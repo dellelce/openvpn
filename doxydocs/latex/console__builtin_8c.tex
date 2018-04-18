@@ -1,0 +1,39 @@
+\hypertarget{console__builtin_8c}{}\section{src/openvpn/console\+\_\+builtin.c File Reference}
+\label{console__builtin_8c}\index{src/openvpn/console\+\_\+builtin.\+c@{src/openvpn/console\+\_\+builtin.\+c}}
+{\ttfamily \#include \char`\"{}syshead.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}console.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}error.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}buffer.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}misc.\+h\char`\"{}}\\*
+Include dependency graph for console\+\_\+builtin.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{console__builtin_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} \hyperlink{console__builtin_8c_a285f4de5297e604771dd132c2345b590}{query\+\_\+user\+\_\+exec\+\_\+builtin} (void)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{console__builtin_8c_a285f4de5297e604771dd132c2345b590}{}\index{console\+\_\+builtin.\+c@{console\+\_\+builtin.\+c}!query\+\_\+user\+\_\+exec\+\_\+builtin@{query\+\_\+user\+\_\+exec\+\_\+builtin}}
+\index{query\+\_\+user\+\_\+exec\+\_\+builtin@{query\+\_\+user\+\_\+exec\+\_\+builtin}!console\+\_\+builtin.\+c@{console\+\_\+builtin.\+c}}
+\subsubsection[{query\+\_\+user\+\_\+exec\+\_\+builtin(void)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} query\+\_\+user\+\_\+exec\+\_\+builtin (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{console__builtin_8c_a285f4de5297e604771dd132c2345b590}
+
+
+
+
+Wrapper function enabling query\+\_\+user\+\_\+exec() if no alternative methods have been enabled
+
+Default method for querying user using default stdin/stdout on a console. This needs to be available as a backup interface for the alternative implementations in case they cannot query through their implementation specific methods.
+
+If no alternative implementation is declared, a wrapper in \hyperlink{console_8h}{console.\+h} will ensure query\+\_\+user\+\_\+exec() will call this function instead. 

@@ -1,0 +1,6 @@
+<map id="close_instance" name="close_instance">
+<area shape="rect" id="node2" href="$init_8h.html#a8f6bfd35ae93f4eda968d89f76637a98" title="close_context" alt="" coords="163,42,265,69"/>
+<area shape="rect" id="node3" href="$init_8h.html#a2986d81718c6cb5cd19bad612998d56f" title="init_instance" alt="" coords="313,42,408,69"/>
+<area shape="rect" id="node4" href="$init_8h.html#a6a1f31e3d9a1f00ef308cd117c540ed4" title="init_instance_handle\l_signals" alt="" coords="457,5,597,47"/>
+<area shape="rect" id="node5" href="$init_8h.html#a2e3da881a15567d205101e6b0853987a" title="inherit_context_child" alt="" coords="456,71,597,98"/>
+</map>

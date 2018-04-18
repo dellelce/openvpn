@@ -1,0 +1,8 @@
+<map id="argv_str" name="argv_str">
+<area shape="rect" id="node2" href="$structargv.html#a3fa35902580e368d0b0c875af2a8e696" title="argv::argv" alt="" coords="121,5,197,32"/>
+<area shape="rect" id="node3" href="$buffer_8c.html#a9fa59da93f5503603025786ec8f33726" title="print_argv" alt="" coords="120,56,197,83"/>
+<area shape="rect" id="node4" href="$buffer_8c.html#aa35bf7feb6a99bf5d364b2d4eba1195c" title="alloc_buf_gc" alt="" coords="245,31,340,57"/>
+<area shape="rect" id="node7" href="$buffer_8c.html#a3307f08331b1ce42168bafd2ecf7874a" title="buf_printf" alt="" coords="255,81,330,108"/>
+<area shape="rect" id="node5" href="$buffer_8c.html#acc1a4ee83a591116d331e52baacf253d" title="buf_size_error" alt="" coords="388,5,491,32"/>
+<area shape="rect" id="node6" href="$buffer_8c.html#a67f7dec7f86e113dc0744584fd80b621" title="gc_malloc" alt="" coords="399,56,480,83"/>
+</map>

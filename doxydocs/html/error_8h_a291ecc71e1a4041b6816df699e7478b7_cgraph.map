@@ -1,0 +1,5 @@
+<map id="open_syslog" name="open_syslog">
+<area shape="rect" id="node2" href="$buffer_8c.html#a06e0220403278399596a7a1b6b601fca" title="string_alloc" alt="" coords="174,5,262,32"/>
+<area shape="rect" id="node4" href="$misc_8c.html#a6e7deed7d2affb7c6a734ec2aea7951d" title="set_std_files_to_null" alt="" coords="148,56,288,83"/>
+<area shape="rect" id="node3" href="$buffer_8c.html#a67f7dec7f86e113dc0744584fd80b621" title="gc_malloc" alt="" coords="336,5,417,32"/>
+</map>

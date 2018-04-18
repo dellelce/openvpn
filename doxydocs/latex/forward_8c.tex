@@ -1,0 +1,697 @@
+\hypertarget{forward_8c}{}\section{src/openvpn/forward.c File Reference}
+\label{forward_8c}\index{src/openvpn/forward.\+c@{src/openvpn/forward.\+c}}
+{\ttfamily \#include \char`\"{}syshead.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}forward.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}init.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}push.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}gremlin.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}mss.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}event.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}ps.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}dhcp.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}common.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}ssl\+\_\+verify.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}memdbg.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}forward-\/inline.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}occ-\/inline.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}ping-\/inline.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}mstats.\+h\char`\"{}}\\*
+Include dependency graph for forward.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{forward_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{forward_8c_aa69b8ddc8529422bd57a2f0ac4dc1baa}{check\+\_\+tls\+\_\+dowork} (struct \hyperlink{structcontext}{context} $\ast$c)
+\item 
+void \hyperlink{forward_8c_a0220d3e3e52a6ed3a07223baf8ec3118}{check\+\_\+tls\+\_\+errors\+\_\+co} (struct \hyperlink{structcontext}{context} $\ast$c)
+\item 
+void \hyperlink{forward_8c_a5bdb78059db1c838ff763037eed2e5d6}{check\+\_\+tls\+\_\+errors\+\_\+nco} (struct \hyperlink{structcontext}{context} $\ast$c)
+\item 
+void \hyperlink{forward_8c_af22e6b17de9f4a9c73f5f68c867a4ee6}{check\+\_\+connection\+\_\+established\+\_\+dowork} (struct \hyperlink{structcontext}{context} $\ast$c)
+\item 
+\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} \hyperlink{forward_8c_a7a409db050be184362b60f3ce7b56b35}{send\+\_\+control\+\_\+channel\+\_\+string} (struct \hyperlink{structcontext}{context} $\ast$c, const char $\ast$str, int msglevel)
+\item 
+void \hyperlink{forward_8c_a7e05ddb37e7fa8d9077fe61646be42b4}{check\+\_\+add\+\_\+routes\+\_\+dowork} (struct \hyperlink{structcontext}{context} $\ast$c)
+\item 
+void \hyperlink{forward_8c_a4aed8bd2612723013ba541ee7f308cea}{check\+\_\+inactivity\+\_\+timeout\+\_\+dowork} (struct \hyperlink{structcontext}{context} $\ast$c)
+\item 
+int \hyperlink{forward_8c_a1445427854d7b321be538f18802b6b35}{get\+\_\+server\+\_\+poll\+\_\+remaining\+\_\+time} (struct \hyperlink{structevent__timeout}{event\+\_\+timeout} $\ast$server\+\_\+poll\+\_\+timeout)
+\item 
+void \hyperlink{forward_8c_a8c98f9f6ed23e51304e14e1f41301be3}{check\+\_\+status\+\_\+file\+\_\+dowork} (struct \hyperlink{structcontext}{context} $\ast$c)
+\item 
+void \hyperlink{forward_8c_a66abf1cd0cfe2af99b61d954cab37966}{encrypt\+\_\+sign} (struct \hyperlink{structcontext}{context} $\ast$c, \hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} comp\+\_\+frag)
+\item 
+void \hyperlink{forward_8c_ab240cf830443447e24d8554e7b290446}{read\+\_\+incoming\+\_\+link} (struct \hyperlink{structcontext}{context} $\ast$c)
+\item 
+\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} \hyperlink{forward_8c_a01bb4da24c0d75c32845ac87c5cad055}{process\+\_\+incoming\+\_\+link\+\_\+part1} (struct \hyperlink{structcontext}{context} $\ast$c, struct \hyperlink{structlink__socket__info}{link\+\_\+socket\+\_\+info} $\ast$lsi, \hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} floated)
+\item 
+void \hyperlink{forward_8c_a28085fcbafd6f128240d96026fd81414}{process\+\_\+incoming\+\_\+link\+\_\+part2} (struct \hyperlink{structcontext}{context} $\ast$c, struct \hyperlink{structlink__socket__info}{link\+\_\+socket\+\_\+info} $\ast$lsi, const uint8\+\_\+t $\ast$orig\+\_\+buf)
+\item 
+void \hyperlink{forward_8c_a085f2884d6c0e63250ad17e489ab2a1e}{read\+\_\+incoming\+\_\+tun} (struct \hyperlink{structcontext}{context} $\ast$c)
+\item 
+void \hyperlink{forward_8c_a1ac8de3ee1c24f16d30a8773d7574bee}{process\+\_\+incoming\+\_\+tun} (struct \hyperlink{structcontext}{context} $\ast$c)
+\item 
+void \hyperlink{forward_8c_a9d9ddd3cb647f519e56209e58fb09610}{process\+\_\+ip\+\_\+header} (struct \hyperlink{structcontext}{context} $\ast$c, unsigned int flags, struct \hyperlink{structbuffer}{buffer} $\ast$buf)
+\item 
+void \hyperlink{forward_8c_a1a506b271590be59a1b285c6cd4a5d85}{process\+\_\+outgoing\+\_\+link} (struct \hyperlink{structcontext}{context} $\ast$c)
+\item 
+void \hyperlink{forward_8c_a2dd6f53fabe65e8e50eafc12030a8a6e}{process\+\_\+outgoing\+\_\+tun} (struct \hyperlink{structcontext}{context} $\ast$c)
+\item 
+void \hyperlink{forward_8c_a98c3703dd840bdc9affca78d893d5024}{pre\+\_\+select} (struct \hyperlink{structcontext}{context} $\ast$c)
+\item 
+void \hyperlink{forward_8c_ae89a1b8349579eb1913fe65253ac81a1}{io\+\_\+wait\+\_\+dowork} (struct \hyperlink{structcontext}{context} $\ast$c, const unsigned int flags)
+\item 
+void \hyperlink{forward_8c_a20db9c6797042b6584e95af8ea5bbc10}{process\+\_\+io} (struct \hyperlink{structcontext}{context} $\ast$c)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{common_8h_a00dd6fbfb368a41945c8c6b9d6fbf88f}{counter\+\_\+type} \hyperlink{forward_8c_ae0b0b85c9002d7df1fc4de4352a7c3e6}{link\+\_\+read\+\_\+bytes\+\_\+global}
+\item 
+\hyperlink{common_8h_a00dd6fbfb368a41945c8c6b9d6fbf88f}{counter\+\_\+type} \hyperlink{forward_8c_a0bd9d43482b20b7440a8d265c611a35c}{link\+\_\+write\+\_\+bytes\+\_\+global}
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{forward_8c_a7e05ddb37e7fa8d9077fe61646be42b4}{}\index{forward.\+c@{forward.\+c}!check\+\_\+add\+\_\+routes\+\_\+dowork@{check\+\_\+add\+\_\+routes\+\_\+dowork}}
+\index{check\+\_\+add\+\_\+routes\+\_\+dowork@{check\+\_\+add\+\_\+routes\+\_\+dowork}!forward.\+c@{forward.\+c}}
+\subsubsection[{check\+\_\+add\+\_\+routes\+\_\+dowork(struct context $\ast$c)}]{\setlength{\rightskip}{0pt plus 5cm}void check\+\_\+add\+\_\+routes\+\_\+dowork (
+\begin{DoxyParamCaption}
+\item[{struct {\bf context} $\ast$}]{c}
+\end{DoxyParamCaption}
+)}\label{forward_8c_a7e05ddb37e7fa8d9077fe61646be42b4}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{forward_8c_a7e05ddb37e7fa8d9077fe61646be42b4_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{forward_8c_af22e6b17de9f4a9c73f5f68c867a4ee6}{}\index{forward.\+c@{forward.\+c}!check\+\_\+connection\+\_\+established\+\_\+dowork@{check\+\_\+connection\+\_\+established\+\_\+dowork}}
+\index{check\+\_\+connection\+\_\+established\+\_\+dowork@{check\+\_\+connection\+\_\+established\+\_\+dowork}!forward.\+c@{forward.\+c}}
+\subsubsection[{check\+\_\+connection\+\_\+established\+\_\+dowork(struct context $\ast$c)}]{\setlength{\rightskip}{0pt plus 5cm}void check\+\_\+connection\+\_\+established\+\_\+dowork (
+\begin{DoxyParamCaption}
+\item[{struct {\bf context} $\ast$}]{c}
+\end{DoxyParamCaption}
+)}\label{forward_8c_af22e6b17de9f4a9c73f5f68c867a4ee6}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{forward_8c_af22e6b17de9f4a9c73f5f68c867a4ee6_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{forward_8c_a4aed8bd2612723013ba541ee7f308cea}{}\index{forward.\+c@{forward.\+c}!check\+\_\+inactivity\+\_\+timeout\+\_\+dowork@{check\+\_\+inactivity\+\_\+timeout\+\_\+dowork}}
+\index{check\+\_\+inactivity\+\_\+timeout\+\_\+dowork@{check\+\_\+inactivity\+\_\+timeout\+\_\+dowork}!forward.\+c@{forward.\+c}}
+\subsubsection[{check\+\_\+inactivity\+\_\+timeout\+\_\+dowork(struct context $\ast$c)}]{\setlength{\rightskip}{0pt plus 5cm}void check\+\_\+inactivity\+\_\+timeout\+\_\+dowork (
+\begin{DoxyParamCaption}
+\item[{struct {\bf context} $\ast$}]{c}
+\end{DoxyParamCaption}
+)}\label{forward_8c_a4aed8bd2612723013ba541ee7f308cea}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=319pt]{forward_8c_a4aed8bd2612723013ba541ee7f308cea_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{forward_8c_a8c98f9f6ed23e51304e14e1f41301be3}{}\index{forward.\+c@{forward.\+c}!check\+\_\+status\+\_\+file\+\_\+dowork@{check\+\_\+status\+\_\+file\+\_\+dowork}}
+\index{check\+\_\+status\+\_\+file\+\_\+dowork@{check\+\_\+status\+\_\+file\+\_\+dowork}!forward.\+c@{forward.\+c}}
+\subsubsection[{check\+\_\+status\+\_\+file\+\_\+dowork(struct context $\ast$c)}]{\setlength{\rightskip}{0pt plus 5cm}void check\+\_\+status\+\_\+file\+\_\+dowork (
+\begin{DoxyParamCaption}
+\item[{struct {\bf context} $\ast$}]{c}
+\end{DoxyParamCaption}
+)}\label{forward_8c_a8c98f9f6ed23e51304e14e1f41301be3}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{forward_8c_a8c98f9f6ed23e51304e14e1f41301be3_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{forward_8c_aa69b8ddc8529422bd57a2f0ac4dc1baa}{}\index{forward.\+c@{forward.\+c}!check\+\_\+tls\+\_\+dowork@{check\+\_\+tls\+\_\+dowork}}
+\index{check\+\_\+tls\+\_\+dowork@{check\+\_\+tls\+\_\+dowork}!forward.\+c@{forward.\+c}}
+\subsubsection[{check\+\_\+tls\+\_\+dowork(struct context $\ast$c)}]{\setlength{\rightskip}{0pt plus 5cm}void check\+\_\+tls\+\_\+dowork (
+\begin{DoxyParamCaption}
+\item[{struct {\bf context} $\ast$}]{c}
+\end{DoxyParamCaption}
+)}\label{forward_8c_aa69b8ddc8529422bd57a2f0ac4dc1baa}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{forward_8c_aa69b8ddc8529422bd57a2f0ac4dc1baa_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{forward_8c_a0220d3e3e52a6ed3a07223baf8ec3118}{}\index{forward.\+c@{forward.\+c}!check\+\_\+tls\+\_\+errors\+\_\+co@{check\+\_\+tls\+\_\+errors\+\_\+co}}
+\index{check\+\_\+tls\+\_\+errors\+\_\+co@{check\+\_\+tls\+\_\+errors\+\_\+co}!forward.\+c@{forward.\+c}}
+\subsubsection[{check\+\_\+tls\+\_\+errors\+\_\+co(struct context $\ast$c)}]{\setlength{\rightskip}{0pt plus 5cm}void check\+\_\+tls\+\_\+errors\+\_\+co (
+\begin{DoxyParamCaption}
+\item[{struct {\bf context} $\ast$}]{c}
+\end{DoxyParamCaption}
+)}\label{forward_8c_a0220d3e3e52a6ed3a07223baf8ec3118}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=300pt]{forward_8c_a0220d3e3e52a6ed3a07223baf8ec3118_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{forward_8c_a5bdb78059db1c838ff763037eed2e5d6}{}\index{forward.\+c@{forward.\+c}!check\+\_\+tls\+\_\+errors\+\_\+nco@{check\+\_\+tls\+\_\+errors\+\_\+nco}}
+\index{check\+\_\+tls\+\_\+errors\+\_\+nco@{check\+\_\+tls\+\_\+errors\+\_\+nco}!forward.\+c@{forward.\+c}}
+\subsubsection[{check\+\_\+tls\+\_\+errors\+\_\+nco(struct context $\ast$c)}]{\setlength{\rightskip}{0pt plus 5cm}void check\+\_\+tls\+\_\+errors\+\_\+nco (
+\begin{DoxyParamCaption}
+\item[{struct {\bf context} $\ast$}]{c}
+\end{DoxyParamCaption}
+)}\label{forward_8c_a5bdb78059db1c838ff763037eed2e5d6}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=306pt]{forward_8c_a5bdb78059db1c838ff763037eed2e5d6_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{forward_8c_a66abf1cd0cfe2af99b61d954cab37966}{}\index{forward.\+c@{forward.\+c}!encrypt\+\_\+sign@{encrypt\+\_\+sign}}
+\index{encrypt\+\_\+sign@{encrypt\+\_\+sign}!forward.\+c@{forward.\+c}}
+\subsubsection[{encrypt\+\_\+sign(struct context $\ast$c, bool comp\+\_\+frag)}]{\setlength{\rightskip}{0pt plus 5cm}void encrypt\+\_\+sign (
+\begin{DoxyParamCaption}
+\item[{struct {\bf context} $\ast$}]{c, }
+\item[{{\bf bool}}]{comp\+\_\+frag}
+\end{DoxyParamCaption}
+)}\label{forward_8c_a66abf1cd0cfe2af99b61d954cab37966}
+Process a data channel packet that will be sent through a V\+P\+N tunnel.
+
+This function controls the processing of a data channel packet which will be sent through a V\+P\+N tunnel to a remote Open\+V\+P\+N peer. It\textquotesingle{}s general structure is as follows\+:
+\begin{DoxyItemize}
+\item Check that the client authentication has succeeded; if not, drop the packet.
+\item If the {\itshape comp\+\_\+frag} argument is true\+:
+\begin{DoxyItemize}
+\item Call {\ttfamily lzo\+\_\+compress()} of the \hyperlink{}{Channel Compression module} to (possibly) compress the packet.
+\item Call {\ttfamily fragment\+\_\+outgoing()} of the \hyperlink{}{Channel Fragmentation module} to (possibly) fragment the packet.
+\end{DoxyItemize}
+\item Activate the \hyperlink{}{Channel Crypto module} to perform security operations on the packet.
+\begin{DoxyItemize}
+\item Call {\ttfamily \hyperlink{group__data__crypto_gaba03eaba587a89c2abda8780da7b3ac7}{tls\+\_\+pre\+\_\+encrypt()}} to choose the appropriate security parameters for this packet.
+\item Call {\ttfamily \hyperlink{group__data__crypto_ga2756bad88224b98719d4e8f08cb11ef9}{openvpn\+\_\+encrypt()}} to encrypt and H\+M\+A\+C signed the packet.
+\item Call {\ttfamily \hyperlink{group__data__crypto_ga1f2ecd39b88da77b2f8067962155ea82}{tls\+\_\+post\+\_\+encrypt()}} to prepend the one-\/byte Open\+V\+P\+N header and do some T\+L\+S accounting.
+\end{DoxyItemize}
+\item Place the resulting packet in {\ttfamily c-\/$>$c2.\+to\+\_\+link} so that it can be sent over the external network interface to its remote destination by the \hyperlink{}{External Multiplexer}.
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parameters}
+{\em c} & -\/ The context structure of the V\+P\+N tunnel associated with this packet. \\
+\hline
+{\em comp\+\_\+frag} & -\/ Whether to do packet compression and fragmentation. This flag is set to true the first time a packet is processed. If the packet then gets fragmented, this function will be called again once for each remaining fragment with this parameter set to false. \\
+\hline
+\end{DoxyParams}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{forward_8c_a66abf1cd0cfe2af99b61d954cab37966_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{forward_8c_a66abf1cd0cfe2af99b61d954cab37966_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{forward_8c_a1445427854d7b321be538f18802b6b35}{}\index{forward.\+c@{forward.\+c}!get\+\_\+server\+\_\+poll\+\_\+remaining\+\_\+time@{get\+\_\+server\+\_\+poll\+\_\+remaining\+\_\+time}}
+\index{get\+\_\+server\+\_\+poll\+\_\+remaining\+\_\+time@{get\+\_\+server\+\_\+poll\+\_\+remaining\+\_\+time}!forward.\+c@{forward.\+c}}
+\subsubsection[{get\+\_\+server\+\_\+poll\+\_\+remaining\+\_\+time(struct event\+\_\+timeout $\ast$server\+\_\+poll\+\_\+timeout)}]{\setlength{\rightskip}{0pt plus 5cm}int get\+\_\+server\+\_\+poll\+\_\+remaining\+\_\+time (
+\begin{DoxyParamCaption}
+\item[{struct {\bf event\+\_\+timeout} $\ast$}]{server\+\_\+poll\+\_\+timeout}
+\end{DoxyParamCaption}
+)}\label{forward_8c_a1445427854d7b321be538f18802b6b35}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{forward_8c_a1445427854d7b321be538f18802b6b35_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{forward_8c_ae89a1b8349579eb1913fe65253ac81a1}{}\index{forward.\+c@{forward.\+c}!io\+\_\+wait\+\_\+dowork@{io\+\_\+wait\+\_\+dowork}}
+\index{io\+\_\+wait\+\_\+dowork@{io\+\_\+wait\+\_\+dowork}!forward.\+c@{forward.\+c}}
+\subsubsection[{io\+\_\+wait\+\_\+dowork(struct context $\ast$c, const unsigned int flags)}]{\setlength{\rightskip}{0pt plus 5cm}void io\+\_\+wait\+\_\+dowork (
+\begin{DoxyParamCaption}
+\item[{struct {\bf context} $\ast$}]{c, }
+\item[{const unsigned int}]{flags}
+\end{DoxyParamCaption}
+)}\label{forward_8c_ae89a1b8349579eb1913fe65253ac81a1}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=293pt]{forward_8c_ae89a1b8349579eb1913fe65253ac81a1_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{forward_8c_a98c3703dd840bdc9affca78d893d5024}{}\index{forward.\+c@{forward.\+c}!pre\+\_\+select@{pre\+\_\+select}}
+\index{pre\+\_\+select@{pre\+\_\+select}!forward.\+c@{forward.\+c}}
+\subsubsection[{pre\+\_\+select(struct context $\ast$c)}]{\setlength{\rightskip}{0pt plus 5cm}void pre\+\_\+select (
+\begin{DoxyParamCaption}
+\item[{struct {\bf context} $\ast$}]{c}
+\end{DoxyParamCaption}
+)}\label{forward_8c_a98c3703dd840bdc9affca78d893d5024}
+\hypertarget{forward_8c_a01bb4da24c0d75c32845ac87c5cad055}{}\index{forward.\+c@{forward.\+c}!process\+\_\+incoming\+\_\+link\+\_\+part1@{process\+\_\+incoming\+\_\+link\+\_\+part1}}
+\index{process\+\_\+incoming\+\_\+link\+\_\+part1@{process\+\_\+incoming\+\_\+link\+\_\+part1}!forward.\+c@{forward.\+c}}
+\subsubsection[{process\+\_\+incoming\+\_\+link\+\_\+part1(struct context $\ast$c, struct link\+\_\+socket\+\_\+info $\ast$lsi, bool floated)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} process\+\_\+incoming\+\_\+link\+\_\+part1 (
+\begin{DoxyParamCaption}
+\item[{struct {\bf context} $\ast$}]{c, }
+\item[{struct {\bf link\+\_\+socket\+\_\+info} $\ast$}]{lsi, }
+\item[{{\bf bool}}]{floated}
+\end{DoxyParamCaption}
+)}\label{forward_8c_a01bb4da24c0d75c32845ac87c5cad055}
+Starts processing a packet read from the external network interface.
+
+This function starts the processing of a data channel packet which has come out of a V\+P\+N tunnel. It\textquotesingle{}s high-\/level structure is as follows\+:
+\begin{DoxyItemize}
+\item Verify that a nonzero length packet has been received from a valid source address for the given context {\itshape c}.
+\item Call {\ttfamily \hyperlink{ssl_8c_ad436aa1372a562e8be84491907531df4}{tls\+\_\+pre\+\_\+decrypt()}}, which splits data channel and control channel packets\+:
+\begin{DoxyItemize}
+\item If a data channel packet, the appropriate security parameters are loaded.
+\item If a control channel packet, this function process is it and afterwards sets the packet\textquotesingle{}s buffer length to 0, so that the data channel processing steps below will ignore it.
+\end{DoxyItemize}
+\item Call {\ttfamily \hyperlink{group__data__crypto_gae91d99446478fcf3327672eb78ef0bf8}{openvpn\+\_\+decrypt()}} of the \hyperlink{group__data__crypto}{Data Channel Crypto module} to authenticate and decrypt the packet using the security parameters loaded by {\ttfamily \hyperlink{ssl_8c_ad436aa1372a562e8be84491907531df4}{tls\+\_\+pre\+\_\+decrypt()}} above.
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parameters}
+{\em c} & -\/ The context structure of the V\+P\+N tunnel associated with the packet. \\
+\hline
+{\em lsi} & -\/ \hyperlink{structlink__socket__info}{link\+\_\+socket\+\_\+info} obtained from context before processing. \\
+\hline
+{\em floated} & -\/ Flag indicates that peer has floated.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if packet is authenticated, false otherwise. 
+\end{DoxyReturn}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{forward_8c_a01bb4da24c0d75c32845ac87c5cad055_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{forward_8c_a28085fcbafd6f128240d96026fd81414}{}\index{forward.\+c@{forward.\+c}!process\+\_\+incoming\+\_\+link\+\_\+part2@{process\+\_\+incoming\+\_\+link\+\_\+part2}}
+\index{process\+\_\+incoming\+\_\+link\+\_\+part2@{process\+\_\+incoming\+\_\+link\+\_\+part2}!forward.\+c@{forward.\+c}}
+\subsubsection[{process\+\_\+incoming\+\_\+link\+\_\+part2(struct context $\ast$c, struct link\+\_\+socket\+\_\+info $\ast$lsi, const uint8\+\_\+t $\ast$orig\+\_\+buf)}]{\setlength{\rightskip}{0pt plus 5cm}void process\+\_\+incoming\+\_\+link\+\_\+part2 (
+\begin{DoxyParamCaption}
+\item[{struct {\bf context} $\ast$}]{c, }
+\item[{struct {\bf link\+\_\+socket\+\_\+info} $\ast$}]{lsi, }
+\item[{const uint8\+\_\+t $\ast$}]{orig\+\_\+buf}
+\end{DoxyParamCaption}
+)}\label{forward_8c_a28085fcbafd6f128240d96026fd81414}
+Continues processing a packet read from the external network interface.
+
+This function continues the processing of a data channel packet which has come out of a V\+P\+N tunnel. It must be called after {\ttfamily \hyperlink{forward_8h_a01bb4da24c0d75c32845ac87c5cad055}{process\+\_\+incoming\+\_\+link\+\_\+part1()}} function.
+
+It\textquotesingle{}s high-\/level structure is as follows\+:
+\begin{DoxyItemize}
+\item Call {\ttfamily fragment\+\_\+incoming()} of the \hyperlink{}{Data Channel Fragmentation module} to reassemble the packet if it\textquotesingle{}s fragmented.
+\item Call {\ttfamily lzo\+\_\+decompress()} of the \hyperlink{}{Data Channel Compression module} to decompress the packet if it\textquotesingle{}s compressed.
+\item Place the resulting packet in {\ttfamily c-\/$>$c2.\+to\+\_\+tun} so that it can be sent over the virtual tun/tap network interface to its local destination by the \hyperlink{}{Internal Multiplexer}.
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parameters}
+{\em c} & -\/ The context structure of the V\+P\+N tunnel associated with the packet. \\
+\hline
+{\em lsi} & -\/ \hyperlink{structlink__socket__info}{link\+\_\+socket\+\_\+info} obtained from context before processing. \\
+\hline
+{\em orig\+\_\+buf} & -\/ Pointer to a buffer data. \\
+\hline
+\end{DoxyParams}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{forward_8c_a28085fcbafd6f128240d96026fd81414_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{forward_8c_a1ac8de3ee1c24f16d30a8773d7574bee}{}\index{forward.\+c@{forward.\+c}!process\+\_\+incoming\+\_\+tun@{process\+\_\+incoming\+\_\+tun}}
+\index{process\+\_\+incoming\+\_\+tun@{process\+\_\+incoming\+\_\+tun}!forward.\+c@{forward.\+c}}
+\subsubsection[{process\+\_\+incoming\+\_\+tun(struct context $\ast$c)}]{\setlength{\rightskip}{0pt plus 5cm}void process\+\_\+incoming\+\_\+tun (
+\begin{DoxyParamCaption}
+\item[{struct {\bf context} $\ast$}]{c}
+\end{DoxyParamCaption}
+)}\label{forward_8c_a1ac8de3ee1c24f16d30a8773d7574bee}
+Process a packet read from the virtual tun/tap network interface.
+
+This function calls {\ttfamily \hyperlink{forward_8h_a66abf1cd0cfe2af99b61d954cab37966}{encrypt\+\_\+sign()}} of the \hyperlink{}{Data Channel Control module} to process the packet.
+
+If an error occurs, it is logged and the packet is dropped.
+
+
+\begin{DoxyParams}{Parameters}
+{\em c} & -\/ The context structure of the V\+P\+N tunnel associated with the packet. \\
+\hline
+\end{DoxyParams}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{forward_8c_a1ac8de3ee1c24f16d30a8773d7574bee_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=294pt]{forward_8c_a1ac8de3ee1c24f16d30a8773d7574bee_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{forward_8c_a20db9c6797042b6584e95af8ea5bbc10}{}\index{forward.\+c@{forward.\+c}!process\+\_\+io@{process\+\_\+io}}
+\index{process\+\_\+io@{process\+\_\+io}!forward.\+c@{forward.\+c}}
+\subsubsection[{process\+\_\+io(struct context $\ast$c)}]{\setlength{\rightskip}{0pt plus 5cm}void process\+\_\+io (
+\begin{DoxyParamCaption}
+\item[{struct {\bf context} $\ast$}]{c}
+\end{DoxyParamCaption}
+)}\label{forward_8c_a20db9c6797042b6584e95af8ea5bbc10}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{forward_8c_a20db9c6797042b6584e95af8ea5bbc10_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{forward_8c_a9d9ddd3cb647f519e56209e58fb09610}{}\index{forward.\+c@{forward.\+c}!process\+\_\+ip\+\_\+header@{process\+\_\+ip\+\_\+header}}
+\index{process\+\_\+ip\+\_\+header@{process\+\_\+ip\+\_\+header}!forward.\+c@{forward.\+c}}
+\subsubsection[{process\+\_\+ip\+\_\+header(struct context $\ast$c, unsigned int flags, struct buffer $\ast$buf)}]{\setlength{\rightskip}{0pt plus 5cm}void process\+\_\+ip\+\_\+header (
+\begin{DoxyParamCaption}
+\item[{struct {\bf context} $\ast$}]{c, }
+\item[{unsigned int}]{flags, }
+\item[{struct {\bf buffer} $\ast$}]{buf}
+\end{DoxyParamCaption}
+)}\label{forward_8c_a9d9ddd3cb647f519e56209e58fb09610}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{forward_8c_a9d9ddd3cb647f519e56209e58fb09610_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{forward_8c_a9d9ddd3cb647f519e56209e58fb09610_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{forward_8c_a1a506b271590be59a1b285c6cd4a5d85}{}\index{forward.\+c@{forward.\+c}!process\+\_\+outgoing\+\_\+link@{process\+\_\+outgoing\+\_\+link}}
+\index{process\+\_\+outgoing\+\_\+link@{process\+\_\+outgoing\+\_\+link}!forward.\+c@{forward.\+c}}
+\subsubsection[{process\+\_\+outgoing\+\_\+link(struct context $\ast$c)}]{\setlength{\rightskip}{0pt plus 5cm}void process\+\_\+outgoing\+\_\+link (
+\begin{DoxyParamCaption}
+\item[{struct {\bf context} $\ast$}]{c}
+\end{DoxyParamCaption}
+)}\label{forward_8c_a1a506b271590be59a1b285c6cd4a5d85}
+Write a packet to the external network interface.
+
+This function writes the packet stored in {\ttfamily c-\/$>$c2.\+to\+\_\+link} to the external network device contained within {\ttfamily c-\/$>$c1.\+link\+\_\+socket}.
+
+If an error occurs, it is logged and the packet is dropped.
+
+
+\begin{DoxyParams}{Parameters}
+{\em c} & -\/ The context structure of the V\+P\+N tunnel associated with the packet. \\
+\hline
+\end{DoxyParams}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{forward_8c_a1a506b271590be59a1b285c6cd4a5d85_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=293pt]{forward_8c_a1a506b271590be59a1b285c6cd4a5d85_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{forward_8c_a2dd6f53fabe65e8e50eafc12030a8a6e}{}\index{forward.\+c@{forward.\+c}!process\+\_\+outgoing\+\_\+tun@{process\+\_\+outgoing\+\_\+tun}}
+\index{process\+\_\+outgoing\+\_\+tun@{process\+\_\+outgoing\+\_\+tun}!forward.\+c@{forward.\+c}}
+\subsubsection[{process\+\_\+outgoing\+\_\+tun(struct context $\ast$c)}]{\setlength{\rightskip}{0pt plus 5cm}void process\+\_\+outgoing\+\_\+tun (
+\begin{DoxyParamCaption}
+\item[{struct {\bf context} $\ast$}]{c}
+\end{DoxyParamCaption}
+)}\label{forward_8c_a2dd6f53fabe65e8e50eafc12030a8a6e}
+Write a packet to the virtual tun/tap network interface.
+
+This function writes the packet stored in {\ttfamily c-\/$>$c2.\+to\+\_\+tun} to the virtual tun/tap network device {\ttfamily c-\/$>$c1.\+tuntap}.
+
+If an error occurs, it is logged and the packet is dropped.
+
+
+\begin{DoxyParams}{Parameters}
+{\em c} & -\/ The context structure of the V\+P\+N tunnel associated with the packet. \\
+\hline
+\end{DoxyParams}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{forward_8c_a2dd6f53fabe65e8e50eafc12030a8a6e_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=292pt]{forward_8c_a2dd6f53fabe65e8e50eafc12030a8a6e_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{forward_8c_ab240cf830443447e24d8554e7b290446}{}\index{forward.\+c@{forward.\+c}!read\+\_\+incoming\+\_\+link@{read\+\_\+incoming\+\_\+link}}
+\index{read\+\_\+incoming\+\_\+link@{read\+\_\+incoming\+\_\+link}!forward.\+c@{forward.\+c}}
+\subsubsection[{read\+\_\+incoming\+\_\+link(struct context $\ast$c)}]{\setlength{\rightskip}{0pt plus 5cm}void read\+\_\+incoming\+\_\+link (
+\begin{DoxyParamCaption}
+\item[{struct {\bf context} $\ast$}]{c}
+\end{DoxyParamCaption}
+)}\label{forward_8c_ab240cf830443447e24d8554e7b290446}
+Read a packet from the external network interface.
+
+The packet read from the external network interface is stored in {\ttfamily c-\/$>$c2.\+buf} and its source address in {\ttfamily c-\/$>$c2.\+from}. If an error occurred, the length of {\ttfamily c-\/$>$c2.\+buf} will be 0.
+
+Open\+V\+P\+N running as client or as U\+D\+P server only has a single external network socket, so this function can be called with the single (client mode) or top level (U\+D\+P server) context as its argument. Open\+V\+P\+N running as T\+C\+P server, on the other hand, has a network socket for each active V\+P\+N tunnel. In that case this function must be called with the context associated with the appropriate V\+P\+N tunnel for which data is available to be read.
+
+
+\begin{DoxyParams}{Parameters}
+{\em c} & -\/ The context structure which contains the external network socket from which to read incoming packets. \\
+\hline
+\end{DoxyParams}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=317pt]{forward_8c_ab240cf830443447e24d8554e7b290446_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=280pt]{forward_8c_ab240cf830443447e24d8554e7b290446_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{forward_8c_a085f2884d6c0e63250ad17e489ab2a1e}{}\index{forward.\+c@{forward.\+c}!read\+\_\+incoming\+\_\+tun@{read\+\_\+incoming\+\_\+tun}}
+\index{read\+\_\+incoming\+\_\+tun@{read\+\_\+incoming\+\_\+tun}!forward.\+c@{forward.\+c}}
+\subsubsection[{read\+\_\+incoming\+\_\+tun(struct context $\ast$c)}]{\setlength{\rightskip}{0pt plus 5cm}void read\+\_\+incoming\+\_\+tun (
+\begin{DoxyParamCaption}
+\item[{struct {\bf context} $\ast$}]{c}
+\end{DoxyParamCaption}
+)}\label{forward_8c_a085f2884d6c0e63250ad17e489ab2a1e}
+Read a packet from the virtual tun/tap network interface.
+
+This function reads a packet from the virtual tun/tap network device {\ttfamily c-\/$>$c1.\+tuntap} and stores it in {\ttfamily c-\/$>$c2.\+buf}.
+
+If an error occurs, it is logged and the packet is dropped.
+
+
+\begin{DoxyParams}{Parameters}
+{\em c} & -\/ The context structure in which to store the received packet. \\
+\hline
+\end{DoxyParams}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=294pt]{forward_8c_a085f2884d6c0e63250ad17e489ab2a1e_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=278pt]{forward_8c_a085f2884d6c0e63250ad17e489ab2a1e_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{forward_8c_a7a409db050be184362b60f3ce7b56b35}{}\index{forward.\+c@{forward.\+c}!send\+\_\+control\+\_\+channel\+\_\+string@{send\+\_\+control\+\_\+channel\+\_\+string}}
+\index{send\+\_\+control\+\_\+channel\+\_\+string@{send\+\_\+control\+\_\+channel\+\_\+string}!forward.\+c@{forward.\+c}}
+\subsubsection[{send\+\_\+control\+\_\+channel\+\_\+string(struct context $\ast$c, const char $\ast$str, int msglevel)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} send\+\_\+control\+\_\+channel\+\_\+string (
+\begin{DoxyParamCaption}
+\item[{struct {\bf context} $\ast$}]{c, }
+\item[{const char $\ast$}]{str, }
+\item[{int}]{msglevel}
+\end{DoxyParamCaption}
+)}\label{forward_8c_a7a409db050be184362b60f3ce7b56b35}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{forward_8c_a7a409db050be184362b60f3ce7b56b35_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Variable Documentation}
+\hypertarget{forward_8c_ae0b0b85c9002d7df1fc4de4352a7c3e6}{}\index{forward.\+c@{forward.\+c}!link\+\_\+read\+\_\+bytes\+\_\+global@{link\+\_\+read\+\_\+bytes\+\_\+global}}
+\index{link\+\_\+read\+\_\+bytes\+\_\+global@{link\+\_\+read\+\_\+bytes\+\_\+global}!forward.\+c@{forward.\+c}}
+\subsubsection[{link\+\_\+read\+\_\+bytes\+\_\+global}]{\setlength{\rightskip}{0pt plus 5cm}{\bf counter\+\_\+type} link\+\_\+read\+\_\+bytes\+\_\+global}\label{forward_8c_ae0b0b85c9002d7df1fc4de4352a7c3e6}
+\hypertarget{forward_8c_a0bd9d43482b20b7440a8d265c611a35c}{}\index{forward.\+c@{forward.\+c}!link\+\_\+write\+\_\+bytes\+\_\+global@{link\+\_\+write\+\_\+bytes\+\_\+global}}
+\index{link\+\_\+write\+\_\+bytes\+\_\+global@{link\+\_\+write\+\_\+bytes\+\_\+global}!forward.\+c@{forward.\+c}}
+\subsubsection[{link\+\_\+write\+\_\+bytes\+\_\+global}]{\setlength{\rightskip}{0pt plus 5cm}{\bf counter\+\_\+type} link\+\_\+write\+\_\+bytes\+\_\+global}\label{forward_8c_a0bd9d43482b20b7440a8d265c611a35c}

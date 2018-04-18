@@ -1,0 +1,303 @@
+\hypertarget{ssl__verify__backend_8h}{}\section{src/openvpn/ssl\+\_\+verify\+\_\+backend.h File Reference}
+\label{ssl__verify__backend_8h}\index{src/openvpn/ssl\+\_\+verify\+\_\+backend.\+h@{src/openvpn/ssl\+\_\+verify\+\_\+backend.\+h}}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ssl__verify__backend_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{ssl__verify__backend_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3}{result\+\_\+t} \{ \hyperlink{ssl__verify__backend_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3ac7f69f7c9e5aea9b8f54cf02870e2bf8}{S\+U\+C\+C\+E\+S\+S} = 0, 
+\hyperlink{ssl__verify__backend_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3aa5571864412c8275a2e18a931fddcaa6}{F\+A\+I\+L\+U\+R\+E} = 1
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{ssl__verify__backend_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3}{result\+\_\+t} \hyperlink{ssl__verify__backend_8h_a8574f9402b712d3051d9febde91cf220}{verify\+\_\+cert} (struct \hyperlink{structtls__session}{tls\+\_\+session} $\ast$session, \hyperlink{ssl__verify__mbedtls_8h_ad391202ae7645e5ee5bb5f1e6f24bb31}{openvpn\+\_\+x509\+\_\+cert\+\_\+t} $\ast$cert, int cert\+\_\+depth)
+\item 
+void \hyperlink{ssl__verify__backend_8h_a17f68be5ea4c01500b430490ef142fef}{cert\+\_\+hash\+\_\+remember} (struct \hyperlink{structtls__session}{tls\+\_\+session} $\ast$session, const int cert\+\_\+depth, const struct \hyperlink{structbuffer}{buffer} $\ast$\hyperlink{structcert__hash}{cert\+\_\+hash})
+\item 
+char $\ast$ \hyperlink{ssl__verify__backend_8h_a826a6d6d97f9ed4fc9a2b1d37b6a8d5d}{x509\+\_\+get\+\_\+subject} (\hyperlink{ssl__verify__mbedtls_8h_ad391202ae7645e5ee5bb5f1e6f24bb31}{openvpn\+\_\+x509\+\_\+cert\+\_\+t} $\ast$cert, struct \hyperlink{structgc__arena}{gc\+\_\+arena} $\ast$gc)
+\item 
+struct \hyperlink{structbuffer}{buffer} \hyperlink{ssl__verify__backend_8h_a90c072dba9d12a3e3df7f8546889bfc3}{x509\+\_\+get\+\_\+sha1\+\_\+fingerprint} (\hyperlink{ssl__verify__mbedtls_8h_ad391202ae7645e5ee5bb5f1e6f24bb31}{openvpn\+\_\+x509\+\_\+cert\+\_\+t} $\ast$cert, struct \hyperlink{structgc__arena}{gc\+\_\+arena} $\ast$gc)
+\item 
+struct \hyperlink{structbuffer}{buffer} \hyperlink{ssl__verify__backend_8h_a05cb48b03a00edbf8ce0f79e960b5be7}{x509\+\_\+get\+\_\+sha256\+\_\+fingerprint} (\hyperlink{ssl__verify__mbedtls_8h_ad391202ae7645e5ee5bb5f1e6f24bb31}{openvpn\+\_\+x509\+\_\+cert\+\_\+t} $\ast$cert, struct \hyperlink{structgc__arena}{gc\+\_\+arena} $\ast$gc)
+\item 
+\hyperlink{ssl__verify__backend_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3}{result\+\_\+t} \hyperlink{ssl__verify__backend_8h_a69b4d63fb21ed42f33810e2b88bd2e34}{backend\+\_\+x509\+\_\+get\+\_\+username} (char $\ast$common\+\_\+name, int cn\+\_\+len, char $\ast$x509\+\_\+username\+\_\+field, \hyperlink{ssl__verify__mbedtls_8h_ad391202ae7645e5ee5bb5f1e6f24bb31}{openvpn\+\_\+x509\+\_\+cert\+\_\+t} $\ast$peer\+\_\+cert)
+\item 
+char $\ast$ \hyperlink{ssl__verify__backend_8h_ac5f135dabdc99173647b49dfe02d03ee}{backend\+\_\+x509\+\_\+get\+\_\+serial} (\hyperlink{ssl__verify__mbedtls_8h_ad391202ae7645e5ee5bb5f1e6f24bb31}{openvpn\+\_\+x509\+\_\+cert\+\_\+t} $\ast$cert, struct \hyperlink{structgc__arena}{gc\+\_\+arena} $\ast$gc)
+\item 
+char $\ast$ \hyperlink{ssl__verify__backend_8h_ad20bc85f4aca0f6f2bcf4376b827e2d5}{backend\+\_\+x509\+\_\+get\+\_\+serial\+\_\+hex} (\hyperlink{ssl__verify__mbedtls_8h_ad391202ae7645e5ee5bb5f1e6f24bb31}{openvpn\+\_\+x509\+\_\+cert\+\_\+t} $\ast$cert, struct \hyperlink{structgc__arena}{gc\+\_\+arena} $\ast$gc)
+\item 
+void \hyperlink{ssl__verify__backend_8h_a3d900edeebbced10ba9cec6a8e11050f}{x509\+\_\+setenv} (struct \hyperlink{structenv__set}{env\+\_\+set} $\ast$es, int cert\+\_\+depth, \hyperlink{ssl__verify__mbedtls_8h_ad391202ae7645e5ee5bb5f1e6f24bb31}{openvpn\+\_\+x509\+\_\+cert\+\_\+t} $\ast$cert)
+\item 
+void \hyperlink{ssl__verify__backend_8h_acd754c2f2c353f01cf2997c3af92be4c}{x509\+\_\+track\+\_\+add} (const struct \hyperlink{structx509__track}{x509\+\_\+track} $\ast$$\ast$ll\+\_\+head, const char $\ast$name, int msglevel, struct \hyperlink{structgc__arena}{gc\+\_\+arena} $\ast$gc)
+\item 
+void \hyperlink{ssl__verify__backend_8h_a2e57338331df2997c022d95e10e2125f}{x509\+\_\+setenv\+\_\+track} (const struct \hyperlink{structx509__track}{x509\+\_\+track} $\ast$xt, struct \hyperlink{structenv__set}{env\+\_\+set} $\ast$es, const int depth, \hyperlink{ssl__verify__mbedtls_8h_ad391202ae7645e5ee5bb5f1e6f24bb31}{openvpn\+\_\+x509\+\_\+cert\+\_\+t} $\ast$x509)
+\item 
+\hyperlink{ssl__verify__backend_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3}{result\+\_\+t} \hyperlink{ssl__verify__backend_8h_a61342ccf1d2ae4e86ab7c6875b95f3e0}{x509\+\_\+verify\+\_\+ns\+\_\+cert\+\_\+type} (\hyperlink{ssl__verify__mbedtls_8h_ad391202ae7645e5ee5bb5f1e6f24bb31}{openvpn\+\_\+x509\+\_\+cert\+\_\+t} $\ast$cert, const int usage)
+\item 
+\hyperlink{ssl__verify__backend_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3}{result\+\_\+t} \hyperlink{ssl__verify__backend_8h_a8b7259d2d6c374d8606efff0eb43e19d}{x509\+\_\+verify\+\_\+cert\+\_\+ku} (\hyperlink{ssl__verify__mbedtls_8h_ad391202ae7645e5ee5bb5f1e6f24bb31}{openvpn\+\_\+x509\+\_\+cert\+\_\+t} $\ast$x509, const unsigned $\ast$const expected\+\_\+ku, int expected\+\_\+len)
+\item 
+\hyperlink{ssl__verify__backend_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3}{result\+\_\+t} \hyperlink{ssl__verify__backend_8h_ae3b1996c23a0d5b508229576847d343a}{x509\+\_\+verify\+\_\+cert\+\_\+eku} (\hyperlink{ssl__verify__mbedtls_8h_ad391202ae7645e5ee5bb5f1e6f24bb31}{openvpn\+\_\+x509\+\_\+cert\+\_\+t} $\ast$x509, const char $\ast$const expected\+\_\+oid)
+\item 
+\hyperlink{ssl__verify__backend_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3}{result\+\_\+t} \hyperlink{ssl__verify__backend_8h_a7593a15002569de845e2bf033d58e691}{x509\+\_\+write\+\_\+pem} (F\+I\+L\+E $\ast$peercert\+\_\+file, \hyperlink{ssl__verify__mbedtls_8h_ad391202ae7645e5ee5bb5f1e6f24bb31}{openvpn\+\_\+x509\+\_\+cert\+\_\+t} $\ast$peercert)
+\item 
+\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} \hyperlink{ssl__verify__backend_8h_a4b25cc233e1b56447e3daefd4bb4a2c2}{tls\+\_\+verify\+\_\+crl\+\_\+missing} (const struct \hyperlink{structtls__options}{tls\+\_\+options} $\ast$opt)
+\end{DoxyCompactItemize}
+
+
+\subsection{Enumeration Type Documentation}
+\hypertarget{ssl__verify__backend_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3}{}\index{ssl\+\_\+verify\+\_\+backend.\+h@{ssl\+\_\+verify\+\_\+backend.\+h}!result\+\_\+t@{result\+\_\+t}}
+\index{result\+\_\+t@{result\+\_\+t}!ssl\+\_\+verify\+\_\+backend.\+h@{ssl\+\_\+verify\+\_\+backend.\+h}}
+\subsubsection[{result\+\_\+t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf result\+\_\+t}}\label{ssl__verify__backend_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3}
+Result of verification function \begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{S\+U\+C\+C\+E\+S\+S@{S\+U\+C\+C\+E\+S\+S}!ssl\+\_\+verify\+\_\+backend.\+h@{ssl\+\_\+verify\+\_\+backend.\+h}}\index{ssl\+\_\+verify\+\_\+backend.\+h@{ssl\+\_\+verify\+\_\+backend.\+h}!S\+U\+C\+C\+E\+S\+S@{S\+U\+C\+C\+E\+S\+S}}\item[{\em 
+\hypertarget{ssl__verify__backend_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3ac7f69f7c9e5aea9b8f54cf02870e2bf8}{}S\+U\+C\+C\+E\+S\+S\label{ssl__verify__backend_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3ac7f69f7c9e5aea9b8f54cf02870e2bf8}
+}]\index{F\+A\+I\+L\+U\+R\+E@{F\+A\+I\+L\+U\+R\+E}!ssl\+\_\+verify\+\_\+backend.\+h@{ssl\+\_\+verify\+\_\+backend.\+h}}\index{ssl\+\_\+verify\+\_\+backend.\+h@{ssl\+\_\+verify\+\_\+backend.\+h}!F\+A\+I\+L\+U\+R\+E@{F\+A\+I\+L\+U\+R\+E}}\item[{\em 
+\hypertarget{ssl__verify__backend_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3aa5571864412c8275a2e18a931fddcaa6}{}F\+A\+I\+L\+U\+R\+E\label{ssl__verify__backend_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3aa5571864412c8275a2e18a931fddcaa6}
+}]\end{description}
+\end{Desc}
+
+
+\subsection{Function Documentation}
+\hypertarget{ssl__verify__backend_8h_ac5f135dabdc99173647b49dfe02d03ee}{}\index{ssl\+\_\+verify\+\_\+backend.\+h@{ssl\+\_\+verify\+\_\+backend.\+h}!backend\+\_\+x509\+\_\+get\+\_\+serial@{backend\+\_\+x509\+\_\+get\+\_\+serial}}
+\index{backend\+\_\+x509\+\_\+get\+\_\+serial@{backend\+\_\+x509\+\_\+get\+\_\+serial}!ssl\+\_\+verify\+\_\+backend.\+h@{ssl\+\_\+verify\+\_\+backend.\+h}}
+\subsubsection[{backend\+\_\+x509\+\_\+get\+\_\+serial(openvpn\+\_\+x509\+\_\+cert\+\_\+t $\ast$cert, struct gc\+\_\+arena $\ast$gc)}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ backend\+\_\+x509\+\_\+get\+\_\+serial (
+\begin{DoxyParamCaption}
+\item[{{\bf openvpn\+\_\+x509\+\_\+cert\+\_\+t} $\ast$}]{cert, }
+\item[{struct {\bf gc\+\_\+arena} $\ast$}]{gc}
+\end{DoxyParamCaption}
+)}\label{ssl__verify__backend_8h_ac5f135dabdc99173647b49dfe02d03ee}
+\hypertarget{ssl__verify__backend_8h_ad20bc85f4aca0f6f2bcf4376b827e2d5}{}\index{ssl\+\_\+verify\+\_\+backend.\+h@{ssl\+\_\+verify\+\_\+backend.\+h}!backend\+\_\+x509\+\_\+get\+\_\+serial\+\_\+hex@{backend\+\_\+x509\+\_\+get\+\_\+serial\+\_\+hex}}
+\index{backend\+\_\+x509\+\_\+get\+\_\+serial\+\_\+hex@{backend\+\_\+x509\+\_\+get\+\_\+serial\+\_\+hex}!ssl\+\_\+verify\+\_\+backend.\+h@{ssl\+\_\+verify\+\_\+backend.\+h}}
+\subsubsection[{backend\+\_\+x509\+\_\+get\+\_\+serial\+\_\+hex(openvpn\+\_\+x509\+\_\+cert\+\_\+t $\ast$cert, struct gc\+\_\+arena $\ast$gc)}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ backend\+\_\+x509\+\_\+get\+\_\+serial\+\_\+hex (
+\begin{DoxyParamCaption}
+\item[{{\bf openvpn\+\_\+x509\+\_\+cert\+\_\+t} $\ast$}]{cert, }
+\item[{struct {\bf gc\+\_\+arena} $\ast$}]{gc}
+\end{DoxyParamCaption}
+)}\label{ssl__verify__backend_8h_ad20bc85f4aca0f6f2bcf4376b827e2d5}
+\hypertarget{ssl__verify__backend_8h_a69b4d63fb21ed42f33810e2b88bd2e34}{}\index{ssl\+\_\+verify\+\_\+backend.\+h@{ssl\+\_\+verify\+\_\+backend.\+h}!backend\+\_\+x509\+\_\+get\+\_\+username@{backend\+\_\+x509\+\_\+get\+\_\+username}}
+\index{backend\+\_\+x509\+\_\+get\+\_\+username@{backend\+\_\+x509\+\_\+get\+\_\+username}!ssl\+\_\+verify\+\_\+backend.\+h@{ssl\+\_\+verify\+\_\+backend.\+h}}
+\subsubsection[{backend\+\_\+x509\+\_\+get\+\_\+username(char $\ast$common\+\_\+name, int cn\+\_\+len, char $\ast$x509\+\_\+username\+\_\+field, openvpn\+\_\+x509\+\_\+cert\+\_\+t $\ast$peer\+\_\+cert)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf result\+\_\+t} backend\+\_\+x509\+\_\+get\+\_\+username (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{common\+\_\+name, }
+\item[{int}]{cn\+\_\+len, }
+\item[{char $\ast$}]{x509\+\_\+username\+\_\+field, }
+\item[{{\bf openvpn\+\_\+x509\+\_\+cert\+\_\+t} $\ast$}]{peer\+\_\+cert}
+\end{DoxyParamCaption}
+)}\label{ssl__verify__backend_8h_a69b4d63fb21ed42f33810e2b88bd2e34}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=322pt]{ssl__verify__backend_8h_a69b4d63fb21ed42f33810e2b88bd2e34_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{ssl__verify__backend_8h_a17f68be5ea4c01500b430490ef142fef}{}\index{ssl\+\_\+verify\+\_\+backend.\+h@{ssl\+\_\+verify\+\_\+backend.\+h}!cert\+\_\+hash\+\_\+remember@{cert\+\_\+hash\+\_\+remember}}
+\index{cert\+\_\+hash\+\_\+remember@{cert\+\_\+hash\+\_\+remember}!ssl\+\_\+verify\+\_\+backend.\+h@{ssl\+\_\+verify\+\_\+backend.\+h}}
+\subsubsection[{cert\+\_\+hash\+\_\+remember(struct tls\+\_\+session $\ast$session, const int cert\+\_\+depth, const struct buffer $\ast$cert\+\_\+hash)}]{\setlength{\rightskip}{0pt plus 5cm}void cert\+\_\+hash\+\_\+remember (
+\begin{DoxyParamCaption}
+\item[{struct {\bf tls\+\_\+session} $\ast$}]{session, }
+\item[{const int}]{cert\+\_\+depth, }
+\item[{const struct {\bf buffer} $\ast$}]{cert\+\_\+hash}
+\end{DoxyParamCaption}
+)}\label{ssl__verify__backend_8h_a17f68be5ea4c01500b430490ef142fef}
+\hypertarget{ssl__verify__backend_8h_a4b25cc233e1b56447e3daefd4bb4a2c2}{}\index{ssl\+\_\+verify\+\_\+backend.\+h@{ssl\+\_\+verify\+\_\+backend.\+h}!tls\+\_\+verify\+\_\+crl\+\_\+missing@{tls\+\_\+verify\+\_\+crl\+\_\+missing}}
+\index{tls\+\_\+verify\+\_\+crl\+\_\+missing@{tls\+\_\+verify\+\_\+crl\+\_\+missing}!ssl\+\_\+verify\+\_\+backend.\+h@{ssl\+\_\+verify\+\_\+backend.\+h}}
+\subsubsection[{tls\+\_\+verify\+\_\+crl\+\_\+missing(const struct tls\+\_\+options $\ast$opt)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} tls\+\_\+verify\+\_\+crl\+\_\+missing (
+\begin{DoxyParamCaption}
+\item[{const struct {\bf tls\+\_\+options} $\ast$}]{opt}
+\end{DoxyParamCaption}
+)}\label{ssl__verify__backend_8h_a4b25cc233e1b56447e3daefd4bb4a2c2}
+Return true iff a C\+R\+L is configured, but is not loaded. This can be caused by e.\+g. a C\+R\+L parsing error, a missing C\+R\+L file or C\+R\+L file permission errors. (These conditions are checked upon startup, but the C\+R\+L might be updated and reloaded during runtime.) 
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=285pt]{ssl__verify__backend_8h_a4b25cc233e1b56447e3daefd4bb4a2c2_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{ssl__verify__backend_8h_a8574f9402b712d3051d9febde91cf220}{}\index{ssl\+\_\+verify\+\_\+backend.\+h@{ssl\+\_\+verify\+\_\+backend.\+h}!verify\+\_\+cert@{verify\+\_\+cert}}
+\index{verify\+\_\+cert@{verify\+\_\+cert}!ssl\+\_\+verify\+\_\+backend.\+h@{ssl\+\_\+verify\+\_\+backend.\+h}}
+\subsubsection[{verify\+\_\+cert(struct tls\+\_\+session $\ast$session, openvpn\+\_\+x509\+\_\+cert\+\_\+t $\ast$cert, int cert\+\_\+depth)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf result\+\_\+t} verify\+\_\+cert (
+\begin{DoxyParamCaption}
+\item[{struct {\bf tls\+\_\+session} $\ast$}]{session, }
+\item[{{\bf openvpn\+\_\+x509\+\_\+cert\+\_\+t} $\ast$}]{cert, }
+\item[{int}]{cert\+\_\+depth}
+\end{DoxyParamCaption}
+)}\label{ssl__verify__backend_8h_a8574f9402b712d3051d9febde91cf220}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=322pt]{ssl__verify__backend_8h_a8574f9402b712d3051d9febde91cf220_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{ssl__verify__backend_8h_a90c072dba9d12a3e3df7f8546889bfc3}{}\index{ssl\+\_\+verify\+\_\+backend.\+h@{ssl\+\_\+verify\+\_\+backend.\+h}!x509\+\_\+get\+\_\+sha1\+\_\+fingerprint@{x509\+\_\+get\+\_\+sha1\+\_\+fingerprint}}
+\index{x509\+\_\+get\+\_\+sha1\+\_\+fingerprint@{x509\+\_\+get\+\_\+sha1\+\_\+fingerprint}!ssl\+\_\+verify\+\_\+backend.\+h@{ssl\+\_\+verify\+\_\+backend.\+h}}
+\subsubsection[{x509\+\_\+get\+\_\+sha1\+\_\+fingerprint(openvpn\+\_\+x509\+\_\+cert\+\_\+t $\ast$cert, struct gc\+\_\+arena $\ast$gc)}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf buffer} x509\+\_\+get\+\_\+sha1\+\_\+fingerprint (
+\begin{DoxyParamCaption}
+\item[{{\bf openvpn\+\_\+x509\+\_\+cert\+\_\+t} $\ast$}]{cert, }
+\item[{struct {\bf gc\+\_\+arena} $\ast$}]{gc}
+\end{DoxyParamCaption}
+)}\label{ssl__verify__backend_8h_a90c072dba9d12a3e3df7f8546889bfc3}
+Retrieve the certificate\textquotesingle{}s S\+H\+A1 fingerprint.
+
+
+\begin{DoxyParams}{Parameters}
+{\em cert} & Certificate to retrieve the fingerprint from. \\
+\hline
+{\em gc} & Garbage collection arena to use when allocating string.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a string containing the certificate fingerprint 
+\end{DoxyReturn}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=306pt]{ssl__verify__backend_8h_a90c072dba9d12a3e3df7f8546889bfc3_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{ssl__verify__backend_8h_a05cb48b03a00edbf8ce0f79e960b5be7}{}\index{ssl\+\_\+verify\+\_\+backend.\+h@{ssl\+\_\+verify\+\_\+backend.\+h}!x509\+\_\+get\+\_\+sha256\+\_\+fingerprint@{x509\+\_\+get\+\_\+sha256\+\_\+fingerprint}}
+\index{x509\+\_\+get\+\_\+sha256\+\_\+fingerprint@{x509\+\_\+get\+\_\+sha256\+\_\+fingerprint}!ssl\+\_\+verify\+\_\+backend.\+h@{ssl\+\_\+verify\+\_\+backend.\+h}}
+\subsubsection[{x509\+\_\+get\+\_\+sha256\+\_\+fingerprint(openvpn\+\_\+x509\+\_\+cert\+\_\+t $\ast$cert, struct gc\+\_\+arena $\ast$gc)}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf buffer} x509\+\_\+get\+\_\+sha256\+\_\+fingerprint (
+\begin{DoxyParamCaption}
+\item[{{\bf openvpn\+\_\+x509\+\_\+cert\+\_\+t} $\ast$}]{cert, }
+\item[{struct {\bf gc\+\_\+arena} $\ast$}]{gc}
+\end{DoxyParamCaption}
+)}\label{ssl__verify__backend_8h_a05cb48b03a00edbf8ce0f79e960b5be7}
+Retrieve the certificate\textquotesingle{}s S\+H\+A256 fingerprint.
+
+
+\begin{DoxyParams}{Parameters}
+{\em cert} & Certificate to retrieve the fingerprint from. \\
+\hline
+{\em gc} & Garbage collection arena to use when allocating string.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a string containing the certificate fingerprint 
+\end{DoxyReturn}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=316pt]{ssl__verify__backend_8h_a05cb48b03a00edbf8ce0f79e960b5be7_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{ssl__verify__backend_8h_a826a6d6d97f9ed4fc9a2b1d37b6a8d5d}{}\index{ssl\+\_\+verify\+\_\+backend.\+h@{ssl\+\_\+verify\+\_\+backend.\+h}!x509\+\_\+get\+\_\+subject@{x509\+\_\+get\+\_\+subject}}
+\index{x509\+\_\+get\+\_\+subject@{x509\+\_\+get\+\_\+subject}!ssl\+\_\+verify\+\_\+backend.\+h@{ssl\+\_\+verify\+\_\+backend.\+h}}
+\subsubsection[{x509\+\_\+get\+\_\+subject(openvpn\+\_\+x509\+\_\+cert\+\_\+t $\ast$cert, struct gc\+\_\+arena $\ast$gc)}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ x509\+\_\+get\+\_\+subject (
+\begin{DoxyParamCaption}
+\item[{{\bf openvpn\+\_\+x509\+\_\+cert\+\_\+t} $\ast$}]{cert, }
+\item[{struct {\bf gc\+\_\+arena} $\ast$}]{gc}
+\end{DoxyParamCaption}
+)}\label{ssl__verify__backend_8h_a826a6d6d97f9ed4fc9a2b1d37b6a8d5d}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=269pt]{ssl__verify__backend_8h_a826a6d6d97f9ed4fc9a2b1d37b6a8d5d_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{ssl__verify__backend_8h_a3d900edeebbced10ba9cec6a8e11050f}{}\index{ssl\+\_\+verify\+\_\+backend.\+h@{ssl\+\_\+verify\+\_\+backend.\+h}!x509\+\_\+setenv@{x509\+\_\+setenv}}
+\index{x509\+\_\+setenv@{x509\+\_\+setenv}!ssl\+\_\+verify\+\_\+backend.\+h@{ssl\+\_\+verify\+\_\+backend.\+h}}
+\subsubsection[{x509\+\_\+setenv(struct env\+\_\+set $\ast$es, int cert\+\_\+depth, openvpn\+\_\+x509\+\_\+cert\+\_\+t $\ast$cert)}]{\setlength{\rightskip}{0pt plus 5cm}void x509\+\_\+setenv (
+\begin{DoxyParamCaption}
+\item[{struct {\bf env\+\_\+set} $\ast$}]{es, }
+\item[{int}]{cert\+\_\+depth, }
+\item[{{\bf openvpn\+\_\+x509\+\_\+cert\+\_\+t} $\ast$}]{cert}
+\end{DoxyParamCaption}
+)}\label{ssl__verify__backend_8h_a3d900edeebbced10ba9cec6a8e11050f}
+\hypertarget{ssl__verify__backend_8h_a2e57338331df2997c022d95e10e2125f}{}\index{ssl\+\_\+verify\+\_\+backend.\+h@{ssl\+\_\+verify\+\_\+backend.\+h}!x509\+\_\+setenv\+\_\+track@{x509\+\_\+setenv\+\_\+track}}
+\index{x509\+\_\+setenv\+\_\+track@{x509\+\_\+setenv\+\_\+track}!ssl\+\_\+verify\+\_\+backend.\+h@{ssl\+\_\+verify\+\_\+backend.\+h}}
+\subsubsection[{x509\+\_\+setenv\+\_\+track(const struct x509\+\_\+track $\ast$xt, struct env\+\_\+set $\ast$es, const int depth, openvpn\+\_\+x509\+\_\+cert\+\_\+t $\ast$x509)}]{\setlength{\rightskip}{0pt plus 5cm}void x509\+\_\+setenv\+\_\+track (
+\begin{DoxyParamCaption}
+\item[{const struct {\bf x509\+\_\+track} $\ast$}]{xt, }
+\item[{struct {\bf env\+\_\+set} $\ast$}]{es, }
+\item[{const int}]{depth, }
+\item[{{\bf openvpn\+\_\+x509\+\_\+cert\+\_\+t} $\ast$}]{x509}
+\end{DoxyParamCaption}
+)}\label{ssl__verify__backend_8h_a2e57338331df2997c022d95e10e2125f}
+\hypertarget{ssl__verify__backend_8h_acd754c2f2c353f01cf2997c3af92be4c}{}\index{ssl\+\_\+verify\+\_\+backend.\+h@{ssl\+\_\+verify\+\_\+backend.\+h}!x509\+\_\+track\+\_\+add@{x509\+\_\+track\+\_\+add}}
+\index{x509\+\_\+track\+\_\+add@{x509\+\_\+track\+\_\+add}!ssl\+\_\+verify\+\_\+backend.\+h@{ssl\+\_\+verify\+\_\+backend.\+h}}
+\subsubsection[{x509\+\_\+track\+\_\+add(const struct x509\+\_\+track $\ast$$\ast$ll\+\_\+head, const char $\ast$name, int msglevel, struct gc\+\_\+arena $\ast$gc)}]{\setlength{\rightskip}{0pt plus 5cm}void x509\+\_\+track\+\_\+add (
+\begin{DoxyParamCaption}
+\item[{const struct {\bf x509\+\_\+track} $\ast$$\ast$}]{ll\+\_\+head, }
+\item[{const char $\ast$}]{name, }
+\item[{int}]{msglevel, }
+\item[{struct {\bf gc\+\_\+arena} $\ast$}]{gc}
+\end{DoxyParamCaption}
+)}\label{ssl__verify__backend_8h_acd754c2f2c353f01cf2997c3af92be4c}
+\hypertarget{ssl__verify__backend_8h_ae3b1996c23a0d5b508229576847d343a}{}\index{ssl\+\_\+verify\+\_\+backend.\+h@{ssl\+\_\+verify\+\_\+backend.\+h}!x509\+\_\+verify\+\_\+cert\+\_\+eku@{x509\+\_\+verify\+\_\+cert\+\_\+eku}}
+\index{x509\+\_\+verify\+\_\+cert\+\_\+eku@{x509\+\_\+verify\+\_\+cert\+\_\+eku}!ssl\+\_\+verify\+\_\+backend.\+h@{ssl\+\_\+verify\+\_\+backend.\+h}}
+\subsubsection[{x509\+\_\+verify\+\_\+cert\+\_\+eku(openvpn\+\_\+x509\+\_\+cert\+\_\+t $\ast$x509, const char $\ast$const expected\+\_\+oid)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf result\+\_\+t} x509\+\_\+verify\+\_\+cert\+\_\+eku (
+\begin{DoxyParamCaption}
+\item[{{\bf openvpn\+\_\+x509\+\_\+cert\+\_\+t} $\ast$}]{x509, }
+\item[{const char $\ast$const}]{expected\+\_\+oid}
+\end{DoxyParamCaption}
+)}\label{ssl__verify__backend_8h_ae3b1996c23a0d5b508229576847d343a}
+\hypertarget{ssl__verify__backend_8h_a8b7259d2d6c374d8606efff0eb43e19d}{}\index{ssl\+\_\+verify\+\_\+backend.\+h@{ssl\+\_\+verify\+\_\+backend.\+h}!x509\+\_\+verify\+\_\+cert\+\_\+ku@{x509\+\_\+verify\+\_\+cert\+\_\+ku}}
+\index{x509\+\_\+verify\+\_\+cert\+\_\+ku@{x509\+\_\+verify\+\_\+cert\+\_\+ku}!ssl\+\_\+verify\+\_\+backend.\+h@{ssl\+\_\+verify\+\_\+backend.\+h}}
+\subsubsection[{x509\+\_\+verify\+\_\+cert\+\_\+ku(openvpn\+\_\+x509\+\_\+cert\+\_\+t $\ast$x509, const unsigned $\ast$const expected\+\_\+ku, int expected\+\_\+len)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf result\+\_\+t} x509\+\_\+verify\+\_\+cert\+\_\+ku (
+\begin{DoxyParamCaption}
+\item[{{\bf openvpn\+\_\+x509\+\_\+cert\+\_\+t} $\ast$}]{x509, }
+\item[{const unsigned $\ast$const}]{expected\+\_\+ku, }
+\item[{int}]{expected\+\_\+len}
+\end{DoxyParamCaption}
+)}\label{ssl__verify__backend_8h_a8b7259d2d6c374d8606efff0eb43e19d}
+\hypertarget{ssl__verify__backend_8h_a61342ccf1d2ae4e86ab7c6875b95f3e0}{}\index{ssl\+\_\+verify\+\_\+backend.\+h@{ssl\+\_\+verify\+\_\+backend.\+h}!x509\+\_\+verify\+\_\+ns\+\_\+cert\+\_\+type@{x509\+\_\+verify\+\_\+ns\+\_\+cert\+\_\+type}}
+\index{x509\+\_\+verify\+\_\+ns\+\_\+cert\+\_\+type@{x509\+\_\+verify\+\_\+ns\+\_\+cert\+\_\+type}!ssl\+\_\+verify\+\_\+backend.\+h@{ssl\+\_\+verify\+\_\+backend.\+h}}
+\subsubsection[{x509\+\_\+verify\+\_\+ns\+\_\+cert\+\_\+type(openvpn\+\_\+x509\+\_\+cert\+\_\+t $\ast$cert, const int usage)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf result\+\_\+t} x509\+\_\+verify\+\_\+ns\+\_\+cert\+\_\+type (
+\begin{DoxyParamCaption}
+\item[{{\bf openvpn\+\_\+x509\+\_\+cert\+\_\+t} $\ast$}]{cert, }
+\item[{const int}]{usage}
+\end{DoxyParamCaption}
+)}\label{ssl__verify__backend_8h_a61342ccf1d2ae4e86ab7c6875b95f3e0}
+\hypertarget{ssl__verify__backend_8h_a7593a15002569de845e2bf033d58e691}{}\index{ssl\+\_\+verify\+\_\+backend.\+h@{ssl\+\_\+verify\+\_\+backend.\+h}!x509\+\_\+write\+\_\+pem@{x509\+\_\+write\+\_\+pem}}
+\index{x509\+\_\+write\+\_\+pem@{x509\+\_\+write\+\_\+pem}!ssl\+\_\+verify\+\_\+backend.\+h@{ssl\+\_\+verify\+\_\+backend.\+h}}
+\subsubsection[{x509\+\_\+write\+\_\+pem(\+F\+I\+L\+E $\ast$peercert\+\_\+file, openvpn\+\_\+x509\+\_\+cert\+\_\+t $\ast$peercert)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf result\+\_\+t} x509\+\_\+write\+\_\+pem (
+\begin{DoxyParamCaption}
+\item[{F\+I\+L\+E $\ast$}]{peercert\+\_\+file, }
+\item[{{\bf openvpn\+\_\+x509\+\_\+cert\+\_\+t} $\ast$}]{peercert}
+\end{DoxyParamCaption}
+)}\label{ssl__verify__backend_8h_a7593a15002569de845e2bf033d58e691}

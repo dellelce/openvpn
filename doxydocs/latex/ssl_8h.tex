@@ -1,0 +1,909 @@
+\hypertarget{ssl_8h}{}\section{src/openvpn/ssl.h File Reference}
+\label{ssl_8h}\index{src/openvpn/ssl.\+h@{src/openvpn/ssl.\+h}}
+{\ttfamily \#include \char`\"{}basic.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}common.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}crypto.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}packet\+\_\+id.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}session\+\_\+id.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}reliable.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}socket.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}mtu.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}options.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}plugin.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}ssl\+\_\+common.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}ssl\+\_\+backend.\+h\char`\"{}}\\*
+Include dependency graph for ssl.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ssl_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ssl_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structtls__auth__standalone}{tls\+\_\+auth\+\_\+standalone}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{ssl_8h_a79b6a3b754602d99e1c7be83247a9fbb}{K\+E\+Y\+\_\+\+E\+X\+P\+A\+N\+S\+I\+O\+N\+\_\+\+I\+D}~\char`\"{}Open\+V\+P\+N\char`\"{}
+\item 
+\#define \hyperlink{ssl_8h_a945e53949b8a467b6cdf18e2596da951}{P\+\_\+\+K\+E\+Y\+\_\+\+I\+D\+\_\+\+M\+A\+S\+K}~0x07
+\item 
+\#define \hyperlink{ssl_8h_a26daec942ff4b17cee3b5ca7b2ff1f28}{P\+\_\+\+O\+P\+C\+O\+D\+E\+\_\+\+S\+H\+I\+F\+T}~3
+\item 
+\#define \hyperlink{ssl_8h_a85d5d42845d3cfdea50e463f0b01ba8d}{P\+\_\+\+C\+O\+N\+T\+R\+O\+L\+\_\+\+H\+A\+R\+D\+\_\+\+R\+E\+S\+E\+T\+\_\+\+C\+L\+I\+E\+N\+T\+\_\+\+V1}~1     /$\ast$ initial \hyperlink{structkey}{key} from client, forget previous state $\ast$/
+\item 
+\#define \hyperlink{ssl_8h_ad849d74232347ef674630eab728c5a67}{P\+\_\+\+C\+O\+N\+T\+R\+O\+L\+\_\+\+H\+A\+R\+D\+\_\+\+R\+E\+S\+E\+T\+\_\+\+S\+E\+R\+V\+E\+R\+\_\+\+V1}~2     /$\ast$ initial \hyperlink{structkey}{key} from server, forget previous state $\ast$/
+\item 
+\#define \hyperlink{ssl_8h_ab38548e556f40eb0c476a04f9e253641}{P\+\_\+\+C\+O\+N\+T\+R\+O\+L\+\_\+\+S\+O\+F\+T\+\_\+\+R\+E\+S\+E\+T\+\_\+\+V1}~3     /$\ast$ new \hyperlink{structkey}{key}, graceful transition from old to new \hyperlink{structkey}{key} $\ast$/
+\item 
+\#define \hyperlink{ssl_8h_ab40aae9eaaa945ce2b5f2b4efbc60522}{P\+\_\+\+C\+O\+N\+T\+R\+O\+L\+\_\+\+V1}~4     /$\ast$ control channel packet (usually T\+L\+S ciphertext) $\ast$/
+\item 
+\#define \hyperlink{ssl_8h_a40f092e9211f1f59194f7a25bcf8f182}{P\+\_\+\+A\+C\+K\+\_\+\+V1}~5     /$\ast$ acknowledgement for packets received $\ast$/
+\item 
+\#define \hyperlink{ssl_8h_a131dc19cebdce366c91cfaa1ac254fd5}{P\+\_\+\+D\+A\+T\+A\+\_\+\+V1}~6     /$\ast$ data channel packet $\ast$/
+\item 
+\#define \hyperlink{ssl_8h_a1e27b1240a3825419b7a3ef64bde493d}{P\+\_\+\+D\+A\+T\+A\+\_\+\+V2}~9     /$\ast$ data channel packet with peer-\/id $\ast$/
+\item 
+\#define \hyperlink{ssl_8h_ad3e98c151af0d0f7dea8fedf52199722}{P\+\_\+\+C\+O\+N\+T\+R\+O\+L\+\_\+\+H\+A\+R\+D\+\_\+\+R\+E\+S\+E\+T\+\_\+\+C\+L\+I\+E\+N\+T\+\_\+\+V2}~7     /$\ast$ initial \hyperlink{structkey}{key} from client, forget previous state $\ast$/
+\item 
+\#define \hyperlink{ssl_8h_aac232f98da4a98e075d974446696c525}{P\+\_\+\+C\+O\+N\+T\+R\+O\+L\+\_\+\+H\+A\+R\+D\+\_\+\+R\+E\+S\+E\+T\+\_\+\+S\+E\+R\+V\+E\+R\+\_\+\+V2}~8     /$\ast$ initial \hyperlink{structkey}{key} from server, forget previous state $\ast$/
+\item 
+\#define \hyperlink{ssl_8h_ae40c6f4c5c2cc561c8de8c3357a8af35}{P\+\_\+\+F\+I\+R\+S\+T\+\_\+\+O\+P\+C\+O\+D\+E}~1
+\item 
+\#define \hyperlink{ssl_8h_ac4bd0d1e295ca7d658a71545d140da33}{P\+\_\+\+L\+A\+S\+T\+\_\+\+O\+P\+C\+O\+D\+E}~9
+\item 
+\#define \hyperlink{ssl_8h_a676afdb1b7a563e486b315e4f3e3de05}{C\+O\+N\+T\+R\+O\+L\+\_\+\+S\+E\+N\+D\+\_\+\+A\+C\+K\+\_\+\+M\+A\+X}~4
+\item 
+\#define \hyperlink{ssl_8h_afa2c9bf8e436949fd4b6c21308d815f8}{T\+L\+S\+\_\+\+R\+E\+L\+I\+A\+B\+L\+E\+\_\+\+N\+\_\+\+S\+E\+N\+D\+\_\+\+B\+U\+F\+F\+E\+R\+S}~4 /$\ast$ also window size for reliablity layer $\ast$/
+\item 
+\#define \hyperlink{ssl_8h_a99a038ec45436abd415c5e94309dd138}{T\+L\+S\+\_\+\+R\+E\+L\+I\+A\+B\+L\+E\+\_\+\+N\+\_\+\+R\+E\+C\+\_\+\+B\+U\+F\+F\+E\+R\+S}~8
+\item 
+\#define \hyperlink{ssl_8h_ababe78be9417be84f1523f5f98b9a0fe}{T\+L\+S\+\_\+\+M\+U\+L\+T\+I\+\_\+\+R\+E\+F\+R\+E\+S\+H}~15    /$\ast$ call \hyperlink{ssl_8h_ab403d9453e1b8088a89f06537ee74fcb}{tls\+\_\+multi\+\_\+process} once every n seconds $\ast$/
+\item 
+\#define \hyperlink{ssl_8h_aa72b1d36bfe00e33ecb2656035cbd718}{T\+L\+S\+\_\+\+M\+U\+L\+T\+I\+\_\+\+H\+O\+R\+I\+Z\+O\+N}
+\item 
+\#define \hyperlink{ssl_8h_a5d2a5946620fdb6b45ce17795edd3c94}{T\+L\+S\+\_\+\+M\+U\+L\+T\+I\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+S\+E\+N\+D\+\_\+\+T\+I\+M\+E\+O\+U\+T}~5
+\item 
+\#define \hyperlink{ssl_8h_aaa964b0c14e3fcef5720adc45c68807b}{T\+L\+S\+\_\+\+M\+U\+L\+T\+I\+\_\+\+A\+U\+T\+H\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+I\+N\+T\+E\+R\+V\+A\+L}~10
+\item 
+\#define \hyperlink{ssl_8h_afd7964435e3dbcd6b77af8c0b3bae6a6}{T\+L\+S\+\_\+\+O\+P\+T\+I\+O\+N\+S\+\_\+\+L\+E\+N}~512
+\item 
+\#define \hyperlink{ssl_8h_a4f8dfe6e6f75a82e742d132b0281f201}{X509\+\_\+\+U\+S\+E\+R\+N\+A\+M\+E\+\_\+\+F\+I\+E\+L\+D\+\_\+\+D\+E\+F\+A\+U\+L\+T}~\char`\"{}C\+N\char`\"{}
+\item 
+\#define \hyperlink{ssl_8h_ac36f3293b004f61728ebe6dbfcf01281}{K\+E\+Y\+\_\+\+M\+E\+T\+H\+O\+D\+\_\+\+M\+I\+N}~1
+\item 
+\#define \hyperlink{ssl_8h_afeafe6d71552bed39bc03edb5ac5010e}{K\+E\+Y\+\_\+\+M\+E\+T\+H\+O\+D\+\_\+\+M\+A\+X}~2
+\item 
+\#define \hyperlink{ssl_8h_ad8a92dd51d77f8bcdbf9a8b2e3a026bd}{K\+E\+Y\+\_\+\+M\+E\+T\+H\+O\+D\+\_\+\+M\+A\+S\+K}~0x0\+F
+\item 
+\#define \hyperlink{ssl_8h_afad9e34a19c93450df2cc84c9eb554c9}{T\+L\+S\+M\+P\+\_\+\+I\+N\+A\+C\+T\+I\+V\+E}~0
+\item 
+\#define \hyperlink{ssl_8h_a6beca04308d9fbf7fae7be05b44194a7}{T\+L\+S\+M\+P\+\_\+\+A\+C\+T\+I\+V\+E}~1
+\item 
+\#define \hyperlink{ssl_8h_ac560afd1e5f5f3c626127aa98b4fc772}{T\+L\+S\+M\+P\+\_\+\+K\+I\+L\+L}~2
+\item 
+\#define \hyperlink{ssl_8h_ae5269dd2c857640b223a1fe96b2f094c}{P\+D\+\_\+\+T\+L\+S\+\_\+\+A\+U\+T\+H\+\_\+\+H\+M\+A\+C\+\_\+\+S\+I\+Z\+E\+\_\+\+M\+A\+S\+K}~0x\+F\+F
+\item 
+\#define \hyperlink{ssl_8h_ac649082cdb213e848720db8c218d6441}{P\+D\+\_\+\+S\+H\+O\+W\+\_\+\+D\+A\+T\+A}~(1$<$$<$8)
+\item 
+\#define \hyperlink{ssl_8h_a8656b6c65641570b490b58e11a11d9d1}{P\+D\+\_\+\+T\+L\+S}~(1$<$$<$9)
+\item 
+\#define \hyperlink{ssl_8h_aa39f766377905223eb0661cb4ea54381}{P\+D\+\_\+\+V\+E\+R\+B\+O\+S\+E}~(1$<$$<$10)
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{ssl_8h_abe608677ee7a8169f4d3402444fa1cd0}{init\+\_\+ssl\+\_\+lib} (void)
+\item 
+void \hyperlink{ssl_8h_ac19d79dce177648026a5a8abf27f521d}{free\+\_\+ssl\+\_\+lib} (void)
+\item 
+void \hyperlink{ssl_8h_a9f68d3f959ef9453ad35fe9eb321b682}{init\+\_\+ssl} (const struct \hyperlink{structoptions}{options} $\ast$\hyperlink{structoptions}{options}, struct \hyperlink{structtls__root__ctx}{tls\+\_\+root\+\_\+ctx} $\ast$ctx)
+\item 
+int \hyperlink{ssl_8h_ab403d9453e1b8088a89f06537ee74fcb}{tls\+\_\+multi\+\_\+process} (struct \hyperlink{structtls__multi}{tls\+\_\+multi} $\ast$multi, struct \hyperlink{structbuffer}{buffer} $\ast$to\+\_\+link, struct \hyperlink{structlink__socket__actual}{link\+\_\+socket\+\_\+actual} $\ast$$\ast$to\+\_\+link\+\_\+addr, struct \hyperlink{structlink__socket__info}{link\+\_\+socket\+\_\+info} $\ast$to\+\_\+link\+\_\+socket\+\_\+info, \hyperlink{common_8h_a3d8621f960ada51a5ad9ff181730481a}{interval\+\_\+t} $\ast$wakeup)
+\item 
+\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} \hyperlink{ssl_8h_ad436aa1372a562e8be84491907531df4}{tls\+\_\+pre\+\_\+decrypt} (struct \hyperlink{structtls__multi}{tls\+\_\+multi} $\ast$multi, const struct \hyperlink{structlink__socket__actual}{link\+\_\+socket\+\_\+actual} $\ast$from, struct \hyperlink{structbuffer}{buffer} $\ast$buf, struct \hyperlink{structcrypto__options}{crypto\+\_\+options} $\ast$$\ast$opt, \hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} floated, const uint8\+\_\+t $\ast$$\ast$ad\+\_\+start)
+\item 
+void \hyperlink{ssl_8h_abdf2bf9dc07fb2b93c112d29b2441659}{pem\+\_\+password\+\_\+setup} (const char $\ast$auth\+\_\+file)
+\item 
+void \hyperlink{ssl_8h_af56b704c18e57862a7cff9e2f5017d74}{auth\+\_\+user\+\_\+pass\+\_\+setup} (const char $\ast$auth\+\_\+file, const struct \hyperlink{structstatic__challenge__info}{static\+\_\+challenge\+\_\+info} $\ast$sc\+\_\+info)
+\item 
+void \hyperlink{ssl_8h_a30e31fcb0ad5da9931e2b122c4a317d3}{ssl\+\_\+set\+\_\+auth\+\_\+nocache} (void)
+\item 
+void \hyperlink{ssl_8h_a004bfec7a400d6c55a880bde27ff8b23}{ssl\+\_\+purge\+\_\+auth} (const \hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} auth\+\_\+user\+\_\+pass\+\_\+only)
+\item 
+void \hyperlink{ssl_8h_aacbc57ca50e4341c8ded4948688aa52b}{ssl\+\_\+set\+\_\+auth\+\_\+token} (const char $\ast$token)
+\item 
+void \hyperlink{ssl_8h_a9ac546116b6a0717a88e54cf9cd6777c}{tls\+\_\+adjust\+\_\+frame\+\_\+parameters} (struct \hyperlink{structframe}{frame} $\ast$\hyperlink{structframe}{frame})
+\item 
+\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} \hyperlink{ssl_8h_af2bd825809313e721a9f2d219ad59ecd}{tls\+\_\+send\+\_\+payload} (struct \hyperlink{structtls__multi}{tls\+\_\+multi} $\ast$multi, const uint8\+\_\+t $\ast$data, int size)
+\item 
+\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} \hyperlink{ssl_8h_a63952262f279faf65f11a21e7e08fe8d}{tls\+\_\+rec\+\_\+payload} (struct \hyperlink{structtls__multi}{tls\+\_\+multi} $\ast$multi, struct \hyperlink{structbuffer}{buffer} $\ast$buf)
+\item 
+void \hyperlink{ssl_8h_a5493e997ba981a4c7924edf80d06e11d}{tls\+\_\+update\+\_\+remote\+\_\+addr} (struct \hyperlink{structtls__multi}{tls\+\_\+multi} $\ast$multi, const struct \hyperlink{structlink__socket__actual}{link\+\_\+socket\+\_\+actual} $\ast$addr)
+\item 
+\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} \hyperlink{ssl_8h_a0f5995c0fcacdedefcc4a7c42a7f18de}{tls\+\_\+session\+\_\+update\+\_\+crypto\+\_\+params} (struct \hyperlink{structtls__session}{tls\+\_\+session} $\ast$session, struct \hyperlink{structoptions}{options} $\ast$\hyperlink{structoptions}{options}, struct \hyperlink{structframe}{frame} $\ast$\hyperlink{structframe}{frame})
+\item 
+void \hyperlink{ssl_8h_ad14c353d14b7dd52a4b78bf75a6c781d}{tls\+\_\+poor\+\_\+mans\+\_\+ncp} (struct \hyperlink{structoptions}{options} $\ast$o, const char $\ast$remote\+\_\+ciphername)
+\item 
+int \hyperlink{ssl_8h_aecbfe1e1a5223dd042a3dbc6f7ca8885}{tls\+\_\+peer\+\_\+info\+\_\+ncp\+\_\+ver} (const char $\ast$peer\+\_\+info)
+\item 
+\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} \hyperlink{ssl_8h_a7cafdcd257ec4551c1e31f8145bce780}{tls\+\_\+check\+\_\+ncp\+\_\+cipher\+\_\+list} (const char $\ast$list)
+\item 
+\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} \hyperlink{ssl_8h_a9e8061a56d8a114317b5f829b6cbf19b}{tls\+\_\+item\+\_\+in\+\_\+cipher\+\_\+list} (const char $\ast$item, const char $\ast$list)
+\item 
+const char $\ast$ \hyperlink{ssl_8h_a942946896996b3be347482cfea59c478}{protocol\+\_\+dump} (struct \hyperlink{structbuffer}{buffer} $\ast$\hyperlink{structbuffer}{buffer}, unsigned int flags, struct \hyperlink{structgc__arena}{gc\+\_\+arena} $\ast$gc)
+\item 
+void \hyperlink{ssl_8h_aa398f159e1dca57893fbfd67ad24a512}{extract\+\_\+x509\+\_\+field\+\_\+test} (void)
+\item 
+\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} \hyperlink{ssl_8h_a99ae60e6d87c574fb49b45d5de1701ae}{is\+\_\+hard\+\_\+reset} (int op, int key\+\_\+method)
+\item 
+void \hyperlink{ssl_8h_a70374b350883a042a4474de772edbddf}{delayed\+\_\+auth\+\_\+pass\+\_\+purge} (void)
+\end{DoxyCompactItemize}
+\begin{Indent}{\bf Functions for initialization and cleanup of tls\+\_\+multi structures}\par
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structtls__multi}{tls\+\_\+multi} $\ast$ \hyperlink{group__control__processor_gaf7223d904613a08407ae52dc3831d7a2}{tls\+\_\+multi\+\_\+init} (struct \hyperlink{structtls__options}{tls\+\_\+options} $\ast$\hyperlink{structtls__options}{tls\+\_\+options})
+\item 
+void \hyperlink{group__control__processor_gada87c9f2a7755ab7507dd16fa6e22716}{tls\+\_\+multi\+\_\+init\+\_\+finalize} (struct \hyperlink{structtls__multi}{tls\+\_\+multi} $\ast$multi, const struct \hyperlink{structframe}{frame} $\ast$\hyperlink{structframe}{frame})
+\item 
+struct \hyperlink{structtls__auth__standalone}{tls\+\_\+auth\+\_\+standalone} $\ast$ \hyperlink{group__control__processor_ga03aaa9093737daae72627dc38198dd1d}{tls\+\_\+auth\+\_\+standalone\+\_\+init} (struct \hyperlink{structtls__options}{tls\+\_\+options} $\ast$\hyperlink{structtls__options}{tls\+\_\+options}, struct \hyperlink{structgc__arena}{gc\+\_\+arena} $\ast$gc)
+\item 
+void \hyperlink{group__control__processor_ga85674d980185b3f2923ae9540114289a}{tls\+\_\+auth\+\_\+standalone\+\_\+finalize} (struct \hyperlink{structtls__auth__standalone}{tls\+\_\+auth\+\_\+standalone} $\ast$tas, const struct \hyperlink{structframe}{frame} $\ast$\hyperlink{structframe}{frame})
+\item 
+void \hyperlink{group__control__processor_gafe3228d8a3cae5eb8f159e8230f4cd27}{tls\+\_\+multi\+\_\+init\+\_\+set\+\_\+options} (struct \hyperlink{structtls__multi}{tls\+\_\+multi} $\ast$multi, const char $\ast$local, const char $\ast$remote)
+\item 
+void \hyperlink{group__control__processor_ga3f6dae3fb4465d1c697a80fdebd50d67}{tls\+\_\+multi\+\_\+free} (struct \hyperlink{structtls__multi}{tls\+\_\+multi} $\ast$multi, \hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} clear)
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}{\bf Functions for managing security parameter state for data channel packets}\par
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} \hyperlink{group__data__crypto_gab1369f42e94bbec108d952d565b0f283}{tls\+\_\+pre\+\_\+decrypt\+\_\+lite} (const struct \hyperlink{structtls__auth__standalone}{tls\+\_\+auth\+\_\+standalone} $\ast$tas, const struct \hyperlink{structlink__socket__actual}{link\+\_\+socket\+\_\+actual} $\ast$from, const struct \hyperlink{structbuffer}{buffer} $\ast$buf)
+\item 
+void \hyperlink{group__data__crypto_gaba03eaba587a89c2abda8780da7b3ac7}{tls\+\_\+pre\+\_\+encrypt} (struct \hyperlink{structtls__multi}{tls\+\_\+multi} $\ast$multi, struct \hyperlink{structbuffer}{buffer} $\ast$buf, struct \hyperlink{structcrypto__options}{crypto\+\_\+options} $\ast$$\ast$opt)
+\item 
+void \hyperlink{group__data__crypto_gaac2b3aa2c842a102804be65f28adf4b1}{tls\+\_\+prepend\+\_\+opcode\+\_\+v1} (const struct \hyperlink{structtls__multi}{tls\+\_\+multi} $\ast$multi, struct \hyperlink{structbuffer}{buffer} $\ast$buf)
+\item 
+void \hyperlink{group__data__crypto_gad27b20736f89d38d0d2e0c2e35f7a0e3}{tls\+\_\+prepend\+\_\+opcode\+\_\+v2} (const struct \hyperlink{structtls__multi}{tls\+\_\+multi} $\ast$multi, struct \hyperlink{structbuffer}{buffer} $\ast$buf)
+\item 
+void \hyperlink{group__data__crypto_ga1f2ecd39b88da77b2f8067962155ea82}{tls\+\_\+post\+\_\+encrypt} (struct \hyperlink{structtls__multi}{tls\+\_\+multi} $\ast$multi, struct \hyperlink{structbuffer}{buffer} $\ast$buf)
+\end{DoxyCompactItemize}
+\end{Indent}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{ssl_8h_a676afdb1b7a563e486b315e4f3e3de05}{}\index{ssl.\+h@{ssl.\+h}!C\+O\+N\+T\+R\+O\+L\+\_\+\+S\+E\+N\+D\+\_\+\+A\+C\+K\+\_\+\+M\+A\+X@{C\+O\+N\+T\+R\+O\+L\+\_\+\+S\+E\+N\+D\+\_\+\+A\+C\+K\+\_\+\+M\+A\+X}}
+\index{C\+O\+N\+T\+R\+O\+L\+\_\+\+S\+E\+N\+D\+\_\+\+A\+C\+K\+\_\+\+M\+A\+X@{C\+O\+N\+T\+R\+O\+L\+\_\+\+S\+E\+N\+D\+\_\+\+A\+C\+K\+\_\+\+M\+A\+X}!ssl.\+h@{ssl.\+h}}
+\subsubsection[{C\+O\+N\+T\+R\+O\+L\+\_\+\+S\+E\+N\+D\+\_\+\+A\+C\+K\+\_\+\+M\+A\+X}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+O\+N\+T\+R\+O\+L\+\_\+\+S\+E\+N\+D\+\_\+\+A\+C\+K\+\_\+\+M\+A\+X~4}\label{ssl_8h_a676afdb1b7a563e486b315e4f3e3de05}
+\hypertarget{ssl_8h_a79b6a3b754602d99e1c7be83247a9fbb}{}\index{ssl.\+h@{ssl.\+h}!K\+E\+Y\+\_\+\+E\+X\+P\+A\+N\+S\+I\+O\+N\+\_\+\+I\+D@{K\+E\+Y\+\_\+\+E\+X\+P\+A\+N\+S\+I\+O\+N\+\_\+\+I\+D}}
+\index{K\+E\+Y\+\_\+\+E\+X\+P\+A\+N\+S\+I\+O\+N\+\_\+\+I\+D@{K\+E\+Y\+\_\+\+E\+X\+P\+A\+N\+S\+I\+O\+N\+\_\+\+I\+D}!ssl.\+h@{ssl.\+h}}
+\subsubsection[{K\+E\+Y\+\_\+\+E\+X\+P\+A\+N\+S\+I\+O\+N\+\_\+\+I\+D}]{\setlength{\rightskip}{0pt plus 5cm}\#define K\+E\+Y\+\_\+\+E\+X\+P\+A\+N\+S\+I\+O\+N\+\_\+\+I\+D~\char`\"{}Open\+V\+P\+N\char`\"{}}\label{ssl_8h_a79b6a3b754602d99e1c7be83247a9fbb}
+\hypertarget{ssl_8h_ad8a92dd51d77f8bcdbf9a8b2e3a026bd}{}\index{ssl.\+h@{ssl.\+h}!K\+E\+Y\+\_\+\+M\+E\+T\+H\+O\+D\+\_\+\+M\+A\+S\+K@{K\+E\+Y\+\_\+\+M\+E\+T\+H\+O\+D\+\_\+\+M\+A\+S\+K}}
+\index{K\+E\+Y\+\_\+\+M\+E\+T\+H\+O\+D\+\_\+\+M\+A\+S\+K@{K\+E\+Y\+\_\+\+M\+E\+T\+H\+O\+D\+\_\+\+M\+A\+S\+K}!ssl.\+h@{ssl.\+h}}
+\subsubsection[{K\+E\+Y\+\_\+\+M\+E\+T\+H\+O\+D\+\_\+\+M\+A\+S\+K}]{\setlength{\rightskip}{0pt plus 5cm}\#define K\+E\+Y\+\_\+\+M\+E\+T\+H\+O\+D\+\_\+\+M\+A\+S\+K~0x0\+F}\label{ssl_8h_ad8a92dd51d77f8bcdbf9a8b2e3a026bd}
+\hypertarget{ssl_8h_afeafe6d71552bed39bc03edb5ac5010e}{}\index{ssl.\+h@{ssl.\+h}!K\+E\+Y\+\_\+\+M\+E\+T\+H\+O\+D\+\_\+\+M\+A\+X@{K\+E\+Y\+\_\+\+M\+E\+T\+H\+O\+D\+\_\+\+M\+A\+X}}
+\index{K\+E\+Y\+\_\+\+M\+E\+T\+H\+O\+D\+\_\+\+M\+A\+X@{K\+E\+Y\+\_\+\+M\+E\+T\+H\+O\+D\+\_\+\+M\+A\+X}!ssl.\+h@{ssl.\+h}}
+\subsubsection[{K\+E\+Y\+\_\+\+M\+E\+T\+H\+O\+D\+\_\+\+M\+A\+X}]{\setlength{\rightskip}{0pt plus 5cm}\#define K\+E\+Y\+\_\+\+M\+E\+T\+H\+O\+D\+\_\+\+M\+A\+X~2}\label{ssl_8h_afeafe6d71552bed39bc03edb5ac5010e}
+\hypertarget{ssl_8h_ac36f3293b004f61728ebe6dbfcf01281}{}\index{ssl.\+h@{ssl.\+h}!K\+E\+Y\+\_\+\+M\+E\+T\+H\+O\+D\+\_\+\+M\+I\+N@{K\+E\+Y\+\_\+\+M\+E\+T\+H\+O\+D\+\_\+\+M\+I\+N}}
+\index{K\+E\+Y\+\_\+\+M\+E\+T\+H\+O\+D\+\_\+\+M\+I\+N@{K\+E\+Y\+\_\+\+M\+E\+T\+H\+O\+D\+\_\+\+M\+I\+N}!ssl.\+h@{ssl.\+h}}
+\subsubsection[{K\+E\+Y\+\_\+\+M\+E\+T\+H\+O\+D\+\_\+\+M\+I\+N}]{\setlength{\rightskip}{0pt plus 5cm}\#define K\+E\+Y\+\_\+\+M\+E\+T\+H\+O\+D\+\_\+\+M\+I\+N~1}\label{ssl_8h_ac36f3293b004f61728ebe6dbfcf01281}
+\hypertarget{ssl_8h_a40f092e9211f1f59194f7a25bcf8f182}{}\index{ssl.\+h@{ssl.\+h}!P\+\_\+\+A\+C\+K\+\_\+\+V1@{P\+\_\+\+A\+C\+K\+\_\+\+V1}}
+\index{P\+\_\+\+A\+C\+K\+\_\+\+V1@{P\+\_\+\+A\+C\+K\+\_\+\+V1}!ssl.\+h@{ssl.\+h}}
+\subsubsection[{P\+\_\+\+A\+C\+K\+\_\+\+V1}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\+\_\+\+A\+C\+K\+\_\+\+V1~5     /$\ast$ acknowledgement for packets received $\ast$/}\label{ssl_8h_a40f092e9211f1f59194f7a25bcf8f182}
+\hypertarget{ssl_8h_a85d5d42845d3cfdea50e463f0b01ba8d}{}\index{ssl.\+h@{ssl.\+h}!P\+\_\+\+C\+O\+N\+T\+R\+O\+L\+\_\+\+H\+A\+R\+D\+\_\+\+R\+E\+S\+E\+T\+\_\+\+C\+L\+I\+E\+N\+T\+\_\+\+V1@{P\+\_\+\+C\+O\+N\+T\+R\+O\+L\+\_\+\+H\+A\+R\+D\+\_\+\+R\+E\+S\+E\+T\+\_\+\+C\+L\+I\+E\+N\+T\+\_\+\+V1}}
+\index{P\+\_\+\+C\+O\+N\+T\+R\+O\+L\+\_\+\+H\+A\+R\+D\+\_\+\+R\+E\+S\+E\+T\+\_\+\+C\+L\+I\+E\+N\+T\+\_\+\+V1@{P\+\_\+\+C\+O\+N\+T\+R\+O\+L\+\_\+\+H\+A\+R\+D\+\_\+\+R\+E\+S\+E\+T\+\_\+\+C\+L\+I\+E\+N\+T\+\_\+\+V1}!ssl.\+h@{ssl.\+h}}
+\subsubsection[{P\+\_\+\+C\+O\+N\+T\+R\+O\+L\+\_\+\+H\+A\+R\+D\+\_\+\+R\+E\+S\+E\+T\+\_\+\+C\+L\+I\+E\+N\+T\+\_\+\+V1}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\+\_\+\+C\+O\+N\+T\+R\+O\+L\+\_\+\+H\+A\+R\+D\+\_\+\+R\+E\+S\+E\+T\+\_\+\+C\+L\+I\+E\+N\+T\+\_\+\+V1~1     /$\ast$ initial {\bf key} from client, forget previous state $\ast$/}\label{ssl_8h_a85d5d42845d3cfdea50e463f0b01ba8d}
+\hypertarget{ssl_8h_ad3e98c151af0d0f7dea8fedf52199722}{}\index{ssl.\+h@{ssl.\+h}!P\+\_\+\+C\+O\+N\+T\+R\+O\+L\+\_\+\+H\+A\+R\+D\+\_\+\+R\+E\+S\+E\+T\+\_\+\+C\+L\+I\+E\+N\+T\+\_\+\+V2@{P\+\_\+\+C\+O\+N\+T\+R\+O\+L\+\_\+\+H\+A\+R\+D\+\_\+\+R\+E\+S\+E\+T\+\_\+\+C\+L\+I\+E\+N\+T\+\_\+\+V2}}
+\index{P\+\_\+\+C\+O\+N\+T\+R\+O\+L\+\_\+\+H\+A\+R\+D\+\_\+\+R\+E\+S\+E\+T\+\_\+\+C\+L\+I\+E\+N\+T\+\_\+\+V2@{P\+\_\+\+C\+O\+N\+T\+R\+O\+L\+\_\+\+H\+A\+R\+D\+\_\+\+R\+E\+S\+E\+T\+\_\+\+C\+L\+I\+E\+N\+T\+\_\+\+V2}!ssl.\+h@{ssl.\+h}}
+\subsubsection[{P\+\_\+\+C\+O\+N\+T\+R\+O\+L\+\_\+\+H\+A\+R\+D\+\_\+\+R\+E\+S\+E\+T\+\_\+\+C\+L\+I\+E\+N\+T\+\_\+\+V2}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\+\_\+\+C\+O\+N\+T\+R\+O\+L\+\_\+\+H\+A\+R\+D\+\_\+\+R\+E\+S\+E\+T\+\_\+\+C\+L\+I\+E\+N\+T\+\_\+\+V2~7     /$\ast$ initial {\bf key} from client, forget previous state $\ast$/}\label{ssl_8h_ad3e98c151af0d0f7dea8fedf52199722}
+\hypertarget{ssl_8h_ad849d74232347ef674630eab728c5a67}{}\index{ssl.\+h@{ssl.\+h}!P\+\_\+\+C\+O\+N\+T\+R\+O\+L\+\_\+\+H\+A\+R\+D\+\_\+\+R\+E\+S\+E\+T\+\_\+\+S\+E\+R\+V\+E\+R\+\_\+\+V1@{P\+\_\+\+C\+O\+N\+T\+R\+O\+L\+\_\+\+H\+A\+R\+D\+\_\+\+R\+E\+S\+E\+T\+\_\+\+S\+E\+R\+V\+E\+R\+\_\+\+V1}}
+\index{P\+\_\+\+C\+O\+N\+T\+R\+O\+L\+\_\+\+H\+A\+R\+D\+\_\+\+R\+E\+S\+E\+T\+\_\+\+S\+E\+R\+V\+E\+R\+\_\+\+V1@{P\+\_\+\+C\+O\+N\+T\+R\+O\+L\+\_\+\+H\+A\+R\+D\+\_\+\+R\+E\+S\+E\+T\+\_\+\+S\+E\+R\+V\+E\+R\+\_\+\+V1}!ssl.\+h@{ssl.\+h}}
+\subsubsection[{P\+\_\+\+C\+O\+N\+T\+R\+O\+L\+\_\+\+H\+A\+R\+D\+\_\+\+R\+E\+S\+E\+T\+\_\+\+S\+E\+R\+V\+E\+R\+\_\+\+V1}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\+\_\+\+C\+O\+N\+T\+R\+O\+L\+\_\+\+H\+A\+R\+D\+\_\+\+R\+E\+S\+E\+T\+\_\+\+S\+E\+R\+V\+E\+R\+\_\+\+V1~2     /$\ast$ initial {\bf key} from server, forget previous state $\ast$/}\label{ssl_8h_ad849d74232347ef674630eab728c5a67}
+\hypertarget{ssl_8h_aac232f98da4a98e075d974446696c525}{}\index{ssl.\+h@{ssl.\+h}!P\+\_\+\+C\+O\+N\+T\+R\+O\+L\+\_\+\+H\+A\+R\+D\+\_\+\+R\+E\+S\+E\+T\+\_\+\+S\+E\+R\+V\+E\+R\+\_\+\+V2@{P\+\_\+\+C\+O\+N\+T\+R\+O\+L\+\_\+\+H\+A\+R\+D\+\_\+\+R\+E\+S\+E\+T\+\_\+\+S\+E\+R\+V\+E\+R\+\_\+\+V2}}
+\index{P\+\_\+\+C\+O\+N\+T\+R\+O\+L\+\_\+\+H\+A\+R\+D\+\_\+\+R\+E\+S\+E\+T\+\_\+\+S\+E\+R\+V\+E\+R\+\_\+\+V2@{P\+\_\+\+C\+O\+N\+T\+R\+O\+L\+\_\+\+H\+A\+R\+D\+\_\+\+R\+E\+S\+E\+T\+\_\+\+S\+E\+R\+V\+E\+R\+\_\+\+V2}!ssl.\+h@{ssl.\+h}}
+\subsubsection[{P\+\_\+\+C\+O\+N\+T\+R\+O\+L\+\_\+\+H\+A\+R\+D\+\_\+\+R\+E\+S\+E\+T\+\_\+\+S\+E\+R\+V\+E\+R\+\_\+\+V2}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\+\_\+\+C\+O\+N\+T\+R\+O\+L\+\_\+\+H\+A\+R\+D\+\_\+\+R\+E\+S\+E\+T\+\_\+\+S\+E\+R\+V\+E\+R\+\_\+\+V2~8     /$\ast$ initial {\bf key} from server, forget previous state $\ast$/}\label{ssl_8h_aac232f98da4a98e075d974446696c525}
+\hypertarget{ssl_8h_ab38548e556f40eb0c476a04f9e253641}{}\index{ssl.\+h@{ssl.\+h}!P\+\_\+\+C\+O\+N\+T\+R\+O\+L\+\_\+\+S\+O\+F\+T\+\_\+\+R\+E\+S\+E\+T\+\_\+\+V1@{P\+\_\+\+C\+O\+N\+T\+R\+O\+L\+\_\+\+S\+O\+F\+T\+\_\+\+R\+E\+S\+E\+T\+\_\+\+V1}}
+\index{P\+\_\+\+C\+O\+N\+T\+R\+O\+L\+\_\+\+S\+O\+F\+T\+\_\+\+R\+E\+S\+E\+T\+\_\+\+V1@{P\+\_\+\+C\+O\+N\+T\+R\+O\+L\+\_\+\+S\+O\+F\+T\+\_\+\+R\+E\+S\+E\+T\+\_\+\+V1}!ssl.\+h@{ssl.\+h}}
+\subsubsection[{P\+\_\+\+C\+O\+N\+T\+R\+O\+L\+\_\+\+S\+O\+F\+T\+\_\+\+R\+E\+S\+E\+T\+\_\+\+V1}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\+\_\+\+C\+O\+N\+T\+R\+O\+L\+\_\+\+S\+O\+F\+T\+\_\+\+R\+E\+S\+E\+T\+\_\+\+V1~3     /$\ast$ new {\bf key}, graceful transition from old to new {\bf key} $\ast$/}\label{ssl_8h_ab38548e556f40eb0c476a04f9e253641}
+\hypertarget{ssl_8h_ab40aae9eaaa945ce2b5f2b4efbc60522}{}\index{ssl.\+h@{ssl.\+h}!P\+\_\+\+C\+O\+N\+T\+R\+O\+L\+\_\+\+V1@{P\+\_\+\+C\+O\+N\+T\+R\+O\+L\+\_\+\+V1}}
+\index{P\+\_\+\+C\+O\+N\+T\+R\+O\+L\+\_\+\+V1@{P\+\_\+\+C\+O\+N\+T\+R\+O\+L\+\_\+\+V1}!ssl.\+h@{ssl.\+h}}
+\subsubsection[{P\+\_\+\+C\+O\+N\+T\+R\+O\+L\+\_\+\+V1}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\+\_\+\+C\+O\+N\+T\+R\+O\+L\+\_\+\+V1~4     /$\ast$ control channel packet (usually T\+L\+S ciphertext) $\ast$/}\label{ssl_8h_ab40aae9eaaa945ce2b5f2b4efbc60522}
+\hypertarget{ssl_8h_a131dc19cebdce366c91cfaa1ac254fd5}{}\index{ssl.\+h@{ssl.\+h}!P\+\_\+\+D\+A\+T\+A\+\_\+\+V1@{P\+\_\+\+D\+A\+T\+A\+\_\+\+V1}}
+\index{P\+\_\+\+D\+A\+T\+A\+\_\+\+V1@{P\+\_\+\+D\+A\+T\+A\+\_\+\+V1}!ssl.\+h@{ssl.\+h}}
+\subsubsection[{P\+\_\+\+D\+A\+T\+A\+\_\+\+V1}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\+\_\+\+D\+A\+T\+A\+\_\+\+V1~6     /$\ast$ data channel packet $\ast$/}\label{ssl_8h_a131dc19cebdce366c91cfaa1ac254fd5}
+\hypertarget{ssl_8h_a1e27b1240a3825419b7a3ef64bde493d}{}\index{ssl.\+h@{ssl.\+h}!P\+\_\+\+D\+A\+T\+A\+\_\+\+V2@{P\+\_\+\+D\+A\+T\+A\+\_\+\+V2}}
+\index{P\+\_\+\+D\+A\+T\+A\+\_\+\+V2@{P\+\_\+\+D\+A\+T\+A\+\_\+\+V2}!ssl.\+h@{ssl.\+h}}
+\subsubsection[{P\+\_\+\+D\+A\+T\+A\+\_\+\+V2}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\+\_\+\+D\+A\+T\+A\+\_\+\+V2~9     /$\ast$ data channel packet with peer-\/id $\ast$/}\label{ssl_8h_a1e27b1240a3825419b7a3ef64bde493d}
+\hypertarget{ssl_8h_ae40c6f4c5c2cc561c8de8c3357a8af35}{}\index{ssl.\+h@{ssl.\+h}!P\+\_\+\+F\+I\+R\+S\+T\+\_\+\+O\+P\+C\+O\+D\+E@{P\+\_\+\+F\+I\+R\+S\+T\+\_\+\+O\+P\+C\+O\+D\+E}}
+\index{P\+\_\+\+F\+I\+R\+S\+T\+\_\+\+O\+P\+C\+O\+D\+E@{P\+\_\+\+F\+I\+R\+S\+T\+\_\+\+O\+P\+C\+O\+D\+E}!ssl.\+h@{ssl.\+h}}
+\subsubsection[{P\+\_\+\+F\+I\+R\+S\+T\+\_\+\+O\+P\+C\+O\+D\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\+\_\+\+F\+I\+R\+S\+T\+\_\+\+O\+P\+C\+O\+D\+E~1}\label{ssl_8h_ae40c6f4c5c2cc561c8de8c3357a8af35}
+\hypertarget{ssl_8h_a945e53949b8a467b6cdf18e2596da951}{}\index{ssl.\+h@{ssl.\+h}!P\+\_\+\+K\+E\+Y\+\_\+\+I\+D\+\_\+\+M\+A\+S\+K@{P\+\_\+\+K\+E\+Y\+\_\+\+I\+D\+\_\+\+M\+A\+S\+K}}
+\index{P\+\_\+\+K\+E\+Y\+\_\+\+I\+D\+\_\+\+M\+A\+S\+K@{P\+\_\+\+K\+E\+Y\+\_\+\+I\+D\+\_\+\+M\+A\+S\+K}!ssl.\+h@{ssl.\+h}}
+\subsubsection[{P\+\_\+\+K\+E\+Y\+\_\+\+I\+D\+\_\+\+M\+A\+S\+K}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\+\_\+\+K\+E\+Y\+\_\+\+I\+D\+\_\+\+M\+A\+S\+K~0x07}\label{ssl_8h_a945e53949b8a467b6cdf18e2596da951}
+\hypertarget{ssl_8h_ac4bd0d1e295ca7d658a71545d140da33}{}\index{ssl.\+h@{ssl.\+h}!P\+\_\+\+L\+A\+S\+T\+\_\+\+O\+P\+C\+O\+D\+E@{P\+\_\+\+L\+A\+S\+T\+\_\+\+O\+P\+C\+O\+D\+E}}
+\index{P\+\_\+\+L\+A\+S\+T\+\_\+\+O\+P\+C\+O\+D\+E@{P\+\_\+\+L\+A\+S\+T\+\_\+\+O\+P\+C\+O\+D\+E}!ssl.\+h@{ssl.\+h}}
+\subsubsection[{P\+\_\+\+L\+A\+S\+T\+\_\+\+O\+P\+C\+O\+D\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\+\_\+\+L\+A\+S\+T\+\_\+\+O\+P\+C\+O\+D\+E~9}\label{ssl_8h_ac4bd0d1e295ca7d658a71545d140da33}
+\hypertarget{ssl_8h_a26daec942ff4b17cee3b5ca7b2ff1f28}{}\index{ssl.\+h@{ssl.\+h}!P\+\_\+\+O\+P\+C\+O\+D\+E\+\_\+\+S\+H\+I\+F\+T@{P\+\_\+\+O\+P\+C\+O\+D\+E\+\_\+\+S\+H\+I\+F\+T}}
+\index{P\+\_\+\+O\+P\+C\+O\+D\+E\+\_\+\+S\+H\+I\+F\+T@{P\+\_\+\+O\+P\+C\+O\+D\+E\+\_\+\+S\+H\+I\+F\+T}!ssl.\+h@{ssl.\+h}}
+\subsubsection[{P\+\_\+\+O\+P\+C\+O\+D\+E\+\_\+\+S\+H\+I\+F\+T}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\+\_\+\+O\+P\+C\+O\+D\+E\+\_\+\+S\+H\+I\+F\+T~3}\label{ssl_8h_a26daec942ff4b17cee3b5ca7b2ff1f28}
+\hypertarget{ssl_8h_ac649082cdb213e848720db8c218d6441}{}\index{ssl.\+h@{ssl.\+h}!P\+D\+\_\+\+S\+H\+O\+W\+\_\+\+D\+A\+T\+A@{P\+D\+\_\+\+S\+H\+O\+W\+\_\+\+D\+A\+T\+A}}
+\index{P\+D\+\_\+\+S\+H\+O\+W\+\_\+\+D\+A\+T\+A@{P\+D\+\_\+\+S\+H\+O\+W\+\_\+\+D\+A\+T\+A}!ssl.\+h@{ssl.\+h}}
+\subsubsection[{P\+D\+\_\+\+S\+H\+O\+W\+\_\+\+D\+A\+T\+A}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\+D\+\_\+\+S\+H\+O\+W\+\_\+\+D\+A\+T\+A~(1$<$$<$8)}\label{ssl_8h_ac649082cdb213e848720db8c218d6441}
+\hypertarget{ssl_8h_a8656b6c65641570b490b58e11a11d9d1}{}\index{ssl.\+h@{ssl.\+h}!P\+D\+\_\+\+T\+L\+S@{P\+D\+\_\+\+T\+L\+S}}
+\index{P\+D\+\_\+\+T\+L\+S@{P\+D\+\_\+\+T\+L\+S}!ssl.\+h@{ssl.\+h}}
+\subsubsection[{P\+D\+\_\+\+T\+L\+S}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\+D\+\_\+\+T\+L\+S~(1$<$$<$9)}\label{ssl_8h_a8656b6c65641570b490b58e11a11d9d1}
+\hypertarget{ssl_8h_ae5269dd2c857640b223a1fe96b2f094c}{}\index{ssl.\+h@{ssl.\+h}!P\+D\+\_\+\+T\+L\+S\+\_\+\+A\+U\+T\+H\+\_\+\+H\+M\+A\+C\+\_\+\+S\+I\+Z\+E\+\_\+\+M\+A\+S\+K@{P\+D\+\_\+\+T\+L\+S\+\_\+\+A\+U\+T\+H\+\_\+\+H\+M\+A\+C\+\_\+\+S\+I\+Z\+E\+\_\+\+M\+A\+S\+K}}
+\index{P\+D\+\_\+\+T\+L\+S\+\_\+\+A\+U\+T\+H\+\_\+\+H\+M\+A\+C\+\_\+\+S\+I\+Z\+E\+\_\+\+M\+A\+S\+K@{P\+D\+\_\+\+T\+L\+S\+\_\+\+A\+U\+T\+H\+\_\+\+H\+M\+A\+C\+\_\+\+S\+I\+Z\+E\+\_\+\+M\+A\+S\+K}!ssl.\+h@{ssl.\+h}}
+\subsubsection[{P\+D\+\_\+\+T\+L\+S\+\_\+\+A\+U\+T\+H\+\_\+\+H\+M\+A\+C\+\_\+\+S\+I\+Z\+E\+\_\+\+M\+A\+S\+K}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\+D\+\_\+\+T\+L\+S\+\_\+\+A\+U\+T\+H\+\_\+\+H\+M\+A\+C\+\_\+\+S\+I\+Z\+E\+\_\+\+M\+A\+S\+K~0x\+F\+F}\label{ssl_8h_ae5269dd2c857640b223a1fe96b2f094c}
+\hypertarget{ssl_8h_aa39f766377905223eb0661cb4ea54381}{}\index{ssl.\+h@{ssl.\+h}!P\+D\+\_\+\+V\+E\+R\+B\+O\+S\+E@{P\+D\+\_\+\+V\+E\+R\+B\+O\+S\+E}}
+\index{P\+D\+\_\+\+V\+E\+R\+B\+O\+S\+E@{P\+D\+\_\+\+V\+E\+R\+B\+O\+S\+E}!ssl.\+h@{ssl.\+h}}
+\subsubsection[{P\+D\+\_\+\+V\+E\+R\+B\+O\+S\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\+D\+\_\+\+V\+E\+R\+B\+O\+S\+E~(1$<$$<$10)}\label{ssl_8h_aa39f766377905223eb0661cb4ea54381}
+\hypertarget{ssl_8h_aaa964b0c14e3fcef5720adc45c68807b}{}\index{ssl.\+h@{ssl.\+h}!T\+L\+S\+\_\+\+M\+U\+L\+T\+I\+\_\+\+A\+U\+T\+H\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+I\+N\+T\+E\+R\+V\+A\+L@{T\+L\+S\+\_\+\+M\+U\+L\+T\+I\+\_\+\+A\+U\+T\+H\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+I\+N\+T\+E\+R\+V\+A\+L}}
+\index{T\+L\+S\+\_\+\+M\+U\+L\+T\+I\+\_\+\+A\+U\+T\+H\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+I\+N\+T\+E\+R\+V\+A\+L@{T\+L\+S\+\_\+\+M\+U\+L\+T\+I\+\_\+\+A\+U\+T\+H\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+I\+N\+T\+E\+R\+V\+A\+L}!ssl.\+h@{ssl.\+h}}
+\subsubsection[{T\+L\+S\+\_\+\+M\+U\+L\+T\+I\+\_\+\+A\+U\+T\+H\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+I\+N\+T\+E\+R\+V\+A\+L}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\+L\+S\+\_\+\+M\+U\+L\+T\+I\+\_\+\+A\+U\+T\+H\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+I\+N\+T\+E\+R\+V\+A\+L~10}\label{ssl_8h_aaa964b0c14e3fcef5720adc45c68807b}
+\hypertarget{ssl_8h_aa72b1d36bfe00e33ecb2656035cbd718}{}\index{ssl.\+h@{ssl.\+h}!T\+L\+S\+\_\+\+M\+U\+L\+T\+I\+\_\+\+H\+O\+R\+I\+Z\+O\+N@{T\+L\+S\+\_\+\+M\+U\+L\+T\+I\+\_\+\+H\+O\+R\+I\+Z\+O\+N}}
+\index{T\+L\+S\+\_\+\+M\+U\+L\+T\+I\+\_\+\+H\+O\+R\+I\+Z\+O\+N@{T\+L\+S\+\_\+\+M\+U\+L\+T\+I\+\_\+\+H\+O\+R\+I\+Z\+O\+N}!ssl.\+h@{ssl.\+h}}
+\subsubsection[{T\+L\+S\+\_\+\+M\+U\+L\+T\+I\+\_\+\+H\+O\+R\+I\+Z\+O\+N}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\+L\+S\+\_\+\+M\+U\+L\+T\+I\+\_\+\+H\+O\+R\+I\+Z\+O\+N}\label{ssl_8h_aa72b1d36bfe00e33ecb2656035cbd718}
+{\bfseries Value\+:}
+\begin{DoxyCode}
+2     \textcolor{comment}{/* call tls\_multi\_process frequently for n seconds after}
+\textcolor{comment}{                                 * every packet sent/received action */}
+\end{DoxyCode}
+\hypertarget{ssl_8h_ababe78be9417be84f1523f5f98b9a0fe}{}\index{ssl.\+h@{ssl.\+h}!T\+L\+S\+\_\+\+M\+U\+L\+T\+I\+\_\+\+R\+E\+F\+R\+E\+S\+H@{T\+L\+S\+\_\+\+M\+U\+L\+T\+I\+\_\+\+R\+E\+F\+R\+E\+S\+H}}
+\index{T\+L\+S\+\_\+\+M\+U\+L\+T\+I\+\_\+\+R\+E\+F\+R\+E\+S\+H@{T\+L\+S\+\_\+\+M\+U\+L\+T\+I\+\_\+\+R\+E\+F\+R\+E\+S\+H}!ssl.\+h@{ssl.\+h}}
+\subsubsection[{T\+L\+S\+\_\+\+M\+U\+L\+T\+I\+\_\+\+R\+E\+F\+R\+E\+S\+H}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\+L\+S\+\_\+\+M\+U\+L\+T\+I\+\_\+\+R\+E\+F\+R\+E\+S\+H~15    /$\ast$ call {\bf tls\+\_\+multi\+\_\+process} once every n seconds $\ast$/}\label{ssl_8h_ababe78be9417be84f1523f5f98b9a0fe}
+\hypertarget{ssl_8h_a5d2a5946620fdb6b45ce17795edd3c94}{}\index{ssl.\+h@{ssl.\+h}!T\+L\+S\+\_\+\+M\+U\+L\+T\+I\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+S\+E\+N\+D\+\_\+\+T\+I\+M\+E\+O\+U\+T@{T\+L\+S\+\_\+\+M\+U\+L\+T\+I\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+S\+E\+N\+D\+\_\+\+T\+I\+M\+E\+O\+U\+T}}
+\index{T\+L\+S\+\_\+\+M\+U\+L\+T\+I\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+S\+E\+N\+D\+\_\+\+T\+I\+M\+E\+O\+U\+T@{T\+L\+S\+\_\+\+M\+U\+L\+T\+I\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+S\+E\+N\+D\+\_\+\+T\+I\+M\+E\+O\+U\+T}!ssl.\+h@{ssl.\+h}}
+\subsubsection[{T\+L\+S\+\_\+\+M\+U\+L\+T\+I\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+S\+E\+N\+D\+\_\+\+T\+I\+M\+E\+O\+U\+T}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\+L\+S\+\_\+\+M\+U\+L\+T\+I\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+S\+E\+N\+D\+\_\+\+T\+I\+M\+E\+O\+U\+T~5}\label{ssl_8h_a5d2a5946620fdb6b45ce17795edd3c94}
+\hypertarget{ssl_8h_afd7964435e3dbcd6b77af8c0b3bae6a6}{}\index{ssl.\+h@{ssl.\+h}!T\+L\+S\+\_\+\+O\+P\+T\+I\+O\+N\+S\+\_\+\+L\+E\+N@{T\+L\+S\+\_\+\+O\+P\+T\+I\+O\+N\+S\+\_\+\+L\+E\+N}}
+\index{T\+L\+S\+\_\+\+O\+P\+T\+I\+O\+N\+S\+\_\+\+L\+E\+N@{T\+L\+S\+\_\+\+O\+P\+T\+I\+O\+N\+S\+\_\+\+L\+E\+N}!ssl.\+h@{ssl.\+h}}
+\subsubsection[{T\+L\+S\+\_\+\+O\+P\+T\+I\+O\+N\+S\+\_\+\+L\+E\+N}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\+L\+S\+\_\+\+O\+P\+T\+I\+O\+N\+S\+\_\+\+L\+E\+N~512}\label{ssl_8h_afd7964435e3dbcd6b77af8c0b3bae6a6}
+\hypertarget{ssl_8h_a99a038ec45436abd415c5e94309dd138}{}\index{ssl.\+h@{ssl.\+h}!T\+L\+S\+\_\+\+R\+E\+L\+I\+A\+B\+L\+E\+\_\+\+N\+\_\+\+R\+E\+C\+\_\+\+B\+U\+F\+F\+E\+R\+S@{T\+L\+S\+\_\+\+R\+E\+L\+I\+A\+B\+L\+E\+\_\+\+N\+\_\+\+R\+E\+C\+\_\+\+B\+U\+F\+F\+E\+R\+S}}
+\index{T\+L\+S\+\_\+\+R\+E\+L\+I\+A\+B\+L\+E\+\_\+\+N\+\_\+\+R\+E\+C\+\_\+\+B\+U\+F\+F\+E\+R\+S@{T\+L\+S\+\_\+\+R\+E\+L\+I\+A\+B\+L\+E\+\_\+\+N\+\_\+\+R\+E\+C\+\_\+\+B\+U\+F\+F\+E\+R\+S}!ssl.\+h@{ssl.\+h}}
+\subsubsection[{T\+L\+S\+\_\+\+R\+E\+L\+I\+A\+B\+L\+E\+\_\+\+N\+\_\+\+R\+E\+C\+\_\+\+B\+U\+F\+F\+E\+R\+S}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\+L\+S\+\_\+\+R\+E\+L\+I\+A\+B\+L\+E\+\_\+\+N\+\_\+\+R\+E\+C\+\_\+\+B\+U\+F\+F\+E\+R\+S~8}\label{ssl_8h_a99a038ec45436abd415c5e94309dd138}
+\hypertarget{ssl_8h_afa2c9bf8e436949fd4b6c21308d815f8}{}\index{ssl.\+h@{ssl.\+h}!T\+L\+S\+\_\+\+R\+E\+L\+I\+A\+B\+L\+E\+\_\+\+N\+\_\+\+S\+E\+N\+D\+\_\+\+B\+U\+F\+F\+E\+R\+S@{T\+L\+S\+\_\+\+R\+E\+L\+I\+A\+B\+L\+E\+\_\+\+N\+\_\+\+S\+E\+N\+D\+\_\+\+B\+U\+F\+F\+E\+R\+S}}
+\index{T\+L\+S\+\_\+\+R\+E\+L\+I\+A\+B\+L\+E\+\_\+\+N\+\_\+\+S\+E\+N\+D\+\_\+\+B\+U\+F\+F\+E\+R\+S@{T\+L\+S\+\_\+\+R\+E\+L\+I\+A\+B\+L\+E\+\_\+\+N\+\_\+\+S\+E\+N\+D\+\_\+\+B\+U\+F\+F\+E\+R\+S}!ssl.\+h@{ssl.\+h}}
+\subsubsection[{T\+L\+S\+\_\+\+R\+E\+L\+I\+A\+B\+L\+E\+\_\+\+N\+\_\+\+S\+E\+N\+D\+\_\+\+B\+U\+F\+F\+E\+R\+S}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\+L\+S\+\_\+\+R\+E\+L\+I\+A\+B\+L\+E\+\_\+\+N\+\_\+\+S\+E\+N\+D\+\_\+\+B\+U\+F\+F\+E\+R\+S~4 /$\ast$ also window size for reliablity layer $\ast$/}\label{ssl_8h_afa2c9bf8e436949fd4b6c21308d815f8}
+\hypertarget{ssl_8h_a6beca04308d9fbf7fae7be05b44194a7}{}\index{ssl.\+h@{ssl.\+h}!T\+L\+S\+M\+P\+\_\+\+A\+C\+T\+I\+V\+E@{T\+L\+S\+M\+P\+\_\+\+A\+C\+T\+I\+V\+E}}
+\index{T\+L\+S\+M\+P\+\_\+\+A\+C\+T\+I\+V\+E@{T\+L\+S\+M\+P\+\_\+\+A\+C\+T\+I\+V\+E}!ssl.\+h@{ssl.\+h}}
+\subsubsection[{T\+L\+S\+M\+P\+\_\+\+A\+C\+T\+I\+V\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\+L\+S\+M\+P\+\_\+\+A\+C\+T\+I\+V\+E~1}\label{ssl_8h_a6beca04308d9fbf7fae7be05b44194a7}
+\hypertarget{ssl_8h_afad9e34a19c93450df2cc84c9eb554c9}{}\index{ssl.\+h@{ssl.\+h}!T\+L\+S\+M\+P\+\_\+\+I\+N\+A\+C\+T\+I\+V\+E@{T\+L\+S\+M\+P\+\_\+\+I\+N\+A\+C\+T\+I\+V\+E}}
+\index{T\+L\+S\+M\+P\+\_\+\+I\+N\+A\+C\+T\+I\+V\+E@{T\+L\+S\+M\+P\+\_\+\+I\+N\+A\+C\+T\+I\+V\+E}!ssl.\+h@{ssl.\+h}}
+\subsubsection[{T\+L\+S\+M\+P\+\_\+\+I\+N\+A\+C\+T\+I\+V\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\+L\+S\+M\+P\+\_\+\+I\+N\+A\+C\+T\+I\+V\+E~0}\label{ssl_8h_afad9e34a19c93450df2cc84c9eb554c9}
+\hypertarget{ssl_8h_ac560afd1e5f5f3c626127aa98b4fc772}{}\index{ssl.\+h@{ssl.\+h}!T\+L\+S\+M\+P\+\_\+\+K\+I\+L\+L@{T\+L\+S\+M\+P\+\_\+\+K\+I\+L\+L}}
+\index{T\+L\+S\+M\+P\+\_\+\+K\+I\+L\+L@{T\+L\+S\+M\+P\+\_\+\+K\+I\+L\+L}!ssl.\+h@{ssl.\+h}}
+\subsubsection[{T\+L\+S\+M\+P\+\_\+\+K\+I\+L\+L}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\+L\+S\+M\+P\+\_\+\+K\+I\+L\+L~2}\label{ssl_8h_ac560afd1e5f5f3c626127aa98b4fc772}
+\hypertarget{ssl_8h_a4f8dfe6e6f75a82e742d132b0281f201}{}\index{ssl.\+h@{ssl.\+h}!X509\+\_\+\+U\+S\+E\+R\+N\+A\+M\+E\+\_\+\+F\+I\+E\+L\+D\+\_\+\+D\+E\+F\+A\+U\+L\+T@{X509\+\_\+\+U\+S\+E\+R\+N\+A\+M\+E\+\_\+\+F\+I\+E\+L\+D\+\_\+\+D\+E\+F\+A\+U\+L\+T}}
+\index{X509\+\_\+\+U\+S\+E\+R\+N\+A\+M\+E\+\_\+\+F\+I\+E\+L\+D\+\_\+\+D\+E\+F\+A\+U\+L\+T@{X509\+\_\+\+U\+S\+E\+R\+N\+A\+M\+E\+\_\+\+F\+I\+E\+L\+D\+\_\+\+D\+E\+F\+A\+U\+L\+T}!ssl.\+h@{ssl.\+h}}
+\subsubsection[{X509\+\_\+\+U\+S\+E\+R\+N\+A\+M\+E\+\_\+\+F\+I\+E\+L\+D\+\_\+\+D\+E\+F\+A\+U\+L\+T}]{\setlength{\rightskip}{0pt plus 5cm}\#define X509\+\_\+\+U\+S\+E\+R\+N\+A\+M\+E\+\_\+\+F\+I\+E\+L\+D\+\_\+\+D\+E\+F\+A\+U\+L\+T~\char`\"{}C\+N\char`\"{}}\label{ssl_8h_a4f8dfe6e6f75a82e742d132b0281f201}
+
+
+\subsection{Function Documentation}
+\hypertarget{ssl_8h_af56b704c18e57862a7cff9e2f5017d74}{}\index{ssl.\+h@{ssl.\+h}!auth\+\_\+user\+\_\+pass\+\_\+setup@{auth\+\_\+user\+\_\+pass\+\_\+setup}}
+\index{auth\+\_\+user\+\_\+pass\+\_\+setup@{auth\+\_\+user\+\_\+pass\+\_\+setup}!ssl.\+h@{ssl.\+h}}
+\subsubsection[{auth\+\_\+user\+\_\+pass\+\_\+setup(const char $\ast$auth\+\_\+file, const struct static\+\_\+challenge\+\_\+info $\ast$sc\+\_\+info)}]{\setlength{\rightskip}{0pt plus 5cm}void auth\+\_\+user\+\_\+pass\+\_\+setup (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{auth\+\_\+file, }
+\item[{const struct {\bf static\+\_\+challenge\+\_\+info} $\ast$}]{sc\+\_\+info}
+\end{DoxyParamCaption}
+)}\label{ssl_8h_af56b704c18e57862a7cff9e2f5017d74}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ssl_8h_af56b704c18e57862a7cff9e2f5017d74_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ssl_8h_af56b704c18e57862a7cff9e2f5017d74_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{ssl_8h_a70374b350883a042a4474de772edbddf}{}\index{ssl.\+h@{ssl.\+h}!delayed\+\_\+auth\+\_\+pass\+\_\+purge@{delayed\+\_\+auth\+\_\+pass\+\_\+purge}}
+\index{delayed\+\_\+auth\+\_\+pass\+\_\+purge@{delayed\+\_\+auth\+\_\+pass\+\_\+purge}!ssl.\+h@{ssl.\+h}}
+\subsubsection[{delayed\+\_\+auth\+\_\+pass\+\_\+purge(void)}]{\setlength{\rightskip}{0pt plus 5cm}void delayed\+\_\+auth\+\_\+pass\+\_\+purge (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{ssl_8h_a70374b350883a042a4474de772edbddf}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=337pt]{ssl_8h_a70374b350883a042a4474de772edbddf_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ssl_8h_a70374b350883a042a4474de772edbddf_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{ssl_8h_aa398f159e1dca57893fbfd67ad24a512}{}\index{ssl.\+h@{ssl.\+h}!extract\+\_\+x509\+\_\+field\+\_\+test@{extract\+\_\+x509\+\_\+field\+\_\+test}}
+\index{extract\+\_\+x509\+\_\+field\+\_\+test@{extract\+\_\+x509\+\_\+field\+\_\+test}!ssl.\+h@{ssl.\+h}}
+\subsubsection[{extract\+\_\+x509\+\_\+field\+\_\+test(void)}]{\setlength{\rightskip}{0pt plus 5cm}void extract\+\_\+x509\+\_\+field\+\_\+test (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{ssl_8h_aa398f159e1dca57893fbfd67ad24a512}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=292pt]{ssl_8h_aa398f159e1dca57893fbfd67ad24a512_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{ssl_8h_ac19d79dce177648026a5a8abf27f521d}{}\index{ssl.\+h@{ssl.\+h}!free\+\_\+ssl\+\_\+lib@{free\+\_\+ssl\+\_\+lib}}
+\index{free\+\_\+ssl\+\_\+lib@{free\+\_\+ssl\+\_\+lib}!ssl.\+h@{ssl.\+h}}
+\subsubsection[{free\+\_\+ssl\+\_\+lib(void)}]{\setlength{\rightskip}{0pt plus 5cm}void free\+\_\+ssl\+\_\+lib (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{ssl_8h_ac19d79dce177648026a5a8abf27f521d}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=268pt]{ssl_8h_ac19d79dce177648026a5a8abf27f521d_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=250pt]{ssl_8h_ac19d79dce177648026a5a8abf27f521d_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{ssl_8h_a9f68d3f959ef9453ad35fe9eb321b682}{}\index{ssl.\+h@{ssl.\+h}!init\+\_\+ssl@{init\+\_\+ssl}}
+\index{init\+\_\+ssl@{init\+\_\+ssl}!ssl.\+h@{ssl.\+h}}
+\subsubsection[{init\+\_\+ssl(const struct options $\ast$options, struct tls\+\_\+root\+\_\+ctx $\ast$ctx)}]{\setlength{\rightskip}{0pt plus 5cm}void init\+\_\+ssl (
+\begin{DoxyParamCaption}
+\item[{const struct {\bf options} $\ast$}]{options, }
+\item[{struct {\bf tls\+\_\+root\+\_\+ctx} $\ast$}]{ctx}
+\end{DoxyParamCaption}
+)}\label{ssl_8h_a9f68d3f959ef9453ad35fe9eb321b682}
+Build master S\+S\+L context object that serves for the whole of Open\+V\+P\+N instantiation 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{ssl_8h_a9f68d3f959ef9453ad35fe9eb321b682_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{ssl_8h_abe608677ee7a8169f4d3402444fa1cd0}{}\index{ssl.\+h@{ssl.\+h}!init\+\_\+ssl\+\_\+lib@{init\+\_\+ssl\+\_\+lib}}
+\index{init\+\_\+ssl\+\_\+lib@{init\+\_\+ssl\+\_\+lib}!ssl.\+h@{ssl.\+h}}
+\subsubsection[{init\+\_\+ssl\+\_\+lib(void)}]{\setlength{\rightskip}{0pt plus 5cm}void init\+\_\+ssl\+\_\+lib (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{ssl_8h_abe608677ee7a8169f4d3402444fa1cd0}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=255pt]{ssl_8h_abe608677ee7a8169f4d3402444fa1cd0_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=237pt]{ssl_8h_abe608677ee7a8169f4d3402444fa1cd0_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{ssl_8h_a99ae60e6d87c574fb49b45d5de1701ae}{}\index{ssl.\+h@{ssl.\+h}!is\+\_\+hard\+\_\+reset@{is\+\_\+hard\+\_\+reset}}
+\index{is\+\_\+hard\+\_\+reset@{is\+\_\+hard\+\_\+reset}!ssl.\+h@{ssl.\+h}}
+\subsubsection[{is\+\_\+hard\+\_\+reset(int op, int key\+\_\+method)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} is\+\_\+hard\+\_\+reset (
+\begin{DoxyParamCaption}
+\item[{int}]{op, }
+\item[{int}]{key\+\_\+method}
+\end{DoxyParamCaption}
+)}\label{ssl_8h_a99ae60e6d87c574fb49b45d5de1701ae}
+Given a key\+\_\+method, return true if opcode represents the required form of hard\+\_\+reset.
+
+If key\+\_\+method == 0, return true if any form of hard reset is used. 
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ssl_8h_a99ae60e6d87c574fb49b45d5de1701ae_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{ssl_8h_abdf2bf9dc07fb2b93c112d29b2441659}{}\index{ssl.\+h@{ssl.\+h}!pem\+\_\+password\+\_\+setup@{pem\+\_\+password\+\_\+setup}}
+\index{pem\+\_\+password\+\_\+setup@{pem\+\_\+password\+\_\+setup}!ssl.\+h@{ssl.\+h}}
+\subsubsection[{pem\+\_\+password\+\_\+setup(const char $\ast$auth\+\_\+file)}]{\setlength{\rightskip}{0pt plus 5cm}void pem\+\_\+password\+\_\+setup (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{auth\+\_\+file}
+\end{DoxyParamCaption}
+)}\label{ssl_8h_abdf2bf9dc07fb2b93c112d29b2441659}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ssl_8h_abdf2bf9dc07fb2b93c112d29b2441659_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{ssl_8h_a942946896996b3be347482cfea59c478}{}\index{ssl.\+h@{ssl.\+h}!protocol\+\_\+dump@{protocol\+\_\+dump}}
+\index{protocol\+\_\+dump@{protocol\+\_\+dump}!ssl.\+h@{ssl.\+h}}
+\subsubsection[{protocol\+\_\+dump(struct buffer $\ast$buffer, unsigned int flags, struct gc\+\_\+arena $\ast$gc)}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ protocol\+\_\+dump (
+\begin{DoxyParamCaption}
+\item[{struct {\bf buffer} $\ast$}]{buffer, }
+\item[{unsigned int}]{flags, }
+\item[{struct {\bf gc\+\_\+arena} $\ast$}]{gc}
+\end{DoxyParamCaption}
+)}\label{ssl_8h_a942946896996b3be347482cfea59c478}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ssl_8h_a942946896996b3be347482cfea59c478_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{ssl_8h_a004bfec7a400d6c55a880bde27ff8b23}{}\index{ssl.\+h@{ssl.\+h}!ssl\+\_\+purge\+\_\+auth@{ssl\+\_\+purge\+\_\+auth}}
+\index{ssl\+\_\+purge\+\_\+auth@{ssl\+\_\+purge\+\_\+auth}!ssl.\+h@{ssl.\+h}}
+\subsubsection[{ssl\+\_\+purge\+\_\+auth(const bool auth\+\_\+user\+\_\+pass\+\_\+only)}]{\setlength{\rightskip}{0pt plus 5cm}void ssl\+\_\+purge\+\_\+auth (
+\begin{DoxyParamCaption}
+\item[{const {\bf bool}}]{auth\+\_\+user\+\_\+pass\+\_\+only}
+\end{DoxyParamCaption}
+)}\label{ssl_8h_a004bfec7a400d6c55a880bde27ff8b23}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=290pt]{ssl_8h_a004bfec7a400d6c55a880bde27ff8b23_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{ssl_8h_a30e31fcb0ad5da9931e2b122c4a317d3}{}\index{ssl.\+h@{ssl.\+h}!ssl\+\_\+set\+\_\+auth\+\_\+nocache@{ssl\+\_\+set\+\_\+auth\+\_\+nocache}}
+\index{ssl\+\_\+set\+\_\+auth\+\_\+nocache@{ssl\+\_\+set\+\_\+auth\+\_\+nocache}!ssl.\+h@{ssl.\+h}}
+\subsubsection[{ssl\+\_\+set\+\_\+auth\+\_\+nocache(void)}]{\setlength{\rightskip}{0pt plus 5cm}void ssl\+\_\+set\+\_\+auth\+\_\+nocache (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{ssl_8h_a30e31fcb0ad5da9931e2b122c4a317d3}
+\hypertarget{ssl_8h_aacbc57ca50e4341c8ded4948688aa52b}{}\index{ssl.\+h@{ssl.\+h}!ssl\+\_\+set\+\_\+auth\+\_\+token@{ssl\+\_\+set\+\_\+auth\+\_\+token}}
+\index{ssl\+\_\+set\+\_\+auth\+\_\+token@{ssl\+\_\+set\+\_\+auth\+\_\+token}!ssl.\+h@{ssl.\+h}}
+\subsubsection[{ssl\+\_\+set\+\_\+auth\+\_\+token(const char $\ast$token)}]{\setlength{\rightskip}{0pt plus 5cm}void ssl\+\_\+set\+\_\+auth\+\_\+token (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{token}
+\end{DoxyParamCaption}
+)}\label{ssl_8h_aacbc57ca50e4341c8ded4948688aa52b}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=300pt]{ssl_8h_aacbc57ca50e4341c8ded4948688aa52b_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{ssl_8h_a9ac546116b6a0717a88e54cf9cd6777c}{}\index{ssl.\+h@{ssl.\+h}!tls\+\_\+adjust\+\_\+frame\+\_\+parameters@{tls\+\_\+adjust\+\_\+frame\+\_\+parameters}}
+\index{tls\+\_\+adjust\+\_\+frame\+\_\+parameters@{tls\+\_\+adjust\+\_\+frame\+\_\+parameters}!ssl.\+h@{ssl.\+h}}
+\subsubsection[{tls\+\_\+adjust\+\_\+frame\+\_\+parameters(struct frame $\ast$frame)}]{\setlength{\rightskip}{0pt plus 5cm}void tls\+\_\+adjust\+\_\+frame\+\_\+parameters (
+\begin{DoxyParamCaption}
+\item[{struct {\bf frame} $\ast$}]{frame}
+\end{DoxyParamCaption}
+)}\label{ssl_8h_a9ac546116b6a0717a88e54cf9cd6777c}
+\hypertarget{ssl_8h_a7cafdcd257ec4551c1e31f8145bce780}{}\index{ssl.\+h@{ssl.\+h}!tls\+\_\+check\+\_\+ncp\+\_\+cipher\+\_\+list@{tls\+\_\+check\+\_\+ncp\+\_\+cipher\+\_\+list}}
+\index{tls\+\_\+check\+\_\+ncp\+\_\+cipher\+\_\+list@{tls\+\_\+check\+\_\+ncp\+\_\+cipher\+\_\+list}!ssl.\+h@{ssl.\+h}}
+\subsubsection[{tls\+\_\+check\+\_\+ncp\+\_\+cipher\+\_\+list(const char $\ast$list)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} tls\+\_\+check\+\_\+ncp\+\_\+cipher\+\_\+list (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{list}
+\end{DoxyParamCaption}
+)}\label{ssl_8h_a7cafdcd257ec4551c1e31f8145bce780}
+Check whether the ciphers in the supplied list are supported.
+
+
+\begin{DoxyParams}{Parameters}
+{\em list} & Colon-\/separated list of ciphers\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true iff all ciphers in list are supported. 
+\end{DoxyReturn}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ssl_8h_a7cafdcd257ec4551c1e31f8145bce780_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{ssl_8h_a9e8061a56d8a114317b5f829b6cbf19b}{}\index{ssl.\+h@{ssl.\+h}!tls\+\_\+item\+\_\+in\+\_\+cipher\+\_\+list@{tls\+\_\+item\+\_\+in\+\_\+cipher\+\_\+list}}
+\index{tls\+\_\+item\+\_\+in\+\_\+cipher\+\_\+list@{tls\+\_\+item\+\_\+in\+\_\+cipher\+\_\+list}!ssl.\+h@{ssl.\+h}}
+\subsubsection[{tls\+\_\+item\+\_\+in\+\_\+cipher\+\_\+list(const char $\ast$item, const char $\ast$list)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} tls\+\_\+item\+\_\+in\+\_\+cipher\+\_\+list (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{item, }
+\item[{const char $\ast$}]{list}
+\end{DoxyParamCaption}
+)}\label{ssl_8h_a9e8061a56d8a114317b5f829b6cbf19b}
+Return true iff item is present in the colon-\/separated zero-\/terminated cipher list. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ssl_8h_a9e8061a56d8a114317b5f829b6cbf19b_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ssl_8h_a9e8061a56d8a114317b5f829b6cbf19b_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{ssl_8h_ab403d9453e1b8088a89f06537ee74fcb}{}\index{ssl.\+h@{ssl.\+h}!tls\+\_\+multi\+\_\+process@{tls\+\_\+multi\+\_\+process}}
+\index{tls\+\_\+multi\+\_\+process@{tls\+\_\+multi\+\_\+process}!ssl.\+h@{ssl.\+h}}
+\subsubsection[{tls\+\_\+multi\+\_\+process(struct tls\+\_\+multi $\ast$multi, struct buffer $\ast$to\+\_\+link, struct link\+\_\+socket\+\_\+actual $\ast$$\ast$to\+\_\+link\+\_\+addr, struct link\+\_\+socket\+\_\+info $\ast$to\+\_\+link\+\_\+socket\+\_\+info, interval\+\_\+t $\ast$wakeup)}]{\setlength{\rightskip}{0pt plus 5cm}int tls\+\_\+multi\+\_\+process (
+\begin{DoxyParamCaption}
+\item[{struct {\bf tls\+\_\+multi} $\ast$}]{multi, }
+\item[{struct {\bf buffer} $\ast$}]{to\+\_\+link, }
+\item[{struct {\bf link\+\_\+socket\+\_\+actual} $\ast$$\ast$}]{to\+\_\+link\+\_\+addr, }
+\item[{struct {\bf link\+\_\+socket\+\_\+info} $\ast$}]{to\+\_\+link\+\_\+socket\+\_\+info, }
+\item[{{\bf interval\+\_\+t} $\ast$}]{wakeup}
+\end{DoxyParamCaption}
+)}\label{ssl_8h_ab403d9453e1b8088a89f06537ee74fcb}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ssl_8h_ab403d9453e1b8088a89f06537ee74fcb_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=304pt]{ssl_8h_ab403d9453e1b8088a89f06537ee74fcb_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{ssl_8h_aecbfe1e1a5223dd042a3dbc6f7ca8885}{}\index{ssl.\+h@{ssl.\+h}!tls\+\_\+peer\+\_\+info\+\_\+ncp\+\_\+ver@{tls\+\_\+peer\+\_\+info\+\_\+ncp\+\_\+ver}}
+\index{tls\+\_\+peer\+\_\+info\+\_\+ncp\+\_\+ver@{tls\+\_\+peer\+\_\+info\+\_\+ncp\+\_\+ver}!ssl.\+h@{ssl.\+h}}
+\subsubsection[{tls\+\_\+peer\+\_\+info\+\_\+ncp\+\_\+ver(const char $\ast$peer\+\_\+info)}]{\setlength{\rightskip}{0pt plus 5cm}int tls\+\_\+peer\+\_\+info\+\_\+ncp\+\_\+ver (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{peer\+\_\+info}
+\end{DoxyParamCaption}
+)}\label{ssl_8h_aecbfe1e1a5223dd042a3dbc6f7ca8885}
+Return the Negotiable Crypto Parameters version advertised in the peer info string, or 0 if none specified. \hypertarget{ssl_8h_ad14c353d14b7dd52a4b78bf75a6c781d}{}\index{ssl.\+h@{ssl.\+h}!tls\+\_\+poor\+\_\+mans\+\_\+ncp@{tls\+\_\+poor\+\_\+mans\+\_\+ncp}}
+\index{tls\+\_\+poor\+\_\+mans\+\_\+ncp@{tls\+\_\+poor\+\_\+mans\+\_\+ncp}!ssl.\+h@{ssl.\+h}}
+\subsubsection[{tls\+\_\+poor\+\_\+mans\+\_\+ncp(struct options $\ast$o, const char $\ast$remote\+\_\+ciphername)}]{\setlength{\rightskip}{0pt plus 5cm}void tls\+\_\+poor\+\_\+mans\+\_\+ncp (
+\begin{DoxyParamCaption}
+\item[{struct {\bf options} $\ast$}]{o, }
+\item[{const char $\ast$}]{remote\+\_\+ciphername}
+\end{DoxyParamCaption}
+)}\label{ssl_8h_ad14c353d14b7dd52a4b78bf75a6c781d}
+\char`\"{}\+Poor man\textquotesingle{}s N\+C\+P\char`\"{}\+: Use peer cipher if it is an allowed (N\+C\+P) cipher. Allows non-\/\+N\+C\+P peers to upgrade their cipher individually.
+
+Make sure to call \hyperlink{ssl_8h_a0f5995c0fcacdedefcc4a7c42a7f18de}{tls\+\_\+session\+\_\+update\+\_\+crypto\+\_\+params()} after calling this function. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ssl_8h_ad14c353d14b7dd52a4b78bf75a6c781d_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ssl_8h_ad14c353d14b7dd52a4b78bf75a6c781d_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{ssl_8h_ad436aa1372a562e8be84491907531df4}{}\index{ssl.\+h@{ssl.\+h}!tls\+\_\+pre\+\_\+decrypt@{tls\+\_\+pre\+\_\+decrypt}}
+\index{tls\+\_\+pre\+\_\+decrypt@{tls\+\_\+pre\+\_\+decrypt}!ssl.\+h@{ssl.\+h}}
+\subsubsection[{tls\+\_\+pre\+\_\+decrypt(struct tls\+\_\+multi $\ast$multi, const struct link\+\_\+socket\+\_\+actual $\ast$from, struct buffer $\ast$buf, struct crypto\+\_\+options $\ast$$\ast$opt, bool floated, const uint8\+\_\+t $\ast$$\ast$ad\+\_\+start)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} tls\+\_\+pre\+\_\+decrypt (
+\begin{DoxyParamCaption}
+\item[{struct {\bf tls\+\_\+multi} $\ast$}]{multi, }
+\item[{const struct {\bf link\+\_\+socket\+\_\+actual} $\ast$}]{from, }
+\item[{struct {\bf buffer} $\ast$}]{buf, }
+\item[{struct {\bf crypto\+\_\+options} $\ast$$\ast$}]{opt, }
+\item[{{\bf bool}}]{floated, }
+\item[{const uint8\+\_\+t $\ast$$\ast$}]{ad\+\_\+start}
+\end{DoxyParamCaption}
+)}\label{ssl_8h_ad436aa1372a562e8be84491907531df4}
+Determine whether an incoming packet is a data channel or control channel packet, and process accordingly.
+
+When Open\+V\+P\+N is in T\+L\+S mode, this is the first function to process an incoming packet. It inspects the packet\textquotesingle{}s one-\/byte header which contains the packet\textquotesingle{}s opcode and key I\+D. Depending on the opcode, the packet is processed as a data channel or as a control channel packet.
+
+\begin{DoxyParagraph}{Data channel packets}
+
+\end{DoxyParagraph}
+If the opcode indicates the packet is a data channel packet, then the packet\textquotesingle{}s key I\+D is used to find the local T\+L\+S state it is associated with. This state is checked whether it is active, authenticated, and its remote peer is the source of this packet. If these checks passed, the state\textquotesingle{}s security parameters are loaded into the {\itshape opt} crypto options so that {\ttfamily \hyperlink{group__data__crypto_gae91d99446478fcf3327672eb78ef0bf8}{openvpn\+\_\+decrypt()}} can later use them to authenticate and decrypt the packet.
+
+This function then returns false. The {\itshape buf} buffer has not been modified, except for removing the header.
+
+\begin{DoxyParagraph}{Control channel packets}
+
+\end{DoxyParagraph}
+If the opcode indicates the packet is a control channel packet, then this function will process it based on its plaintext header. depending on the packet\textquotesingle{}s opcode and session I\+D this function determines if it is destined for an active T\+L\+S session, or whether a new T\+L\+S session should be started. This function also initiates data channel session key renegotiation if the received opcode requests that.
+
+If the incoming packet is destined for an active T\+L\+S session, then the packet is inserted into the Reliability Layer and will be handled later.
+
+
+\begin{DoxyParams}{Parameters}
+{\em multi} & -\/ The T\+L\+S multi structure associated with the V\+P\+N tunnel of this packet. \\
+\hline
+{\em from} & -\/ The source address of the packet. \\
+\hline
+{\em buf} & -\/ A buffer structure containing the incoming packet. \\
+\hline
+{\em opt} & -\/ Returns a crypto options structure with the appropriate security parameters to handle the packet if it is a data channel packet. \\
+\hline
+{\em ad\+\_\+start} & -\/ Returns a pointer to the start of the authenticated data of of this packet\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\begin{DoxyItemize}
+\item True if the packet is a control channel packet that has been processed successfully. \item False if the packet is a data channel packet, or if an error occurred during processing of a control channel packet. \end{DoxyItemize}
+
+\end{DoxyReturn}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ssl_8h_ad436aa1372a562e8be84491907531df4_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=315pt]{ssl_8h_ad436aa1372a562e8be84491907531df4_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{ssl_8h_a63952262f279faf65f11a21e7e08fe8d}{}\index{ssl.\+h@{ssl.\+h}!tls\+\_\+rec\+\_\+payload@{tls\+\_\+rec\+\_\+payload}}
+\index{tls\+\_\+rec\+\_\+payload@{tls\+\_\+rec\+\_\+payload}!ssl.\+h@{ssl.\+h}}
+\subsubsection[{tls\+\_\+rec\+\_\+payload(struct tls\+\_\+multi $\ast$multi, struct buffer $\ast$buf)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} tls\+\_\+rec\+\_\+payload (
+\begin{DoxyParamCaption}
+\item[{struct {\bf tls\+\_\+multi} $\ast$}]{multi, }
+\item[{struct {\bf buffer} $\ast$}]{buf}
+\end{DoxyParamCaption}
+)}\label{ssl_8h_a63952262f279faf65f11a21e7e08fe8d}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=279pt]{ssl_8h_a63952262f279faf65f11a21e7e08fe8d_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{ssl_8h_af2bd825809313e721a9f2d219ad59ecd}{}\index{ssl.\+h@{ssl.\+h}!tls\+\_\+send\+\_\+payload@{tls\+\_\+send\+\_\+payload}}
+\index{tls\+\_\+send\+\_\+payload@{tls\+\_\+send\+\_\+payload}!ssl.\+h@{ssl.\+h}}
+\subsubsection[{tls\+\_\+send\+\_\+payload(struct tls\+\_\+multi $\ast$multi, const uint8\+\_\+t $\ast$data, int size)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} tls\+\_\+send\+\_\+payload (
+\begin{DoxyParamCaption}
+\item[{struct {\bf tls\+\_\+multi} $\ast$}]{multi, }
+\item[{const uint8\+\_\+t $\ast$}]{data, }
+\item[{int}]{size}
+\end{DoxyParamCaption}
+)}\label{ssl_8h_af2bd825809313e721a9f2d219ad59ecd}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ssl_8h_af2bd825809313e721a9f2d219ad59ecd_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=319pt]{ssl_8h_af2bd825809313e721a9f2d219ad59ecd_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{ssl_8h_a0f5995c0fcacdedefcc4a7c42a7f18de}{}\index{ssl.\+h@{ssl.\+h}!tls\+\_\+session\+\_\+update\+\_\+crypto\+\_\+params@{tls\+\_\+session\+\_\+update\+\_\+crypto\+\_\+params}}
+\index{tls\+\_\+session\+\_\+update\+\_\+crypto\+\_\+params@{tls\+\_\+session\+\_\+update\+\_\+crypto\+\_\+params}!ssl.\+h@{ssl.\+h}}
+\subsubsection[{tls\+\_\+session\+\_\+update\+\_\+crypto\+\_\+params(struct tls\+\_\+session $\ast$session, struct options $\ast$options, struct frame $\ast$frame)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} tls\+\_\+session\+\_\+update\+\_\+crypto\+\_\+params (
+\begin{DoxyParamCaption}
+\item[{struct {\bf tls\+\_\+session} $\ast$}]{session, }
+\item[{struct {\bf options} $\ast$}]{options, }
+\item[{struct {\bf frame} $\ast$}]{frame}
+\end{DoxyParamCaption}
+)}\label{ssl_8h_a0f5995c0fcacdedefcc4a7c42a7f18de}
+Update T\+L\+S session crypto parameters (cipher and auth) and derive data channel keys based on the supplied options.
+
+
+\begin{DoxyParams}{Parameters}
+{\em session} & The T\+L\+S session to update. \\
+\hline
+{\em options} & The options to use when updating session. \\
+\hline
+{\em frame} & The frame options for this session (frame overhead is adjusted based on the selected cipher/auth).\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if updating succeeded, false otherwise. 
+\end{DoxyReturn}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ssl_8h_a0f5995c0fcacdedefcc4a7c42a7f18de_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ssl_8h_a0f5995c0fcacdedefcc4a7c42a7f18de_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{ssl_8h_a5493e997ba981a4c7924edf80d06e11d}{}\index{ssl.\+h@{ssl.\+h}!tls\+\_\+update\+\_\+remote\+\_\+addr@{tls\+\_\+update\+\_\+remote\+\_\+addr}}
+\index{tls\+\_\+update\+\_\+remote\+\_\+addr@{tls\+\_\+update\+\_\+remote\+\_\+addr}!ssl.\+h@{ssl.\+h}}
+\subsubsection[{tls\+\_\+update\+\_\+remote\+\_\+addr(struct tls\+\_\+multi $\ast$multi, const struct link\+\_\+socket\+\_\+actual $\ast$addr)}]{\setlength{\rightskip}{0pt plus 5cm}void tls\+\_\+update\+\_\+remote\+\_\+addr (
+\begin{DoxyParamCaption}
+\item[{struct {\bf tls\+\_\+multi} $\ast$}]{multi, }
+\item[{const struct {\bf link\+\_\+socket\+\_\+actual} $\ast$}]{addr}
+\end{DoxyParamCaption}
+)}\label{ssl_8h_a5493e997ba981a4c7924edf80d06e11d}
+Updates remote address in T\+L\+S sessions.
+
+
+\begin{DoxyParams}{Parameters}
+{\em multi} & -\/ Tunnel to update \\
+\hline
+{\em addr} & -\/ new address \\
+\hline
+\end{DoxyParams}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ssl_8h_a5493e997ba981a4c7924edf80d06e11d_cgraph}
+\end{center}
+\end{figure}
+
+

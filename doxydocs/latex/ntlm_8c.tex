@@ -1,0 +1,116 @@
+\hypertarget{ntlm_8c}{}\section{src/openvpn/ntlm.c File Reference}
+\label{ntlm_8c}\index{src/openvpn/ntlm.\+c@{src/openvpn/ntlm.\+c}}
+{\ttfamily \#include \char`\"{}syshead.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}common.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}buffer.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}misc.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}socket.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}fdmisc.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}proxy.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}ntlm.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}base64.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}crypto.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}memdbg.\+h\char`\"{}}\\*
+Include dependency graph for ntlm.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ntlm_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{ntlm_8c_a855af03de59ee06ee0750bdc42a8df05}{U\+I\+N\+T\+E\+G\+E\+R64}~unsigned long long
+\item 
+\#define \hyperlink{ntlm_8c_acc29d213b895c326cc7ea3723d71f74d}{U\+I\+N\+T64}(c)~c \#\# L\+L
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+const char $\ast$ \hyperlink{ntlm_8c_a88048b3b5447357a6b5132fa4b594d90}{ntlm\+\_\+phase\+\_\+1} (const struct \hyperlink{structhttp__proxy__info}{http\+\_\+proxy\+\_\+info} $\ast$p, struct \hyperlink{structgc__arena}{gc\+\_\+arena} $\ast$gc)
+\item 
+const char $\ast$ \hyperlink{ntlm_8c_a558c4dd77d60ee30a096769e27c2a26d}{ntlm\+\_\+phase\+\_\+3} (const struct \hyperlink{structhttp__proxy__info}{http\+\_\+proxy\+\_\+info} $\ast$p, const char $\ast$phase\+\_\+2, struct \hyperlink{structgc__arena}{gc\+\_\+arena} $\ast$gc)
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{ntlm_8c_acc29d213b895c326cc7ea3723d71f74d}{}\index{ntlm.\+c@{ntlm.\+c}!U\+I\+N\+T64@{U\+I\+N\+T64}}
+\index{U\+I\+N\+T64@{U\+I\+N\+T64}!ntlm.\+c@{ntlm.\+c}}
+\subsubsection[{U\+I\+N\+T64}]{\setlength{\rightskip}{0pt plus 5cm}\#define U\+I\+N\+T64(
+\begin{DoxyParamCaption}
+\item[{}]{c}
+\end{DoxyParamCaption}
+)~c \#\# L\+L}\label{ntlm_8c_acc29d213b895c326cc7ea3723d71f74d}
+\hypertarget{ntlm_8c_a855af03de59ee06ee0750bdc42a8df05}{}\index{ntlm.\+c@{ntlm.\+c}!U\+I\+N\+T\+E\+G\+E\+R64@{U\+I\+N\+T\+E\+G\+E\+R64}}
+\index{U\+I\+N\+T\+E\+G\+E\+R64@{U\+I\+N\+T\+E\+G\+E\+R64}!ntlm.\+c@{ntlm.\+c}}
+\subsubsection[{U\+I\+N\+T\+E\+G\+E\+R64}]{\setlength{\rightskip}{0pt plus 5cm}\#define U\+I\+N\+T\+E\+G\+E\+R64~unsigned long long}\label{ntlm_8c_a855af03de59ee06ee0750bdc42a8df05}
+
+
+\subsection{Function Documentation}
+\hypertarget{ntlm_8c_a88048b3b5447357a6b5132fa4b594d90}{}\index{ntlm.\+c@{ntlm.\+c}!ntlm\+\_\+phase\+\_\+1@{ntlm\+\_\+phase\+\_\+1}}
+\index{ntlm\+\_\+phase\+\_\+1@{ntlm\+\_\+phase\+\_\+1}!ntlm.\+c@{ntlm.\+c}}
+\subsubsection[{ntlm\+\_\+phase\+\_\+1(const struct http\+\_\+proxy\+\_\+info $\ast$p, struct gc\+\_\+arena $\ast$gc)}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ ntlm\+\_\+phase\+\_\+1 (
+\begin{DoxyParamCaption}
+\item[{const struct {\bf http\+\_\+proxy\+\_\+info} $\ast$}]{p, }
+\item[{struct {\bf gc\+\_\+arena} $\ast$}]{gc}
+\end{DoxyParamCaption}
+)}\label{ntlm_8c_a88048b3b5447357a6b5132fa4b594d90}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ntlm_8c_a88048b3b5447357a6b5132fa4b594d90_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=300pt]{ntlm_8c_a88048b3b5447357a6b5132fa4b594d90_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{ntlm_8c_a558c4dd77d60ee30a096769e27c2a26d}{}\index{ntlm.\+c@{ntlm.\+c}!ntlm\+\_\+phase\+\_\+3@{ntlm\+\_\+phase\+\_\+3}}
+\index{ntlm\+\_\+phase\+\_\+3@{ntlm\+\_\+phase\+\_\+3}!ntlm.\+c@{ntlm.\+c}}
+\subsubsection[{ntlm\+\_\+phase\+\_\+3(const struct http\+\_\+proxy\+\_\+info $\ast$p, const char $\ast$phase\+\_\+2, struct gc\+\_\+arena $\ast$gc)}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ ntlm\+\_\+phase\+\_\+3 (
+\begin{DoxyParamCaption}
+\item[{const struct {\bf http\+\_\+proxy\+\_\+info} $\ast$}]{p, }
+\item[{const char $\ast$}]{phase\+\_\+2, }
+\item[{struct {\bf gc\+\_\+arena} $\ast$}]{gc}
+\end{DoxyParamCaption}
+)}\label{ntlm_8c_a558c4dd77d60ee30a096769e27c2a26d}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ntlm_8c_a558c4dd77d60ee30a096769e27c2a26d_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=300pt]{ntlm_8c_a558c4dd77d60ee30a096769e27c2a26d_icgraph}
+\end{center}
+\end{figure}
+
+

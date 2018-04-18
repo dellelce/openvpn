@@ -1,0 +1,94 @@
+\hypertarget{utils_8h}{}\section{src/plugins/auth-\/pam/utils.h File Reference}
+\label{utils_8h}\index{src/plugins/auth-\/pam/utils.\+h@{src/plugins/auth-\/pam/utils.\+h}}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=312pt]{utils_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+char $\ast$ \hyperlink{utils_8h_a989100338fce6ea433f71043e551ccf1}{searchandreplace} (const char $\ast$tosearch, const char $\ast$searchfor, const char $\ast$replacewith)
+\item 
+const char $\ast$ \hyperlink{utils_8h_ab7d4c0b408dba6687622aa20b731314a}{get\+\_\+env} (const char $\ast$name, const char $\ast$envp\mbox{[}$\,$\mbox{]})
+\item 
+int \hyperlink{utils_8h_a5671bcdc2dd6e48cf98588f543d08131}{string\+\_\+array\+\_\+len} (const char $\ast$array\mbox{[}$\,$\mbox{]})
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{utils_8h_ab7d4c0b408dba6687622aa20b731314a}{}\index{utils.\+h@{utils.\+h}!get\+\_\+env@{get\+\_\+env}}
+\index{get\+\_\+env@{get\+\_\+env}!utils.\+h@{utils.\+h}}
+\subsubsection[{get\+\_\+env(const char $\ast$name, const char $\ast$envp[])}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ get\+\_\+env (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{name, }
+\item[{const char $\ast$}]{envp\mbox{[}$\,$\mbox{]}}
+\end{DoxyParamCaption}
+)}\label{utils_8h_ab7d4c0b408dba6687622aa20b731314a}
+Given an environmental variable name, search the envp array for its value
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Environment variable to look up \\
+\hline
+{\em envp} & Environment variable table with all key/value pairs\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns a pointer to the value of the enviroment variable if found, otherwise N\+U\+L\+L is returned. 
+\end{DoxyReturn}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=289pt]{utils_8h_ab7d4c0b408dba6687622aa20b731314a_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{utils_8h_a989100338fce6ea433f71043e551ccf1}{}\index{utils.\+h@{utils.\+h}!searchandreplace@{searchandreplace}}
+\index{searchandreplace@{searchandreplace}!utils.\+h@{utils.\+h}}
+\subsubsection[{searchandreplace(const char $\ast$tosearch, const char $\ast$searchfor, const char $\ast$replacewith)}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ searchandreplace (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{tosearch, }
+\item[{const char $\ast$}]{searchfor, }
+\item[{const char $\ast$}]{replacewith}
+\end{DoxyParamCaption}
+)}\label{utils_8h_a989100338fce6ea433f71043e551ccf1}
+Read \textquotesingle{}tosearch\textquotesingle{}, replace all occurences of \textquotesingle{}searchfor\textquotesingle{} with \textquotesingle{}replacewith\textquotesingle{} and return a pointer to the N\+E\+W string. Does not modify the input strings. Will not enter an infinite loop with clever \textquotesingle{}searchfor\textquotesingle{} and \textquotesingle{}replacewith\textquotesingle{} strings.
+
+\begin{DoxyAuthor}{Author}
+Daniel Johnson -\/ \href{mailto:Progman2000@usa.net}{\tt Progman2000@usa.\+net} / \href{mailto:djohnson@progman.us}{\tt djohnson@progman.\+us}
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{Parameters}
+{\em tosearch} & haystack to search in \\
+\hline
+{\em searchfor} & needle to search for in the haystack \\
+\hline
+{\em replacewith} & when a match is found, replace needle with this string\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Retuns N\+U\+L\+L when any parameter is N\+U\+L\+L or the worst-\/case result is to large ( $>$= S\+I\+Z\+E\+\_\+\+M\+A\+X). Otherwise it returns a pointer to a new buffer containing the modified input 
+\end{DoxyReturn}
+\hypertarget{utils_8h_a5671bcdc2dd6e48cf98588f543d08131}{}\index{utils.\+h@{utils.\+h}!string\+\_\+array\+\_\+len@{string\+\_\+array\+\_\+len}}
+\index{string\+\_\+array\+\_\+len@{string\+\_\+array\+\_\+len}!utils.\+h@{utils.\+h}}
+\subsubsection[{string\+\_\+array\+\_\+len(const char $\ast$array[])}]{\setlength{\rightskip}{0pt plus 5cm}int string\+\_\+array\+\_\+len (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{array\mbox{[}$\,$\mbox{]}}
+\end{DoxyParamCaption}
+)}\label{utils_8h_a5671bcdc2dd6e48cf98588f543d08131}
+Return the length of a string array
+
+
+\begin{DoxyParams}{Parameters}
+{\em array} & Pointer to the array to calculate size of \\
+\hline
+\end{DoxyParams}

@@ -1,0 +1,48 @@
+\hypertarget{basic_8h}{}\section{src/openvpn/basic.h File Reference}
+\label{basic_8h}\index{src/openvpn/basic.\+h@{src/openvpn/basic.\+h}}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{basic_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{basic_8h_a94fd7e422c6111004392c9a1bd7242c9}{B\+O\+O\+L\+\_\+\+C\+A\+S\+T}(x)~((x) ? (\hyperlink{automatic_8c_a41f9c5fb8b08eb5dc3edce4dcb37fee7}{true}) \+: (\hyperlink{automatic_8c_a65e9886d74aaee76545e83dd09011727}{false}))
+\item 
+\#define \hyperlink{basic_8h_afd2537d19a3cb6556b0f727580ec6ee7}{S\+I\+Z\+E}(x)~(sizeof(x)/sizeof(x\mbox{[}0\mbox{]}))
+\item 
+\#define \hyperlink{basic_8h_ab0ba4dd6e237b96132c0a66be2fb3bc2}{C\+L\+E\+A\+R}(x)~memset(\&(x), 0, sizeof(x))
+\item 
+\#define \hyperlink{basic_8h_a8c148c96fd9bc7ea66141a318195b6be}{I\+P\+V4\+\_\+\+N\+E\+T\+M\+A\+S\+K\+\_\+\+H\+O\+S\+T}~0xffffffff\+U
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{basic_8h_a94fd7e422c6111004392c9a1bd7242c9}{}\index{basic.\+h@{basic.\+h}!B\+O\+O\+L\+\_\+\+C\+A\+S\+T@{B\+O\+O\+L\+\_\+\+C\+A\+S\+T}}
+\index{B\+O\+O\+L\+\_\+\+C\+A\+S\+T@{B\+O\+O\+L\+\_\+\+C\+A\+S\+T}!basic.\+h@{basic.\+h}}
+\subsubsection[{B\+O\+O\+L\+\_\+\+C\+A\+S\+T}]{\setlength{\rightskip}{0pt plus 5cm}\#define B\+O\+O\+L\+\_\+\+C\+A\+S\+T(
+\begin{DoxyParamCaption}
+\item[{}]{x}
+\end{DoxyParamCaption}
+)~((x) ? ({\bf true}) \+: ({\bf false}))}\label{basic_8h_a94fd7e422c6111004392c9a1bd7242c9}
+\hypertarget{basic_8h_ab0ba4dd6e237b96132c0a66be2fb3bc2}{}\index{basic.\+h@{basic.\+h}!C\+L\+E\+A\+R@{C\+L\+E\+A\+R}}
+\index{C\+L\+E\+A\+R@{C\+L\+E\+A\+R}!basic.\+h@{basic.\+h}}
+\subsubsection[{C\+L\+E\+A\+R}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+L\+E\+A\+R(
+\begin{DoxyParamCaption}
+\item[{}]{x}
+\end{DoxyParamCaption}
+)~memset(\&(x), 0, sizeof(x))}\label{basic_8h_ab0ba4dd6e237b96132c0a66be2fb3bc2}
+\hypertarget{basic_8h_a8c148c96fd9bc7ea66141a318195b6be}{}\index{basic.\+h@{basic.\+h}!I\+P\+V4\+\_\+\+N\+E\+T\+M\+A\+S\+K\+\_\+\+H\+O\+S\+T@{I\+P\+V4\+\_\+\+N\+E\+T\+M\+A\+S\+K\+\_\+\+H\+O\+S\+T}}
+\index{I\+P\+V4\+\_\+\+N\+E\+T\+M\+A\+S\+K\+\_\+\+H\+O\+S\+T@{I\+P\+V4\+\_\+\+N\+E\+T\+M\+A\+S\+K\+\_\+\+H\+O\+S\+T}!basic.\+h@{basic.\+h}}
+\subsubsection[{I\+P\+V4\+\_\+\+N\+E\+T\+M\+A\+S\+K\+\_\+\+H\+O\+S\+T}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\+P\+V4\+\_\+\+N\+E\+T\+M\+A\+S\+K\+\_\+\+H\+O\+S\+T~0xffffffff\+U}\label{basic_8h_a8c148c96fd9bc7ea66141a318195b6be}
+\hypertarget{basic_8h_afd2537d19a3cb6556b0f727580ec6ee7}{}\index{basic.\+h@{basic.\+h}!S\+I\+Z\+E@{S\+I\+Z\+E}}
+\index{S\+I\+Z\+E@{S\+I\+Z\+E}!basic.\+h@{basic.\+h}}
+\subsubsection[{S\+I\+Z\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\+I\+Z\+E(
+\begin{DoxyParamCaption}
+\item[{}]{x}
+\end{DoxyParamCaption}
+)~(sizeof(x)/sizeof(x\mbox{[}0\mbox{]}))}\label{basic_8h_afd2537d19a3cb6556b0f727580ec6ee7}

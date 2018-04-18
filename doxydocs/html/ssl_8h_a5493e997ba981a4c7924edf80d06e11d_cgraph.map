@@ -1,0 +1,10 @@
+<map id="tls_update_remote_addr" name="tls_update_remote_addr">
+<area shape="rect" id="node2" href="$socket_8c.html#aefe5013514f1d62a138107fb43cc74e3" title="print_link_socket_actual" alt="" coords="215,81,377,108"/>
+<area shape="rect" id="node3" href="$socket_8c.html#aa401d7e395acdc1d4f61f6526ef92846" title="print_link_socket_actual_ex" alt="" coords="425,81,608,108"/>
+<area shape="rect" id="node4" href="$buffer_8c.html#aa35bf7feb6a99bf5d364b2d4eba1195c" title="alloc_buf_gc" alt="" coords="832,31,927,57"/>
+<area shape="rect" id="node7" href="$buffer_8c.html#a3307f08331b1ce42168bafd2ecf7874a" title="buf_printf" alt="" coords="842,132,917,159"/>
+<area shape="rect" id="node8" href="$socket_8c.html#a616cfadfd81ab5ba341fa3adb1e93788" title="print_sockaddr_ex" alt="" coords="656,81,784,108"/>
+<area shape="rect" id="node5" href="$buffer_8c.html#acc1a4ee83a591116d331e52baacf253d" title="buf_size_error" alt="" coords="975,5,1077,32"/>
+<area shape="rect" id="node6" href="$buffer_8c.html#a67f7dec7f86e113dc0744584fd80b621" title="gc_malloc" alt="" coords="985,56,1067,83"/>
+<area shape="rect" id="node9" href="$buffer_8c.html#a3856237f6bda0d132ed555c23f3b8968" title="buf_puts" alt="" coords="844,81,915,108"/>
+</map>

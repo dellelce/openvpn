@@ -1,0 +1,259 @@
+\hypertarget{group__control__tls}{}\section{Control\+\_\+tls}
+\label{group__control__tls}\index{Control\+\_\+tls@{Control\+\_\+tls}}
+Collaboration diagram for Control\+\_\+tls\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=311pt]{group__control__tls}
+\end{center}
+\end{figure}
+\subsection*{Modules}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{group__tls__crypt}{Control channel encryption (-\/-\/tls-\/crypt)}
+\end{DoxyCompactItemize}
+\subsection*{Functions for packets to be sent to a remote Open\+V\+P\+N peer}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{group__control__tls_gaa5438c5f4b03dafec41e663a3e5734d0}{key\+\_\+state\+\_\+write\+\_\+plaintext} (struct \hyperlink{structkey__state__ssl}{key\+\_\+state\+\_\+ssl} $\ast$ks\+\_\+ssl, struct \hyperlink{structbuffer}{buffer} $\ast$buf)
+\item 
+int \hyperlink{group__control__tls_ga67dac3b75328d8b92d3f1a69e86dacdc}{key\+\_\+state\+\_\+write\+\_\+plaintext\+\_\+const} (struct \hyperlink{structkey__state__ssl}{key\+\_\+state\+\_\+ssl} $\ast$ks\+\_\+ssl, const uint8\+\_\+t $\ast$data, int len)
+\item 
+int \hyperlink{group__control__tls_ga7260a351c5bb3bf22628278e09f2f7b3}{key\+\_\+state\+\_\+read\+\_\+ciphertext} (struct \hyperlink{structkey__state__ssl}{key\+\_\+state\+\_\+ssl} $\ast$ks\+\_\+ssl, struct \hyperlink{structbuffer}{buffer} $\ast$buf, int maxlen)
+\end{DoxyCompactItemize}
+\subsection*{Functions for packets received from a remote Open\+V\+P\+N peer}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{group__control__tls_ga5712e1bfbeafff1041a99b57cf4a91f4}{key\+\_\+state\+\_\+write\+\_\+ciphertext} (struct \hyperlink{structkey__state__ssl}{key\+\_\+state\+\_\+ssl} $\ast$ks\+\_\+ssl, struct \hyperlink{structbuffer}{buffer} $\ast$buf)
+\item 
+int \hyperlink{group__control__tls_gae5597992eeb64d1be998be0ccf98bf97}{key\+\_\+state\+\_\+read\+\_\+plaintext} (struct \hyperlink{structkey__state__ssl}{key\+\_\+state\+\_\+ssl} $\ast$ks\+\_\+ssl, struct \hyperlink{structbuffer}{buffer} $\ast$buf, int maxlen)
+\end{DoxyCompactItemize}
+\subsection*{Function for authenticating a new connection from a remote Open\+V\+P\+N peer}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{group__control__tls_gadeac70d67a80b44a96cbde2368dd5f3c}{verify\+\_\+callback} (void $\ast$session\+\_\+obj, mbedtls\+\_\+x509\+\_\+crt $\ast$cert, int cert\+\_\+depth, uint32\+\_\+t $\ast$flags)
+\end{DoxyCompactItemize}
+\subsection*{Function for authenticating a new connection from a remote Open\+V\+P\+N peer}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{group__control__tls_gaf045c97f727aebae9e8fc9852421c4f3}{verify\+\_\+callback} (int preverify\+\_\+ok, X509\+\_\+\+S\+T\+O\+R\+E\+\_\+\+C\+T\+X $\ast$ctx)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+\subsection{Function Documentation}
+\hypertarget{group__control__tls_ga7260a351c5bb3bf22628278e09f2f7b3}{}\index{Control\+\_\+tls@{Control\+\_\+tls}!key\+\_\+state\+\_\+read\+\_\+ciphertext@{key\+\_\+state\+\_\+read\+\_\+ciphertext}}
+\index{key\+\_\+state\+\_\+read\+\_\+ciphertext@{key\+\_\+state\+\_\+read\+\_\+ciphertext}!Control\+\_\+tls@{Control\+\_\+tls}}
+\subsubsection[{key\+\_\+state\+\_\+read\+\_\+ciphertext(struct key\+\_\+state\+\_\+ssl $\ast$ks\+\_\+ssl, struct buffer $\ast$buf, int maxlen)}]{\setlength{\rightskip}{0pt plus 5cm}int key\+\_\+state\+\_\+read\+\_\+ciphertext (
+\begin{DoxyParamCaption}
+\item[{struct {\bf key\+\_\+state\+\_\+ssl} $\ast$}]{ks\+\_\+ssl, }
+\item[{struct {\bf buffer} $\ast$}]{buf, }
+\item[{int}]{maxlen}
+\end{DoxyParamCaption}
+)}\label{group__control__tls_ga7260a351c5bb3bf22628278e09f2f7b3}
+Extract ciphertext data from the T\+L\+S module.
+
+If the {\itshape buf} buffer has a length other than zero, this function does not perform any action and returns 0.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ks\+\_\+ssl} & -\/ The security parameter state for this key session. \\
+\hline
+{\em buf} & -\/ A buffer in which to store the ciphertext. \\
+\hline
+{\em maxlen} & -\/ The maximum number of bytes to extract.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The return value indicates whether the data was successfully processed\+:
+\begin{DoxyItemize}
+\item {\ttfamily 1}\+: Data was extracted successfully.
+\item {\ttfamily 0}\+: No data was extracted, this function should be called again later to retry.
+\item {\ttfamily -\/1}\+: An error occurred. 
+\end{DoxyItemize}
+\end{DoxyReturn}
+\hypertarget{group__control__tls_gae5597992eeb64d1be998be0ccf98bf97}{}\index{Control\+\_\+tls@{Control\+\_\+tls}!key\+\_\+state\+\_\+read\+\_\+plaintext@{key\+\_\+state\+\_\+read\+\_\+plaintext}}
+\index{key\+\_\+state\+\_\+read\+\_\+plaintext@{key\+\_\+state\+\_\+read\+\_\+plaintext}!Control\+\_\+tls@{Control\+\_\+tls}}
+\subsubsection[{key\+\_\+state\+\_\+read\+\_\+plaintext(struct key\+\_\+state\+\_\+ssl $\ast$ks\+\_\+ssl, struct buffer $\ast$buf, int maxlen)}]{\setlength{\rightskip}{0pt plus 5cm}int key\+\_\+state\+\_\+read\+\_\+plaintext (
+\begin{DoxyParamCaption}
+\item[{struct {\bf key\+\_\+state\+\_\+ssl} $\ast$}]{ks\+\_\+ssl, }
+\item[{struct {\bf buffer} $\ast$}]{buf, }
+\item[{int}]{maxlen}
+\end{DoxyParamCaption}
+)}\label{group__control__tls_gae5597992eeb64d1be998be0ccf98bf97}
+Extract plaintext data from the T\+L\+S module.
+
+If the {\itshape buf} buffer has a length other than zero, this function does not perform any action and returns 0.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ks\+\_\+ssl} & -\/ The security parameter state for this key session. \\
+\hline
+{\em buf} & -\/ A buffer in which to store the plaintext. \\
+\hline
+{\em maxlen} & -\/ The maximum number of bytes to extract.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The return value indicates whether the data was successfully processed\+:
+\begin{DoxyItemize}
+\item {\ttfamily 1}\+: Data was extracted successfully.
+\item {\ttfamily 0}\+: No data was extracted, this function should be called again later to retry.
+\item {\ttfamily -\/1}\+: An error occurred. 
+\end{DoxyItemize}
+\end{DoxyReturn}
+\hypertarget{group__control__tls_ga5712e1bfbeafff1041a99b57cf4a91f4}{}\index{Control\+\_\+tls@{Control\+\_\+tls}!key\+\_\+state\+\_\+write\+\_\+ciphertext@{key\+\_\+state\+\_\+write\+\_\+ciphertext}}
+\index{key\+\_\+state\+\_\+write\+\_\+ciphertext@{key\+\_\+state\+\_\+write\+\_\+ciphertext}!Control\+\_\+tls@{Control\+\_\+tls}}
+\subsubsection[{key\+\_\+state\+\_\+write\+\_\+ciphertext(struct key\+\_\+state\+\_\+ssl $\ast$ks\+\_\+ssl, struct buffer $\ast$buf)}]{\setlength{\rightskip}{0pt plus 5cm}int key\+\_\+state\+\_\+write\+\_\+ciphertext (
+\begin{DoxyParamCaption}
+\item[{struct {\bf key\+\_\+state\+\_\+ssl} $\ast$}]{ks\+\_\+ssl, }
+\item[{struct {\bf buffer} $\ast$}]{buf}
+\end{DoxyParamCaption}
+)}\label{group__control__tls_ga5712e1bfbeafff1041a99b57cf4a91f4}
+Insert a ciphertext buffer into the T\+L\+S module.
+
+After successfully processing the data, the data in {\itshape buf} is zeroized, its length set to zero, and a value of {\ttfamily 1} is returned.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ks\+\_\+ssl} & -\/ The security parameter state for this key session. \\
+\hline
+{\em buf} & -\/ The ciphertext message to process.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The return value indicates whether the data was successfully processed\+:
+\begin{DoxyItemize}
+\item {\ttfamily 1}\+: All the data was processed successfully.
+\item {\ttfamily 0}\+: The data was not processed, this function should be called again later to retry.
+\item {\ttfamily -\/1}\+: An error occurred. 
+\end{DoxyItemize}
+\end{DoxyReturn}
+\hypertarget{group__control__tls_gaa5438c5f4b03dafec41e663a3e5734d0}{}\index{Control\+\_\+tls@{Control\+\_\+tls}!key\+\_\+state\+\_\+write\+\_\+plaintext@{key\+\_\+state\+\_\+write\+\_\+plaintext}}
+\index{key\+\_\+state\+\_\+write\+\_\+plaintext@{key\+\_\+state\+\_\+write\+\_\+plaintext}!Control\+\_\+tls@{Control\+\_\+tls}}
+\subsubsection[{key\+\_\+state\+\_\+write\+\_\+plaintext(struct key\+\_\+state\+\_\+ssl $\ast$ks\+\_\+ssl, struct buffer $\ast$buf)}]{\setlength{\rightskip}{0pt plus 5cm}int key\+\_\+state\+\_\+write\+\_\+plaintext (
+\begin{DoxyParamCaption}
+\item[{struct {\bf key\+\_\+state\+\_\+ssl} $\ast$}]{ks\+\_\+ssl, }
+\item[{struct {\bf buffer} $\ast$}]{buf}
+\end{DoxyParamCaption}
+)}\label{group__control__tls_gaa5438c5f4b03dafec41e663a3e5734d0}
+Insert a plaintext buffer into the T\+L\+S module.
+
+After successfully processing the data, the data in {\itshape buf} is zeroized, its length set to zero, and a value of {\ttfamily 1} is returned.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ks\+\_\+ssl} & -\/ The security parameter state for this key session. \\
+\hline
+{\em buf} & -\/ The plaintext message to process.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The return value indicates whether the data was successfully processed\+:
+\begin{DoxyItemize}
+\item {\ttfamily 1}\+: All the data was processed successfully.
+\item {\ttfamily 0}\+: The data was not processed, this function should be called again later to retry.
+\item {\ttfamily -\/1}\+: An error occurred. 
+\end{DoxyItemize}
+\end{DoxyReturn}
+\hypertarget{group__control__tls_ga67dac3b75328d8b92d3f1a69e86dacdc}{}\index{Control\+\_\+tls@{Control\+\_\+tls}!key\+\_\+state\+\_\+write\+\_\+plaintext\+\_\+const@{key\+\_\+state\+\_\+write\+\_\+plaintext\+\_\+const}}
+\index{key\+\_\+state\+\_\+write\+\_\+plaintext\+\_\+const@{key\+\_\+state\+\_\+write\+\_\+plaintext\+\_\+const}!Control\+\_\+tls@{Control\+\_\+tls}}
+\subsubsection[{key\+\_\+state\+\_\+write\+\_\+plaintext\+\_\+const(struct key\+\_\+state\+\_\+ssl $\ast$ks\+\_\+ssl, const uint8\+\_\+t $\ast$data, int len)}]{\setlength{\rightskip}{0pt plus 5cm}int key\+\_\+state\+\_\+write\+\_\+plaintext\+\_\+const (
+\begin{DoxyParamCaption}
+\item[{struct {\bf key\+\_\+state\+\_\+ssl} $\ast$}]{ks\+\_\+ssl, }
+\item[{const uint8\+\_\+t $\ast$}]{data, }
+\item[{int}]{len}
+\end{DoxyParamCaption}
+)}\label{group__control__tls_ga67dac3b75328d8b92d3f1a69e86dacdc}
+Insert plaintext data into the T\+L\+S module.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ks\+\_\+ssl} & -\/ The security parameter state for this key session. \\
+\hline
+{\em data} & -\/ A pointer to the data to process. \\
+\hline
+{\em len} & -\/ The length in bytes of the data to process.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The return value indicates whether the data was successfully processed\+:
+\begin{DoxyItemize}
+\item {\ttfamily 1}\+: All the data was processed successfully.
+\item {\ttfamily 0}\+: The data was not processed, this function should be called again later to retry.
+\item {\ttfamily -\/1}\+: An error occurred. 
+\end{DoxyItemize}
+\end{DoxyReturn}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group__control__tls_ga67dac3b75328d8b92d3f1a69e86dacdc_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{group__control__tls_gaf045c97f727aebae9e8fc9852421c4f3}{}\index{Control\+\_\+tls@{Control\+\_\+tls}!verify\+\_\+callback@{verify\+\_\+callback}}
+\index{verify\+\_\+callback@{verify\+\_\+callback}!Control\+\_\+tls@{Control\+\_\+tls}}
+\subsubsection[{verify\+\_\+callback(int preverify\+\_\+ok, X509\+\_\+\+S\+T\+O\+R\+E\+\_\+\+C\+T\+X $\ast$ctx)}]{\setlength{\rightskip}{0pt plus 5cm}int verify\+\_\+callback (
+\begin{DoxyParamCaption}
+\item[{int}]{preverify\+\_\+ok, }
+\item[{X509\+\_\+\+S\+T\+O\+R\+E\+\_\+\+C\+T\+X $\ast$}]{ctx}
+\end{DoxyParamCaption}
+)}\label{group__control__tls_gaf045c97f727aebae9e8fc9852421c4f3}
+Verify that the remote Open\+V\+P\+N peer\textquotesingle{}s certificate allows setting up a V\+P\+N tunnel.
+
+This callback function is called every time a new T\+L\+S session is being setup to determine whether the remote Open\+V\+P\+N peer\textquotesingle{}s certificate is allowed to connect. It is called for once for every certificate in the chain. The callback functionality is configured in the {\ttfamily \hyperlink{ssl_8c_a5d5e4629bd3c2114b3105bf1f082bc86}{init\+\_\+ssl()}} function, which calls the Open\+S\+S\+L library\textquotesingle{}s {\ttfamily S\+S\+L\+\_\+\+C\+T\+X\+\_\+set\+\_\+verify()} function with {\ttfamily \hyperlink{group__control__tls_gaf045c97f727aebae9e8fc9852421c4f3}{verify\+\_\+callback()}} as its callback argument.
+
+It checks preverify\+\_\+ok, and registers the certificate hash. If these steps succeed, it calls the {\ttfamily \hyperlink{ssl__verify_8c_a8574f9402b712d3051d9febde91cf220}{verify\+\_\+cert()}} function, which performs Open\+V\+P\+N-\/specific verification.
+
+
+\begin{DoxyParams}{Parameters}
+{\em preverify\+\_\+ok} & -\/ Whether the remote Open\+V\+P\+N peer\textquotesingle{}s certificate past verification. A value of 1 means it verified successfully, 0 means it failed. \\
+\hline
+{\em ctx} & -\/ The complete context used by the Open\+S\+S\+L library to verify the certificate chain.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The return value indicates whether the supplied certificate is allowed to set up a V\+P\+N tunnel. The following values can be returned\+:
+\begin{DoxyItemize}
+\item {\ttfamily 0}\+: failure, this certificate is not allowed to connect.
+\item {\ttfamily 1}\+: success, this certificate is allowed to connect. 
+\end{DoxyItemize}
+\end{DoxyReturn}
+\hypertarget{group__control__tls_gadeac70d67a80b44a96cbde2368dd5f3c}{}\index{Control\+\_\+tls@{Control\+\_\+tls}!verify\+\_\+callback@{verify\+\_\+callback}}
+\index{verify\+\_\+callback@{verify\+\_\+callback}!Control\+\_\+tls@{Control\+\_\+tls}}
+\subsubsection[{verify\+\_\+callback(void $\ast$session\+\_\+obj, mbedtls\+\_\+x509\+\_\+crt $\ast$cert, int cert\+\_\+depth, uint32\+\_\+t $\ast$flags)}]{\setlength{\rightskip}{0pt plus 5cm}int verify\+\_\+callback (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{session\+\_\+obj, }
+\item[{mbedtls\+\_\+x509\+\_\+crt $\ast$}]{cert, }
+\item[{int}]{cert\+\_\+depth, }
+\item[{uint32\+\_\+t $\ast$}]{flags}
+\end{DoxyParamCaption}
+)}\label{group__control__tls_gadeac70d67a80b44a96cbde2368dd5f3c}
+Verify that the remote Open\+V\+P\+N peer\textquotesingle{}s certificate allows setting up a V\+P\+N tunnel.
+
+This callback function is called when a new T\+L\+S session is being setup to determine whether the remote Open\+V\+P\+N peer\textquotesingle{}s certificate is allowed to connect. It is called for once for every certificate in the chain. The callback functionality is configured in the {\ttfamily \hyperlink{ssl__backend_8h_a8afed7d8591df5b99475f4503031bb89}{key\+\_\+state\+\_\+ssl\+\_\+init()}} function, which calls the mbed T\+L\+S library\textquotesingle{}s {\ttfamily mbedtls\+\_\+ssl\+\_\+conf\+\_\+verify()} function with {\ttfamily \hyperlink{group__control__tls_gadeac70d67a80b44a96cbde2368dd5f3c}{verify\+\_\+callback()}} as its callback argument.
+
+It checks $\ast$flags and registers the certificate hash. If these steps succeed, it calls the {\ttfamily \hyperlink{ssl__verify_8c_a8574f9402b712d3051d9febde91cf220}{verify\+\_\+cert()}} function, which performs Open\+V\+P\+N-\/specific verification.
+
+
+\begin{DoxyParams}{Parameters}
+{\em session\+\_\+obj} & -\/ The Open\+V\+P\+N {\ttfamily \hyperlink{structtls__session}{tls\+\_\+session}} associated with this object, as set during S\+S\+L session setup. \\
+\hline
+{\em cert} & -\/ The certificate used by mbed T\+L\+S. \\
+\hline
+{\em cert\+\_\+depth} & -\/ The depth of the current certificate in the chain, with 0 being the actual certificate. \\
+\hline
+{\em flags} & -\/ Whether the remote Open\+V\+P\+N peer\textquotesingle{}s certificate passed verification. A value of 0 means it verified successfully, any other value means it failed. {\ttfamily \hyperlink{group__control__tls_gadeac70d67a80b44a96cbde2368dd5f3c}{verify\+\_\+callback()}} is considered to have ok\textquotesingle{}ed this certificate if flags is 0 when it returns.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The return value is 0 unless a fatal error occurred. 
+\end{DoxyReturn}

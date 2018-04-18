@@ -1,0 +1,80 @@
+\hypertarget{reliable_8c}{}\section{src/openvpn/reliable.c File Reference}
+\label{reliable_8c}\index{src/openvpn/reliable.\+c@{src/openvpn/reliable.\+c}}
+{\ttfamily \#include \char`\"{}syshead.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}buffer.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}error.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}common.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}reliable.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}memdbg.\+h\char`\"{}}\\*
+Include dependency graph for reliable.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{reliable_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{reliable_8c_af34c72aaa41d17665be4be69e6722ca1}{A\+C\+K\+\_\+\+S\+I\+Z\+E}(n)~(sizeof(uint8\+\_\+t) + ((n) ? \hyperlink{session__id_8h_ad1163f0bf6339f1dd003192df69052df}{S\+I\+D\+\_\+\+S\+I\+Z\+E} \+: 0) + sizeof(\hyperlink{packet__id_8h_a345f753b1c6ea20d24409e769aadb7e6}{packet\+\_\+id\+\_\+type}) $\ast$ (n))
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} \hyperlink{group__reliable_ga21a2f2e1296cea87eb6d68331667fc9e}{reliable\+\_\+ack\+\_\+read\+\_\+packet\+\_\+id} (struct \hyperlink{structbuffer}{buffer} $\ast$buf, \hyperlink{packet__id_8h_a345f753b1c6ea20d24409e769aadb7e6}{packet\+\_\+id\+\_\+type} $\ast$pid)
+\item 
+\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} \hyperlink{group__reliable_ga3bdc89dd24741d52a2fcf8182389b947}{reliable\+\_\+ack\+\_\+acknowledge\+\_\+packet\+\_\+id} (struct \hyperlink{structreliable__ack}{reliable\+\_\+ack} $\ast$ack, \hyperlink{packet__id_8h_a345f753b1c6ea20d24409e769aadb7e6}{packet\+\_\+id\+\_\+type} pid)
+\item 
+\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} \hyperlink{group__reliable_ga03d3c93ec4c15d57947740a56eae0aec}{reliable\+\_\+ack\+\_\+read} (struct \hyperlink{structreliable__ack}{reliable\+\_\+ack} $\ast$ack, struct \hyperlink{structbuffer}{buffer} $\ast$buf, const struct \hyperlink{structsession__id}{session\+\_\+id} $\ast$sid)
+\item 
+\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} \hyperlink{group__reliable_ga6875d0fb65bdd960736068b2e0fe4a29}{reliable\+\_\+ack\+\_\+write} (struct \hyperlink{structreliable__ack}{reliable\+\_\+ack} $\ast$ack, struct \hyperlink{structbuffer}{buffer} $\ast$buf, const struct \hyperlink{structsession__id}{session\+\_\+id} $\ast$sid, int max, \hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} prepend)
+\item 
+void \hyperlink{group__reliable_gaaf4135caf45a800b9accff968aaa59d6}{reliable\+\_\+ack\+\_\+adjust\+\_\+frame\+\_\+parameters} (struct \hyperlink{structframe}{frame} $\ast$\hyperlink{structframe}{frame}, int max)
+\item 
+const char $\ast$ \hyperlink{group__reliable_ga6b9917d2ee4fe23f48f4471e8f4f4fdd}{reliable\+\_\+ack\+\_\+print} (struct \hyperlink{structbuffer}{buffer} $\ast$buf, \hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} verbose, struct \hyperlink{structgc__arena}{gc\+\_\+arena} $\ast$gc)
+\item 
+void \hyperlink{group__reliable_gab5e5ef6d6fd862187abe76f88b972ee5}{reliable\+\_\+init} (struct \hyperlink{structreliable}{reliable} $\ast$rel, int buf\+\_\+size, int offset, int array\+\_\+size, \hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} hold)
+\item 
+void \hyperlink{group__reliable_ga0315c8ecda1aafbfb61e6ab1b8c2477b}{reliable\+\_\+free} (struct \hyperlink{structreliable}{reliable} $\ast$rel)
+\item 
+\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} \hyperlink{group__reliable_ga7e0186d08bdeb59563ce37578ee64f8d}{reliable\+\_\+empty} (const struct \hyperlink{structreliable}{reliable} $\ast$rel)
+\item 
+void \hyperlink{group__reliable_ga0f79fac5e64e7d2a9df9bc13740f6293}{reliable\+\_\+send\+\_\+purge} (struct \hyperlink{structreliable}{reliable} $\ast$rel, struct \hyperlink{structreliable__ack}{reliable\+\_\+ack} $\ast$ack)
+\item 
+\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} \hyperlink{group__reliable_ga68f5e71b155cdcfabca18d028d336311}{reliable\+\_\+can\+\_\+get} (const struct \hyperlink{structreliable}{reliable} $\ast$rel)
+\item 
+\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} \hyperlink{group__reliable_ga907fd32837c50b4266eb5db1c56f9b13}{reliable\+\_\+not\+\_\+replay} (const struct \hyperlink{structreliable}{reliable} $\ast$rel, \hyperlink{packet__id_8h_a345f753b1c6ea20d24409e769aadb7e6}{packet\+\_\+id\+\_\+type} id)
+\item 
+\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} \hyperlink{group__reliable_gad2d6e3bde9beced3d69bbba652730439}{reliable\+\_\+wont\+\_\+break\+\_\+sequentiality} (const struct \hyperlink{structreliable}{reliable} $\ast$rel, \hyperlink{packet__id_8h_a345f753b1c6ea20d24409e769aadb7e6}{packet\+\_\+id\+\_\+type} id)
+\item 
+struct \hyperlink{structbuffer}{buffer} $\ast$ \hyperlink{group__reliable_gaa69117718f8e1e22881d957e219134ff}{reliable\+\_\+get\+\_\+buf} (struct \hyperlink{structreliable}{reliable} $\ast$rel)
+\item 
+struct \hyperlink{structbuffer}{buffer} $\ast$ \hyperlink{group__reliable_gaa15b0672f4ddd65d55194ed5bde0e1c8}{reliable\+\_\+get\+\_\+buf\+\_\+output\+\_\+sequenced} (struct \hyperlink{structreliable}{reliable} $\ast$rel)
+\item 
+struct \hyperlink{structbuffer}{buffer} $\ast$ \hyperlink{group__reliable_ga08f53328657f0172eb061193171e2a41}{reliable\+\_\+get\+\_\+buf\+\_\+sequenced} (struct \hyperlink{structreliable}{reliable} $\ast$rel)
+\item 
+\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} \hyperlink{group__reliable_ga79e86f7694ffbd592d944f8f45efa7c8}{reliable\+\_\+can\+\_\+send} (const struct \hyperlink{structreliable}{reliable} $\ast$rel)
+\item 
+struct \hyperlink{structbuffer}{buffer} $\ast$ \hyperlink{group__reliable_gaebcf7ae7a144f32b55c9af5c51121ec1}{reliable\+\_\+send} (struct \hyperlink{structreliable}{reliable} $\ast$rel, int $\ast$opcode)
+\item 
+void \hyperlink{group__reliable_ga14cb4395f780502ae9edbe6d3f90aec5}{reliable\+\_\+schedule\+\_\+now} (struct \hyperlink{structreliable}{reliable} $\ast$rel)
+\item 
+\hyperlink{common_8h_a3d8621f960ada51a5ad9ff181730481a}{interval\+\_\+t} \hyperlink{group__reliable_ga9e8edfca42338da6da6ccb3fd1849dca}{reliable\+\_\+send\+\_\+timeout} (const struct \hyperlink{structreliable}{reliable} $\ast$rel)
+\item 
+void \hyperlink{group__reliable_ga2689b44850ce41cc2fe1fc7f57657eb4}{reliable\+\_\+mark\+\_\+active\+\_\+incoming} (struct \hyperlink{structreliable}{reliable} $\ast$rel, struct \hyperlink{structbuffer}{buffer} $\ast$buf, \hyperlink{packet__id_8h_a345f753b1c6ea20d24409e769aadb7e6}{packet\+\_\+id\+\_\+type} pid, int opcode)
+\item 
+void \hyperlink{group__reliable_ga2c03b5ae47fe72dbf4fe16f11ea1c091}{reliable\+\_\+mark\+\_\+active\+\_\+outgoing} (struct \hyperlink{structreliable}{reliable} $\ast$rel, struct \hyperlink{structbuffer}{buffer} $\ast$buf, int opcode)
+\item 
+void \hyperlink{group__reliable_ga5c51920665fa9c34f082dd7aa6ce0e55}{reliable\+\_\+mark\+\_\+deleted} (struct \hyperlink{structreliable}{reliable} $\ast$rel, struct \hyperlink{structbuffer}{buffer} $\ast$buf, \hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} inc\+\_\+pid)
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{reliable_8c_af34c72aaa41d17665be4be69e6722ca1}{}\index{reliable.\+c@{reliable.\+c}!A\+C\+K\+\_\+\+S\+I\+Z\+E@{A\+C\+K\+\_\+\+S\+I\+Z\+E}}
+\index{A\+C\+K\+\_\+\+S\+I\+Z\+E@{A\+C\+K\+\_\+\+S\+I\+Z\+E}!reliable.\+c@{reliable.\+c}}
+\subsubsection[{A\+C\+K\+\_\+\+S\+I\+Z\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\+C\+K\+\_\+\+S\+I\+Z\+E(
+\begin{DoxyParamCaption}
+\item[{}]{n}
+\end{DoxyParamCaption}
+)~(sizeof(uint8\+\_\+t) + ((n) ? {\bf S\+I\+D\+\_\+\+S\+I\+Z\+E} \+: 0) + sizeof({\bf packet\+\_\+id\+\_\+type}) $\ast$ (n))}\label{reliable_8c_af34c72aaa41d17665be4be69e6722ca1}

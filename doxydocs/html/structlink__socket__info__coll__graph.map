@@ -1,0 +1,6 @@
+<map id="link_socket_info" name="link_socket_info">
+<area shape="rect" id="node2" href="$structplugin__list.html" title="plugin_list" alt="" coords="5,184,85,211"/>
+<area shape="rect" id="node3" href="$structlink__socket__addr.html" title="link_socket_addr" alt="" coords="109,184,229,211"/>
+<area shape="rect" id="node4" href="$structlink__socket__actual.html" title="link_socket_actual" alt="" coords="104,95,235,121"/>
+<area shape="rect" id="node5" href="$structopenvpn__sockaddr.html" title="openvpn_sockaddr" alt="" coords="105,5,234,32"/>
+</map>

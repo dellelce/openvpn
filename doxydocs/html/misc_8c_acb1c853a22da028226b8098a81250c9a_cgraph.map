@@ -1,0 +1,6 @@
+<map id="safe_print" name="safe_print">
+<area shape="rect" id="node2" href="$buffer_8c.html#a55db6b55ce08e95dc30a543ee37ecd92" title="string_mod_const" alt="" coords="132,31,257,57"/>
+<area shape="rect" id="node3" href="$buffer_8c.html#a06e0220403278399596a7a1b6b601fca" title="string_alloc" alt="" coords="305,5,393,32"/>
+<area shape="rect" id="node5" href="$buffer_8c.html#aa68699d49774055c860c609ec5d84bd5" title="string_mod" alt="" coords="306,56,393,83"/>
+<area shape="rect" id="node4" href="$buffer_8c.html#a67f7dec7f86e113dc0744584fd80b621" title="gc_malloc" alt="" coords="441,5,523,32"/>
+</map>

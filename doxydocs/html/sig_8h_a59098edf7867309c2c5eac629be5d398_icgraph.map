@@ -1,0 +1,5 @@
+<map id="signal_name" name="signal_name">
+<area shape="rect" id="node2" href="$sig_8h.html#a9dce4123b9a7da434cc417d0a1e47294" title="signal_description" alt="" coords="156,5,283,32"/>
+<area shape="rect" id="node3" href="$sig_8h.html#adcd32e744f78356ea2e4feea8f4cc9b6" title="print_signal" alt="" coords="175,56,263,83"/>
+<area shape="rect" id="node4" href="$sig_8h.html#a20b38f6720bc3e269384bf56d8e1a80e" title="signal_restart_status" alt="" coords="148,107,291,133"/>
+</map>

@@ -1,0 +1,117 @@
+\hypertarget{structtuntap}{}\section{tuntap Struct Reference}
+\label{structtuntap}\index{tuntap@{tuntap}}
+
+
+{\ttfamily \#include $<$tun.\+h$>$}
+
+
+
+Collaboration diagram for tuntap\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=160pt]{structtuntap__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{structtuntap_a33cc194495f4f5cac85cd788defc2350}{type}
+\item 
+int \hyperlink{structtuntap_a8fcc61d0d87cd8df310942042be86f23}{topology}
+\item 
+\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} \hyperlink{structtuntap_a8d99c6cfbc9fdf2c1466535afeebdbdb}{did\+\_\+ifconfig\+\_\+setup}
+\item 
+\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} \hyperlink{structtuntap_a70831f0f929eb68a2c0cdd85dc8c917c}{did\+\_\+ifconfig\+\_\+ipv6\+\_\+setup}
+\item 
+\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} \hyperlink{structtuntap_a9f6502124af50012c9e9b19089590d27}{did\+\_\+ifconfig}
+\item 
+\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} \hyperlink{structtuntap_afd4a0397ced0c1118162c669228dfc58}{persistent\+\_\+if}
+\item 
+struct \hyperlink{structtuntap__options}{tuntap\+\_\+options} \hyperlink{structtuntap_a7efedc501b62607f297aeee8b839c7c8}{options}
+\item 
+char $\ast$ \hyperlink{structtuntap_acfb3d1fb2ebdae626785a31156ec8bce}{actual\+\_\+name}
+\item 
+int \hyperlink{structtuntap_aa20e943f0981bec0e544b6c8dc5ee4bb}{txqueuelen}
+\item 
+in\+\_\+addr\+\_\+t \hyperlink{structtuntap_a310bbe962b4610e99c122fc7147bfbd4}{local}
+\item 
+in\+\_\+addr\+\_\+t \hyperlink{structtuntap_adfc8cf984637bed412c9718cd8a4b0cb}{remote\+\_\+netmask}
+\item 
+in\+\_\+addr\+\_\+t \hyperlink{structtuntap_a167d8c3651caeb0189d9f3bdf4fc4b89}{broadcast}
+\item 
+struct in6\+\_\+addr \hyperlink{structtuntap_ab854704d9efd886f25b7a0083b0196c6}{local\+\_\+ipv6}
+\item 
+struct in6\+\_\+addr \hyperlink{structtuntap_a81746b4bf6278227195affed161a12c5}{remote\+\_\+ipv6}
+\item 
+int \hyperlink{structtuntap_a481a2d64b9173bd16b80d758c478dfef}{netbits\+\_\+ipv6}
+\item 
+int \hyperlink{structtuntap_a38643d31d3dda496f36d9036fb8285d2}{fd}
+\item 
+unsigned int \hyperlink{structtuntap_a00ce662769a347aadc467000312a51c9}{rwflags\+\_\+debug}
+\item 
+int \hyperlink{structtuntap_ade6ab1d7cbe4e6f64dc453eaf7fc251e}{post\+\_\+open\+\_\+mtu}
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{structtuntap_acfb3d1fb2ebdae626785a31156ec8bce}{}\index{tuntap@{tuntap}!actual\+\_\+name@{actual\+\_\+name}}
+\index{actual\+\_\+name@{actual\+\_\+name}!tuntap@{tuntap}}
+\subsubsection[{actual\+\_\+name}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ tuntap\+::actual\+\_\+name}\label{structtuntap_acfb3d1fb2ebdae626785a31156ec8bce}
+\hypertarget{structtuntap_a167d8c3651caeb0189d9f3bdf4fc4b89}{}\index{tuntap@{tuntap}!broadcast@{broadcast}}
+\index{broadcast@{broadcast}!tuntap@{tuntap}}
+\subsubsection[{broadcast}]{\setlength{\rightskip}{0pt plus 5cm}in\+\_\+addr\+\_\+t tuntap\+::broadcast}\label{structtuntap_a167d8c3651caeb0189d9f3bdf4fc4b89}
+\hypertarget{structtuntap_a9f6502124af50012c9e9b19089590d27}{}\index{tuntap@{tuntap}!did\+\_\+ifconfig@{did\+\_\+ifconfig}}
+\index{did\+\_\+ifconfig@{did\+\_\+ifconfig}!tuntap@{tuntap}}
+\subsubsection[{did\+\_\+ifconfig}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} tuntap\+::did\+\_\+ifconfig}\label{structtuntap_a9f6502124af50012c9e9b19089590d27}
+\hypertarget{structtuntap_a70831f0f929eb68a2c0cdd85dc8c917c}{}\index{tuntap@{tuntap}!did\+\_\+ifconfig\+\_\+ipv6\+\_\+setup@{did\+\_\+ifconfig\+\_\+ipv6\+\_\+setup}}
+\index{did\+\_\+ifconfig\+\_\+ipv6\+\_\+setup@{did\+\_\+ifconfig\+\_\+ipv6\+\_\+setup}!tuntap@{tuntap}}
+\subsubsection[{did\+\_\+ifconfig\+\_\+ipv6\+\_\+setup}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} tuntap\+::did\+\_\+ifconfig\+\_\+ipv6\+\_\+setup}\label{structtuntap_a70831f0f929eb68a2c0cdd85dc8c917c}
+\hypertarget{structtuntap_a8d99c6cfbc9fdf2c1466535afeebdbdb}{}\index{tuntap@{tuntap}!did\+\_\+ifconfig\+\_\+setup@{did\+\_\+ifconfig\+\_\+setup}}
+\index{did\+\_\+ifconfig\+\_\+setup@{did\+\_\+ifconfig\+\_\+setup}!tuntap@{tuntap}}
+\subsubsection[{did\+\_\+ifconfig\+\_\+setup}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} tuntap\+::did\+\_\+ifconfig\+\_\+setup}\label{structtuntap_a8d99c6cfbc9fdf2c1466535afeebdbdb}
+\hypertarget{structtuntap_a38643d31d3dda496f36d9036fb8285d2}{}\index{tuntap@{tuntap}!fd@{fd}}
+\index{fd@{fd}!tuntap@{tuntap}}
+\subsubsection[{fd}]{\setlength{\rightskip}{0pt plus 5cm}int tuntap\+::fd}\label{structtuntap_a38643d31d3dda496f36d9036fb8285d2}
+\hypertarget{structtuntap_a310bbe962b4610e99c122fc7147bfbd4}{}\index{tuntap@{tuntap}!local@{local}}
+\index{local@{local}!tuntap@{tuntap}}
+\subsubsection[{local}]{\setlength{\rightskip}{0pt plus 5cm}in\+\_\+addr\+\_\+t tuntap\+::local}\label{structtuntap_a310bbe962b4610e99c122fc7147bfbd4}
+\hypertarget{structtuntap_ab854704d9efd886f25b7a0083b0196c6}{}\index{tuntap@{tuntap}!local\+\_\+ipv6@{local\+\_\+ipv6}}
+\index{local\+\_\+ipv6@{local\+\_\+ipv6}!tuntap@{tuntap}}
+\subsubsection[{local\+\_\+ipv6}]{\setlength{\rightskip}{0pt plus 5cm}struct in6\+\_\+addr tuntap\+::local\+\_\+ipv6}\label{structtuntap_ab854704d9efd886f25b7a0083b0196c6}
+\hypertarget{structtuntap_a481a2d64b9173bd16b80d758c478dfef}{}\index{tuntap@{tuntap}!netbits\+\_\+ipv6@{netbits\+\_\+ipv6}}
+\index{netbits\+\_\+ipv6@{netbits\+\_\+ipv6}!tuntap@{tuntap}}
+\subsubsection[{netbits\+\_\+ipv6}]{\setlength{\rightskip}{0pt plus 5cm}int tuntap\+::netbits\+\_\+ipv6}\label{structtuntap_a481a2d64b9173bd16b80d758c478dfef}
+\hypertarget{structtuntap_a7efedc501b62607f297aeee8b839c7c8}{}\index{tuntap@{tuntap}!options@{options}}
+\index{options@{options}!tuntap@{tuntap}}
+\subsubsection[{options}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf tuntap\+\_\+options} tuntap\+::options}\label{structtuntap_a7efedc501b62607f297aeee8b839c7c8}
+\hypertarget{structtuntap_afd4a0397ced0c1118162c669228dfc58}{}\index{tuntap@{tuntap}!persistent\+\_\+if@{persistent\+\_\+if}}
+\index{persistent\+\_\+if@{persistent\+\_\+if}!tuntap@{tuntap}}
+\subsubsection[{persistent\+\_\+if}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} tuntap\+::persistent\+\_\+if}\label{structtuntap_afd4a0397ced0c1118162c669228dfc58}
+\hypertarget{structtuntap_ade6ab1d7cbe4e6f64dc453eaf7fc251e}{}\index{tuntap@{tuntap}!post\+\_\+open\+\_\+mtu@{post\+\_\+open\+\_\+mtu}}
+\index{post\+\_\+open\+\_\+mtu@{post\+\_\+open\+\_\+mtu}!tuntap@{tuntap}}
+\subsubsection[{post\+\_\+open\+\_\+mtu}]{\setlength{\rightskip}{0pt plus 5cm}int tuntap\+::post\+\_\+open\+\_\+mtu}\label{structtuntap_ade6ab1d7cbe4e6f64dc453eaf7fc251e}
+\hypertarget{structtuntap_a81746b4bf6278227195affed161a12c5}{}\index{tuntap@{tuntap}!remote\+\_\+ipv6@{remote\+\_\+ipv6}}
+\index{remote\+\_\+ipv6@{remote\+\_\+ipv6}!tuntap@{tuntap}}
+\subsubsection[{remote\+\_\+ipv6}]{\setlength{\rightskip}{0pt plus 5cm}struct in6\+\_\+addr tuntap\+::remote\+\_\+ipv6}\label{structtuntap_a81746b4bf6278227195affed161a12c5}
+\hypertarget{structtuntap_adfc8cf984637bed412c9718cd8a4b0cb}{}\index{tuntap@{tuntap}!remote\+\_\+netmask@{remote\+\_\+netmask}}
+\index{remote\+\_\+netmask@{remote\+\_\+netmask}!tuntap@{tuntap}}
+\subsubsection[{remote\+\_\+netmask}]{\setlength{\rightskip}{0pt plus 5cm}in\+\_\+addr\+\_\+t tuntap\+::remote\+\_\+netmask}\label{structtuntap_adfc8cf984637bed412c9718cd8a4b0cb}
+\hypertarget{structtuntap_a00ce662769a347aadc467000312a51c9}{}\index{tuntap@{tuntap}!rwflags\+\_\+debug@{rwflags\+\_\+debug}}
+\index{rwflags\+\_\+debug@{rwflags\+\_\+debug}!tuntap@{tuntap}}
+\subsubsection[{rwflags\+\_\+debug}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int tuntap\+::rwflags\+\_\+debug}\label{structtuntap_a00ce662769a347aadc467000312a51c9}
+\hypertarget{structtuntap_a8fcc61d0d87cd8df310942042be86f23}{}\index{tuntap@{tuntap}!topology@{topology}}
+\index{topology@{topology}!tuntap@{tuntap}}
+\subsubsection[{topology}]{\setlength{\rightskip}{0pt plus 5cm}int tuntap\+::topology}\label{structtuntap_a8fcc61d0d87cd8df310942042be86f23}
+\hypertarget{structtuntap_aa20e943f0981bec0e544b6c8dc5ee4bb}{}\index{tuntap@{tuntap}!txqueuelen@{txqueuelen}}
+\index{txqueuelen@{txqueuelen}!tuntap@{tuntap}}
+\subsubsection[{txqueuelen}]{\setlength{\rightskip}{0pt plus 5cm}int tuntap\+::txqueuelen}\label{structtuntap_aa20e943f0981bec0e544b6c8dc5ee4bb}
+\hypertarget{structtuntap_a33cc194495f4f5cac85cd788defc2350}{}\index{tuntap@{tuntap}!type@{type}}
+\index{type@{type}!tuntap@{tuntap}}
+\subsubsection[{type}]{\setlength{\rightskip}{0pt plus 5cm}int tuntap\+::type}\label{structtuntap_a33cc194495f4f5cac85cd788defc2350}
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/openvpn/\hyperlink{tun_8h}{tun.\+h}\end{DoxyCompactItemize}

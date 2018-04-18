@@ -1,0 +1,480 @@
+\hypertarget{packet__id_8h}{}\section{src/openvpn/packet\+\_\+id.h File Reference}
+\label{packet__id_8h}\index{src/openvpn/packet\+\_\+id.\+h@{src/openvpn/packet\+\_\+id.\+h}}
+{\ttfamily \#include \char`\"{}circ\+\_\+list.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}buffer.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}error.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}otime.\+h\char`\"{}}\\*
+Include dependency graph for packet\+\_\+id.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{packet__id_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{packet__id_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structpacket__id__rec}{packet\+\_\+id\+\_\+rec}
+\item 
+struct \hyperlink{structpacket__id__persist}{packet\+\_\+id\+\_\+persist}
+\item 
+struct \hyperlink{structpacket__id__persist__file__image}{packet\+\_\+id\+\_\+persist\+\_\+file\+\_\+image}
+\item 
+struct \hyperlink{structpacket__id__send}{packet\+\_\+id\+\_\+send}
+\item 
+struct \hyperlink{structpacket__id__net}{packet\+\_\+id\+\_\+net}
+\item 
+struct \hyperlink{structpacket__id}{packet\+\_\+id}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{packet__id_8h_a39bfc101b34dfc0f43bd1c11e11b0843}{P\+A\+C\+K\+E\+T\+\_\+\+I\+D\+\_\+\+M\+A\+X}~U\+I\+N\+T32\+\_\+\+M\+A\+X
+\item 
+\#define \hyperlink{packet__id_8h_ae4d5cc41a611e1585b12b46b1767be54}{P\+A\+C\+K\+E\+T\+\_\+\+I\+D\+\_\+\+W\+R\+A\+P\+\_\+\+T\+R\+I\+G\+G\+E\+R}~0x\+F\+F000000
+\item 
+\#define \hyperlink{packet__id_8h_a0da9d39d2d3c71dfacd613e8a0aac6a0}{htonpid}(x)~htonl(x)
+\item 
+\#define \hyperlink{packet__id_8h_abacb99dc8912caf847dfd6397716ec27}{ntohpid}(x)~ntohl(x)
+\item 
+\#define \hyperlink{packet__id_8h_ac411505a7a14b3d4e7fbf1be8d339435}{htontime}(x)~htonl((\hyperlink{packet__id_8h_a32b361b1d3a0fc2f92ceeff736bba97e}{net\+\_\+time\+\_\+t})x)
+\item 
+\#define \hyperlink{packet__id_8h_a442a6e21bfced6f4d284448b4aa65552}{ntohtime}(x)~((time\+\_\+t)ntohl(x))
+\item 
+\#define \hyperlink{packet__id_8h_a0192a284c2d450c79753406b5fb77f50}{packet\+\_\+id\+\_\+format}~\char`\"{}\%u\char`\"{}
+\item 
+\#define \hyperlink{packet__id_8h_a5a1ae6ee2a2935d5f3b64fd9a3d5e6a7}{M\+I\+N\+\_\+\+S\+E\+Q\+\_\+\+B\+A\+C\+K\+T\+R\+A\+C\+K}~0
+\item 
+\#define \hyperlink{packet__id_8h_a31905b75035f1632e39e1ca290dc5469}{M\+A\+X\+\_\+\+S\+E\+Q\+\_\+\+B\+A\+C\+K\+T\+R\+A\+C\+K}~65536
+\item 
+\#define \hyperlink{packet__id_8h_a7989d94b913a13c1fec371159ffefd07}{D\+E\+F\+A\+U\+L\+T\+\_\+\+S\+E\+Q\+\_\+\+B\+A\+C\+K\+T\+R\+A\+C\+K}~64
+\item 
+\#define \hyperlink{packet__id_8h_ac2bd0374c39ad45e01de884c6a3d8710}{M\+I\+N\+\_\+\+T\+I\+M\+E\+\_\+\+B\+A\+C\+K\+T\+R\+A\+C\+K}~0
+\item 
+\#define \hyperlink{packet__id_8h_ab1dffa6e06875ea2cd23dc97fb9b7ee2}{M\+A\+X\+\_\+\+T\+I\+M\+E\+\_\+\+B\+A\+C\+K\+T\+R\+A\+C\+K}~600
+\item 
+\#define \hyperlink{packet__id_8h_ab7ddffc56300765fa8ba8875a2a15303}{D\+E\+F\+A\+U\+L\+T\+\_\+\+T\+I\+M\+E\+\_\+\+B\+A\+C\+K\+T\+R\+A\+C\+K}~15
+\item 
+\#define \hyperlink{packet__id_8h_a393dccdc7e2982524b2cc95711397b3c}{S\+E\+Q\+\_\+\+R\+E\+A\+P\+\_\+\+I\+N\+T\+E\+R\+V\+A\+L}~5
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef uint32\+\_\+t \hyperlink{packet__id_8h_a345f753b1c6ea20d24409e769aadb7e6}{packet\+\_\+id\+\_\+type}
+\item 
+typedef uint32\+\_\+t \hyperlink{packet__id_8h_a32b361b1d3a0fc2f92ceeff736bba97e}{net\+\_\+time\+\_\+t}
+\item 
+typedef unsigned int \hyperlink{packet__id_8h_a1db5965313c67fd339444af9555d38ed}{packet\+\_\+id\+\_\+print\+\_\+type}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{packet__id_8h_a75491429fc8027136285f3f1a70a4670}{C\+I\+R\+C\+\_\+\+L\+I\+S\+T} (seq\+\_\+list, time\+\_\+t)
+\item 
+void \hyperlink{packet__id_8h_a2ed0adcc640944fdb68ef1e394fc4f32}{packet\+\_\+id\+\_\+init} (struct \hyperlink{structpacket__id}{packet\+\_\+id} $\ast$p, int seq\+\_\+backtrack, int time\+\_\+backtrack, const char $\ast$name, int unit)
+\item 
+void \hyperlink{packet__id_8h_a5162087628a8856757b82c93cf4a696b}{packet\+\_\+id\+\_\+free} (struct \hyperlink{structpacket__id}{packet\+\_\+id} $\ast$p)
+\item 
+\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} \hyperlink{packet__id_8h_a68f8055e781f23fe159e979550e3b60b}{packet\+\_\+id\+\_\+test} (struct \hyperlink{structpacket__id__rec}{packet\+\_\+id\+\_\+rec} $\ast$p, const struct \hyperlink{structpacket__id__net}{packet\+\_\+id\+\_\+net} $\ast$pin)
+\item 
+void \hyperlink{packet__id_8h_ab5f78b3bd91dc5e3ef4946855365933a}{packet\+\_\+id\+\_\+add} (struct \hyperlink{structpacket__id__rec}{packet\+\_\+id\+\_\+rec} $\ast$p, const struct \hyperlink{structpacket__id__net}{packet\+\_\+id\+\_\+net} $\ast$pin)
+\item 
+void \hyperlink{packet__id_8h_aa2b33d1c90ab197e51fc502282d6f172}{packet\+\_\+id\+\_\+reap} (struct \hyperlink{structpacket__id__rec}{packet\+\_\+id\+\_\+rec} $\ast$p)
+\item 
+void \hyperlink{packet__id_8h_ad94f10b2db56c515a76480bd23d003aa}{packet\+\_\+id\+\_\+persist\+\_\+init} (struct \hyperlink{structpacket__id__persist}{packet\+\_\+id\+\_\+persist} $\ast$p)
+\item 
+void \hyperlink{packet__id_8h_a3f6e28af6874fe3665778dc54a8752cb}{packet\+\_\+id\+\_\+persist\+\_\+close} (struct \hyperlink{structpacket__id__persist}{packet\+\_\+id\+\_\+persist} $\ast$p)
+\item 
+void \hyperlink{packet__id_8h_ad4f489a3f0c44154ef52e924a1ef4caa}{packet\+\_\+id\+\_\+persist\+\_\+load} (struct \hyperlink{structpacket__id__persist}{packet\+\_\+id\+\_\+persist} $\ast$p, const char $\ast$filename)
+\item 
+void \hyperlink{packet__id_8h_a1a1b4689057b6361657f57fe65bd4f93}{packet\+\_\+id\+\_\+persist\+\_\+save} (struct \hyperlink{structpacket__id__persist}{packet\+\_\+id\+\_\+persist} $\ast$p)
+\item 
+void \hyperlink{packet__id_8h_a249d12dcab1d0a2bc424990138caa4e5}{packet\+\_\+id\+\_\+persist\+\_\+load\+\_\+obj} (const struct \hyperlink{structpacket__id__persist}{packet\+\_\+id\+\_\+persist} $\ast$p, struct \hyperlink{structpacket__id}{packet\+\_\+id} $\ast$pid)
+\item 
+const char $\ast$ \hyperlink{packet__id_8h_ae872b1bbf2e3afd6a6d3d2ab1271b43c}{packet\+\_\+id\+\_\+persist\+\_\+print} (const struct \hyperlink{structpacket__id__persist}{packet\+\_\+id\+\_\+persist} $\ast$p, struct \hyperlink{structgc__arena}{gc\+\_\+arena} $\ast$gc)
+\item 
+\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} \hyperlink{packet__id_8h_a698b7a89921d8dc6441b47b87545c18d}{packet\+\_\+id\+\_\+read} (struct \hyperlink{structpacket__id__net}{packet\+\_\+id\+\_\+net} $\ast$pin, struct \hyperlink{structbuffer}{buffer} $\ast$buf, \hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} long\+\_\+form)
+\item 
+\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} \hyperlink{packet__id_8h_aee6501cdf56ed860554c95fd7e89854d}{packet\+\_\+id\+\_\+write} (struct \hyperlink{structpacket__id__send}{packet\+\_\+id\+\_\+send} $\ast$p, struct \hyperlink{structbuffer}{buffer} $\ast$buf, \hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} long\+\_\+form, \hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} prepend)
+\item 
+const char $\ast$ \hyperlink{packet__id_8h_a80c9b2288cb1df565dad9d7b65837ace}{packet\+\_\+id\+\_\+net\+\_\+print} (const struct \hyperlink{structpacket__id__net}{packet\+\_\+id\+\_\+net} $\ast$pin, \hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} print\+\_\+timestamp, struct \hyperlink{structgc__arena}{gc\+\_\+arena} $\ast$gc)
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{packet__id_8h_a7989d94b913a13c1fec371159ffefd07}{}\index{packet\+\_\+id.\+h@{packet\+\_\+id.\+h}!D\+E\+F\+A\+U\+L\+T\+\_\+\+S\+E\+Q\+\_\+\+B\+A\+C\+K\+T\+R\+A\+C\+K@{D\+E\+F\+A\+U\+L\+T\+\_\+\+S\+E\+Q\+\_\+\+B\+A\+C\+K\+T\+R\+A\+C\+K}}
+\index{D\+E\+F\+A\+U\+L\+T\+\_\+\+S\+E\+Q\+\_\+\+B\+A\+C\+K\+T\+R\+A\+C\+K@{D\+E\+F\+A\+U\+L\+T\+\_\+\+S\+E\+Q\+\_\+\+B\+A\+C\+K\+T\+R\+A\+C\+K}!packet\+\_\+id.\+h@{packet\+\_\+id.\+h}}
+\subsubsection[{D\+E\+F\+A\+U\+L\+T\+\_\+\+S\+E\+Q\+\_\+\+B\+A\+C\+K\+T\+R\+A\+C\+K}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+E\+F\+A\+U\+L\+T\+\_\+\+S\+E\+Q\+\_\+\+B\+A\+C\+K\+T\+R\+A\+C\+K~64}\label{packet__id_8h_a7989d94b913a13c1fec371159ffefd07}
+\hypertarget{packet__id_8h_ab7ddffc56300765fa8ba8875a2a15303}{}\index{packet\+\_\+id.\+h@{packet\+\_\+id.\+h}!D\+E\+F\+A\+U\+L\+T\+\_\+\+T\+I\+M\+E\+\_\+\+B\+A\+C\+K\+T\+R\+A\+C\+K@{D\+E\+F\+A\+U\+L\+T\+\_\+\+T\+I\+M\+E\+\_\+\+B\+A\+C\+K\+T\+R\+A\+C\+K}}
+\index{D\+E\+F\+A\+U\+L\+T\+\_\+\+T\+I\+M\+E\+\_\+\+B\+A\+C\+K\+T\+R\+A\+C\+K@{D\+E\+F\+A\+U\+L\+T\+\_\+\+T\+I\+M\+E\+\_\+\+B\+A\+C\+K\+T\+R\+A\+C\+K}!packet\+\_\+id.\+h@{packet\+\_\+id.\+h}}
+\subsubsection[{D\+E\+F\+A\+U\+L\+T\+\_\+\+T\+I\+M\+E\+\_\+\+B\+A\+C\+K\+T\+R\+A\+C\+K}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+E\+F\+A\+U\+L\+T\+\_\+\+T\+I\+M\+E\+\_\+\+B\+A\+C\+K\+T\+R\+A\+C\+K~15}\label{packet__id_8h_ab7ddffc56300765fa8ba8875a2a15303}
+\hypertarget{packet__id_8h_a0da9d39d2d3c71dfacd613e8a0aac6a0}{}\index{packet\+\_\+id.\+h@{packet\+\_\+id.\+h}!htonpid@{htonpid}}
+\index{htonpid@{htonpid}!packet\+\_\+id.\+h@{packet\+\_\+id.\+h}}
+\subsubsection[{htonpid}]{\setlength{\rightskip}{0pt plus 5cm}\#define htonpid(
+\begin{DoxyParamCaption}
+\item[{}]{x}
+\end{DoxyParamCaption}
+)~htonl(x)}\label{packet__id_8h_a0da9d39d2d3c71dfacd613e8a0aac6a0}
+\hypertarget{packet__id_8h_ac411505a7a14b3d4e7fbf1be8d339435}{}\index{packet\+\_\+id.\+h@{packet\+\_\+id.\+h}!htontime@{htontime}}
+\index{htontime@{htontime}!packet\+\_\+id.\+h@{packet\+\_\+id.\+h}}
+\subsubsection[{htontime}]{\setlength{\rightskip}{0pt plus 5cm}\#define htontime(
+\begin{DoxyParamCaption}
+\item[{}]{x}
+\end{DoxyParamCaption}
+)~htonl(({\bf net\+\_\+time\+\_\+t})x)}\label{packet__id_8h_ac411505a7a14b3d4e7fbf1be8d339435}
+\hypertarget{packet__id_8h_a31905b75035f1632e39e1ca290dc5469}{}\index{packet\+\_\+id.\+h@{packet\+\_\+id.\+h}!M\+A\+X\+\_\+\+S\+E\+Q\+\_\+\+B\+A\+C\+K\+T\+R\+A\+C\+K@{M\+A\+X\+\_\+\+S\+E\+Q\+\_\+\+B\+A\+C\+K\+T\+R\+A\+C\+K}}
+\index{M\+A\+X\+\_\+\+S\+E\+Q\+\_\+\+B\+A\+C\+K\+T\+R\+A\+C\+K@{M\+A\+X\+\_\+\+S\+E\+Q\+\_\+\+B\+A\+C\+K\+T\+R\+A\+C\+K}!packet\+\_\+id.\+h@{packet\+\_\+id.\+h}}
+\subsubsection[{M\+A\+X\+\_\+\+S\+E\+Q\+\_\+\+B\+A\+C\+K\+T\+R\+A\+C\+K}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\+A\+X\+\_\+\+S\+E\+Q\+\_\+\+B\+A\+C\+K\+T\+R\+A\+C\+K~65536}\label{packet__id_8h_a31905b75035f1632e39e1ca290dc5469}
+\hypertarget{packet__id_8h_ab1dffa6e06875ea2cd23dc97fb9b7ee2}{}\index{packet\+\_\+id.\+h@{packet\+\_\+id.\+h}!M\+A\+X\+\_\+\+T\+I\+M\+E\+\_\+\+B\+A\+C\+K\+T\+R\+A\+C\+K@{M\+A\+X\+\_\+\+T\+I\+M\+E\+\_\+\+B\+A\+C\+K\+T\+R\+A\+C\+K}}
+\index{M\+A\+X\+\_\+\+T\+I\+M\+E\+\_\+\+B\+A\+C\+K\+T\+R\+A\+C\+K@{M\+A\+X\+\_\+\+T\+I\+M\+E\+\_\+\+B\+A\+C\+K\+T\+R\+A\+C\+K}!packet\+\_\+id.\+h@{packet\+\_\+id.\+h}}
+\subsubsection[{M\+A\+X\+\_\+\+T\+I\+M\+E\+\_\+\+B\+A\+C\+K\+T\+R\+A\+C\+K}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\+A\+X\+\_\+\+T\+I\+M\+E\+\_\+\+B\+A\+C\+K\+T\+R\+A\+C\+K~600}\label{packet__id_8h_ab1dffa6e06875ea2cd23dc97fb9b7ee2}
+\hypertarget{packet__id_8h_a5a1ae6ee2a2935d5f3b64fd9a3d5e6a7}{}\index{packet\+\_\+id.\+h@{packet\+\_\+id.\+h}!M\+I\+N\+\_\+\+S\+E\+Q\+\_\+\+B\+A\+C\+K\+T\+R\+A\+C\+K@{M\+I\+N\+\_\+\+S\+E\+Q\+\_\+\+B\+A\+C\+K\+T\+R\+A\+C\+K}}
+\index{M\+I\+N\+\_\+\+S\+E\+Q\+\_\+\+B\+A\+C\+K\+T\+R\+A\+C\+K@{M\+I\+N\+\_\+\+S\+E\+Q\+\_\+\+B\+A\+C\+K\+T\+R\+A\+C\+K}!packet\+\_\+id.\+h@{packet\+\_\+id.\+h}}
+\subsubsection[{M\+I\+N\+\_\+\+S\+E\+Q\+\_\+\+B\+A\+C\+K\+T\+R\+A\+C\+K}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\+I\+N\+\_\+\+S\+E\+Q\+\_\+\+B\+A\+C\+K\+T\+R\+A\+C\+K~0}\label{packet__id_8h_a5a1ae6ee2a2935d5f3b64fd9a3d5e6a7}
+\hypertarget{packet__id_8h_ac2bd0374c39ad45e01de884c6a3d8710}{}\index{packet\+\_\+id.\+h@{packet\+\_\+id.\+h}!M\+I\+N\+\_\+\+T\+I\+M\+E\+\_\+\+B\+A\+C\+K\+T\+R\+A\+C\+K@{M\+I\+N\+\_\+\+T\+I\+M\+E\+\_\+\+B\+A\+C\+K\+T\+R\+A\+C\+K}}
+\index{M\+I\+N\+\_\+\+T\+I\+M\+E\+\_\+\+B\+A\+C\+K\+T\+R\+A\+C\+K@{M\+I\+N\+\_\+\+T\+I\+M\+E\+\_\+\+B\+A\+C\+K\+T\+R\+A\+C\+K}!packet\+\_\+id.\+h@{packet\+\_\+id.\+h}}
+\subsubsection[{M\+I\+N\+\_\+\+T\+I\+M\+E\+\_\+\+B\+A\+C\+K\+T\+R\+A\+C\+K}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\+I\+N\+\_\+\+T\+I\+M\+E\+\_\+\+B\+A\+C\+K\+T\+R\+A\+C\+K~0}\label{packet__id_8h_ac2bd0374c39ad45e01de884c6a3d8710}
+\hypertarget{packet__id_8h_abacb99dc8912caf847dfd6397716ec27}{}\index{packet\+\_\+id.\+h@{packet\+\_\+id.\+h}!ntohpid@{ntohpid}}
+\index{ntohpid@{ntohpid}!packet\+\_\+id.\+h@{packet\+\_\+id.\+h}}
+\subsubsection[{ntohpid}]{\setlength{\rightskip}{0pt plus 5cm}\#define ntohpid(
+\begin{DoxyParamCaption}
+\item[{}]{x}
+\end{DoxyParamCaption}
+)~ntohl(x)}\label{packet__id_8h_abacb99dc8912caf847dfd6397716ec27}
+\hypertarget{packet__id_8h_a442a6e21bfced6f4d284448b4aa65552}{}\index{packet\+\_\+id.\+h@{packet\+\_\+id.\+h}!ntohtime@{ntohtime}}
+\index{ntohtime@{ntohtime}!packet\+\_\+id.\+h@{packet\+\_\+id.\+h}}
+\subsubsection[{ntohtime}]{\setlength{\rightskip}{0pt plus 5cm}\#define ntohtime(
+\begin{DoxyParamCaption}
+\item[{}]{x}
+\end{DoxyParamCaption}
+)~((time\+\_\+t)ntohl(x))}\label{packet__id_8h_a442a6e21bfced6f4d284448b4aa65552}
+\hypertarget{packet__id_8h_a0192a284c2d450c79753406b5fb77f50}{}\index{packet\+\_\+id.\+h@{packet\+\_\+id.\+h}!packet\+\_\+id\+\_\+format@{packet\+\_\+id\+\_\+format}}
+\index{packet\+\_\+id\+\_\+format@{packet\+\_\+id\+\_\+format}!packet\+\_\+id.\+h@{packet\+\_\+id.\+h}}
+\subsubsection[{packet\+\_\+id\+\_\+format}]{\setlength{\rightskip}{0pt plus 5cm}\#define packet\+\_\+id\+\_\+format~\char`\"{}\%u\char`\"{}}\label{packet__id_8h_a0192a284c2d450c79753406b5fb77f50}
+\hypertarget{packet__id_8h_a39bfc101b34dfc0f43bd1c11e11b0843}{}\index{packet\+\_\+id.\+h@{packet\+\_\+id.\+h}!P\+A\+C\+K\+E\+T\+\_\+\+I\+D\+\_\+\+M\+A\+X@{P\+A\+C\+K\+E\+T\+\_\+\+I\+D\+\_\+\+M\+A\+X}}
+\index{P\+A\+C\+K\+E\+T\+\_\+\+I\+D\+\_\+\+M\+A\+X@{P\+A\+C\+K\+E\+T\+\_\+\+I\+D\+\_\+\+M\+A\+X}!packet\+\_\+id.\+h@{packet\+\_\+id.\+h}}
+\subsubsection[{P\+A\+C\+K\+E\+T\+\_\+\+I\+D\+\_\+\+M\+A\+X}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\+A\+C\+K\+E\+T\+\_\+\+I\+D\+\_\+\+M\+A\+X~U\+I\+N\+T32\+\_\+\+M\+A\+X}\label{packet__id_8h_a39bfc101b34dfc0f43bd1c11e11b0843}
+\hypertarget{packet__id_8h_ae4d5cc41a611e1585b12b46b1767be54}{}\index{packet\+\_\+id.\+h@{packet\+\_\+id.\+h}!P\+A\+C\+K\+E\+T\+\_\+\+I\+D\+\_\+\+W\+R\+A\+P\+\_\+\+T\+R\+I\+G\+G\+E\+R@{P\+A\+C\+K\+E\+T\+\_\+\+I\+D\+\_\+\+W\+R\+A\+P\+\_\+\+T\+R\+I\+G\+G\+E\+R}}
+\index{P\+A\+C\+K\+E\+T\+\_\+\+I\+D\+\_\+\+W\+R\+A\+P\+\_\+\+T\+R\+I\+G\+G\+E\+R@{P\+A\+C\+K\+E\+T\+\_\+\+I\+D\+\_\+\+W\+R\+A\+P\+\_\+\+T\+R\+I\+G\+G\+E\+R}!packet\+\_\+id.\+h@{packet\+\_\+id.\+h}}
+\subsubsection[{P\+A\+C\+K\+E\+T\+\_\+\+I\+D\+\_\+\+W\+R\+A\+P\+\_\+\+T\+R\+I\+G\+G\+E\+R}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\+A\+C\+K\+E\+T\+\_\+\+I\+D\+\_\+\+W\+R\+A\+P\+\_\+\+T\+R\+I\+G\+G\+E\+R~0x\+F\+F000000}\label{packet__id_8h_ae4d5cc41a611e1585b12b46b1767be54}
+\hypertarget{packet__id_8h_a393dccdc7e2982524b2cc95711397b3c}{}\index{packet\+\_\+id.\+h@{packet\+\_\+id.\+h}!S\+E\+Q\+\_\+\+R\+E\+A\+P\+\_\+\+I\+N\+T\+E\+R\+V\+A\+L@{S\+E\+Q\+\_\+\+R\+E\+A\+P\+\_\+\+I\+N\+T\+E\+R\+V\+A\+L}}
+\index{S\+E\+Q\+\_\+\+R\+E\+A\+P\+\_\+\+I\+N\+T\+E\+R\+V\+A\+L@{S\+E\+Q\+\_\+\+R\+E\+A\+P\+\_\+\+I\+N\+T\+E\+R\+V\+A\+L}!packet\+\_\+id.\+h@{packet\+\_\+id.\+h}}
+\subsubsection[{S\+E\+Q\+\_\+\+R\+E\+A\+P\+\_\+\+I\+N\+T\+E\+R\+V\+A\+L}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\+E\+Q\+\_\+\+R\+E\+A\+P\+\_\+\+I\+N\+T\+E\+R\+V\+A\+L~5}\label{packet__id_8h_a393dccdc7e2982524b2cc95711397b3c}
+
+
+\subsection{Typedef Documentation}
+\hypertarget{packet__id_8h_a32b361b1d3a0fc2f92ceeff736bba97e}{}\index{packet\+\_\+id.\+h@{packet\+\_\+id.\+h}!net\+\_\+time\+\_\+t@{net\+\_\+time\+\_\+t}}
+\index{net\+\_\+time\+\_\+t@{net\+\_\+time\+\_\+t}!packet\+\_\+id.\+h@{packet\+\_\+id.\+h}}
+\subsubsection[{net\+\_\+time\+\_\+t}]{\setlength{\rightskip}{0pt plus 5cm}typedef uint32\+\_\+t {\bf net\+\_\+time\+\_\+t}}\label{packet__id_8h_a32b361b1d3a0fc2f92ceeff736bba97e}
+\hypertarget{packet__id_8h_a1db5965313c67fd339444af9555d38ed}{}\index{packet\+\_\+id.\+h@{packet\+\_\+id.\+h}!packet\+\_\+id\+\_\+print\+\_\+type@{packet\+\_\+id\+\_\+print\+\_\+type}}
+\index{packet\+\_\+id\+\_\+print\+\_\+type@{packet\+\_\+id\+\_\+print\+\_\+type}!packet\+\_\+id.\+h@{packet\+\_\+id.\+h}}
+\subsubsection[{packet\+\_\+id\+\_\+print\+\_\+type}]{\setlength{\rightskip}{0pt plus 5cm}typedef unsigned int {\bf packet\+\_\+id\+\_\+print\+\_\+type}}\label{packet__id_8h_a1db5965313c67fd339444af9555d38ed}
+\hypertarget{packet__id_8h_a345f753b1c6ea20d24409e769aadb7e6}{}\index{packet\+\_\+id.\+h@{packet\+\_\+id.\+h}!packet\+\_\+id\+\_\+type@{packet\+\_\+id\+\_\+type}}
+\index{packet\+\_\+id\+\_\+type@{packet\+\_\+id\+\_\+type}!packet\+\_\+id.\+h@{packet\+\_\+id.\+h}}
+\subsubsection[{packet\+\_\+id\+\_\+type}]{\setlength{\rightskip}{0pt plus 5cm}typedef uint32\+\_\+t {\bf packet\+\_\+id\+\_\+type}}\label{packet__id_8h_a345f753b1c6ea20d24409e769aadb7e6}
+
+
+\subsection{Function Documentation}
+\hypertarget{packet__id_8h_a75491429fc8027136285f3f1a70a4670}{}\index{packet\+\_\+id.\+h@{packet\+\_\+id.\+h}!C\+I\+R\+C\+\_\+\+L\+I\+S\+T@{C\+I\+R\+C\+\_\+\+L\+I\+S\+T}}
+\index{C\+I\+R\+C\+\_\+\+L\+I\+S\+T@{C\+I\+R\+C\+\_\+\+L\+I\+S\+T}!packet\+\_\+id.\+h@{packet\+\_\+id.\+h}}
+\subsubsection[{C\+I\+R\+C\+\_\+\+L\+I\+S\+T(seq\+\_\+list, time\+\_\+t)}]{\setlength{\rightskip}{0pt plus 5cm}C\+I\+R\+C\+\_\+\+L\+I\+S\+T (
+\begin{DoxyParamCaption}
+\item[{seq\+\_\+list}]{, }
+\item[{time\+\_\+t}]{}
+\end{DoxyParamCaption}
+)}\label{packet__id_8h_a75491429fc8027136285f3f1a70a4670}
+\hypertarget{packet__id_8h_ab5f78b3bd91dc5e3ef4946855365933a}{}\index{packet\+\_\+id.\+h@{packet\+\_\+id.\+h}!packet\+\_\+id\+\_\+add@{packet\+\_\+id\+\_\+add}}
+\index{packet\+\_\+id\+\_\+add@{packet\+\_\+id\+\_\+add}!packet\+\_\+id.\+h@{packet\+\_\+id.\+h}}
+\subsubsection[{packet\+\_\+id\+\_\+add(struct packet\+\_\+id\+\_\+rec $\ast$p, const struct packet\+\_\+id\+\_\+net $\ast$pin)}]{\setlength{\rightskip}{0pt plus 5cm}void packet\+\_\+id\+\_\+add (
+\begin{DoxyParamCaption}
+\item[{struct {\bf packet\+\_\+id\+\_\+rec} $\ast$}]{p, }
+\item[{const struct {\bf packet\+\_\+id\+\_\+net} $\ast$}]{pin}
+\end{DoxyParamCaption}
+)}\label{packet__id_8h_ab5f78b3bd91dc5e3ef4946855365933a}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{packet__id_8h_ab5f78b3bd91dc5e3ef4946855365933a_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{packet__id_8h_ab5f78b3bd91dc5e3ef4946855365933a_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{packet__id_8h_a5162087628a8856757b82c93cf4a696b}{}\index{packet\+\_\+id.\+h@{packet\+\_\+id.\+h}!packet\+\_\+id\+\_\+free@{packet\+\_\+id\+\_\+free}}
+\index{packet\+\_\+id\+\_\+free@{packet\+\_\+id\+\_\+free}!packet\+\_\+id.\+h@{packet\+\_\+id.\+h}}
+\subsubsection[{packet\+\_\+id\+\_\+free(struct packet\+\_\+id $\ast$p)}]{\setlength{\rightskip}{0pt plus 5cm}void packet\+\_\+id\+\_\+free (
+\begin{DoxyParamCaption}
+\item[{struct {\bf packet\+\_\+id} $\ast$}]{p}
+\end{DoxyParamCaption}
+)}\label{packet__id_8h_a5162087628a8856757b82c93cf4a696b}
+\hypertarget{packet__id_8h_a2ed0adcc640944fdb68ef1e394fc4f32}{}\index{packet\+\_\+id.\+h@{packet\+\_\+id.\+h}!packet\+\_\+id\+\_\+init@{packet\+\_\+id\+\_\+init}}
+\index{packet\+\_\+id\+\_\+init@{packet\+\_\+id\+\_\+init}!packet\+\_\+id.\+h@{packet\+\_\+id.\+h}}
+\subsubsection[{packet\+\_\+id\+\_\+init(struct packet\+\_\+id $\ast$p, int seq\+\_\+backtrack, int time\+\_\+backtrack, const char $\ast$name, int unit)}]{\setlength{\rightskip}{0pt plus 5cm}void packet\+\_\+id\+\_\+init (
+\begin{DoxyParamCaption}
+\item[{struct {\bf packet\+\_\+id} $\ast$}]{p, }
+\item[{int}]{seq\+\_\+backtrack, }
+\item[{int}]{time\+\_\+backtrack, }
+\item[{const char $\ast$}]{name, }
+\item[{int}]{unit}
+\end{DoxyParamCaption}
+)}\label{packet__id_8h_a2ed0adcc640944fdb68ef1e394fc4f32}
+\hypertarget{packet__id_8h_a80c9b2288cb1df565dad9d7b65837ace}{}\index{packet\+\_\+id.\+h@{packet\+\_\+id.\+h}!packet\+\_\+id\+\_\+net\+\_\+print@{packet\+\_\+id\+\_\+net\+\_\+print}}
+\index{packet\+\_\+id\+\_\+net\+\_\+print@{packet\+\_\+id\+\_\+net\+\_\+print}!packet\+\_\+id.\+h@{packet\+\_\+id.\+h}}
+\subsubsection[{packet\+\_\+id\+\_\+net\+\_\+print(const struct packet\+\_\+id\+\_\+net $\ast$pin, bool print\+\_\+timestamp, struct gc\+\_\+arena $\ast$gc)}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ packet\+\_\+id\+\_\+net\+\_\+print (
+\begin{DoxyParamCaption}
+\item[{const struct {\bf packet\+\_\+id\+\_\+net} $\ast$}]{pin, }
+\item[{{\bf bool}}]{print\+\_\+timestamp, }
+\item[{struct {\bf gc\+\_\+arena} $\ast$}]{gc}
+\end{DoxyParamCaption}
+)}\label{packet__id_8h_a80c9b2288cb1df565dad9d7b65837ace}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{packet__id_8h_a80c9b2288cb1df565dad9d7b65837ace_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{packet__id_8h_a80c9b2288cb1df565dad9d7b65837ace_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{packet__id_8h_a3f6e28af6874fe3665778dc54a8752cb}{}\index{packet\+\_\+id.\+h@{packet\+\_\+id.\+h}!packet\+\_\+id\+\_\+persist\+\_\+close@{packet\+\_\+id\+\_\+persist\+\_\+close}}
+\index{packet\+\_\+id\+\_\+persist\+\_\+close@{packet\+\_\+id\+\_\+persist\+\_\+close}!packet\+\_\+id.\+h@{packet\+\_\+id.\+h}}
+\subsubsection[{packet\+\_\+id\+\_\+persist\+\_\+close(struct packet\+\_\+id\+\_\+persist $\ast$p)}]{\setlength{\rightskip}{0pt plus 5cm}void packet\+\_\+id\+\_\+persist\+\_\+close (
+\begin{DoxyParamCaption}
+\item[{struct {\bf packet\+\_\+id\+\_\+persist} $\ast$}]{p}
+\end{DoxyParamCaption}
+)}\label{packet__id_8h_a3f6e28af6874fe3665778dc54a8752cb}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=349pt]{packet__id_8h_a3f6e28af6874fe3665778dc54a8752cb_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{packet__id_8h_ad94f10b2db56c515a76480bd23d003aa}{}\index{packet\+\_\+id.\+h@{packet\+\_\+id.\+h}!packet\+\_\+id\+\_\+persist\+\_\+init@{packet\+\_\+id\+\_\+persist\+\_\+init}}
+\index{packet\+\_\+id\+\_\+persist\+\_\+init@{packet\+\_\+id\+\_\+persist\+\_\+init}!packet\+\_\+id.\+h@{packet\+\_\+id.\+h}}
+\subsubsection[{packet\+\_\+id\+\_\+persist\+\_\+init(struct packet\+\_\+id\+\_\+persist $\ast$p)}]{\setlength{\rightskip}{0pt plus 5cm}void packet\+\_\+id\+\_\+persist\+\_\+init (
+\begin{DoxyParamCaption}
+\item[{struct {\bf packet\+\_\+id\+\_\+persist} $\ast$}]{p}
+\end{DoxyParamCaption}
+)}\label{packet__id_8h_ad94f10b2db56c515a76480bd23d003aa}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=349pt]{packet__id_8h_ad94f10b2db56c515a76480bd23d003aa_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{packet__id_8h_ad4f489a3f0c44154ef52e924a1ef4caa}{}\index{packet\+\_\+id.\+h@{packet\+\_\+id.\+h}!packet\+\_\+id\+\_\+persist\+\_\+load@{packet\+\_\+id\+\_\+persist\+\_\+load}}
+\index{packet\+\_\+id\+\_\+persist\+\_\+load@{packet\+\_\+id\+\_\+persist\+\_\+load}!packet\+\_\+id.\+h@{packet\+\_\+id.\+h}}
+\subsubsection[{packet\+\_\+id\+\_\+persist\+\_\+load(struct packet\+\_\+id\+\_\+persist $\ast$p, const char $\ast$filename)}]{\setlength{\rightskip}{0pt plus 5cm}void packet\+\_\+id\+\_\+persist\+\_\+load (
+\begin{DoxyParamCaption}
+\item[{struct {\bf packet\+\_\+id\+\_\+persist} $\ast$}]{p, }
+\item[{const char $\ast$}]{filename}
+\end{DoxyParamCaption}
+)}\label{packet__id_8h_ad4f489a3f0c44154ef52e924a1ef4caa}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{packet__id_8h_ad4f489a3f0c44154ef52e924a1ef4caa_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{packet__id_8h_a249d12dcab1d0a2bc424990138caa4e5}{}\index{packet\+\_\+id.\+h@{packet\+\_\+id.\+h}!packet\+\_\+id\+\_\+persist\+\_\+load\+\_\+obj@{packet\+\_\+id\+\_\+persist\+\_\+load\+\_\+obj}}
+\index{packet\+\_\+id\+\_\+persist\+\_\+load\+\_\+obj@{packet\+\_\+id\+\_\+persist\+\_\+load\+\_\+obj}!packet\+\_\+id.\+h@{packet\+\_\+id.\+h}}
+\subsubsection[{packet\+\_\+id\+\_\+persist\+\_\+load\+\_\+obj(const struct packet\+\_\+id\+\_\+persist $\ast$p, struct packet\+\_\+id $\ast$pid)}]{\setlength{\rightskip}{0pt plus 5cm}void packet\+\_\+id\+\_\+persist\+\_\+load\+\_\+obj (
+\begin{DoxyParamCaption}
+\item[{const struct {\bf packet\+\_\+id\+\_\+persist} $\ast$}]{p, }
+\item[{struct {\bf packet\+\_\+id} $\ast$}]{pid}
+\end{DoxyParamCaption}
+)}\label{packet__id_8h_a249d12dcab1d0a2bc424990138caa4e5}
+\hypertarget{packet__id_8h_ae872b1bbf2e3afd6a6d3d2ab1271b43c}{}\index{packet\+\_\+id.\+h@{packet\+\_\+id.\+h}!packet\+\_\+id\+\_\+persist\+\_\+print@{packet\+\_\+id\+\_\+persist\+\_\+print}}
+\index{packet\+\_\+id\+\_\+persist\+\_\+print@{packet\+\_\+id\+\_\+persist\+\_\+print}!packet\+\_\+id.\+h@{packet\+\_\+id.\+h}}
+\subsubsection[{packet\+\_\+id\+\_\+persist\+\_\+print(const struct packet\+\_\+id\+\_\+persist $\ast$p, struct gc\+\_\+arena $\ast$gc)}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ packet\+\_\+id\+\_\+persist\+\_\+print (
+\begin{DoxyParamCaption}
+\item[{const struct {\bf packet\+\_\+id\+\_\+persist} $\ast$}]{p, }
+\item[{struct {\bf gc\+\_\+arena} $\ast$}]{gc}
+\end{DoxyParamCaption}
+)}\label{packet__id_8h_ae872b1bbf2e3afd6a6d3d2ab1271b43c}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{packet__id_8h_ae872b1bbf2e3afd6a6d3d2ab1271b43c_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{packet__id_8h_ae872b1bbf2e3afd6a6d3d2ab1271b43c_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{packet__id_8h_a1a1b4689057b6361657f57fe65bd4f93}{}\index{packet\+\_\+id.\+h@{packet\+\_\+id.\+h}!packet\+\_\+id\+\_\+persist\+\_\+save@{packet\+\_\+id\+\_\+persist\+\_\+save}}
+\index{packet\+\_\+id\+\_\+persist\+\_\+save@{packet\+\_\+id\+\_\+persist\+\_\+save}!packet\+\_\+id.\+h@{packet\+\_\+id.\+h}}
+\subsubsection[{packet\+\_\+id\+\_\+persist\+\_\+save(struct packet\+\_\+id\+\_\+persist $\ast$p)}]{\setlength{\rightskip}{0pt plus 5cm}void packet\+\_\+id\+\_\+persist\+\_\+save (
+\begin{DoxyParamCaption}
+\item[{struct {\bf packet\+\_\+id\+\_\+persist} $\ast$}]{p}
+\end{DoxyParamCaption}
+)}\label{packet__id_8h_a1a1b4689057b6361657f57fe65bd4f93}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{packet__id_8h_a1a1b4689057b6361657f57fe65bd4f93_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{packet__id_8h_a698b7a89921d8dc6441b47b87545c18d}{}\index{packet\+\_\+id.\+h@{packet\+\_\+id.\+h}!packet\+\_\+id\+\_\+read@{packet\+\_\+id\+\_\+read}}
+\index{packet\+\_\+id\+\_\+read@{packet\+\_\+id\+\_\+read}!packet\+\_\+id.\+h@{packet\+\_\+id.\+h}}
+\subsubsection[{packet\+\_\+id\+\_\+read(struct packet\+\_\+id\+\_\+net $\ast$pin, struct buffer $\ast$buf, bool long\+\_\+form)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} packet\+\_\+id\+\_\+read (
+\begin{DoxyParamCaption}
+\item[{struct {\bf packet\+\_\+id\+\_\+net} $\ast$}]{pin, }
+\item[{struct {\bf buffer} $\ast$}]{buf, }
+\item[{{\bf bool}}]{long\+\_\+form}
+\end{DoxyParamCaption}
+)}\label{packet__id_8h_a698b7a89921d8dc6441b47b87545c18d}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=289pt]{packet__id_8h_a698b7a89921d8dc6441b47b87545c18d_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{packet__id_8h_aa2b33d1c90ab197e51fc502282d6f172}{}\index{packet\+\_\+id.\+h@{packet\+\_\+id.\+h}!packet\+\_\+id\+\_\+reap@{packet\+\_\+id\+\_\+reap}}
+\index{packet\+\_\+id\+\_\+reap@{packet\+\_\+id\+\_\+reap}!packet\+\_\+id.\+h@{packet\+\_\+id.\+h}}
+\subsubsection[{packet\+\_\+id\+\_\+reap(struct packet\+\_\+id\+\_\+rec $\ast$p)}]{\setlength{\rightskip}{0pt plus 5cm}void packet\+\_\+id\+\_\+reap (
+\begin{DoxyParamCaption}
+\item[{struct {\bf packet\+\_\+id\+\_\+rec} $\ast$}]{p}
+\end{DoxyParamCaption}
+)}\label{packet__id_8h_aa2b33d1c90ab197e51fc502282d6f172}
+\hypertarget{packet__id_8h_a68f8055e781f23fe159e979550e3b60b}{}\index{packet\+\_\+id.\+h@{packet\+\_\+id.\+h}!packet\+\_\+id\+\_\+test@{packet\+\_\+id\+\_\+test}}
+\index{packet\+\_\+id\+\_\+test@{packet\+\_\+id\+\_\+test}!packet\+\_\+id.\+h@{packet\+\_\+id.\+h}}
+\subsubsection[{packet\+\_\+id\+\_\+test(struct packet\+\_\+id\+\_\+rec $\ast$p, const struct packet\+\_\+id\+\_\+net $\ast$pin)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} packet\+\_\+id\+\_\+test (
+\begin{DoxyParamCaption}
+\item[{struct {\bf packet\+\_\+id\+\_\+rec} $\ast$}]{p, }
+\item[{const struct {\bf packet\+\_\+id\+\_\+net} $\ast$}]{pin}
+\end{DoxyParamCaption}
+)}\label{packet__id_8h_a68f8055e781f23fe159e979550e3b60b}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{packet__id_8h_a68f8055e781f23fe159e979550e3b60b_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{packet__id_8h_aee6501cdf56ed860554c95fd7e89854d}{}\index{packet\+\_\+id.\+h@{packet\+\_\+id.\+h}!packet\+\_\+id\+\_\+write@{packet\+\_\+id\+\_\+write}}
+\index{packet\+\_\+id\+\_\+write@{packet\+\_\+id\+\_\+write}!packet\+\_\+id.\+h@{packet\+\_\+id.\+h}}
+\subsubsection[{packet\+\_\+id\+\_\+write(struct packet\+\_\+id\+\_\+send $\ast$p, struct buffer $\ast$buf, bool long\+\_\+form, bool prepend)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} packet\+\_\+id\+\_\+write (
+\begin{DoxyParamCaption}
+\item[{struct {\bf packet\+\_\+id\+\_\+send} $\ast$}]{p, }
+\item[{struct {\bf buffer} $\ast$}]{buf, }
+\item[{{\bf bool}}]{long\+\_\+form, }
+\item[{{\bf bool}}]{prepend}
+\end{DoxyParamCaption}
+)}\label{packet__id_8h_aee6501cdf56ed860554c95fd7e89854d}
+Write a packet I\+D to buf, and update the packet I\+D state.
+
+
+\begin{DoxyParams}{Parameters}
+{\em p} & Packet I\+D state. \\
+\hline
+{\em buf} & Buffer to write the packet I\+D too \\
+\hline
+{\em long\+\_\+form} & If true, also update and write time\+\_\+t to buf \\
+\hline
+{\em prepend} & If true, prepend to buffer, otherwise apppend.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if successful, false otherwise. 
+\end{DoxyReturn}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=280pt]{packet__id_8h_aee6501cdf56ed860554c95fd7e89854d_icgraph}
+\end{center}
+\end{figure}
+
+

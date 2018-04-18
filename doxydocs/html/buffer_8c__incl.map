@@ -1,0 +1,16 @@
+<map id="src/openvpn/buffer.c" name="src/openvpn/buffer.c">
+<area shape="rect" id="node2" href="$syshead_8h.html" title="syshead.h" alt="" coords="37,80,120,107"/>
+<area shape="rect" id="node5" href="$common_8h.html" title="common.h" alt="" coords="608,229,691,256"/>
+<area shape="rect" id="node6" href="$buffer_8h.html" title="buffer.h" alt="" coords="358,304,421,331"/>
+<area shape="rect" id="node8" href="$error_8h.html" title="error.h" alt="" coords="259,379,317,405"/>
+<area shape="rect" id="node12" href="$mtu_8h.html" title="mtu.h" alt="" coords="195,229,250,256"/>
+<area shape="rect" id="node13" href="$misc_8h.html" title="misc.h" alt="" coords="461,80,523,107"/>
+<area shape="rect" id="node18" href="$memdbg_8h.html" title="memdbg.h" alt="" coords="779,80,861,107"/>
+<area shape="rect" id="node3" href="$compat_8h.html" title="compat.h" alt="" coords="43,155,119,181"/>
+<area shape="rect" id="node7" href="$basic_8h.html" title="basic.h" alt="" coords="539,453,603,480"/>
+<area shape="rect" id="node11" href="$errlevel_8h.html" title="errlevel.h" alt="" coords="205,453,278,480"/>
+<area shape="rect" id="node14" href="$argv_8h.html" title="argv.h" alt="" coords="427,229,482,256"/>
+<area shape="rect" id="node15" href="$env__set_8h.html" title="env_set.h" alt="" coords="492,155,569,181"/>
+<area shape="rect" id="node16" href="$integer_8h.html" title="integer.h" alt="" coords="253,304,323,331"/>
+<area shape="rect" id="node17" href="$platform_8h.html" title="platform.h" alt="" coords="766,379,845,405"/>
+</map>

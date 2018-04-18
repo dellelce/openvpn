@@ -1,0 +1,80 @@
+\hypertarget{ping_8c}{}\section{src/openvpn/ping.c File Reference}
+\label{ping_8c}\index{src/openvpn/ping.\+c@{src/openvpn/ping.\+c}}
+{\ttfamily \#include \char`\"{}syshead.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}ping.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}memdbg.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}ping-\/inline.\+h\char`\"{}}\\*
+Include dependency graph for ping.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ping_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{ping_8c_a5cbea318600593a847b0085729033bd0}{check\+\_\+ping\+\_\+restart\+\_\+dowork} (struct \hyperlink{structcontext}{context} $\ast$c)
+\item 
+void \hyperlink{ping_8c_a4b45bd434660f2737f39189105c0604f}{check\+\_\+ping\+\_\+send\+\_\+dowork} (struct \hyperlink{structcontext}{context} $\ast$c)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const uint8\+\_\+t \hyperlink{ping_8c_a0d7821703f78e3607de3fa6c89491dda}{ping\+\_\+string} \mbox{[}$\,$\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{ping_8c_a5cbea318600593a847b0085729033bd0}{}\index{ping.\+c@{ping.\+c}!check\+\_\+ping\+\_\+restart\+\_\+dowork@{check\+\_\+ping\+\_\+restart\+\_\+dowork}}
+\index{check\+\_\+ping\+\_\+restart\+\_\+dowork@{check\+\_\+ping\+\_\+restart\+\_\+dowork}!ping.\+c@{ping.\+c}}
+\subsubsection[{check\+\_\+ping\+\_\+restart\+\_\+dowork(struct context $\ast$c)}]{\setlength{\rightskip}{0pt plus 5cm}void check\+\_\+ping\+\_\+restart\+\_\+dowork (
+\begin{DoxyParamCaption}
+\item[{struct {\bf context} $\ast$}]{c}
+\end{DoxyParamCaption}
+)}\label{ping_8c_a5cbea318600593a847b0085729033bd0}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ping_8c_a5cbea318600593a847b0085729033bd0_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{ping_8c_a4b45bd434660f2737f39189105c0604f}{}\index{ping.\+c@{ping.\+c}!check\+\_\+ping\+\_\+send\+\_\+dowork@{check\+\_\+ping\+\_\+send\+\_\+dowork}}
+\index{check\+\_\+ping\+\_\+send\+\_\+dowork@{check\+\_\+ping\+\_\+send\+\_\+dowork}!ping.\+c@{ping.\+c}}
+\subsubsection[{check\+\_\+ping\+\_\+send\+\_\+dowork(struct context $\ast$c)}]{\setlength{\rightskip}{0pt plus 5cm}void check\+\_\+ping\+\_\+send\+\_\+dowork (
+\begin{DoxyParamCaption}
+\item[{struct {\bf context} $\ast$}]{c}
+\end{DoxyParamCaption}
+)}\label{ping_8c_a4b45bd434660f2737f39189105c0604f}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ping_8c_a4b45bd434660f2737f39189105c0604f_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Variable Documentation}
+\hypertarget{ping_8c_a0d7821703f78e3607de3fa6c89491dda}{}\index{ping.\+c@{ping.\+c}!ping\+\_\+string@{ping\+\_\+string}}
+\index{ping\+\_\+string@{ping\+\_\+string}!ping.\+c@{ping.\+c}}
+\subsubsection[{ping\+\_\+string}]{\setlength{\rightskip}{0pt plus 5cm}const uint8\+\_\+t ping\+\_\+string\mbox{[}$\,$\mbox{]}}\label{ping_8c_a0d7821703f78e3607de3fa6c89491dda}
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+= \{
+    0x2a, 0x18, 0x7b, 0xf3, 0x64, 0x1e, 0xb4, 0xcb,
+    0x07, 0xed, 0x2d, 0x0a, 0x98, 0x1f, 0xc7, 0x48
+\}
+\end{DoxyCode}

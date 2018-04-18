@@ -1,0 +1,118 @@
+\hypertarget{socks_8h}{}\section{src/openvpn/socks.h File Reference}
+\label{socks_8h}\index{src/openvpn/socks.\+h@{src/openvpn/socks.\+h}}
+{\ttfamily \#include \char`\"{}buffer.\+h\char`\"{}}\\*
+Include dependency graph for socks.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{socks_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{socks_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structsocks__proxy__info}{socks\+\_\+proxy\+\_\+info}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{socks_8h_ae7e0b35168a8224034b9a8d86e2a9f5e}{socks\+\_\+adjust\+\_\+frame\+\_\+parameters} (struct \hyperlink{structframe}{frame} $\ast$\hyperlink{structframe}{frame}, int proto)
+\item 
+struct \hyperlink{structsocks__proxy__info}{socks\+\_\+proxy\+\_\+info} $\ast$ \hyperlink{socks_8h_adcc6f9ee8bd4825a6ffe8d9a8bc54dab}{socks\+\_\+proxy\+\_\+new} (const char $\ast$server, const char $\ast$port, const char $\ast$authfile)
+\item 
+void \hyperlink{socks_8h_afc9ad215c8de030df0dd7de7969510d1}{socks\+\_\+proxy\+\_\+close} (struct \hyperlink{structsocks__proxy__info}{socks\+\_\+proxy\+\_\+info} $\ast$sp)
+\item 
+void \hyperlink{socks_8h_ab4cc96be0f219a39f2f5477b67a7f031}{establish\+\_\+socks\+\_\+proxy\+\_\+passthru} (struct \hyperlink{structsocks__proxy__info}{socks\+\_\+proxy\+\_\+info} $\ast$p, \hyperlink{syshead_8h_a7433d79fe33816fe24b9c231ac75fc42}{socket\+\_\+descriptor\+\_\+t} sd, const char $\ast$host, const char $\ast$servname, volatile int $\ast$signal\+\_\+received)
+\item 
+void \hyperlink{socks_8h_abb5d1f3158229736a9fb4f96e6f65bad}{establish\+\_\+socks\+\_\+proxy\+\_\+udpassoc} (struct \hyperlink{structsocks__proxy__info}{socks\+\_\+proxy\+\_\+info} $\ast$p, \hyperlink{syshead_8h_a7433d79fe33816fe24b9c231ac75fc42}{socket\+\_\+descriptor\+\_\+t} ctrl\+\_\+sd, \hyperlink{syshead_8h_a7433d79fe33816fe24b9c231ac75fc42}{socket\+\_\+descriptor\+\_\+t} udp\+\_\+sd, struct \hyperlink{structopenvpn__sockaddr}{openvpn\+\_\+sockaddr} $\ast$relay\+\_\+addr, volatile int $\ast$signal\+\_\+received)
+\item 
+void \hyperlink{socks_8h_aa49f31dbdcf2e48520e0c2268c184b8d}{socks\+\_\+process\+\_\+incoming\+\_\+udp} (struct \hyperlink{structbuffer}{buffer} $\ast$buf, struct \hyperlink{structlink__socket__actual}{link\+\_\+socket\+\_\+actual} $\ast$from)
+\item 
+int \hyperlink{socks_8h_a5e9668e24fa0bd1b8811a23b96fcf3bc}{socks\+\_\+process\+\_\+outgoing\+\_\+udp} (struct \hyperlink{structbuffer}{buffer} $\ast$buf, const struct \hyperlink{structlink__socket__actual}{link\+\_\+socket\+\_\+actual} $\ast$to)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{socks_8h_ab4cc96be0f219a39f2f5477b67a7f031}{}\index{socks.\+h@{socks.\+h}!establish\+\_\+socks\+\_\+proxy\+\_\+passthru@{establish\+\_\+socks\+\_\+proxy\+\_\+passthru}}
+\index{establish\+\_\+socks\+\_\+proxy\+\_\+passthru@{establish\+\_\+socks\+\_\+proxy\+\_\+passthru}!socks.\+h@{socks.\+h}}
+\subsubsection[{establish\+\_\+socks\+\_\+proxy\+\_\+passthru(struct socks\+\_\+proxy\+\_\+info $\ast$p, socket\+\_\+descriptor\+\_\+t sd, const char $\ast$host, const char $\ast$servname, volatile int $\ast$signal\+\_\+received)}]{\setlength{\rightskip}{0pt plus 5cm}void establish\+\_\+socks\+\_\+proxy\+\_\+passthru (
+\begin{DoxyParamCaption}
+\item[{struct {\bf socks\+\_\+proxy\+\_\+info} $\ast$}]{p, }
+\item[{{\bf socket\+\_\+descriptor\+\_\+t}}]{sd, }
+\item[{const char $\ast$}]{host, }
+\item[{const char $\ast$}]{servname, }
+\item[{volatile int $\ast$}]{signal\+\_\+received}
+\end{DoxyParamCaption}
+)}\label{socks_8h_ab4cc96be0f219a39f2f5477b67a7f031}
+\hypertarget{socks_8h_abb5d1f3158229736a9fb4f96e6f65bad}{}\index{socks.\+h@{socks.\+h}!establish\+\_\+socks\+\_\+proxy\+\_\+udpassoc@{establish\+\_\+socks\+\_\+proxy\+\_\+udpassoc}}
+\index{establish\+\_\+socks\+\_\+proxy\+\_\+udpassoc@{establish\+\_\+socks\+\_\+proxy\+\_\+udpassoc}!socks.\+h@{socks.\+h}}
+\subsubsection[{establish\+\_\+socks\+\_\+proxy\+\_\+udpassoc(struct socks\+\_\+proxy\+\_\+info $\ast$p, socket\+\_\+descriptor\+\_\+t ctrl\+\_\+sd, socket\+\_\+descriptor\+\_\+t udp\+\_\+sd, struct openvpn\+\_\+sockaddr $\ast$relay\+\_\+addr, volatile int $\ast$signal\+\_\+received)}]{\setlength{\rightskip}{0pt plus 5cm}void establish\+\_\+socks\+\_\+proxy\+\_\+udpassoc (
+\begin{DoxyParamCaption}
+\item[{struct {\bf socks\+\_\+proxy\+\_\+info} $\ast$}]{p, }
+\item[{{\bf socket\+\_\+descriptor\+\_\+t}}]{ctrl\+\_\+sd, }
+\item[{{\bf socket\+\_\+descriptor\+\_\+t}}]{udp\+\_\+sd, }
+\item[{struct {\bf openvpn\+\_\+sockaddr} $\ast$}]{relay\+\_\+addr, }
+\item[{volatile int $\ast$}]{signal\+\_\+received}
+\end{DoxyParamCaption}
+)}\label{socks_8h_abb5d1f3158229736a9fb4f96e6f65bad}
+\hypertarget{socks_8h_ae7e0b35168a8224034b9a8d86e2a9f5e}{}\index{socks.\+h@{socks.\+h}!socks\+\_\+adjust\+\_\+frame\+\_\+parameters@{socks\+\_\+adjust\+\_\+frame\+\_\+parameters}}
+\index{socks\+\_\+adjust\+\_\+frame\+\_\+parameters@{socks\+\_\+adjust\+\_\+frame\+\_\+parameters}!socks.\+h@{socks.\+h}}
+\subsubsection[{socks\+\_\+adjust\+\_\+frame\+\_\+parameters(struct frame $\ast$frame, int proto)}]{\setlength{\rightskip}{0pt plus 5cm}void socks\+\_\+adjust\+\_\+frame\+\_\+parameters (
+\begin{DoxyParamCaption}
+\item[{struct {\bf frame} $\ast$}]{frame, }
+\item[{int}]{proto}
+\end{DoxyParamCaption}
+)}\label{socks_8h_ae7e0b35168a8224034b9a8d86e2a9f5e}
+\hypertarget{socks_8h_aa49f31dbdcf2e48520e0c2268c184b8d}{}\index{socks.\+h@{socks.\+h}!socks\+\_\+process\+\_\+incoming\+\_\+udp@{socks\+\_\+process\+\_\+incoming\+\_\+udp}}
+\index{socks\+\_\+process\+\_\+incoming\+\_\+udp@{socks\+\_\+process\+\_\+incoming\+\_\+udp}!socks.\+h@{socks.\+h}}
+\subsubsection[{socks\+\_\+process\+\_\+incoming\+\_\+udp(struct buffer $\ast$buf, struct link\+\_\+socket\+\_\+actual $\ast$from)}]{\setlength{\rightskip}{0pt plus 5cm}void socks\+\_\+process\+\_\+incoming\+\_\+udp (
+\begin{DoxyParamCaption}
+\item[{struct {\bf buffer} $\ast$}]{buf, }
+\item[{struct {\bf link\+\_\+socket\+\_\+actual} $\ast$}]{from}
+\end{DoxyParamCaption}
+)}\label{socks_8h_aa49f31dbdcf2e48520e0c2268c184b8d}
+\hypertarget{socks_8h_a5e9668e24fa0bd1b8811a23b96fcf3bc}{}\index{socks.\+h@{socks.\+h}!socks\+\_\+process\+\_\+outgoing\+\_\+udp@{socks\+\_\+process\+\_\+outgoing\+\_\+udp}}
+\index{socks\+\_\+process\+\_\+outgoing\+\_\+udp@{socks\+\_\+process\+\_\+outgoing\+\_\+udp}!socks.\+h@{socks.\+h}}
+\subsubsection[{socks\+\_\+process\+\_\+outgoing\+\_\+udp(struct buffer $\ast$buf, const struct link\+\_\+socket\+\_\+actual $\ast$to)}]{\setlength{\rightskip}{0pt plus 5cm}int socks\+\_\+process\+\_\+outgoing\+\_\+udp (
+\begin{DoxyParamCaption}
+\item[{struct {\bf buffer} $\ast$}]{buf, }
+\item[{const struct {\bf link\+\_\+socket\+\_\+actual} $\ast$}]{to}
+\end{DoxyParamCaption}
+)}\label{socks_8h_a5e9668e24fa0bd1b8811a23b96fcf3bc}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=312pt]{socks_8h_a5e9668e24fa0bd1b8811a23b96fcf3bc_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{socks_8h_afc9ad215c8de030df0dd7de7969510d1}{}\index{socks.\+h@{socks.\+h}!socks\+\_\+proxy\+\_\+close@{socks\+\_\+proxy\+\_\+close}}
+\index{socks\+\_\+proxy\+\_\+close@{socks\+\_\+proxy\+\_\+close}!socks.\+h@{socks.\+h}}
+\subsubsection[{socks\+\_\+proxy\+\_\+close(struct socks\+\_\+proxy\+\_\+info $\ast$sp)}]{\setlength{\rightskip}{0pt plus 5cm}void socks\+\_\+proxy\+\_\+close (
+\begin{DoxyParamCaption}
+\item[{struct {\bf socks\+\_\+proxy\+\_\+info} $\ast$}]{sp}
+\end{DoxyParamCaption}
+)}\label{socks_8h_afc9ad215c8de030df0dd7de7969510d1}
+\hypertarget{socks_8h_adcc6f9ee8bd4825a6ffe8d9a8bc54dab}{}\index{socks.\+h@{socks.\+h}!socks\+\_\+proxy\+\_\+new@{socks\+\_\+proxy\+\_\+new}}
+\index{socks\+\_\+proxy\+\_\+new@{socks\+\_\+proxy\+\_\+new}!socks.\+h@{socks.\+h}}
+\subsubsection[{socks\+\_\+proxy\+\_\+new(const char $\ast$server, const char $\ast$port, const char $\ast$authfile)}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf socks\+\_\+proxy\+\_\+info}$\ast$ socks\+\_\+proxy\+\_\+new (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{server, }
+\item[{const char $\ast$}]{port, }
+\item[{const char $\ast$}]{authfile}
+\end{DoxyParamCaption}
+)}\label{socks_8h_adcc6f9ee8bd4825a6ffe8d9a8bc54dab}

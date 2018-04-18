@@ -1,0 +1,518 @@
+\hypertarget{error_8c}{}\section{src/openvpn/error.c File Reference}
+\label{error_8c}\index{src/openvpn/error.\+c@{src/openvpn/error.\+c}}
+{\ttfamily \#include \char`\"{}syshead.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}error.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}buffer.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}misc.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}win32.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}socket.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}tun.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}otime.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}perf.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}status.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}integer.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}ps.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}mstats.\+h\char`\"{}}\\*
+Include dependency graph for error.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{error_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{error_8c_aac9b57651bcead0a7564efe6460e5310}{S\+W\+A\+P}~\{ tmp = m1; m1 = m2; m2 = tmp; \}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{error_8c_a540e97cac0c01abe8f0f866788352b25}{msg\+\_\+forked} (void)
+\item 
+\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} \hyperlink{error_8c_af250e34abb4c2f896fcfa37e10aaeebf}{set\+\_\+debug\+\_\+level} (const int level, const unsigned int flags)
+\item 
+\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} \hyperlink{error_8c_aa24606a2ec1cb6e454a387c4fd709545}{set\+\_\+mute\+\_\+cutoff} (const int cutoff)
+\item 
+int \hyperlink{error_8c_a77cad2c632c4d56f6db20bc9f49e483b}{get\+\_\+debug\+\_\+level} (void)
+\item 
+int \hyperlink{error_8c_ae92d511635137d13fa3e3fcb5b63c30c}{get\+\_\+mute\+\_\+cutoff} (void)
+\item 
+void \hyperlink{error_8c_aeb50a33f9d057f0a90a5e8d57541d687}{set\+\_\+suppress\+\_\+timestamps} (\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} suppressed)
+\item 
+void \hyperlink{error_8c_aed638b90e3fe15693140aa2395f2136b}{set\+\_\+machine\+\_\+readable\+\_\+output} (\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} parsable)
+\item 
+void \hyperlink{error_8c_a0b40f361c449800d74f89d1c14dfa3cc}{error\+\_\+reset} (void)
+\item 
+void \hyperlink{error_8c_a233b2e66629459fa236ef66e4ed12e18}{errors\+\_\+to\+\_\+stderr} (void)
+\item 
+F\+I\+L\+E $\ast$ \hyperlink{error_8c_a692dbcf8520af95b60e8beb23f0155a5}{msg\+\_\+fp} (const unsigned int flags)
+\item 
+void \hyperlink{error_8c_a69aed7acd879be502a26b9114f9da2cc}{x\+\_\+msg} (const unsigned int flags, const char $\ast$format,...)
+\item 
+void \hyperlink{error_8c_a98e586e25ee166a62299c110f598f952}{x\+\_\+msg\+\_\+va} (const unsigned int flags, const char $\ast$format, va\+\_\+list arglist)
+\item 
+\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} \hyperlink{error_8c_a4f8ff3cb9e3ea249c5f370a4d5963b49}{dont\+\_\+mute} (unsigned int flags)
+\item 
+void \hyperlink{error_8c_a9ee00e44b44daef5acfacb29de0b2d64}{assert\+\_\+failed} (const char $\ast$filename, int line, const char $\ast$condition)
+\item 
+void \hyperlink{error_8c_a1f147a9ed021308a6b658c77d566a4dc}{out\+\_\+of\+\_\+memory} (void)
+\item 
+void \hyperlink{error_8c_a291ecc71e1a4041b6816df699e7478b7}{open\+\_\+syslog} (const char $\ast$pgmname, \hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} stdio\+\_\+to\+\_\+null)
+\item 
+void \hyperlink{error_8c_a2c57c9daa70de43f5a36efa6dba65a0c}{close\+\_\+syslog} (void)
+\item 
+void \hyperlink{error_8c_a9355a091e8b3e1c2c181727681c46010}{redirect\+\_\+stdout\+\_\+stderr} (const char $\ast$file, \hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} append)
+\item 
+void \hyperlink{error_8c_ac013439368e05d67a8515f9a6295359c}{reset\+\_\+check\+\_\+status} (void)
+\item 
+void \hyperlink{error_8c_ab76eae70d91e60b44b8c6478c72baae5}{set\+\_\+check\+\_\+status} (unsigned int info\+\_\+level, unsigned int verbose\+\_\+level)
+\item 
+void \hyperlink{error_8c_a67f3e46b0c81125d48254aac6fbf92eb}{x\+\_\+check\+\_\+status} (int status, const char $\ast$description, struct \hyperlink{structlink__socket}{link\+\_\+socket} $\ast$sock, struct \hyperlink{structtuntap}{tuntap} $\ast$tt)
+\item 
+void \hyperlink{error_8c_abfd36ef9b390f01aad213d7062dbb78d}{openvpn\+\_\+exit} (const int status)
+\item 
+const char $\ast$ \hyperlink{error_8c_a12e19662dce619502f632747e9984c78}{msg\+\_\+flags\+\_\+string} (const unsigned int flags, struct \hyperlink{structgc__arena}{gc\+\_\+arena} $\ast$gc)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+unsigned int \hyperlink{error_8c_a0cf2e25fae07d4a6ab95d494428a698c}{x\+\_\+debug\+\_\+level}
+\item 
+int \hyperlink{error_8c_a6182ffedfd04856c7a6147b4aba0f774}{x\+\_\+msg\+\_\+line\+\_\+num}
+\item 
+unsigned int \hyperlink{error_8c_a3e0fc77ce12c6cd6eb1b224290064a04}{x\+\_\+cs\+\_\+info\+\_\+level}
+\item 
+unsigned int \hyperlink{error_8c_aba212c1f2512355010d35d8fa7a0d43c}{x\+\_\+cs\+\_\+verbose\+\_\+level}
+\item 
+unsigned int \hyperlink{error_8c_affed9095be74ace9a8570c3093acb09b}{x\+\_\+cs\+\_\+err\+\_\+delay\+\_\+ms}
+\item 
+const char $\ast$ \hyperlink{error_8c_a5bc1525dd52536077d1d6f0571112d7f}{x\+\_\+msg\+\_\+prefix}
+\item 
+const struct \hyperlink{structvirtual__output}{virtual\+\_\+output} $\ast$ \hyperlink{error_8c_a12161c08ca4f1909ace7d8b71bee8d3e}{x\+\_\+msg\+\_\+virtual\+\_\+output}
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{error_8c_aac9b57651bcead0a7564efe6460e5310}{}\index{error.\+c@{error.\+c}!S\+W\+A\+P@{S\+W\+A\+P}}
+\index{S\+W\+A\+P@{S\+W\+A\+P}!error.\+c@{error.\+c}}
+\subsubsection[{S\+W\+A\+P}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\+W\+A\+P~\{ tmp = m1; m1 = m2; m2 = tmp; \}}\label{error_8c_aac9b57651bcead0a7564efe6460e5310}
+
+
+\subsection{Function Documentation}
+\hypertarget{error_8c_a9ee00e44b44daef5acfacb29de0b2d64}{}\index{error.\+c@{error.\+c}!assert\+\_\+failed@{assert\+\_\+failed}}
+\index{assert\+\_\+failed@{assert\+\_\+failed}!error.\+c@{error.\+c}}
+\subsubsection[{assert\+\_\+failed(const char $\ast$filename, int line, const char $\ast$condition)}]{\setlength{\rightskip}{0pt plus 5cm}void assert\+\_\+failed (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{filename, }
+\item[{int}]{line, }
+\item[{const char $\ast$}]{condition}
+\end{DoxyParamCaption}
+)}\label{error_8c_a9ee00e44b44daef5acfacb29de0b2d64}
+\hypertarget{error_8c_a2c57c9daa70de43f5a36efa6dba65a0c}{}\index{error.\+c@{error.\+c}!close\+\_\+syslog@{close\+\_\+syslog}}
+\index{close\+\_\+syslog@{close\+\_\+syslog}!error.\+c@{error.\+c}}
+\subsubsection[{close\+\_\+syslog(void)}]{\setlength{\rightskip}{0pt plus 5cm}void close\+\_\+syslog (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{error_8c_a2c57c9daa70de43f5a36efa6dba65a0c}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{error_8c_a2c57c9daa70de43f5a36efa6dba65a0c_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{error_8c_a4f8ff3cb9e3ea249c5f370a4d5963b49}{}\index{error.\+c@{error.\+c}!dont\+\_\+mute@{dont\+\_\+mute}}
+\index{dont\+\_\+mute@{dont\+\_\+mute}!error.\+c@{error.\+c}}
+\subsubsection[{dont\+\_\+mute(unsigned int flags)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} dont\+\_\+mute (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{flags}
+\end{DoxyParamCaption}
+)}\label{error_8c_a4f8ff3cb9e3ea249c5f370a4d5963b49}
+Check muting filter 
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=320pt]{error_8c_a4f8ff3cb9e3ea249c5f370a4d5963b49_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{error_8c_a0b40f361c449800d74f89d1c14dfa3cc}{}\index{error.\+c@{error.\+c}!error\+\_\+reset@{error\+\_\+reset}}
+\index{error\+\_\+reset@{error\+\_\+reset}!error.\+c@{error.\+c}}
+\subsubsection[{error\+\_\+reset(void)}]{\setlength{\rightskip}{0pt plus 5cm}void error\+\_\+reset (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{error_8c_a0b40f361c449800d74f89d1c14dfa3cc}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{error_8c_a0b40f361c449800d74f89d1c14dfa3cc_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=238pt]{error_8c_a0b40f361c449800d74f89d1c14dfa3cc_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{error_8c_a233b2e66629459fa236ef66e4ed12e18}{}\index{error.\+c@{error.\+c}!errors\+\_\+to\+\_\+stderr@{errors\+\_\+to\+\_\+stderr}}
+\index{errors\+\_\+to\+\_\+stderr@{errors\+\_\+to\+\_\+stderr}!error.\+c@{error.\+c}}
+\subsubsection[{errors\+\_\+to\+\_\+stderr(void)}]{\setlength{\rightskip}{0pt plus 5cm}void errors\+\_\+to\+\_\+stderr (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{error_8c_a233b2e66629459fa236ef66e4ed12e18}
+\hypertarget{error_8c_a77cad2c632c4d56f6db20bc9f49e483b}{}\index{error.\+c@{error.\+c}!get\+\_\+debug\+\_\+level@{get\+\_\+debug\+\_\+level}}
+\index{get\+\_\+debug\+\_\+level@{get\+\_\+debug\+\_\+level}!error.\+c@{error.\+c}}
+\subsubsection[{get\+\_\+debug\+\_\+level(void)}]{\setlength{\rightskip}{0pt plus 5cm}int get\+\_\+debug\+\_\+level (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{error_8c_a77cad2c632c4d56f6db20bc9f49e483b}
+\hypertarget{error_8c_ae92d511635137d13fa3e3fcb5b63c30c}{}\index{error.\+c@{error.\+c}!get\+\_\+mute\+\_\+cutoff@{get\+\_\+mute\+\_\+cutoff}}
+\index{get\+\_\+mute\+\_\+cutoff@{get\+\_\+mute\+\_\+cutoff}!error.\+c@{error.\+c}}
+\subsubsection[{get\+\_\+mute\+\_\+cutoff(void)}]{\setlength{\rightskip}{0pt plus 5cm}int get\+\_\+mute\+\_\+cutoff (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{error_8c_ae92d511635137d13fa3e3fcb5b63c30c}
+\hypertarget{error_8c_a12e19662dce619502f632747e9984c78}{}\index{error.\+c@{error.\+c}!msg\+\_\+flags\+\_\+string@{msg\+\_\+flags\+\_\+string}}
+\index{msg\+\_\+flags\+\_\+string@{msg\+\_\+flags\+\_\+string}!error.\+c@{error.\+c}}
+\subsubsection[{msg\+\_\+flags\+\_\+string(const unsigned int flags, struct gc\+\_\+arena $\ast$gc)}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ msg\+\_\+flags\+\_\+string (
+\begin{DoxyParamCaption}
+\item[{const unsigned int}]{flags, }
+\item[{struct {\bf gc\+\_\+arena} $\ast$}]{gc}
+\end{DoxyParamCaption}
+)}\label{error_8c_a12e19662dce619502f632747e9984c78}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{error_8c_a12e19662dce619502f632747e9984c78_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{error_8c_a540e97cac0c01abe8f0f866788352b25}{}\index{error.\+c@{error.\+c}!msg\+\_\+forked@{msg\+\_\+forked}}
+\index{msg\+\_\+forked@{msg\+\_\+forked}!error.\+c@{error.\+c}}
+\subsubsection[{msg\+\_\+forked(void)}]{\setlength{\rightskip}{0pt plus 5cm}void msg\+\_\+forked (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{error_8c_a540e97cac0c01abe8f0f866788352b25}
+\hypertarget{error_8c_a692dbcf8520af95b60e8beb23f0155a5}{}\index{error.\+c@{error.\+c}!msg\+\_\+fp@{msg\+\_\+fp}}
+\index{msg\+\_\+fp@{msg\+\_\+fp}!error.\+c@{error.\+c}}
+\subsubsection[{msg\+\_\+fp(const unsigned int flags)}]{\setlength{\rightskip}{0pt plus 5cm}F\+I\+L\+E$\ast$ msg\+\_\+fp (
+\begin{DoxyParamCaption}
+\item[{const unsigned int}]{flags}
+\end{DoxyParamCaption}
+)}\label{error_8c_a692dbcf8520af95b60e8beb23f0155a5}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=347pt]{error_8c_a692dbcf8520af95b60e8beb23f0155a5_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=306pt]{error_8c_a692dbcf8520af95b60e8beb23f0155a5_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{error_8c_a291ecc71e1a4041b6816df699e7478b7}{}\index{error.\+c@{error.\+c}!open\+\_\+syslog@{open\+\_\+syslog}}
+\index{open\+\_\+syslog@{open\+\_\+syslog}!error.\+c@{error.\+c}}
+\subsubsection[{open\+\_\+syslog(const char $\ast$pgmname, bool stdio\+\_\+to\+\_\+null)}]{\setlength{\rightskip}{0pt plus 5cm}void open\+\_\+syslog (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{pgmname, }
+\item[{{\bf bool}}]{stdio\+\_\+to\+\_\+null}
+\end{DoxyParamCaption}
+)}\label{error_8c_a291ecc71e1a4041b6816df699e7478b7}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{error_8c_a291ecc71e1a4041b6816df699e7478b7_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{error_8c_abfd36ef9b390f01aad213d7062dbb78d}{}\index{error.\+c@{error.\+c}!openvpn\+\_\+exit@{openvpn\+\_\+exit}}
+\index{openvpn\+\_\+exit@{openvpn\+\_\+exit}!error.\+c@{error.\+c}}
+\subsubsection[{openvpn\+\_\+exit(const int status)}]{\setlength{\rightskip}{0pt plus 5cm}void openvpn\+\_\+exit (
+\begin{DoxyParamCaption}
+\item[{const int}]{status}
+\end{DoxyParamCaption}
+)}\label{error_8c_abfd36ef9b390f01aad213d7062dbb78d}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=263pt]{error_8c_abfd36ef9b390f01aad213d7062dbb78d_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{error_8c_abfd36ef9b390f01aad213d7062dbb78d_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{error_8c_a1f147a9ed021308a6b658c77d566a4dc}{}\index{error.\+c@{error.\+c}!out\+\_\+of\+\_\+memory@{out\+\_\+of\+\_\+memory}}
+\index{out\+\_\+of\+\_\+memory@{out\+\_\+of\+\_\+memory}!error.\+c@{error.\+c}}
+\subsubsection[{out\+\_\+of\+\_\+memory(void)}]{\setlength{\rightskip}{0pt plus 5cm}void out\+\_\+of\+\_\+memory (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{error_8c_a1f147a9ed021308a6b658c77d566a4dc}
+\hypertarget{error_8c_a9355a091e8b3e1c2c181727681c46010}{}\index{error.\+c@{error.\+c}!redirect\+\_\+stdout\+\_\+stderr@{redirect\+\_\+stdout\+\_\+stderr}}
+\index{redirect\+\_\+stdout\+\_\+stderr@{redirect\+\_\+stdout\+\_\+stderr}!error.\+c@{error.\+c}}
+\subsubsection[{redirect\+\_\+stdout\+\_\+stderr(const char $\ast$file, bool append)}]{\setlength{\rightskip}{0pt plus 5cm}void redirect\+\_\+stdout\+\_\+stderr (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{file, }
+\item[{{\bf bool}}]{append}
+\end{DoxyParamCaption}
+)}\label{error_8c_a9355a091e8b3e1c2c181727681c46010}
+\hypertarget{error_8c_ac013439368e05d67a8515f9a6295359c}{}\index{error.\+c@{error.\+c}!reset\+\_\+check\+\_\+status@{reset\+\_\+check\+\_\+status}}
+\index{reset\+\_\+check\+\_\+status@{reset\+\_\+check\+\_\+status}!error.\+c@{error.\+c}}
+\subsubsection[{reset\+\_\+check\+\_\+status(void)}]{\setlength{\rightskip}{0pt plus 5cm}void reset\+\_\+check\+\_\+status (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{error_8c_ac013439368e05d67a8515f9a6295359c}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=277pt]{error_8c_ac013439368e05d67a8515f9a6295359c_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{error_8c_ab76eae70d91e60b44b8c6478c72baae5}{}\index{error.\+c@{error.\+c}!set\+\_\+check\+\_\+status@{set\+\_\+check\+\_\+status}}
+\index{set\+\_\+check\+\_\+status@{set\+\_\+check\+\_\+status}!error.\+c@{error.\+c}}
+\subsubsection[{set\+\_\+check\+\_\+status(unsigned int info\+\_\+level, unsigned int verbose\+\_\+level)}]{\setlength{\rightskip}{0pt plus 5cm}void set\+\_\+check\+\_\+status (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{info\+\_\+level, }
+\item[{unsigned int}]{verbose\+\_\+level}
+\end{DoxyParamCaption}
+)}\label{error_8c_ab76eae70d91e60b44b8c6478c72baae5}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{error_8c_ab76eae70d91e60b44b8c6478c72baae5_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{error_8c_af250e34abb4c2f896fcfa37e10aaeebf}{}\index{error.\+c@{error.\+c}!set\+\_\+debug\+\_\+level@{set\+\_\+debug\+\_\+level}}
+\index{set\+\_\+debug\+\_\+level@{set\+\_\+debug\+\_\+level}!error.\+c@{error.\+c}}
+\subsubsection[{set\+\_\+debug\+\_\+level(const int level, const unsigned int flags)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} set\+\_\+debug\+\_\+level (
+\begin{DoxyParamCaption}
+\item[{const int}]{level, }
+\item[{const unsigned int}]{flags}
+\end{DoxyParamCaption}
+)}\label{error_8c_af250e34abb4c2f896fcfa37e10aaeebf}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{error_8c_af250e34abb4c2f896fcfa37e10aaeebf_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{error_8c_aed638b90e3fe15693140aa2395f2136b}{}\index{error.\+c@{error.\+c}!set\+\_\+machine\+\_\+readable\+\_\+output@{set\+\_\+machine\+\_\+readable\+\_\+output}}
+\index{set\+\_\+machine\+\_\+readable\+\_\+output@{set\+\_\+machine\+\_\+readable\+\_\+output}!error.\+c@{error.\+c}}
+\subsubsection[{set\+\_\+machine\+\_\+readable\+\_\+output(bool parsable)}]{\setlength{\rightskip}{0pt plus 5cm}void set\+\_\+machine\+\_\+readable\+\_\+output (
+\begin{DoxyParamCaption}
+\item[{{\bf bool}}]{parsable}
+\end{DoxyParamCaption}
+)}\label{error_8c_aed638b90e3fe15693140aa2395f2136b}
+\hypertarget{error_8c_aa24606a2ec1cb6e454a387c4fd709545}{}\index{error.\+c@{error.\+c}!set\+\_\+mute\+\_\+cutoff@{set\+\_\+mute\+\_\+cutoff}}
+\index{set\+\_\+mute\+\_\+cutoff@{set\+\_\+mute\+\_\+cutoff}!error.\+c@{error.\+c}}
+\subsubsection[{set\+\_\+mute\+\_\+cutoff(const int cutoff)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} set\+\_\+mute\+\_\+cutoff (
+\begin{DoxyParamCaption}
+\item[{const int}]{cutoff}
+\end{DoxyParamCaption}
+)}\label{error_8c_aa24606a2ec1cb6e454a387c4fd709545}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{error_8c_aa24606a2ec1cb6e454a387c4fd709545_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{error_8c_aeb50a33f9d057f0a90a5e8d57541d687}{}\index{error.\+c@{error.\+c}!set\+\_\+suppress\+\_\+timestamps@{set\+\_\+suppress\+\_\+timestamps}}
+\index{set\+\_\+suppress\+\_\+timestamps@{set\+\_\+suppress\+\_\+timestamps}!error.\+c@{error.\+c}}
+\subsubsection[{set\+\_\+suppress\+\_\+timestamps(bool suppressed)}]{\setlength{\rightskip}{0pt plus 5cm}void set\+\_\+suppress\+\_\+timestamps (
+\begin{DoxyParamCaption}
+\item[{{\bf bool}}]{suppressed}
+\end{DoxyParamCaption}
+)}\label{error_8c_aeb50a33f9d057f0a90a5e8d57541d687}
+\hypertarget{error_8c_a67f3e46b0c81125d48254aac6fbf92eb}{}\index{error.\+c@{error.\+c}!x\+\_\+check\+\_\+status@{x\+\_\+check\+\_\+status}}
+\index{x\+\_\+check\+\_\+status@{x\+\_\+check\+\_\+status}!error.\+c@{error.\+c}}
+\subsubsection[{x\+\_\+check\+\_\+status(int status, const char $\ast$description, struct link\+\_\+socket $\ast$sock, struct tuntap $\ast$tt)}]{\setlength{\rightskip}{0pt plus 5cm}void x\+\_\+check\+\_\+status (
+\begin{DoxyParamCaption}
+\item[{int}]{status, }
+\item[{const char $\ast$}]{description, }
+\item[{struct {\bf link\+\_\+socket} $\ast$}]{sock, }
+\item[{struct {\bf tuntap} $\ast$}]{tt}
+\end{DoxyParamCaption}
+)}\label{error_8c_a67f3e46b0c81125d48254aac6fbf92eb}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=341pt]{error_8c_a67f3e46b0c81125d48254aac6fbf92eb_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{error_8c_a69aed7acd879be502a26b9114f9da2cc}{}\index{error.\+c@{error.\+c}!x\+\_\+msg@{x\+\_\+msg}}
+\index{x\+\_\+msg@{x\+\_\+msg}!error.\+c@{error.\+c}}
+\subsubsection[{x\+\_\+msg(const unsigned int flags, const char $\ast$format,...)}]{\setlength{\rightskip}{0pt plus 5cm}void x\+\_\+msg (
+\begin{DoxyParamCaption}
+\item[{const unsigned int}]{flags, }
+\item[{const char $\ast$}]{format, }
+\item[{}]{...}
+\end{DoxyParamCaption}
+)}\label{error_8c_a69aed7acd879be502a26b9114f9da2cc}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{error_8c_a69aed7acd879be502a26b9114f9da2cc_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{error_8c_a98e586e25ee166a62299c110f598f952}{}\index{error.\+c@{error.\+c}!x\+\_\+msg\+\_\+va@{x\+\_\+msg\+\_\+va}}
+\index{x\+\_\+msg\+\_\+va@{x\+\_\+msg\+\_\+va}!error.\+c@{error.\+c}}
+\subsubsection[{x\+\_\+msg\+\_\+va(const unsigned int flags, const char $\ast$format, va\+\_\+list arglist)}]{\setlength{\rightskip}{0pt plus 5cm}void x\+\_\+msg\+\_\+va (
+\begin{DoxyParamCaption}
+\item[{const unsigned int}]{flags, }
+\item[{const char $\ast$}]{format, }
+\item[{va\+\_\+list}]{arglist}
+\end{DoxyParamCaption}
+)}\label{error_8c_a98e586e25ee166a62299c110f598f952}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{error_8c_a98e586e25ee166a62299c110f598f952_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=222pt]{error_8c_a98e586e25ee166a62299c110f598f952_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Variable Documentation}
+\hypertarget{error_8c_affed9095be74ace9a8570c3093acb09b}{}\index{error.\+c@{error.\+c}!x\+\_\+cs\+\_\+err\+\_\+delay\+\_\+ms@{x\+\_\+cs\+\_\+err\+\_\+delay\+\_\+ms}}
+\index{x\+\_\+cs\+\_\+err\+\_\+delay\+\_\+ms@{x\+\_\+cs\+\_\+err\+\_\+delay\+\_\+ms}!error.\+c@{error.\+c}}
+\subsubsection[{x\+\_\+cs\+\_\+err\+\_\+delay\+\_\+ms}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int x\+\_\+cs\+\_\+err\+\_\+delay\+\_\+ms}\label{error_8c_affed9095be74ace9a8570c3093acb09b}
+\hypertarget{error_8c_a3e0fc77ce12c6cd6eb1b224290064a04}{}\index{error.\+c@{error.\+c}!x\+\_\+cs\+\_\+info\+\_\+level@{x\+\_\+cs\+\_\+info\+\_\+level}}
+\index{x\+\_\+cs\+\_\+info\+\_\+level@{x\+\_\+cs\+\_\+info\+\_\+level}!error.\+c@{error.\+c}}
+\subsubsection[{x\+\_\+cs\+\_\+info\+\_\+level}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int x\+\_\+cs\+\_\+info\+\_\+level}\label{error_8c_a3e0fc77ce12c6cd6eb1b224290064a04}
+\hypertarget{error_8c_aba212c1f2512355010d35d8fa7a0d43c}{}\index{error.\+c@{error.\+c}!x\+\_\+cs\+\_\+verbose\+\_\+level@{x\+\_\+cs\+\_\+verbose\+\_\+level}}
+\index{x\+\_\+cs\+\_\+verbose\+\_\+level@{x\+\_\+cs\+\_\+verbose\+\_\+level}!error.\+c@{error.\+c}}
+\subsubsection[{x\+\_\+cs\+\_\+verbose\+\_\+level}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int x\+\_\+cs\+\_\+verbose\+\_\+level}\label{error_8c_aba212c1f2512355010d35d8fa7a0d43c}
+\hypertarget{error_8c_a0cf2e25fae07d4a6ab95d494428a698c}{}\index{error.\+c@{error.\+c}!x\+\_\+debug\+\_\+level@{x\+\_\+debug\+\_\+level}}
+\index{x\+\_\+debug\+\_\+level@{x\+\_\+debug\+\_\+level}!error.\+c@{error.\+c}}
+\subsubsection[{x\+\_\+debug\+\_\+level}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int x\+\_\+debug\+\_\+level}\label{error_8c_a0cf2e25fae07d4a6ab95d494428a698c}
+\hypertarget{error_8c_a6182ffedfd04856c7a6147b4aba0f774}{}\index{error.\+c@{error.\+c}!x\+\_\+msg\+\_\+line\+\_\+num@{x\+\_\+msg\+\_\+line\+\_\+num}}
+\index{x\+\_\+msg\+\_\+line\+\_\+num@{x\+\_\+msg\+\_\+line\+\_\+num}!error.\+c@{error.\+c}}
+\subsubsection[{x\+\_\+msg\+\_\+line\+\_\+num}]{\setlength{\rightskip}{0pt plus 5cm}int x\+\_\+msg\+\_\+line\+\_\+num}\label{error_8c_a6182ffedfd04856c7a6147b4aba0f774}
+\hypertarget{error_8c_a5bc1525dd52536077d1d6f0571112d7f}{}\index{error.\+c@{error.\+c}!x\+\_\+msg\+\_\+prefix@{x\+\_\+msg\+\_\+prefix}}
+\index{x\+\_\+msg\+\_\+prefix@{x\+\_\+msg\+\_\+prefix}!error.\+c@{error.\+c}}
+\subsubsection[{x\+\_\+msg\+\_\+prefix}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ x\+\_\+msg\+\_\+prefix}\label{error_8c_a5bc1525dd52536077d1d6f0571112d7f}
+\hypertarget{error_8c_a12161c08ca4f1909ace7d8b71bee8d3e}{}\index{error.\+c@{error.\+c}!x\+\_\+msg\+\_\+virtual\+\_\+output@{x\+\_\+msg\+\_\+virtual\+\_\+output}}
+\index{x\+\_\+msg\+\_\+virtual\+\_\+output@{x\+\_\+msg\+\_\+virtual\+\_\+output}!error.\+c@{error.\+c}}
+\subsubsection[{x\+\_\+msg\+\_\+virtual\+\_\+output}]{\setlength{\rightskip}{0pt plus 5cm}const struct {\bf virtual\+\_\+output}$\ast$ x\+\_\+msg\+\_\+virtual\+\_\+output}\label{error_8c_a12161c08ca4f1909ace7d8b71bee8d3e}

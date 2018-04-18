@@ -1,0 +1,6 @@
+<map id="ReportStatusToSCMgr" name="ReportStatusToSCMgr">
+<area shape="rect" id="node2" href="$common_8c.html#a8d96b9d66b4a1f920afe99d73686d8e5" title="MsgToEventLog" alt="" coords="204,56,317,83"/>
+<area shape="rect" id="node3" href="$common_8c.html#a2610102e271fc65ae8908d593cab8afd" title="GetLastErrorText" alt="" coords="365,5,485,32"/>
+<area shape="rect" id="node4" href="$common_8c.html#ae697dac0c0dd8b6b2eeef1283595efe4" title="openvpn_sntprintf" alt="" coords="533,56,656,83"/>
+<area shape="rect" id="node5" href="$common_8c.html#a443b5988f6015454008fdab390a50edb" title="openvpn_vsntprintf" alt="" coords="704,81,831,108"/>
+</map>

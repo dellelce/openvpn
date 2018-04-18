@@ -1,0 +1,4 @@
+<map id="create_socket_tcp" name="create_socket_tcp">
+<area shape="rect" id="node2" href="$fdmisc_8c.html#a09193ec56615d682308eff8c491fc791" title="set_cloexec" alt="" coords="183,5,275,32"/>
+<area shape="rect" id="node3" href="$fdmisc_8c.html#a2a0bdc9a9465ff3df6ba4eb3f6d685e3" title="set_cloexec_action" alt="" coords="323,5,457,32"/>
+</map>

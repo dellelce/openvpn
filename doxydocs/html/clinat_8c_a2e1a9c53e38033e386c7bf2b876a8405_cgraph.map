@@ -1,0 +1,7 @@
+<map id="print_client_nat_list" name="print_client_nat_list">
+<area shape="rect" id="node2" href="$socket_8c.html#a2741d6007f1e5a670409883f4304da61" title="print_in_addr_t" alt="" coords="188,56,295,83"/>
+<area shape="rect" id="node3" href="$buffer_8c.html#aa35bf7feb6a99bf5d364b2d4eba1195c" title="alloc_buf_gc" alt="" coords="343,31,437,57"/>
+<area shape="rect" id="node6" href="$buffer_8c.html#a3307f08331b1ce42168bafd2ecf7874a" title="buf_printf" alt="" coords="353,81,427,108"/>
+<area shape="rect" id="node4" href="$buffer_8c.html#acc1a4ee83a591116d331e52baacf253d" title="buf_size_error" alt="" coords="485,5,588,32"/>
+<area shape="rect" id="node5" href="$buffer_8c.html#a67f7dec7f86e113dc0744584fd80b621" title="gc_malloc" alt="" coords="496,56,577,83"/>
+</map>

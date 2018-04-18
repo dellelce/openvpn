@@ -1,0 +1,167 @@
+\hypertarget{structlink__socket}{}\section{link\+\_\+socket Struct Reference}
+\label{structlink__socket}\index{link\+\_\+socket@{link\+\_\+socket}}
+
+
+{\ttfamily \#include $<$socket.\+h$>$}
+
+
+
+Collaboration diagram for link\+\_\+socket\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{structlink__socket__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structlink__socket__info}{link\+\_\+socket\+\_\+info} \hyperlink{structlink__socket_a4758d694c759a1aab884bc1cc5ab969f}{info}
+\item 
+\hyperlink{syshead_8h_a7433d79fe33816fe24b9c231ac75fc42}{socket\+\_\+descriptor\+\_\+t} \hyperlink{structlink__socket_aef0ab7aed42bb525241ae838e98ce8cd}{sd}
+\item 
+\hyperlink{syshead_8h_a7433d79fe33816fe24b9c231ac75fc42}{socket\+\_\+descriptor\+\_\+t} \hyperlink{structlink__socket_aa7175ad31d03505bc3e4ae9cee7b01d9}{ctrl\+\_\+sd}
+\item 
+unsigned int \hyperlink{structlink__socket_a2eb3263b82cffec1f1b29866157c56a8}{rwflags\+\_\+debug}
+\item 
+\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} \hyperlink{structlink__socket_a997203703be187550fa55ba1f6eb15d2}{listen\+\_\+persistent\+\_\+queued}
+\item 
+const char $\ast$ \hyperlink{structlink__socket_a2e4c65ab398681555a465ae7edef334e}{remote\+\_\+host}
+\item 
+const char $\ast$ \hyperlink{structlink__socket_a56a53dd8880d191a5c9e44b4345179c8}{remote\+\_\+port}
+\item 
+const char $\ast$ \hyperlink{structlink__socket_a5fdf06bda040b06ddf1598b03e553983}{local\+\_\+host}
+\item 
+const char $\ast$ \hyperlink{structlink__socket_a94440573fc8c73b414ece119f679f374}{local\+\_\+port}
+\item 
+struct \hyperlink{structcached__dns__entry}{cached\+\_\+dns\+\_\+entry} $\ast$ \hyperlink{structlink__socket_acb1f6f8229c3d38364d74d7a88c7c09d}{dns\+\_\+cache}
+\item 
+\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} \hyperlink{structlink__socket_a5d0273818bc55dd3be2a9b856816659e}{bind\+\_\+local}
+\item 
+int \hyperlink{structlink__socket_a3b8f6b6038fc694204d898d0417cf4f0}{inetd}
+\item 
+int \hyperlink{structlink__socket_aaf4c7db16f0d905338f8d221f09177ee}{mode}
+\item 
+int \hyperlink{structlink__socket_ac2b6bf38dc70b6b263f23a687611b4bf}{resolve\+\_\+retry\+\_\+seconds}
+\item 
+int \hyperlink{structlink__socket_a9968fc78504a49c861a0deedc1f5df3c}{mtu\+\_\+discover\+\_\+type}
+\item 
+struct \hyperlink{structsocket__buffer__size}{socket\+\_\+buffer\+\_\+size} \hyperlink{structlink__socket_a30f2a6730a458002824a902bdff9b539}{socket\+\_\+buffer\+\_\+sizes}
+\item 
+int \hyperlink{structlink__socket_a78e016494e8d48f1f752808d5fa2533d}{mtu}
+\item 
+unsigned int \hyperlink{structlink__socket_aa5cbf92dc691f9e3b1a460f1f1e290b4}{sockflags}
+\item 
+int \hyperlink{structlink__socket_a7e6126e013970d898982b4c2c939dd88}{mark}
+\item 
+struct \hyperlink{structstream__buf}{stream\+\_\+buf} \hyperlink{structlink__socket_aadfcc653c136bad2c174066f4ff5b799}{stream\+\_\+buf}
+\item 
+struct \hyperlink{structbuffer}{buffer} \hyperlink{structlink__socket_acf50c66913a5c334fa9e7443a6dcc62f}{stream\+\_\+buf\+\_\+data}
+\item 
+\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} \hyperlink{structlink__socket_af79d1156e0883558c7c06d2eaf9b636f}{stream\+\_\+reset}
+\item 
+struct \hyperlink{structhttp__proxy__info}{http\+\_\+proxy\+\_\+info} $\ast$ \hyperlink{structlink__socket_acb1c75e94b2fdd9f85484e5ec6ef0848}{http\+\_\+proxy}
+\item 
+struct \hyperlink{structsocks__proxy__info}{socks\+\_\+proxy\+\_\+info} $\ast$ \hyperlink{structlink__socket_ab8860d796d2cdcde7e2741508d219da2}{socks\+\_\+proxy}
+\item 
+struct \hyperlink{structlink__socket__actual}{link\+\_\+socket\+\_\+actual} \hyperlink{structlink__socket_a33f63972fd440622ae822bfde852a678}{socks\+\_\+relay}
+\item 
+const char $\ast$ \hyperlink{structlink__socket_ac869fb51f69b672b4e7bac087e3bffff}{proxy\+\_\+dest\+\_\+host}
+\item 
+const char $\ast$ \hyperlink{structlink__socket_a70419eaf37ac157e894c98967ab218b2}{proxy\+\_\+dest\+\_\+port}
+\item 
+struct \hyperlink{structevent__timeout}{event\+\_\+timeout} $\ast$ \hyperlink{structlink__socket_a06d1a16c1d6372443d7e51c1d2e45a23}{server\+\_\+poll\+\_\+timeout}
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{structlink__socket_a5d0273818bc55dd3be2a9b856816659e}{}\index{link\+\_\+socket@{link\+\_\+socket}!bind\+\_\+local@{bind\+\_\+local}}
+\index{bind\+\_\+local@{bind\+\_\+local}!link\+\_\+socket@{link\+\_\+socket}}
+\subsubsection[{bind\+\_\+local}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} link\+\_\+socket\+::bind\+\_\+local}\label{structlink__socket_a5d0273818bc55dd3be2a9b856816659e}
+\hypertarget{structlink__socket_aa7175ad31d03505bc3e4ae9cee7b01d9}{}\index{link\+\_\+socket@{link\+\_\+socket}!ctrl\+\_\+sd@{ctrl\+\_\+sd}}
+\index{ctrl\+\_\+sd@{ctrl\+\_\+sd}!link\+\_\+socket@{link\+\_\+socket}}
+\subsubsection[{ctrl\+\_\+sd}]{\setlength{\rightskip}{0pt plus 5cm}{\bf socket\+\_\+descriptor\+\_\+t} link\+\_\+socket\+::ctrl\+\_\+sd}\label{structlink__socket_aa7175ad31d03505bc3e4ae9cee7b01d9}
+\hypertarget{structlink__socket_acb1f6f8229c3d38364d74d7a88c7c09d}{}\index{link\+\_\+socket@{link\+\_\+socket}!dns\+\_\+cache@{dns\+\_\+cache}}
+\index{dns\+\_\+cache@{dns\+\_\+cache}!link\+\_\+socket@{link\+\_\+socket}}
+\subsubsection[{dns\+\_\+cache}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf cached\+\_\+dns\+\_\+entry}$\ast$ link\+\_\+socket\+::dns\+\_\+cache}\label{structlink__socket_acb1f6f8229c3d38364d74d7a88c7c09d}
+\hypertarget{structlink__socket_acb1c75e94b2fdd9f85484e5ec6ef0848}{}\index{link\+\_\+socket@{link\+\_\+socket}!http\+\_\+proxy@{http\+\_\+proxy}}
+\index{http\+\_\+proxy@{http\+\_\+proxy}!link\+\_\+socket@{link\+\_\+socket}}
+\subsubsection[{http\+\_\+proxy}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf http\+\_\+proxy\+\_\+info}$\ast$ link\+\_\+socket\+::http\+\_\+proxy}\label{structlink__socket_acb1c75e94b2fdd9f85484e5ec6ef0848}
+\hypertarget{structlink__socket_a3b8f6b6038fc694204d898d0417cf4f0}{}\index{link\+\_\+socket@{link\+\_\+socket}!inetd@{inetd}}
+\index{inetd@{inetd}!link\+\_\+socket@{link\+\_\+socket}}
+\subsubsection[{inetd}]{\setlength{\rightskip}{0pt plus 5cm}int link\+\_\+socket\+::inetd}\label{structlink__socket_a3b8f6b6038fc694204d898d0417cf4f0}
+\hypertarget{structlink__socket_a4758d694c759a1aab884bc1cc5ab969f}{}\index{link\+\_\+socket@{link\+\_\+socket}!info@{info}}
+\index{info@{info}!link\+\_\+socket@{link\+\_\+socket}}
+\subsubsection[{info}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf link\+\_\+socket\+\_\+info} link\+\_\+socket\+::info}\label{structlink__socket_a4758d694c759a1aab884bc1cc5ab969f}
+\hypertarget{structlink__socket_a997203703be187550fa55ba1f6eb15d2}{}\index{link\+\_\+socket@{link\+\_\+socket}!listen\+\_\+persistent\+\_\+queued@{listen\+\_\+persistent\+\_\+queued}}
+\index{listen\+\_\+persistent\+\_\+queued@{listen\+\_\+persistent\+\_\+queued}!link\+\_\+socket@{link\+\_\+socket}}
+\subsubsection[{listen\+\_\+persistent\+\_\+queued}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} link\+\_\+socket\+::listen\+\_\+persistent\+\_\+queued}\label{structlink__socket_a997203703be187550fa55ba1f6eb15d2}
+\hypertarget{structlink__socket_a5fdf06bda040b06ddf1598b03e553983}{}\index{link\+\_\+socket@{link\+\_\+socket}!local\+\_\+host@{local\+\_\+host}}
+\index{local\+\_\+host@{local\+\_\+host}!link\+\_\+socket@{link\+\_\+socket}}
+\subsubsection[{local\+\_\+host}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ link\+\_\+socket\+::local\+\_\+host}\label{structlink__socket_a5fdf06bda040b06ddf1598b03e553983}
+\hypertarget{structlink__socket_a94440573fc8c73b414ece119f679f374}{}\index{link\+\_\+socket@{link\+\_\+socket}!local\+\_\+port@{local\+\_\+port}}
+\index{local\+\_\+port@{local\+\_\+port}!link\+\_\+socket@{link\+\_\+socket}}
+\subsubsection[{local\+\_\+port}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ link\+\_\+socket\+::local\+\_\+port}\label{structlink__socket_a94440573fc8c73b414ece119f679f374}
+\hypertarget{structlink__socket_a7e6126e013970d898982b4c2c939dd88}{}\index{link\+\_\+socket@{link\+\_\+socket}!mark@{mark}}
+\index{mark@{mark}!link\+\_\+socket@{link\+\_\+socket}}
+\subsubsection[{mark}]{\setlength{\rightskip}{0pt plus 5cm}int link\+\_\+socket\+::mark}\label{structlink__socket_a7e6126e013970d898982b4c2c939dd88}
+\hypertarget{structlink__socket_aaf4c7db16f0d905338f8d221f09177ee}{}\index{link\+\_\+socket@{link\+\_\+socket}!mode@{mode}}
+\index{mode@{mode}!link\+\_\+socket@{link\+\_\+socket}}
+\subsubsection[{mode}]{\setlength{\rightskip}{0pt plus 5cm}int link\+\_\+socket\+::mode}\label{structlink__socket_aaf4c7db16f0d905338f8d221f09177ee}
+\hypertarget{structlink__socket_a78e016494e8d48f1f752808d5fa2533d}{}\index{link\+\_\+socket@{link\+\_\+socket}!mtu@{mtu}}
+\index{mtu@{mtu}!link\+\_\+socket@{link\+\_\+socket}}
+\subsubsection[{mtu}]{\setlength{\rightskip}{0pt plus 5cm}int link\+\_\+socket\+::mtu}\label{structlink__socket_a78e016494e8d48f1f752808d5fa2533d}
+\hypertarget{structlink__socket_a9968fc78504a49c861a0deedc1f5df3c}{}\index{link\+\_\+socket@{link\+\_\+socket}!mtu\+\_\+discover\+\_\+type@{mtu\+\_\+discover\+\_\+type}}
+\index{mtu\+\_\+discover\+\_\+type@{mtu\+\_\+discover\+\_\+type}!link\+\_\+socket@{link\+\_\+socket}}
+\subsubsection[{mtu\+\_\+discover\+\_\+type}]{\setlength{\rightskip}{0pt plus 5cm}int link\+\_\+socket\+::mtu\+\_\+discover\+\_\+type}\label{structlink__socket_a9968fc78504a49c861a0deedc1f5df3c}
+\hypertarget{structlink__socket_ac869fb51f69b672b4e7bac087e3bffff}{}\index{link\+\_\+socket@{link\+\_\+socket}!proxy\+\_\+dest\+\_\+host@{proxy\+\_\+dest\+\_\+host}}
+\index{proxy\+\_\+dest\+\_\+host@{proxy\+\_\+dest\+\_\+host}!link\+\_\+socket@{link\+\_\+socket}}
+\subsubsection[{proxy\+\_\+dest\+\_\+host}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ link\+\_\+socket\+::proxy\+\_\+dest\+\_\+host}\label{structlink__socket_ac869fb51f69b672b4e7bac087e3bffff}
+\hypertarget{structlink__socket_a70419eaf37ac157e894c98967ab218b2}{}\index{link\+\_\+socket@{link\+\_\+socket}!proxy\+\_\+dest\+\_\+port@{proxy\+\_\+dest\+\_\+port}}
+\index{proxy\+\_\+dest\+\_\+port@{proxy\+\_\+dest\+\_\+port}!link\+\_\+socket@{link\+\_\+socket}}
+\subsubsection[{proxy\+\_\+dest\+\_\+port}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ link\+\_\+socket\+::proxy\+\_\+dest\+\_\+port}\label{structlink__socket_a70419eaf37ac157e894c98967ab218b2}
+\hypertarget{structlink__socket_a2e4c65ab398681555a465ae7edef334e}{}\index{link\+\_\+socket@{link\+\_\+socket}!remote\+\_\+host@{remote\+\_\+host}}
+\index{remote\+\_\+host@{remote\+\_\+host}!link\+\_\+socket@{link\+\_\+socket}}
+\subsubsection[{remote\+\_\+host}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ link\+\_\+socket\+::remote\+\_\+host}\label{structlink__socket_a2e4c65ab398681555a465ae7edef334e}
+\hypertarget{structlink__socket_a56a53dd8880d191a5c9e44b4345179c8}{}\index{link\+\_\+socket@{link\+\_\+socket}!remote\+\_\+port@{remote\+\_\+port}}
+\index{remote\+\_\+port@{remote\+\_\+port}!link\+\_\+socket@{link\+\_\+socket}}
+\subsubsection[{remote\+\_\+port}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ link\+\_\+socket\+::remote\+\_\+port}\label{structlink__socket_a56a53dd8880d191a5c9e44b4345179c8}
+\hypertarget{structlink__socket_ac2b6bf38dc70b6b263f23a687611b4bf}{}\index{link\+\_\+socket@{link\+\_\+socket}!resolve\+\_\+retry\+\_\+seconds@{resolve\+\_\+retry\+\_\+seconds}}
+\index{resolve\+\_\+retry\+\_\+seconds@{resolve\+\_\+retry\+\_\+seconds}!link\+\_\+socket@{link\+\_\+socket}}
+\subsubsection[{resolve\+\_\+retry\+\_\+seconds}]{\setlength{\rightskip}{0pt plus 5cm}int link\+\_\+socket\+::resolve\+\_\+retry\+\_\+seconds}\label{structlink__socket_ac2b6bf38dc70b6b263f23a687611b4bf}
+\hypertarget{structlink__socket_a2eb3263b82cffec1f1b29866157c56a8}{}\index{link\+\_\+socket@{link\+\_\+socket}!rwflags\+\_\+debug@{rwflags\+\_\+debug}}
+\index{rwflags\+\_\+debug@{rwflags\+\_\+debug}!link\+\_\+socket@{link\+\_\+socket}}
+\subsubsection[{rwflags\+\_\+debug}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int link\+\_\+socket\+::rwflags\+\_\+debug}\label{structlink__socket_a2eb3263b82cffec1f1b29866157c56a8}
+\hypertarget{structlink__socket_aef0ab7aed42bb525241ae838e98ce8cd}{}\index{link\+\_\+socket@{link\+\_\+socket}!sd@{sd}}
+\index{sd@{sd}!link\+\_\+socket@{link\+\_\+socket}}
+\subsubsection[{sd}]{\setlength{\rightskip}{0pt plus 5cm}{\bf socket\+\_\+descriptor\+\_\+t} link\+\_\+socket\+::sd}\label{structlink__socket_aef0ab7aed42bb525241ae838e98ce8cd}
+\hypertarget{structlink__socket_a06d1a16c1d6372443d7e51c1d2e45a23}{}\index{link\+\_\+socket@{link\+\_\+socket}!server\+\_\+poll\+\_\+timeout@{server\+\_\+poll\+\_\+timeout}}
+\index{server\+\_\+poll\+\_\+timeout@{server\+\_\+poll\+\_\+timeout}!link\+\_\+socket@{link\+\_\+socket}}
+\subsubsection[{server\+\_\+poll\+\_\+timeout}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf event\+\_\+timeout}$\ast$ link\+\_\+socket\+::server\+\_\+poll\+\_\+timeout}\label{structlink__socket_a06d1a16c1d6372443d7e51c1d2e45a23}
+\hypertarget{structlink__socket_a30f2a6730a458002824a902bdff9b539}{}\index{link\+\_\+socket@{link\+\_\+socket}!socket\+\_\+buffer\+\_\+sizes@{socket\+\_\+buffer\+\_\+sizes}}
+\index{socket\+\_\+buffer\+\_\+sizes@{socket\+\_\+buffer\+\_\+sizes}!link\+\_\+socket@{link\+\_\+socket}}
+\subsubsection[{socket\+\_\+buffer\+\_\+sizes}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf socket\+\_\+buffer\+\_\+size} link\+\_\+socket\+::socket\+\_\+buffer\+\_\+sizes}\label{structlink__socket_a30f2a6730a458002824a902bdff9b539}
+\hypertarget{structlink__socket_aa5cbf92dc691f9e3b1a460f1f1e290b4}{}\index{link\+\_\+socket@{link\+\_\+socket}!sockflags@{sockflags}}
+\index{sockflags@{sockflags}!link\+\_\+socket@{link\+\_\+socket}}
+\subsubsection[{sockflags}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int link\+\_\+socket\+::sockflags}\label{structlink__socket_aa5cbf92dc691f9e3b1a460f1f1e290b4}
+\hypertarget{structlink__socket_ab8860d796d2cdcde7e2741508d219da2}{}\index{link\+\_\+socket@{link\+\_\+socket}!socks\+\_\+proxy@{socks\+\_\+proxy}}
+\index{socks\+\_\+proxy@{socks\+\_\+proxy}!link\+\_\+socket@{link\+\_\+socket}}
+\subsubsection[{socks\+\_\+proxy}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf socks\+\_\+proxy\+\_\+info}$\ast$ link\+\_\+socket\+::socks\+\_\+proxy}\label{structlink__socket_ab8860d796d2cdcde7e2741508d219da2}
+\hypertarget{structlink__socket_a33f63972fd440622ae822bfde852a678}{}\index{link\+\_\+socket@{link\+\_\+socket}!socks\+\_\+relay@{socks\+\_\+relay}}
+\index{socks\+\_\+relay@{socks\+\_\+relay}!link\+\_\+socket@{link\+\_\+socket}}
+\subsubsection[{socks\+\_\+relay}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf link\+\_\+socket\+\_\+actual} link\+\_\+socket\+::socks\+\_\+relay}\label{structlink__socket_a33f63972fd440622ae822bfde852a678}
+\hypertarget{structlink__socket_aadfcc653c136bad2c174066f4ff5b799}{}\index{link\+\_\+socket@{link\+\_\+socket}!stream\+\_\+buf@{stream\+\_\+buf}}
+\index{stream\+\_\+buf@{stream\+\_\+buf}!link\+\_\+socket@{link\+\_\+socket}}
+\subsubsection[{stream\+\_\+buf}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf stream\+\_\+buf} link\+\_\+socket\+::stream\+\_\+buf}\label{structlink__socket_aadfcc653c136bad2c174066f4ff5b799}
+\hypertarget{structlink__socket_acf50c66913a5c334fa9e7443a6dcc62f}{}\index{link\+\_\+socket@{link\+\_\+socket}!stream\+\_\+buf\+\_\+data@{stream\+\_\+buf\+\_\+data}}
+\index{stream\+\_\+buf\+\_\+data@{stream\+\_\+buf\+\_\+data}!link\+\_\+socket@{link\+\_\+socket}}
+\subsubsection[{stream\+\_\+buf\+\_\+data}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf buffer} link\+\_\+socket\+::stream\+\_\+buf\+\_\+data}\label{structlink__socket_acf50c66913a5c334fa9e7443a6dcc62f}
+\hypertarget{structlink__socket_af79d1156e0883558c7c06d2eaf9b636f}{}\index{link\+\_\+socket@{link\+\_\+socket}!stream\+\_\+reset@{stream\+\_\+reset}}
+\index{stream\+\_\+reset@{stream\+\_\+reset}!link\+\_\+socket@{link\+\_\+socket}}
+\subsubsection[{stream\+\_\+reset}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} link\+\_\+socket\+::stream\+\_\+reset}\label{structlink__socket_af79d1156e0883558c7c06d2eaf9b636f}
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/openvpn/\hyperlink{socket_8h}{socket.\+h}\end{DoxyCompactItemize}

@@ -1,0 +1,5 @@
+<map id="pre_init_signal_catch" name="pre_init_signal_catch">
+<area shape="rect" id="node2" href="$init_8h.html#a6a1f31e3d9a1f00ef308cd117c540ed4" title="init_instance_handle\l_signals" alt="" coords="197,5,337,47"/>
+<area shape="rect" id="node3" href="$sig_8h.html#a90955f1d36eb2dbcc7aacb204d5ea523" title="restore_signal_state" alt="" coords="198,71,337,98"/>
+<area shape="rect" id="node4" href="$init_8h.html#acd4b5343f4f2c63b813a3f67d2c3ef46" title="possibly_become_daemon" alt="" coords="385,71,561,98"/>
+</map>

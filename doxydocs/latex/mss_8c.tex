@@ -1,0 +1,110 @@
+\hypertarget{mss_8c}{}\section{src/openvpn/mss.c File Reference}
+\label{mss_8c}\index{src/openvpn/mss.\+c@{src/openvpn/mss.\+c}}
+{\ttfamily \#include \char`\"{}syshead.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}error.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}mss.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}memdbg.\+h\char`\"{}}\\*
+Include dependency graph for mss.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{mss_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{mss_8c_a97f1f8f283390625cf3a6fe362f991a5}{mss\+\_\+fixup\+\_\+ipv4} (struct \hyperlink{structbuffer}{buffer} $\ast$buf, int maxmss)
+\item 
+void \hyperlink{mss_8c_a7a5a47f5ac568a784816b0f8bf20be81}{mss\+\_\+fixup\+\_\+ipv6} (struct \hyperlink{structbuffer}{buffer} $\ast$buf, int maxmss)
+\item 
+void \hyperlink{mss_8c_a21222acb54e33e11135a9fbdf4b02b53}{mss\+\_\+fixup\+\_\+dowork} (struct \hyperlink{structbuffer}{buffer} $\ast$buf, uint16\+\_\+t maxmss)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{mss_8c_a21222acb54e33e11135a9fbdf4b02b53}{}\index{mss.\+c@{mss.\+c}!mss\+\_\+fixup\+\_\+dowork@{mss\+\_\+fixup\+\_\+dowork}}
+\index{mss\+\_\+fixup\+\_\+dowork@{mss\+\_\+fixup\+\_\+dowork}!mss.\+c@{mss.\+c}}
+\subsubsection[{mss\+\_\+fixup\+\_\+dowork(struct buffer $\ast$buf, uint16\+\_\+t maxmss)}]{\setlength{\rightskip}{0pt plus 5cm}void mss\+\_\+fixup\+\_\+dowork (
+\begin{DoxyParamCaption}
+\item[{struct {\bf buffer} $\ast$}]{buf, }
+\item[{uint16\+\_\+t}]{maxmss}
+\end{DoxyParamCaption}
+)}\label{mss_8c_a21222acb54e33e11135a9fbdf4b02b53}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{mss_8c_a21222acb54e33e11135a9fbdf4b02b53_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{mss_8c_a97f1f8f283390625cf3a6fe362f991a5}{}\index{mss.\+c@{mss.\+c}!mss\+\_\+fixup\+\_\+ipv4@{mss\+\_\+fixup\+\_\+ipv4}}
+\index{mss\+\_\+fixup\+\_\+ipv4@{mss\+\_\+fixup\+\_\+ipv4}!mss.\+c@{mss.\+c}}
+\subsubsection[{mss\+\_\+fixup\+\_\+ipv4(struct buffer $\ast$buf, int maxmss)}]{\setlength{\rightskip}{0pt plus 5cm}void mss\+\_\+fixup\+\_\+ipv4 (
+\begin{DoxyParamCaption}
+\item[{struct {\bf buffer} $\ast$}]{buf, }
+\item[{int}]{maxmss}
+\end{DoxyParamCaption}
+)}\label{mss_8c_a97f1f8f283390625cf3a6fe362f991a5}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=296pt]{mss_8c_a97f1f8f283390625cf3a6fe362f991a5_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{mss_8c_a97f1f8f283390625cf3a6fe362f991a5_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{mss_8c_a7a5a47f5ac568a784816b0f8bf20be81}{}\index{mss.\+c@{mss.\+c}!mss\+\_\+fixup\+\_\+ipv6@{mss\+\_\+fixup\+\_\+ipv6}}
+\index{mss\+\_\+fixup\+\_\+ipv6@{mss\+\_\+fixup\+\_\+ipv6}!mss.\+c@{mss.\+c}}
+\subsubsection[{mss\+\_\+fixup\+\_\+ipv6(struct buffer $\ast$buf, int maxmss)}]{\setlength{\rightskip}{0pt plus 5cm}void mss\+\_\+fixup\+\_\+ipv6 (
+\begin{DoxyParamCaption}
+\item[{struct {\bf buffer} $\ast$}]{buf, }
+\item[{int}]{maxmss}
+\end{DoxyParamCaption}
+)}\label{mss_8c_a7a5a47f5ac568a784816b0f8bf20be81}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=296pt]{mss_8c_a7a5a47f5ac568a784816b0f8bf20be81_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{mss_8c_a7a5a47f5ac568a784816b0f8bf20be81_icgraph}
+\end{center}
+\end{figure}
+
+

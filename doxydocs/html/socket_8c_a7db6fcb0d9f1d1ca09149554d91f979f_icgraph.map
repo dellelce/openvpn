@@ -1,0 +1,7 @@
+<map id="setenv_sockaddr" name="setenv_sockaddr">
+<area shape="rect" id="node2" href="$socket_8h.html#a4f17a188890a7bc5a8d0dcb30355ac18" title="setenv_in_addr_t" alt="" coords="179,5,297,32"/>
+<area shape="rect" id="node3" href="$socket_8h.html#a607e25972e470d65dd7f99d15953cac4" title="setenv_in6_addr" alt="" coords="181,56,295,83"/>
+<area shape="rect" id="node4" href="$socket_8h.html#a58387f8e96dacad4aa9322c3890c6001" title="setenv_link_socket\l_actual" alt="" coords="172,107,304,149"/>
+<area shape="rect" id="node5" href="$socket_8h.html#aed93bf1bce64b0baebbf79c40b30bada" title="setenv_trusted" alt="" coords="352,115,459,141"/>
+<area shape="rect" id="node6" href="$socket_8h.html#a9b45c23be28d07f10f5b1253c36c1a76" title="link_socket_connection\l_initiated" alt="" coords="507,107,665,149"/>
+</map>

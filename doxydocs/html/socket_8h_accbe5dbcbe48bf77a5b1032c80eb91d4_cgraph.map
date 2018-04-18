@@ -1,0 +1,7 @@
+<map id="print_in6_addr" name="print_in6_addr">
+<area shape="rect" id="node2" href="$buffer_8c.html#aa35bf7feb6a99bf5d364b2d4eba1195c" title="alloc_buf_gc" alt="" coords="156,31,251,57"/>
+<area shape="rect" id="node5" href="$compat_8h.html#a102fcb53ee2ffdbeceeec5b5ffa0cb1c" title="inet_ntop" alt="" coords="166,81,241,108"/>
+<area shape="rect" id="node6" href="$buffer_8c.html#a3307f08331b1ce42168bafd2ecf7874a" title="buf_printf" alt="" coords="166,132,241,159"/>
+<area shape="rect" id="node3" href="$buffer_8c.html#acc1a4ee83a591116d331e52baacf253d" title="buf_size_error" alt="" coords="299,5,401,32"/>
+<area shape="rect" id="node4" href="$buffer_8c.html#a67f7dec7f86e113dc0744584fd80b621" title="gc_malloc" alt="" coords="309,56,391,83"/>
+</map>

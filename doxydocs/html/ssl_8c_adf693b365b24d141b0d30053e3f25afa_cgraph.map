@@ -1,0 +1,16 @@
+<map id="auth_user_pass_setup" name="auth_user_pass_setup">
+<area shape="rect" id="node2" href="$misc_8c.html#a17ec57572c876bf53ca3fa0cadb9c664" title="get_user_pass_cr" alt="" coords="207,259,332,285"/>
+<area shape="rect" id="node3" href="$buffer_8c.html#aa35bf7feb6a99bf5d364b2d4eba1195c" title="alloc_buf_gc" alt="" coords="416,5,511,32"/>
+<area shape="rect" id="node5" href="$buffer_8c.html#a67f7dec7f86e113dc0744584fd80b621" title="gc_malloc" alt="" coords="615,56,696,83"/>
+<area shape="rect" id="node6" href="$buffer_8c.html#a3307f08331b1ce42168bafd2ecf7874a" title="buf_printf" alt="" coords="426,107,501,133"/>
+<area shape="rect" id="node7" href="$buffer_8c.html#ac55fefaff3ce0991e97c76e78725d1c9" title="buf_parse" alt="" coords="424,157,503,184"/>
+<area shape="rect" id="node8" href="$platform_8c.html#a7da5056ce6a8a2efd54ccee6b993e0a6" title="platform_fopen" alt="" coords="410,208,517,235"/>
+<area shape="rect" id="node9" href="$buffer_8c.html#a6752d536938b11aa1ced5549a1cf3c7e" title="chomp" alt="" coords="433,259,494,285"/>
+<area shape="rect" id="node11" href="$console_8c.html#a1723be7ca1a9e0c4992cb7e9c6d5c6d8" title="query_user_clear" alt="" coords="403,309,524,336"/>
+<area shape="rect" id="node12" href="$console_8c.html#af9287e418f46b3bce4d65ebbd17d401a" title="query_user_add" alt="" coords="406,360,521,387"/>
+<area shape="rect" id="node13" href="$base64_8c.html#aa4ba2746be38180fa210944b20a1a6e4" title="openvpn_base64_encode" alt="" coords="380,411,547,437"/>
+<area shape="rect" id="node14" href="$buffer_8c.html#a41f2a5ee8d893ed30a214b2d70c5d303" title="string_clear" alt="" coords="419,461,508,488"/>
+<area shape="rect" id="node15" href="$buffer_8c.html#aa68699d49774055c860c609ec5d84bd5" title="string_mod" alt="" coords="420,512,507,539"/>
+<area shape="rect" id="node4" href="$buffer_8c.html#acc1a4ee83a591116d331e52baacf253d" title="buf_size_error" alt="" coords="604,5,707,32"/>
+<area shape="rect" id="node10" href="$buffer_8c.html#a0dfcbda5f8696795915dd592ee27a812" title="rm_trailing_chars" alt="" coords="595,259,716,285"/>
+</map>

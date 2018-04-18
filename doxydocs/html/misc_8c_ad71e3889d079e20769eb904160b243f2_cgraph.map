@@ -1,0 +1,9 @@
+<map id="gen_path" name="gen_path">
+<area shape="rect" id="node2" href="$buffer_8c.html#a55db6b55ce08e95dc30a543ee37ecd92" title="string_mod_const" alt="" coords="128,56,253,83"/>
+<area shape="rect" id="node6" href="$buffer_8c.html#aa35bf7feb6a99bf5d364b2d4eba1195c" title="alloc_buf_gc" alt="" coords="143,107,238,133"/>
+<area shape="rect" id="node8" href="$buffer_8c.html#a3307f08331b1ce42168bafd2ecf7874a" title="buf_printf" alt="" coords="153,157,228,184"/>
+<area shape="rect" id="node3" href="$buffer_8c.html#a06e0220403278399596a7a1b6b601fca" title="string_alloc" alt="" coords="309,5,397,32"/>
+<area shape="rect" id="node5" href="$buffer_8c.html#aa68699d49774055c860c609ec5d84bd5" title="string_mod" alt="" coords="309,56,396,83"/>
+<area shape="rect" id="node4" href="$buffer_8c.html#a67f7dec7f86e113dc0744584fd80b621" title="gc_malloc" alt="" coords="452,56,533,83"/>
+<area shape="rect" id="node7" href="$buffer_8c.html#acc1a4ee83a591116d331e52baacf253d" title="buf_size_error" alt="" coords="301,157,404,184"/>
+</map>

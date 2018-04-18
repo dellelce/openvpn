@@ -1,0 +1,11 @@
+<map id="frame_set_mtu_dynamic" name="frame_set_mtu_dynamic">
+<area shape="rect" id="node2" href="$mtu_8h.html#abf74c37a0e444f337bb18382ff84321b" title="frame_init_mssfix" alt="" coords="235,97,357,123"/>
+<area shape="rect" id="node10" href="$socket_8h.html#a9f553edafb49e0efa0bc784c45412e39" title="frame_adjust_path_mtu" alt="" coords="217,147,375,174"/>
+<area shape="rect" id="node3" href="$init_8h.html#a2986d81718c6cb5cd19bad612998d56f" title="init_instance" alt="" coords="443,67,537,94"/>
+<area shape="rect" id="node6" href="$ssl_8h.html#a0f5995c0fcacdedefcc4a7c42a7f18de" title="tls_session_update\l_crypto_params" alt="" coords="423,119,557,160"/>
+<area shape="rect" id="node4" href="$init_8h.html#a6a1f31e3d9a1f00ef308cd117c540ed4" title="init_instance_handle\l_signals" alt="" coords="606,5,746,47"/>
+<area shape="rect" id="node5" href="$init_8h.html#a2e3da881a15567d205101e6b0853987a" title="inherit_context_child" alt="" coords="605,71,747,98"/>
+<area shape="rect" id="node7" href="$init_8h.html#af461b176774f98425ec61cc176f0ec7c" title="do_deferred_options" alt="" coords="607,126,745,153"/>
+<area shape="rect" id="node8" href="$init_8h.html#a9b053b7a612943b6be1d1be2c25181bf" title="do_up" alt="" coords="795,126,852,153"/>
+<area shape="rect" id="node9" href="$forward_8c.html#af22e6b17de9f4a9c73f5f68c867a4ee6" title="check_connection_established\l_dowork" alt="" coords="900,119,1100,160"/>
+</map>

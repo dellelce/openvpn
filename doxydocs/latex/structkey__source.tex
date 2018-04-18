@@ -1,0 +1,35 @@
+\hypertarget{structkey__source}{}\section{key\+\_\+source Struct Reference}
+\label{structkey__source}\index{key\+\_\+source@{key\+\_\+source}}
+
+
+{\ttfamily \#include $<$ssl\+\_\+common.\+h$>$}
+
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+uint8\+\_\+t \hyperlink{structkey__source_a82d38ddf3045b9abd531a07c024464b6}{pre\+\_\+master} \mbox{[}48\mbox{]}
+\item 
+uint8\+\_\+t \hyperlink{structkey__source_a2c31011a183ba65651390e5bfbda3032}{random1} \mbox{[}32\mbox{]}
+\item 
+uint8\+\_\+t \hyperlink{structkey__source_a88a904e92bfac5a03da3f5e0b7f12124}{random2} \mbox{[}32\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Container for one half of random material to be used in key method 2 data channel key generation. 
+
+\subsection{Member Data Documentation}
+\hypertarget{structkey__source_a82d38ddf3045b9abd531a07c024464b6}{}\index{key\+\_\+source@{key\+\_\+source}!pre\+\_\+master@{pre\+\_\+master}}
+\index{pre\+\_\+master@{pre\+\_\+master}!key\+\_\+source@{key\+\_\+source}}
+\subsubsection[{pre\+\_\+master}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t key\+\_\+source\+::pre\+\_\+master\mbox{[}48\mbox{]}}\label{structkey__source_a82d38ddf3045b9abd531a07c024464b6}
+Random used for master secret generation, provided only by client Open\+V\+P\+N peer. \hypertarget{structkey__source_a2c31011a183ba65651390e5bfbda3032}{}\index{key\+\_\+source@{key\+\_\+source}!random1@{random1}}
+\index{random1@{random1}!key\+\_\+source@{key\+\_\+source}}
+\subsubsection[{random1}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t key\+\_\+source\+::random1\mbox{[}32\mbox{]}}\label{structkey__source_a2c31011a183ba65651390e5bfbda3032}
+Seed used for master secret generation, provided by both client and server. \hypertarget{structkey__source_a88a904e92bfac5a03da3f5e0b7f12124}{}\index{key\+\_\+source@{key\+\_\+source}!random2@{random2}}
+\index{random2@{random2}!key\+\_\+source@{key\+\_\+source}}
+\subsubsection[{random2}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t key\+\_\+source\+::random2\mbox{[}32\mbox{]}}\label{structkey__source_a88a904e92bfac5a03da3f5e0b7f12124}
+Seed used for key expansion, provided by both client and server. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/openvpn/\hyperlink{ssl__common_8h}{ssl\+\_\+common.\+h}\end{DoxyCompactItemize}

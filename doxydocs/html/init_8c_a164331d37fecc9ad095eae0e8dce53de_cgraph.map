@@ -1,0 +1,5 @@
+<map id="init_verb_mute" name="init_verb_mute">
+<area shape="rect" id="node2" href="$error_8c.html#ab76eae70d91e60b44b8c6478c72baae5" title="set_check_status" alt="" coords="159,5,284,32"/>
+<area shape="rect" id="node3" href="$error_8c.html#af250e34abb4c2f896fcfa37e10aaeebf" title="set_debug_level" alt="" coords="164,56,279,83"/>
+<area shape="rect" id="node4" href="$error_8c.html#aa24606a2ec1cb6e454a387c4fd709545" title="set_mute_cutoff" alt="" coords="164,107,279,133"/>
+</map>

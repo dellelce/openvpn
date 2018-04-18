@@ -1,0 +1,354 @@
+\hypertarget{sig_8c}{}\section{src/openvpn/sig.c File Reference}
+\label{sig_8c}\index{src/openvpn/sig.\+c@{src/openvpn/sig.\+c}}
+{\ttfamily \#include \char`\"{}syshead.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}buffer.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}error.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}win32.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}init.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}status.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}sig.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}occ.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}manage.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}openvpn.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}memdbg.\+h\char`\"{}}\\*
+Include dependency graph for sig.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sig_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structsigname}{signame}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{sig_8c_a9e81731d4d7e4348c113421afaf58551}{parse\+\_\+signal} (const char $\ast$\hyperlink{structsigname}{signame})
+\item 
+const char $\ast$ \hyperlink{sig_8c_a59098edf7867309c2c5eac629be5d398}{signal\+\_\+name} (const int sig, const \hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} upper)
+\item 
+const char $\ast$ \hyperlink{sig_8c_a9dce4123b9a7da434cc417d0a1e47294}{signal\+\_\+description} (const int signum, const char $\ast$sigtext)
+\item 
+void \hyperlink{sig_8c_a9bc565386894a2ac2b331d8558ce4945}{throw\+\_\+signal} (const int signum)
+\item 
+void \hyperlink{sig_8c_a32aaa7fe4ac3cc792696d77174ef8ba8}{throw\+\_\+signal\+\_\+soft} (const int signum, const char $\ast$signal\+\_\+text)
+\item 
+void \hyperlink{sig_8c_adcd32e744f78356ea2e4feea8f4cc9b6}{print\+\_\+signal} (const struct \hyperlink{structsignal__info}{signal\+\_\+info} $\ast$si, const char $\ast$title, int msglevel)
+\item 
+void \hyperlink{sig_8c_a20b38f6720bc3e269384bf56d8e1a80e}{signal\+\_\+restart\+\_\+status} (const struct \hyperlink{structsignal__info}{signal\+\_\+info} $\ast$si)
+\item 
+void \hyperlink{sig_8c_a705ac4a2e18cd9194106e0bed544247f}{pre\+\_\+init\+\_\+signal\+\_\+catch} (void)
+\item 
+void \hyperlink{sig_8c_a26c2d844baaa9c3c3457b1b8081c7458}{post\+\_\+init\+\_\+signal\+\_\+catch} (void)
+\item 
+void \hyperlink{sig_8c_a90955f1d36eb2dbcc7aacb204d5ea523}{restore\+\_\+signal\+\_\+state} (void)
+\item 
+void \hyperlink{sig_8c_ab24d8ba0a87e34d962d54e377a1f9858}{print\+\_\+status} (const struct \hyperlink{structcontext}{context} $\ast$c, struct \hyperlink{structstatus__output}{status\+\_\+output} $\ast$so)
+\item 
+void \hyperlink{sig_8c_a4a0e163d780f33ed0772e7a88a256973}{process\+\_\+explicit\+\_\+exit\+\_\+notification\+\_\+timer\+\_\+wakeup} (struct \hyperlink{structcontext}{context} $\ast$c)
+\item 
+void \hyperlink{sig_8c_a72435bcf3d3d808567a47c639a8fd121}{remap\+\_\+signal} (struct \hyperlink{structcontext}{context} $\ast$c)
+\item 
+\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} \hyperlink{sig_8c_a0e3b6de9b6e95cc3e33d3ef616ce5aac}{process\+\_\+signal} (struct \hyperlink{structcontext}{context} $\ast$c)
+\item 
+void \hyperlink{sig_8c_a76174cdf16caa2f356ddb93af281e417}{register\+\_\+signal} (struct \hyperlink{structcontext}{context} $\ast$c, int sig, const char $\ast$text)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structsignal__info}{signal\+\_\+info} \hyperlink{sig_8c_aa970b47752de968a7bf41bc1758f0de7}{siginfo\+\_\+static}
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{sig_8c_a9e81731d4d7e4348c113421afaf58551}{}\index{sig.\+c@{sig.\+c}!parse\+\_\+signal@{parse\+\_\+signal}}
+\index{parse\+\_\+signal@{parse\+\_\+signal}!sig.\+c@{sig.\+c}}
+\subsubsection[{parse\+\_\+signal(const char $\ast$signame)}]{\setlength{\rightskip}{0pt plus 5cm}int parse\+\_\+signal (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{signame}
+\end{DoxyParamCaption}
+)}\label{sig_8c_a9e81731d4d7e4348c113421afaf58551}
+\hypertarget{sig_8c_a26c2d844baaa9c3c3457b1b8081c7458}{}\index{sig.\+c@{sig.\+c}!post\+\_\+init\+\_\+signal\+\_\+catch@{post\+\_\+init\+\_\+signal\+\_\+catch}}
+\index{post\+\_\+init\+\_\+signal\+\_\+catch@{post\+\_\+init\+\_\+signal\+\_\+catch}!sig.\+c@{sig.\+c}}
+\subsubsection[{post\+\_\+init\+\_\+signal\+\_\+catch(void)}]{\setlength{\rightskip}{0pt plus 5cm}void post\+\_\+init\+\_\+signal\+\_\+catch (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{sig_8c_a26c2d844baaa9c3c3457b1b8081c7458}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sig_8c_a26c2d844baaa9c3c3457b1b8081c7458_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{sig_8c_a705ac4a2e18cd9194106e0bed544247f}{}\index{sig.\+c@{sig.\+c}!pre\+\_\+init\+\_\+signal\+\_\+catch@{pre\+\_\+init\+\_\+signal\+\_\+catch}}
+\index{pre\+\_\+init\+\_\+signal\+\_\+catch@{pre\+\_\+init\+\_\+signal\+\_\+catch}!sig.\+c@{sig.\+c}}
+\subsubsection[{pre\+\_\+init\+\_\+signal\+\_\+catch(void)}]{\setlength{\rightskip}{0pt plus 5cm}void pre\+\_\+init\+\_\+signal\+\_\+catch (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{sig_8c_a705ac4a2e18cd9194106e0bed544247f}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sig_8c_a705ac4a2e18cd9194106e0bed544247f_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{sig_8c_adcd32e744f78356ea2e4feea8f4cc9b6}{}\index{sig.\+c@{sig.\+c}!print\+\_\+signal@{print\+\_\+signal}}
+\index{print\+\_\+signal@{print\+\_\+signal}!sig.\+c@{sig.\+c}}
+\subsubsection[{print\+\_\+signal(const struct signal\+\_\+info $\ast$si, const char $\ast$title, int msglevel)}]{\setlength{\rightskip}{0pt plus 5cm}void print\+\_\+signal (
+\begin{DoxyParamCaption}
+\item[{const struct {\bf signal\+\_\+info} $\ast$}]{si, }
+\item[{const char $\ast$}]{title, }
+\item[{int}]{msglevel}
+\end{DoxyParamCaption}
+)}\label{sig_8c_adcd32e744f78356ea2e4feea8f4cc9b6}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=253pt]{sig_8c_adcd32e744f78356ea2e4feea8f4cc9b6_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{sig_8c_ab24d8ba0a87e34d962d54e377a1f9858}{}\index{sig.\+c@{sig.\+c}!print\+\_\+status@{print\+\_\+status}}
+\index{print\+\_\+status@{print\+\_\+status}!sig.\+c@{sig.\+c}}
+\subsubsection[{print\+\_\+status(const struct context $\ast$c, struct status\+\_\+output $\ast$so)}]{\setlength{\rightskip}{0pt plus 5cm}void print\+\_\+status (
+\begin{DoxyParamCaption}
+\item[{const struct {\bf context} $\ast$}]{c, }
+\item[{struct {\bf status\+\_\+output} $\ast$}]{so}
+\end{DoxyParamCaption}
+)}\label{sig_8c_ab24d8ba0a87e34d962d54e377a1f9858}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sig_8c_ab24d8ba0a87e34d962d54e377a1f9858_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=312pt]{sig_8c_ab24d8ba0a87e34d962d54e377a1f9858_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{sig_8c_a4a0e163d780f33ed0772e7a88a256973}{}\index{sig.\+c@{sig.\+c}!process\+\_\+explicit\+\_\+exit\+\_\+notification\+\_\+timer\+\_\+wakeup@{process\+\_\+explicit\+\_\+exit\+\_\+notification\+\_\+timer\+\_\+wakeup}}
+\index{process\+\_\+explicit\+\_\+exit\+\_\+notification\+\_\+timer\+\_\+wakeup@{process\+\_\+explicit\+\_\+exit\+\_\+notification\+\_\+timer\+\_\+wakeup}!sig.\+c@{sig.\+c}}
+\subsubsection[{process\+\_\+explicit\+\_\+exit\+\_\+notification\+\_\+timer\+\_\+wakeup(struct context $\ast$c)}]{\setlength{\rightskip}{0pt plus 5cm}void process\+\_\+explicit\+\_\+exit\+\_\+notification\+\_\+timer\+\_\+wakeup (
+\begin{DoxyParamCaption}
+\item[{struct {\bf context} $\ast$}]{c}
+\end{DoxyParamCaption}
+)}\label{sig_8c_a4a0e163d780f33ed0772e7a88a256973}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sig_8c_a4a0e163d780f33ed0772e7a88a256973_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{sig_8c_a0e3b6de9b6e95cc3e33d3ef616ce5aac}{}\index{sig.\+c@{sig.\+c}!process\+\_\+signal@{process\+\_\+signal}}
+\index{process\+\_\+signal@{process\+\_\+signal}!sig.\+c@{sig.\+c}}
+\subsubsection[{process\+\_\+signal(struct context $\ast$c)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} process\+\_\+signal (
+\begin{DoxyParamCaption}
+\item[{struct {\bf context} $\ast$}]{c}
+\end{DoxyParamCaption}
+)}\label{sig_8c_a0e3b6de9b6e95cc3e33d3ef616ce5aac}
+\hypertarget{sig_8c_a76174cdf16caa2f356ddb93af281e417}{}\index{sig.\+c@{sig.\+c}!register\+\_\+signal@{register\+\_\+signal}}
+\index{register\+\_\+signal@{register\+\_\+signal}!sig.\+c@{sig.\+c}}
+\subsubsection[{register\+\_\+signal(struct context $\ast$c, int sig, const char $\ast$text)}]{\setlength{\rightskip}{0pt plus 5cm}void register\+\_\+signal (
+\begin{DoxyParamCaption}
+\item[{struct {\bf context} $\ast$}]{c, }
+\item[{int}]{sig, }
+\item[{const char $\ast$}]{text}
+\end{DoxyParamCaption}
+)}\label{sig_8c_a76174cdf16caa2f356ddb93af281e417}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sig_8c_a76174cdf16caa2f356ddb93af281e417_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{sig_8c_a72435bcf3d3d808567a47c639a8fd121}{}\index{sig.\+c@{sig.\+c}!remap\+\_\+signal@{remap\+\_\+signal}}
+\index{remap\+\_\+signal@{remap\+\_\+signal}!sig.\+c@{sig.\+c}}
+\subsubsection[{remap\+\_\+signal(struct context $\ast$c)}]{\setlength{\rightskip}{0pt plus 5cm}void remap\+\_\+signal (
+\begin{DoxyParamCaption}
+\item[{struct {\bf context} $\ast$}]{c}
+\end{DoxyParamCaption}
+)}\label{sig_8c_a72435bcf3d3d808567a47c639a8fd121}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=295pt]{sig_8c_a72435bcf3d3d808567a47c639a8fd121_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{sig_8c_a90955f1d36eb2dbcc7aacb204d5ea523}{}\index{sig.\+c@{sig.\+c}!restore\+\_\+signal\+\_\+state@{restore\+\_\+signal\+\_\+state}}
+\index{restore\+\_\+signal\+\_\+state@{restore\+\_\+signal\+\_\+state}!sig.\+c@{sig.\+c}}
+\subsubsection[{restore\+\_\+signal\+\_\+state(void)}]{\setlength{\rightskip}{0pt plus 5cm}void restore\+\_\+signal\+\_\+state (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{sig_8c_a90955f1d36eb2dbcc7aacb204d5ea523}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=333pt]{sig_8c_a90955f1d36eb2dbcc7aacb204d5ea523_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sig_8c_a90955f1d36eb2dbcc7aacb204d5ea523_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{sig_8c_a9dce4123b9a7da434cc417d0a1e47294}{}\index{sig.\+c@{sig.\+c}!signal\+\_\+description@{signal\+\_\+description}}
+\index{signal\+\_\+description@{signal\+\_\+description}!sig.\+c@{sig.\+c}}
+\subsubsection[{signal\+\_\+description(const int signum, const char $\ast$sigtext)}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ signal\+\_\+description (
+\begin{DoxyParamCaption}
+\item[{const int}]{signum, }
+\item[{const char $\ast$}]{sigtext}
+\end{DoxyParamCaption}
+)}\label{sig_8c_a9dce4123b9a7da434cc417d0a1e47294}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=282pt]{sig_8c_a9dce4123b9a7da434cc417d0a1e47294_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{sig_8c_a59098edf7867309c2c5eac629be5d398}{}\index{sig.\+c@{sig.\+c}!signal\+\_\+name@{signal\+\_\+name}}
+\index{signal\+\_\+name@{signal\+\_\+name}!sig.\+c@{sig.\+c}}
+\subsubsection[{signal\+\_\+name(const int sig, const bool upper)}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ signal\+\_\+name (
+\begin{DoxyParamCaption}
+\item[{const int}]{sig, }
+\item[{const {\bf bool}}]{upper}
+\end{DoxyParamCaption}
+)}\label{sig_8c_a59098edf7867309c2c5eac629be5d398}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=294pt]{sig_8c_a59098edf7867309c2c5eac629be5d398_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{sig_8c_a20b38f6720bc3e269384bf56d8e1a80e}{}\index{sig.\+c@{sig.\+c}!signal\+\_\+restart\+\_\+status@{signal\+\_\+restart\+\_\+status}}
+\index{signal\+\_\+restart\+\_\+status@{signal\+\_\+restart\+\_\+status}!sig.\+c@{sig.\+c}}
+\subsubsection[{signal\+\_\+restart\+\_\+status(const struct signal\+\_\+info $\ast$si)}]{\setlength{\rightskip}{0pt plus 5cm}void signal\+\_\+restart\+\_\+status (
+\begin{DoxyParamCaption}
+\item[{const struct {\bf signal\+\_\+info} $\ast$}]{si}
+\end{DoxyParamCaption}
+)}\label{sig_8c_a20b38f6720bc3e269384bf56d8e1a80e}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=294pt]{sig_8c_a20b38f6720bc3e269384bf56d8e1a80e_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{sig_8c_a9bc565386894a2ac2b331d8558ce4945}{}\index{sig.\+c@{sig.\+c}!throw\+\_\+signal@{throw\+\_\+signal}}
+\index{throw\+\_\+signal@{throw\+\_\+signal}!sig.\+c@{sig.\+c}}
+\subsubsection[{throw\+\_\+signal(const int signum)}]{\setlength{\rightskip}{0pt plus 5cm}void throw\+\_\+signal (
+\begin{DoxyParamCaption}
+\item[{const int}]{signum}
+\end{DoxyParamCaption}
+)}\label{sig_8c_a9bc565386894a2ac2b331d8558ce4945}
+\hypertarget{sig_8c_a32aaa7fe4ac3cc792696d77174ef8ba8}{}\index{sig.\+c@{sig.\+c}!throw\+\_\+signal\+\_\+soft@{throw\+\_\+signal\+\_\+soft}}
+\index{throw\+\_\+signal\+\_\+soft@{throw\+\_\+signal\+\_\+soft}!sig.\+c@{sig.\+c}}
+\subsubsection[{throw\+\_\+signal\+\_\+soft(const int signum, const char $\ast$signal\+\_\+text)}]{\setlength{\rightskip}{0pt plus 5cm}void throw\+\_\+signal\+\_\+soft (
+\begin{DoxyParamCaption}
+\item[{const int}]{signum, }
+\item[{const char $\ast$}]{signal\+\_\+text}
+\end{DoxyParamCaption}
+)}\label{sig_8c_a32aaa7fe4ac3cc792696d77174ef8ba8}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sig_8c_a32aaa7fe4ac3cc792696d77174ef8ba8_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Variable Documentation}
+\hypertarget{sig_8c_aa970b47752de968a7bf41bc1758f0de7}{}\index{sig.\+c@{sig.\+c}!siginfo\+\_\+static@{siginfo\+\_\+static}}
+\index{siginfo\+\_\+static@{siginfo\+\_\+static}!sig.\+c@{sig.\+c}}
+\subsubsection[{siginfo\+\_\+static}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf signal\+\_\+info} siginfo\+\_\+static}\label{sig_8c_aa970b47752de968a7bf41bc1758f0de7}

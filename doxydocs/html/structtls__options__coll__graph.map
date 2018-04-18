@@ -1,0 +1,21 @@
+<map id="tls_options" name="tls_options">
+<area shape="rect" id="node2" href="$structx509__track.html" title="x509_track" alt="" coords="156,288,243,315"/>
+<area shape="rect" id="node3" href="$structtls__wrap__ctx.html" title="tls_wrap_ctx" alt="" coords="320,288,415,315"/>
+<area shape="rect" id="node4" href="$structcrypto__options.html" title="crypto_options" alt="" coords="249,199,355,225"/>
+<area shape="rect" id="node5" href="$structpacket__id.html" title="packet_id" alt="" coords="155,109,233,136"/>
+<area shape="rect" id="node6" href="$structpacket__id__send.html" title="packet_id_send" alt="" coords="5,5,119,32"/>
+<area shape="rect" id="node7" href="$structpacket__id__rec.html" title="packet_id_rec" alt="" coords="143,5,245,32"/>
+<area shape="rect" id="node8" href="$structkey__ctx__bi.html" title="key_ctx_bi" alt="" coords="259,109,345,136"/>
+<area shape="rect" id="node9" href="$structkey__ctx.html" title="key_ctx" alt="" coords="269,5,337,32"/>
+<area shape="rect" id="node10" href="$structpacket__id__persist.html" title="packet_id_persist" alt="" coords="369,109,493,136"/>
+<area shape="rect" id="node11" href="$structbuffer.html" title="buffer" alt="" coords="379,199,433,225"/>
+<area shape="rect" id="node12" href="$structplugin__list.html" title="plugin_list" alt="" coords="439,288,519,315"/>
+<area shape="rect" id="node13" href="$structtls__root__ctx.html" title="tls_root_ctx" alt="" coords="543,288,634,315"/>
+<area shape="rect" id="node14" href="$structframe.html" title="frame" alt="" coords="659,288,713,315"/>
+<area shape="rect" id="node15" href="$structkey__type.html" title="key_type" alt="" coords="738,288,813,315"/>
+<area shape="rect" id="node16" href="$structenv__set.html" title="env_set" alt="" coords="837,288,903,315"/>
+<area shape="rect" id="node17" href="$structenv__item.html" title="env_item" alt="" coords="769,199,843,225"/>
+<area shape="rect" id="node18" href="$structgc__arena.html" title="gc_arena" alt="" coords="921,199,995,225"/>
+<area shape="rect" id="node19" href="$structgc__entry__special.html" title="gc_entry_special" alt="" coords="830,109,950,136"/>
+<area shape="rect" id="node20" href="$structgc__entry.html" title="gc_entry" alt="" coords="1027,109,1099,136"/>
+</map>

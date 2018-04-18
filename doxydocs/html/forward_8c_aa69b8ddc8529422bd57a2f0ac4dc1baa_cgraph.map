@@ -1,0 +1,15 @@
+<map id="check_tls_dowork" name="check_tls_dowork">
+<area shape="rect" id="node2" href="$ssl_8c.html#ab403d9453e1b8088a89f06537ee74fcb" title="tls_multi_process" alt="" coords="180,81,304,108"/>
+<area shape="rect" id="node14" href="$sig_8c.html#a76174cdf16caa2f356ddb93af281e417" title="register_signal" alt="" coords="189,132,295,159"/>
+<area shape="rect" id="node3" href="$ssl__backend_8h.html#a163fa38939865554f4d7160a0e426b17" title="tls_clear_error" alt="" coords="381,5,485,32"/>
+<area shape="rect" id="node4" href="$session__id_8c.html#aa7884bbdd976e0582af7ce08249a5688" title="session_id_print" alt="" coords="375,56,491,83"/>
+<area shape="rect" id="node5" href="$socket_8c.html#aefe5013514f1d62a138107fb43cc74e3" title="print_link_socket_actual" alt="" coords="352,107,515,133"/>
+<area shape="rect" id="node13" href="$ssl__verify_8c.html#ac6de478954452cfd54e8352f57638772" title="tls_authentication\l_status" alt="" coords="371,158,495,199"/>
+<area shape="rect" id="node6" href="$socket_8c.html#aa401d7e395acdc1d4f61f6526ef92846" title="print_link_socket_actual_ex" alt="" coords="563,107,745,133"/>
+<area shape="rect" id="node7" href="$buffer_8c.html#aa35bf7feb6a99bf5d364b2d4eba1195c" title="alloc_buf_gc" alt="" coords="969,56,1064,83"/>
+<area shape="rect" id="node10" href="$buffer_8c.html#a3307f08331b1ce42168bafd2ecf7874a" title="buf_printf" alt="" coords="979,157,1054,184"/>
+<area shape="rect" id="node11" href="$socket_8c.html#a616cfadfd81ab5ba341fa3adb1e93788" title="print_sockaddr_ex" alt="" coords="793,107,921,133"/>
+<area shape="rect" id="node8" href="$buffer_8c.html#acc1a4ee83a591116d331e52baacf253d" title="buf_size_error" alt="" coords="1112,31,1215,57"/>
+<area shape="rect" id="node9" href="$buffer_8c.html#a67f7dec7f86e113dc0744584fd80b621" title="gc_malloc" alt="" coords="1123,81,1204,108"/>
+<area shape="rect" id="node12" href="$buffer_8c.html#a3856237f6bda0d132ed555c23f3b8968" title="buf_puts" alt="" coords="981,107,1052,133"/>
+</map>

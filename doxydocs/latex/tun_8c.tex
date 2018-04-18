@@ -1,0 +1,459 @@
+\hypertarget{tun_8c}{}\section{src/openvpn/tun.c File Reference}
+\label{tun_8c}\index{src/openvpn/tun.\+c@{src/openvpn/tun.\+c}}
+{\ttfamily \#include \char`\"{}syshead.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}tun.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}fdmisc.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}common.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}misc.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}socket.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}manage.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}route.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}win32.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}block\+\_\+dns.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}memdbg.\+h\char`\"{}}\\*
+{\ttfamily \#include $<$string.\+h$>$}\\*
+Include dependency graph for tun.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{tun_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} \hyperlink{tun_8c_a73e6d824b7b018e9b1d9230b0ea16137}{is\+\_\+dev\+\_\+type} (const char $\ast$dev, const char $\ast$dev\+\_\+type, const char $\ast$match\+\_\+type)
+\item 
+int \hyperlink{tun_8c_a167ef5d50e4284066beb05f5466bd858}{dev\+\_\+type\+\_\+enum} (const char $\ast$dev, const char $\ast$dev\+\_\+type)
+\item 
+const char $\ast$ \hyperlink{tun_8c_aaeb7d66a96170c82580b2e821110c745}{dev\+\_\+type\+\_\+string} (const char $\ast$dev, const char $\ast$dev\+\_\+type)
+\item 
+const char $\ast$ \hyperlink{tun_8c_ac881cca015e20fc2d4290525767642f4}{guess\+\_\+tuntap\+\_\+dev} (const char $\ast$dev, const char $\ast$dev\+\_\+type, const char $\ast$dev\+\_\+node, struct \hyperlink{structgc__arena}{gc\+\_\+arena} $\ast$gc)
+\item 
+void \hyperlink{tun_8c_a924d8c9818ca3d219b0fd0f1d49a5f1a}{check\+\_\+subnet\+\_\+conflict} (const in\+\_\+addr\+\_\+t ip, const in\+\_\+addr\+\_\+t netmask, const char $\ast$prefix)
+\item 
+void \hyperlink{tun_8c_ae0893ee82c077b01d1e34e32ac5a5698}{warn\+\_\+on\+\_\+use\+\_\+of\+\_\+common\+\_\+subnets} (void)
+\item 
+const char $\ast$ \hyperlink{tun_8c_abd1ff4647b055b72492dc07cc1e25c78}{ifconfig\+\_\+options\+\_\+string} (const struct \hyperlink{structtuntap}{tuntap} $\ast$tt, \hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} remote, \hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} disable, struct \hyperlink{structgc__arena}{gc\+\_\+arena} $\ast$gc)
+\item 
+const char $\ast$ \hyperlink{tun_8c_a69a3515b1f385a59c642390602c835fd}{tun\+\_\+stat} (const struct \hyperlink{structtuntap}{tuntap} $\ast$tt, unsigned int rwflags, struct \hyperlink{structgc__arena}{gc\+\_\+arena} $\ast$gc)
+\item 
+\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} \hyperlink{tun_8c_add5885eccc02f0f7e9d7edb7e781fa02}{is\+\_\+tun\+\_\+p2p} (const struct \hyperlink{structtuntap}{tuntap} $\ast$tt)
+\item 
+void \hyperlink{tun_8c_ad8365278b4f196950c8a29745b361e0a}{do\+\_\+ifconfig\+\_\+setenv} (const struct \hyperlink{structtuntap}{tuntap} $\ast$tt, struct \hyperlink{structenv__set}{env\+\_\+set} $\ast$es)
+\item 
+struct \hyperlink{structtuntap}{tuntap} $\ast$ \hyperlink{tun_8c_afee8026032ec0cf9c118465a970d4ac0}{init\+\_\+tun} (const char $\ast$dev, const char $\ast$dev\+\_\+type, int topology, const char $\ast$ifconfig\+\_\+local\+\_\+parm, const char $\ast$ifconfig\+\_\+remote\+\_\+netmask\+\_\+parm, const char $\ast$ifconfig\+\_\+ipv6\+\_\+local\+\_\+parm, int ifconfig\+\_\+ipv6\+\_\+netbits\+\_\+parm, const char $\ast$ifconfig\+\_\+ipv6\+\_\+remote\+\_\+parm, struct addrinfo $\ast$local\+\_\+public, struct addrinfo $\ast$remote\+\_\+public, const \hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} strict\+\_\+warn, struct \hyperlink{structenv__set}{env\+\_\+set} $\ast$es)
+\item 
+void \hyperlink{tun_8c_ac81775a8129068d72892557f733bc583}{init\+\_\+tun\+\_\+post} (struct \hyperlink{structtuntap}{tuntap} $\ast$tt, const struct \hyperlink{structframe}{frame} $\ast$\hyperlink{structframe}{frame}, const struct \hyperlink{structtuntap__options}{tuntap\+\_\+options} $\ast$\hyperlink{structoptions}{options})
+\item 
+void \hyperlink{tun_8c_a29632143fb8b809282d762f9a2850500}{do\+\_\+ifconfig} (struct \hyperlink{structtuntap}{tuntap} $\ast$tt, const char $\ast$actual, int tun\+\_\+mtu, const struct \hyperlink{structenv__set}{env\+\_\+set} $\ast$es)
+\item 
+void \hyperlink{tun_8c_a8ed81f24edc25b83eba293057754830b}{open\+\_\+tun} (const char $\ast$dev, const char $\ast$dev\+\_\+type, const char $\ast$dev\+\_\+node, struct \hyperlink{structtuntap}{tuntap} $\ast$tt)
+\item 
+void \hyperlink{tun_8c_a678990725b42b0006d7b355c32f8f7cd}{close\+\_\+tun} (struct \hyperlink{structtuntap}{tuntap} $\ast$tt)
+\item 
+int \hyperlink{tun_8c_afdac6b3217749dccb863f9dc39818b9d}{write\+\_\+tun} (struct \hyperlink{structtuntap}{tuntap} $\ast$tt, uint8\+\_\+t $\ast$buf, int len)
+\item 
+int \hyperlink{tun_8c_ac75f33ac5fe746f7bf5733d9e8c67bf2}{read\+\_\+tun} (struct \hyperlink{structtuntap}{tuntap} $\ast$tt, uint8\+\_\+t $\ast$buf, int len)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{tun_8c_a924d8c9818ca3d219b0fd0f1d49a5f1a}{}\index{tun.\+c@{tun.\+c}!check\+\_\+subnet\+\_\+conflict@{check\+\_\+subnet\+\_\+conflict}}
+\index{check\+\_\+subnet\+\_\+conflict@{check\+\_\+subnet\+\_\+conflict}!tun.\+c@{tun.\+c}}
+\subsubsection[{check\+\_\+subnet\+\_\+conflict(const in\+\_\+addr\+\_\+t ip, const in\+\_\+addr\+\_\+t netmask, const char $\ast$prefix)}]{\setlength{\rightskip}{0pt plus 5cm}void check\+\_\+subnet\+\_\+conflict (
+\begin{DoxyParamCaption}
+\item[{const in\+\_\+addr\+\_\+t}]{ip, }
+\item[{const in\+\_\+addr\+\_\+t}]{netmask, }
+\item[{const char $\ast$}]{prefix}
+\end{DoxyParamCaption}
+)}\label{tun_8c_a924d8c9818ca3d219b0fd0f1d49a5f1a}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{tun_8c_a924d8c9818ca3d219b0fd0f1d49a5f1a_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{tun_8c_a924d8c9818ca3d219b0fd0f1d49a5f1a_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{tun_8c_a678990725b42b0006d7b355c32f8f7cd}{}\index{tun.\+c@{tun.\+c}!close\+\_\+tun@{close\+\_\+tun}}
+\index{close\+\_\+tun@{close\+\_\+tun}!tun.\+c@{tun.\+c}}
+\subsubsection[{close\+\_\+tun(struct tuntap $\ast$tt)}]{\setlength{\rightskip}{0pt plus 5cm}void close\+\_\+tun (
+\begin{DoxyParamCaption}
+\item[{struct {\bf tuntap} $\ast$}]{tt}
+\end{DoxyParamCaption}
+)}\label{tun_8c_a678990725b42b0006d7b355c32f8f7cd}
+\hypertarget{tun_8c_a167ef5d50e4284066beb05f5466bd858}{}\index{tun.\+c@{tun.\+c}!dev\+\_\+type\+\_\+enum@{dev\+\_\+type\+\_\+enum}}
+\index{dev\+\_\+type\+\_\+enum@{dev\+\_\+type\+\_\+enum}!tun.\+c@{tun.\+c}}
+\subsubsection[{dev\+\_\+type\+\_\+enum(const char $\ast$dev, const char $\ast$dev\+\_\+type)}]{\setlength{\rightskip}{0pt plus 5cm}int dev\+\_\+type\+\_\+enum (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{dev, }
+\item[{const char $\ast$}]{dev\+\_\+type}
+\end{DoxyParamCaption}
+)}\label{tun_8c_a167ef5d50e4284066beb05f5466bd858}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=268pt]{tun_8c_a167ef5d50e4284066beb05f5466bd858_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{tun_8c_a167ef5d50e4284066beb05f5466bd858_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{tun_8c_aaeb7d66a96170c82580b2e821110c745}{}\index{tun.\+c@{tun.\+c}!dev\+\_\+type\+\_\+string@{dev\+\_\+type\+\_\+string}}
+\index{dev\+\_\+type\+\_\+string@{dev\+\_\+type\+\_\+string}!tun.\+c@{tun.\+c}}
+\subsubsection[{dev\+\_\+type\+\_\+string(const char $\ast$dev, const char $\ast$dev\+\_\+type)}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ dev\+\_\+type\+\_\+string (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{dev, }
+\item[{const char $\ast$}]{dev\+\_\+type}
+\end{DoxyParamCaption}
+)}\label{tun_8c_aaeb7d66a96170c82580b2e821110c745}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{tun_8c_aaeb7d66a96170c82580b2e821110c745_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{tun_8c_aaeb7d66a96170c82580b2e821110c745_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{tun_8c_a29632143fb8b809282d762f9a2850500}{}\index{tun.\+c@{tun.\+c}!do\+\_\+ifconfig@{do\+\_\+ifconfig}}
+\index{do\+\_\+ifconfig@{do\+\_\+ifconfig}!tun.\+c@{tun.\+c}}
+\subsubsection[{do\+\_\+ifconfig(struct tuntap $\ast$tt, const char $\ast$actual, int tun\+\_\+mtu, const struct env\+\_\+set $\ast$es)}]{\setlength{\rightskip}{0pt plus 5cm}void do\+\_\+ifconfig (
+\begin{DoxyParamCaption}
+\item[{struct {\bf tuntap} $\ast$}]{tt, }
+\item[{const char $\ast$}]{actual, }
+\item[{int}]{tun\+\_\+mtu, }
+\item[{const struct {\bf env\+\_\+set} $\ast$}]{es}
+\end{DoxyParamCaption}
+)}\label{tun_8c_a29632143fb8b809282d762f9a2850500}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{tun_8c_a29632143fb8b809282d762f9a2850500_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{tun_8c_ad8365278b4f196950c8a29745b361e0a}{}\index{tun.\+c@{tun.\+c}!do\+\_\+ifconfig\+\_\+setenv@{do\+\_\+ifconfig\+\_\+setenv}}
+\index{do\+\_\+ifconfig\+\_\+setenv@{do\+\_\+ifconfig\+\_\+setenv}!tun.\+c@{tun.\+c}}
+\subsubsection[{do\+\_\+ifconfig\+\_\+setenv(const struct tuntap $\ast$tt, struct env\+\_\+set $\ast$es)}]{\setlength{\rightskip}{0pt plus 5cm}void do\+\_\+ifconfig\+\_\+setenv (
+\begin{DoxyParamCaption}
+\item[{const struct {\bf tuntap} $\ast$}]{tt, }
+\item[{struct {\bf env\+\_\+set} $\ast$}]{es}
+\end{DoxyParamCaption}
+)}\label{tun_8c_ad8365278b4f196950c8a29745b361e0a}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{tun_8c_ad8365278b4f196950c8a29745b361e0a_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{tun_8c_ad8365278b4f196950c8a29745b361e0a_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{tun_8c_ac881cca015e20fc2d4290525767642f4}{}\index{tun.\+c@{tun.\+c}!guess\+\_\+tuntap\+\_\+dev@{guess\+\_\+tuntap\+\_\+dev}}
+\index{guess\+\_\+tuntap\+\_\+dev@{guess\+\_\+tuntap\+\_\+dev}!tun.\+c@{tun.\+c}}
+\subsubsection[{guess\+\_\+tuntap\+\_\+dev(const char $\ast$dev, const char $\ast$dev\+\_\+type, const char $\ast$dev\+\_\+node, struct gc\+\_\+arena $\ast$gc)}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ guess\+\_\+tuntap\+\_\+dev (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{dev, }
+\item[{const char $\ast$}]{dev\+\_\+type, }
+\item[{const char $\ast$}]{dev\+\_\+node, }
+\item[{struct {\bf gc\+\_\+arena} $\ast$}]{gc}
+\end{DoxyParamCaption}
+)}\label{tun_8c_ac881cca015e20fc2d4290525767642f4}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{tun_8c_ac881cca015e20fc2d4290525767642f4_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{tun_8c_abd1ff4647b055b72492dc07cc1e25c78}{}\index{tun.\+c@{tun.\+c}!ifconfig\+\_\+options\+\_\+string@{ifconfig\+\_\+options\+\_\+string}}
+\index{ifconfig\+\_\+options\+\_\+string@{ifconfig\+\_\+options\+\_\+string}!tun.\+c@{tun.\+c}}
+\subsubsection[{ifconfig\+\_\+options\+\_\+string(const struct tuntap $\ast$tt, bool remote, bool disable, struct gc\+\_\+arena $\ast$gc)}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ ifconfig\+\_\+options\+\_\+string (
+\begin{DoxyParamCaption}
+\item[{const struct {\bf tuntap} $\ast$}]{tt, }
+\item[{{\bf bool}}]{remote, }
+\item[{{\bf bool}}]{disable, }
+\item[{struct {\bf gc\+\_\+arena} $\ast$}]{gc}
+\end{DoxyParamCaption}
+)}\label{tun_8c_abd1ff4647b055b72492dc07cc1e25c78}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{tun_8c_abd1ff4647b055b72492dc07cc1e25c78_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{tun_8c_abd1ff4647b055b72492dc07cc1e25c78_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{tun_8c_afee8026032ec0cf9c118465a970d4ac0}{}\index{tun.\+c@{tun.\+c}!init\+\_\+tun@{init\+\_\+tun}}
+\index{init\+\_\+tun@{init\+\_\+tun}!tun.\+c@{tun.\+c}}
+\subsubsection[{init\+\_\+tun(const char $\ast$dev, const char $\ast$dev\+\_\+type, int topology, const char $\ast$ifconfig\+\_\+local\+\_\+parm, const char $\ast$ifconfig\+\_\+remote\+\_\+netmask\+\_\+parm, const char $\ast$ifconfig\+\_\+ipv6\+\_\+local\+\_\+parm, int ifconfig\+\_\+ipv6\+\_\+netbits\+\_\+parm, const char $\ast$ifconfig\+\_\+ipv6\+\_\+remote\+\_\+parm, struct addrinfo $\ast$local\+\_\+public, struct addrinfo $\ast$remote\+\_\+public, const bool strict\+\_\+warn, struct env\+\_\+set $\ast$es)}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf tuntap}$\ast$ init\+\_\+tun (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{dev, }
+\item[{const char $\ast$}]{dev\+\_\+type, }
+\item[{int}]{topology, }
+\item[{const char $\ast$}]{ifconfig\+\_\+local\+\_\+parm, }
+\item[{const char $\ast$}]{ifconfig\+\_\+remote\+\_\+netmask\+\_\+parm, }
+\item[{const char $\ast$}]{ifconfig\+\_\+ipv6\+\_\+local\+\_\+parm, }
+\item[{int}]{ifconfig\+\_\+ipv6\+\_\+netbits\+\_\+parm, }
+\item[{const char $\ast$}]{ifconfig\+\_\+ipv6\+\_\+remote\+\_\+parm, }
+\item[{struct addrinfo $\ast$}]{local\+\_\+public, }
+\item[{struct addrinfo $\ast$}]{remote\+\_\+public, }
+\item[{const {\bf bool}}]{strict\+\_\+warn, }
+\item[{struct {\bf env\+\_\+set} $\ast$}]{es}
+\end{DoxyParamCaption}
+)}\label{tun_8c_afee8026032ec0cf9c118465a970d4ac0}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{tun_8c_afee8026032ec0cf9c118465a970d4ac0_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{tun_8c_afee8026032ec0cf9c118465a970d4ac0_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{tun_8c_ac81775a8129068d72892557f733bc583}{}\index{tun.\+c@{tun.\+c}!init\+\_\+tun\+\_\+post@{init\+\_\+tun\+\_\+post}}
+\index{init\+\_\+tun\+\_\+post@{init\+\_\+tun\+\_\+post}!tun.\+c@{tun.\+c}}
+\subsubsection[{init\+\_\+tun\+\_\+post(struct tuntap $\ast$tt, const struct frame $\ast$frame, const struct tuntap\+\_\+options $\ast$options)}]{\setlength{\rightskip}{0pt plus 5cm}void init\+\_\+tun\+\_\+post (
+\begin{DoxyParamCaption}
+\item[{struct {\bf tuntap} $\ast$}]{tt, }
+\item[{const struct {\bf frame} $\ast$}]{frame, }
+\item[{const struct {\bf tuntap\+\_\+options} $\ast$}]{options}
+\end{DoxyParamCaption}
+)}\label{tun_8c_ac81775a8129068d72892557f733bc583}
+\hypertarget{tun_8c_a73e6d824b7b018e9b1d9230b0ea16137}{}\index{tun.\+c@{tun.\+c}!is\+\_\+dev\+\_\+type@{is\+\_\+dev\+\_\+type}}
+\index{is\+\_\+dev\+\_\+type@{is\+\_\+dev\+\_\+type}!tun.\+c@{tun.\+c}}
+\subsubsection[{is\+\_\+dev\+\_\+type(const char $\ast$dev, const char $\ast$dev\+\_\+type, const char $\ast$match\+\_\+type)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} is\+\_\+dev\+\_\+type (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{dev, }
+\item[{const char $\ast$}]{dev\+\_\+type, }
+\item[{const char $\ast$}]{match\+\_\+type}
+\end{DoxyParamCaption}
+)}\label{tun_8c_a73e6d824b7b018e9b1d9230b0ea16137}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{tun_8c_a73e6d824b7b018e9b1d9230b0ea16137_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{tun_8c_add5885eccc02f0f7e9d7edb7e781fa02}{}\index{tun.\+c@{tun.\+c}!is\+\_\+tun\+\_\+p2p@{is\+\_\+tun\+\_\+p2p}}
+\index{is\+\_\+tun\+\_\+p2p@{is\+\_\+tun\+\_\+p2p}!tun.\+c@{tun.\+c}}
+\subsubsection[{is\+\_\+tun\+\_\+p2p(const struct tuntap $\ast$tt)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} is\+\_\+tun\+\_\+p2p (
+\begin{DoxyParamCaption}
+\item[{const struct {\bf tuntap} $\ast$}]{tt}
+\end{DoxyParamCaption}
+)}\label{tun_8c_add5885eccc02f0f7e9d7edb7e781fa02}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{tun_8c_add5885eccc02f0f7e9d7edb7e781fa02_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{tun_8c_a8ed81f24edc25b83eba293057754830b}{}\index{tun.\+c@{tun.\+c}!open\+\_\+tun@{open\+\_\+tun}}
+\index{open\+\_\+tun@{open\+\_\+tun}!tun.\+c@{tun.\+c}}
+\subsubsection[{open\+\_\+tun(const char $\ast$dev, const char $\ast$dev\+\_\+type, const char $\ast$dev\+\_\+node, struct tuntap $\ast$tt)}]{\setlength{\rightskip}{0pt plus 5cm}void open\+\_\+tun (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{dev, }
+\item[{const char $\ast$}]{dev\+\_\+type, }
+\item[{const char $\ast$}]{dev\+\_\+node, }
+\item[{struct {\bf tuntap} $\ast$}]{tt}
+\end{DoxyParamCaption}
+)}\label{tun_8c_a8ed81f24edc25b83eba293057754830b}
+\hypertarget{tun_8c_ac75f33ac5fe746f7bf5733d9e8c67bf2}{}\index{tun.\+c@{tun.\+c}!read\+\_\+tun@{read\+\_\+tun}}
+\index{read\+\_\+tun@{read\+\_\+tun}!tun.\+c@{tun.\+c}}
+\subsubsection[{read\+\_\+tun(struct tuntap $\ast$tt, uint8\+\_\+t $\ast$buf, int len)}]{\setlength{\rightskip}{0pt plus 5cm}int read\+\_\+tun (
+\begin{DoxyParamCaption}
+\item[{struct {\bf tuntap} $\ast$}]{tt, }
+\item[{uint8\+\_\+t $\ast$}]{buf, }
+\item[{int}]{len}
+\end{DoxyParamCaption}
+)}\label{tun_8c_ac75f33ac5fe746f7bf5733d9e8c67bf2}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{tun_8c_ac75f33ac5fe746f7bf5733d9e8c67bf2_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{tun_8c_a69a3515b1f385a59c642390602c835fd}{}\index{tun.\+c@{tun.\+c}!tun\+\_\+stat@{tun\+\_\+stat}}
+\index{tun\+\_\+stat@{tun\+\_\+stat}!tun.\+c@{tun.\+c}}
+\subsubsection[{tun\+\_\+stat(const struct tuntap $\ast$tt, unsigned int rwflags, struct gc\+\_\+arena $\ast$gc)}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ tun\+\_\+stat (
+\begin{DoxyParamCaption}
+\item[{const struct {\bf tuntap} $\ast$}]{tt, }
+\item[{unsigned int}]{rwflags, }
+\item[{struct {\bf gc\+\_\+arena} $\ast$}]{gc}
+\end{DoxyParamCaption}
+)}\label{tun_8c_a69a3515b1f385a59c642390602c835fd}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{tun_8c_a69a3515b1f385a59c642390602c835fd_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{tun_8c_ae0893ee82c077b01d1e34e32ac5a5698}{}\index{tun.\+c@{tun.\+c}!warn\+\_\+on\+\_\+use\+\_\+of\+\_\+common\+\_\+subnets@{warn\+\_\+on\+\_\+use\+\_\+of\+\_\+common\+\_\+subnets}}
+\index{warn\+\_\+on\+\_\+use\+\_\+of\+\_\+common\+\_\+subnets@{warn\+\_\+on\+\_\+use\+\_\+of\+\_\+common\+\_\+subnets}!tun.\+c@{tun.\+c}}
+\subsubsection[{warn\+\_\+on\+\_\+use\+\_\+of\+\_\+common\+\_\+subnets(void)}]{\setlength{\rightskip}{0pt plus 5cm}void warn\+\_\+on\+\_\+use\+\_\+of\+\_\+common\+\_\+subnets (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{tun_8c_ae0893ee82c077b01d1e34e32ac5a5698}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{tun_8c_ae0893ee82c077b01d1e34e32ac5a5698_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{tun_8c_afdac6b3217749dccb863f9dc39818b9d}{}\index{tun.\+c@{tun.\+c}!write\+\_\+tun@{write\+\_\+tun}}
+\index{write\+\_\+tun@{write\+\_\+tun}!tun.\+c@{tun.\+c}}
+\subsubsection[{write\+\_\+tun(struct tuntap $\ast$tt, uint8\+\_\+t $\ast$buf, int len)}]{\setlength{\rightskip}{0pt plus 5cm}int write\+\_\+tun (
+\begin{DoxyParamCaption}
+\item[{struct {\bf tuntap} $\ast$}]{tt, }
+\item[{uint8\+\_\+t $\ast$}]{buf, }
+\item[{int}]{len}
+\end{DoxyParamCaption}
+)}\label{tun_8c_afdac6b3217749dccb863f9dc39818b9d}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{tun_8c_afdac6b3217749dccb863f9dc39818b9d_icgraph}
+\end{center}
+\end{figure}
+
+

@@ -1,0 +1,13 @@
+<map id="setenv_in6_addr" name="setenv_in6_addr">
+<area shape="rect" id="node2" href="$socket_8c.html#a7db6fcb0d9f1d1ca09149554d91f979f" title="setenv_sockaddr" alt="" coords="168,44,287,71"/>
+<area shape="rect" id="node3" href="$buffer_8c.html#afd2a93a0940b1ea7e093d293a05e2927" title="openvpn_snprintf" alt="" coords="463,19,581,45"/>
+<area shape="rect" id="node4" href="$env__set_8c.html#a872620e2e324ded9c1bc8af1c253faf9" title="setenv_str" alt="" coords="481,81,563,108"/>
+<area shape="rect" id="node12" href="$env__set_8c.html#a2ee1297d7cd864a08edff8440efa4143" title="setenv_int" alt="" coords="335,44,415,71"/>
+<area shape="rect" id="node5" href="$env__set_8c.html#a9ff3fe081db33808bf428d7af93c68ad" title="setenv_str_ex" alt="" coords="629,81,732,108"/>
+<area shape="rect" id="node6" href="$buffer_8c.html#a55db6b55ce08e95dc30a543ee37ecd92" title="string_mod_const" alt="" coords="780,31,905,57"/>
+<area shape="rect" id="node10" href="$env__set_8c.html#a8f95bd5663cdc04bc9764b429538f536" title="env_set_add" alt="" coords="795,81,890,108"/>
+<area shape="rect" id="node11" href="$env__set_8c.html#acb6a73dee5f207c8a86187f111b0e910" title="env_set_del" alt="" coords="797,132,888,159"/>
+<area shape="rect" id="node7" href="$buffer_8c.html#a06e0220403278399596a7a1b6b601fca" title="string_alloc" alt="" coords="953,5,1041,32"/>
+<area shape="rect" id="node9" href="$buffer_8c.html#aa68699d49774055c860c609ec5d84bd5" title="string_mod" alt="" coords="954,56,1041,83"/>
+<area shape="rect" id="node8" href="$buffer_8c.html#a67f7dec7f86e113dc0744584fd80b621" title="gc_malloc" alt="" coords="1089,5,1171,32"/>
+</map>

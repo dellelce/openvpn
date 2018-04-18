@@ -1,0 +1,9 @@
+<map id="is_dev_type" name="is_dev_type">
+<area shape="rect" id="node2" href="$tun_8h.html#a167ef5d50e4284066beb05f5466bd858" title="dev_type_enum" alt="" coords="144,81,256,108"/>
+<area shape="rect" id="node3" href="$helper_8h.html#a92d54d6276906c26e42d9b1675b122b4" title="helper_client_server" alt="" coords="304,5,440,32"/>
+<area shape="rect" id="node4" href="$tun_8h.html#aaeb7d66a96170c82580b2e821110c745" title="dev_type_string" alt="" coords="316,56,428,83"/>
+<area shape="rect" id="node7" href="$tun_8h.html#ac881cca015e20fc2d4290525767642f4" title="guess_tuntap_dev" alt="" coords="309,107,435,133"/>
+<area shape="rect" id="node8" href="$tun_8h.html#afee8026032ec0cf9c118465a970d4ac0" title="init_tun" alt="" coords="340,157,404,184"/>
+<area shape="rect" id="node5" href="$options_8c.html#a9038bb54aa94c5b93b2b28dee9bdb0bc" title="options_string" alt="" coords="488,107,591,133"/>
+<area shape="rect" id="node6" href="$options_8h.html#a5c19843f7bda8a3cadf41ecbabb6cd6a" title="options_string_extract\l_option" alt="" coords="639,99,789,141"/>
+</map>

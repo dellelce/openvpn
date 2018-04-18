@@ -1,0 +1,6 @@
+<map id="socket_stat" name="socket_stat">
+<area shape="rect" id="node2" href="$buffer_8c.html#aa35bf7feb6a99bf5d364b2d4eba1195c" title="alloc_buf_gc" alt="" coords="144,31,239,57"/>
+<area shape="rect" id="node5" href="$buffer_8c.html#a3307f08331b1ce42168bafd2ecf7874a" title="buf_printf" alt="" coords="154,81,229,108"/>
+<area shape="rect" id="node3" href="$buffer_8c.html#acc1a4ee83a591116d331e52baacf253d" title="buf_size_error" alt="" coords="287,5,389,32"/>
+<area shape="rect" id="node4" href="$buffer_8c.html#a67f7dec7f86e113dc0744584fd80b621" title="gc_malloc" alt="" coords="297,56,379,83"/>
+</map>

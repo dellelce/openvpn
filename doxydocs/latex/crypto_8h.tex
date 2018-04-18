@@ -1,0 +1,947 @@
+\hypertarget{crypto_8h}{}\section{src/openvpn/crypto.h File Reference}
+\label{crypto_8h}\index{src/openvpn/crypto.\+h@{src/openvpn/crypto.\+h}}
+{\ttfamily \#include \char`\"{}crypto\+\_\+backend.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}basic.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}buffer.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}packet\+\_\+id.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}mtu.\+h\char`\"{}}\\*
+Include dependency graph for crypto.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{crypto_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{crypto_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structsha256__digest}{sha256\+\_\+digest}
+\item 
+struct \hyperlink{structkey__type}{key\+\_\+type}
+\item 
+struct \hyperlink{structkey}{key}
+\item 
+struct \hyperlink{structkey__ctx}{key\+\_\+ctx}
+\item 
+struct \hyperlink{structkey2}{key2}
+\item 
+struct \hyperlink{structkey__direction__state}{key\+\_\+direction\+\_\+state}
+\item 
+struct \hyperlink{structkey__ctx__bi}{key\+\_\+ctx\+\_\+bi}
+\item 
+struct \hyperlink{structcrypto__options}{crypto\+\_\+options}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{crypto_8h_ab8be0ec27dfc6dc8d779afa0c42db52c}{K\+E\+Y\+\_\+\+D\+I\+R\+E\+C\+T\+I\+O\+N\+\_\+\+B\+I\+D\+I\+R\+E\+C\+T\+I\+O\+N\+A\+L}~0 /$\ast$ same keys for both directions $\ast$/
+\item 
+\#define \hyperlink{crypto_8h_a09112b6672bf44b0ecef2eee6348244c}{K\+E\+Y\+\_\+\+D\+I\+R\+E\+C\+T\+I\+O\+N\+\_\+\+N\+O\+R\+M\+A\+L}~1 /$\ast$ encrypt with keys\mbox{[}0\mbox{]}, decrypt with keys\mbox{[}1\mbox{]} $\ast$/
+\item 
+\#define \hyperlink{crypto_8h_ad246376c36364cabaacea01498048ec7}{K\+E\+Y\+\_\+\+D\+I\+R\+E\+C\+T\+I\+O\+N\+\_\+\+I\+N\+V\+E\+R\+S\+E}~2 /$\ast$ encrypt with keys\mbox{[}1\mbox{]}, decrypt with keys\mbox{[}0\mbox{]} $\ast$/
+\item 
+\#define \hyperlink{crypto_8h_a10cf731ef4917a647cdca413d507ff81}{C\+O\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+I\+D\+\_\+\+L\+O\+N\+G\+\_\+\+F\+O\+R\+M}~(1$<$$<$0)
+\item 
+\#define \hyperlink{crypto_8h_a46afc2f632a024378e286f6ada0ade76}{C\+O\+\_\+\+I\+G\+N\+O\+R\+E\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+I\+D}~(1$<$$<$1)
+\item 
+\#define \hyperlink{crypto_8h_a897fcd411cae93fbed05653515ce480e}{C\+O\+\_\+\+M\+U\+T\+E\+\_\+\+R\+E\+P\+L\+A\+Y\+\_\+\+W\+A\+R\+N\+I\+N\+G\+S}~(1$<$$<$2)
+\item 
+\#define \hyperlink{crypto_8h_a3c30c5ee1d0788ec86d22aec61952199}{C\+R\+Y\+P\+T\+\_\+\+E\+R\+R\+O\+R}(format)~do \{ \hyperlink{error_8h_a3ac39702968675a6552a43d7c68bf7f9}{msg}(\hyperlink{errlevel_8h_a82c6e0357ff0b26eaa2ad2fb17cc1268}{D\+\_\+\+C\+R\+Y\+P\+T\+\_\+\+E\+R\+R\+O\+R\+S}, \char`\"{}\%s\+: \char`\"{} format, error\+\_\+prefix); goto error\+\_\+exit; \} while (\hyperlink{automatic_8c_a65e9886d74aaee76545e83dd09011727}{false})
+\item 
+\#define \hyperlink{crypto_8h_a3658531e5110d45db922d6a47fb2454b}{O\+P\+E\+N\+V\+P\+N\+\_\+\+A\+E\+A\+D\+\_\+\+M\+I\+N\+\_\+\+I\+V\+\_\+\+L\+E\+N}~(sizeof(\hyperlink{packet__id_8h_a345f753b1c6ea20d24409e769aadb7e6}{packet\+\_\+id\+\_\+type}) + 8)
+\item 
+\#define \hyperlink{crypto_8h_abab39c003d995feddd945d8c680be0bd}{R\+K\+F\+\_\+\+M\+U\+S\+T\+\_\+\+S\+U\+C\+C\+E\+E\+D}~(1$<$$<$0)
+\item 
+\#define \hyperlink{crypto_8h_a88d01fb7acc16a3c70e24fbc61b741bc}{R\+K\+F\+\_\+\+I\+N\+L\+I\+N\+E}~(1$<$$<$1)
+\item 
+\#define \hyperlink{crypto_8h_a89d9152ef191855e0958554eca1e877c}{N\+O\+N\+C\+E\+\_\+\+S\+E\+C\+R\+E\+T\+\_\+\+L\+E\+N\+\_\+\+M\+I\+N}~16
+\item 
+\#define \hyperlink{crypto_8h_a73f126605671fbbab2201edf86635df4}{N\+O\+N\+C\+E\+\_\+\+S\+E\+C\+R\+E\+T\+\_\+\+L\+E\+N\+\_\+\+M\+A\+X}~64
+\item 
+\#define \hyperlink{crypto_8h_a72d592a2e01dbbf9ac96d01aa811fee7}{P\+R\+N\+G\+\_\+\+N\+O\+N\+C\+E\+\_\+\+R\+E\+S\+E\+T\+\_\+\+B\+Y\+T\+E\+S}~1024
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{crypto_8h_a3482d06fa45961722769bcad30ed3407}{read\+\_\+key\+\_\+file} (struct \hyperlink{structkey2}{key2} $\ast$\hyperlink{structkey2}{key2}, const char $\ast$file, const unsigned int flags)
+\item 
+int \hyperlink{crypto_8h_a81c00d1ee124bc52b54b6b3082fba96e}{write\+\_\+key\+\_\+file} (const int nkeys, const char $\ast$filename)
+\item 
+int \hyperlink{crypto_8h_a926d3c88e21b5e810b59e5ba45a34639}{read\+\_\+passphrase\+\_\+hash} (const char $\ast$passphrase\+\_\+file, const \hyperlink{crypto__mbedtls_8h_acd12a312c79aead7af792554fb5606d5}{md\+\_\+kt\+\_\+t} $\ast$digest, uint8\+\_\+t $\ast$output, int len)
+\item 
+void \hyperlink{crypto_8h_abd4e2239c5b8afe85276885676851bcf}{generate\+\_\+key\+\_\+random} (struct \hyperlink{structkey}{key} $\ast$\hyperlink{structkey}{key}, const struct \hyperlink{structkey__type}{key\+\_\+type} $\ast$kt)
+\item 
+void \hyperlink{crypto_8h_af0c4bb63e6b4aae63502a87217a36c79}{check\+\_\+replay\+\_\+consistency} (const struct \hyperlink{structkey__type}{key\+\_\+type} $\ast$kt, \hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} \hyperlink{structpacket__id}{packet\+\_\+id})
+\item 
+\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} \hyperlink{crypto_8h_a87b883dc7b32de49358a397c4e5a56a6}{check\+\_\+key} (struct \hyperlink{structkey}{key} $\ast$\hyperlink{structkey}{key}, const struct \hyperlink{structkey__type}{key\+\_\+type} $\ast$kt)
+\item 
+void \hyperlink{crypto_8h_aba43c7afa9dab7d3d1bb9443a0fba6d8}{fixup\+\_\+key} (struct \hyperlink{structkey}{key} $\ast$\hyperlink{structkey}{key}, const struct \hyperlink{structkey__type}{key\+\_\+type} $\ast$kt)
+\item 
+\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} \hyperlink{crypto_8h_ac5e8c79c3087b70be89679a45aa3a310}{write\+\_\+key} (const struct \hyperlink{structkey}{key} $\ast$\hyperlink{structkey}{key}, const struct \hyperlink{structkey__type}{key\+\_\+type} $\ast$kt, struct \hyperlink{structbuffer}{buffer} $\ast$buf)
+\item 
+int \hyperlink{crypto_8h_aa5a63a28549eab7b202ca3fa522a22d6}{read\+\_\+key} (struct \hyperlink{structkey}{key} $\ast$\hyperlink{structkey}{key}, const struct \hyperlink{structkey__type}{key\+\_\+type} $\ast$kt, struct \hyperlink{structbuffer}{buffer} $\ast$buf)
+\item 
+void \hyperlink{crypto_8h_a5657fa40c2ed8eed4ac057b87902100b}{init\+\_\+key\+\_\+type} (struct \hyperlink{structkey__type}{key\+\_\+type} $\ast$kt, const char $\ast$ciphername, const char $\ast$authname, int keysize, \hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} tls\+\_\+mode, \hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} warn)
+\item 
+void \hyperlink{crypto_8h_ae629299ae8c5888623e26033c1784d31}{init\+\_\+key\+\_\+ctx} (struct \hyperlink{structkey__ctx}{key\+\_\+ctx} $\ast$ctx, const struct \hyperlink{structkey}{key} $\ast$\hyperlink{structkey}{key}, const struct \hyperlink{structkey__type}{key\+\_\+type} $\ast$kt, int enc, const char $\ast$prefix)
+\item 
+void \hyperlink{crypto_8h_af3aee473fd00923f722cc0518add3d7c}{free\+\_\+key\+\_\+ctx} (struct \hyperlink{structkey__ctx}{key\+\_\+ctx} $\ast$ctx)
+\item 
+void \hyperlink{crypto_8h_ab4bddbfa55994baf73b823dd49eb9320}{init\+\_\+key\+\_\+ctx\+\_\+bi} (struct \hyperlink{structkey__ctx__bi}{key\+\_\+ctx\+\_\+bi} $\ast$ctx, const struct \hyperlink{structkey2}{key2} $\ast$\hyperlink{structkey2}{key2}, int key\+\_\+direction, const struct \hyperlink{structkey__type}{key\+\_\+type} $\ast$kt, const char $\ast$name)
+\item 
+void \hyperlink{crypto_8h_a0605d1e78bd3bf4e23d99e039301f934}{free\+\_\+key\+\_\+ctx\+\_\+bi} (struct \hyperlink{structkey__ctx__bi}{key\+\_\+ctx\+\_\+bi} $\ast$ctx)
+\item 
+\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} \hyperlink{crypto_8h_a1e6bbdde50a9843d441c22ada85e6345}{crypto\+\_\+check\+\_\+replay} (struct \hyperlink{structcrypto__options}{crypto\+\_\+options} $\ast$opt, const struct \hyperlink{structpacket__id__net}{packet\+\_\+id\+\_\+net} $\ast$pin, const char $\ast$error\+\_\+prefix, struct \hyperlink{structgc__arena}{gc\+\_\+arena} $\ast$gc)
+\item 
+void \hyperlink{crypto_8h_af597e0d765df961d66a200fa33ba4faf}{crypto\+\_\+adjust\+\_\+frame\+\_\+parameters} (struct \hyperlink{structframe}{frame} $\ast$\hyperlink{structframe}{frame}, const struct \hyperlink{structkey__type}{key\+\_\+type} $\ast$kt, \hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} \hyperlink{structpacket__id}{packet\+\_\+id}, \hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} packet\+\_\+id\+\_\+long\+\_\+form)
+\item 
+size\+\_\+t \hyperlink{crypto_8h_aec68a44ce58275f8f5c90363ea527288}{crypto\+\_\+max\+\_\+overhead} (void)
+\item 
+void \hyperlink{crypto_8h_ab99dea190ad93a642a0fc5a429b8f0ed}{prng\+\_\+init} (const char $\ast$md\+\_\+name, const int nonce\+\_\+secret\+\_\+len\+\_\+parm)
+\item 
+void \hyperlink{crypto_8h_a1d7c04eddcc6269ed0f1e76fe3f9ce0f}{prng\+\_\+bytes} (uint8\+\_\+t $\ast$output, int len)
+\item 
+void \hyperlink{crypto_8h_ae8c523b770f0e2f30d44004797106508}{prng\+\_\+uninit} (void)
+\item 
+void \hyperlink{crypto_8h_a3c572ced6eea1c2b933df8e82b848983}{test\+\_\+crypto} (struct \hyperlink{structcrypto__options}{crypto\+\_\+options} $\ast$co, struct \hyperlink{structframe}{frame} $\ast$f)
+\item 
+void \hyperlink{crypto_8h_abe602273d3919da32e45249dc2af3bc5}{key\+\_\+direction\+\_\+state\+\_\+init} (struct \hyperlink{structkey__direction__state}{key\+\_\+direction\+\_\+state} $\ast$kds, int key\+\_\+direction)
+\item 
+void \hyperlink{crypto_8h_a30a5545a94f3f5be9a828a54fae87c60}{verify\+\_\+fix\+\_\+key2} (struct \hyperlink{structkey2}{key2} $\ast$\hyperlink{structkey2}{key2}, const struct \hyperlink{structkey__type}{key\+\_\+type} $\ast$kt, const char $\ast$shared\+\_\+secret\+\_\+file)
+\item 
+void \hyperlink{crypto_8h_a740d1036dfdb6ed93199f8bce8bbbbe9}{must\+\_\+have\+\_\+n\+\_\+keys} (const char $\ast$filename, const char $\ast$option, const struct \hyperlink{structkey2}{key2} $\ast$\hyperlink{structkey2}{key2}, int n)
+\item 
+int \hyperlink{crypto_8h_a6a09f04c154e9795c61d37fb79419cd4}{ascii2keydirection} (int msglevel, const char $\ast$str)
+\item 
+const char $\ast$ \hyperlink{crypto_8h_ab16d0ee42a623040eccffb7f9ad575c0}{keydirection2ascii} (int kd, \hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} remote, \hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} humanreadable)
+\item 
+void \hyperlink{crypto_8h_a2a5874f830425ad932c70899d6d25b7d}{key2\+\_\+print} (const struct \hyperlink{structkey2}{key2} $\ast$k, const struct \hyperlink{structkey__type}{key\+\_\+type} $\ast$kt, const char $\ast$prefix0, const char $\ast$prefix1)
+\item 
+void \hyperlink{crypto_8h_a7b8d6e163d43f5f77488c2237a184e81}{crypto\+\_\+read\+\_\+openvpn\+\_\+key} (const struct \hyperlink{structkey__type}{key\+\_\+type} $\ast$\hyperlink{structkey__type}{key\+\_\+type}, struct \hyperlink{structkey__ctx__bi}{key\+\_\+ctx\+\_\+bi} $\ast$ctx, const char $\ast$key\+\_\+file, const char $\ast$key\+\_\+inline, const int key\+\_\+direction, const char $\ast$key\+\_\+name, const char $\ast$opt\+\_\+name)
+\end{DoxyCompactItemize}
+\begin{Indent}{\bf Functions for performing security operations on data channel packets}\par
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{group__data__crypto_ga2756bad88224b98719d4e8f08cb11ef9}{openvpn\+\_\+encrypt} (struct \hyperlink{structbuffer}{buffer} $\ast$buf, struct \hyperlink{structbuffer}{buffer} work, struct \hyperlink{structcrypto__options}{crypto\+\_\+options} $\ast$opt)
+\item 
+\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} \hyperlink{group__data__crypto_gae91d99446478fcf3327672eb78ef0bf8}{openvpn\+\_\+decrypt} (struct \hyperlink{structbuffer}{buffer} $\ast$buf, struct \hyperlink{structbuffer}{buffer} work, struct \hyperlink{structcrypto__options}{crypto\+\_\+options} $\ast$opt, const struct \hyperlink{structframe}{frame} $\ast$\hyperlink{structframe}{frame}, const uint8\+\_\+t $\ast$ad\+\_\+start)
+\end{DoxyCompactItemize}
+\end{Indent}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{crypto_8h_a46afc2f632a024378e286f6ada0ade76}{}\index{crypto.\+h@{crypto.\+h}!C\+O\+\_\+\+I\+G\+N\+O\+R\+E\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+I\+D@{C\+O\+\_\+\+I\+G\+N\+O\+R\+E\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+I\+D}}
+\index{C\+O\+\_\+\+I\+G\+N\+O\+R\+E\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+I\+D@{C\+O\+\_\+\+I\+G\+N\+O\+R\+E\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+I\+D}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{C\+O\+\_\+\+I\+G\+N\+O\+R\+E\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+I\+D}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+O\+\_\+\+I\+G\+N\+O\+R\+E\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+I\+D~(1$<$$<$1)}\label{crypto_8h_a46afc2f632a024378e286f6ada0ade76}
+Bit-\/flag indicating whether to ignore the packet I\+D of a received packet. This flag is used during processing of the first packet received from a client. \hypertarget{crypto_8h_a897fcd411cae93fbed05653515ce480e}{}\index{crypto.\+h@{crypto.\+h}!C\+O\+\_\+\+M\+U\+T\+E\+\_\+\+R\+E\+P\+L\+A\+Y\+\_\+\+W\+A\+R\+N\+I\+N\+G\+S@{C\+O\+\_\+\+M\+U\+T\+E\+\_\+\+R\+E\+P\+L\+A\+Y\+\_\+\+W\+A\+R\+N\+I\+N\+G\+S}}
+\index{C\+O\+\_\+\+M\+U\+T\+E\+\_\+\+R\+E\+P\+L\+A\+Y\+\_\+\+W\+A\+R\+N\+I\+N\+G\+S@{C\+O\+\_\+\+M\+U\+T\+E\+\_\+\+R\+E\+P\+L\+A\+Y\+\_\+\+W\+A\+R\+N\+I\+N\+G\+S}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{C\+O\+\_\+\+M\+U\+T\+E\+\_\+\+R\+E\+P\+L\+A\+Y\+\_\+\+W\+A\+R\+N\+I\+N\+G\+S}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+O\+\_\+\+M\+U\+T\+E\+\_\+\+R\+E\+P\+L\+A\+Y\+\_\+\+W\+A\+R\+N\+I\+N\+G\+S~(1$<$$<$2)}\label{crypto_8h_a897fcd411cae93fbed05653515ce480e}
+Bit-\/flag indicating not to display replay warnings. \hypertarget{crypto_8h_a10cf731ef4917a647cdca413d507ff81}{}\index{crypto.\+h@{crypto.\+h}!C\+O\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+I\+D\+\_\+\+L\+O\+N\+G\+\_\+\+F\+O\+R\+M@{C\+O\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+I\+D\+\_\+\+L\+O\+N\+G\+\_\+\+F\+O\+R\+M}}
+\index{C\+O\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+I\+D\+\_\+\+L\+O\+N\+G\+\_\+\+F\+O\+R\+M@{C\+O\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+I\+D\+\_\+\+L\+O\+N\+G\+\_\+\+F\+O\+R\+M}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{C\+O\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+I\+D\+\_\+\+L\+O\+N\+G\+\_\+\+F\+O\+R\+M}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+O\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+I\+D\+\_\+\+L\+O\+N\+G\+\_\+\+F\+O\+R\+M~(1$<$$<$0)}\label{crypto_8h_a10cf731ef4917a647cdca413d507ff81}
+Bit-\/flag indicating whether to use Open\+V\+P\+N\textquotesingle{}s long packet I\+D format. \hypertarget{crypto_8h_a3c30c5ee1d0788ec86d22aec61952199}{}\index{crypto.\+h@{crypto.\+h}!C\+R\+Y\+P\+T\+\_\+\+E\+R\+R\+O\+R@{C\+R\+Y\+P\+T\+\_\+\+E\+R\+R\+O\+R}}
+\index{C\+R\+Y\+P\+T\+\_\+\+E\+R\+R\+O\+R@{C\+R\+Y\+P\+T\+\_\+\+E\+R\+R\+O\+R}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{C\+R\+Y\+P\+T\+\_\+\+E\+R\+R\+O\+R}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+R\+Y\+P\+T\+\_\+\+E\+R\+R\+O\+R(
+\begin{DoxyParamCaption}
+\item[{}]{format}
+\end{DoxyParamCaption}
+)~do \{ {\bf msg}({\bf D\+\_\+\+C\+R\+Y\+P\+T\+\_\+\+E\+R\+R\+O\+R\+S}, \char`\"{}\%s\+: \char`\"{} format, error\+\_\+prefix); goto error\+\_\+exit; \} while ({\bf false})}\label{crypto_8h_a3c30c5ee1d0788ec86d22aec61952199}
+\hypertarget{crypto_8h_ab8be0ec27dfc6dc8d779afa0c42db52c}{}\index{crypto.\+h@{crypto.\+h}!K\+E\+Y\+\_\+\+D\+I\+R\+E\+C\+T\+I\+O\+N\+\_\+\+B\+I\+D\+I\+R\+E\+C\+T\+I\+O\+N\+A\+L@{K\+E\+Y\+\_\+\+D\+I\+R\+E\+C\+T\+I\+O\+N\+\_\+\+B\+I\+D\+I\+R\+E\+C\+T\+I\+O\+N\+A\+L}}
+\index{K\+E\+Y\+\_\+\+D\+I\+R\+E\+C\+T\+I\+O\+N\+\_\+\+B\+I\+D\+I\+R\+E\+C\+T\+I\+O\+N\+A\+L@{K\+E\+Y\+\_\+\+D\+I\+R\+E\+C\+T\+I\+O\+N\+\_\+\+B\+I\+D\+I\+R\+E\+C\+T\+I\+O\+N\+A\+L}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{K\+E\+Y\+\_\+\+D\+I\+R\+E\+C\+T\+I\+O\+N\+\_\+\+B\+I\+D\+I\+R\+E\+C\+T\+I\+O\+N\+A\+L}]{\setlength{\rightskip}{0pt plus 5cm}\#define K\+E\+Y\+\_\+\+D\+I\+R\+E\+C\+T\+I\+O\+N\+\_\+\+B\+I\+D\+I\+R\+E\+C\+T\+I\+O\+N\+A\+L~0 /$\ast$ same keys for both directions $\ast$/}\label{crypto_8h_ab8be0ec27dfc6dc8d779afa0c42db52c}
+\hypertarget{crypto_8h_ad246376c36364cabaacea01498048ec7}{}\index{crypto.\+h@{crypto.\+h}!K\+E\+Y\+\_\+\+D\+I\+R\+E\+C\+T\+I\+O\+N\+\_\+\+I\+N\+V\+E\+R\+S\+E@{K\+E\+Y\+\_\+\+D\+I\+R\+E\+C\+T\+I\+O\+N\+\_\+\+I\+N\+V\+E\+R\+S\+E}}
+\index{K\+E\+Y\+\_\+\+D\+I\+R\+E\+C\+T\+I\+O\+N\+\_\+\+I\+N\+V\+E\+R\+S\+E@{K\+E\+Y\+\_\+\+D\+I\+R\+E\+C\+T\+I\+O\+N\+\_\+\+I\+N\+V\+E\+R\+S\+E}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{K\+E\+Y\+\_\+\+D\+I\+R\+E\+C\+T\+I\+O\+N\+\_\+\+I\+N\+V\+E\+R\+S\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define K\+E\+Y\+\_\+\+D\+I\+R\+E\+C\+T\+I\+O\+N\+\_\+\+I\+N\+V\+E\+R\+S\+E~2 /$\ast$ encrypt with keys\mbox{[}1\mbox{]}, decrypt with keys\mbox{[}0\mbox{]} $\ast$/}\label{crypto_8h_ad246376c36364cabaacea01498048ec7}
+\hypertarget{crypto_8h_a09112b6672bf44b0ecef2eee6348244c}{}\index{crypto.\+h@{crypto.\+h}!K\+E\+Y\+\_\+\+D\+I\+R\+E\+C\+T\+I\+O\+N\+\_\+\+N\+O\+R\+M\+A\+L@{K\+E\+Y\+\_\+\+D\+I\+R\+E\+C\+T\+I\+O\+N\+\_\+\+N\+O\+R\+M\+A\+L}}
+\index{K\+E\+Y\+\_\+\+D\+I\+R\+E\+C\+T\+I\+O\+N\+\_\+\+N\+O\+R\+M\+A\+L@{K\+E\+Y\+\_\+\+D\+I\+R\+E\+C\+T\+I\+O\+N\+\_\+\+N\+O\+R\+M\+A\+L}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{K\+E\+Y\+\_\+\+D\+I\+R\+E\+C\+T\+I\+O\+N\+\_\+\+N\+O\+R\+M\+A\+L}]{\setlength{\rightskip}{0pt plus 5cm}\#define K\+E\+Y\+\_\+\+D\+I\+R\+E\+C\+T\+I\+O\+N\+\_\+\+N\+O\+R\+M\+A\+L~1 /$\ast$ encrypt with keys\mbox{[}0\mbox{]}, decrypt with keys\mbox{[}1\mbox{]} $\ast$/}\label{crypto_8h_a09112b6672bf44b0ecef2eee6348244c}
+\hypertarget{crypto_8h_a73f126605671fbbab2201edf86635df4}{}\index{crypto.\+h@{crypto.\+h}!N\+O\+N\+C\+E\+\_\+\+S\+E\+C\+R\+E\+T\+\_\+\+L\+E\+N\+\_\+\+M\+A\+X@{N\+O\+N\+C\+E\+\_\+\+S\+E\+C\+R\+E\+T\+\_\+\+L\+E\+N\+\_\+\+M\+A\+X}}
+\index{N\+O\+N\+C\+E\+\_\+\+S\+E\+C\+R\+E\+T\+\_\+\+L\+E\+N\+\_\+\+M\+A\+X@{N\+O\+N\+C\+E\+\_\+\+S\+E\+C\+R\+E\+T\+\_\+\+L\+E\+N\+\_\+\+M\+A\+X}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{N\+O\+N\+C\+E\+\_\+\+S\+E\+C\+R\+E\+T\+\_\+\+L\+E\+N\+\_\+\+M\+A\+X}]{\setlength{\rightskip}{0pt plus 5cm}\#define N\+O\+N\+C\+E\+\_\+\+S\+E\+C\+R\+E\+T\+\_\+\+L\+E\+N\+\_\+\+M\+A\+X~64}\label{crypto_8h_a73f126605671fbbab2201edf86635df4}
+\hypertarget{crypto_8h_a89d9152ef191855e0958554eca1e877c}{}\index{crypto.\+h@{crypto.\+h}!N\+O\+N\+C\+E\+\_\+\+S\+E\+C\+R\+E\+T\+\_\+\+L\+E\+N\+\_\+\+M\+I\+N@{N\+O\+N\+C\+E\+\_\+\+S\+E\+C\+R\+E\+T\+\_\+\+L\+E\+N\+\_\+\+M\+I\+N}}
+\index{N\+O\+N\+C\+E\+\_\+\+S\+E\+C\+R\+E\+T\+\_\+\+L\+E\+N\+\_\+\+M\+I\+N@{N\+O\+N\+C\+E\+\_\+\+S\+E\+C\+R\+E\+T\+\_\+\+L\+E\+N\+\_\+\+M\+I\+N}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{N\+O\+N\+C\+E\+\_\+\+S\+E\+C\+R\+E\+T\+\_\+\+L\+E\+N\+\_\+\+M\+I\+N}]{\setlength{\rightskip}{0pt plus 5cm}\#define N\+O\+N\+C\+E\+\_\+\+S\+E\+C\+R\+E\+T\+\_\+\+L\+E\+N\+\_\+\+M\+I\+N~16}\label{crypto_8h_a89d9152ef191855e0958554eca1e877c}
+\hypertarget{crypto_8h_a3658531e5110d45db922d6a47fb2454b}{}\index{crypto.\+h@{crypto.\+h}!O\+P\+E\+N\+V\+P\+N\+\_\+\+A\+E\+A\+D\+\_\+\+M\+I\+N\+\_\+\+I\+V\+\_\+\+L\+E\+N@{O\+P\+E\+N\+V\+P\+N\+\_\+\+A\+E\+A\+D\+\_\+\+M\+I\+N\+\_\+\+I\+V\+\_\+\+L\+E\+N}}
+\index{O\+P\+E\+N\+V\+P\+N\+\_\+\+A\+E\+A\+D\+\_\+\+M\+I\+N\+\_\+\+I\+V\+\_\+\+L\+E\+N@{O\+P\+E\+N\+V\+P\+N\+\_\+\+A\+E\+A\+D\+\_\+\+M\+I\+N\+\_\+\+I\+V\+\_\+\+L\+E\+N}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{O\+P\+E\+N\+V\+P\+N\+\_\+\+A\+E\+A\+D\+\_\+\+M\+I\+N\+\_\+\+I\+V\+\_\+\+L\+E\+N}]{\setlength{\rightskip}{0pt plus 5cm}\#define O\+P\+E\+N\+V\+P\+N\+\_\+\+A\+E\+A\+D\+\_\+\+M\+I\+N\+\_\+\+I\+V\+\_\+\+L\+E\+N~(sizeof({\bf packet\+\_\+id\+\_\+type}) + 8)}\label{crypto_8h_a3658531e5110d45db922d6a47fb2454b}
+Minimal I\+V length for A\+E\+A\+D mode ciphers (in bytes)\+: 4-\/byte packet id + 8 bytes implicit I\+V. \hypertarget{crypto_8h_a72d592a2e01dbbf9ac96d01aa811fee7}{}\index{crypto.\+h@{crypto.\+h}!P\+R\+N\+G\+\_\+\+N\+O\+N\+C\+E\+\_\+\+R\+E\+S\+E\+T\+\_\+\+B\+Y\+T\+E\+S@{P\+R\+N\+G\+\_\+\+N\+O\+N\+C\+E\+\_\+\+R\+E\+S\+E\+T\+\_\+\+B\+Y\+T\+E\+S}}
+\index{P\+R\+N\+G\+\_\+\+N\+O\+N\+C\+E\+\_\+\+R\+E\+S\+E\+T\+\_\+\+B\+Y\+T\+E\+S@{P\+R\+N\+G\+\_\+\+N\+O\+N\+C\+E\+\_\+\+R\+E\+S\+E\+T\+\_\+\+B\+Y\+T\+E\+S}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{P\+R\+N\+G\+\_\+\+N\+O\+N\+C\+E\+\_\+\+R\+E\+S\+E\+T\+\_\+\+B\+Y\+T\+E\+S}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\+R\+N\+G\+\_\+\+N\+O\+N\+C\+E\+\_\+\+R\+E\+S\+E\+T\+\_\+\+B\+Y\+T\+E\+S~1024}\label{crypto_8h_a72d592a2e01dbbf9ac96d01aa811fee7}
+Number of bytes of random to allow before resetting the nonce \hypertarget{crypto_8h_a88d01fb7acc16a3c70e24fbc61b741bc}{}\index{crypto.\+h@{crypto.\+h}!R\+K\+F\+\_\+\+I\+N\+L\+I\+N\+E@{R\+K\+F\+\_\+\+I\+N\+L\+I\+N\+E}}
+\index{R\+K\+F\+\_\+\+I\+N\+L\+I\+N\+E@{R\+K\+F\+\_\+\+I\+N\+L\+I\+N\+E}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{R\+K\+F\+\_\+\+I\+N\+L\+I\+N\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+K\+F\+\_\+\+I\+N\+L\+I\+N\+E~(1$<$$<$1)}\label{crypto_8h_a88d01fb7acc16a3c70e24fbc61b741bc}
+\hypertarget{crypto_8h_abab39c003d995feddd945d8c680be0bd}{}\index{crypto.\+h@{crypto.\+h}!R\+K\+F\+\_\+\+M\+U\+S\+T\+\_\+\+S\+U\+C\+C\+E\+E\+D@{R\+K\+F\+\_\+\+M\+U\+S\+T\+\_\+\+S\+U\+C\+C\+E\+E\+D}}
+\index{R\+K\+F\+\_\+\+M\+U\+S\+T\+\_\+\+S\+U\+C\+C\+E\+E\+D@{R\+K\+F\+\_\+\+M\+U\+S\+T\+\_\+\+S\+U\+C\+C\+E\+E\+D}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{R\+K\+F\+\_\+\+M\+U\+S\+T\+\_\+\+S\+U\+C\+C\+E\+E\+D}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+K\+F\+\_\+\+M\+U\+S\+T\+\_\+\+S\+U\+C\+C\+E\+E\+D~(1$<$$<$0)}\label{crypto_8h_abab39c003d995feddd945d8c680be0bd}
+
+
+\subsection{Function Documentation}
+\hypertarget{crypto_8h_a6a09f04c154e9795c61d37fb79419cd4}{}\index{crypto.\+h@{crypto.\+h}!ascii2keydirection@{ascii2keydirection}}
+\index{ascii2keydirection@{ascii2keydirection}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{ascii2keydirection(int msglevel, const char $\ast$str)}]{\setlength{\rightskip}{0pt plus 5cm}int ascii2keydirection (
+\begin{DoxyParamCaption}
+\item[{int}]{msglevel, }
+\item[{const char $\ast$}]{str}
+\end{DoxyParamCaption}
+)}\label{crypto_8h_a6a09f04c154e9795c61d37fb79419cd4}
+\hypertarget{crypto_8h_a87b883dc7b32de49358a397c4e5a56a6}{}\index{crypto.\+h@{crypto.\+h}!check\+\_\+key@{check\+\_\+key}}
+\index{check\+\_\+key@{check\+\_\+key}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{check\+\_\+key(struct key $\ast$key, const struct key\+\_\+type $\ast$kt)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} check\+\_\+key (
+\begin{DoxyParamCaption}
+\item[{struct {\bf key} $\ast$}]{key, }
+\item[{const struct {\bf key\+\_\+type} $\ast$}]{kt}
+\end{DoxyParamCaption}
+)}\label{crypto_8h_a87b883dc7b32de49358a397c4e5a56a6}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=296pt]{crypto_8h_a87b883dc7b32de49358a397c4e5a56a6_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{crypto_8h_a87b883dc7b32de49358a397c4e5a56a6_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{crypto_8h_af0c4bb63e6b4aae63502a87217a36c79}{}\index{crypto.\+h@{crypto.\+h}!check\+\_\+replay\+\_\+consistency@{check\+\_\+replay\+\_\+consistency}}
+\index{check\+\_\+replay\+\_\+consistency@{check\+\_\+replay\+\_\+consistency}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{check\+\_\+replay\+\_\+consistency(const struct key\+\_\+type $\ast$kt, bool packet\+\_\+id)}]{\setlength{\rightskip}{0pt plus 5cm}void check\+\_\+replay\+\_\+consistency (
+\begin{DoxyParamCaption}
+\item[{const struct {\bf key\+\_\+type} $\ast$}]{kt, }
+\item[{{\bf bool}}]{packet\+\_\+id}
+\end{DoxyParamCaption}
+)}\label{crypto_8h_af0c4bb63e6b4aae63502a87217a36c79}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{crypto_8h_af0c4bb63e6b4aae63502a87217a36c79_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{crypto_8h_af597e0d765df961d66a200fa33ba4faf}{}\index{crypto.\+h@{crypto.\+h}!crypto\+\_\+adjust\+\_\+frame\+\_\+parameters@{crypto\+\_\+adjust\+\_\+frame\+\_\+parameters}}
+\index{crypto\+\_\+adjust\+\_\+frame\+\_\+parameters@{crypto\+\_\+adjust\+\_\+frame\+\_\+parameters}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{crypto\+\_\+adjust\+\_\+frame\+\_\+parameters(struct frame $\ast$frame, const struct key\+\_\+type $\ast$kt, bool packet\+\_\+id, bool packet\+\_\+id\+\_\+long\+\_\+form)}]{\setlength{\rightskip}{0pt plus 5cm}void crypto\+\_\+adjust\+\_\+frame\+\_\+parameters (
+\begin{DoxyParamCaption}
+\item[{struct {\bf frame} $\ast$}]{frame, }
+\item[{const struct {\bf key\+\_\+type} $\ast$}]{kt, }
+\item[{{\bf bool}}]{packet\+\_\+id, }
+\item[{{\bf bool}}]{packet\+\_\+id\+\_\+long\+\_\+form}
+\end{DoxyParamCaption}
+)}\label{crypto_8h_af597e0d765df961d66a200fa33ba4faf}
+Calculate crypto overhead and adjust frame to account for that 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=332pt]{crypto_8h_af597e0d765df961d66a200fa33ba4faf_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{crypto_8h_af597e0d765df961d66a200fa33ba4faf_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{crypto_8h_a1e6bbdde50a9843d441c22ada85e6345}{}\index{crypto.\+h@{crypto.\+h}!crypto\+\_\+check\+\_\+replay@{crypto\+\_\+check\+\_\+replay}}
+\index{crypto\+\_\+check\+\_\+replay@{crypto\+\_\+check\+\_\+replay}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{crypto\+\_\+check\+\_\+replay(struct crypto\+\_\+options $\ast$opt, const struct packet\+\_\+id\+\_\+net $\ast$pin, const char $\ast$error\+\_\+prefix, struct gc\+\_\+arena $\ast$gc)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} crypto\+\_\+check\+\_\+replay (
+\begin{DoxyParamCaption}
+\item[{struct {\bf crypto\+\_\+options} $\ast$}]{opt, }
+\item[{const struct {\bf packet\+\_\+id\+\_\+net} $\ast$}]{pin, }
+\item[{const char $\ast$}]{error\+\_\+prefix, }
+\item[{struct {\bf gc\+\_\+arena} $\ast$}]{gc}
+\end{DoxyParamCaption}
+)}\label{crypto_8h_a1e6bbdde50a9843d441c22ada85e6345}
+Check packet I\+D for replay, and perform replay administration.
+
+
+\begin{DoxyParams}{Parameters}
+{\em opt} & Crypto options for this packet, contains replay state. \\
+\hline
+{\em pin} & Packet I\+D read from packet. \\
+\hline
+{\em error\+\_\+prefix} & Prefix to use when printing error messages. \\
+\hline
+{\em gc} & Garbage collector to use.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if packet I\+D is validated to be not a replay, false otherwise. 
+\end{DoxyReturn}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{crypto_8h_a1e6bbdde50a9843d441c22ada85e6345_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=313pt]{crypto_8h_a1e6bbdde50a9843d441c22ada85e6345_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{crypto_8h_aec68a44ce58275f8f5c90363ea527288}{}\index{crypto.\+h@{crypto.\+h}!crypto\+\_\+max\+\_\+overhead@{crypto\+\_\+max\+\_\+overhead}}
+\index{crypto\+\_\+max\+\_\+overhead@{crypto\+\_\+max\+\_\+overhead}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{crypto\+\_\+max\+\_\+overhead(void)}]{\setlength{\rightskip}{0pt plus 5cm}size\+\_\+t crypto\+\_\+max\+\_\+overhead (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{crypto_8h_aec68a44ce58275f8f5c90363ea527288}
+Return the worst-\/case Open\+V\+P\+N crypto overhead (in bytes) 
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{crypto_8h_aec68a44ce58275f8f5c90363ea527288_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{crypto_8h_a7b8d6e163d43f5f77488c2237a184e81}{}\index{crypto.\+h@{crypto.\+h}!crypto\+\_\+read\+\_\+openvpn\+\_\+key@{crypto\+\_\+read\+\_\+openvpn\+\_\+key}}
+\index{crypto\+\_\+read\+\_\+openvpn\+\_\+key@{crypto\+\_\+read\+\_\+openvpn\+\_\+key}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{crypto\+\_\+read\+\_\+openvpn\+\_\+key(const struct key\+\_\+type $\ast$key\+\_\+type, struct key\+\_\+ctx\+\_\+bi $\ast$ctx, const char $\ast$key\+\_\+file, const char $\ast$key\+\_\+inline, const int key\+\_\+direction, const char $\ast$key\+\_\+name, const char $\ast$opt\+\_\+name)}]{\setlength{\rightskip}{0pt plus 5cm}void crypto\+\_\+read\+\_\+openvpn\+\_\+key (
+\begin{DoxyParamCaption}
+\item[{const struct {\bf key\+\_\+type} $\ast$}]{key\+\_\+type, }
+\item[{struct {\bf key\+\_\+ctx\+\_\+bi} $\ast$}]{ctx, }
+\item[{const char $\ast$}]{key\+\_\+file, }
+\item[{const char $\ast$}]{key\+\_\+inline, }
+\item[{const int}]{key\+\_\+direction, }
+\item[{const char $\ast$}]{key\+\_\+name, }
+\item[{const char $\ast$}]{opt\+\_\+name}
+\end{DoxyParamCaption}
+)}\label{crypto_8h_a7b8d6e163d43f5f77488c2237a184e81}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{crypto_8h_a7b8d6e163d43f5f77488c2237a184e81_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=338pt]{crypto_8h_a7b8d6e163d43f5f77488c2237a184e81_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{crypto_8h_aba43c7afa9dab7d3d1bb9443a0fba6d8}{}\index{crypto.\+h@{crypto.\+h}!fixup\+\_\+key@{fixup\+\_\+key}}
+\index{fixup\+\_\+key@{fixup\+\_\+key}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{fixup\+\_\+key(struct key $\ast$key, const struct key\+\_\+type $\ast$kt)}]{\setlength{\rightskip}{0pt plus 5cm}void fixup\+\_\+key (
+\begin{DoxyParamCaption}
+\item[{struct {\bf key} $\ast$}]{key, }
+\item[{const struct {\bf key\+\_\+type} $\ast$}]{kt}
+\end{DoxyParamCaption}
+)}\label{crypto_8h_aba43c7afa9dab7d3d1bb9443a0fba6d8}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=290pt]{crypto_8h_aba43c7afa9dab7d3d1bb9443a0fba6d8_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{crypto_8h_aba43c7afa9dab7d3d1bb9443a0fba6d8_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{crypto_8h_af3aee473fd00923f722cc0518add3d7c}{}\index{crypto.\+h@{crypto.\+h}!free\+\_\+key\+\_\+ctx@{free\+\_\+key\+\_\+ctx}}
+\index{free\+\_\+key\+\_\+ctx@{free\+\_\+key\+\_\+ctx}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{free\+\_\+key\+\_\+ctx(struct key\+\_\+ctx $\ast$ctx)}]{\setlength{\rightskip}{0pt plus 5cm}void free\+\_\+key\+\_\+ctx (
+\begin{DoxyParamCaption}
+\item[{struct {\bf key\+\_\+ctx} $\ast$}]{ctx}
+\end{DoxyParamCaption}
+)}\label{crypto_8h_af3aee473fd00923f722cc0518add3d7c}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=289pt]{crypto_8h_af3aee473fd00923f722cc0518add3d7c_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=273pt]{crypto_8h_af3aee473fd00923f722cc0518add3d7c_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{crypto_8h_a0605d1e78bd3bf4e23d99e039301f934}{}\index{crypto.\+h@{crypto.\+h}!free\+\_\+key\+\_\+ctx\+\_\+bi@{free\+\_\+key\+\_\+ctx\+\_\+bi}}
+\index{free\+\_\+key\+\_\+ctx\+\_\+bi@{free\+\_\+key\+\_\+ctx\+\_\+bi}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{free\+\_\+key\+\_\+ctx\+\_\+bi(struct key\+\_\+ctx\+\_\+bi $\ast$ctx)}]{\setlength{\rightskip}{0pt plus 5cm}void free\+\_\+key\+\_\+ctx\+\_\+bi (
+\begin{DoxyParamCaption}
+\item[{struct {\bf key\+\_\+ctx\+\_\+bi} $\ast$}]{ctx}
+\end{DoxyParamCaption}
+)}\label{crypto_8h_a0605d1e78bd3bf4e23d99e039301f934}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{crypto_8h_a0605d1e78bd3bf4e23d99e039301f934_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{crypto_8h_abd4e2239c5b8afe85276885676851bcf}{}\index{crypto.\+h@{crypto.\+h}!generate\+\_\+key\+\_\+random@{generate\+\_\+key\+\_\+random}}
+\index{generate\+\_\+key\+\_\+random@{generate\+\_\+key\+\_\+random}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{generate\+\_\+key\+\_\+random(struct key $\ast$key, const struct key\+\_\+type $\ast$kt)}]{\setlength{\rightskip}{0pt plus 5cm}void generate\+\_\+key\+\_\+random (
+\begin{DoxyParamCaption}
+\item[{struct {\bf key} $\ast$}]{key, }
+\item[{const struct {\bf key\+\_\+type} $\ast$}]{kt}
+\end{DoxyParamCaption}
+)}\label{crypto_8h_abd4e2239c5b8afe85276885676851bcf}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{crypto_8h_abd4e2239c5b8afe85276885676851bcf_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{crypto_8h_abd4e2239c5b8afe85276885676851bcf_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{crypto_8h_ae629299ae8c5888623e26033c1784d31}{}\index{crypto.\+h@{crypto.\+h}!init\+\_\+key\+\_\+ctx@{init\+\_\+key\+\_\+ctx}}
+\index{init\+\_\+key\+\_\+ctx@{init\+\_\+key\+\_\+ctx}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{init\+\_\+key\+\_\+ctx(struct key\+\_\+ctx $\ast$ctx, const struct key $\ast$key, const struct key\+\_\+type $\ast$kt, int enc, const char $\ast$prefix)}]{\setlength{\rightskip}{0pt plus 5cm}void init\+\_\+key\+\_\+ctx (
+\begin{DoxyParamCaption}
+\item[{struct {\bf key\+\_\+ctx} $\ast$}]{ctx, }
+\item[{const struct {\bf key} $\ast$}]{key, }
+\item[{const struct {\bf key\+\_\+type} $\ast$}]{kt, }
+\item[{int}]{enc, }
+\item[{const char $\ast$}]{prefix}
+\end{DoxyParamCaption}
+)}\label{crypto_8h_ae629299ae8c5888623e26033c1784d31}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=300pt]{crypto_8h_ae629299ae8c5888623e26033c1784d31_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{crypto_8h_ae629299ae8c5888623e26033c1784d31_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{crypto_8h_ab4bddbfa55994baf73b823dd49eb9320}{}\index{crypto.\+h@{crypto.\+h}!init\+\_\+key\+\_\+ctx\+\_\+bi@{init\+\_\+key\+\_\+ctx\+\_\+bi}}
+\index{init\+\_\+key\+\_\+ctx\+\_\+bi@{init\+\_\+key\+\_\+ctx\+\_\+bi}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{init\+\_\+key\+\_\+ctx\+\_\+bi(struct key\+\_\+ctx\+\_\+bi $\ast$ctx, const struct key2 $\ast$key2, int key\+\_\+direction, const struct key\+\_\+type $\ast$kt, const char $\ast$name)}]{\setlength{\rightskip}{0pt plus 5cm}void init\+\_\+key\+\_\+ctx\+\_\+bi (
+\begin{DoxyParamCaption}
+\item[{struct {\bf key\+\_\+ctx\+\_\+bi} $\ast$}]{ctx, }
+\item[{const struct {\bf key2} $\ast$}]{key2, }
+\item[{int}]{key\+\_\+direction, }
+\item[{const struct {\bf key\+\_\+type} $\ast$}]{kt, }
+\item[{const char $\ast$}]{name}
+\end{DoxyParamCaption}
+)}\label{crypto_8h_ab4bddbfa55994baf73b823dd49eb9320}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{crypto_8h_ab4bddbfa55994baf73b823dd49eb9320_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{crypto_8h_ab4bddbfa55994baf73b823dd49eb9320_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{crypto_8h_a5657fa40c2ed8eed4ac057b87902100b}{}\index{crypto.\+h@{crypto.\+h}!init\+\_\+key\+\_\+type@{init\+\_\+key\+\_\+type}}
+\index{init\+\_\+key\+\_\+type@{init\+\_\+key\+\_\+type}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{init\+\_\+key\+\_\+type(struct key\+\_\+type $\ast$kt, const char $\ast$ciphername, const char $\ast$authname, int keysize, bool tls\+\_\+mode, bool warn)}]{\setlength{\rightskip}{0pt plus 5cm}void init\+\_\+key\+\_\+type (
+\begin{DoxyParamCaption}
+\item[{struct {\bf key\+\_\+type} $\ast$}]{kt, }
+\item[{const char $\ast$}]{ciphername, }
+\item[{const char $\ast$}]{authname, }
+\item[{int}]{keysize, }
+\item[{{\bf bool}}]{tls\+\_\+mode, }
+\item[{{\bf bool}}]{warn}
+\end{DoxyParamCaption}
+)}\label{crypto_8h_a5657fa40c2ed8eed4ac057b87902100b}
+Initialize a \hyperlink{structkey__type}{key\+\_\+type} structure with.
+
+
+\begin{DoxyParams}{Parameters}
+{\em kt} & The struct \hyperlink{structkey__type}{key\+\_\+type} to initialize \\
+\hline
+{\em ciphername} & The name of the cipher to use \\
+\hline
+{\em authname} & The name of the H\+M\+A\+C digest to use \\
+\hline
+{\em keysize} & The length of the cipher key to use, in bytes. Only valid for ciphers that support variable length keys. \\
+\hline
+{\em tls\+\_\+mode} & Specifies wether we are running in T\+L\+S mode, which allows more ciphers than static key mode. \\
+\hline
+{\em warn} & Print warnings when null cipher / auth is used. \\
+\hline
+\end{DoxyParams}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=312pt]{crypto_8h_a5657fa40c2ed8eed4ac057b87902100b_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{crypto_8h_a5657fa40c2ed8eed4ac057b87902100b_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{crypto_8h_a2a5874f830425ad932c70899d6d25b7d}{}\index{crypto.\+h@{crypto.\+h}!key2\+\_\+print@{key2\+\_\+print}}
+\index{key2\+\_\+print@{key2\+\_\+print}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{key2\+\_\+print(const struct key2 $\ast$k, const struct key\+\_\+type $\ast$kt, const char $\ast$prefix0, const char $\ast$prefix1)}]{\setlength{\rightskip}{0pt plus 5cm}void key2\+\_\+print (
+\begin{DoxyParamCaption}
+\item[{const struct {\bf key2} $\ast$}]{k, }
+\item[{const struct {\bf key\+\_\+type} $\ast$}]{kt, }
+\item[{const char $\ast$}]{prefix0, }
+\item[{const char $\ast$}]{prefix1}
+\end{DoxyParamCaption}
+)}\label{crypto_8h_a2a5874f830425ad932c70899d6d25b7d}
+\hypertarget{crypto_8h_abe602273d3919da32e45249dc2af3bc5}{}\index{crypto.\+h@{crypto.\+h}!key\+\_\+direction\+\_\+state\+\_\+init@{key\+\_\+direction\+\_\+state\+\_\+init}}
+\index{key\+\_\+direction\+\_\+state\+\_\+init@{key\+\_\+direction\+\_\+state\+\_\+init}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{key\+\_\+direction\+\_\+state\+\_\+init(struct key\+\_\+direction\+\_\+state $\ast$kds, int key\+\_\+direction)}]{\setlength{\rightskip}{0pt plus 5cm}void key\+\_\+direction\+\_\+state\+\_\+init (
+\begin{DoxyParamCaption}
+\item[{struct {\bf key\+\_\+direction\+\_\+state} $\ast$}]{kds, }
+\item[{int}]{key\+\_\+direction}
+\end{DoxyParamCaption}
+)}\label{crypto_8h_abe602273d3919da32e45249dc2af3bc5}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{crypto_8h_abe602273d3919da32e45249dc2af3bc5_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{crypto_8h_ab16d0ee42a623040eccffb7f9ad575c0}{}\index{crypto.\+h@{crypto.\+h}!keydirection2ascii@{keydirection2ascii}}
+\index{keydirection2ascii@{keydirection2ascii}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{keydirection2ascii(int kd, bool remote, bool humanreadable)}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ keydirection2ascii (
+\begin{DoxyParamCaption}
+\item[{int}]{kd, }
+\item[{{\bf bool}}]{remote, }
+\item[{{\bf bool}}]{humanreadable}
+\end{DoxyParamCaption}
+)}\label{crypto_8h_ab16d0ee42a623040eccffb7f9ad575c0}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{crypto_8h_ab16d0ee42a623040eccffb7f9ad575c0_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{crypto_8h_a740d1036dfdb6ed93199f8bce8bbbbe9}{}\index{crypto.\+h@{crypto.\+h}!must\+\_\+have\+\_\+n\+\_\+keys@{must\+\_\+have\+\_\+n\+\_\+keys}}
+\index{must\+\_\+have\+\_\+n\+\_\+keys@{must\+\_\+have\+\_\+n\+\_\+keys}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{must\+\_\+have\+\_\+n\+\_\+keys(const char $\ast$filename, const char $\ast$option, const struct key2 $\ast$key2, int n)}]{\setlength{\rightskip}{0pt plus 5cm}void must\+\_\+have\+\_\+n\+\_\+keys (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{filename, }
+\item[{const char $\ast$}]{option, }
+\item[{const struct {\bf key2} $\ast$}]{key2, }
+\item[{int}]{n}
+\end{DoxyParamCaption}
+)}\label{crypto_8h_a740d1036dfdb6ed93199f8bce8bbbbe9}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{crypto_8h_a740d1036dfdb6ed93199f8bce8bbbbe9_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{crypto_8h_a1d7c04eddcc6269ed0f1e76fe3f9ce0f}{}\index{crypto.\+h@{crypto.\+h}!prng\+\_\+bytes@{prng\+\_\+bytes}}
+\index{prng\+\_\+bytes@{prng\+\_\+bytes}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{prng\+\_\+bytes(uint8\+\_\+t $\ast$output, int len)}]{\setlength{\rightskip}{0pt plus 5cm}void prng\+\_\+bytes (
+\begin{DoxyParamCaption}
+\item[{uint8\+\_\+t $\ast$}]{output, }
+\item[{int}]{len}
+\end{DoxyParamCaption}
+)}\label{crypto_8h_a1d7c04eddcc6269ed0f1e76fe3f9ce0f}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=248pt]{crypto_8h_a1d7c04eddcc6269ed0f1e76fe3f9ce0f_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{crypto_8h_a1d7c04eddcc6269ed0f1e76fe3f9ce0f_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{crypto_8h_ab99dea190ad93a642a0fc5a429b8f0ed}{}\index{crypto.\+h@{crypto.\+h}!prng\+\_\+init@{prng\+\_\+init}}
+\index{prng\+\_\+init@{prng\+\_\+init}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{prng\+\_\+init(const char $\ast$md\+\_\+name, const int nonce\+\_\+secret\+\_\+len\+\_\+parm)}]{\setlength{\rightskip}{0pt plus 5cm}void prng\+\_\+init (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{md\+\_\+name, }
+\item[{const int}]{nonce\+\_\+secret\+\_\+len\+\_\+parm}
+\end{DoxyParamCaption}
+)}\label{crypto_8h_ab99dea190ad93a642a0fc5a429b8f0ed}
+Pseudo-\/random number generator initialisation. (see {\ttfamily prng\+\_\+rand\+\_\+bytes()})
+
+
+\begin{DoxyParams}{Parameters}
+{\em md\+\_\+name} & Name of the message digest to use \\
+\hline
+{\em nonce\+\_\+secret\+\_\+len\+\_\+param} & Length of the nonce to use \\
+\hline
+\end{DoxyParams}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=242pt]{crypto_8h_ab99dea190ad93a642a0fc5a429b8f0ed_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=228pt]{crypto_8h_ab99dea190ad93a642a0fc5a429b8f0ed_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{crypto_8h_ae8c523b770f0e2f30d44004797106508}{}\index{crypto.\+h@{crypto.\+h}!prng\+\_\+uninit@{prng\+\_\+uninit}}
+\index{prng\+\_\+uninit@{prng\+\_\+uninit}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{prng\+\_\+uninit(void)}]{\setlength{\rightskip}{0pt plus 5cm}void prng\+\_\+uninit (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{crypto_8h_ae8c523b770f0e2f30d44004797106508}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{crypto_8h_ae8c523b770f0e2f30d44004797106508_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{crypto_8h_aa5a63a28549eab7b202ca3fa522a22d6}{}\index{crypto.\+h@{crypto.\+h}!read\+\_\+key@{read\+\_\+key}}
+\index{read\+\_\+key@{read\+\_\+key}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{read\+\_\+key(struct key $\ast$key, const struct key\+\_\+type $\ast$kt, struct buffer $\ast$buf)}]{\setlength{\rightskip}{0pt plus 5cm}int read\+\_\+key (
+\begin{DoxyParamCaption}
+\item[{struct {\bf key} $\ast$}]{key, }
+\item[{const struct {\bf key\+\_\+type} $\ast$}]{kt, }
+\item[{struct {\bf buffer} $\ast$}]{buf}
+\end{DoxyParamCaption}
+)}\label{crypto_8h_aa5a63a28549eab7b202ca3fa522a22d6}
+\hypertarget{crypto_8h_a3482d06fa45961722769bcad30ed3407}{}\index{crypto.\+h@{crypto.\+h}!read\+\_\+key\+\_\+file@{read\+\_\+key\+\_\+file}}
+\index{read\+\_\+key\+\_\+file@{read\+\_\+key\+\_\+file}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{read\+\_\+key\+\_\+file(struct key2 $\ast$key2, const char $\ast$file, const unsigned int flags)}]{\setlength{\rightskip}{0pt plus 5cm}void read\+\_\+key\+\_\+file (
+\begin{DoxyParamCaption}
+\item[{struct {\bf key2} $\ast$}]{key2, }
+\item[{const char $\ast$}]{file, }
+\item[{const unsigned int}]{flags}
+\end{DoxyParamCaption}
+)}\label{crypto_8h_a3482d06fa45961722769bcad30ed3407}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{crypto_8h_a3482d06fa45961722769bcad30ed3407_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{crypto_8h_a3482d06fa45961722769bcad30ed3407_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{crypto_8h_a926d3c88e21b5e810b59e5ba45a34639}{}\index{crypto.\+h@{crypto.\+h}!read\+\_\+passphrase\+\_\+hash@{read\+\_\+passphrase\+\_\+hash}}
+\index{read\+\_\+passphrase\+\_\+hash@{read\+\_\+passphrase\+\_\+hash}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{read\+\_\+passphrase\+\_\+hash(const char $\ast$passphrase\+\_\+file, const md\+\_\+kt\+\_\+t $\ast$digest, uint8\+\_\+t $\ast$output, int len)}]{\setlength{\rightskip}{0pt plus 5cm}int read\+\_\+passphrase\+\_\+hash (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{passphrase\+\_\+file, }
+\item[{const {\bf md\+\_\+kt\+\_\+t} $\ast$}]{digest, }
+\item[{uint8\+\_\+t $\ast$}]{output, }
+\item[{int}]{len}
+\end{DoxyParamCaption}
+)}\label{crypto_8h_a926d3c88e21b5e810b59e5ba45a34639}
+\hypertarget{crypto_8h_a3c572ced6eea1c2b933df8e82b848983}{}\index{crypto.\+h@{crypto.\+h}!test\+\_\+crypto@{test\+\_\+crypto}}
+\index{test\+\_\+crypto@{test\+\_\+crypto}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{test\+\_\+crypto(struct crypto\+\_\+options $\ast$co, struct frame $\ast$f)}]{\setlength{\rightskip}{0pt plus 5cm}void test\+\_\+crypto (
+\begin{DoxyParamCaption}
+\item[{struct {\bf crypto\+\_\+options} $\ast$}]{co, }
+\item[{struct {\bf frame} $\ast$}]{f}
+\end{DoxyParamCaption}
+)}\label{crypto_8h_a3c572ced6eea1c2b933df8e82b848983}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{crypto_8h_a3c572ced6eea1c2b933df8e82b848983_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=260pt]{crypto_8h_a3c572ced6eea1c2b933df8e82b848983_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{crypto_8h_a30a5545a94f3f5be9a828a54fae87c60}{}\index{crypto.\+h@{crypto.\+h}!verify\+\_\+fix\+\_\+key2@{verify\+\_\+fix\+\_\+key2}}
+\index{verify\+\_\+fix\+\_\+key2@{verify\+\_\+fix\+\_\+key2}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{verify\+\_\+fix\+\_\+key2(struct key2 $\ast$key2, const struct key\+\_\+type $\ast$kt, const char $\ast$shared\+\_\+secret\+\_\+file)}]{\setlength{\rightskip}{0pt plus 5cm}void verify\+\_\+fix\+\_\+key2 (
+\begin{DoxyParamCaption}
+\item[{struct {\bf key2} $\ast$}]{key2, }
+\item[{const struct {\bf key\+\_\+type} $\ast$}]{kt, }
+\item[{const char $\ast$}]{shared\+\_\+secret\+\_\+file}
+\end{DoxyParamCaption}
+)}\label{crypto_8h_a30a5545a94f3f5be9a828a54fae87c60}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{crypto_8h_a30a5545a94f3f5be9a828a54fae87c60_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{crypto_8h_a30a5545a94f3f5be9a828a54fae87c60_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{crypto_8h_ac5e8c79c3087b70be89679a45aa3a310}{}\index{crypto.\+h@{crypto.\+h}!write\+\_\+key@{write\+\_\+key}}
+\index{write\+\_\+key@{write\+\_\+key}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{write\+\_\+key(const struct key $\ast$key, const struct key\+\_\+type $\ast$kt, struct buffer $\ast$buf)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} write\+\_\+key (
+\begin{DoxyParamCaption}
+\item[{const struct {\bf key} $\ast$}]{key, }
+\item[{const struct {\bf key\+\_\+type} $\ast$}]{kt, }
+\item[{struct {\bf buffer} $\ast$}]{buf}
+\end{DoxyParamCaption}
+)}\label{crypto_8h_ac5e8c79c3087b70be89679a45aa3a310}
+\hypertarget{crypto_8h_a81c00d1ee124bc52b54b6b3082fba96e}{}\index{crypto.\+h@{crypto.\+h}!write\+\_\+key\+\_\+file@{write\+\_\+key\+\_\+file}}
+\index{write\+\_\+key\+\_\+file@{write\+\_\+key\+\_\+file}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{write\+\_\+key\+\_\+file(const int nkeys, const char $\ast$filename)}]{\setlength{\rightskip}{0pt plus 5cm}int write\+\_\+key\+\_\+file (
+\begin{DoxyParamCaption}
+\item[{const int}]{nkeys, }
+\item[{const char $\ast$}]{filename}
+\end{DoxyParamCaption}
+)}\label{crypto_8h_a81c00d1ee124bc52b54b6b3082fba96e}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{crypto_8h_a81c00d1ee124bc52b54b6b3082fba96e_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=255pt]{crypto_8h_a81c00d1ee124bc52b54b6b3082fba96e_icgraph}
+\end{center}
+\end{figure}
+
+

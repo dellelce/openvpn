@@ -1,0 +1,15 @@
+<map id="getaddr" name="getaddr">
+<area shape="rect" id="node2" href="$socket_8c.html#a02e4efd449ac0356c68ec0a4477e3342" title="openvpn_getaddrinfo" alt="" coords="119,208,257,235"/>
+<area shape="rect" id="node3" href="$misc_8c.html#ac6174edbe71fde417d167f81417ae36b" title="hostname_randomize" alt="" coords="305,183,452,209"/>
+<area shape="rect" id="node14" href="$manage_8c.html#af07a56f96cec84856d0bf97899a4d460" title="management_sleep" alt="" coords="311,233,446,260"/>
+<area shape="rect" id="node4" href="$buffer_8c.html#aa35bf7feb6a99bf5d364b2d4eba1195c" title="alloc_buf_gc" alt="" coords="655,157,749,184"/>
+<area shape="rect" id="node7" href="$crypto_8c.html#a1d7c04eddcc6269ed0f1e76fe3f9ce0f" title="prng_bytes" alt="" coords="510,81,597,108"/>
+<area shape="rect" id="node11" href="$buffer_8c.html#a765c29b346cf601c5e0be2fd2c935a8d" title="format_hex_ex" alt="" coords="500,208,607,235"/>
+<area shape="rect" id="node12" href="$buffer_8c.html#a3307f08331b1ce42168bafd2ecf7874a" title="buf_printf" alt="" coords="665,259,739,285"/>
+<area shape="rect" id="node5" href="$buffer_8c.html#acc1a4ee83a591116d331e52baacf253d" title="buf_size_error" alt="" coords="797,132,900,159"/>
+<area shape="rect" id="node6" href="$buffer_8c.html#a67f7dec7f86e113dc0744584fd80b621" title="gc_malloc" alt="" coords="808,183,889,209"/>
+<area shape="rect" id="node8" href="$crypto__backend_8h.html#a002732eb1e19865cdb8f49a46af2cf69" title="md_kt_size" alt="" coords="657,107,747,133"/>
+<area shape="rect" id="node9" href="$crypto__backend_8h.html#a70d35559ec46dbb97b8b8a83a1e4ecbf" title="md_full" alt="" coords="671,5,733,32"/>
+<area shape="rect" id="node10" href="$crypto__backend_8h.html#a8a19f717f5824ff4455b6925af81299c" title="rand_bytes" alt="" coords="659,56,745,83"/>
+<area shape="rect" id="node13" href="$buffer_8c.html#a276febeb3ac5da2600b722b8dfb7ba0f" title="buf_catrunc" alt="" coords="657,208,747,235"/>
+</map>

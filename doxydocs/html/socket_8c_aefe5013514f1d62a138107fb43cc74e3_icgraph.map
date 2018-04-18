@@ -1,0 +1,12 @@
+<map id="print_link_socket_actual" name="print_link_socket_actual">
+<area shape="rect" id="node2" href="$forward_8h.html#a01bb4da24c0d75c32845ac87c5cad055" title="process_incoming_link\l_part1" alt="" coords="471,166,625,207"/>
+<area shape="rect" id="node3" href="$forward_8h.html#a1a506b271590be59a1b285c6cd4a5d85" title="process_outgoing_link" alt="" coords="244,5,395,32"/>
+<area shape="rect" id="node5" href="$socket_8h.html#a9b45c23be28d07f10f5b1253c36c1a76" title="link_socket_connection\l_initiated" alt="" coords="240,107,399,149"/>
+<area shape="rect" id="node6" href="$socket_8h.html#abfc81cb26972c5efe7ae96036c1f3881" title="link_socket_bad_incoming_addr" alt="" coords="216,173,423,200"/>
+<area shape="rect" id="node7" href="$ssl_8h.html#ab403d9453e1b8088a89f06537ee74fcb" title="tls_multi_process" alt="" coords="257,275,381,301"/>
+<area shape="rect" id="node9" href="$ssl_8h.html#ad436aa1372a562e8be84491907531df4" title="tls_pre_decrypt" alt="" coords="264,224,375,251"/>
+<area shape="rect" id="node10" href="$group__data__crypto.html#gab1369f42e94bbec108d952d565b0f283" title="tls_pre_decrypt_lite" alt="" coords="252,325,387,352"/>
+<area shape="rect" id="node11" href="$ssl_8h.html#a5493e997ba981a4c7924edf80d06e11d" title="tls_update_remote_addr" alt="" coords="239,376,400,403"/>
+<area shape="rect" id="node4" href="$forward_8h.html#a20db9c6797042b6584e95af8ea5bbc10" title="process_io" alt="" coords="505,5,591,32"/>
+<area shape="rect" id="node8" href="$forward_8c.html#aa69b8ddc8529422bd57a2f0ac4dc1baa" title="check_tls_dowork" alt="" coords="485,275,611,301"/>
+</map>

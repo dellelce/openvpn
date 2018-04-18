@@ -1,0 +1,847 @@
+\hypertarget{structoptions}{}\section{options Struct Reference}
+\label{structoptions}\index{options@{options}}
+
+
+{\ttfamily \#include $<$options.\+h$>$}
+
+
+
+Collaboration diagram for options\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{structoptions__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structgc__arena}{gc\+\_\+arena} \hyperlink{structoptions_aa397848a05d2511b2aaf320f5edb65d2}{gc}
+\item 
+\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} \hyperlink{structoptions_aa44383fcd0939cf9024027cbfa6386be}{gc\+\_\+owned}
+\item 
+const char $\ast$ \hyperlink{structoptions_ab10b9cdcad048c3ef63cdae7ffd09444}{config}
+\item 
+int \hyperlink{structoptions_a8a97f5f530042a7f4321cb97c3983fa1}{mode}
+\item 
+\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} \hyperlink{structoptions_a827f7c7f522afec6e2c666bbc754296b}{forward\+\_\+compatible}
+\item 
+const char $\ast$$\ast$ \hyperlink{structoptions_aa0bdd5f970f790178b6d61e62e21aefc}{ignore\+\_\+unknown\+\_\+option}
+\item 
+\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} \hyperlink{structoptions_a0fa2c5ba57c9ffb4a898bafc3725e88f}{persist\+\_\+config}
+\item 
+int \hyperlink{structoptions_a46e9ecdbdf449d7298f3fe42d587b5f4}{persist\+\_\+mode}
+\item 
+const char $\ast$ \hyperlink{structoptions_a69bd45d624f2701927f2d71589f402ee}{key\+\_\+pass\+\_\+file}
+\item 
+\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} \hyperlink{structoptions_a98fc9a0879158d9aaf12696ff8726b35}{show\+\_\+ciphers}
+\item 
+\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} \hyperlink{structoptions_a4aa894e058d4e005aa5c533183f86439}{show\+\_\+digests}
+\item 
+\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} \hyperlink{structoptions_a6627153e6bb2d0952fce58f65ee07329}{show\+\_\+engines}
+\item 
+\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} \hyperlink{structoptions_a73c23de77b777cbd7a59bea56f1ee366}{show\+\_\+tls\+\_\+ciphers}
+\item 
+\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} \hyperlink{structoptions_a916e724576aa058a30902dc1c34862e8}{show\+\_\+curves}
+\item 
+\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} \hyperlink{structoptions_a7c99b66271ee7577a665de983a3d6346}{genkey}
+\item 
+int \hyperlink{structoptions_a8cf8cffcea3a27764644702bc382d35c}{connect\+\_\+retry\+\_\+max}
+\item 
+struct \hyperlink{structconnection__entry}{connection\+\_\+entry} \hyperlink{structoptions_a6f0d2996992b45f52c8f8403e22c51ce}{ce}
+\item 
+struct \hyperlink{structconnection__list}{connection\+\_\+list} $\ast$ \hyperlink{structoptions_a111f57f3a14727b141dc4d359cc02ea2}{connection\+\_\+list}
+\item 
+struct \hyperlink{structremote__list}{remote\+\_\+list} $\ast$ \hyperlink{structoptions_a66489088b6b873a31c218169faa90298}{remote\+\_\+list}
+\item 
+\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} \hyperlink{structoptions_adb8ec5e44523e50a40777073262d41a2}{no\+\_\+advance}
+\item 
+unsigned int \hyperlink{structoptions_a6b6701741dc1e5698babf4ce474984f7}{unsuccessful\+\_\+attempts}
+\item 
+struct \hyperlink{structremote__host__store}{remote\+\_\+host\+\_\+store} $\ast$ \hyperlink{structoptions_a505d7766d3e0af765edf710f2a69b3a9}{rh\+\_\+store}
+\item 
+\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} \hyperlink{structoptions_ad1253168302c07ba9e2c89e1bdff9547}{remote\+\_\+random}
+\item 
+const char $\ast$ \hyperlink{structoptions_a7a68302ffa97bdc216d2fcc15cca0bb2}{ipchange}
+\item 
+const char $\ast$ \hyperlink{structoptions_af6b62b93b093f8c8a8f0aa326c510c11}{dev}
+\item 
+const char $\ast$ \hyperlink{structoptions_a46085bfaf25d5996f2f21c7553411a65}{dev\+\_\+type}
+\item 
+const char $\ast$ \hyperlink{structoptions_ad1e91361004780f9f9c8bf2e8d7180f4}{dev\+\_\+node}
+\item 
+const char $\ast$ \hyperlink{structoptions_ae774b572dbe4d6eb691db24d6cbd3481}{lladdr}
+\item 
+int \hyperlink{structoptions_a7a75e271f54a80de7c345599e69bcfe9}{topology}
+\item 
+const char $\ast$ \hyperlink{structoptions_a6c5eef6691660bf4aa7618c2a5485558}{ifconfig\+\_\+local}
+\item 
+const char $\ast$ \hyperlink{structoptions_ae70b5eee99cad7ca77438a457078d62c}{ifconfig\+\_\+remote\+\_\+netmask}
+\item 
+const char $\ast$ \hyperlink{structoptions_a3d47337cb28fd6bdb4a804a198b0baa7}{ifconfig\+\_\+ipv6\+\_\+local}
+\item 
+int \hyperlink{structoptions_afdb01c0cc7766b1e0320f3374123ecc9}{ifconfig\+\_\+ipv6\+\_\+netbits}
+\item 
+const char $\ast$ \hyperlink{structoptions_a128e966186c103e2d5dc456b90647420}{ifconfig\+\_\+ipv6\+\_\+remote}
+\item 
+\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} \hyperlink{structoptions_af55d6b16c337f98fa0ec7fe63539ff76}{ifconfig\+\_\+noexec}
+\item 
+\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} \hyperlink{structoptions_a35d738ab294975825e2a299996d55c0e}{ifconfig\+\_\+nowarn}
+\item 
+int \hyperlink{structoptions_a0ee67574c48f7e866b0e292485f733f2}{proto\+\_\+force}
+\item 
+\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} \hyperlink{structoptions_aa016b4614f03c9fc02b643846812bbc7}{mlock}
+\item 
+int \hyperlink{structoptions_adad7b538e1a7f315447db983d33bc458}{keepalive\+\_\+ping}
+\item 
+int \hyperlink{structoptions_a5b6381333b82e8689f820ae2ecf2ecb1}{keepalive\+\_\+timeout}
+\item 
+int \hyperlink{structoptions_a6ac631694e763190d479679978e19c08}{inactivity\+\_\+timeout}
+\item 
+int \hyperlink{structoptions_aef5ef9f2a1811711fce34f18f99bd9ab}{inactivity\+\_\+minimum\+\_\+bytes}
+\item 
+int \hyperlink{structoptions_acee62ed6d25e482506731cada8f1ecaa}{ping\+\_\+send\+\_\+timeout}
+\item 
+int \hyperlink{structoptions_ac7d983496a189237f68f99e6816708c8}{ping\+\_\+rec\+\_\+timeout}
+\item 
+\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} \hyperlink{structoptions_a92fb5c781f585b1a3e03a2c35bfa06f4}{ping\+\_\+timer\+\_\+remote}
+\item 
+int \hyperlink{structoptions_a96e979feb652ac4f21f59df5cf1ca108}{ping\+\_\+rec\+\_\+timeout\+\_\+action}
+\item 
+\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} \hyperlink{structoptions_aa5a53a81882886ed763b33d6db6050e4}{persist\+\_\+tun}
+\item 
+\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} \hyperlink{structoptions_afdd8d36525c3ca430f3ae3986d968813}{persist\+\_\+local\+\_\+ip}
+\item 
+\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} \hyperlink{structoptions_ada37ffb590fc8620f2f5e8f9615defeb}{persist\+\_\+remote\+\_\+ip}
+\item 
+\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} \hyperlink{structoptions_a66101dbc2f00c4ef3e1ac1a492292811}{persist\+\_\+key}
+\item 
+int \hyperlink{structoptions_a01eeeea7687682a0ac932969c065222f}{resolve\+\_\+retry\+\_\+seconds}
+\item 
+\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} \hyperlink{structoptions_a055000dd88801bd1be2262bf8b447ec9}{resolve\+\_\+in\+\_\+advance}
+\item 
+const char $\ast$ \hyperlink{structoptions_a57973a1e800d248bb8d7bbe8682afc9e}{ip\+\_\+remote\+\_\+hint}
+\item 
+struct \hyperlink{structtuntap__options}{tuntap\+\_\+options} \hyperlink{structoptions_a7464e4dafe3c9f80b09c620c83f22227}{tuntap\+\_\+options}
+\item 
+const char $\ast$ \hyperlink{structoptions_a8388094487ff9931a91eb02e7fa8d472}{username}
+\item 
+const char $\ast$ \hyperlink{structoptions_add57437239b837341d533dac68982743}{groupname}
+\item 
+const char $\ast$ \hyperlink{structoptions_ac37a2848b8a1a91de9dfde7c1c9d8fa5}{chroot\+\_\+dir}
+\item 
+const char $\ast$ \hyperlink{structoptions_adda4185edc6728b8ca138902ff9dfe15}{cd\+\_\+dir}
+\item 
+const char $\ast$ \hyperlink{structoptions_a5c937139ec761b56b6a01395ea310e91}{writepid}
+\item 
+const char $\ast$ \hyperlink{structoptions_a4ad9197223f3b828c0caa17c59e311fd}{up\+\_\+script}
+\item 
+const char $\ast$ \hyperlink{structoptions_a21be06e306586356c1730387c8294d57}{down\+\_\+script}
+\item 
+\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} \hyperlink{structoptions_a7309025b69e21f09e0867970b052d1e2}{user\+\_\+script\+\_\+used}
+\item 
+\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} \hyperlink{structoptions_aa4c0435a248abc1b65d922505c89e32c}{down\+\_\+pre}
+\item 
+\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} \hyperlink{structoptions_a38f4b8bb967c7310eaaa3d77239f7780}{up\+\_\+delay}
+\item 
+\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} \hyperlink{structoptions_ada4714b5025b2e2d0e863de94507d4d5}{up\+\_\+restart}
+\item 
+\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} \hyperlink{structoptions_a17176de9689460974a9eb1e7df7fb020}{daemon}
+\item 
+int \hyperlink{structoptions_aeea9c1239f3809521b0dde3bcc622fc3}{remap\+\_\+sigusr1}
+\item 
+int \hyperlink{structoptions_a313ef9730dd723427ca9ab74896109a6}{inetd}
+\item 
+\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} \hyperlink{structoptions_ac409c0cbee0a011db8215dc8c9bf6a9d}{log}
+\item 
+\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} \hyperlink{structoptions_ab2949e8fcd70888be052d9c40bd915d0}{suppress\+\_\+timestamps}
+\item 
+\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} \hyperlink{structoptions_ad461fce774eec3e12e38baa36994cd7f}{machine\+\_\+readable\+\_\+output}
+\item 
+int \hyperlink{structoptions_adf54ee33312d3e824a9f95a8c74dc03a}{nice}
+\item 
+int \hyperlink{structoptions_ae86dddeb121da4d534e9705c2fa063fc}{verbosity}
+\item 
+int \hyperlink{structoptions_a4262860a03a36842bb63d1d3dae60e2d}{mute}
+\item 
+const char $\ast$ \hyperlink{structoptions_a3499def098c5b5d0a40c742770b11aef}{status\+\_\+file}
+\item 
+int \hyperlink{structoptions_a14d5ae7bbfea0b36ad151ee0d783970d}{status\+\_\+file\+\_\+version}
+\item 
+int \hyperlink{structoptions_abab76df02281e67b578e568d765cf99c}{status\+\_\+file\+\_\+update\+\_\+freq}
+\item 
+\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} \hyperlink{structoptions_a5eca9bf5a659b7beaf3d1ed9e1113c3e}{fast\+\_\+io}
+\item 
+int \hyperlink{structoptions_a0536fdadf7c9e61bfe97e269172bbf3a}{rcvbuf}
+\item 
+int \hyperlink{structoptions_aa177cf2ad8396bfadd40a7b3fb79adeb}{sndbuf}
+\item 
+int \hyperlink{structoptions_ab21da757cf5ae13f90e852f17e0a4676}{mark}
+\item 
+unsigned int \hyperlink{structoptions_ac8e77b47a812a59d723b57059eede161}{sockflags}
+\item 
+const char $\ast$ \hyperlink{structoptions_af013c3f8f620bfcf06553f9e0340c6e2}{route\+\_\+script}
+\item 
+const char $\ast$ \hyperlink{structoptions_a9ab2e37abdb87f168a53a0dc73ddcc1a}{route\+\_\+predown\+\_\+script}
+\item 
+const char $\ast$ \hyperlink{structoptions_a781486d9be15f2560d4f73e5eb822db7}{route\+\_\+default\+\_\+gateway}
+\item 
+int \hyperlink{structoptions_a1853e40c6a50fe479d6f0cb8e0a97216}{route\+\_\+default\+\_\+metric}
+\item 
+\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} \hyperlink{structoptions_a358bbf5e604ead362690b34e147324e0}{route\+\_\+noexec}
+\item 
+int \hyperlink{structoptions_ad1a7fff9ea0912c167096c44896fedfa}{route\+\_\+delay}
+\item 
+int \hyperlink{structoptions_a9f34739ff66477dcf8e5db79a87517e3}{route\+\_\+delay\+\_\+window}
+\item 
+\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} \hyperlink{structoptions_a510dc28521e59d0075843b498297a634}{route\+\_\+delay\+\_\+defined}
+\item 
+struct \hyperlink{structroute__option__list}{route\+\_\+option\+\_\+list} $\ast$ \hyperlink{structoptions_a599b21d6f45322992703af0b4e12741e}{routes}
+\item 
+struct \hyperlink{structroute__ipv6__option__list}{route\+\_\+ipv6\+\_\+option\+\_\+list} $\ast$ \hyperlink{structoptions_ad3572f352bd2aa332207cddfdc607ff4}{routes\+\_\+ipv6}
+\item 
+\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} \hyperlink{structoptions_a05b0630208dd924ada185a3b73adf8c8}{route\+\_\+nopull}
+\item 
+\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} \hyperlink{structoptions_ad0c28f17a7489fcd4865e5c4287c0f1c}{route\+\_\+gateway\+\_\+via\+\_\+dhcp}
+\item 
+\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} \hyperlink{structoptions_a2dc9bafd78a346a5354b53999a80e335}{allow\+\_\+pull\+\_\+fqdn}
+\item 
+struct \hyperlink{structclient__nat__option__list}{client\+\_\+nat\+\_\+option\+\_\+list} $\ast$ \hyperlink{structoptions_ade749cc08a84dbbc8f866beab247aad0}{client\+\_\+nat}
+\item 
+const char $\ast$ \hyperlink{structoptions_af4f6ab25d97dd623648d3c2342659e0d}{shared\+\_\+secret\+\_\+file}
+\item 
+const char $\ast$ \hyperlink{structoptions_aaadf5244b70d58c2cc46417c017ced15}{shared\+\_\+secret\+\_\+file\+\_\+inline}
+\item 
+int \hyperlink{structoptions_ad47394d36a22f99461bdb6d749bcb6a1}{key\+\_\+direction}
+\item 
+const char $\ast$ \hyperlink{structoptions_a7f09235fee401590074265aff177491a}{ciphername}
+\item 
+\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} \hyperlink{structoptions_a7c5a04e0f575936f6d77977ca5c5748b}{ncp\+\_\+enabled}
+\item 
+const char $\ast$ \hyperlink{structoptions_a7c186af1daae850bf1f44d5534de11d1}{ncp\+\_\+ciphers}
+\item 
+const char $\ast$ \hyperlink{structoptions_a3b2503d5f5f98a176450b3baf1953a20}{authname}
+\item 
+int \hyperlink{structoptions_ae644c14875e0dd32c008a4685f3ee3e3}{keysize}
+\item 
+const char $\ast$ \hyperlink{structoptions_a67f4cc4bc80fc43da3ca9a24e5fb72b7}{prng\+\_\+hash}
+\item 
+int \hyperlink{structoptions_a3d0e034a7cdda86ad66beee637423a74}{prng\+\_\+nonce\+\_\+secret\+\_\+len}
+\item 
+const char $\ast$ \hyperlink{structoptions_acb0e7875a4dcacb855d7b7fac93d9ca8}{engine}
+\item 
+\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} \hyperlink{structoptions_a6ab0ea3447528be930897de097a1a37f}{replay}
+\item 
+\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} \hyperlink{structoptions_a6a1327f7d30f878848f4e72211878a88}{mute\+\_\+replay\+\_\+warnings}
+\item 
+int \hyperlink{structoptions_a408775e6f474f8c25ad492e9c9d2b7b8}{replay\+\_\+window}
+\item 
+int \hyperlink{structoptions_a27bd2c7c26f4e5bbb67c57743c785b18}{replay\+\_\+time}
+\item 
+const char $\ast$ \hyperlink{structoptions_a5463781f357b5c1c13070e92645c6194}{packet\+\_\+id\+\_\+file}
+\item 
+\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} \hyperlink{structoptions_a38d22a55bf92acf99f3c5d71d3b06b18}{test\+\_\+crypto}
+\item 
+\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} \hyperlink{structoptions_a8cc67b442d93909bc5500945a8ac08ff}{tls\+\_\+server}
+\item 
+\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} \hyperlink{structoptions_a92cffd160044d2b84a1085fa3ddb9a2d}{tls\+\_\+client}
+\item 
+const char $\ast$ \hyperlink{structoptions_a2951f38b6d2332cd518be5e2447be835}{ca\+\_\+file}
+\item 
+const char $\ast$ \hyperlink{structoptions_ac654195e103c3a6d0dd22715ec76cf3c}{ca\+\_\+path}
+\item 
+const char $\ast$ \hyperlink{structoptions_a9cc7e8d9f3c0a19ea6d14b3364921227}{dh\+\_\+file}
+\item 
+const char $\ast$ \hyperlink{structoptions_aea2c386f0272225726bffc3d3f906604}{cert\+\_\+file}
+\item 
+const char $\ast$ \hyperlink{structoptions_a8e09af700789695e284c6417a1927437}{extra\+\_\+certs\+\_\+file}
+\item 
+const char $\ast$ \hyperlink{structoptions_ad99fd87c39fc152e252da7a9465d7f32}{priv\+\_\+key\+\_\+file}
+\item 
+const char $\ast$ \hyperlink{structoptions_a6439467dfde92c9d4fbd4cc164395003}{pkcs12\+\_\+file}
+\item 
+const char $\ast$ \hyperlink{structoptions_abd58a7a4b0ea3e30121218d08ba6c9f9}{cipher\+\_\+list}
+\item 
+const char $\ast$ \hyperlink{structoptions_a74fd79cb23d82f4e47840ea1568aade3}{tls\+\_\+cert\+\_\+profile}
+\item 
+const char $\ast$ \hyperlink{structoptions_ab908373721a1c04966f1ac4a5f6a59b3}{ecdh\+\_\+curve}
+\item 
+const char $\ast$ \hyperlink{structoptions_a937ce3e9f18cc533ac9baab101437360}{tls\+\_\+verify}
+\item 
+int \hyperlink{structoptions_ab7d414e087194f31b1a0f16dec7bd0f9}{verify\+\_\+x509\+\_\+type}
+\item 
+const char $\ast$ \hyperlink{structoptions_acdf0fec84661c4ccdf8bbf01430e3729}{verify\+\_\+x509\+\_\+name}
+\item 
+const char $\ast$ \hyperlink{structoptions_a8f3c7dbd55ca4f5e960020ecdecf032f}{tls\+\_\+export\+\_\+cert}
+\item 
+const char $\ast$ \hyperlink{structoptions_a9665bb2a81816f56c43a05593b7cf304}{crl\+\_\+file}
+\item 
+const char $\ast$ \hyperlink{structoptions_a77b26d95413f8b38e923a04da1861560}{ca\+\_\+file\+\_\+inline}
+\item 
+const char $\ast$ \hyperlink{structoptions_aadeb12a014482b0b6b9f6aae886e1352}{cert\+\_\+file\+\_\+inline}
+\item 
+const char $\ast$ \hyperlink{structoptions_a58d6d17d9b6cefde13d67cc7985d8a9c}{extra\+\_\+certs\+\_\+file\+\_\+inline}
+\item 
+const char $\ast$ \hyperlink{structoptions_acd6451a84c0c4f38ad1a94756941c118}{crl\+\_\+file\+\_\+inline}
+\item 
+char $\ast$ \hyperlink{structoptions_a42b68fc2b348cb2257c9fdd51e0798e6}{priv\+\_\+key\+\_\+file\+\_\+inline}
+\item 
+const char $\ast$ \hyperlink{structoptions_a437c1ff5a8289699ef43f09ecc2938d2}{dh\+\_\+file\+\_\+inline}
+\item 
+const char $\ast$ \hyperlink{structoptions_ae9739331f41f5a93ff22f7af683e37db}{pkcs12\+\_\+file\+\_\+inline}
+\item 
+int \hyperlink{structoptions_a888a84a61b2986b8c433b9a98c8de5ad}{ns\+\_\+cert\+\_\+type}
+\item 
+unsigned \hyperlink{structoptions_a2f274b709207225b29461a422026c921}{remote\+\_\+cert\+\_\+ku} \mbox{[}\hyperlink{options_8h_abc112140dccf35b37370da1791c3d8c3}{M\+A\+X\+\_\+\+P\+A\+R\+M\+S}\mbox{]}
+\item 
+const char $\ast$ \hyperlink{structoptions_a35efdd07abfdcad8904ed80f823be6b4}{remote\+\_\+cert\+\_\+eku}
+\item 
+uint8\+\_\+t $\ast$ \hyperlink{structoptions_af331e61067f9d3fa9d071615d6830720}{verify\+\_\+hash}
+\item 
+\hyperlink{crypto__backend_8h_a1bdec30a85e44df9ee6c6ad815bccb00}{hash\+\_\+algo\+\_\+type} \hyperlink{structoptions_a2243ce90bf5e84bb70fdb979f452669e}{verify\+\_\+hash\+\_\+algo}
+\item 
+unsigned int \hyperlink{structoptions_a3564873509d5272dd6fca9fa283d1560}{ssl\+\_\+flags}
+\item 
+int \hyperlink{structoptions_af7f8b27ab797608a96a058f04793e940}{key\+\_\+method}
+\item 
+int \hyperlink{structoptions_a36a0d523e3942a896639cda6abf2e426}{tls\+\_\+timeout}
+\item 
+int \hyperlink{structoptions_a45bb6bb056b0755eed6445cd8fb07156}{renegotiate\+\_\+bytes}
+\item 
+int \hyperlink{structoptions_a56dbf5c1dce17063ea7ae4b351427ef2}{renegotiate\+\_\+packets}
+\item 
+int \hyperlink{structoptions_ac6e1f16b4069b73fef030866606705bb}{renegotiate\+\_\+seconds}
+\item 
+int \hyperlink{structoptions_a1a60e506cdd22f1fbf395c90389d1ace}{renegotiate\+\_\+seconds\+\_\+min}
+\item 
+int \hyperlink{structoptions_a6b960ac0e59bda605e2b6879d024afa2}{handshake\+\_\+window}
+\item 
+int \hyperlink{structoptions_ae304d9717c86ae466b4749b3ab04b718}{transition\+\_\+window}
+\item 
+const char $\ast$ \hyperlink{structoptions_a2a1f083c13f82cd960431bd4b89efdb9}{tls\+\_\+auth\+\_\+file}
+\item 
+const char $\ast$ \hyperlink{structoptions_a56422a288a9c522d46374602d0477a4f}{tls\+\_\+auth\+\_\+file\+\_\+inline}
+\item 
+const char $\ast$ \hyperlink{structoptions_a6aa8b678204365100038f569fbbe184c}{tls\+\_\+crypt\+\_\+file}
+\item 
+const char $\ast$ \hyperlink{structoptions_ae4c336e72d6e63351a26a8daa69adfc7}{tls\+\_\+crypt\+\_\+inline}
+\item 
+\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} \hyperlink{structoptions_a4d6d794acedbb97bff36ed663408f55b}{single\+\_\+session}
+\item 
+\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} \hyperlink{structoptions_a17009cf5cdc04448103ca126317d5af7}{push\+\_\+peer\+\_\+info}
+\item 
+\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} \hyperlink{structoptions_a62716987c407e3768a60476bd1b6b908}{tls\+\_\+exit}
+\item 
+const struct \hyperlink{structx509__track}{x509\+\_\+track} $\ast$ \hyperlink{structoptions_ac34bf3412bfd7f1c7185e08c3e6d212c}{x509\+\_\+track}
+\item 
+int \hyperlink{structoptions_aa2b933a9d96a05d752a3ce2c1c4ca55c}{foreign\+\_\+option\+\_\+index}
+\item 
+\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} \hyperlink{structoptions_a2eb572d30b4a4d1e636dbdf666fc29b9}{use\+\_\+peer\+\_\+id}
+\item 
+uint32\+\_\+t \hyperlink{structoptions_a58306b60489c8093ab83be97174daebb}{peer\+\_\+id}
+\item 
+struct \hyperlink{structpull__filter__list}{pull\+\_\+filter\+\_\+list} $\ast$ \hyperlink{structoptions_ac0019bc66757add36d108772a29b53f3}{pull\+\_\+filter\+\_\+list}
+\item 
+\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} \hyperlink{structoptions_a3a58cde5af8b61a0c90bafbeb70b5787}{allow\+\_\+recursive\+\_\+routing}
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{structoptions_a2dc9bafd78a346a5354b53999a80e335}{}\index{options@{options}!allow\+\_\+pull\+\_\+fqdn@{allow\+\_\+pull\+\_\+fqdn}}
+\index{allow\+\_\+pull\+\_\+fqdn@{allow\+\_\+pull\+\_\+fqdn}!options@{options}}
+\subsubsection[{allow\+\_\+pull\+\_\+fqdn}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} options\+::allow\+\_\+pull\+\_\+fqdn}\label{structoptions_a2dc9bafd78a346a5354b53999a80e335}
+\hypertarget{structoptions_a3a58cde5af8b61a0c90bafbeb70b5787}{}\index{options@{options}!allow\+\_\+recursive\+\_\+routing@{allow\+\_\+recursive\+\_\+routing}}
+\index{allow\+\_\+recursive\+\_\+routing@{allow\+\_\+recursive\+\_\+routing}!options@{options}}
+\subsubsection[{allow\+\_\+recursive\+\_\+routing}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} options\+::allow\+\_\+recursive\+\_\+routing}\label{structoptions_a3a58cde5af8b61a0c90bafbeb70b5787}
+\hypertarget{structoptions_a3b2503d5f5f98a176450b3baf1953a20}{}\index{options@{options}!authname@{authname}}
+\index{authname@{authname}!options@{options}}
+\subsubsection[{authname}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ options\+::authname}\label{structoptions_a3b2503d5f5f98a176450b3baf1953a20}
+\hypertarget{structoptions_a2951f38b6d2332cd518be5e2447be835}{}\index{options@{options}!ca\+\_\+file@{ca\+\_\+file}}
+\index{ca\+\_\+file@{ca\+\_\+file}!options@{options}}
+\subsubsection[{ca\+\_\+file}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ options\+::ca\+\_\+file}\label{structoptions_a2951f38b6d2332cd518be5e2447be835}
+\hypertarget{structoptions_a77b26d95413f8b38e923a04da1861560}{}\index{options@{options}!ca\+\_\+file\+\_\+inline@{ca\+\_\+file\+\_\+inline}}
+\index{ca\+\_\+file\+\_\+inline@{ca\+\_\+file\+\_\+inline}!options@{options}}
+\subsubsection[{ca\+\_\+file\+\_\+inline}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ options\+::ca\+\_\+file\+\_\+inline}\label{structoptions_a77b26d95413f8b38e923a04da1861560}
+\hypertarget{structoptions_ac654195e103c3a6d0dd22715ec76cf3c}{}\index{options@{options}!ca\+\_\+path@{ca\+\_\+path}}
+\index{ca\+\_\+path@{ca\+\_\+path}!options@{options}}
+\subsubsection[{ca\+\_\+path}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ options\+::ca\+\_\+path}\label{structoptions_ac654195e103c3a6d0dd22715ec76cf3c}
+\hypertarget{structoptions_adda4185edc6728b8ca138902ff9dfe15}{}\index{options@{options}!cd\+\_\+dir@{cd\+\_\+dir}}
+\index{cd\+\_\+dir@{cd\+\_\+dir}!options@{options}}
+\subsubsection[{cd\+\_\+dir}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ options\+::cd\+\_\+dir}\label{structoptions_adda4185edc6728b8ca138902ff9dfe15}
+\hypertarget{structoptions_a6f0d2996992b45f52c8f8403e22c51ce}{}\index{options@{options}!ce@{ce}}
+\index{ce@{ce}!options@{options}}
+\subsubsection[{ce}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf connection\+\_\+entry} options\+::ce}\label{structoptions_a6f0d2996992b45f52c8f8403e22c51ce}
+\hypertarget{structoptions_aea2c386f0272225726bffc3d3f906604}{}\index{options@{options}!cert\+\_\+file@{cert\+\_\+file}}
+\index{cert\+\_\+file@{cert\+\_\+file}!options@{options}}
+\subsubsection[{cert\+\_\+file}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ options\+::cert\+\_\+file}\label{structoptions_aea2c386f0272225726bffc3d3f906604}
+\hypertarget{structoptions_aadeb12a014482b0b6b9f6aae886e1352}{}\index{options@{options}!cert\+\_\+file\+\_\+inline@{cert\+\_\+file\+\_\+inline}}
+\index{cert\+\_\+file\+\_\+inline@{cert\+\_\+file\+\_\+inline}!options@{options}}
+\subsubsection[{cert\+\_\+file\+\_\+inline}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ options\+::cert\+\_\+file\+\_\+inline}\label{structoptions_aadeb12a014482b0b6b9f6aae886e1352}
+\hypertarget{structoptions_ac37a2848b8a1a91de9dfde7c1c9d8fa5}{}\index{options@{options}!chroot\+\_\+dir@{chroot\+\_\+dir}}
+\index{chroot\+\_\+dir@{chroot\+\_\+dir}!options@{options}}
+\subsubsection[{chroot\+\_\+dir}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ options\+::chroot\+\_\+dir}\label{structoptions_ac37a2848b8a1a91de9dfde7c1c9d8fa5}
+\hypertarget{structoptions_abd58a7a4b0ea3e30121218d08ba6c9f9}{}\index{options@{options}!cipher\+\_\+list@{cipher\+\_\+list}}
+\index{cipher\+\_\+list@{cipher\+\_\+list}!options@{options}}
+\subsubsection[{cipher\+\_\+list}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ options\+::cipher\+\_\+list}\label{structoptions_abd58a7a4b0ea3e30121218d08ba6c9f9}
+\hypertarget{structoptions_a7f09235fee401590074265aff177491a}{}\index{options@{options}!ciphername@{ciphername}}
+\index{ciphername@{ciphername}!options@{options}}
+\subsubsection[{ciphername}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ options\+::ciphername}\label{structoptions_a7f09235fee401590074265aff177491a}
+\hypertarget{structoptions_ade749cc08a84dbbc8f866beab247aad0}{}\index{options@{options}!client\+\_\+nat@{client\+\_\+nat}}
+\index{client\+\_\+nat@{client\+\_\+nat}!options@{options}}
+\subsubsection[{client\+\_\+nat}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf client\+\_\+nat\+\_\+option\+\_\+list}$\ast$ options\+::client\+\_\+nat}\label{structoptions_ade749cc08a84dbbc8f866beab247aad0}
+\hypertarget{structoptions_ab10b9cdcad048c3ef63cdae7ffd09444}{}\index{options@{options}!config@{config}}
+\index{config@{config}!options@{options}}
+\subsubsection[{config}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ options\+::config}\label{structoptions_ab10b9cdcad048c3ef63cdae7ffd09444}
+\hypertarget{structoptions_a8cf8cffcea3a27764644702bc382d35c}{}\index{options@{options}!connect\+\_\+retry\+\_\+max@{connect\+\_\+retry\+\_\+max}}
+\index{connect\+\_\+retry\+\_\+max@{connect\+\_\+retry\+\_\+max}!options@{options}}
+\subsubsection[{connect\+\_\+retry\+\_\+max}]{\setlength{\rightskip}{0pt plus 5cm}int options\+::connect\+\_\+retry\+\_\+max}\label{structoptions_a8cf8cffcea3a27764644702bc382d35c}
+\hypertarget{structoptions_a111f57f3a14727b141dc4d359cc02ea2}{}\index{options@{options}!connection\+\_\+list@{connection\+\_\+list}}
+\index{connection\+\_\+list@{connection\+\_\+list}!options@{options}}
+\subsubsection[{connection\+\_\+list}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf connection\+\_\+list}$\ast$ options\+::connection\+\_\+list}\label{structoptions_a111f57f3a14727b141dc4d359cc02ea2}
+\hypertarget{structoptions_a9665bb2a81816f56c43a05593b7cf304}{}\index{options@{options}!crl\+\_\+file@{crl\+\_\+file}}
+\index{crl\+\_\+file@{crl\+\_\+file}!options@{options}}
+\subsubsection[{crl\+\_\+file}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ options\+::crl\+\_\+file}\label{structoptions_a9665bb2a81816f56c43a05593b7cf304}
+\hypertarget{structoptions_acd6451a84c0c4f38ad1a94756941c118}{}\index{options@{options}!crl\+\_\+file\+\_\+inline@{crl\+\_\+file\+\_\+inline}}
+\index{crl\+\_\+file\+\_\+inline@{crl\+\_\+file\+\_\+inline}!options@{options}}
+\subsubsection[{crl\+\_\+file\+\_\+inline}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ options\+::crl\+\_\+file\+\_\+inline}\label{structoptions_acd6451a84c0c4f38ad1a94756941c118}
+\hypertarget{structoptions_a17176de9689460974a9eb1e7df7fb020}{}\index{options@{options}!daemon@{daemon}}
+\index{daemon@{daemon}!options@{options}}
+\subsubsection[{daemon}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} options\+::daemon}\label{structoptions_a17176de9689460974a9eb1e7df7fb020}
+\hypertarget{structoptions_af6b62b93b093f8c8a8f0aa326c510c11}{}\index{options@{options}!dev@{dev}}
+\index{dev@{dev}!options@{options}}
+\subsubsection[{dev}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ options\+::dev}\label{structoptions_af6b62b93b093f8c8a8f0aa326c510c11}
+\hypertarget{structoptions_ad1e91361004780f9f9c8bf2e8d7180f4}{}\index{options@{options}!dev\+\_\+node@{dev\+\_\+node}}
+\index{dev\+\_\+node@{dev\+\_\+node}!options@{options}}
+\subsubsection[{dev\+\_\+node}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ options\+::dev\+\_\+node}\label{structoptions_ad1e91361004780f9f9c8bf2e8d7180f4}
+\hypertarget{structoptions_a46085bfaf25d5996f2f21c7553411a65}{}\index{options@{options}!dev\+\_\+type@{dev\+\_\+type}}
+\index{dev\+\_\+type@{dev\+\_\+type}!options@{options}}
+\subsubsection[{dev\+\_\+type}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ options\+::dev\+\_\+type}\label{structoptions_a46085bfaf25d5996f2f21c7553411a65}
+\hypertarget{structoptions_a9cc7e8d9f3c0a19ea6d14b3364921227}{}\index{options@{options}!dh\+\_\+file@{dh\+\_\+file}}
+\index{dh\+\_\+file@{dh\+\_\+file}!options@{options}}
+\subsubsection[{dh\+\_\+file}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ options\+::dh\+\_\+file}\label{structoptions_a9cc7e8d9f3c0a19ea6d14b3364921227}
+\hypertarget{structoptions_a437c1ff5a8289699ef43f09ecc2938d2}{}\index{options@{options}!dh\+\_\+file\+\_\+inline@{dh\+\_\+file\+\_\+inline}}
+\index{dh\+\_\+file\+\_\+inline@{dh\+\_\+file\+\_\+inline}!options@{options}}
+\subsubsection[{dh\+\_\+file\+\_\+inline}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ options\+::dh\+\_\+file\+\_\+inline}\label{structoptions_a437c1ff5a8289699ef43f09ecc2938d2}
+\hypertarget{structoptions_aa4c0435a248abc1b65d922505c89e32c}{}\index{options@{options}!down\+\_\+pre@{down\+\_\+pre}}
+\index{down\+\_\+pre@{down\+\_\+pre}!options@{options}}
+\subsubsection[{down\+\_\+pre}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} options\+::down\+\_\+pre}\label{structoptions_aa4c0435a248abc1b65d922505c89e32c}
+\hypertarget{structoptions_a21be06e306586356c1730387c8294d57}{}\index{options@{options}!down\+\_\+script@{down\+\_\+script}}
+\index{down\+\_\+script@{down\+\_\+script}!options@{options}}
+\subsubsection[{down\+\_\+script}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ options\+::down\+\_\+script}\label{structoptions_a21be06e306586356c1730387c8294d57}
+\hypertarget{structoptions_ab908373721a1c04966f1ac4a5f6a59b3}{}\index{options@{options}!ecdh\+\_\+curve@{ecdh\+\_\+curve}}
+\index{ecdh\+\_\+curve@{ecdh\+\_\+curve}!options@{options}}
+\subsubsection[{ecdh\+\_\+curve}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ options\+::ecdh\+\_\+curve}\label{structoptions_ab908373721a1c04966f1ac4a5f6a59b3}
+\hypertarget{structoptions_acb0e7875a4dcacb855d7b7fac93d9ca8}{}\index{options@{options}!engine@{engine}}
+\index{engine@{engine}!options@{options}}
+\subsubsection[{engine}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ options\+::engine}\label{structoptions_acb0e7875a4dcacb855d7b7fac93d9ca8}
+\hypertarget{structoptions_a8e09af700789695e284c6417a1927437}{}\index{options@{options}!extra\+\_\+certs\+\_\+file@{extra\+\_\+certs\+\_\+file}}
+\index{extra\+\_\+certs\+\_\+file@{extra\+\_\+certs\+\_\+file}!options@{options}}
+\subsubsection[{extra\+\_\+certs\+\_\+file}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ options\+::extra\+\_\+certs\+\_\+file}\label{structoptions_a8e09af700789695e284c6417a1927437}
+\hypertarget{structoptions_a58d6d17d9b6cefde13d67cc7985d8a9c}{}\index{options@{options}!extra\+\_\+certs\+\_\+file\+\_\+inline@{extra\+\_\+certs\+\_\+file\+\_\+inline}}
+\index{extra\+\_\+certs\+\_\+file\+\_\+inline@{extra\+\_\+certs\+\_\+file\+\_\+inline}!options@{options}}
+\subsubsection[{extra\+\_\+certs\+\_\+file\+\_\+inline}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ options\+::extra\+\_\+certs\+\_\+file\+\_\+inline}\label{structoptions_a58d6d17d9b6cefde13d67cc7985d8a9c}
+\hypertarget{structoptions_a5eca9bf5a659b7beaf3d1ed9e1113c3e}{}\index{options@{options}!fast\+\_\+io@{fast\+\_\+io}}
+\index{fast\+\_\+io@{fast\+\_\+io}!options@{options}}
+\subsubsection[{fast\+\_\+io}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} options\+::fast\+\_\+io}\label{structoptions_a5eca9bf5a659b7beaf3d1ed9e1113c3e}
+\hypertarget{structoptions_aa2b933a9d96a05d752a3ce2c1c4ca55c}{}\index{options@{options}!foreign\+\_\+option\+\_\+index@{foreign\+\_\+option\+\_\+index}}
+\index{foreign\+\_\+option\+\_\+index@{foreign\+\_\+option\+\_\+index}!options@{options}}
+\subsubsection[{foreign\+\_\+option\+\_\+index}]{\setlength{\rightskip}{0pt plus 5cm}int options\+::foreign\+\_\+option\+\_\+index}\label{structoptions_aa2b933a9d96a05d752a3ce2c1c4ca55c}
+\hypertarget{structoptions_a827f7c7f522afec6e2c666bbc754296b}{}\index{options@{options}!forward\+\_\+compatible@{forward\+\_\+compatible}}
+\index{forward\+\_\+compatible@{forward\+\_\+compatible}!options@{options}}
+\subsubsection[{forward\+\_\+compatible}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} options\+::forward\+\_\+compatible}\label{structoptions_a827f7c7f522afec6e2c666bbc754296b}
+\hypertarget{structoptions_aa397848a05d2511b2aaf320f5edb65d2}{}\index{options@{options}!gc@{gc}}
+\index{gc@{gc}!options@{options}}
+\subsubsection[{gc}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf gc\+\_\+arena} options\+::gc}\label{structoptions_aa397848a05d2511b2aaf320f5edb65d2}
+\hypertarget{structoptions_aa44383fcd0939cf9024027cbfa6386be}{}\index{options@{options}!gc\+\_\+owned@{gc\+\_\+owned}}
+\index{gc\+\_\+owned@{gc\+\_\+owned}!options@{options}}
+\subsubsection[{gc\+\_\+owned}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} options\+::gc\+\_\+owned}\label{structoptions_aa44383fcd0939cf9024027cbfa6386be}
+\hypertarget{structoptions_a7c99b66271ee7577a665de983a3d6346}{}\index{options@{options}!genkey@{genkey}}
+\index{genkey@{genkey}!options@{options}}
+\subsubsection[{genkey}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} options\+::genkey}\label{structoptions_a7c99b66271ee7577a665de983a3d6346}
+\hypertarget{structoptions_add57437239b837341d533dac68982743}{}\index{options@{options}!groupname@{groupname}}
+\index{groupname@{groupname}!options@{options}}
+\subsubsection[{groupname}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ options\+::groupname}\label{structoptions_add57437239b837341d533dac68982743}
+\hypertarget{structoptions_a6b960ac0e59bda605e2b6879d024afa2}{}\index{options@{options}!handshake\+\_\+window@{handshake\+\_\+window}}
+\index{handshake\+\_\+window@{handshake\+\_\+window}!options@{options}}
+\subsubsection[{handshake\+\_\+window}]{\setlength{\rightskip}{0pt plus 5cm}int options\+::handshake\+\_\+window}\label{structoptions_a6b960ac0e59bda605e2b6879d024afa2}
+\hypertarget{structoptions_a3d47337cb28fd6bdb4a804a198b0baa7}{}\index{options@{options}!ifconfig\+\_\+ipv6\+\_\+local@{ifconfig\+\_\+ipv6\+\_\+local}}
+\index{ifconfig\+\_\+ipv6\+\_\+local@{ifconfig\+\_\+ipv6\+\_\+local}!options@{options}}
+\subsubsection[{ifconfig\+\_\+ipv6\+\_\+local}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ options\+::ifconfig\+\_\+ipv6\+\_\+local}\label{structoptions_a3d47337cb28fd6bdb4a804a198b0baa7}
+\hypertarget{structoptions_afdb01c0cc7766b1e0320f3374123ecc9}{}\index{options@{options}!ifconfig\+\_\+ipv6\+\_\+netbits@{ifconfig\+\_\+ipv6\+\_\+netbits}}
+\index{ifconfig\+\_\+ipv6\+\_\+netbits@{ifconfig\+\_\+ipv6\+\_\+netbits}!options@{options}}
+\subsubsection[{ifconfig\+\_\+ipv6\+\_\+netbits}]{\setlength{\rightskip}{0pt plus 5cm}int options\+::ifconfig\+\_\+ipv6\+\_\+netbits}\label{structoptions_afdb01c0cc7766b1e0320f3374123ecc9}
+\hypertarget{structoptions_a128e966186c103e2d5dc456b90647420}{}\index{options@{options}!ifconfig\+\_\+ipv6\+\_\+remote@{ifconfig\+\_\+ipv6\+\_\+remote}}
+\index{ifconfig\+\_\+ipv6\+\_\+remote@{ifconfig\+\_\+ipv6\+\_\+remote}!options@{options}}
+\subsubsection[{ifconfig\+\_\+ipv6\+\_\+remote}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ options\+::ifconfig\+\_\+ipv6\+\_\+remote}\label{structoptions_a128e966186c103e2d5dc456b90647420}
+\hypertarget{structoptions_a6c5eef6691660bf4aa7618c2a5485558}{}\index{options@{options}!ifconfig\+\_\+local@{ifconfig\+\_\+local}}
+\index{ifconfig\+\_\+local@{ifconfig\+\_\+local}!options@{options}}
+\subsubsection[{ifconfig\+\_\+local}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ options\+::ifconfig\+\_\+local}\label{structoptions_a6c5eef6691660bf4aa7618c2a5485558}
+\hypertarget{structoptions_af55d6b16c337f98fa0ec7fe63539ff76}{}\index{options@{options}!ifconfig\+\_\+noexec@{ifconfig\+\_\+noexec}}
+\index{ifconfig\+\_\+noexec@{ifconfig\+\_\+noexec}!options@{options}}
+\subsubsection[{ifconfig\+\_\+noexec}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} options\+::ifconfig\+\_\+noexec}\label{structoptions_af55d6b16c337f98fa0ec7fe63539ff76}
+\hypertarget{structoptions_a35d738ab294975825e2a299996d55c0e}{}\index{options@{options}!ifconfig\+\_\+nowarn@{ifconfig\+\_\+nowarn}}
+\index{ifconfig\+\_\+nowarn@{ifconfig\+\_\+nowarn}!options@{options}}
+\subsubsection[{ifconfig\+\_\+nowarn}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} options\+::ifconfig\+\_\+nowarn}\label{structoptions_a35d738ab294975825e2a299996d55c0e}
+\hypertarget{structoptions_ae70b5eee99cad7ca77438a457078d62c}{}\index{options@{options}!ifconfig\+\_\+remote\+\_\+netmask@{ifconfig\+\_\+remote\+\_\+netmask}}
+\index{ifconfig\+\_\+remote\+\_\+netmask@{ifconfig\+\_\+remote\+\_\+netmask}!options@{options}}
+\subsubsection[{ifconfig\+\_\+remote\+\_\+netmask}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ options\+::ifconfig\+\_\+remote\+\_\+netmask}\label{structoptions_ae70b5eee99cad7ca77438a457078d62c}
+\hypertarget{structoptions_aa0bdd5f970f790178b6d61e62e21aefc}{}\index{options@{options}!ignore\+\_\+unknown\+\_\+option@{ignore\+\_\+unknown\+\_\+option}}
+\index{ignore\+\_\+unknown\+\_\+option@{ignore\+\_\+unknown\+\_\+option}!options@{options}}
+\subsubsection[{ignore\+\_\+unknown\+\_\+option}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$$\ast$ options\+::ignore\+\_\+unknown\+\_\+option}\label{structoptions_aa0bdd5f970f790178b6d61e62e21aefc}
+\hypertarget{structoptions_aef5ef9f2a1811711fce34f18f99bd9ab}{}\index{options@{options}!inactivity\+\_\+minimum\+\_\+bytes@{inactivity\+\_\+minimum\+\_\+bytes}}
+\index{inactivity\+\_\+minimum\+\_\+bytes@{inactivity\+\_\+minimum\+\_\+bytes}!options@{options}}
+\subsubsection[{inactivity\+\_\+minimum\+\_\+bytes}]{\setlength{\rightskip}{0pt plus 5cm}int options\+::inactivity\+\_\+minimum\+\_\+bytes}\label{structoptions_aef5ef9f2a1811711fce34f18f99bd9ab}
+\hypertarget{structoptions_a6ac631694e763190d479679978e19c08}{}\index{options@{options}!inactivity\+\_\+timeout@{inactivity\+\_\+timeout}}
+\index{inactivity\+\_\+timeout@{inactivity\+\_\+timeout}!options@{options}}
+\subsubsection[{inactivity\+\_\+timeout}]{\setlength{\rightskip}{0pt plus 5cm}int options\+::inactivity\+\_\+timeout}\label{structoptions_a6ac631694e763190d479679978e19c08}
+\hypertarget{structoptions_a313ef9730dd723427ca9ab74896109a6}{}\index{options@{options}!inetd@{inetd}}
+\index{inetd@{inetd}!options@{options}}
+\subsubsection[{inetd}]{\setlength{\rightskip}{0pt plus 5cm}int options\+::inetd}\label{structoptions_a313ef9730dd723427ca9ab74896109a6}
+\hypertarget{structoptions_a57973a1e800d248bb8d7bbe8682afc9e}{}\index{options@{options}!ip\+\_\+remote\+\_\+hint@{ip\+\_\+remote\+\_\+hint}}
+\index{ip\+\_\+remote\+\_\+hint@{ip\+\_\+remote\+\_\+hint}!options@{options}}
+\subsubsection[{ip\+\_\+remote\+\_\+hint}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ options\+::ip\+\_\+remote\+\_\+hint}\label{structoptions_a57973a1e800d248bb8d7bbe8682afc9e}
+\hypertarget{structoptions_a7a68302ffa97bdc216d2fcc15cca0bb2}{}\index{options@{options}!ipchange@{ipchange}}
+\index{ipchange@{ipchange}!options@{options}}
+\subsubsection[{ipchange}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ options\+::ipchange}\label{structoptions_a7a68302ffa97bdc216d2fcc15cca0bb2}
+\hypertarget{structoptions_adad7b538e1a7f315447db983d33bc458}{}\index{options@{options}!keepalive\+\_\+ping@{keepalive\+\_\+ping}}
+\index{keepalive\+\_\+ping@{keepalive\+\_\+ping}!options@{options}}
+\subsubsection[{keepalive\+\_\+ping}]{\setlength{\rightskip}{0pt plus 5cm}int options\+::keepalive\+\_\+ping}\label{structoptions_adad7b538e1a7f315447db983d33bc458}
+\hypertarget{structoptions_a5b6381333b82e8689f820ae2ecf2ecb1}{}\index{options@{options}!keepalive\+\_\+timeout@{keepalive\+\_\+timeout}}
+\index{keepalive\+\_\+timeout@{keepalive\+\_\+timeout}!options@{options}}
+\subsubsection[{keepalive\+\_\+timeout}]{\setlength{\rightskip}{0pt plus 5cm}int options\+::keepalive\+\_\+timeout}\label{structoptions_a5b6381333b82e8689f820ae2ecf2ecb1}
+\hypertarget{structoptions_ad47394d36a22f99461bdb6d749bcb6a1}{}\index{options@{options}!key\+\_\+direction@{key\+\_\+direction}}
+\index{key\+\_\+direction@{key\+\_\+direction}!options@{options}}
+\subsubsection[{key\+\_\+direction}]{\setlength{\rightskip}{0pt plus 5cm}int options\+::key\+\_\+direction}\label{structoptions_ad47394d36a22f99461bdb6d749bcb6a1}
+\hypertarget{structoptions_af7f8b27ab797608a96a058f04793e940}{}\index{options@{options}!key\+\_\+method@{key\+\_\+method}}
+\index{key\+\_\+method@{key\+\_\+method}!options@{options}}
+\subsubsection[{key\+\_\+method}]{\setlength{\rightskip}{0pt plus 5cm}int options\+::key\+\_\+method}\label{structoptions_af7f8b27ab797608a96a058f04793e940}
+\hypertarget{structoptions_a69bd45d624f2701927f2d71589f402ee}{}\index{options@{options}!key\+\_\+pass\+\_\+file@{key\+\_\+pass\+\_\+file}}
+\index{key\+\_\+pass\+\_\+file@{key\+\_\+pass\+\_\+file}!options@{options}}
+\subsubsection[{key\+\_\+pass\+\_\+file}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ options\+::key\+\_\+pass\+\_\+file}\label{structoptions_a69bd45d624f2701927f2d71589f402ee}
+\hypertarget{structoptions_ae644c14875e0dd32c008a4685f3ee3e3}{}\index{options@{options}!keysize@{keysize}}
+\index{keysize@{keysize}!options@{options}}
+\subsubsection[{keysize}]{\setlength{\rightskip}{0pt plus 5cm}int options\+::keysize}\label{structoptions_ae644c14875e0dd32c008a4685f3ee3e3}
+\hypertarget{structoptions_ae774b572dbe4d6eb691db24d6cbd3481}{}\index{options@{options}!lladdr@{lladdr}}
+\index{lladdr@{lladdr}!options@{options}}
+\subsubsection[{lladdr}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ options\+::lladdr}\label{structoptions_ae774b572dbe4d6eb691db24d6cbd3481}
+\hypertarget{structoptions_ac409c0cbee0a011db8215dc8c9bf6a9d}{}\index{options@{options}!log@{log}}
+\index{log@{log}!options@{options}}
+\subsubsection[{log}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} options\+::log}\label{structoptions_ac409c0cbee0a011db8215dc8c9bf6a9d}
+\hypertarget{structoptions_ad461fce774eec3e12e38baa36994cd7f}{}\index{options@{options}!machine\+\_\+readable\+\_\+output@{machine\+\_\+readable\+\_\+output}}
+\index{machine\+\_\+readable\+\_\+output@{machine\+\_\+readable\+\_\+output}!options@{options}}
+\subsubsection[{machine\+\_\+readable\+\_\+output}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} options\+::machine\+\_\+readable\+\_\+output}\label{structoptions_ad461fce774eec3e12e38baa36994cd7f}
+\hypertarget{structoptions_ab21da757cf5ae13f90e852f17e0a4676}{}\index{options@{options}!mark@{mark}}
+\index{mark@{mark}!options@{options}}
+\subsubsection[{mark}]{\setlength{\rightskip}{0pt plus 5cm}int options\+::mark}\label{structoptions_ab21da757cf5ae13f90e852f17e0a4676}
+\hypertarget{structoptions_aa016b4614f03c9fc02b643846812bbc7}{}\index{options@{options}!mlock@{mlock}}
+\index{mlock@{mlock}!options@{options}}
+\subsubsection[{mlock}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} options\+::mlock}\label{structoptions_aa016b4614f03c9fc02b643846812bbc7}
+\hypertarget{structoptions_a8a97f5f530042a7f4321cb97c3983fa1}{}\index{options@{options}!mode@{mode}}
+\index{mode@{mode}!options@{options}}
+\subsubsection[{mode}]{\setlength{\rightskip}{0pt plus 5cm}int options\+::mode}\label{structoptions_a8a97f5f530042a7f4321cb97c3983fa1}
+\hypertarget{structoptions_a4262860a03a36842bb63d1d3dae60e2d}{}\index{options@{options}!mute@{mute}}
+\index{mute@{mute}!options@{options}}
+\subsubsection[{mute}]{\setlength{\rightskip}{0pt plus 5cm}int options\+::mute}\label{structoptions_a4262860a03a36842bb63d1d3dae60e2d}
+\hypertarget{structoptions_a6a1327f7d30f878848f4e72211878a88}{}\index{options@{options}!mute\+\_\+replay\+\_\+warnings@{mute\+\_\+replay\+\_\+warnings}}
+\index{mute\+\_\+replay\+\_\+warnings@{mute\+\_\+replay\+\_\+warnings}!options@{options}}
+\subsubsection[{mute\+\_\+replay\+\_\+warnings}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} options\+::mute\+\_\+replay\+\_\+warnings}\label{structoptions_a6a1327f7d30f878848f4e72211878a88}
+\hypertarget{structoptions_a7c186af1daae850bf1f44d5534de11d1}{}\index{options@{options}!ncp\+\_\+ciphers@{ncp\+\_\+ciphers}}
+\index{ncp\+\_\+ciphers@{ncp\+\_\+ciphers}!options@{options}}
+\subsubsection[{ncp\+\_\+ciphers}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ options\+::ncp\+\_\+ciphers}\label{structoptions_a7c186af1daae850bf1f44d5534de11d1}
+\hypertarget{structoptions_a7c5a04e0f575936f6d77977ca5c5748b}{}\index{options@{options}!ncp\+\_\+enabled@{ncp\+\_\+enabled}}
+\index{ncp\+\_\+enabled@{ncp\+\_\+enabled}!options@{options}}
+\subsubsection[{ncp\+\_\+enabled}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} options\+::ncp\+\_\+enabled}\label{structoptions_a7c5a04e0f575936f6d77977ca5c5748b}
+\hypertarget{structoptions_adf54ee33312d3e824a9f95a8c74dc03a}{}\index{options@{options}!nice@{nice}}
+\index{nice@{nice}!options@{options}}
+\subsubsection[{nice}]{\setlength{\rightskip}{0pt plus 5cm}int options\+::nice}\label{structoptions_adf54ee33312d3e824a9f95a8c74dc03a}
+\hypertarget{structoptions_adb8ec5e44523e50a40777073262d41a2}{}\index{options@{options}!no\+\_\+advance@{no\+\_\+advance}}
+\index{no\+\_\+advance@{no\+\_\+advance}!options@{options}}
+\subsubsection[{no\+\_\+advance}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} options\+::no\+\_\+advance}\label{structoptions_adb8ec5e44523e50a40777073262d41a2}
+\hypertarget{structoptions_a888a84a61b2986b8c433b9a98c8de5ad}{}\index{options@{options}!ns\+\_\+cert\+\_\+type@{ns\+\_\+cert\+\_\+type}}
+\index{ns\+\_\+cert\+\_\+type@{ns\+\_\+cert\+\_\+type}!options@{options}}
+\subsubsection[{ns\+\_\+cert\+\_\+type}]{\setlength{\rightskip}{0pt plus 5cm}int options\+::ns\+\_\+cert\+\_\+type}\label{structoptions_a888a84a61b2986b8c433b9a98c8de5ad}
+\hypertarget{structoptions_a5463781f357b5c1c13070e92645c6194}{}\index{options@{options}!packet\+\_\+id\+\_\+file@{packet\+\_\+id\+\_\+file}}
+\index{packet\+\_\+id\+\_\+file@{packet\+\_\+id\+\_\+file}!options@{options}}
+\subsubsection[{packet\+\_\+id\+\_\+file}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ options\+::packet\+\_\+id\+\_\+file}\label{structoptions_a5463781f357b5c1c13070e92645c6194}
+\hypertarget{structoptions_a58306b60489c8093ab83be97174daebb}{}\index{options@{options}!peer\+\_\+id@{peer\+\_\+id}}
+\index{peer\+\_\+id@{peer\+\_\+id}!options@{options}}
+\subsubsection[{peer\+\_\+id}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t options\+::peer\+\_\+id}\label{structoptions_a58306b60489c8093ab83be97174daebb}
+\hypertarget{structoptions_a0fa2c5ba57c9ffb4a898bafc3725e88f}{}\index{options@{options}!persist\+\_\+config@{persist\+\_\+config}}
+\index{persist\+\_\+config@{persist\+\_\+config}!options@{options}}
+\subsubsection[{persist\+\_\+config}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} options\+::persist\+\_\+config}\label{structoptions_a0fa2c5ba57c9ffb4a898bafc3725e88f}
+\hypertarget{structoptions_a66101dbc2f00c4ef3e1ac1a492292811}{}\index{options@{options}!persist\+\_\+key@{persist\+\_\+key}}
+\index{persist\+\_\+key@{persist\+\_\+key}!options@{options}}
+\subsubsection[{persist\+\_\+key}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} options\+::persist\+\_\+key}\label{structoptions_a66101dbc2f00c4ef3e1ac1a492292811}
+\hypertarget{structoptions_afdd8d36525c3ca430f3ae3986d968813}{}\index{options@{options}!persist\+\_\+local\+\_\+ip@{persist\+\_\+local\+\_\+ip}}
+\index{persist\+\_\+local\+\_\+ip@{persist\+\_\+local\+\_\+ip}!options@{options}}
+\subsubsection[{persist\+\_\+local\+\_\+ip}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} options\+::persist\+\_\+local\+\_\+ip}\label{structoptions_afdd8d36525c3ca430f3ae3986d968813}
+\hypertarget{structoptions_a46e9ecdbdf449d7298f3fe42d587b5f4}{}\index{options@{options}!persist\+\_\+mode@{persist\+\_\+mode}}
+\index{persist\+\_\+mode@{persist\+\_\+mode}!options@{options}}
+\subsubsection[{persist\+\_\+mode}]{\setlength{\rightskip}{0pt plus 5cm}int options\+::persist\+\_\+mode}\label{structoptions_a46e9ecdbdf449d7298f3fe42d587b5f4}
+\hypertarget{structoptions_ada37ffb590fc8620f2f5e8f9615defeb}{}\index{options@{options}!persist\+\_\+remote\+\_\+ip@{persist\+\_\+remote\+\_\+ip}}
+\index{persist\+\_\+remote\+\_\+ip@{persist\+\_\+remote\+\_\+ip}!options@{options}}
+\subsubsection[{persist\+\_\+remote\+\_\+ip}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} options\+::persist\+\_\+remote\+\_\+ip}\label{structoptions_ada37ffb590fc8620f2f5e8f9615defeb}
+\hypertarget{structoptions_aa5a53a81882886ed763b33d6db6050e4}{}\index{options@{options}!persist\+\_\+tun@{persist\+\_\+tun}}
+\index{persist\+\_\+tun@{persist\+\_\+tun}!options@{options}}
+\subsubsection[{persist\+\_\+tun}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} options\+::persist\+\_\+tun}\label{structoptions_aa5a53a81882886ed763b33d6db6050e4}
+\hypertarget{structoptions_ac7d983496a189237f68f99e6816708c8}{}\index{options@{options}!ping\+\_\+rec\+\_\+timeout@{ping\+\_\+rec\+\_\+timeout}}
+\index{ping\+\_\+rec\+\_\+timeout@{ping\+\_\+rec\+\_\+timeout}!options@{options}}
+\subsubsection[{ping\+\_\+rec\+\_\+timeout}]{\setlength{\rightskip}{0pt plus 5cm}int options\+::ping\+\_\+rec\+\_\+timeout}\label{structoptions_ac7d983496a189237f68f99e6816708c8}
+\hypertarget{structoptions_a96e979feb652ac4f21f59df5cf1ca108}{}\index{options@{options}!ping\+\_\+rec\+\_\+timeout\+\_\+action@{ping\+\_\+rec\+\_\+timeout\+\_\+action}}
+\index{ping\+\_\+rec\+\_\+timeout\+\_\+action@{ping\+\_\+rec\+\_\+timeout\+\_\+action}!options@{options}}
+\subsubsection[{ping\+\_\+rec\+\_\+timeout\+\_\+action}]{\setlength{\rightskip}{0pt plus 5cm}int options\+::ping\+\_\+rec\+\_\+timeout\+\_\+action}\label{structoptions_a96e979feb652ac4f21f59df5cf1ca108}
+\hypertarget{structoptions_acee62ed6d25e482506731cada8f1ecaa}{}\index{options@{options}!ping\+\_\+send\+\_\+timeout@{ping\+\_\+send\+\_\+timeout}}
+\index{ping\+\_\+send\+\_\+timeout@{ping\+\_\+send\+\_\+timeout}!options@{options}}
+\subsubsection[{ping\+\_\+send\+\_\+timeout}]{\setlength{\rightskip}{0pt plus 5cm}int options\+::ping\+\_\+send\+\_\+timeout}\label{structoptions_acee62ed6d25e482506731cada8f1ecaa}
+\hypertarget{structoptions_a92fb5c781f585b1a3e03a2c35bfa06f4}{}\index{options@{options}!ping\+\_\+timer\+\_\+remote@{ping\+\_\+timer\+\_\+remote}}
+\index{ping\+\_\+timer\+\_\+remote@{ping\+\_\+timer\+\_\+remote}!options@{options}}
+\subsubsection[{ping\+\_\+timer\+\_\+remote}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} options\+::ping\+\_\+timer\+\_\+remote}\label{structoptions_a92fb5c781f585b1a3e03a2c35bfa06f4}
+\hypertarget{structoptions_a6439467dfde92c9d4fbd4cc164395003}{}\index{options@{options}!pkcs12\+\_\+file@{pkcs12\+\_\+file}}
+\index{pkcs12\+\_\+file@{pkcs12\+\_\+file}!options@{options}}
+\subsubsection[{pkcs12\+\_\+file}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ options\+::pkcs12\+\_\+file}\label{structoptions_a6439467dfde92c9d4fbd4cc164395003}
+\hypertarget{structoptions_ae9739331f41f5a93ff22f7af683e37db}{}\index{options@{options}!pkcs12\+\_\+file\+\_\+inline@{pkcs12\+\_\+file\+\_\+inline}}
+\index{pkcs12\+\_\+file\+\_\+inline@{pkcs12\+\_\+file\+\_\+inline}!options@{options}}
+\subsubsection[{pkcs12\+\_\+file\+\_\+inline}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ options\+::pkcs12\+\_\+file\+\_\+inline}\label{structoptions_ae9739331f41f5a93ff22f7af683e37db}
+\hypertarget{structoptions_ad99fd87c39fc152e252da7a9465d7f32}{}\index{options@{options}!priv\+\_\+key\+\_\+file@{priv\+\_\+key\+\_\+file}}
+\index{priv\+\_\+key\+\_\+file@{priv\+\_\+key\+\_\+file}!options@{options}}
+\subsubsection[{priv\+\_\+key\+\_\+file}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ options\+::priv\+\_\+key\+\_\+file}\label{structoptions_ad99fd87c39fc152e252da7a9465d7f32}
+\hypertarget{structoptions_a42b68fc2b348cb2257c9fdd51e0798e6}{}\index{options@{options}!priv\+\_\+key\+\_\+file\+\_\+inline@{priv\+\_\+key\+\_\+file\+\_\+inline}}
+\index{priv\+\_\+key\+\_\+file\+\_\+inline@{priv\+\_\+key\+\_\+file\+\_\+inline}!options@{options}}
+\subsubsection[{priv\+\_\+key\+\_\+file\+\_\+inline}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ options\+::priv\+\_\+key\+\_\+file\+\_\+inline}\label{structoptions_a42b68fc2b348cb2257c9fdd51e0798e6}
+\hypertarget{structoptions_a67f4cc4bc80fc43da3ca9a24e5fb72b7}{}\index{options@{options}!prng\+\_\+hash@{prng\+\_\+hash}}
+\index{prng\+\_\+hash@{prng\+\_\+hash}!options@{options}}
+\subsubsection[{prng\+\_\+hash}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ options\+::prng\+\_\+hash}\label{structoptions_a67f4cc4bc80fc43da3ca9a24e5fb72b7}
+\hypertarget{structoptions_a3d0e034a7cdda86ad66beee637423a74}{}\index{options@{options}!prng\+\_\+nonce\+\_\+secret\+\_\+len@{prng\+\_\+nonce\+\_\+secret\+\_\+len}}
+\index{prng\+\_\+nonce\+\_\+secret\+\_\+len@{prng\+\_\+nonce\+\_\+secret\+\_\+len}!options@{options}}
+\subsubsection[{prng\+\_\+nonce\+\_\+secret\+\_\+len}]{\setlength{\rightskip}{0pt plus 5cm}int options\+::prng\+\_\+nonce\+\_\+secret\+\_\+len}\label{structoptions_a3d0e034a7cdda86ad66beee637423a74}
+\hypertarget{structoptions_a0ee67574c48f7e866b0e292485f733f2}{}\index{options@{options}!proto\+\_\+force@{proto\+\_\+force}}
+\index{proto\+\_\+force@{proto\+\_\+force}!options@{options}}
+\subsubsection[{proto\+\_\+force}]{\setlength{\rightskip}{0pt plus 5cm}int options\+::proto\+\_\+force}\label{structoptions_a0ee67574c48f7e866b0e292485f733f2}
+\hypertarget{structoptions_ac0019bc66757add36d108772a29b53f3}{}\index{options@{options}!pull\+\_\+filter\+\_\+list@{pull\+\_\+filter\+\_\+list}}
+\index{pull\+\_\+filter\+\_\+list@{pull\+\_\+filter\+\_\+list}!options@{options}}
+\subsubsection[{pull\+\_\+filter\+\_\+list}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf pull\+\_\+filter\+\_\+list}$\ast$ options\+::pull\+\_\+filter\+\_\+list}\label{structoptions_ac0019bc66757add36d108772a29b53f3}
+\hypertarget{structoptions_a17009cf5cdc04448103ca126317d5af7}{}\index{options@{options}!push\+\_\+peer\+\_\+info@{push\+\_\+peer\+\_\+info}}
+\index{push\+\_\+peer\+\_\+info@{push\+\_\+peer\+\_\+info}!options@{options}}
+\subsubsection[{push\+\_\+peer\+\_\+info}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} options\+::push\+\_\+peer\+\_\+info}\label{structoptions_a17009cf5cdc04448103ca126317d5af7}
+\hypertarget{structoptions_a0536fdadf7c9e61bfe97e269172bbf3a}{}\index{options@{options}!rcvbuf@{rcvbuf}}
+\index{rcvbuf@{rcvbuf}!options@{options}}
+\subsubsection[{rcvbuf}]{\setlength{\rightskip}{0pt plus 5cm}int options\+::rcvbuf}\label{structoptions_a0536fdadf7c9e61bfe97e269172bbf3a}
+\hypertarget{structoptions_aeea9c1239f3809521b0dde3bcc622fc3}{}\index{options@{options}!remap\+\_\+sigusr1@{remap\+\_\+sigusr1}}
+\index{remap\+\_\+sigusr1@{remap\+\_\+sigusr1}!options@{options}}
+\subsubsection[{remap\+\_\+sigusr1}]{\setlength{\rightskip}{0pt plus 5cm}int options\+::remap\+\_\+sigusr1}\label{structoptions_aeea9c1239f3809521b0dde3bcc622fc3}
+\hypertarget{structoptions_a35efdd07abfdcad8904ed80f823be6b4}{}\index{options@{options}!remote\+\_\+cert\+\_\+eku@{remote\+\_\+cert\+\_\+eku}}
+\index{remote\+\_\+cert\+\_\+eku@{remote\+\_\+cert\+\_\+eku}!options@{options}}
+\subsubsection[{remote\+\_\+cert\+\_\+eku}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ options\+::remote\+\_\+cert\+\_\+eku}\label{structoptions_a35efdd07abfdcad8904ed80f823be6b4}
+\hypertarget{structoptions_a2f274b709207225b29461a422026c921}{}\index{options@{options}!remote\+\_\+cert\+\_\+ku@{remote\+\_\+cert\+\_\+ku}}
+\index{remote\+\_\+cert\+\_\+ku@{remote\+\_\+cert\+\_\+ku}!options@{options}}
+\subsubsection[{remote\+\_\+cert\+\_\+ku}]{\setlength{\rightskip}{0pt plus 5cm}unsigned options\+::remote\+\_\+cert\+\_\+ku\mbox{[}{\bf M\+A\+X\+\_\+\+P\+A\+R\+M\+S}\mbox{]}}\label{structoptions_a2f274b709207225b29461a422026c921}
+\hypertarget{structoptions_a66489088b6b873a31c218169faa90298}{}\index{options@{options}!remote\+\_\+list@{remote\+\_\+list}}
+\index{remote\+\_\+list@{remote\+\_\+list}!options@{options}}
+\subsubsection[{remote\+\_\+list}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf remote\+\_\+list}$\ast$ options\+::remote\+\_\+list}\label{structoptions_a66489088b6b873a31c218169faa90298}
+\hypertarget{structoptions_ad1253168302c07ba9e2c89e1bdff9547}{}\index{options@{options}!remote\+\_\+random@{remote\+\_\+random}}
+\index{remote\+\_\+random@{remote\+\_\+random}!options@{options}}
+\subsubsection[{remote\+\_\+random}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} options\+::remote\+\_\+random}\label{structoptions_ad1253168302c07ba9e2c89e1bdff9547}
+\hypertarget{structoptions_a45bb6bb056b0755eed6445cd8fb07156}{}\index{options@{options}!renegotiate\+\_\+bytes@{renegotiate\+\_\+bytes}}
+\index{renegotiate\+\_\+bytes@{renegotiate\+\_\+bytes}!options@{options}}
+\subsubsection[{renegotiate\+\_\+bytes}]{\setlength{\rightskip}{0pt plus 5cm}int options\+::renegotiate\+\_\+bytes}\label{structoptions_a45bb6bb056b0755eed6445cd8fb07156}
+\hypertarget{structoptions_a56dbf5c1dce17063ea7ae4b351427ef2}{}\index{options@{options}!renegotiate\+\_\+packets@{renegotiate\+\_\+packets}}
+\index{renegotiate\+\_\+packets@{renegotiate\+\_\+packets}!options@{options}}
+\subsubsection[{renegotiate\+\_\+packets}]{\setlength{\rightskip}{0pt plus 5cm}int options\+::renegotiate\+\_\+packets}\label{structoptions_a56dbf5c1dce17063ea7ae4b351427ef2}
+\hypertarget{structoptions_ac6e1f16b4069b73fef030866606705bb}{}\index{options@{options}!renegotiate\+\_\+seconds@{renegotiate\+\_\+seconds}}
+\index{renegotiate\+\_\+seconds@{renegotiate\+\_\+seconds}!options@{options}}
+\subsubsection[{renegotiate\+\_\+seconds}]{\setlength{\rightskip}{0pt plus 5cm}int options\+::renegotiate\+\_\+seconds}\label{structoptions_ac6e1f16b4069b73fef030866606705bb}
+\hypertarget{structoptions_a1a60e506cdd22f1fbf395c90389d1ace}{}\index{options@{options}!renegotiate\+\_\+seconds\+\_\+min@{renegotiate\+\_\+seconds\+\_\+min}}
+\index{renegotiate\+\_\+seconds\+\_\+min@{renegotiate\+\_\+seconds\+\_\+min}!options@{options}}
+\subsubsection[{renegotiate\+\_\+seconds\+\_\+min}]{\setlength{\rightskip}{0pt plus 5cm}int options\+::renegotiate\+\_\+seconds\+\_\+min}\label{structoptions_a1a60e506cdd22f1fbf395c90389d1ace}
+\hypertarget{structoptions_a6ab0ea3447528be930897de097a1a37f}{}\index{options@{options}!replay@{replay}}
+\index{replay@{replay}!options@{options}}
+\subsubsection[{replay}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} options\+::replay}\label{structoptions_a6ab0ea3447528be930897de097a1a37f}
+\hypertarget{structoptions_a27bd2c7c26f4e5bbb67c57743c785b18}{}\index{options@{options}!replay\+\_\+time@{replay\+\_\+time}}
+\index{replay\+\_\+time@{replay\+\_\+time}!options@{options}}
+\subsubsection[{replay\+\_\+time}]{\setlength{\rightskip}{0pt plus 5cm}int options\+::replay\+\_\+time}\label{structoptions_a27bd2c7c26f4e5bbb67c57743c785b18}
+\hypertarget{structoptions_a408775e6f474f8c25ad492e9c9d2b7b8}{}\index{options@{options}!replay\+\_\+window@{replay\+\_\+window}}
+\index{replay\+\_\+window@{replay\+\_\+window}!options@{options}}
+\subsubsection[{replay\+\_\+window}]{\setlength{\rightskip}{0pt plus 5cm}int options\+::replay\+\_\+window}\label{structoptions_a408775e6f474f8c25ad492e9c9d2b7b8}
+\hypertarget{structoptions_a055000dd88801bd1be2262bf8b447ec9}{}\index{options@{options}!resolve\+\_\+in\+\_\+advance@{resolve\+\_\+in\+\_\+advance}}
+\index{resolve\+\_\+in\+\_\+advance@{resolve\+\_\+in\+\_\+advance}!options@{options}}
+\subsubsection[{resolve\+\_\+in\+\_\+advance}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} options\+::resolve\+\_\+in\+\_\+advance}\label{structoptions_a055000dd88801bd1be2262bf8b447ec9}
+\hypertarget{structoptions_a01eeeea7687682a0ac932969c065222f}{}\index{options@{options}!resolve\+\_\+retry\+\_\+seconds@{resolve\+\_\+retry\+\_\+seconds}}
+\index{resolve\+\_\+retry\+\_\+seconds@{resolve\+\_\+retry\+\_\+seconds}!options@{options}}
+\subsubsection[{resolve\+\_\+retry\+\_\+seconds}]{\setlength{\rightskip}{0pt plus 5cm}int options\+::resolve\+\_\+retry\+\_\+seconds}\label{structoptions_a01eeeea7687682a0ac932969c065222f}
+\hypertarget{structoptions_a505d7766d3e0af765edf710f2a69b3a9}{}\index{options@{options}!rh\+\_\+store@{rh\+\_\+store}}
+\index{rh\+\_\+store@{rh\+\_\+store}!options@{options}}
+\subsubsection[{rh\+\_\+store}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf remote\+\_\+host\+\_\+store}$\ast$ options\+::rh\+\_\+store}\label{structoptions_a505d7766d3e0af765edf710f2a69b3a9}
+\hypertarget{structoptions_a781486d9be15f2560d4f73e5eb822db7}{}\index{options@{options}!route\+\_\+default\+\_\+gateway@{route\+\_\+default\+\_\+gateway}}
+\index{route\+\_\+default\+\_\+gateway@{route\+\_\+default\+\_\+gateway}!options@{options}}
+\subsubsection[{route\+\_\+default\+\_\+gateway}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ options\+::route\+\_\+default\+\_\+gateway}\label{structoptions_a781486d9be15f2560d4f73e5eb822db7}
+\hypertarget{structoptions_a1853e40c6a50fe479d6f0cb8e0a97216}{}\index{options@{options}!route\+\_\+default\+\_\+metric@{route\+\_\+default\+\_\+metric}}
+\index{route\+\_\+default\+\_\+metric@{route\+\_\+default\+\_\+metric}!options@{options}}
+\subsubsection[{route\+\_\+default\+\_\+metric}]{\setlength{\rightskip}{0pt plus 5cm}int options\+::route\+\_\+default\+\_\+metric}\label{structoptions_a1853e40c6a50fe479d6f0cb8e0a97216}
+\hypertarget{structoptions_ad1a7fff9ea0912c167096c44896fedfa}{}\index{options@{options}!route\+\_\+delay@{route\+\_\+delay}}
+\index{route\+\_\+delay@{route\+\_\+delay}!options@{options}}
+\subsubsection[{route\+\_\+delay}]{\setlength{\rightskip}{0pt plus 5cm}int options\+::route\+\_\+delay}\label{structoptions_ad1a7fff9ea0912c167096c44896fedfa}
+\hypertarget{structoptions_a510dc28521e59d0075843b498297a634}{}\index{options@{options}!route\+\_\+delay\+\_\+defined@{route\+\_\+delay\+\_\+defined}}
+\index{route\+\_\+delay\+\_\+defined@{route\+\_\+delay\+\_\+defined}!options@{options}}
+\subsubsection[{route\+\_\+delay\+\_\+defined}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} options\+::route\+\_\+delay\+\_\+defined}\label{structoptions_a510dc28521e59d0075843b498297a634}
+\hypertarget{structoptions_a9f34739ff66477dcf8e5db79a87517e3}{}\index{options@{options}!route\+\_\+delay\+\_\+window@{route\+\_\+delay\+\_\+window}}
+\index{route\+\_\+delay\+\_\+window@{route\+\_\+delay\+\_\+window}!options@{options}}
+\subsubsection[{route\+\_\+delay\+\_\+window}]{\setlength{\rightskip}{0pt plus 5cm}int options\+::route\+\_\+delay\+\_\+window}\label{structoptions_a9f34739ff66477dcf8e5db79a87517e3}
+\hypertarget{structoptions_ad0c28f17a7489fcd4865e5c4287c0f1c}{}\index{options@{options}!route\+\_\+gateway\+\_\+via\+\_\+dhcp@{route\+\_\+gateway\+\_\+via\+\_\+dhcp}}
+\index{route\+\_\+gateway\+\_\+via\+\_\+dhcp@{route\+\_\+gateway\+\_\+via\+\_\+dhcp}!options@{options}}
+\subsubsection[{route\+\_\+gateway\+\_\+via\+\_\+dhcp}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} options\+::route\+\_\+gateway\+\_\+via\+\_\+dhcp}\label{structoptions_ad0c28f17a7489fcd4865e5c4287c0f1c}
+\hypertarget{structoptions_a358bbf5e604ead362690b34e147324e0}{}\index{options@{options}!route\+\_\+noexec@{route\+\_\+noexec}}
+\index{route\+\_\+noexec@{route\+\_\+noexec}!options@{options}}
+\subsubsection[{route\+\_\+noexec}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} options\+::route\+\_\+noexec}\label{structoptions_a358bbf5e604ead362690b34e147324e0}
+\hypertarget{structoptions_a05b0630208dd924ada185a3b73adf8c8}{}\index{options@{options}!route\+\_\+nopull@{route\+\_\+nopull}}
+\index{route\+\_\+nopull@{route\+\_\+nopull}!options@{options}}
+\subsubsection[{route\+\_\+nopull}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} options\+::route\+\_\+nopull}\label{structoptions_a05b0630208dd924ada185a3b73adf8c8}
+\hypertarget{structoptions_a9ab2e37abdb87f168a53a0dc73ddcc1a}{}\index{options@{options}!route\+\_\+predown\+\_\+script@{route\+\_\+predown\+\_\+script}}
+\index{route\+\_\+predown\+\_\+script@{route\+\_\+predown\+\_\+script}!options@{options}}
+\subsubsection[{route\+\_\+predown\+\_\+script}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ options\+::route\+\_\+predown\+\_\+script}\label{structoptions_a9ab2e37abdb87f168a53a0dc73ddcc1a}
+\hypertarget{structoptions_af013c3f8f620bfcf06553f9e0340c6e2}{}\index{options@{options}!route\+\_\+script@{route\+\_\+script}}
+\index{route\+\_\+script@{route\+\_\+script}!options@{options}}
+\subsubsection[{route\+\_\+script}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ options\+::route\+\_\+script}\label{structoptions_af013c3f8f620bfcf06553f9e0340c6e2}
+\hypertarget{structoptions_a599b21d6f45322992703af0b4e12741e}{}\index{options@{options}!routes@{routes}}
+\index{routes@{routes}!options@{options}}
+\subsubsection[{routes}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf route\+\_\+option\+\_\+list}$\ast$ options\+::routes}\label{structoptions_a599b21d6f45322992703af0b4e12741e}
+\hypertarget{structoptions_ad3572f352bd2aa332207cddfdc607ff4}{}\index{options@{options}!routes\+\_\+ipv6@{routes\+\_\+ipv6}}
+\index{routes\+\_\+ipv6@{routes\+\_\+ipv6}!options@{options}}
+\subsubsection[{routes\+\_\+ipv6}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf route\+\_\+ipv6\+\_\+option\+\_\+list}$\ast$ options\+::routes\+\_\+ipv6}\label{structoptions_ad3572f352bd2aa332207cddfdc607ff4}
+\hypertarget{structoptions_af4f6ab25d97dd623648d3c2342659e0d}{}\index{options@{options}!shared\+\_\+secret\+\_\+file@{shared\+\_\+secret\+\_\+file}}
+\index{shared\+\_\+secret\+\_\+file@{shared\+\_\+secret\+\_\+file}!options@{options}}
+\subsubsection[{shared\+\_\+secret\+\_\+file}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ options\+::shared\+\_\+secret\+\_\+file}\label{structoptions_af4f6ab25d97dd623648d3c2342659e0d}
+\hypertarget{structoptions_aaadf5244b70d58c2cc46417c017ced15}{}\index{options@{options}!shared\+\_\+secret\+\_\+file\+\_\+inline@{shared\+\_\+secret\+\_\+file\+\_\+inline}}
+\index{shared\+\_\+secret\+\_\+file\+\_\+inline@{shared\+\_\+secret\+\_\+file\+\_\+inline}!options@{options}}
+\subsubsection[{shared\+\_\+secret\+\_\+file\+\_\+inline}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ options\+::shared\+\_\+secret\+\_\+file\+\_\+inline}\label{structoptions_aaadf5244b70d58c2cc46417c017ced15}
+\hypertarget{structoptions_a98fc9a0879158d9aaf12696ff8726b35}{}\index{options@{options}!show\+\_\+ciphers@{show\+\_\+ciphers}}
+\index{show\+\_\+ciphers@{show\+\_\+ciphers}!options@{options}}
+\subsubsection[{show\+\_\+ciphers}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} options\+::show\+\_\+ciphers}\label{structoptions_a98fc9a0879158d9aaf12696ff8726b35}
+\hypertarget{structoptions_a916e724576aa058a30902dc1c34862e8}{}\index{options@{options}!show\+\_\+curves@{show\+\_\+curves}}
+\index{show\+\_\+curves@{show\+\_\+curves}!options@{options}}
+\subsubsection[{show\+\_\+curves}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} options\+::show\+\_\+curves}\label{structoptions_a916e724576aa058a30902dc1c34862e8}
+\hypertarget{structoptions_a4aa894e058d4e005aa5c533183f86439}{}\index{options@{options}!show\+\_\+digests@{show\+\_\+digests}}
+\index{show\+\_\+digests@{show\+\_\+digests}!options@{options}}
+\subsubsection[{show\+\_\+digests}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} options\+::show\+\_\+digests}\label{structoptions_a4aa894e058d4e005aa5c533183f86439}
+\hypertarget{structoptions_a6627153e6bb2d0952fce58f65ee07329}{}\index{options@{options}!show\+\_\+engines@{show\+\_\+engines}}
+\index{show\+\_\+engines@{show\+\_\+engines}!options@{options}}
+\subsubsection[{show\+\_\+engines}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} options\+::show\+\_\+engines}\label{structoptions_a6627153e6bb2d0952fce58f65ee07329}
+\hypertarget{structoptions_a73c23de77b777cbd7a59bea56f1ee366}{}\index{options@{options}!show\+\_\+tls\+\_\+ciphers@{show\+\_\+tls\+\_\+ciphers}}
+\index{show\+\_\+tls\+\_\+ciphers@{show\+\_\+tls\+\_\+ciphers}!options@{options}}
+\subsubsection[{show\+\_\+tls\+\_\+ciphers}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} options\+::show\+\_\+tls\+\_\+ciphers}\label{structoptions_a73c23de77b777cbd7a59bea56f1ee366}
+\hypertarget{structoptions_a4d6d794acedbb97bff36ed663408f55b}{}\index{options@{options}!single\+\_\+session@{single\+\_\+session}}
+\index{single\+\_\+session@{single\+\_\+session}!options@{options}}
+\subsubsection[{single\+\_\+session}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} options\+::single\+\_\+session}\label{structoptions_a4d6d794acedbb97bff36ed663408f55b}
+\hypertarget{structoptions_aa177cf2ad8396bfadd40a7b3fb79adeb}{}\index{options@{options}!sndbuf@{sndbuf}}
+\index{sndbuf@{sndbuf}!options@{options}}
+\subsubsection[{sndbuf}]{\setlength{\rightskip}{0pt plus 5cm}int options\+::sndbuf}\label{structoptions_aa177cf2ad8396bfadd40a7b3fb79adeb}
+\hypertarget{structoptions_ac8e77b47a812a59d723b57059eede161}{}\index{options@{options}!sockflags@{sockflags}}
+\index{sockflags@{sockflags}!options@{options}}
+\subsubsection[{sockflags}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int options\+::sockflags}\label{structoptions_ac8e77b47a812a59d723b57059eede161}
+\hypertarget{structoptions_a3564873509d5272dd6fca9fa283d1560}{}\index{options@{options}!ssl\+\_\+flags@{ssl\+\_\+flags}}
+\index{ssl\+\_\+flags@{ssl\+\_\+flags}!options@{options}}
+\subsubsection[{ssl\+\_\+flags}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int options\+::ssl\+\_\+flags}\label{structoptions_a3564873509d5272dd6fca9fa283d1560}
+\hypertarget{structoptions_a3499def098c5b5d0a40c742770b11aef}{}\index{options@{options}!status\+\_\+file@{status\+\_\+file}}
+\index{status\+\_\+file@{status\+\_\+file}!options@{options}}
+\subsubsection[{status\+\_\+file}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ options\+::status\+\_\+file}\label{structoptions_a3499def098c5b5d0a40c742770b11aef}
+\hypertarget{structoptions_abab76df02281e67b578e568d765cf99c}{}\index{options@{options}!status\+\_\+file\+\_\+update\+\_\+freq@{status\+\_\+file\+\_\+update\+\_\+freq}}
+\index{status\+\_\+file\+\_\+update\+\_\+freq@{status\+\_\+file\+\_\+update\+\_\+freq}!options@{options}}
+\subsubsection[{status\+\_\+file\+\_\+update\+\_\+freq}]{\setlength{\rightskip}{0pt plus 5cm}int options\+::status\+\_\+file\+\_\+update\+\_\+freq}\label{structoptions_abab76df02281e67b578e568d765cf99c}
+\hypertarget{structoptions_a14d5ae7bbfea0b36ad151ee0d783970d}{}\index{options@{options}!status\+\_\+file\+\_\+version@{status\+\_\+file\+\_\+version}}
+\index{status\+\_\+file\+\_\+version@{status\+\_\+file\+\_\+version}!options@{options}}
+\subsubsection[{status\+\_\+file\+\_\+version}]{\setlength{\rightskip}{0pt plus 5cm}int options\+::status\+\_\+file\+\_\+version}\label{structoptions_a14d5ae7bbfea0b36ad151ee0d783970d}
+\hypertarget{structoptions_ab2949e8fcd70888be052d9c40bd915d0}{}\index{options@{options}!suppress\+\_\+timestamps@{suppress\+\_\+timestamps}}
+\index{suppress\+\_\+timestamps@{suppress\+\_\+timestamps}!options@{options}}
+\subsubsection[{suppress\+\_\+timestamps}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} options\+::suppress\+\_\+timestamps}\label{structoptions_ab2949e8fcd70888be052d9c40bd915d0}
+\hypertarget{structoptions_a38d22a55bf92acf99f3c5d71d3b06b18}{}\index{options@{options}!test\+\_\+crypto@{test\+\_\+crypto}}
+\index{test\+\_\+crypto@{test\+\_\+crypto}!options@{options}}
+\subsubsection[{test\+\_\+crypto}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} options\+::test\+\_\+crypto}\label{structoptions_a38d22a55bf92acf99f3c5d71d3b06b18}
+\hypertarget{structoptions_a2a1f083c13f82cd960431bd4b89efdb9}{}\index{options@{options}!tls\+\_\+auth\+\_\+file@{tls\+\_\+auth\+\_\+file}}
+\index{tls\+\_\+auth\+\_\+file@{tls\+\_\+auth\+\_\+file}!options@{options}}
+\subsubsection[{tls\+\_\+auth\+\_\+file}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ options\+::tls\+\_\+auth\+\_\+file}\label{structoptions_a2a1f083c13f82cd960431bd4b89efdb9}
+\hypertarget{structoptions_a56422a288a9c522d46374602d0477a4f}{}\index{options@{options}!tls\+\_\+auth\+\_\+file\+\_\+inline@{tls\+\_\+auth\+\_\+file\+\_\+inline}}
+\index{tls\+\_\+auth\+\_\+file\+\_\+inline@{tls\+\_\+auth\+\_\+file\+\_\+inline}!options@{options}}
+\subsubsection[{tls\+\_\+auth\+\_\+file\+\_\+inline}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ options\+::tls\+\_\+auth\+\_\+file\+\_\+inline}\label{structoptions_a56422a288a9c522d46374602d0477a4f}
+\hypertarget{structoptions_a74fd79cb23d82f4e47840ea1568aade3}{}\index{options@{options}!tls\+\_\+cert\+\_\+profile@{tls\+\_\+cert\+\_\+profile}}
+\index{tls\+\_\+cert\+\_\+profile@{tls\+\_\+cert\+\_\+profile}!options@{options}}
+\subsubsection[{tls\+\_\+cert\+\_\+profile}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ options\+::tls\+\_\+cert\+\_\+profile}\label{structoptions_a74fd79cb23d82f4e47840ea1568aade3}
+\hypertarget{structoptions_a92cffd160044d2b84a1085fa3ddb9a2d}{}\index{options@{options}!tls\+\_\+client@{tls\+\_\+client}}
+\index{tls\+\_\+client@{tls\+\_\+client}!options@{options}}
+\subsubsection[{tls\+\_\+client}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} options\+::tls\+\_\+client}\label{structoptions_a92cffd160044d2b84a1085fa3ddb9a2d}
+\hypertarget{structoptions_a6aa8b678204365100038f569fbbe184c}{}\index{options@{options}!tls\+\_\+crypt\+\_\+file@{tls\+\_\+crypt\+\_\+file}}
+\index{tls\+\_\+crypt\+\_\+file@{tls\+\_\+crypt\+\_\+file}!options@{options}}
+\subsubsection[{tls\+\_\+crypt\+\_\+file}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ options\+::tls\+\_\+crypt\+\_\+file}\label{structoptions_a6aa8b678204365100038f569fbbe184c}
+\hypertarget{structoptions_ae4c336e72d6e63351a26a8daa69adfc7}{}\index{options@{options}!tls\+\_\+crypt\+\_\+inline@{tls\+\_\+crypt\+\_\+inline}}
+\index{tls\+\_\+crypt\+\_\+inline@{tls\+\_\+crypt\+\_\+inline}!options@{options}}
+\subsubsection[{tls\+\_\+crypt\+\_\+inline}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ options\+::tls\+\_\+crypt\+\_\+inline}\label{structoptions_ae4c336e72d6e63351a26a8daa69adfc7}
+\hypertarget{structoptions_a62716987c407e3768a60476bd1b6b908}{}\index{options@{options}!tls\+\_\+exit@{tls\+\_\+exit}}
+\index{tls\+\_\+exit@{tls\+\_\+exit}!options@{options}}
+\subsubsection[{tls\+\_\+exit}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} options\+::tls\+\_\+exit}\label{structoptions_a62716987c407e3768a60476bd1b6b908}
+\hypertarget{structoptions_a8f3c7dbd55ca4f5e960020ecdecf032f}{}\index{options@{options}!tls\+\_\+export\+\_\+cert@{tls\+\_\+export\+\_\+cert}}
+\index{tls\+\_\+export\+\_\+cert@{tls\+\_\+export\+\_\+cert}!options@{options}}
+\subsubsection[{tls\+\_\+export\+\_\+cert}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ options\+::tls\+\_\+export\+\_\+cert}\label{structoptions_a8f3c7dbd55ca4f5e960020ecdecf032f}
+\hypertarget{structoptions_a8cc67b442d93909bc5500945a8ac08ff}{}\index{options@{options}!tls\+\_\+server@{tls\+\_\+server}}
+\index{tls\+\_\+server@{tls\+\_\+server}!options@{options}}
+\subsubsection[{tls\+\_\+server}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} options\+::tls\+\_\+server}\label{structoptions_a8cc67b442d93909bc5500945a8ac08ff}
+\hypertarget{structoptions_a36a0d523e3942a896639cda6abf2e426}{}\index{options@{options}!tls\+\_\+timeout@{tls\+\_\+timeout}}
+\index{tls\+\_\+timeout@{tls\+\_\+timeout}!options@{options}}
+\subsubsection[{tls\+\_\+timeout}]{\setlength{\rightskip}{0pt plus 5cm}int options\+::tls\+\_\+timeout}\label{structoptions_a36a0d523e3942a896639cda6abf2e426}
+\hypertarget{structoptions_a937ce3e9f18cc533ac9baab101437360}{}\index{options@{options}!tls\+\_\+verify@{tls\+\_\+verify}}
+\index{tls\+\_\+verify@{tls\+\_\+verify}!options@{options}}
+\subsubsection[{tls\+\_\+verify}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ options\+::tls\+\_\+verify}\label{structoptions_a937ce3e9f18cc533ac9baab101437360}
+\hypertarget{structoptions_a7a75e271f54a80de7c345599e69bcfe9}{}\index{options@{options}!topology@{topology}}
+\index{topology@{topology}!options@{options}}
+\subsubsection[{topology}]{\setlength{\rightskip}{0pt plus 5cm}int options\+::topology}\label{structoptions_a7a75e271f54a80de7c345599e69bcfe9}
+\hypertarget{structoptions_ae304d9717c86ae466b4749b3ab04b718}{}\index{options@{options}!transition\+\_\+window@{transition\+\_\+window}}
+\index{transition\+\_\+window@{transition\+\_\+window}!options@{options}}
+\subsubsection[{transition\+\_\+window}]{\setlength{\rightskip}{0pt plus 5cm}int options\+::transition\+\_\+window}\label{structoptions_ae304d9717c86ae466b4749b3ab04b718}
+\hypertarget{structoptions_a7464e4dafe3c9f80b09c620c83f22227}{}\index{options@{options}!tuntap\+\_\+options@{tuntap\+\_\+options}}
+\index{tuntap\+\_\+options@{tuntap\+\_\+options}!options@{options}}
+\subsubsection[{tuntap\+\_\+options}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf tuntap\+\_\+options} options\+::tuntap\+\_\+options}\label{structoptions_a7464e4dafe3c9f80b09c620c83f22227}
+\hypertarget{structoptions_a6b6701741dc1e5698babf4ce474984f7}{}\index{options@{options}!unsuccessful\+\_\+attempts@{unsuccessful\+\_\+attempts}}
+\index{unsuccessful\+\_\+attempts@{unsuccessful\+\_\+attempts}!options@{options}}
+\subsubsection[{unsuccessful\+\_\+attempts}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int options\+::unsuccessful\+\_\+attempts}\label{structoptions_a6b6701741dc1e5698babf4ce474984f7}
+\hypertarget{structoptions_a38f4b8bb967c7310eaaa3d77239f7780}{}\index{options@{options}!up\+\_\+delay@{up\+\_\+delay}}
+\index{up\+\_\+delay@{up\+\_\+delay}!options@{options}}
+\subsubsection[{up\+\_\+delay}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} options\+::up\+\_\+delay}\label{structoptions_a38f4b8bb967c7310eaaa3d77239f7780}
+\hypertarget{structoptions_ada4714b5025b2e2d0e863de94507d4d5}{}\index{options@{options}!up\+\_\+restart@{up\+\_\+restart}}
+\index{up\+\_\+restart@{up\+\_\+restart}!options@{options}}
+\subsubsection[{up\+\_\+restart}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} options\+::up\+\_\+restart}\label{structoptions_ada4714b5025b2e2d0e863de94507d4d5}
+\hypertarget{structoptions_a4ad9197223f3b828c0caa17c59e311fd}{}\index{options@{options}!up\+\_\+script@{up\+\_\+script}}
+\index{up\+\_\+script@{up\+\_\+script}!options@{options}}
+\subsubsection[{up\+\_\+script}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ options\+::up\+\_\+script}\label{structoptions_a4ad9197223f3b828c0caa17c59e311fd}
+\hypertarget{structoptions_a2eb572d30b4a4d1e636dbdf666fc29b9}{}\index{options@{options}!use\+\_\+peer\+\_\+id@{use\+\_\+peer\+\_\+id}}
+\index{use\+\_\+peer\+\_\+id@{use\+\_\+peer\+\_\+id}!options@{options}}
+\subsubsection[{use\+\_\+peer\+\_\+id}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} options\+::use\+\_\+peer\+\_\+id}\label{structoptions_a2eb572d30b4a4d1e636dbdf666fc29b9}
+\hypertarget{structoptions_a7309025b69e21f09e0867970b052d1e2}{}\index{options@{options}!user\+\_\+script\+\_\+used@{user\+\_\+script\+\_\+used}}
+\index{user\+\_\+script\+\_\+used@{user\+\_\+script\+\_\+used}!options@{options}}
+\subsubsection[{user\+\_\+script\+\_\+used}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} options\+::user\+\_\+script\+\_\+used}\label{structoptions_a7309025b69e21f09e0867970b052d1e2}
+\hypertarget{structoptions_a8388094487ff9931a91eb02e7fa8d472}{}\index{options@{options}!username@{username}}
+\index{username@{username}!options@{options}}
+\subsubsection[{username}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ options\+::username}\label{structoptions_a8388094487ff9931a91eb02e7fa8d472}
+\hypertarget{structoptions_ae86dddeb121da4d534e9705c2fa063fc}{}\index{options@{options}!verbosity@{verbosity}}
+\index{verbosity@{verbosity}!options@{options}}
+\subsubsection[{verbosity}]{\setlength{\rightskip}{0pt plus 5cm}int options\+::verbosity}\label{structoptions_ae86dddeb121da4d534e9705c2fa063fc}
+\hypertarget{structoptions_af331e61067f9d3fa9d071615d6830720}{}\index{options@{options}!verify\+\_\+hash@{verify\+\_\+hash}}
+\index{verify\+\_\+hash@{verify\+\_\+hash}!options@{options}}
+\subsubsection[{verify\+\_\+hash}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t$\ast$ options\+::verify\+\_\+hash}\label{structoptions_af331e61067f9d3fa9d071615d6830720}
+\hypertarget{structoptions_a2243ce90bf5e84bb70fdb979f452669e}{}\index{options@{options}!verify\+\_\+hash\+\_\+algo@{verify\+\_\+hash\+\_\+algo}}
+\index{verify\+\_\+hash\+\_\+algo@{verify\+\_\+hash\+\_\+algo}!options@{options}}
+\subsubsection[{verify\+\_\+hash\+\_\+algo}]{\setlength{\rightskip}{0pt plus 5cm}{\bf hash\+\_\+algo\+\_\+type} options\+::verify\+\_\+hash\+\_\+algo}\label{structoptions_a2243ce90bf5e84bb70fdb979f452669e}
+\hypertarget{structoptions_acdf0fec84661c4ccdf8bbf01430e3729}{}\index{options@{options}!verify\+\_\+x509\+\_\+name@{verify\+\_\+x509\+\_\+name}}
+\index{verify\+\_\+x509\+\_\+name@{verify\+\_\+x509\+\_\+name}!options@{options}}
+\subsubsection[{verify\+\_\+x509\+\_\+name}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ options\+::verify\+\_\+x509\+\_\+name}\label{structoptions_acdf0fec84661c4ccdf8bbf01430e3729}
+\hypertarget{structoptions_ab7d414e087194f31b1a0f16dec7bd0f9}{}\index{options@{options}!verify\+\_\+x509\+\_\+type@{verify\+\_\+x509\+\_\+type}}
+\index{verify\+\_\+x509\+\_\+type@{verify\+\_\+x509\+\_\+type}!options@{options}}
+\subsubsection[{verify\+\_\+x509\+\_\+type}]{\setlength{\rightskip}{0pt plus 5cm}int options\+::verify\+\_\+x509\+\_\+type}\label{structoptions_ab7d414e087194f31b1a0f16dec7bd0f9}
+\hypertarget{structoptions_a5c937139ec761b56b6a01395ea310e91}{}\index{options@{options}!writepid@{writepid}}
+\index{writepid@{writepid}!options@{options}}
+\subsubsection[{writepid}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ options\+::writepid}\label{structoptions_a5c937139ec761b56b6a01395ea310e91}
+\hypertarget{structoptions_ac34bf3412bfd7f1c7185e08c3e6d212c}{}\index{options@{options}!x509\+\_\+track@{x509\+\_\+track}}
+\index{x509\+\_\+track@{x509\+\_\+track}!options@{options}}
+\subsubsection[{x509\+\_\+track}]{\setlength{\rightskip}{0pt plus 5cm}const struct {\bf x509\+\_\+track}$\ast$ options\+::x509\+\_\+track}\label{structoptions_ac34bf3412bfd7f1c7185e08c3e6d212c}
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/openvpn/\hyperlink{options_8h}{options.\+h}\end{DoxyCompactItemize}

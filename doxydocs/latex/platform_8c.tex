@@ -1,0 +1,278 @@
+\hypertarget{platform_8c}{}\section{src/openvpn/platform.c File Reference}
+\label{platform_8c}\index{src/openvpn/platform.\+c@{src/openvpn/platform.\+c}}
+{\ttfamily \#include \char`\"{}syshead.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}buffer.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}error.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}win32.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}memdbg.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}platform.\+h\char`\"{}}\\*
+Include dependency graph for platform.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{platform_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{platform_8c_a82c8419a350edc0a41c53bb0d495235f}{platform\+\_\+chroot} (const char $\ast$path)
+\item 
+\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} \hyperlink{platform_8c_a52d59a56eff6b981f01eff915af4fad8}{platform\+\_\+user\+\_\+get} (const char $\ast$username, struct \hyperlink{structplatform__state__user}{platform\+\_\+state\+\_\+user} $\ast$state)
+\item 
+void \hyperlink{platform_8c_a99cf5236d05fa18d32f2b7790c9e7cb4}{platform\+\_\+user\+\_\+set} (const struct \hyperlink{structplatform__state__user}{platform\+\_\+state\+\_\+user} $\ast$state)
+\item 
+\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} \hyperlink{platform_8c_ac9360f2b8017f5885191fd52e3192ddd}{platform\+\_\+group\+\_\+get} (const char $\ast$groupname, struct \hyperlink{structplatform__state__group}{platform\+\_\+state\+\_\+group} $\ast$state)
+\item 
+void \hyperlink{platform_8c_a9fa1294012cccd23c3d8145837883057}{platform\+\_\+group\+\_\+set} (const struct \hyperlink{structplatform__state__group}{platform\+\_\+state\+\_\+group} $\ast$state)
+\item 
+void \hyperlink{platform_8c_a3d70db12180a04ae095a6bfb21951efb}{platform\+\_\+nice} (int niceval)
+\item 
+unsigned int \hyperlink{platform_8c_a0ed26af4c60fafd6cb3de6759dfb0238}{platform\+\_\+getpid} (void)
+\item 
+void \hyperlink{platform_8c_a81c983ed37e32842f86b6677e3b830ba}{platform\+\_\+mlockall} (\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} print\+\_\+msg)
+\item 
+int \hyperlink{platform_8c_a7dc2e3b7b5be2916dd35a763744e7702}{platform\+\_\+chdir} (const char $\ast$dir)
+\item 
+\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} \hyperlink{platform_8c_af39d8df6f7d3f4bbcfcb505c2c58c136}{platform\+\_\+system\+\_\+ok} (int stat)
+\item 
+int \hyperlink{platform_8c_a4b6f1460a84106d6088f52393a70d5a2}{platform\+\_\+access} (const char $\ast$path, int mode)
+\item 
+void \hyperlink{platform_8c_a051975a0dc989eb9c9a93a09baff809a}{platform\+\_\+sleep\+\_\+milliseconds} (unsigned int n)
+\item 
+void \hyperlink{platform_8c_a2e3bccb170734945c4c9293c5cd69a18}{platform\+\_\+sleep\+\_\+until\+\_\+signal} (void)
+\item 
+\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} \hyperlink{platform_8c_a575a320fe086fd16b99a55ca2b4e511a}{platform\+\_\+unlink} (const char $\ast$filename)
+\item 
+F\+I\+L\+E $\ast$ \hyperlink{platform_8c_a7da5056ce6a8a2efd54ccee6b993e0a6}{platform\+\_\+fopen} (const char $\ast$path, const char $\ast$mode)
+\item 
+int \hyperlink{platform_8c_adb289c825e8632ae08564aaa193a608d}{platform\+\_\+open} (const char $\ast$path, int flags, int mode)
+\item 
+int \hyperlink{platform_8c_af447a8a6593935a6fd4d7dc74938e33f}{platform\+\_\+stat} (const char $\ast$path, \hyperlink{platform_8h_ae789361b6ea53f595d5ba712474bffd2}{platform\+\_\+stat\+\_\+t} $\ast$buf)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{platform_8c_a4b6f1460a84106d6088f52393a70d5a2}{}\index{platform.\+c@{platform.\+c}!platform\+\_\+access@{platform\+\_\+access}}
+\index{platform\+\_\+access@{platform\+\_\+access}!platform.\+c@{platform.\+c}}
+\subsubsection[{platform\+\_\+access(const char $\ast$path, int mode)}]{\setlength{\rightskip}{0pt plus 5cm}int platform\+\_\+access (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{path, }
+\item[{int}]{mode}
+\end{DoxyParamCaption}
+)}\label{platform_8c_a4b6f1460a84106d6088f52393a70d5a2}
+\hypertarget{platform_8c_a7dc2e3b7b5be2916dd35a763744e7702}{}\index{platform.\+c@{platform.\+c}!platform\+\_\+chdir@{platform\+\_\+chdir}}
+\index{platform\+\_\+chdir@{platform\+\_\+chdir}!platform.\+c@{platform.\+c}}
+\subsubsection[{platform\+\_\+chdir(const char $\ast$dir)}]{\setlength{\rightskip}{0pt plus 5cm}int platform\+\_\+chdir (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{dir}
+\end{DoxyParamCaption}
+)}\label{platform_8c_a7dc2e3b7b5be2916dd35a763744e7702}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=276pt]{platform_8c_a7dc2e3b7b5be2916dd35a763744e7702_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{platform_8c_a82c8419a350edc0a41c53bb0d495235f}{}\index{platform.\+c@{platform.\+c}!platform\+\_\+chroot@{platform\+\_\+chroot}}
+\index{platform\+\_\+chroot@{platform\+\_\+chroot}!platform.\+c@{platform.\+c}}
+\subsubsection[{platform\+\_\+chroot(const char $\ast$path)}]{\setlength{\rightskip}{0pt plus 5cm}void platform\+\_\+chroot (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{path}
+\end{DoxyParamCaption}
+)}\label{platform_8c_a82c8419a350edc0a41c53bb0d495235f}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=276pt]{platform_8c_a82c8419a350edc0a41c53bb0d495235f_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{platform_8c_a7da5056ce6a8a2efd54ccee6b993e0a6}{}\index{platform.\+c@{platform.\+c}!platform\+\_\+fopen@{platform\+\_\+fopen}}
+\index{platform\+\_\+fopen@{platform\+\_\+fopen}!platform.\+c@{platform.\+c}}
+\subsubsection[{platform\+\_\+fopen(const char $\ast$path, const char $\ast$mode)}]{\setlength{\rightskip}{0pt plus 5cm}F\+I\+L\+E$\ast$ platform\+\_\+fopen (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{path, }
+\item[{const char $\ast$}]{mode}
+\end{DoxyParamCaption}
+)}\label{platform_8c_a7da5056ce6a8a2efd54ccee6b993e0a6}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{platform_8c_a7da5056ce6a8a2efd54ccee6b993e0a6_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{platform_8c_a0ed26af4c60fafd6cb3de6759dfb0238}{}\index{platform.\+c@{platform.\+c}!platform\+\_\+getpid@{platform\+\_\+getpid}}
+\index{platform\+\_\+getpid@{platform\+\_\+getpid}!platform.\+c@{platform.\+c}}
+\subsubsection[{platform\+\_\+getpid(void)}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int platform\+\_\+getpid (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{platform_8c_a0ed26af4c60fafd6cb3de6759dfb0238}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=283pt]{platform_8c_a0ed26af4c60fafd6cb3de6759dfb0238_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{platform_8c_ac9360f2b8017f5885191fd52e3192ddd}{}\index{platform.\+c@{platform.\+c}!platform\+\_\+group\+\_\+get@{platform\+\_\+group\+\_\+get}}
+\index{platform\+\_\+group\+\_\+get@{platform\+\_\+group\+\_\+get}!platform.\+c@{platform.\+c}}
+\subsubsection[{platform\+\_\+group\+\_\+get(const char $\ast$groupname, struct platform\+\_\+state\+\_\+group $\ast$state)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} platform\+\_\+group\+\_\+get (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{groupname, }
+\item[{struct {\bf platform\+\_\+state\+\_\+group} $\ast$}]{state}
+\end{DoxyParamCaption}
+)}\label{platform_8c_ac9360f2b8017f5885191fd52e3192ddd}
+\hypertarget{platform_8c_a9fa1294012cccd23c3d8145837883057}{}\index{platform.\+c@{platform.\+c}!platform\+\_\+group\+\_\+set@{platform\+\_\+group\+\_\+set}}
+\index{platform\+\_\+group\+\_\+set@{platform\+\_\+group\+\_\+set}!platform.\+c@{platform.\+c}}
+\subsubsection[{platform\+\_\+group\+\_\+set(const struct platform\+\_\+state\+\_\+group $\ast$state)}]{\setlength{\rightskip}{0pt plus 5cm}void platform\+\_\+group\+\_\+set (
+\begin{DoxyParamCaption}
+\item[{const struct {\bf platform\+\_\+state\+\_\+group} $\ast$}]{state}
+\end{DoxyParamCaption}
+)}\label{platform_8c_a9fa1294012cccd23c3d8145837883057}
+\hypertarget{platform_8c_a81c983ed37e32842f86b6677e3b830ba}{}\index{platform.\+c@{platform.\+c}!platform\+\_\+mlockall@{platform\+\_\+mlockall}}
+\index{platform\+\_\+mlockall@{platform\+\_\+mlockall}!platform.\+c@{platform.\+c}}
+\subsubsection[{platform\+\_\+mlockall(bool print\+\_\+msg)}]{\setlength{\rightskip}{0pt plus 5cm}void platform\+\_\+mlockall (
+\begin{DoxyParamCaption}
+\item[{{\bf bool}}]{print\+\_\+msg}
+\end{DoxyParamCaption}
+)}\label{platform_8c_a81c983ed37e32842f86b6677e3b830ba}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{platform_8c_a81c983ed37e32842f86b6677e3b830ba_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{platform_8c_a3d70db12180a04ae095a6bfb21951efb}{}\index{platform.\+c@{platform.\+c}!platform\+\_\+nice@{platform\+\_\+nice}}
+\index{platform\+\_\+nice@{platform\+\_\+nice}!platform.\+c@{platform.\+c}}
+\subsubsection[{platform\+\_\+nice(int niceval)}]{\setlength{\rightskip}{0pt plus 5cm}void platform\+\_\+nice (
+\begin{DoxyParamCaption}
+\item[{int}]{niceval}
+\end{DoxyParamCaption}
+)}\label{platform_8c_a3d70db12180a04ae095a6bfb21951efb}
+\hypertarget{platform_8c_adb289c825e8632ae08564aaa193a608d}{}\index{platform.\+c@{platform.\+c}!platform\+\_\+open@{platform\+\_\+open}}
+\index{platform\+\_\+open@{platform\+\_\+open}!platform.\+c@{platform.\+c}}
+\subsubsection[{platform\+\_\+open(const char $\ast$path, int flags, int mode)}]{\setlength{\rightskip}{0pt plus 5cm}int platform\+\_\+open (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{path, }
+\item[{int}]{flags, }
+\item[{int}]{mode}
+\end{DoxyParamCaption}
+)}\label{platform_8c_adb289c825e8632ae08564aaa193a608d}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{platform_8c_adb289c825e8632ae08564aaa193a608d_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{platform_8c_a051975a0dc989eb9c9a93a09baff809a}{}\index{platform.\+c@{platform.\+c}!platform\+\_\+sleep\+\_\+milliseconds@{platform\+\_\+sleep\+\_\+milliseconds}}
+\index{platform\+\_\+sleep\+\_\+milliseconds@{platform\+\_\+sleep\+\_\+milliseconds}!platform.\+c@{platform.\+c}}
+\subsubsection[{platform\+\_\+sleep\+\_\+milliseconds(unsigned int n)}]{\setlength{\rightskip}{0pt plus 5cm}void platform\+\_\+sleep\+\_\+milliseconds (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{n}
+\end{DoxyParamCaption}
+)}\label{platform_8c_a051975a0dc989eb9c9a93a09baff809a}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=341pt]{platform_8c_a051975a0dc989eb9c9a93a09baff809a_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{platform_8c_a2e3bccb170734945c4c9293c5cd69a18}{}\index{platform.\+c@{platform.\+c}!platform\+\_\+sleep\+\_\+until\+\_\+signal@{platform\+\_\+sleep\+\_\+until\+\_\+signal}}
+\index{platform\+\_\+sleep\+\_\+until\+\_\+signal@{platform\+\_\+sleep\+\_\+until\+\_\+signal}!platform.\+c@{platform.\+c}}
+\subsubsection[{platform\+\_\+sleep\+\_\+until\+\_\+signal(void)}]{\setlength{\rightskip}{0pt plus 5cm}void platform\+\_\+sleep\+\_\+until\+\_\+signal (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{platform_8c_a2e3bccb170734945c4c9293c5cd69a18}
+\hypertarget{platform_8c_af447a8a6593935a6fd4d7dc74938e33f}{}\index{platform.\+c@{platform.\+c}!platform\+\_\+stat@{platform\+\_\+stat}}
+\index{platform\+\_\+stat@{platform\+\_\+stat}!platform.\+c@{platform.\+c}}
+\subsubsection[{platform\+\_\+stat(const char $\ast$path, platform\+\_\+stat\+\_\+t $\ast$buf)}]{\setlength{\rightskip}{0pt plus 5cm}int platform\+\_\+stat (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{path, }
+\item[{{\bf platform\+\_\+stat\+\_\+t} $\ast$}]{buf}
+\end{DoxyParamCaption}
+)}\label{platform_8c_af447a8a6593935a6fd4d7dc74938e33f}
+\hypertarget{platform_8c_af39d8df6f7d3f4bbcfcb505c2c58c136}{}\index{platform.\+c@{platform.\+c}!platform\+\_\+system\+\_\+ok@{platform\+\_\+system\+\_\+ok}}
+\index{platform\+\_\+system\+\_\+ok@{platform\+\_\+system\+\_\+ok}!platform.\+c@{platform.\+c}}
+\subsubsection[{platform\+\_\+system\+\_\+ok(int stat)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} platform\+\_\+system\+\_\+ok (
+\begin{DoxyParamCaption}
+\item[{int}]{stat}
+\end{DoxyParamCaption}
+)}\label{platform_8c_af39d8df6f7d3f4bbcfcb505c2c58c136}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{platform_8c_af39d8df6f7d3f4bbcfcb505c2c58c136_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{platform_8c_a575a320fe086fd16b99a55ca2b4e511a}{}\index{platform.\+c@{platform.\+c}!platform\+\_\+unlink@{platform\+\_\+unlink}}
+\index{platform\+\_\+unlink@{platform\+\_\+unlink}!platform.\+c@{platform.\+c}}
+\subsubsection[{platform\+\_\+unlink(const char $\ast$filename)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} platform\+\_\+unlink (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{filename}
+\end{DoxyParamCaption}
+)}\label{platform_8c_a575a320fe086fd16b99a55ca2b4e511a}
+\hypertarget{platform_8c_a52d59a56eff6b981f01eff915af4fad8}{}\index{platform.\+c@{platform.\+c}!platform\+\_\+user\+\_\+get@{platform\+\_\+user\+\_\+get}}
+\index{platform\+\_\+user\+\_\+get@{platform\+\_\+user\+\_\+get}!platform.\+c@{platform.\+c}}
+\subsubsection[{platform\+\_\+user\+\_\+get(const char $\ast$username, struct platform\+\_\+state\+\_\+user $\ast$state)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} platform\+\_\+user\+\_\+get (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{username, }
+\item[{struct {\bf platform\+\_\+state\+\_\+user} $\ast$}]{state}
+\end{DoxyParamCaption}
+)}\label{platform_8c_a52d59a56eff6b981f01eff915af4fad8}
+\hypertarget{platform_8c_a99cf5236d05fa18d32f2b7790c9e7cb4}{}\index{platform.\+c@{platform.\+c}!platform\+\_\+user\+\_\+set@{platform\+\_\+user\+\_\+set}}
+\index{platform\+\_\+user\+\_\+set@{platform\+\_\+user\+\_\+set}!platform.\+c@{platform.\+c}}
+\subsubsection[{platform\+\_\+user\+\_\+set(const struct platform\+\_\+state\+\_\+user $\ast$state)}]{\setlength{\rightskip}{0pt plus 5cm}void platform\+\_\+user\+\_\+set (
+\begin{DoxyParamCaption}
+\item[{const struct {\bf platform\+\_\+state\+\_\+user} $\ast$}]{state}
+\end{DoxyParamCaption}
+)}\label{platform_8c_a99cf5236d05fa18d32f2b7790c9e7cb4}

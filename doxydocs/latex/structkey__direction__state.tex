@@ -1,0 +1,39 @@
+\hypertarget{structkey__direction__state}{}\section{key\+\_\+direction\+\_\+state Struct Reference}
+\label{structkey__direction__state}\index{key\+\_\+direction\+\_\+state@{key\+\_\+direction\+\_\+state}}
+
+
+{\ttfamily \#include $<$crypto.\+h$>$}
+
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{structkey__direction__state_acedd040b7d56fae540d55e6a380b42bb}{out\+\_\+key}
+\item 
+int \hyperlink{structkey__direction__state_a650262f702aa180805a0101bbcb7646b}{in\+\_\+key}
+\item 
+int \hyperlink{structkey__direction__state_a235ef043e0135e9626b532d28c6a5ddc}{need\+\_\+keys}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Key ordering of the {\ttfamily \hyperlink{structkey2_a9698a633f0112a2000a0efdb8d960010}{key2.\+keys}} array.
+
+This structure takes care of correct ordering when using unidirectional or bidirectional key material, and allows the same shared secret key file to be loaded in the same way by client and server by having one of the hosts use an reversed ordering. 
+
+\subsection{Member Data Documentation}
+\hypertarget{structkey__direction__state_a650262f702aa180805a0101bbcb7646b}{}\index{key\+\_\+direction\+\_\+state@{key\+\_\+direction\+\_\+state}!in\+\_\+key@{in\+\_\+key}}
+\index{in\+\_\+key@{in\+\_\+key}!key\+\_\+direction\+\_\+state@{key\+\_\+direction\+\_\+state}}
+\subsubsection[{in\+\_\+key}]{\setlength{\rightskip}{0pt plus 5cm}int key\+\_\+direction\+\_\+state\+::in\+\_\+key}\label{structkey__direction__state_a650262f702aa180805a0101bbcb7646b}
+Index into the {\ttfamily \hyperlink{structkey2_a9698a633f0112a2000a0efdb8d960010}{key2.\+keys}} array for the receiving direction. \hypertarget{structkey__direction__state_a235ef043e0135e9626b532d28c6a5ddc}{}\index{key\+\_\+direction\+\_\+state@{key\+\_\+direction\+\_\+state}!need\+\_\+keys@{need\+\_\+keys}}
+\index{need\+\_\+keys@{need\+\_\+keys}!key\+\_\+direction\+\_\+state@{key\+\_\+direction\+\_\+state}}
+\subsubsection[{need\+\_\+keys}]{\setlength{\rightskip}{0pt plus 5cm}int key\+\_\+direction\+\_\+state\+::need\+\_\+keys}\label{structkey__direction__state_a235ef043e0135e9626b532d28c6a5ddc}
+The number of key objects necessary to support both sending and receiving.
+
+This will be 1 if the same keys are used in both directions, or 2 if there are two sets of unidirectional keys. \hypertarget{structkey__direction__state_acedd040b7d56fae540d55e6a380b42bb}{}\index{key\+\_\+direction\+\_\+state@{key\+\_\+direction\+\_\+state}!out\+\_\+key@{out\+\_\+key}}
+\index{out\+\_\+key@{out\+\_\+key}!key\+\_\+direction\+\_\+state@{key\+\_\+direction\+\_\+state}}
+\subsubsection[{out\+\_\+key}]{\setlength{\rightskip}{0pt plus 5cm}int key\+\_\+direction\+\_\+state\+::out\+\_\+key}\label{structkey__direction__state_acedd040b7d56fae540d55e6a380b42bb}
+Index into the {\ttfamily \hyperlink{structkey2_a9698a633f0112a2000a0efdb8d960010}{key2.\+keys}} array for the sending direction. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/openvpn/\hyperlink{crypto_8h}{crypto.\+h}\end{DoxyCompactItemize}

@@ -1,0 +1,778 @@
+\hypertarget{group__reliable}{}\section{Reliable}
+\label{group__reliable}\index{Reliable@{Reliable}}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structreliable__ack}{reliable\+\_\+ack}
+\item 
+struct \hyperlink{structreliable__entry}{reliable\+\_\+entry}
+\item 
+struct \hyperlink{structreliable}{reliable}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group__reliable_gacb891f0bfc023839a53a2c7005cd340c}{E\+X\+P\+O\+N\+E\+N\+T\+I\+A\+L\+\_\+\+B\+A\+C\+K\+O\+F\+F}
+\item 
+\#define \hyperlink{group__reliable_ga91ccbc389e490d03321b1a6de0dd096d}{R\+E\+L\+I\+A\+B\+L\+E\+\_\+\+A\+C\+K\+\_\+\+S\+I\+Z\+E}~8
+\item 
+\#define \hyperlink{group__reliable_gaa626a13dc31bf131a92548b9b2810cba}{R\+E\+L\+I\+A\+B\+L\+E\+\_\+\+C\+A\+P\+A\+C\+I\+T\+Y}~8
+\end{DoxyCompactItemize}
+\subsection*{Functions for processing incoming acknowledgments}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} \hyperlink{group__reliable_ga03d3c93ec4c15d57947740a56eae0aec}{reliable\+\_\+ack\+\_\+read} (struct \hyperlink{structreliable__ack}{reliable\+\_\+ack} $\ast$ack, struct \hyperlink{structbuffer}{buffer} $\ast$buf, const struct \hyperlink{structsession__id}{session\+\_\+id} $\ast$sid)
+\item 
+void \hyperlink{group__reliable_ga0f79fac5e64e7d2a9df9bc13740f6293}{reliable\+\_\+send\+\_\+purge} (struct \hyperlink{structreliable}{reliable} $\ast$rel, struct \hyperlink{structreliable__ack}{reliable\+\_\+ack} $\ast$ack)
+\end{DoxyCompactItemize}
+\subsection*{Functions for processing outgoing acknowledgments}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} \hyperlink{group__reliable_ga6875d0fb65bdd960736068b2e0fe4a29}{reliable\+\_\+ack\+\_\+write} (struct \hyperlink{structreliable__ack}{reliable\+\_\+ack} $\ast$ack, struct \hyperlink{structbuffer}{buffer} $\ast$buf, const struct \hyperlink{structsession__id}{session\+\_\+id} $\ast$sid, int max, \hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} prepend)
+\end{DoxyCompactItemize}
+\subsection*{Functions for initialization and cleanup}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{group__reliable_gab5e5ef6d6fd862187abe76f88b972ee5}{reliable\+\_\+init} (struct \hyperlink{structreliable}{reliable} $\ast$rel, int buf\+\_\+size, int offset, int array\+\_\+size, \hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} hold)
+\item 
+void \hyperlink{group__reliable_ga0315c8ecda1aafbfb61e6ab1b8c2477b}{reliable\+\_\+free} (struct \hyperlink{structreliable}{reliable} $\ast$rel)
+\item 
+void \hyperlink{group__reliable_gaaf4135caf45a800b9accff968aaa59d6}{reliable\+\_\+ack\+\_\+adjust\+\_\+frame\+\_\+parameters} (struct \hyperlink{structframe}{frame} $\ast$\hyperlink{structframe}{frame}, int max)
+\end{DoxyCompactItemize}
+\subsection*{Functions for inserting incoming packets}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} \hyperlink{group__reliable_ga68f5e71b155cdcfabca18d028d336311}{reliable\+\_\+can\+\_\+get} (const struct \hyperlink{structreliable}{reliable} $\ast$rel)
+\item 
+\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} \hyperlink{group__reliable_ga907fd32837c50b4266eb5db1c56f9b13}{reliable\+\_\+not\+\_\+replay} (const struct \hyperlink{structreliable}{reliable} $\ast$rel, \hyperlink{packet__id_8h_a345f753b1c6ea20d24409e769aadb7e6}{packet\+\_\+id\+\_\+type} id)
+\item 
+\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} \hyperlink{group__reliable_gad2d6e3bde9beced3d69bbba652730439}{reliable\+\_\+wont\+\_\+break\+\_\+sequentiality} (const struct \hyperlink{structreliable}{reliable} $\ast$rel, \hyperlink{packet__id_8h_a345f753b1c6ea20d24409e769aadb7e6}{packet\+\_\+id\+\_\+type} id)
+\item 
+\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} \hyperlink{group__reliable_ga21a2f2e1296cea87eb6d68331667fc9e}{reliable\+\_\+ack\+\_\+read\+\_\+packet\+\_\+id} (struct \hyperlink{structbuffer}{buffer} $\ast$buf, \hyperlink{packet__id_8h_a345f753b1c6ea20d24409e769aadb7e6}{packet\+\_\+id\+\_\+type} $\ast$pid)
+\item 
+struct \hyperlink{structbuffer}{buffer} $\ast$ \hyperlink{group__reliable_gaa69117718f8e1e22881d957e219134ff}{reliable\+\_\+get\+\_\+buf} (struct \hyperlink{structreliable}{reliable} $\ast$rel)
+\item 
+void \hyperlink{group__reliable_ga2689b44850ce41cc2fe1fc7f57657eb4}{reliable\+\_\+mark\+\_\+active\+\_\+incoming} (struct \hyperlink{structreliable}{reliable} $\ast$rel, struct \hyperlink{structbuffer}{buffer} $\ast$buf, \hyperlink{packet__id_8h_a345f753b1c6ea20d24409e769aadb7e6}{packet\+\_\+id\+\_\+type} pid, int opcode)
+\item 
+\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} \hyperlink{group__reliable_ga3bdc89dd24741d52a2fcf8182389b947}{reliable\+\_\+ack\+\_\+acknowledge\+\_\+packet\+\_\+id} (struct \hyperlink{structreliable__ack}{reliable\+\_\+ack} $\ast$ack, \hyperlink{packet__id_8h_a345f753b1c6ea20d24409e769aadb7e6}{packet\+\_\+id\+\_\+type} pid)
+\end{DoxyCompactItemize}
+\subsection*{Functions for extracting incoming packets}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structbuffer}{buffer} $\ast$ \hyperlink{group__reliable_ga08f53328657f0172eb061193171e2a41}{reliable\+\_\+get\+\_\+buf\+\_\+sequenced} (struct \hyperlink{structreliable}{reliable} $\ast$rel)
+\item 
+void \hyperlink{group__reliable_ga5c51920665fa9c34f082dd7aa6ce0e55}{reliable\+\_\+mark\+\_\+deleted} (struct \hyperlink{structreliable}{reliable} $\ast$rel, struct \hyperlink{structbuffer}{buffer} $\ast$buf, \hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} inc\+\_\+pid)
+\end{DoxyCompactItemize}
+\subsection*{Functions for inserting outgoing packets}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structbuffer}{buffer} $\ast$ \hyperlink{group__reliable_gaa15b0672f4ddd65d55194ed5bde0e1c8}{reliable\+\_\+get\+\_\+buf\+\_\+output\+\_\+sequenced} (struct \hyperlink{structreliable}{reliable} $\ast$rel)
+\item 
+void \hyperlink{group__reliable_ga2c03b5ae47fe72dbf4fe16f11ea1c091}{reliable\+\_\+mark\+\_\+active\+\_\+outgoing} (struct \hyperlink{structreliable}{reliable} $\ast$rel, struct \hyperlink{structbuffer}{buffer} $\ast$buf, int opcode)
+\end{DoxyCompactItemize}
+\subsection*{Functions for extracting outgoing packets}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} \hyperlink{group__reliable_ga79e86f7694ffbd592d944f8f45efa7c8}{reliable\+\_\+can\+\_\+send} (const struct \hyperlink{structreliable}{reliable} $\ast$rel)
+\item 
+struct \hyperlink{structbuffer}{buffer} $\ast$ \hyperlink{group__reliable_gaebcf7ae7a144f32b55c9af5c51121ec1}{reliable\+\_\+send} (struct \hyperlink{structreliable}{reliable} $\ast$rel, int $\ast$opcode)
+\end{DoxyCompactItemize}
+\subsection*{Miscellaneous functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} \hyperlink{group__reliable_ga7e0186d08bdeb59563ce37578ee64f8d}{reliable\+\_\+empty} (const struct \hyperlink{structreliable}{reliable} $\ast$rel)
+\item 
+\hyperlink{common_8h_a3d8621f960ada51a5ad9ff181730481a}{interval\+\_\+t} \hyperlink{group__reliable_ga9e8edfca42338da6da6ccb3fd1849dca}{reliable\+\_\+send\+\_\+timeout} (const struct \hyperlink{structreliable}{reliable} $\ast$rel)
+\item 
+void \hyperlink{group__reliable_ga14cb4395f780502ae9edbe6d3f90aec5}{reliable\+\_\+schedule\+\_\+now} (struct \hyperlink{structreliable}{reliable} $\ast$rel)
+\item 
+void \hyperlink{group__reliable_ga864d5a93bec5ac5554ce9481d1551197}{reliable\+\_\+debug\+\_\+print} (const struct \hyperlink{structreliable}{reliable} $\ast$rel, char $\ast$desc)
+\item 
+const char $\ast$ \hyperlink{group__reliable_ga6b9917d2ee4fe23f48f4471e8f4f4fdd}{reliable\+\_\+ack\+\_\+print} (struct \hyperlink{structbuffer}{buffer} $\ast$buf, \hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} verbose, struct \hyperlink{structgc__arena}{gc\+\_\+arena} $\ast$gc)
+\item 
+void \hyperlink{group__reliable_ga1e35eb4bd321de7b34aa1f086451f724}{reliable\+\_\+ack\+\_\+debug\+\_\+print} (const struct \hyperlink{structreliable__ack}{reliable\+\_\+ack} $\ast$ack, char $\ast$desc)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{group__reliable_gacb891f0bfc023839a53a2c7005cd340c}{}\index{Reliable@{Reliable}!E\+X\+P\+O\+N\+E\+N\+T\+I\+A\+L\+\_\+\+B\+A\+C\+K\+O\+F\+F@{E\+X\+P\+O\+N\+E\+N\+T\+I\+A\+L\+\_\+\+B\+A\+C\+K\+O\+F\+F}}
+\index{E\+X\+P\+O\+N\+E\+N\+T\+I\+A\+L\+\_\+\+B\+A\+C\+K\+O\+F\+F@{E\+X\+P\+O\+N\+E\+N\+T\+I\+A\+L\+\_\+\+B\+A\+C\+K\+O\+F\+F}!Reliable@{Reliable}}
+\subsubsection[{E\+X\+P\+O\+N\+E\+N\+T\+I\+A\+L\+\_\+\+B\+A\+C\+K\+O\+F\+F}]{\setlength{\rightskip}{0pt plus 5cm}\#define E\+X\+P\+O\+N\+E\+N\+T\+I\+A\+L\+\_\+\+B\+A\+C\+K\+O\+F\+F}\label{group__reliable_gacb891f0bfc023839a53a2c7005cd340c}
+\hypertarget{group__reliable_ga91ccbc389e490d03321b1a6de0dd096d}{}\index{Reliable@{Reliable}!R\+E\+L\+I\+A\+B\+L\+E\+\_\+\+A\+C\+K\+\_\+\+S\+I\+Z\+E@{R\+E\+L\+I\+A\+B\+L\+E\+\_\+\+A\+C\+K\+\_\+\+S\+I\+Z\+E}}
+\index{R\+E\+L\+I\+A\+B\+L\+E\+\_\+\+A\+C\+K\+\_\+\+S\+I\+Z\+E@{R\+E\+L\+I\+A\+B\+L\+E\+\_\+\+A\+C\+K\+\_\+\+S\+I\+Z\+E}!Reliable@{Reliable}}
+\subsubsection[{R\+E\+L\+I\+A\+B\+L\+E\+\_\+\+A\+C\+K\+\_\+\+S\+I\+Z\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+E\+L\+I\+A\+B\+L\+E\+\_\+\+A\+C\+K\+\_\+\+S\+I\+Z\+E~8}\label{group__reliable_ga91ccbc389e490d03321b1a6de0dd096d}
+The maximum number of packet I\+Ds waiting to be acknowledged which can be stored in one {\ttfamily \hyperlink{structreliable__ack}{reliable\+\_\+ack}} structure. \hypertarget{group__reliable_gaa626a13dc31bf131a92548b9b2810cba}{}\index{Reliable@{Reliable}!R\+E\+L\+I\+A\+B\+L\+E\+\_\+\+C\+A\+P\+A\+C\+I\+T\+Y@{R\+E\+L\+I\+A\+B\+L\+E\+\_\+\+C\+A\+P\+A\+C\+I\+T\+Y}}
+\index{R\+E\+L\+I\+A\+B\+L\+E\+\_\+\+C\+A\+P\+A\+C\+I\+T\+Y@{R\+E\+L\+I\+A\+B\+L\+E\+\_\+\+C\+A\+P\+A\+C\+I\+T\+Y}!Reliable@{Reliable}}
+\subsubsection[{R\+E\+L\+I\+A\+B\+L\+E\+\_\+\+C\+A\+P\+A\+C\+I\+T\+Y}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+E\+L\+I\+A\+B\+L\+E\+\_\+\+C\+A\+P\+A\+C\+I\+T\+Y~8}\label{group__reliable_gaa626a13dc31bf131a92548b9b2810cba}
+The maximum number of packets that the reliability layer for one V\+P\+N tunnel in one direction can store. 
+
+\subsection{Function Documentation}
+\hypertarget{group__reliable_ga3bdc89dd24741d52a2fcf8182389b947}{}\index{Reliable@{Reliable}!reliable\+\_\+ack\+\_\+acknowledge\+\_\+packet\+\_\+id@{reliable\+\_\+ack\+\_\+acknowledge\+\_\+packet\+\_\+id}}
+\index{reliable\+\_\+ack\+\_\+acknowledge\+\_\+packet\+\_\+id@{reliable\+\_\+ack\+\_\+acknowledge\+\_\+packet\+\_\+id}!Reliable@{Reliable}}
+\subsubsection[{reliable\+\_\+ack\+\_\+acknowledge\+\_\+packet\+\_\+id(struct reliable\+\_\+ack $\ast$ack, packet\+\_\+id\+\_\+type pid)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} reliable\+\_\+ack\+\_\+acknowledge\+\_\+packet\+\_\+id (
+\begin{DoxyParamCaption}
+\item[{struct {\bf reliable\+\_\+ack} $\ast$}]{ack, }
+\item[{{\bf packet\+\_\+id\+\_\+type}}]{pid}
+\end{DoxyParamCaption}
+)}\label{group__reliable_ga3bdc89dd24741d52a2fcf8182389b947}
+Record a packet I\+D for later acknowledgment.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ack} & The acknowledgment structure which stores this V\+P\+N tunnel\textquotesingle{}s packet I\+Ds for later acknowledgment. \\
+\hline
+{\em pid} & The packet I\+D of the received packet which should be acknowledged.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\begin{DoxyItemize}
+\item True, if the packet I\+D was added to {\itshape ack}. \item False, if the packet I\+D was already present in {\itshape ack} or {\itshape ack} has no free space to store any more packet I\+Ds. \end{DoxyItemize}
+
+\end{DoxyReturn}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group__reliable_ga3bdc89dd24741d52a2fcf8182389b947_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{group__reliable_gaaf4135caf45a800b9accff968aaa59d6}{}\index{Reliable@{Reliable}!reliable\+\_\+ack\+\_\+adjust\+\_\+frame\+\_\+parameters@{reliable\+\_\+ack\+\_\+adjust\+\_\+frame\+\_\+parameters}}
+\index{reliable\+\_\+ack\+\_\+adjust\+\_\+frame\+\_\+parameters@{reliable\+\_\+ack\+\_\+adjust\+\_\+frame\+\_\+parameters}!Reliable@{Reliable}}
+\subsubsection[{reliable\+\_\+ack\+\_\+adjust\+\_\+frame\+\_\+parameters(struct frame $\ast$frame, int max)}]{\setlength{\rightskip}{0pt plus 5cm}void reliable\+\_\+ack\+\_\+adjust\+\_\+frame\+\_\+parameters (
+\begin{DoxyParamCaption}
+\item[{struct {\bf frame} $\ast$}]{frame, }
+\item[{int}]{max}
+\end{DoxyParamCaption}
+)}\label{group__reliable_gaaf4135caf45a800b9accff968aaa59d6}
+\hypertarget{group__reliable_ga1e35eb4bd321de7b34aa1f086451f724}{}\index{Reliable@{Reliable}!reliable\+\_\+ack\+\_\+debug\+\_\+print@{reliable\+\_\+ack\+\_\+debug\+\_\+print}}
+\index{reliable\+\_\+ack\+\_\+debug\+\_\+print@{reliable\+\_\+ack\+\_\+debug\+\_\+print}!Reliable@{Reliable}}
+\subsubsection[{reliable\+\_\+ack\+\_\+debug\+\_\+print(const struct reliable\+\_\+ack $\ast$ack, char $\ast$desc)}]{\setlength{\rightskip}{0pt plus 5cm}void reliable\+\_\+ack\+\_\+debug\+\_\+print (
+\begin{DoxyParamCaption}
+\item[{const struct {\bf reliable\+\_\+ack} $\ast$}]{ack, }
+\item[{char $\ast$}]{desc}
+\end{DoxyParamCaption}
+)}\label{group__reliable_ga1e35eb4bd321de7b34aa1f086451f724}
+\hypertarget{group__reliable_ga6b9917d2ee4fe23f48f4471e8f4f4fdd}{}\index{Reliable@{Reliable}!reliable\+\_\+ack\+\_\+print@{reliable\+\_\+ack\+\_\+print}}
+\index{reliable\+\_\+ack\+\_\+print@{reliable\+\_\+ack\+\_\+print}!Reliable@{Reliable}}
+\subsubsection[{reliable\+\_\+ack\+\_\+print(struct buffer $\ast$buf, bool verbose, struct gc\+\_\+arena $\ast$gc)}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ reliable\+\_\+ack\+\_\+print (
+\begin{DoxyParamCaption}
+\item[{struct {\bf buffer} $\ast$}]{buf, }
+\item[{{\bf bool}}]{verbose, }
+\item[{struct {\bf gc\+\_\+arena} $\ast$}]{gc}
+\end{DoxyParamCaption}
+)}\label{group__reliable_ga6b9917d2ee4fe23f48f4471e8f4f4fdd}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group__reliable_ga6b9917d2ee4fe23f48f4471e8f4f4fdd_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=288pt]{group__reliable_ga6b9917d2ee4fe23f48f4471e8f4f4fdd_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{group__reliable_ga03d3c93ec4c15d57947740a56eae0aec}{}\index{Reliable@{Reliable}!reliable\+\_\+ack\+\_\+read@{reliable\+\_\+ack\+\_\+read}}
+\index{reliable\+\_\+ack\+\_\+read@{reliable\+\_\+ack\+\_\+read}!Reliable@{Reliable}}
+\subsubsection[{reliable\+\_\+ack\+\_\+read(struct reliable\+\_\+ack $\ast$ack, struct buffer $\ast$buf, const struct session\+\_\+id $\ast$sid)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} reliable\+\_\+ack\+\_\+read (
+\begin{DoxyParamCaption}
+\item[{struct {\bf reliable\+\_\+ack} $\ast$}]{ack, }
+\item[{struct {\bf buffer} $\ast$}]{buf, }
+\item[{const struct {\bf session\+\_\+id} $\ast$}]{sid}
+\end{DoxyParamCaption}
+)}\label{group__reliable_ga03d3c93ec4c15d57947740a56eae0aec}
+Read an acknowledgment record from a received packet.
+
+This function reads the packet I\+D acknowledgment record from the packet contained in {\itshape buf}. If the record contains acknowledgments, these are stored in {\itshape ack}. This function also compares the packet\textquotesingle{}s session I\+D with the expected session I\+D {\itshape sid}, which should be equal.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ack} & The acknowledgment structure in which received acknowledgments are to be stored. \\
+\hline
+{\em buf} & The buffer containing the packet. \\
+\hline
+{\em sid} & The expected session I\+D to compare to the session I\+D in the packet.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\begin{DoxyItemize}
+\item True, if processing was successful. \item False, if an error occurs during processing. \end{DoxyItemize}
+
+\end{DoxyReturn}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=295pt]{group__reliable_ga03d3c93ec4c15d57947740a56eae0aec_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group__reliable_ga03d3c93ec4c15d57947740a56eae0aec_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{group__reliable_ga21a2f2e1296cea87eb6d68331667fc9e}{}\index{Reliable@{Reliable}!reliable\+\_\+ack\+\_\+read\+\_\+packet\+\_\+id@{reliable\+\_\+ack\+\_\+read\+\_\+packet\+\_\+id}}
+\index{reliable\+\_\+ack\+\_\+read\+\_\+packet\+\_\+id@{reliable\+\_\+ack\+\_\+read\+\_\+packet\+\_\+id}!Reliable@{Reliable}}
+\subsubsection[{reliable\+\_\+ack\+\_\+read\+\_\+packet\+\_\+id(struct buffer $\ast$buf, packet\+\_\+id\+\_\+type $\ast$pid)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} reliable\+\_\+ack\+\_\+read\+\_\+packet\+\_\+id (
+\begin{DoxyParamCaption}
+\item[{struct {\bf buffer} $\ast$}]{buf, }
+\item[{{\bf packet\+\_\+id\+\_\+type} $\ast$}]{pid}
+\end{DoxyParamCaption}
+)}\label{group__reliable_ga21a2f2e1296cea87eb6d68331667fc9e}
+Read the packet I\+D of a received packet.
+
+
+\begin{DoxyParams}{Parameters}
+{\em buf} & The buffer containing the received packet. \\
+\hline
+{\em pid} & A pointer where the packet\textquotesingle{}s packet I\+D will be written.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\begin{DoxyItemize}
+\item True, if processing was successful. \item False, if an error occurs during processing. \end{DoxyItemize}
+
+\end{DoxyReturn}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group__reliable_ga21a2f2e1296cea87eb6d68331667fc9e_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{group__reliable_ga6875d0fb65bdd960736068b2e0fe4a29}{}\index{Reliable@{Reliable}!reliable\+\_\+ack\+\_\+write@{reliable\+\_\+ack\+\_\+write}}
+\index{reliable\+\_\+ack\+\_\+write@{reliable\+\_\+ack\+\_\+write}!Reliable@{Reliable}}
+\subsubsection[{reliable\+\_\+ack\+\_\+write(struct reliable\+\_\+ack $\ast$ack, struct buffer $\ast$buf, const struct session\+\_\+id $\ast$sid, int max, bool prepend)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} reliable\+\_\+ack\+\_\+write (
+\begin{DoxyParamCaption}
+\item[{struct {\bf reliable\+\_\+ack} $\ast$}]{ack, }
+\item[{struct {\bf buffer} $\ast$}]{buf, }
+\item[{const struct {\bf session\+\_\+id} $\ast$}]{sid, }
+\item[{int}]{max, }
+\item[{{\bf bool}}]{prepend}
+\end{DoxyParamCaption}
+)}\label{group__reliable_ga6875d0fb65bdd960736068b2e0fe4a29}
+Write a packet I\+D acknowledgment record to a buffer.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ack} & The acknowledgment structure containing packet I\+Ds to be acknowledged. \\
+\hline
+{\em buf} & The buffer into which the acknowledgment record will be written. \\
+\hline
+{\em sid} & The session I\+D of the V\+P\+N tunnel associated with the packet I\+Ds to be acknowledged. \\
+\hline
+{\em max} & The maximum number of acknowledgments to be written in the record. \\
+\hline
+{\em prepend} & If true, prepend the acknowledgment record in the buffer; if false, write into the buffer\textquotesingle{}s current position.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\begin{DoxyItemize}
+\item True, if processing was successful. \item False, if an error occurs during processing. \end{DoxyItemize}
+
+\end{DoxyReturn}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=260pt]{group__reliable_ga6875d0fb65bdd960736068b2e0fe4a29_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{group__reliable_ga68f5e71b155cdcfabca18d028d336311}{}\index{Reliable@{Reliable}!reliable\+\_\+can\+\_\+get@{reliable\+\_\+can\+\_\+get}}
+\index{reliable\+\_\+can\+\_\+get@{reliable\+\_\+can\+\_\+get}!Reliable@{Reliable}}
+\subsubsection[{reliable\+\_\+can\+\_\+get(const struct reliable $\ast$rel)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} reliable\+\_\+can\+\_\+get (
+\begin{DoxyParamCaption}
+\item[{const struct {\bf reliable} $\ast$}]{rel}
+\end{DoxyParamCaption}
+)}\label{group__reliable_ga68f5e71b155cdcfabca18d028d336311}
+Check whether a reliable structure has any free buffers available for use.
+
+
+\begin{DoxyParams}{Parameters}
+{\em rel} & The reliable structure to check.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\begin{DoxyItemize}
+\item True, if at least one buffer is available for use. \item False, if all the buffers are active. \end{DoxyItemize}
+
+\end{DoxyReturn}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group__reliable_ga68f5e71b155cdcfabca18d028d336311_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{group__reliable_ga79e86f7694ffbd592d944f8f45efa7c8}{}\index{Reliable@{Reliable}!reliable\+\_\+can\+\_\+send@{reliable\+\_\+can\+\_\+send}}
+\index{reliable\+\_\+can\+\_\+send@{reliable\+\_\+can\+\_\+send}!Reliable@{Reliable}}
+\subsubsection[{reliable\+\_\+can\+\_\+send(const struct reliable $\ast$rel)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} reliable\+\_\+can\+\_\+send (
+\begin{DoxyParamCaption}
+\item[{const struct {\bf reliable} $\ast$}]{rel}
+\end{DoxyParamCaption}
+)}\label{group__reliable_ga79e86f7694ffbd592d944f8f45efa7c8}
+Check whether a reliable structure has any active entries ready to be (re)sent.
+
+
+\begin{DoxyParams}{Parameters}
+{\em rel} & The reliable structure to check.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\begin{DoxyItemize}
+\item True, if there are active entries ready to be (re)sent president. \item False, if there are no active entries, or the active entries are not yet ready for resending. \end{DoxyItemize}
+
+\end{DoxyReturn}
+\hypertarget{group__reliable_ga864d5a93bec5ac5554ce9481d1551197}{}\index{Reliable@{Reliable}!reliable\+\_\+debug\+\_\+print@{reliable\+\_\+debug\+\_\+print}}
+\index{reliable\+\_\+debug\+\_\+print@{reliable\+\_\+debug\+\_\+print}!Reliable@{Reliable}}
+\subsubsection[{reliable\+\_\+debug\+\_\+print(const struct reliable $\ast$rel, char $\ast$desc)}]{\setlength{\rightskip}{0pt plus 5cm}void reliable\+\_\+debug\+\_\+print (
+\begin{DoxyParamCaption}
+\item[{const struct {\bf reliable} $\ast$}]{rel, }
+\item[{char $\ast$}]{desc}
+\end{DoxyParamCaption}
+)}\label{group__reliable_ga864d5a93bec5ac5554ce9481d1551197}
+\hypertarget{group__reliable_ga7e0186d08bdeb59563ce37578ee64f8d}{}\index{Reliable@{Reliable}!reliable\+\_\+empty@{reliable\+\_\+empty}}
+\index{reliable\+\_\+empty@{reliable\+\_\+empty}!Reliable@{Reliable}}
+\subsubsection[{reliable\+\_\+empty(const struct reliable $\ast$rel)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} reliable\+\_\+empty (
+\begin{DoxyParamCaption}
+\item[{const struct {\bf reliable} $\ast$}]{rel}
+\end{DoxyParamCaption}
+)}\label{group__reliable_ga7e0186d08bdeb59563ce37578ee64f8d}
+Check whether a reliable structure is empty.
+
+
+\begin{DoxyParams}{Parameters}
+{\em rel} & The reliable structure to check.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\begin{DoxyItemize}
+\item True, if there are no active entries in the given reliable structure. \item False, if there is at least one active entry present. \end{DoxyItemize}
+
+\end{DoxyReturn}
+\hypertarget{group__reliable_ga0315c8ecda1aafbfb61e6ab1b8c2477b}{}\index{Reliable@{Reliable}!reliable\+\_\+free@{reliable\+\_\+free}}
+\index{reliable\+\_\+free@{reliable\+\_\+free}!Reliable@{Reliable}}
+\subsubsection[{reliable\+\_\+free(struct reliable $\ast$rel)}]{\setlength{\rightskip}{0pt plus 5cm}void reliable\+\_\+free (
+\begin{DoxyParamCaption}
+\item[{struct {\bf reliable} $\ast$}]{rel}
+\end{DoxyParamCaption}
+)}\label{group__reliable_ga0315c8ecda1aafbfb61e6ab1b8c2477b}
+Free allocated memory associated with a reliable structure.
+
+
+\begin{DoxyParams}{Parameters}
+{\em rel} & The reliable structured to clean up. \\
+\hline
+\end{DoxyParams}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=234pt]{group__reliable_ga0315c8ecda1aafbfb61e6ab1b8c2477b_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{group__reliable_gaa69117718f8e1e22881d957e219134ff}{}\index{Reliable@{Reliable}!reliable\+\_\+get\+\_\+buf@{reliable\+\_\+get\+\_\+buf}}
+\index{reliable\+\_\+get\+\_\+buf@{reliable\+\_\+get\+\_\+buf}!Reliable@{Reliable}}
+\subsubsection[{reliable\+\_\+get\+\_\+buf(struct reliable $\ast$rel)}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf buffer}$\ast$ reliable\+\_\+get\+\_\+buf (
+\begin{DoxyParamCaption}
+\item[{struct {\bf reliable} $\ast$}]{rel}
+\end{DoxyParamCaption}
+)}\label{group__reliable_gaa69117718f8e1e22881d957e219134ff}
+Get the buffer of a free reliable entry in which to store a packet.
+
+
+\begin{DoxyParams}{Parameters}
+{\em rel} & The reliable structure in which to search for a free entry.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to a buffer of a free entry in the {\itshape rel} reliable structure. If there are no free entries available, this function returns N\+U\+L\+L. 
+\end{DoxyReturn}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group__reliable_gaa69117718f8e1e22881d957e219134ff_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{group__reliable_gaa15b0672f4ddd65d55194ed5bde0e1c8}{}\index{Reliable@{Reliable}!reliable\+\_\+get\+\_\+buf\+\_\+output\+\_\+sequenced@{reliable\+\_\+get\+\_\+buf\+\_\+output\+\_\+sequenced}}
+\index{reliable\+\_\+get\+\_\+buf\+\_\+output\+\_\+sequenced@{reliable\+\_\+get\+\_\+buf\+\_\+output\+\_\+sequenced}!Reliable@{Reliable}}
+\subsubsection[{reliable\+\_\+get\+\_\+buf\+\_\+output\+\_\+sequenced(struct reliable $\ast$rel)}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf buffer}$\ast$ reliable\+\_\+get\+\_\+buf\+\_\+output\+\_\+sequenced (
+\begin{DoxyParamCaption}
+\item[{struct {\bf reliable} $\ast$}]{rel}
+\end{DoxyParamCaption}
+)}\label{group__reliable_gaa15b0672f4ddd65d55194ed5bde0e1c8}
+Get the buffer of free reliable entry and check whether the outgoing acknowledgment sequence is still okay.
+
+
+\begin{DoxyParams}{Parameters}
+{\em rel} & The reliable structure in which to search for a free entry.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to a buffer of a free entry in the {\itshape rel} reliable structure. If there are no free entries available, this function returns N\+U\+L\+L. If the outgoing acknowledgment sequence is broken, this function also returns N\+U\+L\+L. 
+\end{DoxyReturn}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=316pt]{group__reliable_gaa15b0672f4ddd65d55194ed5bde0e1c8_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{group__reliable_ga08f53328657f0172eb061193171e2a41}{}\index{Reliable@{Reliable}!reliable\+\_\+get\+\_\+buf\+\_\+sequenced@{reliable\+\_\+get\+\_\+buf\+\_\+sequenced}}
+\index{reliable\+\_\+get\+\_\+buf\+\_\+sequenced@{reliable\+\_\+get\+\_\+buf\+\_\+sequenced}!Reliable@{Reliable}}
+\subsubsection[{reliable\+\_\+get\+\_\+buf\+\_\+sequenced(struct reliable $\ast$rel)}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf buffer}$\ast$ reliable\+\_\+get\+\_\+buf\+\_\+sequenced (
+\begin{DoxyParamCaption}
+\item[{struct {\bf reliable} $\ast$}]{rel}
+\end{DoxyParamCaption}
+)}\label{group__reliable_ga08f53328657f0172eb061193171e2a41}
+Get the buffer of the next sequential and active entry.
+
+
+\begin{DoxyParams}{Parameters}
+{\em rel} & The reliable structure from which to retrieve the buffer.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to the buffer of the entry with the next sequential key I\+D. If no such entry is present, this function returns N\+U\+L\+L. 
+\end{DoxyReturn}
+\hypertarget{group__reliable_gab5e5ef6d6fd862187abe76f88b972ee5}{}\index{Reliable@{Reliable}!reliable\+\_\+init@{reliable\+\_\+init}}
+\index{reliable\+\_\+init@{reliable\+\_\+init}!Reliable@{Reliable}}
+\subsubsection[{reliable\+\_\+init(struct reliable $\ast$rel, int buf\+\_\+size, int offset, int array\+\_\+size, bool hold)}]{\setlength{\rightskip}{0pt plus 5cm}void reliable\+\_\+init (
+\begin{DoxyParamCaption}
+\item[{struct {\bf reliable} $\ast$}]{rel, }
+\item[{int}]{buf\+\_\+size, }
+\item[{int}]{offset, }
+\item[{int}]{array\+\_\+size, }
+\item[{{\bf bool}}]{hold}
+\end{DoxyParamCaption}
+)}\label{group__reliable_gab5e5ef6d6fd862187abe76f88b972ee5}
+Initialize a reliable structure.
+
+
+\begin{DoxyParams}{Parameters}
+{\em rel} & The reliable structure to initialize. \\
+\hline
+{\em buf\+\_\+size} & The size of the buffers in which packets will be stored. \\
+\hline
+{\em offset} & The size of reserved space at the beginning of the buffers to allow efficient header prepending. \\
+\hline
+{\em array\+\_\+size} & The number of packets that this reliable structure can store simultaneously. \\
+\hline
+{\em hold} & description \\
+\hline
+\end{DoxyParams}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=349pt]{group__reliable_gab5e5ef6d6fd862187abe76f88b972ee5_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{group__reliable_ga2689b44850ce41cc2fe1fc7f57657eb4}{}\index{Reliable@{Reliable}!reliable\+\_\+mark\+\_\+active\+\_\+incoming@{reliable\+\_\+mark\+\_\+active\+\_\+incoming}}
+\index{reliable\+\_\+mark\+\_\+active\+\_\+incoming@{reliable\+\_\+mark\+\_\+active\+\_\+incoming}!Reliable@{Reliable}}
+\subsubsection[{reliable\+\_\+mark\+\_\+active\+\_\+incoming(struct reliable $\ast$rel, struct buffer $\ast$buf, packet\+\_\+id\+\_\+type pid, int opcode)}]{\setlength{\rightskip}{0pt plus 5cm}void reliable\+\_\+mark\+\_\+active\+\_\+incoming (
+\begin{DoxyParamCaption}
+\item[{struct {\bf reliable} $\ast$}]{rel, }
+\item[{struct {\bf buffer} $\ast$}]{buf, }
+\item[{{\bf packet\+\_\+id\+\_\+type}}]{pid, }
+\item[{int}]{opcode}
+\end{DoxyParamCaption}
+)}\label{group__reliable_ga2689b44850ce41cc2fe1fc7f57657eb4}
+Mark the reliable entry associated with the given buffer as active incoming.
+
+
+\begin{DoxyParams}{Parameters}
+{\em rel} & The reliable structure associated with this packet. \\
+\hline
+{\em buf} & The buffer into which the packet has been copied. \\
+\hline
+{\em pid} & The packet\textquotesingle{}s packet I\+D. \\
+\hline
+{\em opcode} & The packet\textquotesingle{}s opcode. \\
+\hline
+\end{DoxyParams}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group__reliable_ga2689b44850ce41cc2fe1fc7f57657eb4_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{group__reliable_ga2c03b5ae47fe72dbf4fe16f11ea1c091}{}\index{Reliable@{Reliable}!reliable\+\_\+mark\+\_\+active\+\_\+outgoing@{reliable\+\_\+mark\+\_\+active\+\_\+outgoing}}
+\index{reliable\+\_\+mark\+\_\+active\+\_\+outgoing@{reliable\+\_\+mark\+\_\+active\+\_\+outgoing}!Reliable@{Reliable}}
+\subsubsection[{reliable\+\_\+mark\+\_\+active\+\_\+outgoing(struct reliable $\ast$rel, struct buffer $\ast$buf, int opcode)}]{\setlength{\rightskip}{0pt plus 5cm}void reliable\+\_\+mark\+\_\+active\+\_\+outgoing (
+\begin{DoxyParamCaption}
+\item[{struct {\bf reliable} $\ast$}]{rel, }
+\item[{struct {\bf buffer} $\ast$}]{buf, }
+\item[{int}]{opcode}
+\end{DoxyParamCaption}
+)}\label{group__reliable_ga2c03b5ae47fe72dbf4fe16f11ea1c091}
+Mark the reliable entry associated with the given buffer as active outgoing.
+
+
+\begin{DoxyParams}{Parameters}
+{\em rel} & The reliable structure for handling this V\+P\+N tunnel\textquotesingle{}s outgoing packets. \\
+\hline
+{\em buf} & The buffer previously returned by {\ttfamily \hyperlink{group__reliable_gaa15b0672f4ddd65d55194ed5bde0e1c8}{reliable\+\_\+get\+\_\+buf\+\_\+output\+\_\+sequenced()}} into which the packet has been copied. \\
+\hline
+{\em opcode} & The packet\textquotesingle{}s opcode. \\
+\hline
+\end{DoxyParams}
+\hypertarget{group__reliable_ga5c51920665fa9c34f082dd7aa6ce0e55}{}\index{Reliable@{Reliable}!reliable\+\_\+mark\+\_\+deleted@{reliable\+\_\+mark\+\_\+deleted}}
+\index{reliable\+\_\+mark\+\_\+deleted@{reliable\+\_\+mark\+\_\+deleted}!Reliable@{Reliable}}
+\subsubsection[{reliable\+\_\+mark\+\_\+deleted(struct reliable $\ast$rel, struct buffer $\ast$buf, bool inc\+\_\+pid)}]{\setlength{\rightskip}{0pt plus 5cm}void reliable\+\_\+mark\+\_\+deleted (
+\begin{DoxyParamCaption}
+\item[{struct {\bf reliable} $\ast$}]{rel, }
+\item[{struct {\bf buffer} $\ast$}]{buf, }
+\item[{{\bf bool}}]{inc\+\_\+pid}
+\end{DoxyParamCaption}
+)}\label{group__reliable_ga5c51920665fa9c34f082dd7aa6ce0e55}
+Remove an entry from a reliable structure.
+
+
+\begin{DoxyParams}{Parameters}
+{\em rel} & The reliable structure associated with the given buffer. \\
+\hline
+{\em buf} & The buffer of the reliable entry which is to be removed. \\
+\hline
+{\em inc\+\_\+pid} & If true, the reliable structure\textquotesingle{}s packet I\+D counter will be incremented. \\
+\hline
+\end{DoxyParams}
+\hypertarget{group__reliable_ga907fd32837c50b4266eb5db1c56f9b13}{}\index{Reliable@{Reliable}!reliable\+\_\+not\+\_\+replay@{reliable\+\_\+not\+\_\+replay}}
+\index{reliable\+\_\+not\+\_\+replay@{reliable\+\_\+not\+\_\+replay}!Reliable@{Reliable}}
+\subsubsection[{reliable\+\_\+not\+\_\+replay(const struct reliable $\ast$rel, packet\+\_\+id\+\_\+type id)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} reliable\+\_\+not\+\_\+replay (
+\begin{DoxyParamCaption}
+\item[{const struct {\bf reliable} $\ast$}]{rel, }
+\item[{{\bf packet\+\_\+id\+\_\+type}}]{id}
+\end{DoxyParamCaption}
+)}\label{group__reliable_ga907fd32837c50b4266eb5db1c56f9b13}
+Check that a received packet\textquotesingle{}s I\+D is not a replay.
+
+
+\begin{DoxyParams}{Parameters}
+{\em rel} & The reliable structure for handling this V\+P\+N tunnel\textquotesingle{}s received packets. \\
+\hline
+{\em id} & The packet I\+D of the received packet.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\begin{DoxyItemize}
+\item True, if the packet I\+D is not a replay. \item False, if the packet I\+D is a replay. \end{DoxyItemize}
+
+\end{DoxyReturn}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group__reliable_ga907fd32837c50b4266eb5db1c56f9b13_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{group__reliable_ga14cb4395f780502ae9edbe6d3f90aec5}{}\index{Reliable@{Reliable}!reliable\+\_\+schedule\+\_\+now@{reliable\+\_\+schedule\+\_\+now}}
+\index{reliable\+\_\+schedule\+\_\+now@{reliable\+\_\+schedule\+\_\+now}!Reliable@{Reliable}}
+\subsubsection[{reliable\+\_\+schedule\+\_\+now(struct reliable $\ast$rel)}]{\setlength{\rightskip}{0pt plus 5cm}void reliable\+\_\+schedule\+\_\+now (
+\begin{DoxyParamCaption}
+\item[{struct {\bf reliable} $\ast$}]{rel}
+\end{DoxyParamCaption}
+)}\label{group__reliable_ga14cb4395f780502ae9edbe6d3f90aec5}
+Reschedule all entries of a reliable structure to be ready for (re)sending immediately.
+
+
+\begin{DoxyParams}{Parameters}
+{\em rel} & The reliable structure of which the entries should be modified. \\
+\hline
+\end{DoxyParams}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group__reliable_ga14cb4395f780502ae9edbe6d3f90aec5_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{group__reliable_gaebcf7ae7a144f32b55c9af5c51121ec1}{}\index{Reliable@{Reliable}!reliable\+\_\+send@{reliable\+\_\+send}}
+\index{reliable\+\_\+send@{reliable\+\_\+send}!Reliable@{Reliable}}
+\subsubsection[{reliable\+\_\+send(struct reliable $\ast$rel, int $\ast$opcode)}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf buffer}$\ast$ reliable\+\_\+send (
+\begin{DoxyParamCaption}
+\item[{struct {\bf reliable} $\ast$}]{rel, }
+\item[{int $\ast$}]{opcode}
+\end{DoxyParamCaption}
+)}\label{group__reliable_gaebcf7ae7a144f32b55c9af5c51121ec1}
+Get the next packet to send to the remote peer.
+
+This function looks for the active entry ready for (re)sending with the lowest packet I\+D, and returns the buffer associated with it. This function also resets the timeout after which that entry will become ready for resending again.
+
+
+\begin{DoxyParams}{Parameters}
+{\em rel} & The reliable structure to check. \\
+\hline
+{\em opcode} & A pointer to an integer in which this function will store the opcode of the next packet to be sent.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to the buffer of the next entry to be sent, or N\+U\+L\+L if there are no entries ready for (re)sending present in the reliable structure. If a valid pointer is returned, then {\itshape opcode} will point to the opcode of that packet. 
+\end{DoxyReturn}
+\hypertarget{group__reliable_ga0f79fac5e64e7d2a9df9bc13740f6293}{}\index{Reliable@{Reliable}!reliable\+\_\+send\+\_\+purge@{reliable\+\_\+send\+\_\+purge}}
+\index{reliable\+\_\+send\+\_\+purge@{reliable\+\_\+send\+\_\+purge}!Reliable@{Reliable}}
+\subsubsection[{reliable\+\_\+send\+\_\+purge(struct reliable $\ast$rel, struct reliable\+\_\+ack $\ast$ack)}]{\setlength{\rightskip}{0pt plus 5cm}void reliable\+\_\+send\+\_\+purge (
+\begin{DoxyParamCaption}
+\item[{struct {\bf reliable} $\ast$}]{rel, }
+\item[{struct {\bf reliable\+\_\+ack} $\ast$}]{ack}
+\end{DoxyParamCaption}
+)}\label{group__reliable_ga0f79fac5e64e7d2a9df9bc13740f6293}
+Remove acknowledged packets from a reliable structure.
+
+
+\begin{DoxyParams}{Parameters}
+{\em rel} & The reliable structure storing sent packets. \\
+\hline
+{\em ack} & The acknowledgment structure containing received acknowledgments. \\
+\hline
+\end{DoxyParams}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group__reliable_ga0f79fac5e64e7d2a9df9bc13740f6293_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{group__reliable_ga9e8edfca42338da6da6ccb3fd1849dca}{}\index{Reliable@{Reliable}!reliable\+\_\+send\+\_\+timeout@{reliable\+\_\+send\+\_\+timeout}}
+\index{reliable\+\_\+send\+\_\+timeout@{reliable\+\_\+send\+\_\+timeout}!Reliable@{Reliable}}
+\subsubsection[{reliable\+\_\+send\+\_\+timeout(const struct reliable $\ast$rel)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf interval\+\_\+t} reliable\+\_\+send\+\_\+timeout (
+\begin{DoxyParamCaption}
+\item[{const struct {\bf reliable} $\ast$}]{rel}
+\end{DoxyParamCaption}
+)}\label{group__reliable_ga9e8edfca42338da6da6ccb3fd1849dca}
+Determined how many seconds until the earliest resend should be attempted.
+
+
+\begin{DoxyParams}{Parameters}
+{\em rel} & The reliable structured to check.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The interval in seconds until the earliest resend attempt of the outgoing packets stored in the {\itshape rel} reliable structure. If the next time for attempting resending of one or more packets has already passed, this function will return 0. 
+\end{DoxyReturn}
+\hypertarget{group__reliable_gad2d6e3bde9beced3d69bbba652730439}{}\index{Reliable@{Reliable}!reliable\+\_\+wont\+\_\+break\+\_\+sequentiality@{reliable\+\_\+wont\+\_\+break\+\_\+sequentiality}}
+\index{reliable\+\_\+wont\+\_\+break\+\_\+sequentiality@{reliable\+\_\+wont\+\_\+break\+\_\+sequentiality}!Reliable@{Reliable}}
+\subsubsection[{reliable\+\_\+wont\+\_\+break\+\_\+sequentiality(const struct reliable $\ast$rel, packet\+\_\+id\+\_\+type id)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} reliable\+\_\+wont\+\_\+break\+\_\+sequentiality (
+\begin{DoxyParamCaption}
+\item[{const struct {\bf reliable} $\ast$}]{rel, }
+\item[{{\bf packet\+\_\+id\+\_\+type}}]{id}
+\end{DoxyParamCaption}
+)}\label{group__reliable_gad2d6e3bde9beced3d69bbba652730439}
+Check that a received packet\textquotesingle{}s I\+D can safely be stored in the reliable structure\textquotesingle{}s processing window.
+
+This function checks the difference between the received packet\textquotesingle{}s I\+D and the lowest non-\/acknowledged packet I\+D in the given reliable structure. If that difference is larger than the total number of packets which can be stored, then this packet cannot be stored safely, because the reliable structure could possibly fill up without leaving room for all intervening packets. In that case, this received packet could break the reliable structure\textquotesingle{}s sequentiality, and must therefore be discarded.
+
+
+\begin{DoxyParams}{Parameters}
+{\em rel} & The reliable structure for handling this V\+P\+N tunnel\textquotesingle{}s received packets. \\
+\hline
+{\em id} & The packet I\+D of the received packet.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\begin{DoxyItemize}
+\item True, if the packet can safely be stored. \item False, if the packet does not fit safely in the reliable structure\textquotesingle{}s processing window. \end{DoxyItemize}
+
+\end{DoxyReturn}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group__reliable_gad2d6e3bde9beced3d69bbba652730439_icgraph}
+\end{center}
+\end{figure}
+
+

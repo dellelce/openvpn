@@ -1,0 +1,18 @@
+<map id="write_key_file" name="write_key_file">
+<area shape="rect" id="node2" href="$buffer_8c.html#aa35bf7feb6a99bf5d364b2d4eba1195c" title="alloc_buf_gc" alt="" coords="352,31,447,57"/>
+<area shape="rect" id="node5" href="$platform_8c.html#adb289c825e8632ae08564aaa193a608d" title="platform_open" alt="" coords="177,68,280,95"/>
+<area shape="rect" id="node6" href="$buffer_8c.html#a3307f08331b1ce42168bafd2ecf7874a" title="buf_printf" alt="" coords="362,144,437,171"/>
+<area shape="rect" id="node7" href="$crypto_8c.html#abd4e2239c5b8afe85276885676851bcf" title="generate_key_random" alt="" coords="153,220,304,247"/>
+<area shape="rect" id="node14" href="$buffer_8c.html#a765c29b346cf601c5e0be2fd2c935a8d" title="format_hex_ex" alt="" coords="175,119,282,145"/>
+<area shape="rect" id="node16" href="$buffer_8c.html#aef9ae988bf07cf32cad83997d0c2ce8b" title="buf_write_string_file" alt="" coords="161,271,296,297"/>
+<area shape="rect" id="node17" href="$buffer_8c.html#a1bb5d44eee3543955d61ffbc671d2927" title="buf_clear" alt="" coords="191,321,266,348"/>
+<area shape="rect" id="node3" href="$buffer_8c.html#acc1a4ee83a591116d331e52baacf253d" title="buf_size_error" alt="" coords="521,56,623,83"/>
+<area shape="rect" id="node4" href="$buffer_8c.html#a67f7dec7f86e113dc0744584fd80b621" title="gc_malloc" alt="" coords="531,5,613,32"/>
+<area shape="rect" id="node8" href="$crypto__backend_8h.html#a8a19f717f5824ff4455b6925af81299c" title="rand_bytes" alt="" coords="356,195,443,221"/>
+<area shape="rect" id="node9" href="$crypto_8c.html#aba43c7afa9dab7d3d1bb9443a0fba6d8" title="fixup_key" alt="" coords="361,245,438,272"/>
+<area shape="rect" id="node12" href="$crypto_8c.html#a87b883dc7b32de49358a397c4e5a56a6" title="check_key" alt="" coords="357,296,442,323"/>
+<area shape="rect" id="node10" href="$crypto__backend_8h.html#ad4d9be2aec664087528e31d2bc8c00ac" title="key_des_num_cblocks" alt="" coords="495,271,649,297"/>
+<area shape="rect" id="node11" href="$crypto__backend_8h.html#a70a3e94b6fec5fdd271096aaef9f6e95" title="key_des_fixup" alt="" coords="519,220,625,247"/>
+<area shape="rect" id="node13" href="$crypto__backend_8h.html#a5cf6dcb410ea887d845852b1a486dd6e" title="key_des_check" alt="" coords="515,321,629,348"/>
+<area shape="rect" id="node15" href="$buffer_8c.html#a276febeb3ac5da2600b722b8dfb7ba0f" title="buf_catrunc" alt="" coords="355,93,444,120"/>
+</map>

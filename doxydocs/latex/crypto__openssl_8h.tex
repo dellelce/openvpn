@@ -1,0 +1,145 @@
+\hypertarget{crypto__openssl_8h}{}\section{src/openvpn/crypto\+\_\+openssl.h File Reference}
+\label{crypto__openssl_8h}\index{src/openvpn/crypto\+\_\+openssl.\+h@{src/openvpn/crypto\+\_\+openssl.\+h}}
+{\ttfamily \#include $<$openssl/evp.\+h$>$}\\*
+{\ttfamily \#include $<$openssl/hmac.\+h$>$}\\*
+{\ttfamily \#include $<$openssl/md5.\+h$>$}\\*
+{\ttfamily \#include $<$openssl/sha.\+h$>$}\\*
+Include dependency graph for crypto\+\_\+openssl.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{crypto__openssl_8h__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{crypto__openssl_8h_ae9cda5ecb2fa1ec97a413d9ffbb0c87e}{O\+P\+E\+N\+V\+P\+N\+\_\+\+M\+A\+X\+\_\+\+I\+V\+\_\+\+L\+E\+N\+G\+T\+H}~E\+V\+P\+\_\+\+M\+A\+X\+\_\+\+I\+V\+\_\+\+L\+E\+N\+G\+T\+H
+\item 
+\#define \hyperlink{crypto__openssl_8h_acb69f3c245ceb88cec69889fb73a9763}{O\+P\+E\+N\+V\+P\+N\+\_\+\+M\+O\+D\+E\+\_\+\+C\+B\+C}~E\+V\+P\+\_\+\+C\+I\+P\+H\+\_\+\+C\+B\+C\+\_\+\+M\+O\+D\+E
+\item 
+\#define \hyperlink{crypto__openssl_8h_a6e0636d524db1a3f8c6941746d71d1dd}{O\+P\+E\+N\+V\+P\+N\+\_\+\+M\+O\+D\+E\+\_\+\+O\+F\+B}~E\+V\+P\+\_\+\+C\+I\+P\+H\+\_\+\+O\+F\+B\+\_\+\+M\+O\+D\+E
+\item 
+\#define \hyperlink{crypto__openssl_8h_aca7bc6d7c689c19751e1bceb0c8dde76}{O\+P\+E\+N\+V\+P\+N\+\_\+\+M\+O\+D\+E\+\_\+\+C\+F\+B}~E\+V\+P\+\_\+\+C\+I\+P\+H\+\_\+\+C\+F\+B\+\_\+\+M\+O\+D\+E
+\item 
+\#define \hyperlink{crypto__openssl_8h_aedb62c875ead89c35e9fb22a953f49a6}{O\+P\+E\+N\+V\+P\+N\+\_\+\+O\+P\+\_\+\+E\+N\+C\+R\+Y\+P\+T}~1
+\item 
+\#define \hyperlink{crypto__openssl_8h_a3fd2a5b62ce0fb95f4975e692d433853}{O\+P\+E\+N\+V\+P\+N\+\_\+\+O\+P\+\_\+\+D\+E\+C\+R\+Y\+P\+T}~0
+\item 
+\#define \hyperlink{crypto__openssl_8h_a6f4a9dcb76f52b2c9bd29dafc52c80aa}{D\+E\+S\+\_\+\+K\+E\+Y\+\_\+\+L\+E\+N\+G\+T\+H}~8
+\item 
+\#define \hyperlink{crypto__openssl_8h_ac91d9731e3eca871a80f7d2c494d5ee5}{M\+D4\+\_\+\+D\+I\+G\+E\+S\+T\+\_\+\+L\+E\+N\+G\+T\+H}~16
+\item 
+\#define \hyperlink{crypto__openssl_8h_a40d92b6b242073dc71cfec26c79c0397}{crypto\+\_\+msg}(flags, ...)
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef E\+V\+P\+\_\+\+C\+I\+P\+H\+E\+R \hyperlink{crypto__openssl_8h_afe03d73610fa6b26a9bbbc7ac461382f}{cipher\+\_\+kt\+\_\+t}
+\item 
+typedef E\+V\+P\+\_\+\+M\+D \hyperlink{crypto__openssl_8h_a0150c8456ecde81cd4a4805a3a49a62b}{md\+\_\+kt\+\_\+t}
+\item 
+typedef E\+V\+P\+\_\+\+C\+I\+P\+H\+E\+R\+\_\+\+C\+T\+X \hyperlink{crypto__openssl_8h_ac37c5321b9b5746a0884879c0feedae6}{cipher\+\_\+ctx\+\_\+t}
+\item 
+typedef E\+V\+P\+\_\+\+M\+D\+\_\+\+C\+T\+X \hyperlink{crypto__openssl_8h_a154c8f86b0ce62b5a7f39bd5ad4a5e91}{md\+\_\+ctx\+\_\+t}
+\item 
+typedef H\+M\+A\+C\+\_\+\+C\+T\+X \hyperlink{crypto__openssl_8h_a1e4ed8749309d74c0a6452bc6fbdb3e9}{hmac\+\_\+ctx\+\_\+t}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{crypto__openssl_8h_a05c506b428cf496bdad68392d20c9b16}{crypto\+\_\+print\+\_\+openssl\+\_\+errors} (const unsigned int flags)
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{crypto__openssl_8h_a40d92b6b242073dc71cfec26c79c0397}{}\index{crypto\+\_\+openssl.\+h@{crypto\+\_\+openssl.\+h}!crypto\+\_\+msg@{crypto\+\_\+msg}}
+\index{crypto\+\_\+msg@{crypto\+\_\+msg}!crypto\+\_\+openssl.\+h@{crypto\+\_\+openssl.\+h}}
+\subsubsection[{crypto\+\_\+msg}]{\setlength{\rightskip}{0pt plus 5cm}\#define crypto\+\_\+msg(
+\begin{DoxyParamCaption}
+\item[{}]{flags, }
+\item[{}]{...}
+\end{DoxyParamCaption}
+)}\label{crypto__openssl_8h_a40d92b6b242073dc71cfec26c79c0397}
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\textcolor{keywordflow}{do} \{ \(\backslash\)
+        crypto\_print\_openssl\_errors(nonfatal(flags)); \(\backslash\)
+        msg((flags), \_\_VA\_ARGS\_\_); \(\backslash\)
+    \} \textcolor{keywordflow}{while} (\textcolor{keyword}{false})
+\end{DoxyCode}
+Retrieve any Open\+S\+S\+L errors, then print the supplied error message.
+
+This is just a convenience wrapper for often occurring situations.
+
+
+\begin{DoxyParams}{Parameters}
+{\em flags} & Flags to indicate error type and priority. \\
+\hline
+{\em format} & Format string to print. \\
+\hline
+{\em format} & args (optional) arguments for the format string. \\
+\hline
+\end{DoxyParams}
+\hypertarget{crypto__openssl_8h_a6f4a9dcb76f52b2c9bd29dafc52c80aa}{}\index{crypto\+\_\+openssl.\+h@{crypto\+\_\+openssl.\+h}!D\+E\+S\+\_\+\+K\+E\+Y\+\_\+\+L\+E\+N\+G\+T\+H@{D\+E\+S\+\_\+\+K\+E\+Y\+\_\+\+L\+E\+N\+G\+T\+H}}
+\index{D\+E\+S\+\_\+\+K\+E\+Y\+\_\+\+L\+E\+N\+G\+T\+H@{D\+E\+S\+\_\+\+K\+E\+Y\+\_\+\+L\+E\+N\+G\+T\+H}!crypto\+\_\+openssl.\+h@{crypto\+\_\+openssl.\+h}}
+\subsubsection[{D\+E\+S\+\_\+\+K\+E\+Y\+\_\+\+L\+E\+N\+G\+T\+H}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+E\+S\+\_\+\+K\+E\+Y\+\_\+\+L\+E\+N\+G\+T\+H~8}\label{crypto__openssl_8h_a6f4a9dcb76f52b2c9bd29dafc52c80aa}
+\hypertarget{crypto__openssl_8h_ac91d9731e3eca871a80f7d2c494d5ee5}{}\index{crypto\+\_\+openssl.\+h@{crypto\+\_\+openssl.\+h}!M\+D4\+\_\+\+D\+I\+G\+E\+S\+T\+\_\+\+L\+E\+N\+G\+T\+H@{M\+D4\+\_\+\+D\+I\+G\+E\+S\+T\+\_\+\+L\+E\+N\+G\+T\+H}}
+\index{M\+D4\+\_\+\+D\+I\+G\+E\+S\+T\+\_\+\+L\+E\+N\+G\+T\+H@{M\+D4\+\_\+\+D\+I\+G\+E\+S\+T\+\_\+\+L\+E\+N\+G\+T\+H}!crypto\+\_\+openssl.\+h@{crypto\+\_\+openssl.\+h}}
+\subsubsection[{M\+D4\+\_\+\+D\+I\+G\+E\+S\+T\+\_\+\+L\+E\+N\+G\+T\+H}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\+D4\+\_\+\+D\+I\+G\+E\+S\+T\+\_\+\+L\+E\+N\+G\+T\+H~16}\label{crypto__openssl_8h_ac91d9731e3eca871a80f7d2c494d5ee5}
+\hypertarget{crypto__openssl_8h_ae9cda5ecb2fa1ec97a413d9ffbb0c87e}{}\index{crypto\+\_\+openssl.\+h@{crypto\+\_\+openssl.\+h}!O\+P\+E\+N\+V\+P\+N\+\_\+\+M\+A\+X\+\_\+\+I\+V\+\_\+\+L\+E\+N\+G\+T\+H@{O\+P\+E\+N\+V\+P\+N\+\_\+\+M\+A\+X\+\_\+\+I\+V\+\_\+\+L\+E\+N\+G\+T\+H}}
+\index{O\+P\+E\+N\+V\+P\+N\+\_\+\+M\+A\+X\+\_\+\+I\+V\+\_\+\+L\+E\+N\+G\+T\+H@{O\+P\+E\+N\+V\+P\+N\+\_\+\+M\+A\+X\+\_\+\+I\+V\+\_\+\+L\+E\+N\+G\+T\+H}!crypto\+\_\+openssl.\+h@{crypto\+\_\+openssl.\+h}}
+\subsubsection[{O\+P\+E\+N\+V\+P\+N\+\_\+\+M\+A\+X\+\_\+\+I\+V\+\_\+\+L\+E\+N\+G\+T\+H}]{\setlength{\rightskip}{0pt plus 5cm}\#define O\+P\+E\+N\+V\+P\+N\+\_\+\+M\+A\+X\+\_\+\+I\+V\+\_\+\+L\+E\+N\+G\+T\+H~E\+V\+P\+\_\+\+M\+A\+X\+\_\+\+I\+V\+\_\+\+L\+E\+N\+G\+T\+H}\label{crypto__openssl_8h_ae9cda5ecb2fa1ec97a413d9ffbb0c87e}
+Maximum length of an I\+V \hypertarget{crypto__openssl_8h_acb69f3c245ceb88cec69889fb73a9763}{}\index{crypto\+\_\+openssl.\+h@{crypto\+\_\+openssl.\+h}!O\+P\+E\+N\+V\+P\+N\+\_\+\+M\+O\+D\+E\+\_\+\+C\+B\+C@{O\+P\+E\+N\+V\+P\+N\+\_\+\+M\+O\+D\+E\+\_\+\+C\+B\+C}}
+\index{O\+P\+E\+N\+V\+P\+N\+\_\+\+M\+O\+D\+E\+\_\+\+C\+B\+C@{O\+P\+E\+N\+V\+P\+N\+\_\+\+M\+O\+D\+E\+\_\+\+C\+B\+C}!crypto\+\_\+openssl.\+h@{crypto\+\_\+openssl.\+h}}
+\subsubsection[{O\+P\+E\+N\+V\+P\+N\+\_\+\+M\+O\+D\+E\+\_\+\+C\+B\+C}]{\setlength{\rightskip}{0pt plus 5cm}\#define O\+P\+E\+N\+V\+P\+N\+\_\+\+M\+O\+D\+E\+\_\+\+C\+B\+C~E\+V\+P\+\_\+\+C\+I\+P\+H\+\_\+\+C\+B\+C\+\_\+\+M\+O\+D\+E}\label{crypto__openssl_8h_acb69f3c245ceb88cec69889fb73a9763}
+Cipher is in C\+B\+C mode \hypertarget{crypto__openssl_8h_aca7bc6d7c689c19751e1bceb0c8dde76}{}\index{crypto\+\_\+openssl.\+h@{crypto\+\_\+openssl.\+h}!O\+P\+E\+N\+V\+P\+N\+\_\+\+M\+O\+D\+E\+\_\+\+C\+F\+B@{O\+P\+E\+N\+V\+P\+N\+\_\+\+M\+O\+D\+E\+\_\+\+C\+F\+B}}
+\index{O\+P\+E\+N\+V\+P\+N\+\_\+\+M\+O\+D\+E\+\_\+\+C\+F\+B@{O\+P\+E\+N\+V\+P\+N\+\_\+\+M\+O\+D\+E\+\_\+\+C\+F\+B}!crypto\+\_\+openssl.\+h@{crypto\+\_\+openssl.\+h}}
+\subsubsection[{O\+P\+E\+N\+V\+P\+N\+\_\+\+M\+O\+D\+E\+\_\+\+C\+F\+B}]{\setlength{\rightskip}{0pt plus 5cm}\#define O\+P\+E\+N\+V\+P\+N\+\_\+\+M\+O\+D\+E\+\_\+\+C\+F\+B~E\+V\+P\+\_\+\+C\+I\+P\+H\+\_\+\+C\+F\+B\+\_\+\+M\+O\+D\+E}\label{crypto__openssl_8h_aca7bc6d7c689c19751e1bceb0c8dde76}
+Cipher is in C\+F\+B mode \hypertarget{crypto__openssl_8h_a6e0636d524db1a3f8c6941746d71d1dd}{}\index{crypto\+\_\+openssl.\+h@{crypto\+\_\+openssl.\+h}!O\+P\+E\+N\+V\+P\+N\+\_\+\+M\+O\+D\+E\+\_\+\+O\+F\+B@{O\+P\+E\+N\+V\+P\+N\+\_\+\+M\+O\+D\+E\+\_\+\+O\+F\+B}}
+\index{O\+P\+E\+N\+V\+P\+N\+\_\+\+M\+O\+D\+E\+\_\+\+O\+F\+B@{O\+P\+E\+N\+V\+P\+N\+\_\+\+M\+O\+D\+E\+\_\+\+O\+F\+B}!crypto\+\_\+openssl.\+h@{crypto\+\_\+openssl.\+h}}
+\subsubsection[{O\+P\+E\+N\+V\+P\+N\+\_\+\+M\+O\+D\+E\+\_\+\+O\+F\+B}]{\setlength{\rightskip}{0pt plus 5cm}\#define O\+P\+E\+N\+V\+P\+N\+\_\+\+M\+O\+D\+E\+\_\+\+O\+F\+B~E\+V\+P\+\_\+\+C\+I\+P\+H\+\_\+\+O\+F\+B\+\_\+\+M\+O\+D\+E}\label{crypto__openssl_8h_a6e0636d524db1a3f8c6941746d71d1dd}
+Cipher is in O\+F\+B mode \hypertarget{crypto__openssl_8h_a3fd2a5b62ce0fb95f4975e692d433853}{}\index{crypto\+\_\+openssl.\+h@{crypto\+\_\+openssl.\+h}!O\+P\+E\+N\+V\+P\+N\+\_\+\+O\+P\+\_\+\+D\+E\+C\+R\+Y\+P\+T@{O\+P\+E\+N\+V\+P\+N\+\_\+\+O\+P\+\_\+\+D\+E\+C\+R\+Y\+P\+T}}
+\index{O\+P\+E\+N\+V\+P\+N\+\_\+\+O\+P\+\_\+\+D\+E\+C\+R\+Y\+P\+T@{O\+P\+E\+N\+V\+P\+N\+\_\+\+O\+P\+\_\+\+D\+E\+C\+R\+Y\+P\+T}!crypto\+\_\+openssl.\+h@{crypto\+\_\+openssl.\+h}}
+\subsubsection[{O\+P\+E\+N\+V\+P\+N\+\_\+\+O\+P\+\_\+\+D\+E\+C\+R\+Y\+P\+T}]{\setlength{\rightskip}{0pt plus 5cm}\#define O\+P\+E\+N\+V\+P\+N\+\_\+\+O\+P\+\_\+\+D\+E\+C\+R\+Y\+P\+T~0}\label{crypto__openssl_8h_a3fd2a5b62ce0fb95f4975e692d433853}
+Cipher should decrypt \hypertarget{crypto__openssl_8h_aedb62c875ead89c35e9fb22a953f49a6}{}\index{crypto\+\_\+openssl.\+h@{crypto\+\_\+openssl.\+h}!O\+P\+E\+N\+V\+P\+N\+\_\+\+O\+P\+\_\+\+E\+N\+C\+R\+Y\+P\+T@{O\+P\+E\+N\+V\+P\+N\+\_\+\+O\+P\+\_\+\+E\+N\+C\+R\+Y\+P\+T}}
+\index{O\+P\+E\+N\+V\+P\+N\+\_\+\+O\+P\+\_\+\+E\+N\+C\+R\+Y\+P\+T@{O\+P\+E\+N\+V\+P\+N\+\_\+\+O\+P\+\_\+\+E\+N\+C\+R\+Y\+P\+T}!crypto\+\_\+openssl.\+h@{crypto\+\_\+openssl.\+h}}
+\subsubsection[{O\+P\+E\+N\+V\+P\+N\+\_\+\+O\+P\+\_\+\+E\+N\+C\+R\+Y\+P\+T}]{\setlength{\rightskip}{0pt plus 5cm}\#define O\+P\+E\+N\+V\+P\+N\+\_\+\+O\+P\+\_\+\+E\+N\+C\+R\+Y\+P\+T~1}\label{crypto__openssl_8h_aedb62c875ead89c35e9fb22a953f49a6}
+Cipher should encrypt 
+
+\subsection{Typedef Documentation}
+\hypertarget{crypto__openssl_8h_ac37c5321b9b5746a0884879c0feedae6}{}\index{crypto\+\_\+openssl.\+h@{crypto\+\_\+openssl.\+h}!cipher\+\_\+ctx\+\_\+t@{cipher\+\_\+ctx\+\_\+t}}
+\index{cipher\+\_\+ctx\+\_\+t@{cipher\+\_\+ctx\+\_\+t}!crypto\+\_\+openssl.\+h@{crypto\+\_\+openssl.\+h}}
+\subsubsection[{cipher\+\_\+ctx\+\_\+t}]{\setlength{\rightskip}{0pt plus 5cm}typedef E\+V\+P\+\_\+\+C\+I\+P\+H\+E\+R\+\_\+\+C\+T\+X {\bf cipher\+\_\+ctx\+\_\+t}}\label{crypto__openssl_8h_ac37c5321b9b5746a0884879c0feedae6}
+Generic cipher context. \hypertarget{crypto__openssl_8h_afe03d73610fa6b26a9bbbc7ac461382f}{}\index{crypto\+\_\+openssl.\+h@{crypto\+\_\+openssl.\+h}!cipher\+\_\+kt\+\_\+t@{cipher\+\_\+kt\+\_\+t}}
+\index{cipher\+\_\+kt\+\_\+t@{cipher\+\_\+kt\+\_\+t}!crypto\+\_\+openssl.\+h@{crypto\+\_\+openssl.\+h}}
+\subsubsection[{cipher\+\_\+kt\+\_\+t}]{\setlength{\rightskip}{0pt plus 5cm}typedef E\+V\+P\+\_\+\+C\+I\+P\+H\+E\+R {\bf cipher\+\_\+kt\+\_\+t}}\label{crypto__openssl_8h_afe03d73610fa6b26a9bbbc7ac461382f}
+Generic cipher key type context. \hypertarget{crypto__openssl_8h_a1e4ed8749309d74c0a6452bc6fbdb3e9}{}\index{crypto\+\_\+openssl.\+h@{crypto\+\_\+openssl.\+h}!hmac\+\_\+ctx\+\_\+t@{hmac\+\_\+ctx\+\_\+t}}
+\index{hmac\+\_\+ctx\+\_\+t@{hmac\+\_\+ctx\+\_\+t}!crypto\+\_\+openssl.\+h@{crypto\+\_\+openssl.\+h}}
+\subsubsection[{hmac\+\_\+ctx\+\_\+t}]{\setlength{\rightskip}{0pt plus 5cm}typedef H\+M\+A\+C\+\_\+\+C\+T\+X {\bf hmac\+\_\+ctx\+\_\+t}}\label{crypto__openssl_8h_a1e4ed8749309d74c0a6452bc6fbdb3e9}
+Generic H\+M\+A\+C context. \hypertarget{crypto__openssl_8h_a154c8f86b0ce62b5a7f39bd5ad4a5e91}{}\index{crypto\+\_\+openssl.\+h@{crypto\+\_\+openssl.\+h}!md\+\_\+ctx\+\_\+t@{md\+\_\+ctx\+\_\+t}}
+\index{md\+\_\+ctx\+\_\+t@{md\+\_\+ctx\+\_\+t}!crypto\+\_\+openssl.\+h@{crypto\+\_\+openssl.\+h}}
+\subsubsection[{md\+\_\+ctx\+\_\+t}]{\setlength{\rightskip}{0pt plus 5cm}typedef E\+V\+P\+\_\+\+M\+D\+\_\+\+C\+T\+X {\bf md\+\_\+ctx\+\_\+t}}\label{crypto__openssl_8h_a154c8f86b0ce62b5a7f39bd5ad4a5e91}
+Generic message digest context. \hypertarget{crypto__openssl_8h_a0150c8456ecde81cd4a4805a3a49a62b}{}\index{crypto\+\_\+openssl.\+h@{crypto\+\_\+openssl.\+h}!md\+\_\+kt\+\_\+t@{md\+\_\+kt\+\_\+t}}
+\index{md\+\_\+kt\+\_\+t@{md\+\_\+kt\+\_\+t}!crypto\+\_\+openssl.\+h@{crypto\+\_\+openssl.\+h}}
+\subsubsection[{md\+\_\+kt\+\_\+t}]{\setlength{\rightskip}{0pt plus 5cm}typedef E\+V\+P\+\_\+\+M\+D {\bf md\+\_\+kt\+\_\+t}}\label{crypto__openssl_8h_a0150c8456ecde81cd4a4805a3a49a62b}
+Generic message digest key type context. 
+
+\subsection{Function Documentation}
+\hypertarget{crypto__openssl_8h_a05c506b428cf496bdad68392d20c9b16}{}\index{crypto\+\_\+openssl.\+h@{crypto\+\_\+openssl.\+h}!crypto\+\_\+print\+\_\+openssl\+\_\+errors@{crypto\+\_\+print\+\_\+openssl\+\_\+errors}}
+\index{crypto\+\_\+print\+\_\+openssl\+\_\+errors@{crypto\+\_\+print\+\_\+openssl\+\_\+errors}!crypto\+\_\+openssl.\+h@{crypto\+\_\+openssl.\+h}}
+\subsubsection[{crypto\+\_\+print\+\_\+openssl\+\_\+errors(const unsigned int flags)}]{\setlength{\rightskip}{0pt plus 5cm}void crypto\+\_\+print\+\_\+openssl\+\_\+errors (
+\begin{DoxyParamCaption}
+\item[{const unsigned int}]{flags}
+\end{DoxyParamCaption}
+)}\label{crypto__openssl_8h_a05c506b428cf496bdad68392d20c9b16}
+Retrieve any occurred Open\+S\+S\+L errors and print those errors.
+
+Note that this function uses the not thread-\/safe Open\+S\+S\+L error A\+P\+I.
+
+
+\begin{DoxyParams}{Parameters}
+{\em flags} & Flags to indicate error type and priority. \\
+\hline
+\end{DoxyParams}

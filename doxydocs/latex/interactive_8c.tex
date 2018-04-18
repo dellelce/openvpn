@@ -1,0 +1,241 @@
+\hypertarget{interactive_8c}{}\section{src/openvpnserv/interactive.c File Reference}
+\label{interactive_8c}\index{src/openvpnserv/interactive.\+c@{src/openvpnserv/interactive.\+c}}
+{\ttfamily \#include \char`\"{}service.\+h\char`\"{}}\\*
+{\ttfamily \#include $<$winsock2.\+h$>$}\\*
+{\ttfamily \#include $<$ws2tcpip.\+h$>$}\\*
+{\ttfamily \#include $<$iphlpapi.\+h$>$}\\*
+{\ttfamily \#include $<$userenv.\+h$>$}\\*
+{\ttfamily \#include $<$accctrl.\+h$>$}\\*
+{\ttfamily \#include $<$aclapi.\+h$>$}\\*
+{\ttfamily \#include $<$stdio.\+h$>$}\\*
+{\ttfamily \#include $<$sddl.\+h$>$}\\*
+{\ttfamily \#include $<$shellapi.\+h$>$}\\*
+{\ttfamily \#include $<$mstcpip.\+h$>$}\\*
+{\ttfamily \#include \char`\"{}compat-\/versionhelpers.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}openvpn-\/msg.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}validate.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}block\+\_\+dns.\+h\char`\"{}}\\*
+Include dependency graph for interactive.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{interactive_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{struct_s_t_a_r_t_u_p___d_a_t_a}{S\+T\+A\+R\+T\+U\+P\+\_\+\+D\+A\+T\+A}
+\item 
+struct \hyperlink{struct__list__item}{\+\_\+list\+\_\+item}
+\item 
+struct \hyperlink{structblock__dns__data__t}{block\+\_\+dns\+\_\+data\+\_\+t}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{interactive_8c_aa93c04b7063725819bb0bd0a97d52e5e}{I\+O\+\_\+\+T\+I\+M\+E\+O\+U\+T}~2000 /$\ast$ms$\ast$/
+\item 
+\#define \hyperlink{interactive_8c_a90a49804d190befef8a58dd3bb0805b3}{E\+R\+R\+O\+R\+\_\+\+O\+P\+E\+N\+V\+P\+N\+\_\+\+S\+T\+A\+R\+T\+U\+P}~0x20000000
+\item 
+\#define \hyperlink{interactive_8c_a3e830043ac908c399ae0fe0bee6ed1c5}{E\+R\+R\+O\+R\+\_\+\+S\+T\+A\+R\+T\+U\+P\+\_\+\+D\+A\+T\+A}~0x20000001
+\item 
+\#define \hyperlink{interactive_8c_ad729bf7a8ca4815566a096d551e8cd2d}{E\+R\+R\+O\+R\+\_\+\+M\+E\+S\+S\+A\+G\+E\+\_\+\+D\+A\+T\+A}~0x20000002
+\item 
+\#define \hyperlink{interactive_8c_a59bd710e31fca9953b08e8401793b12a}{E\+R\+R\+O\+R\+\_\+\+M\+E\+S\+S\+A\+G\+E\+\_\+\+T\+Y\+P\+E}~0x20000003
+\item 
+\#define \hyperlink{interactive_8c_a7624aa21819c64d63a7efda92463e26e}{R\+D\+N\+S\+\_\+\+T\+I\+M\+E\+O\+U\+T}~600  /$\ast$ seconds to wait for the semaphore $\ast$/
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \hyperlink{struct__list__item}{\+\_\+list\+\_\+item} \hyperlink{interactive_8c_a0e8da9813c75a43894d349306d7944ea}{list\+\_\+item\+\_\+t}
+\item 
+typedef \hyperlink{interactive_8c_a0e8da9813c75a43894d349306d7944ea}{list\+\_\+item\+\_\+t} $\ast$ \hyperlink{interactive_8c_ac0dcf7ff1b747204f03f762503c2d8ed}{undo\+\_\+lists\+\_\+t}\mbox{[}\hyperlink{interactive_8c_a767357491f19fc428e12e95225ac6127a5663f98ec658c9d7819abb3b96a0b05f}{\+\_\+undo\+\_\+type\+\_\+max}\mbox{]}
+\item 
+typedef B\+O\+O\+L($\ast$ \hyperlink{interactive_8c_a8617850bc2cd64d964a98a8503e04ef3}{match\+\_\+fn\+\_\+t}) (L\+P\+V\+O\+I\+D item, L\+P\+V\+O\+I\+D ctx)
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{interactive_8c_a767357491f19fc428e12e95225ac6127}{undo\+\_\+type\+\_\+t} \{ \\*
+\hyperlink{interactive_8c_a767357491f19fc428e12e95225ac6127ada7aa65619250e2ee161e4876d6f1d9e}{address}, 
+\hyperlink{interactive_8c_a767357491f19fc428e12e95225ac6127ac8ce842bafa47f7340ea0edbe49989f9}{route}, 
+\hyperlink{interactive_8c_a767357491f19fc428e12e95225ac6127aa04fd0b588244b7970b8700193209c7a}{block\+\_\+dns}, 
+\hyperlink{interactive_8c_a767357491f19fc428e12e95225ac6127a6fc54a4486a571b70a835dad314cd41e}{undo\+\_\+dns4}, 
+\\*
+\hyperlink{interactive_8c_a767357491f19fc428e12e95225ac6127a6f4fcaa4a9068ccd888ef0a972a1a924}{undo\+\_\+dns6}, 
+\hyperlink{interactive_8c_a767357491f19fc428e12e95225ac6127a5663f98ec658c9d7819abb3b96a0b05f}{\+\_\+undo\+\_\+type\+\_\+max}
+ \}
+\item 
+enum \hyperlink{interactive_8c_af26225c1e5936add32354d6633b47567}{async\+\_\+op\+\_\+t} \{ \hyperlink{interactive_8c_af26225c1e5936add32354d6633b47567a620605dd7ac39436364bfe949dce21b7}{peek}, 
+\hyperlink{interactive_8c_af26225c1e5936add32354d6633b47567aea7c12cb3031ad9e88104ce9859ce1c5}{read}, 
+\hyperlink{interactive_8c_af26225c1e5936add32354d6633b47567aae835b662be01cdc3752f7db84529cca}{write}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+V\+O\+I\+D W\+I\+N\+A\+P\+I \hyperlink{interactive_8c_ab9113fbe718dbccfdfb9f1bfc1137266}{Service\+Start\+Interactive\+Own} (D\+W\+O\+R\+D dw\+Argc, L\+P\+T\+S\+T\+R $\ast$lpsz\+Argv)
+\item 
+V\+O\+I\+D W\+I\+N\+A\+P\+I \hyperlink{interactive_8c_abb763ed1be5210f61bf6f185ee4c3467}{Service\+Start\+Interactive} (D\+W\+O\+R\+D dw\+Argc, L\+P\+T\+S\+T\+R $\ast$lpsz\+Argv)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structopenvpn__service__t}{openvpn\+\_\+service\+\_\+t} \hyperlink{interactive_8c_aa85687c1a27dabde58bff951314eab93}{interactive\+\_\+service}
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{interactive_8c_ad729bf7a8ca4815566a096d551e8cd2d}{}\index{interactive.\+c@{interactive.\+c}!E\+R\+R\+O\+R\+\_\+\+M\+E\+S\+S\+A\+G\+E\+\_\+\+D\+A\+T\+A@{E\+R\+R\+O\+R\+\_\+\+M\+E\+S\+S\+A\+G\+E\+\_\+\+D\+A\+T\+A}}
+\index{E\+R\+R\+O\+R\+\_\+\+M\+E\+S\+S\+A\+G\+E\+\_\+\+D\+A\+T\+A@{E\+R\+R\+O\+R\+\_\+\+M\+E\+S\+S\+A\+G\+E\+\_\+\+D\+A\+T\+A}!interactive.\+c@{interactive.\+c}}
+\subsubsection[{E\+R\+R\+O\+R\+\_\+\+M\+E\+S\+S\+A\+G\+E\+\_\+\+D\+A\+T\+A}]{\setlength{\rightskip}{0pt plus 5cm}\#define E\+R\+R\+O\+R\+\_\+\+M\+E\+S\+S\+A\+G\+E\+\_\+\+D\+A\+T\+A~0x20000002}\label{interactive_8c_ad729bf7a8ca4815566a096d551e8cd2d}
+\hypertarget{interactive_8c_a59bd710e31fca9953b08e8401793b12a}{}\index{interactive.\+c@{interactive.\+c}!E\+R\+R\+O\+R\+\_\+\+M\+E\+S\+S\+A\+G\+E\+\_\+\+T\+Y\+P\+E@{E\+R\+R\+O\+R\+\_\+\+M\+E\+S\+S\+A\+G\+E\+\_\+\+T\+Y\+P\+E}}
+\index{E\+R\+R\+O\+R\+\_\+\+M\+E\+S\+S\+A\+G\+E\+\_\+\+T\+Y\+P\+E@{E\+R\+R\+O\+R\+\_\+\+M\+E\+S\+S\+A\+G\+E\+\_\+\+T\+Y\+P\+E}!interactive.\+c@{interactive.\+c}}
+\subsubsection[{E\+R\+R\+O\+R\+\_\+\+M\+E\+S\+S\+A\+G\+E\+\_\+\+T\+Y\+P\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define E\+R\+R\+O\+R\+\_\+\+M\+E\+S\+S\+A\+G\+E\+\_\+\+T\+Y\+P\+E~0x20000003}\label{interactive_8c_a59bd710e31fca9953b08e8401793b12a}
+\hypertarget{interactive_8c_a90a49804d190befef8a58dd3bb0805b3}{}\index{interactive.\+c@{interactive.\+c}!E\+R\+R\+O\+R\+\_\+\+O\+P\+E\+N\+V\+P\+N\+\_\+\+S\+T\+A\+R\+T\+U\+P@{E\+R\+R\+O\+R\+\_\+\+O\+P\+E\+N\+V\+P\+N\+\_\+\+S\+T\+A\+R\+T\+U\+P}}
+\index{E\+R\+R\+O\+R\+\_\+\+O\+P\+E\+N\+V\+P\+N\+\_\+\+S\+T\+A\+R\+T\+U\+P@{E\+R\+R\+O\+R\+\_\+\+O\+P\+E\+N\+V\+P\+N\+\_\+\+S\+T\+A\+R\+T\+U\+P}!interactive.\+c@{interactive.\+c}}
+\subsubsection[{E\+R\+R\+O\+R\+\_\+\+O\+P\+E\+N\+V\+P\+N\+\_\+\+S\+T\+A\+R\+T\+U\+P}]{\setlength{\rightskip}{0pt plus 5cm}\#define E\+R\+R\+O\+R\+\_\+\+O\+P\+E\+N\+V\+P\+N\+\_\+\+S\+T\+A\+R\+T\+U\+P~0x20000000}\label{interactive_8c_a90a49804d190befef8a58dd3bb0805b3}
+\hypertarget{interactive_8c_a3e830043ac908c399ae0fe0bee6ed1c5}{}\index{interactive.\+c@{interactive.\+c}!E\+R\+R\+O\+R\+\_\+\+S\+T\+A\+R\+T\+U\+P\+\_\+\+D\+A\+T\+A@{E\+R\+R\+O\+R\+\_\+\+S\+T\+A\+R\+T\+U\+P\+\_\+\+D\+A\+T\+A}}
+\index{E\+R\+R\+O\+R\+\_\+\+S\+T\+A\+R\+T\+U\+P\+\_\+\+D\+A\+T\+A@{E\+R\+R\+O\+R\+\_\+\+S\+T\+A\+R\+T\+U\+P\+\_\+\+D\+A\+T\+A}!interactive.\+c@{interactive.\+c}}
+\subsubsection[{E\+R\+R\+O\+R\+\_\+\+S\+T\+A\+R\+T\+U\+P\+\_\+\+D\+A\+T\+A}]{\setlength{\rightskip}{0pt plus 5cm}\#define E\+R\+R\+O\+R\+\_\+\+S\+T\+A\+R\+T\+U\+P\+\_\+\+D\+A\+T\+A~0x20000001}\label{interactive_8c_a3e830043ac908c399ae0fe0bee6ed1c5}
+\hypertarget{interactive_8c_aa93c04b7063725819bb0bd0a97d52e5e}{}\index{interactive.\+c@{interactive.\+c}!I\+O\+\_\+\+T\+I\+M\+E\+O\+U\+T@{I\+O\+\_\+\+T\+I\+M\+E\+O\+U\+T}}
+\index{I\+O\+\_\+\+T\+I\+M\+E\+O\+U\+T@{I\+O\+\_\+\+T\+I\+M\+E\+O\+U\+T}!interactive.\+c@{interactive.\+c}}
+\subsubsection[{I\+O\+\_\+\+T\+I\+M\+E\+O\+U\+T}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\+O\+\_\+\+T\+I\+M\+E\+O\+U\+T~2000 /$\ast$ms$\ast$/}\label{interactive_8c_aa93c04b7063725819bb0bd0a97d52e5e}
+\hypertarget{interactive_8c_a7624aa21819c64d63a7efda92463e26e}{}\index{interactive.\+c@{interactive.\+c}!R\+D\+N\+S\+\_\+\+T\+I\+M\+E\+O\+U\+T@{R\+D\+N\+S\+\_\+\+T\+I\+M\+E\+O\+U\+T}}
+\index{R\+D\+N\+S\+\_\+\+T\+I\+M\+E\+O\+U\+T@{R\+D\+N\+S\+\_\+\+T\+I\+M\+E\+O\+U\+T}!interactive.\+c@{interactive.\+c}}
+\subsubsection[{R\+D\+N\+S\+\_\+\+T\+I\+M\+E\+O\+U\+T}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+D\+N\+S\+\_\+\+T\+I\+M\+E\+O\+U\+T~600  /$\ast$ seconds to wait for the semaphore $\ast$/}\label{interactive_8c_a7624aa21819c64d63a7efda92463e26e}
+
+
+\subsection{Typedef Documentation}
+\hypertarget{interactive_8c_a0e8da9813c75a43894d349306d7944ea}{}\index{interactive.\+c@{interactive.\+c}!list\+\_\+item\+\_\+t@{list\+\_\+item\+\_\+t}}
+\index{list\+\_\+item\+\_\+t@{list\+\_\+item\+\_\+t}!interactive.\+c@{interactive.\+c}}
+\subsubsection[{list\+\_\+item\+\_\+t}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf \+\_\+list\+\_\+item}  {\bf list\+\_\+item\+\_\+t}}\label{interactive_8c_a0e8da9813c75a43894d349306d7944ea}
+\hypertarget{interactive_8c_a8617850bc2cd64d964a98a8503e04ef3}{}\index{interactive.\+c@{interactive.\+c}!match\+\_\+fn\+\_\+t@{match\+\_\+fn\+\_\+t}}
+\index{match\+\_\+fn\+\_\+t@{match\+\_\+fn\+\_\+t}!interactive.\+c@{interactive.\+c}}
+\subsubsection[{match\+\_\+fn\+\_\+t}]{\setlength{\rightskip}{0pt plus 5cm}typedef B\+O\+O\+L($\ast$ match\+\_\+fn\+\_\+t) (L\+P\+V\+O\+I\+D item, L\+P\+V\+O\+I\+D ctx)}\label{interactive_8c_a8617850bc2cd64d964a98a8503e04ef3}
+\hypertarget{interactive_8c_ac0dcf7ff1b747204f03f762503c2d8ed}{}\index{interactive.\+c@{interactive.\+c}!undo\+\_\+lists\+\_\+t@{undo\+\_\+lists\+\_\+t}}
+\index{undo\+\_\+lists\+\_\+t@{undo\+\_\+lists\+\_\+t}!interactive.\+c@{interactive.\+c}}
+\subsubsection[{undo\+\_\+lists\+\_\+t}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf list\+\_\+item\+\_\+t}$\ast$ undo\+\_\+lists\+\_\+t\mbox{[}{\bf \+\_\+undo\+\_\+type\+\_\+max}\mbox{]}}\label{interactive_8c_ac0dcf7ff1b747204f03f762503c2d8ed}
+
+
+\subsection{Enumeration Type Documentation}
+\hypertarget{interactive_8c_af26225c1e5936add32354d6633b47567}{}\index{interactive.\+c@{interactive.\+c}!async\+\_\+op\+\_\+t@{async\+\_\+op\+\_\+t}}
+\index{async\+\_\+op\+\_\+t@{async\+\_\+op\+\_\+t}!interactive.\+c@{interactive.\+c}}
+\subsubsection[{async\+\_\+op\+\_\+t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf async\+\_\+op\+\_\+t}}\label{interactive_8c_af26225c1e5936add32354d6633b47567}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{peek@{peek}!interactive.\+c@{interactive.\+c}}\index{interactive.\+c@{interactive.\+c}!peek@{peek}}\item[{\em 
+\hypertarget{interactive_8c_af26225c1e5936add32354d6633b47567a620605dd7ac39436364bfe949dce21b7}{}peek\label{interactive_8c_af26225c1e5936add32354d6633b47567a620605dd7ac39436364bfe949dce21b7}
+}]\index{read@{read}!interactive.\+c@{interactive.\+c}}\index{interactive.\+c@{interactive.\+c}!read@{read}}\item[{\em 
+\hypertarget{interactive_8c_af26225c1e5936add32354d6633b47567aea7c12cb3031ad9e88104ce9859ce1c5}{}read\label{interactive_8c_af26225c1e5936add32354d6633b47567aea7c12cb3031ad9e88104ce9859ce1c5}
+}]\index{write@{write}!interactive.\+c@{interactive.\+c}}\index{interactive.\+c@{interactive.\+c}!write@{write}}\item[{\em 
+\hypertarget{interactive_8c_af26225c1e5936add32354d6633b47567aae835b662be01cdc3752f7db84529cca}{}write\label{interactive_8c_af26225c1e5936add32354d6633b47567aae835b662be01cdc3752f7db84529cca}
+}]\end{description}
+\end{Desc}
+\hypertarget{interactive_8c_a767357491f19fc428e12e95225ac6127}{}\index{interactive.\+c@{interactive.\+c}!undo\+\_\+type\+\_\+t@{undo\+\_\+type\+\_\+t}}
+\index{undo\+\_\+type\+\_\+t@{undo\+\_\+type\+\_\+t}!interactive.\+c@{interactive.\+c}}
+\subsubsection[{undo\+\_\+type\+\_\+t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf undo\+\_\+type\+\_\+t}}\label{interactive_8c_a767357491f19fc428e12e95225ac6127}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{address@{address}!interactive.\+c@{interactive.\+c}}\index{interactive.\+c@{interactive.\+c}!address@{address}}\item[{\em 
+\hypertarget{interactive_8c_a767357491f19fc428e12e95225ac6127ada7aa65619250e2ee161e4876d6f1d9e}{}address\label{interactive_8c_a767357491f19fc428e12e95225ac6127ada7aa65619250e2ee161e4876d6f1d9e}
+}]\index{route@{route}!interactive.\+c@{interactive.\+c}}\index{interactive.\+c@{interactive.\+c}!route@{route}}\item[{\em 
+\hypertarget{interactive_8c_a767357491f19fc428e12e95225ac6127ac8ce842bafa47f7340ea0edbe49989f9}{}route\label{interactive_8c_a767357491f19fc428e12e95225ac6127ac8ce842bafa47f7340ea0edbe49989f9}
+}]\index{block\+\_\+dns@{block\+\_\+dns}!interactive.\+c@{interactive.\+c}}\index{interactive.\+c@{interactive.\+c}!block\+\_\+dns@{block\+\_\+dns}}\item[{\em 
+\hypertarget{interactive_8c_a767357491f19fc428e12e95225ac6127aa04fd0b588244b7970b8700193209c7a}{}block\+\_\+dns\label{interactive_8c_a767357491f19fc428e12e95225ac6127aa04fd0b588244b7970b8700193209c7a}
+}]\index{undo\+\_\+dns4@{undo\+\_\+dns4}!interactive.\+c@{interactive.\+c}}\index{interactive.\+c@{interactive.\+c}!undo\+\_\+dns4@{undo\+\_\+dns4}}\item[{\em 
+\hypertarget{interactive_8c_a767357491f19fc428e12e95225ac6127a6fc54a4486a571b70a835dad314cd41e}{}undo\+\_\+dns4\label{interactive_8c_a767357491f19fc428e12e95225ac6127a6fc54a4486a571b70a835dad314cd41e}
+}]\index{undo\+\_\+dns6@{undo\+\_\+dns6}!interactive.\+c@{interactive.\+c}}\index{interactive.\+c@{interactive.\+c}!undo\+\_\+dns6@{undo\+\_\+dns6}}\item[{\em 
+\hypertarget{interactive_8c_a767357491f19fc428e12e95225ac6127a6f4fcaa4a9068ccd888ef0a972a1a924}{}undo\+\_\+dns6\label{interactive_8c_a767357491f19fc428e12e95225ac6127a6f4fcaa4a9068ccd888ef0a972a1a924}
+}]\index{\+\_\+undo\+\_\+type\+\_\+max@{\+\_\+undo\+\_\+type\+\_\+max}!interactive.\+c@{interactive.\+c}}\index{interactive.\+c@{interactive.\+c}!\+\_\+undo\+\_\+type\+\_\+max@{\+\_\+undo\+\_\+type\+\_\+max}}\item[{\em 
+\hypertarget{interactive_8c_a767357491f19fc428e12e95225ac6127a5663f98ec658c9d7819abb3b96a0b05f}{}\+\_\+undo\+\_\+type\+\_\+max\label{interactive_8c_a767357491f19fc428e12e95225ac6127a5663f98ec658c9d7819abb3b96a0b05f}
+}]\end{description}
+\end{Desc}
+
+
+\subsection{Function Documentation}
+\hypertarget{interactive_8c_abb763ed1be5210f61bf6f185ee4c3467}{}\index{interactive.\+c@{interactive.\+c}!Service\+Start\+Interactive@{Service\+Start\+Interactive}}
+\index{Service\+Start\+Interactive@{Service\+Start\+Interactive}!interactive.\+c@{interactive.\+c}}
+\subsubsection[{Service\+Start\+Interactive(\+D\+W\+O\+R\+D dw\+Argc, L\+P\+T\+S\+T\+R $\ast$lpsz\+Argv)}]{\setlength{\rightskip}{0pt plus 5cm}V\+O\+I\+D W\+I\+N\+A\+P\+I Service\+Start\+Interactive (
+\begin{DoxyParamCaption}
+\item[{D\+W\+O\+R\+D}]{dw\+Argc, }
+\item[{L\+P\+T\+S\+T\+R $\ast$}]{lpsz\+Argv}
+\end{DoxyParamCaption}
+)}\label{interactive_8c_abb763ed1be5210f61bf6f185ee4c3467}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{interactive_8c_abb763ed1be5210f61bf6f185ee4c3467_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{interactive_8c_abb763ed1be5210f61bf6f185ee4c3467_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{interactive_8c_ab9113fbe718dbccfdfb9f1bfc1137266}{}\index{interactive.\+c@{interactive.\+c}!Service\+Start\+Interactive\+Own@{Service\+Start\+Interactive\+Own}}
+\index{Service\+Start\+Interactive\+Own@{Service\+Start\+Interactive\+Own}!interactive.\+c@{interactive.\+c}}
+\subsubsection[{Service\+Start\+Interactive\+Own(\+D\+W\+O\+R\+D dw\+Argc, L\+P\+T\+S\+T\+R $\ast$lpsz\+Argv)}]{\setlength{\rightskip}{0pt plus 5cm}V\+O\+I\+D W\+I\+N\+A\+P\+I Service\+Start\+Interactive\+Own (
+\begin{DoxyParamCaption}
+\item[{D\+W\+O\+R\+D}]{dw\+Argc, }
+\item[{L\+P\+T\+S\+T\+R $\ast$}]{lpsz\+Argv}
+\end{DoxyParamCaption}
+)}\label{interactive_8c_ab9113fbe718dbccfdfb9f1bfc1137266}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{interactive_8c_ab9113fbe718dbccfdfb9f1bfc1137266_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=294pt]{interactive_8c_ab9113fbe718dbccfdfb9f1bfc1137266_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Variable Documentation}
+\hypertarget{interactive_8c_aa85687c1a27dabde58bff951314eab93}{}\index{interactive.\+c@{interactive.\+c}!interactive\+\_\+service@{interactive\+\_\+service}}
+\index{interactive\+\_\+service@{interactive\+\_\+service}!interactive.\+c@{interactive.\+c}}
+\subsubsection[{interactive\+\_\+service}]{\setlength{\rightskip}{0pt plus 5cm}{\bf openvpn\+\_\+service\+\_\+t} interactive\+\_\+service}\label{interactive_8c_aa85687c1a27dabde58bff951314eab93}
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+= \{
+    \hyperlink{service_8h_aef1837f9e79431d8295c9ef230dfcb71aa4f69043da5496da4702a05b6cdaab33}{interactive},
+    TEXT(PACKAGE\_NAME \textcolor{stringliteral}{"ServiceInteractive"}),
+    TEXT(PACKAGE\_NAME \textcolor{stringliteral}{" Interactive Service"}),
+    TEXT(\hyperlink{service_8h_a0c406ce56eab18fb4411f5487583005e}{SERVICE\_DEPENDENCIES}),
+    SERVICE\_AUTO\_START
+\}
+\end{DoxyCode}

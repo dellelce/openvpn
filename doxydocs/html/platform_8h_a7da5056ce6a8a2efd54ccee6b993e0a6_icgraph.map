@@ -1,0 +1,11 @@
+<map id="platform_fopen" name="platform_fopen">
+<area shape="rect" id="node2" href="$buffer_8h.html#ac6ca47343e8740ff6480de93840ad002" title="buffer_list_file" alt="" coords="173,5,273,32"/>
+<area shape="rect" id="node3" href="$misc_8h.html#aa26af8ee2558835f5c8c920fb12a1db6" title="test_file" alt="" coords="189,56,256,83"/>
+<area shape="rect" id="node5" href="$misc_8h.html#a17ec57572c876bf53ca3fa0cadb9c664" title="get_user_pass_cr" alt="" coords="160,107,285,133"/>
+<area shape="rect" id="node4" href="$ssl__verify_8h.html#a923edfe06fe9d56f1b92fea3ddfecbcf" title="verify_final_auth_checks" alt="" coords="333,56,496,83"/>
+<area shape="rect" id="node6" href="$ssl_8h.html#af56b704c18e57862a7cff9e2f5017d74" title="auth_user_pass_setup" alt="" coords="338,107,491,133"/>
+<area shape="rect" id="node7" href="$init_8h.html#a7876e414d4cb824cab1e8ad6b2c7c35c" title="init_query_passwords" alt="" coords="544,107,691,133"/>
+<area shape="rect" id="node8" href="$init_8h.html#a2986d81718c6cb5cd19bad612998d56f" title="init_instance" alt="" coords="739,107,833,133"/>
+<area shape="rect" id="node9" href="$init_8h.html#a6a1f31e3d9a1f00ef308cd117c540ed4" title="init_instance_handle\l_signals" alt="" coords="882,70,1022,111"/>
+<area shape="rect" id="node10" href="$init_8h.html#a2e3da881a15567d205101e6b0853987a" title="inherit_context_child" alt="" coords="881,136,1023,163"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="delayed_auth_pass_purge" name="delayed_auth_pass_purge">
+<area shape="rect" id="node2" href="$init_8h.html#a0efe2bfd4ac02795b81d7aafe116fd25" title="initialization_sequence\l_completed" alt="" coords="227,5,380,47"/>
+<area shape="rect" id="node3" href="$init_8h.html#a9b053b7a612943b6be1d1be2c25181bf" title="do_up" alt="" coords="428,13,485,39"/>
+<area shape="rect" id="node4" href="$forward_8c.html#af22e6b17de9f4a9c73f5f68c867a4ee6" title="check_connection_established\l_dowork" alt="" coords="533,5,733,47"/>
+</map>

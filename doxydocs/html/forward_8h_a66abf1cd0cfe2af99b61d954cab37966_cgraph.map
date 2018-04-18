@@ -1,0 +1,9 @@
+<map id="encrypt_sign" name="encrypt_sign">
+<area shape="rect" id="node2" href="$group__data__crypto.html#gaba03eaba587a89c2abda8780da7b3ac7" title="tls_pre_encrypt" alt="" coords="173,5,283,32"/>
+<area shape="rect" id="node3" href="$group__data__crypto.html#gad27b20736f89d38d0d2e0c2e35f7a0e3" title="tls_prepend_opcode_v2" alt="" coords="149,56,307,83"/>
+<area shape="rect" id="node4" href="$group__data__crypto.html#ga2756bad88224b98719d4e8f08cb11ef9" title="openvpn_encrypt" alt="" coords="169,107,287,133"/>
+<area shape="rect" id="node7" href="$group__data__crypto.html#gaac2b3aa2c842a102804be65f28adf4b1" title="tls_prepend_opcode_v1" alt="" coords="149,157,307,184"/>
+<area shape="rect" id="node8" href="$group__data__crypto.html#ga1f2ecd39b88da77b2f8067962155ea82" title="tls_post_encrypt" alt="" coords="169,208,287,235"/>
+<area shape="rect" id="node5" href="$crypto__backend_8h.html#a56d0dd0253f889a5305beb86d2900fe7" title="cipher_ctx_get_cipher_kt" alt="" coords="355,81,521,108"/>
+<area shape="rect" id="node6" href="$crypto__backend_8h.html#a21c134671c60f2bc399a5b5a76d7e084" title="cipher_kt_mode_aead" alt="" coords="363,132,513,159"/>
+</map>

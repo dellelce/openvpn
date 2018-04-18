@@ -1,0 +1,250 @@
+\hypertarget{group__control__processor}{}\section{Control\+\_\+processor}
+\label{group__control__processor}\index{Control\+\_\+processor@{Control\+\_\+processor}}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structkey}{key}
+\item 
+struct \hyperlink{structkey__ctx}{key\+\_\+ctx}
+\item 
+struct \hyperlink{structkey2}{key2}
+\item 
+struct \hyperlink{structkey__direction__state}{key\+\_\+direction\+\_\+state}
+\item 
+struct \hyperlink{structkey__ctx__bi}{key\+\_\+ctx\+\_\+bi}
+\item 
+struct \hyperlink{structkey__source}{key\+\_\+source}
+\item 
+struct \hyperlink{structkey__source2}{key\+\_\+source2}
+\item 
+struct \hyperlink{structkey__state}{key\+\_\+state}
+\item 
+struct \hyperlink{structtls__session}{tls\+\_\+session}
+\item 
+struct \hyperlink{structtls__multi}{tls\+\_\+multi}
+\end{DoxyCompactItemize}
+\subsection*{Functions for initialization and cleanup of tls\+\_\+multi structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structtls__multi}{tls\+\_\+multi} $\ast$ \hyperlink{group__control__processor_gaf7223d904613a08407ae52dc3831d7a2}{tls\+\_\+multi\+\_\+init} (struct \hyperlink{structtls__options}{tls\+\_\+options} $\ast$\hyperlink{structtls__options}{tls\+\_\+options})
+\item 
+void \hyperlink{group__control__processor_gada87c9f2a7755ab7507dd16fa6e22716}{tls\+\_\+multi\+\_\+init\+\_\+finalize} (struct \hyperlink{structtls__multi}{tls\+\_\+multi} $\ast$multi, const struct \hyperlink{structframe}{frame} $\ast$\hyperlink{structframe}{frame})
+\item 
+struct \hyperlink{structtls__auth__standalone}{tls\+\_\+auth\+\_\+standalone} $\ast$ \hyperlink{group__control__processor_ga03aaa9093737daae72627dc38198dd1d}{tls\+\_\+auth\+\_\+standalone\+\_\+init} (struct \hyperlink{structtls__options}{tls\+\_\+options} $\ast$\hyperlink{structtls__options}{tls\+\_\+options}, struct \hyperlink{structgc__arena}{gc\+\_\+arena} $\ast$gc)
+\item 
+void \hyperlink{group__control__processor_ga85674d980185b3f2923ae9540114289a}{tls\+\_\+auth\+\_\+standalone\+\_\+finalize} (struct \hyperlink{structtls__auth__standalone}{tls\+\_\+auth\+\_\+standalone} $\ast$tas, const struct \hyperlink{structframe}{frame} $\ast$\hyperlink{structframe}{frame})
+\item 
+void \hyperlink{group__control__processor_gafe3228d8a3cae5eb8f159e8230f4cd27}{tls\+\_\+multi\+\_\+init\+\_\+set\+\_\+options} (struct \hyperlink{structtls__multi}{tls\+\_\+multi} $\ast$multi, const char $\ast$local, const char $\ast$remote)
+\item 
+void \hyperlink{group__control__processor_ga3f6dae3fb4465d1c697a80fdebd50d67}{tls\+\_\+multi\+\_\+free} (struct \hyperlink{structtls__multi}{tls\+\_\+multi} $\ast$multi, \hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} clear)
+\end{DoxyCompactItemize}
+\subsection*{Control channel negotiation states}
+\label{_amgrp074f583fcd32a701d71d3a0081fec6b1}%
+These states represent the different phases of control channel negotiation between Open\+V\+P\+N peers. Open\+V\+P\+N servers and clients progress through the states in a different order, because of their different roles during exchange of random material. The references to the {\ttfamily \hyperlink{structkey__source2}{key\+\_\+source2}} structure in the list below is only valid if key method 2 is being used. See the \hyperlink{}{data channel key generation} related page for more information.
+
+Clients follow this order\+:
+\begin{DoxyEnumerate}
+\item {\ttfamily S\+\_\+\+I\+N\+I\+T\+I\+A\+L}, ready to begin three-\/way handshake and control channel negotiation.
+\item {\ttfamily S\+\_\+\+P\+R\+E\+\_\+\+S\+T\+A\+R\+T}, have started three-\/way handshake, waiting for acknowledgment from remote.
+\item {\ttfamily S\+\_\+\+S\+T\+A\+R\+T}, initial three-\/way handshake complete.
+\item {\ttfamily S\+\_\+\+S\+E\+N\+T\+\_\+\+K\+E\+Y}, have sent local part of {\ttfamily \hyperlink{structkey__source2}{key\+\_\+source2}} random material.
+\item {\ttfamily S\+\_\+\+G\+O\+T\+\_\+\+K\+E\+Y}, have received remote part of {\ttfamily \hyperlink{structkey__source2}{key\+\_\+source2}} random material.
+\item {\ttfamily S\+\_\+\+A\+C\+T\+I\+V\+E}, normal operation during remaining handshake window.
+\item {\ttfamily S\+\_\+\+N\+O\+R\+M\+A\+L\+\_\+\+O\+P}, normal operation.
+\end{DoxyEnumerate}
+
+Servers follow the same order, except for {\ttfamily S\+\_\+\+S\+E\+N\+T\+\_\+\+K\+E\+Y} and {\ttfamily S\+\_\+\+G\+O\+T\+\_\+\+K\+E\+Y} being reversed, because the server first receives the client\textquotesingle{}s {\ttfamily \hyperlink{structkey__source2}{key\+\_\+source2}} random material before generating and sending its own. \begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group__control__processor_gaf6e8cab5d0642b96ef462156816c3a28}{S\+\_\+\+E\+R\+R\+O\+R}~-\/1
+\item 
+\#define \hyperlink{group__control__processor_ga5c620f0ab83a389abc17d80bfb1e0665}{S\+\_\+\+U\+N\+D\+E\+F}~0
+\item 
+\#define \hyperlink{group__control__processor_gaf80d9f1dca21e561e35220bdeee2fc1e}{S\+\_\+\+I\+N\+I\+T\+I\+A\+L}~1
+\item 
+\#define \hyperlink{group__control__processor_ga6be8de96f4d931c3be923f74f8511b02}{S\+\_\+\+P\+R\+E\+\_\+\+S\+T\+A\+R\+T}~2
+\item 
+\#define \hyperlink{group__control__processor_ga66275a3888e8a86da79d69078c27c18d}{S\+\_\+\+S\+T\+A\+R\+T}~3
+\item 
+\#define \hyperlink{group__control__processor_gadf3421bc4c6c95c3ed9824fe7c2c20d8}{S\+\_\+\+S\+E\+N\+T\+\_\+\+K\+E\+Y}~4
+\item 
+\#define \hyperlink{group__control__processor_ga66bd0f7cdbc8450a4690c519de7d75bc}{S\+\_\+\+G\+O\+T\+\_\+\+K\+E\+Y}~5
+\item 
+\#define \hyperlink{group__control__processor_ga0b9dd6c70b47159cdbfbeecb4b971197}{S\+\_\+\+A\+C\+T\+I\+V\+E}~6
+\item 
+\#define \hyperlink{group__control__processor_gaa92fb79464b68ac009946bd9cc9b8d89}{S\+\_\+\+N\+O\+R\+M\+A\+L\+\_\+\+O\+P}~7
+\end{DoxyCompactItemize}
+\subsection*{Index of key\+\_\+state objects within a tls\+\_\+session structure}
+\label{_amgrp348dc162a1f22f9ec4d9fab524f330d1}%
+This is the index of {\ttfamily \hyperlink{structtls__session_a1de4672c1233dd4887122a909b10c314}{tls\+\_\+session.\+key}} \begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group__control__processor_ga53a47713d8d3afdedf8826560da3e8b1}{K\+S\+\_\+\+P\+R\+I\+M\+A\+R\+Y}~0
+\item 
+\#define \hyperlink{group__control__processor_gadf097bad90fb34433800b15445db8398}{K\+S\+\_\+\+L\+A\+M\+E\+\_\+\+D\+U\+C\+K}~1
+\item 
+\#define \hyperlink{group__control__processor_ga136f3095237ae23358c30581753e4178}{K\+S\+\_\+\+S\+I\+Z\+E}~2
+\end{DoxyCompactItemize}
+\subsection*{Index of tls\+\_\+session objects within a tls\+\_\+multi structure}
+\label{_amgrp12b5b9f5a31276d4e8a8352c56f23541}%
+This is the index of {\ttfamily \hyperlink{structtls__multi_a74e065e432f819307a830ef38d5be73c}{tls\+\_\+multi.\+session}} 
+
+Normally three \hyperlink{structtls__session}{tls\+\_\+session} objects are maintained by an active openvpn session. The first is the current, T\+L\+S authenticated session, the second is used to process connection requests from a new client that would usurp the current session if successfully authenticated, and the third is used as a repository for a \char`\"{}lame-\/duck\char`\"{} key in the event that the primary session resets due to error while the lame-\/duck key still has time left before its expiration. Lame duck keys are used to maintain the continuity of the data channel connection while a new key is being negotiated. \begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group__control__processor_gad3c70b02a0ca4537fba1d53802e1e429}{T\+M\+\_\+\+A\+C\+T\+I\+V\+E}~0
+\item 
+\#define \hyperlink{group__control__processor_ga6575a67494af1ca3e9608941e12a5386}{T\+M\+\_\+\+U\+N\+T\+R\+U\+S\+T\+E\+D}~1
+\item 
+\#define \hyperlink{group__control__processor_ga89d765b434597e7194131ace44c605af}{T\+M\+\_\+\+L\+A\+M\+E\+\_\+\+D\+U\+C\+K}~2
+\item 
+\#define \hyperlink{group__control__processor_gaa195349d22c113d3acc88b6795e491b8}{T\+M\+\_\+\+S\+I\+Z\+E}~3
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{group__control__processor_gadf097bad90fb34433800b15445db8398}{}\index{Control\+\_\+processor@{Control\+\_\+processor}!K\+S\+\_\+\+L\+A\+M\+E\+\_\+\+D\+U\+C\+K@{K\+S\+\_\+\+L\+A\+M\+E\+\_\+\+D\+U\+C\+K}}
+\index{K\+S\+\_\+\+L\+A\+M\+E\+\_\+\+D\+U\+C\+K@{K\+S\+\_\+\+L\+A\+M\+E\+\_\+\+D\+U\+C\+K}!Control\+\_\+processor@{Control\+\_\+processor}}
+\subsubsection[{K\+S\+\_\+\+L\+A\+M\+E\+\_\+\+D\+U\+C\+K}]{\setlength{\rightskip}{0pt plus 5cm}\#define K\+S\+\_\+\+L\+A\+M\+E\+\_\+\+D\+U\+C\+K~1}\label{group__control__processor_gadf097bad90fb34433800b15445db8398}
+Key state index that will retire soon. \hypertarget{group__control__processor_ga53a47713d8d3afdedf8826560da3e8b1}{}\index{Control\+\_\+processor@{Control\+\_\+processor}!K\+S\+\_\+\+P\+R\+I\+M\+A\+R\+Y@{K\+S\+\_\+\+P\+R\+I\+M\+A\+R\+Y}}
+\index{K\+S\+\_\+\+P\+R\+I\+M\+A\+R\+Y@{K\+S\+\_\+\+P\+R\+I\+M\+A\+R\+Y}!Control\+\_\+processor@{Control\+\_\+processor}}
+\subsubsection[{K\+S\+\_\+\+P\+R\+I\+M\+A\+R\+Y}]{\setlength{\rightskip}{0pt plus 5cm}\#define K\+S\+\_\+\+P\+R\+I\+M\+A\+R\+Y~0}\label{group__control__processor_ga53a47713d8d3afdedf8826560da3e8b1}
+Primary key state index. \hypertarget{group__control__processor_ga136f3095237ae23358c30581753e4178}{}\index{Control\+\_\+processor@{Control\+\_\+processor}!K\+S\+\_\+\+S\+I\+Z\+E@{K\+S\+\_\+\+S\+I\+Z\+E}}
+\index{K\+S\+\_\+\+S\+I\+Z\+E@{K\+S\+\_\+\+S\+I\+Z\+E}!Control\+\_\+processor@{Control\+\_\+processor}}
+\subsubsection[{K\+S\+\_\+\+S\+I\+Z\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define K\+S\+\_\+\+S\+I\+Z\+E~2}\label{group__control__processor_ga136f3095237ae23358c30581753e4178}
+Size of the {\ttfamily \hyperlink{structtls__session_a1de4672c1233dd4887122a909b10c314}{tls\+\_\+session.\+key}} array. \hypertarget{group__control__processor_ga0b9dd6c70b47159cdbfbeecb4b971197}{}\index{Control\+\_\+processor@{Control\+\_\+processor}!S\+\_\+\+A\+C\+T\+I\+V\+E@{S\+\_\+\+A\+C\+T\+I\+V\+E}}
+\index{S\+\_\+\+A\+C\+T\+I\+V\+E@{S\+\_\+\+A\+C\+T\+I\+V\+E}!Control\+\_\+processor@{Control\+\_\+processor}}
+\subsubsection[{S\+\_\+\+A\+C\+T\+I\+V\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\+\_\+\+A\+C\+T\+I\+V\+E~6}\label{group__control__processor_ga0b9dd6c70b47159cdbfbeecb4b971197}
+Operational {\ttfamily \hyperlink{structkey__state}{key\+\_\+state}} state immediately after negotiation has completed while still within the handshake window. \hypertarget{group__control__processor_gaf6e8cab5d0642b96ef462156816c3a28}{}\index{Control\+\_\+processor@{Control\+\_\+processor}!S\+\_\+\+E\+R\+R\+O\+R@{S\+\_\+\+E\+R\+R\+O\+R}}
+\index{S\+\_\+\+E\+R\+R\+O\+R@{S\+\_\+\+E\+R\+R\+O\+R}!Control\+\_\+processor@{Control\+\_\+processor}}
+\subsubsection[{S\+\_\+\+E\+R\+R\+O\+R}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\+\_\+\+E\+R\+R\+O\+R~-\/1}\label{group__control__processor_gaf6e8cab5d0642b96ef462156816c3a28}
+Error state. \hypertarget{group__control__processor_ga66bd0f7cdbc8450a4690c519de7d75bc}{}\index{Control\+\_\+processor@{Control\+\_\+processor}!S\+\_\+\+G\+O\+T\+\_\+\+K\+E\+Y@{S\+\_\+\+G\+O\+T\+\_\+\+K\+E\+Y}}
+\index{S\+\_\+\+G\+O\+T\+\_\+\+K\+E\+Y@{S\+\_\+\+G\+O\+T\+\_\+\+K\+E\+Y}!Control\+\_\+processor@{Control\+\_\+processor}}
+\subsubsection[{S\+\_\+\+G\+O\+T\+\_\+\+K\+E\+Y}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\+\_\+\+G\+O\+T\+\_\+\+K\+E\+Y~5}\label{group__control__processor_ga66bd0f7cdbc8450a4690c519de7d75bc}
+Local Open\+V\+P\+N process has received the remote\textquotesingle{}s part of the key material. \hypertarget{group__control__processor_gaf80d9f1dca21e561e35220bdeee2fc1e}{}\index{Control\+\_\+processor@{Control\+\_\+processor}!S\+\_\+\+I\+N\+I\+T\+I\+A\+L@{S\+\_\+\+I\+N\+I\+T\+I\+A\+L}}
+\index{S\+\_\+\+I\+N\+I\+T\+I\+A\+L@{S\+\_\+\+I\+N\+I\+T\+I\+A\+L}!Control\+\_\+processor@{Control\+\_\+processor}}
+\subsubsection[{S\+\_\+\+I\+N\+I\+T\+I\+A\+L}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\+\_\+\+I\+N\+I\+T\+I\+A\+L~1}\label{group__control__processor_gaf80d9f1dca21e561e35220bdeee2fc1e}
+Initial {\ttfamily \hyperlink{structkey__state}{key\+\_\+state}} state after initialization by {\ttfamily key\+\_\+state\+\_\+init()} before start of three-\/way handshake. \hypertarget{group__control__processor_gaa92fb79464b68ac009946bd9cc9b8d89}{}\index{Control\+\_\+processor@{Control\+\_\+processor}!S\+\_\+\+N\+O\+R\+M\+A\+L\+\_\+\+O\+P@{S\+\_\+\+N\+O\+R\+M\+A\+L\+\_\+\+O\+P}}
+\index{S\+\_\+\+N\+O\+R\+M\+A\+L\+\_\+\+O\+P@{S\+\_\+\+N\+O\+R\+M\+A\+L\+\_\+\+O\+P}!Control\+\_\+processor@{Control\+\_\+processor}}
+\subsubsection[{S\+\_\+\+N\+O\+R\+M\+A\+L\+\_\+\+O\+P}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\+\_\+\+N\+O\+R\+M\+A\+L\+\_\+\+O\+P~7}\label{group__control__processor_gaa92fb79464b68ac009946bd9cc9b8d89}
+Normal operational {\ttfamily \hyperlink{structkey__state}{key\+\_\+state}} state. \hypertarget{group__control__processor_ga6be8de96f4d931c3be923f74f8511b02}{}\index{Control\+\_\+processor@{Control\+\_\+processor}!S\+\_\+\+P\+R\+E\+\_\+\+S\+T\+A\+R\+T@{S\+\_\+\+P\+R\+E\+\_\+\+S\+T\+A\+R\+T}}
+\index{S\+\_\+\+P\+R\+E\+\_\+\+S\+T\+A\+R\+T@{S\+\_\+\+P\+R\+E\+\_\+\+S\+T\+A\+R\+T}!Control\+\_\+processor@{Control\+\_\+processor}}
+\subsubsection[{S\+\_\+\+P\+R\+E\+\_\+\+S\+T\+A\+R\+T}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\+\_\+\+P\+R\+E\+\_\+\+S\+T\+A\+R\+T~2}\label{group__control__processor_ga6be8de96f4d931c3be923f74f8511b02}
+Waiting for the remote Open\+V\+P\+N peer to acknowledge during the initial three-\/way handshake. \hypertarget{group__control__processor_gadf3421bc4c6c95c3ed9824fe7c2c20d8}{}\index{Control\+\_\+processor@{Control\+\_\+processor}!S\+\_\+\+S\+E\+N\+T\+\_\+\+K\+E\+Y@{S\+\_\+\+S\+E\+N\+T\+\_\+\+K\+E\+Y}}
+\index{S\+\_\+\+S\+E\+N\+T\+\_\+\+K\+E\+Y@{S\+\_\+\+S\+E\+N\+T\+\_\+\+K\+E\+Y}!Control\+\_\+processor@{Control\+\_\+processor}}
+\subsubsection[{S\+\_\+\+S\+E\+N\+T\+\_\+\+K\+E\+Y}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\+\_\+\+S\+E\+N\+T\+\_\+\+K\+E\+Y~4}\label{group__control__processor_gadf3421bc4c6c95c3ed9824fe7c2c20d8}
+Local Open\+V\+P\+N process has sent its part of the key material. \hypertarget{group__control__processor_ga66275a3888e8a86da79d69078c27c18d}{}\index{Control\+\_\+processor@{Control\+\_\+processor}!S\+\_\+\+S\+T\+A\+R\+T@{S\+\_\+\+S\+T\+A\+R\+T}}
+\index{S\+\_\+\+S\+T\+A\+R\+T@{S\+\_\+\+S\+T\+A\+R\+T}!Control\+\_\+processor@{Control\+\_\+processor}}
+\subsubsection[{S\+\_\+\+S\+T\+A\+R\+T}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\+\_\+\+S\+T\+A\+R\+T~3}\label{group__control__processor_ga66275a3888e8a86da79d69078c27c18d}
+Three-\/way handshake is complete, start of key exchange. \hypertarget{group__control__processor_ga5c620f0ab83a389abc17d80bfb1e0665}{}\index{Control\+\_\+processor@{Control\+\_\+processor}!S\+\_\+\+U\+N\+D\+E\+F@{S\+\_\+\+U\+N\+D\+E\+F}}
+\index{S\+\_\+\+U\+N\+D\+E\+F@{S\+\_\+\+U\+N\+D\+E\+F}!Control\+\_\+processor@{Control\+\_\+processor}}
+\subsubsection[{S\+\_\+\+U\+N\+D\+E\+F}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\+\_\+\+U\+N\+D\+E\+F~0}\label{group__control__processor_ga5c620f0ab83a389abc17d80bfb1e0665}
+Undefined state, used after a {\ttfamily \hyperlink{structkey__state}{key\+\_\+state}} is cleaned up. \hypertarget{group__control__processor_gad3c70b02a0ca4537fba1d53802e1e429}{}\index{Control\+\_\+processor@{Control\+\_\+processor}!T\+M\+\_\+\+A\+C\+T\+I\+V\+E@{T\+M\+\_\+\+A\+C\+T\+I\+V\+E}}
+\index{T\+M\+\_\+\+A\+C\+T\+I\+V\+E@{T\+M\+\_\+\+A\+C\+T\+I\+V\+E}!Control\+\_\+processor@{Control\+\_\+processor}}
+\subsubsection[{T\+M\+\_\+\+A\+C\+T\+I\+V\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\+M\+\_\+\+A\+C\+T\+I\+V\+E~0}\label{group__control__processor_gad3c70b02a0ca4537fba1d53802e1e429}
+Active {\ttfamily \hyperlink{structtls__session}{tls\+\_\+session}}. \hypertarget{group__control__processor_ga89d765b434597e7194131ace44c605af}{}\index{Control\+\_\+processor@{Control\+\_\+processor}!T\+M\+\_\+\+L\+A\+M\+E\+\_\+\+D\+U\+C\+K@{T\+M\+\_\+\+L\+A\+M\+E\+\_\+\+D\+U\+C\+K}}
+\index{T\+M\+\_\+\+L\+A\+M\+E\+\_\+\+D\+U\+C\+K@{T\+M\+\_\+\+L\+A\+M\+E\+\_\+\+D\+U\+C\+K}!Control\+\_\+processor@{Control\+\_\+processor}}
+\subsubsection[{T\+M\+\_\+\+L\+A\+M\+E\+\_\+\+D\+U\+C\+K}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\+M\+\_\+\+L\+A\+M\+E\+\_\+\+D\+U\+C\+K~2}\label{group__control__processor_ga89d765b434597e7194131ace44c605af}
+Old {\ttfamily \hyperlink{structtls__session}{tls\+\_\+session}}. \hypertarget{group__control__processor_gaa195349d22c113d3acc88b6795e491b8}{}\index{Control\+\_\+processor@{Control\+\_\+processor}!T\+M\+\_\+\+S\+I\+Z\+E@{T\+M\+\_\+\+S\+I\+Z\+E}}
+\index{T\+M\+\_\+\+S\+I\+Z\+E@{T\+M\+\_\+\+S\+I\+Z\+E}!Control\+\_\+processor@{Control\+\_\+processor}}
+\subsubsection[{T\+M\+\_\+\+S\+I\+Z\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\+M\+\_\+\+S\+I\+Z\+E~3}\label{group__control__processor_gaa195349d22c113d3acc88b6795e491b8}
+Size of the {\ttfamily \hyperlink{structtls__multi_a74e065e432f819307a830ef38d5be73c}{tls\+\_\+multi.\+session}} array. \hypertarget{group__control__processor_ga6575a67494af1ca3e9608941e12a5386}{}\index{Control\+\_\+processor@{Control\+\_\+processor}!T\+M\+\_\+\+U\+N\+T\+R\+U\+S\+T\+E\+D@{T\+M\+\_\+\+U\+N\+T\+R\+U\+S\+T\+E\+D}}
+\index{T\+M\+\_\+\+U\+N\+T\+R\+U\+S\+T\+E\+D@{T\+M\+\_\+\+U\+N\+T\+R\+U\+S\+T\+E\+D}!Control\+\_\+processor@{Control\+\_\+processor}}
+\subsubsection[{T\+M\+\_\+\+U\+N\+T\+R\+U\+S\+T\+E\+D}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\+M\+\_\+\+U\+N\+T\+R\+U\+S\+T\+E\+D~1}\label{group__control__processor_ga6575a67494af1ca3e9608941e12a5386}
+As yet un-\/trusted {\ttfamily \hyperlink{structtls__session}{tls\+\_\+session}} being negotiated. 
+
+\subsection{Function Documentation}
+\hypertarget{group__control__processor_ga85674d980185b3f2923ae9540114289a}{}\index{Control\+\_\+processor@{Control\+\_\+processor}!tls\+\_\+auth\+\_\+standalone\+\_\+finalize@{tls\+\_\+auth\+\_\+standalone\+\_\+finalize}}
+\index{tls\+\_\+auth\+\_\+standalone\+\_\+finalize@{tls\+\_\+auth\+\_\+standalone\+\_\+finalize}!Control\+\_\+processor@{Control\+\_\+processor}}
+\subsubsection[{tls\+\_\+auth\+\_\+standalone\+\_\+finalize(struct tls\+\_\+auth\+\_\+standalone $\ast$tas, const struct frame $\ast$frame)}]{\setlength{\rightskip}{0pt plus 5cm}void tls\+\_\+auth\+\_\+standalone\+\_\+finalize (
+\begin{DoxyParamCaption}
+\item[{struct {\bf tls\+\_\+auth\+\_\+standalone} $\ast$}]{tas, }
+\item[{const struct {\bf frame} $\ast$}]{frame}
+\end{DoxyParamCaption}
+)}\label{group__control__processor_ga85674d980185b3f2923ae9540114289a}
+\hypertarget{group__control__processor_ga03aaa9093737daae72627dc38198dd1d}{}\index{Control\+\_\+processor@{Control\+\_\+processor}!tls\+\_\+auth\+\_\+standalone\+\_\+init@{tls\+\_\+auth\+\_\+standalone\+\_\+init}}
+\index{tls\+\_\+auth\+\_\+standalone\+\_\+init@{tls\+\_\+auth\+\_\+standalone\+\_\+init}!Control\+\_\+processor@{Control\+\_\+processor}}
+\subsubsection[{tls\+\_\+auth\+\_\+standalone\+\_\+init(struct tls\+\_\+options $\ast$tls\+\_\+options, struct gc\+\_\+arena $\ast$gc)}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf tls\+\_\+auth\+\_\+standalone}$\ast$ tls\+\_\+auth\+\_\+standalone\+\_\+init (
+\begin{DoxyParamCaption}
+\item[{struct {\bf tls\+\_\+options} $\ast$}]{tls\+\_\+options, }
+\item[{struct {\bf gc\+\_\+arena} $\ast$}]{gc}
+\end{DoxyParamCaption}
+)}\label{group__control__processor_ga03aaa9093737daae72627dc38198dd1d}
+\hypertarget{group__control__processor_ga3f6dae3fb4465d1c697a80fdebd50d67}{}\index{Control\+\_\+processor@{Control\+\_\+processor}!tls\+\_\+multi\+\_\+free@{tls\+\_\+multi\+\_\+free}}
+\index{tls\+\_\+multi\+\_\+free@{tls\+\_\+multi\+\_\+free}!Control\+\_\+processor@{Control\+\_\+processor}}
+\subsubsection[{tls\+\_\+multi\+\_\+free(struct tls\+\_\+multi $\ast$multi, bool clear)}]{\setlength{\rightskip}{0pt plus 5cm}void tls\+\_\+multi\+\_\+free (
+\begin{DoxyParamCaption}
+\item[{struct {\bf tls\+\_\+multi} $\ast$}]{multi, }
+\item[{{\bf bool}}]{clear}
+\end{DoxyParamCaption}
+)}\label{group__control__processor_ga3f6dae3fb4465d1c697a80fdebd50d67}
+Cleanup a {\ttfamily \hyperlink{structtls__multi}{tls\+\_\+multi}} structure and free associated memory allocations.
+
+This function cleans up a {\ttfamily \hyperlink{structtls__multi}{tls\+\_\+multi}} structure. This includes cleaning up all associated {\ttfamily \hyperlink{structtls__session}{tls\+\_\+session}} structures.
+
+
+\begin{DoxyParams}{Parameters}
+{\em multi} & -\/ The {\ttfamily \hyperlink{structtls__multi}{tls\+\_\+multi}} structure to clean up in free. \\
+\hline
+{\em clear} & -\/ Whether the memory allocated for the {\itshape multi} object should be overwritten with 0s. \\
+\hline
+\end{DoxyParams}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=270pt]{group__control__processor_ga3f6dae3fb4465d1c697a80fdebd50d67_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{group__control__processor_gaf7223d904613a08407ae52dc3831d7a2}{}\index{Control\+\_\+processor@{Control\+\_\+processor}!tls\+\_\+multi\+\_\+init@{tls\+\_\+multi\+\_\+init}}
+\index{tls\+\_\+multi\+\_\+init@{tls\+\_\+multi\+\_\+init}!Control\+\_\+processor@{Control\+\_\+processor}}
+\subsubsection[{tls\+\_\+multi\+\_\+init(struct tls\+\_\+options $\ast$tls\+\_\+options)}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf tls\+\_\+multi}$\ast$ tls\+\_\+multi\+\_\+init (
+\begin{DoxyParamCaption}
+\item[{struct {\bf tls\+\_\+options} $\ast$}]{tls\+\_\+options}
+\end{DoxyParamCaption}
+)}\label{group__control__processor_gaf7223d904613a08407ae52dc3831d7a2}
+Allocate and initialize a {\ttfamily \hyperlink{structtls__multi}{tls\+\_\+multi}} structure.
+
+This function allocates a new {\ttfamily \hyperlink{structtls__multi}{tls\+\_\+multi}} structure, and performs some amount of initialization. Afterwards, the {\ttfamily \hyperlink{group__control__processor_gada87c9f2a7755ab7507dd16fa6e22716}{tls\+\_\+multi\+\_\+init\+\_\+finalize()}} function must be called to finalize the structure\textquotesingle{}s initialization process.
+
+
+\begin{DoxyParams}{Parameters}
+{\em \hyperlink{structtls__options}{tls\+\_\+options}} & -\/ The configuration options to be used for this V\+P\+N tunnel.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A newly allocated and initialized {\ttfamily \hyperlink{structtls__multi}{tls\+\_\+multi}} structure. 
+\end{DoxyReturn}
+\hypertarget{group__control__processor_gada87c9f2a7755ab7507dd16fa6e22716}{}\index{Control\+\_\+processor@{Control\+\_\+processor}!tls\+\_\+multi\+\_\+init\+\_\+finalize@{tls\+\_\+multi\+\_\+init\+\_\+finalize}}
+\index{tls\+\_\+multi\+\_\+init\+\_\+finalize@{tls\+\_\+multi\+\_\+init\+\_\+finalize}!Control\+\_\+processor@{Control\+\_\+processor}}
+\subsubsection[{tls\+\_\+multi\+\_\+init\+\_\+finalize(struct tls\+\_\+multi $\ast$multi, const struct frame $\ast$frame)}]{\setlength{\rightskip}{0pt plus 5cm}void tls\+\_\+multi\+\_\+init\+\_\+finalize (
+\begin{DoxyParamCaption}
+\item[{struct {\bf tls\+\_\+multi} $\ast$}]{multi, }
+\item[{const struct {\bf frame} $\ast$}]{frame}
+\end{DoxyParamCaption}
+)}\label{group__control__processor_gada87c9f2a7755ab7507dd16fa6e22716}
+Finalize initialization of a {\ttfamily \hyperlink{structtls__multi}{tls\+\_\+multi}} structure.
+
+This function initializes the {\ttfamily T\+M\+\_\+\+A\+C\+T\+I\+V\+E} {\ttfamily \hyperlink{structtls__session}{tls\+\_\+session}}, and in server mode also the {\ttfamily T\+M\+\_\+\+U\+N\+T\+R\+U\+S\+T\+E\+D} {\ttfamily \hyperlink{structtls__session}{tls\+\_\+session}}, associated with this {\ttfamily \hyperlink{structtls__multi}{tls\+\_\+multi}} structure. It also configures the control channel\textquotesingle{}s {\ttfamily frame} structure based on the data channel\textquotesingle{}s {\ttfamily frame} given in argument {\itshape frame}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em multi} & -\/ The {\ttfamily \hyperlink{structtls__multi}{tls\+\_\+multi}} structure of which to finalize initialization. \\
+\hline
+{\em frame} & -\/ The data channel\textquotesingle{}s {\ttfamily frame} structure. \\
+\hline
+\end{DoxyParams}
+\hypertarget{group__control__processor_gafe3228d8a3cae5eb8f159e8230f4cd27}{}\index{Control\+\_\+processor@{Control\+\_\+processor}!tls\+\_\+multi\+\_\+init\+\_\+set\+\_\+options@{tls\+\_\+multi\+\_\+init\+\_\+set\+\_\+options}}
+\index{tls\+\_\+multi\+\_\+init\+\_\+set\+\_\+options@{tls\+\_\+multi\+\_\+init\+\_\+set\+\_\+options}!Control\+\_\+processor@{Control\+\_\+processor}}
+\subsubsection[{tls\+\_\+multi\+\_\+init\+\_\+set\+\_\+options(struct tls\+\_\+multi $\ast$multi, const char $\ast$local, const char $\ast$remote)}]{\setlength{\rightskip}{0pt plus 5cm}void tls\+\_\+multi\+\_\+init\+\_\+set\+\_\+options (
+\begin{DoxyParamCaption}
+\item[{struct {\bf tls\+\_\+multi} $\ast$}]{multi, }
+\item[{const char $\ast$}]{local, }
+\item[{const char $\ast$}]{remote}
+\end{DoxyParamCaption}
+)}\label{group__control__processor_gafe3228d8a3cae5eb8f159e8230f4cd27}

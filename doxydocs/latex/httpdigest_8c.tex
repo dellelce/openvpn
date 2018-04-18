@@ -1,0 +1,99 @@
+\hypertarget{httpdigest_8c}{}\section{src/openvpn/httpdigest.c File Reference}
+\label{httpdigest_8c}\index{src/openvpn/httpdigest.\+c@{src/openvpn/httpdigest.\+c}}
+{\ttfamily \#include \char`\"{}syshead.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}crypto.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}httpdigest.\+h\char`\"{}}\\*
+Include dependency graph for httpdigest.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{httpdigest_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{httpdigest_8c_a5692d234c495cca238fb69c8e8952290}{Digest\+Calc\+H\+A1} (I\+N char $\ast$psz\+Alg, I\+N char $\ast$psz\+User\+Name, I\+N char $\ast$psz\+Realm, I\+N char $\ast$psz\+Password, I\+N char $\ast$psz\+Nonce, I\+N char $\ast$psz\+C\+Nonce, O\+U\+T H\+A\+S\+H\+H\+E\+X Session\+Key)
+\item 
+void \hyperlink{httpdigest_8c_adb30e176daa894b18a7f7cd2bca6bd9d}{Digest\+Calc\+Response} (I\+N H\+A\+S\+H\+H\+E\+X H\+A1, I\+N char $\ast$psz\+Nonce, I\+N char $\ast$psz\+Nonce\+Count, I\+N char $\ast$psz\+C\+Nonce, I\+N char $\ast$psz\+Qop, I\+N char $\ast$psz\+Method, I\+N char $\ast$psz\+Digest\+Uri, I\+N H\+A\+S\+H\+H\+E\+X H\+Entity, O\+U\+T H\+A\+S\+H\+H\+E\+X Response)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{httpdigest_8c_a5692d234c495cca238fb69c8e8952290}{}\index{httpdigest.\+c@{httpdigest.\+c}!Digest\+Calc\+H\+A1@{Digest\+Calc\+H\+A1}}
+\index{Digest\+Calc\+H\+A1@{Digest\+Calc\+H\+A1}!httpdigest.\+c@{httpdigest.\+c}}
+\subsubsection[{Digest\+Calc\+H\+A1(\+I\+N char $\ast$psz\+Alg, I\+N char $\ast$psz\+User\+Name, I\+N char $\ast$psz\+Realm, I\+N char $\ast$psz\+Password, I\+N char $\ast$psz\+Nonce, I\+N char $\ast$psz\+C\+Nonce, O\+U\+T H\+A\+S\+H\+H\+E\+X Session\+Key)}]{\setlength{\rightskip}{0pt plus 5cm}void Digest\+Calc\+H\+A1 (
+\begin{DoxyParamCaption}
+\item[{I\+N char $\ast$}]{psz\+Alg, }
+\item[{I\+N char $\ast$}]{psz\+User\+Name, }
+\item[{I\+N char $\ast$}]{psz\+Realm, }
+\item[{I\+N char $\ast$}]{psz\+Password, }
+\item[{I\+N char $\ast$}]{psz\+Nonce, }
+\item[{I\+N char $\ast$}]{psz\+C\+Nonce, }
+\item[{O\+U\+T H\+A\+S\+H\+H\+E\+X}]{Session\+Key}
+\end{DoxyParamCaption}
+)}\label{httpdigest_8c_a5692d234c495cca238fb69c8e8952290}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=287pt]{httpdigest_8c_a5692d234c495cca238fb69c8e8952290_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=306pt]{httpdigest_8c_a5692d234c495cca238fb69c8e8952290_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{httpdigest_8c_adb30e176daa894b18a7f7cd2bca6bd9d}{}\index{httpdigest.\+c@{httpdigest.\+c}!Digest\+Calc\+Response@{Digest\+Calc\+Response}}
+\index{Digest\+Calc\+Response@{Digest\+Calc\+Response}!httpdigest.\+c@{httpdigest.\+c}}
+\subsubsection[{Digest\+Calc\+Response(\+I\+N H\+A\+S\+H\+H\+E\+X H\+A1, I\+N char $\ast$psz\+Nonce, I\+N char $\ast$psz\+Nonce\+Count, I\+N char $\ast$psz\+C\+Nonce, I\+N char $\ast$psz\+Qop, I\+N char $\ast$psz\+Method, I\+N char $\ast$psz\+Digest\+Uri, I\+N H\+A\+S\+H\+H\+E\+X H\+Entity, O\+U\+T H\+A\+S\+H\+H\+E\+X Response)}]{\setlength{\rightskip}{0pt plus 5cm}void Digest\+Calc\+Response (
+\begin{DoxyParamCaption}
+\item[{I\+N H\+A\+S\+H\+H\+E\+X}]{H\+A1, }
+\item[{I\+N char $\ast$}]{psz\+Nonce, }
+\item[{I\+N char $\ast$}]{psz\+Nonce\+Count, }
+\item[{I\+N char $\ast$}]{psz\+C\+Nonce, }
+\item[{I\+N char $\ast$}]{psz\+Qop, }
+\item[{I\+N char $\ast$}]{psz\+Method, }
+\item[{I\+N char $\ast$}]{psz\+Digest\+Uri, }
+\item[{I\+N H\+A\+S\+H\+H\+E\+X}]{H\+Entity, }
+\item[{O\+U\+T H\+A\+S\+H\+H\+E\+X}]{Response}
+\end{DoxyParamCaption}
+)}\label{httpdigest_8c_adb30e176daa894b18a7f7cd2bca6bd9d}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=311pt]{httpdigest_8c_adb30e176daa894b18a7f7cd2bca6bd9d_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=330pt]{httpdigest_8c_adb30e176daa894b18a7f7cd2bca6bd9d_icgraph}
+\end{center}
+\end{figure}
+
+

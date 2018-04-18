@@ -1,0 +1,5 @@
+<map id="add_route" name="add_route">
+<area shape="rect" id="node2" href="$route_8h.html#a71b6566b675a91729b168da08d71d052" title="add_routes" alt="" coords="132,5,219,32"/>
+<area shape="rect" id="node4" href="$tun_8h.html#a29632143fb8b809282d762f9a2850500" title="do_ifconfig" alt="" coords="134,56,217,83"/>
+<area shape="rect" id="node3" href="$init_8h.html#a6445a4c044e64ef173fd00db00a860bf" title="do_route" alt="" coords="267,5,339,32"/>
+</map>

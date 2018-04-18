@@ -1,0 +1,5 @@
+<map id="route_ipv6_clear_host_bits" name="route_ipv6_clear_host_bits">
+<area shape="rect" id="node2" href="$route_8h.html#a788bc024ca7fd587866a9928e235b572" title="add_route_ipv6" alt="" coords="228,5,336,32"/>
+<area shape="rect" id="node3" href="$route_8h.html#a71b6566b675a91729b168da08d71d052" title="add_routes" alt="" coords="384,5,471,32"/>
+<area shape="rect" id="node4" href="$init_8h.html#a6445a4c044e64ef173fd00db00a860bf" title="do_route" alt="" coords="519,5,591,32"/>
+</map>

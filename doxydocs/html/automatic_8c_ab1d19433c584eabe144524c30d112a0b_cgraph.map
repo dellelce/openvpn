@@ -1,0 +1,11 @@
+<map id="ServiceStartAutomaticOwn" name="ServiceStartAutomaticOwn">
+<area shape="rect" id="node2" href="$automatic_8c.html#a74e28f33531506012a6fece0b25ed440" title="ServiceStartAutomatic" alt="" coords="231,132,381,159"/>
+<area shape="rect" id="node3" href="$service_8c.html#a9f46bc08640b6816eab1e49e72a08145" title="ReportStatusToSCMgr" alt="" coords="429,56,580,83"/>
+<area shape="rect" id="node4" href="$common_8c.html#a8d96b9d66b4a1f920afe99d73686d8e5" title="MsgToEventLog" alt="" coords="648,31,761,57"/>
+<area shape="rect" id="node6" href="$common_8c.html#ae697dac0c0dd8b6b2eeef1283595efe4" title="openvpn_sntprintf" alt="" coords="997,56,1120,83"/>
+<area shape="rect" id="node8" href="$automatic_8c.html#a1d8f55145f1d5ef92df4e86bdf50f96f" title="create_event" alt="" coords="457,259,552,285"/>
+<area shape="rect" id="node9" href="$automatic_8c.html#aef221066442b594355d1ed2ac80a3736" title="init_security_attributes\l_allow_all" alt="" coords="628,230,781,271"/>
+<area shape="rect" id="node10" href="$common_8c.html#ab54be77a669fa1e3eb854462610e5521" title="GetOpenvpnSettings" alt="" coords="434,107,575,133"/>
+<area shape="rect" id="node5" href="$common_8c.html#a2610102e271fc65ae8908d593cab8afd" title="GetLastErrorText" alt="" coords="829,56,949,83"/>
+<area shape="rect" id="node7" href="$common_8c.html#a443b5988f6015454008fdab390a50edb" title="openvpn_vsntprintf" alt="" coords="1168,5,1295,32"/>
+</map>

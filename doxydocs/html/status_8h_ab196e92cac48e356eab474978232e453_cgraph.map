@@ -1,0 +1,9 @@
+<map id="status_open" name="status_open">
+<area shape="rect" id="node2" href="$platform_8c.html#adb289c825e8632ae08564aaa193a608d" title="platform_open" alt="" coords="147,5,249,32"/>
+<area shape="rect" id="node3" href="$buffer_8c.html#a06e0220403278399596a7a1b6b601fca" title="string_alloc" alt="" coords="154,56,242,83"/>
+<area shape="rect" id="node5" href="$fdmisc_8c.html#a09193ec56615d682308eff8c491fc791" title="set_cloexec" alt="" coords="152,107,244,133"/>
+<area shape="rect" id="node7" href="$buffer_8c.html#aa6bae12914d41c7aecaa7b64fea1bc51" title="alloc_buf" alt="" coords="161,157,235,184"/>
+<area shape="rect" id="node4" href="$buffer_8c.html#a67f7dec7f86e113dc0744584fd80b621" title="gc_malloc" alt="" coords="324,56,405,83"/>
+<area shape="rect" id="node6" href="$fdmisc_8c.html#a2a0bdc9a9465ff3df6ba4eb3f6d685e3" title="set_cloexec_action" alt="" coords="297,107,432,133"/>
+<area shape="rect" id="node8" href="$buffer_8c.html#acc1a4ee83a591116d331e52baacf253d" title="buf_size_error" alt="" coords="313,157,416,184"/>
+</map>

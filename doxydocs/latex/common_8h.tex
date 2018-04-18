@@ -1,0 +1,87 @@
+\hypertarget{common_8h}{}\section{src/openvpn/common.h File Reference}
+\label{common_8h}\index{src/openvpn/common.\+h@{src/openvpn/common.\+h}}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{common_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{common_8h_a72e9834cd0f5b1d57eceed2cb68fe555}{counter\+\_\+format}~\char`\"{}\%u\char`\"{}
+\item 
+\#define \hyperlink{common_8h_a99ad1b2f46ff50b47305d281730c24d3}{B\+I\+G\+\_\+\+T\+I\+M\+E\+O\+U\+T}~(60$\ast$60$\ast$24$\ast$7)  /$\ast$ one week (in seconds) $\ast$/
+\item 
+\#define \hyperlink{common_8h_ace3be72d6ded2dfae474ee913948d9ba}{ptr\+\_\+format}~\char`\"{}0x\%08lx\char`\"{}
+\item 
+\#define \hyperlink{common_8h_a3e02c7c47b277f4a757620d259a1c6a0}{fragment\+\_\+header\+\_\+format}~\char`\"{}0x\%08x\char`\"{}
+\item 
+\#define \hyperlink{common_8h_a6c935b85d586856bb3509ed4fa496727}{C\+C\+D\+\_\+\+D\+E\+F\+A\+U\+L\+T}~\char`\"{}D\+E\+F\+A\+U\+L\+T\char`\"{}
+\item 
+\#define \hyperlink{common_8h_a4214355e5ba4cd31502b8045603d7fef}{T\+L\+S\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+B\+U\+F\+\_\+\+S\+I\+Z\+E}~2048
+\item 
+\#define \hyperlink{common_8h_acffcd4cb515881c936f8b7092f235f3e}{P\+U\+S\+H\+\_\+\+B\+U\+N\+D\+L\+E\+\_\+\+S\+I\+Z\+E}~1024
+\item 
+\#define \hyperlink{common_8h_a82f7052097bbb3782cda1437e443eeea}{P\+U\+S\+H\+\_\+\+R\+E\+Q\+U\+E\+S\+T\+\_\+\+I\+N\+T\+E\+R\+V\+A\+L}~5
+\item 
+\#define \hyperlink{common_8h_a735d2ace59b94a9a31ecd0a6cc9fff8b}{I\+N\+L\+I\+N\+E\+\_\+\+F\+I\+L\+E\+\_\+\+T\+A\+G}~\char`\"{}\mbox{[}\mbox{[}I\+N\+L\+I\+N\+E\mbox{]}\mbox{]}\char`\"{}
+\item 
+\#define \hyperlink{common_8h_a79bf73474cbd03d78296280f02b91be7}{S\+C\+R\+I\+P\+T\+\_\+\+S\+E\+C\+U\+R\+I\+T\+Y\+\_\+\+W\+A\+R\+N\+I\+N\+G}~\char`\"{}W\+A\+R\+N\+I\+N\+G\+: External program may not be called unless \textquotesingle{}-\/-\/script-\/security 2\textquotesingle{} or higher is enabled. See -\/-\/help text or man page for detailed info.\char`\"{}
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef unsigned int \hyperlink{common_8h_a00dd6fbfb368a41945c8c6b9d6fbf88f}{counter\+\_\+type}
+\item 
+typedef int \hyperlink{common_8h_a3d8621f960ada51a5ad9ff181730481a}{interval\+\_\+t}
+\item 
+typedef unsigned long \hyperlink{common_8h_aabc53d4dd55c2d8cd1210596383c3648}{ptr\+\_\+type}
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{common_8h_a99ad1b2f46ff50b47305d281730c24d3}{}\index{common.\+h@{common.\+h}!B\+I\+G\+\_\+\+T\+I\+M\+E\+O\+U\+T@{B\+I\+G\+\_\+\+T\+I\+M\+E\+O\+U\+T}}
+\index{B\+I\+G\+\_\+\+T\+I\+M\+E\+O\+U\+T@{B\+I\+G\+\_\+\+T\+I\+M\+E\+O\+U\+T}!common.\+h@{common.\+h}}
+\subsubsection[{B\+I\+G\+\_\+\+T\+I\+M\+E\+O\+U\+T}]{\setlength{\rightskip}{0pt plus 5cm}\#define B\+I\+G\+\_\+\+T\+I\+M\+E\+O\+U\+T~(60$\ast$60$\ast$24$\ast$7)  /$\ast$ one week (in seconds) $\ast$/}\label{common_8h_a99ad1b2f46ff50b47305d281730c24d3}
+\hypertarget{common_8h_a6c935b85d586856bb3509ed4fa496727}{}\index{common.\+h@{common.\+h}!C\+C\+D\+\_\+\+D\+E\+F\+A\+U\+L\+T@{C\+C\+D\+\_\+\+D\+E\+F\+A\+U\+L\+T}}
+\index{C\+C\+D\+\_\+\+D\+E\+F\+A\+U\+L\+T@{C\+C\+D\+\_\+\+D\+E\+F\+A\+U\+L\+T}!common.\+h@{common.\+h}}
+\subsubsection[{C\+C\+D\+\_\+\+D\+E\+F\+A\+U\+L\+T}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+C\+D\+\_\+\+D\+E\+F\+A\+U\+L\+T~\char`\"{}D\+E\+F\+A\+U\+L\+T\char`\"{}}\label{common_8h_a6c935b85d586856bb3509ed4fa496727}
+\hypertarget{common_8h_a72e9834cd0f5b1d57eceed2cb68fe555}{}\index{common.\+h@{common.\+h}!counter\+\_\+format@{counter\+\_\+format}}
+\index{counter\+\_\+format@{counter\+\_\+format}!common.\+h@{common.\+h}}
+\subsubsection[{counter\+\_\+format}]{\setlength{\rightskip}{0pt plus 5cm}\#define counter\+\_\+format~\char`\"{}\%u\char`\"{}}\label{common_8h_a72e9834cd0f5b1d57eceed2cb68fe555}
+\hypertarget{common_8h_a3e02c7c47b277f4a757620d259a1c6a0}{}\index{common.\+h@{common.\+h}!fragment\+\_\+header\+\_\+format@{fragment\+\_\+header\+\_\+format}}
+\index{fragment\+\_\+header\+\_\+format@{fragment\+\_\+header\+\_\+format}!common.\+h@{common.\+h}}
+\subsubsection[{fragment\+\_\+header\+\_\+format}]{\setlength{\rightskip}{0pt plus 5cm}\#define fragment\+\_\+header\+\_\+format~\char`\"{}0x\%08x\char`\"{}}\label{common_8h_a3e02c7c47b277f4a757620d259a1c6a0}
+\hypertarget{common_8h_a735d2ace59b94a9a31ecd0a6cc9fff8b}{}\index{common.\+h@{common.\+h}!I\+N\+L\+I\+N\+E\+\_\+\+F\+I\+L\+E\+\_\+\+T\+A\+G@{I\+N\+L\+I\+N\+E\+\_\+\+F\+I\+L\+E\+\_\+\+T\+A\+G}}
+\index{I\+N\+L\+I\+N\+E\+\_\+\+F\+I\+L\+E\+\_\+\+T\+A\+G@{I\+N\+L\+I\+N\+E\+\_\+\+F\+I\+L\+E\+\_\+\+T\+A\+G}!common.\+h@{common.\+h}}
+\subsubsection[{I\+N\+L\+I\+N\+E\+\_\+\+F\+I\+L\+E\+\_\+\+T\+A\+G}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\+N\+L\+I\+N\+E\+\_\+\+F\+I\+L\+E\+\_\+\+T\+A\+G~\char`\"{}\mbox{[}\mbox{[}I\+N\+L\+I\+N\+E\mbox{]}\mbox{]}\char`\"{}}\label{common_8h_a735d2ace59b94a9a31ecd0a6cc9fff8b}
+\hypertarget{common_8h_ace3be72d6ded2dfae474ee913948d9ba}{}\index{common.\+h@{common.\+h}!ptr\+\_\+format@{ptr\+\_\+format}}
+\index{ptr\+\_\+format@{ptr\+\_\+format}!common.\+h@{common.\+h}}
+\subsubsection[{ptr\+\_\+format}]{\setlength{\rightskip}{0pt plus 5cm}\#define ptr\+\_\+format~\char`\"{}0x\%08lx\char`\"{}}\label{common_8h_ace3be72d6ded2dfae474ee913948d9ba}
+\hypertarget{common_8h_acffcd4cb515881c936f8b7092f235f3e}{}\index{common.\+h@{common.\+h}!P\+U\+S\+H\+\_\+\+B\+U\+N\+D\+L\+E\+\_\+\+S\+I\+Z\+E@{P\+U\+S\+H\+\_\+\+B\+U\+N\+D\+L\+E\+\_\+\+S\+I\+Z\+E}}
+\index{P\+U\+S\+H\+\_\+\+B\+U\+N\+D\+L\+E\+\_\+\+S\+I\+Z\+E@{P\+U\+S\+H\+\_\+\+B\+U\+N\+D\+L\+E\+\_\+\+S\+I\+Z\+E}!common.\+h@{common.\+h}}
+\subsubsection[{P\+U\+S\+H\+\_\+\+B\+U\+N\+D\+L\+E\+\_\+\+S\+I\+Z\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\+U\+S\+H\+\_\+\+B\+U\+N\+D\+L\+E\+\_\+\+S\+I\+Z\+E~1024}\label{common_8h_acffcd4cb515881c936f8b7092f235f3e}
+\hypertarget{common_8h_a82f7052097bbb3782cda1437e443eeea}{}\index{common.\+h@{common.\+h}!P\+U\+S\+H\+\_\+\+R\+E\+Q\+U\+E\+S\+T\+\_\+\+I\+N\+T\+E\+R\+V\+A\+L@{P\+U\+S\+H\+\_\+\+R\+E\+Q\+U\+E\+S\+T\+\_\+\+I\+N\+T\+E\+R\+V\+A\+L}}
+\index{P\+U\+S\+H\+\_\+\+R\+E\+Q\+U\+E\+S\+T\+\_\+\+I\+N\+T\+E\+R\+V\+A\+L@{P\+U\+S\+H\+\_\+\+R\+E\+Q\+U\+E\+S\+T\+\_\+\+I\+N\+T\+E\+R\+V\+A\+L}!common.\+h@{common.\+h}}
+\subsubsection[{P\+U\+S\+H\+\_\+\+R\+E\+Q\+U\+E\+S\+T\+\_\+\+I\+N\+T\+E\+R\+V\+A\+L}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\+U\+S\+H\+\_\+\+R\+E\+Q\+U\+E\+S\+T\+\_\+\+I\+N\+T\+E\+R\+V\+A\+L~5}\label{common_8h_a82f7052097bbb3782cda1437e443eeea}
+\hypertarget{common_8h_a79bf73474cbd03d78296280f02b91be7}{}\index{common.\+h@{common.\+h}!S\+C\+R\+I\+P\+T\+\_\+\+S\+E\+C\+U\+R\+I\+T\+Y\+\_\+\+W\+A\+R\+N\+I\+N\+G@{S\+C\+R\+I\+P\+T\+\_\+\+S\+E\+C\+U\+R\+I\+T\+Y\+\_\+\+W\+A\+R\+N\+I\+N\+G}}
+\index{S\+C\+R\+I\+P\+T\+\_\+\+S\+E\+C\+U\+R\+I\+T\+Y\+\_\+\+W\+A\+R\+N\+I\+N\+G@{S\+C\+R\+I\+P\+T\+\_\+\+S\+E\+C\+U\+R\+I\+T\+Y\+\_\+\+W\+A\+R\+N\+I\+N\+G}!common.\+h@{common.\+h}}
+\subsubsection[{S\+C\+R\+I\+P\+T\+\_\+\+S\+E\+C\+U\+R\+I\+T\+Y\+\_\+\+W\+A\+R\+N\+I\+N\+G}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\+C\+R\+I\+P\+T\+\_\+\+S\+E\+C\+U\+R\+I\+T\+Y\+\_\+\+W\+A\+R\+N\+I\+N\+G~\char`\"{}W\+A\+R\+N\+I\+N\+G\+: External program may not be called unless \textquotesingle{}-\/-\/script-\/security 2\textquotesingle{} or higher is enabled. See -\/-\/help text or man page for detailed info.\char`\"{}}\label{common_8h_a79bf73474cbd03d78296280f02b91be7}
+\hypertarget{common_8h_a4214355e5ba4cd31502b8045603d7fef}{}\index{common.\+h@{common.\+h}!T\+L\+S\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+B\+U\+F\+\_\+\+S\+I\+Z\+E@{T\+L\+S\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+B\+U\+F\+\_\+\+S\+I\+Z\+E}}
+\index{T\+L\+S\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+B\+U\+F\+\_\+\+S\+I\+Z\+E@{T\+L\+S\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+B\+U\+F\+\_\+\+S\+I\+Z\+E}!common.\+h@{common.\+h}}
+\subsubsection[{T\+L\+S\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+B\+U\+F\+\_\+\+S\+I\+Z\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\+L\+S\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+B\+U\+F\+\_\+\+S\+I\+Z\+E~2048}\label{common_8h_a4214355e5ba4cd31502b8045603d7fef}
+
+
+\subsection{Typedef Documentation}
+\hypertarget{common_8h_a00dd6fbfb368a41945c8c6b9d6fbf88f}{}\index{common.\+h@{common.\+h}!counter\+\_\+type@{counter\+\_\+type}}
+\index{counter\+\_\+type@{counter\+\_\+type}!common.\+h@{common.\+h}}
+\subsubsection[{counter\+\_\+type}]{\setlength{\rightskip}{0pt plus 5cm}typedef unsigned int {\bf counter\+\_\+type}}\label{common_8h_a00dd6fbfb368a41945c8c6b9d6fbf88f}
+\hypertarget{common_8h_a3d8621f960ada51a5ad9ff181730481a}{}\index{common.\+h@{common.\+h}!interval\+\_\+t@{interval\+\_\+t}}
+\index{interval\+\_\+t@{interval\+\_\+t}!common.\+h@{common.\+h}}
+\subsubsection[{interval\+\_\+t}]{\setlength{\rightskip}{0pt plus 5cm}typedef int {\bf interval\+\_\+t}}\label{common_8h_a3d8621f960ada51a5ad9ff181730481a}
+\hypertarget{common_8h_aabc53d4dd55c2d8cd1210596383c3648}{}\index{common.\+h@{common.\+h}!ptr\+\_\+type@{ptr\+\_\+type}}
+\index{ptr\+\_\+type@{ptr\+\_\+type}!common.\+h@{common.\+h}}
+\subsubsection[{ptr\+\_\+type}]{\setlength{\rightskip}{0pt plus 5cm}typedef unsigned long {\bf ptr\+\_\+type}}\label{common_8h_aabc53d4dd55c2d8cd1210596383c3648}

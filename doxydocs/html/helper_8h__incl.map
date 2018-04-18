@@ -1,0 +1,33 @@
+<map id="src/openvpn/helper.h" name="src/openvpn/helper.h">
+<area shape="rect" id="node2" href="$options_8h.html" title="options.h" alt="" coords="1229,80,1304,107"/>
+<area shape="rect" id="node3" href="$basic_8h.html" title="basic.h" alt="" coords="1076,827,1140,853"/>
+<area shape="rect" id="node4" href="$common_8h.html" title="common.h" alt="" coords="264,677,347,704"/>
+<area shape="rect" id="node5" href="$mtu_8h.html" title="mtu.h" alt="" coords="755,304,810,331"/>
+<area shape="rect" id="node12" href="$route_8h.html" title="route.h" alt="" coords="1045,155,1107,181"/>
+<area shape="rect" id="node13" href="$tun_8h.html" title="tun.h" alt="" coords="339,229,389,256"/>
+<area shape="rect" id="node27" href="$socket_8h.html" title="socket.h" alt="" coords="681,229,753,256"/>
+<area shape="rect" id="node28" href="$proxy_8h.html" title="proxy.h" alt="" coords="1101,379,1165,405"/>
+<area shape="rect" id="node30" href="$plugin_8h.html" title="plugin.h" alt="" coords="1651,155,1717,181"/>
+<area shape="rect" id="node32" href="$manage_8h.html" title="manage.h" alt="" coords="1355,155,1434,181"/>
+<area shape="rect" id="node33" href="$comp_8h.html" title="comp.h" alt="" coords="1458,155,1523,181"/>
+<area shape="rect" id="node34" href="$pushlist_8h.html" title="pushlist.h" alt="" coords="1547,155,1626,181"/>
+<area shape="rect" id="node35" href="$clinat_8h.html" title="clinat.h" alt="" coords="1253,304,1317,331"/>
+<area shape="rect" id="node36" href="$crypto__backend_8h.html" title="crypto_backend.h" alt="" coords="1541,752,1667,779"/>
+<area shape="rect" id="node6" href="$buffer_8h.html" title="buffer.h" alt="" coords="838,677,901,704"/>
+<area shape="rect" id="node7" href="$error_8h.html" title="error.h" alt="" coords="497,752,556,779"/>
+<area shape="rect" id="node11" href="$errlevel_8h.html" title="errlevel.h" alt="" coords="586,827,659,853"/>
+<area shape="rect" id="node23" href="$misc_8h.html" title="misc.h" alt="" coords="919,453,980,480"/>
+<area shape="rect" id="node14" href="$win32_8h.html" title="win32.h" alt="" coords="295,453,361,480"/>
+<area shape="rect" id="node15" href="$event_8h.html" title="event.h" alt="" coords="333,304,395,331"/>
+<area shape="rect" id="node22" href="$proto_8h.html" title="proto.h" alt="" coords="345,528,407,555"/>
+<area shape="rect" id="node16" href="$sig_8h.html" title="sig.h" alt="" coords="245,379,296,405"/>
+<area shape="rect" id="node21" href="$perf_8h.html" title="perf.h" alt="" coords="371,379,426,405"/>
+<area shape="rect" id="node17" href="$status_8h.html" title="status.h" alt="" coords="144,453,213,480"/>
+<area shape="rect" id="node18" href="$interval_8h.html" title="interval.h" alt="" coords="94,528,167,555"/>
+<area shape="rect" id="node19" href="$otime_8h.html" title="otime.h" alt="" coords="419,603,485,629"/>
+<area shape="rect" id="node20" href="$integer_8h.html" title="integer.h" alt="" coords="491,677,562,704"/>
+<area shape="rect" id="node24" href="$argv_8h.html" title="argv.h" alt="" coords="907,603,962,629"/>
+<area shape="rect" id="node25" href="$env__set_8h.html" title="env_set.h" alt="" coords="835,528,912,555"/>
+<area shape="rect" id="node26" href="$platform_8h.html" title="platform.h" alt="" coords="1126,752,1205,779"/>
+<area shape="rect" id="node29" href="$socks_8h.html" title="socks.h" alt="" coords="713,603,781,629"/>
+</map>

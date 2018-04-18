@@ -1,0 +1,51 @@
+\hypertarget{structbuffer}{}\section{buffer Struct Reference}
+\label{structbuffer}\index{buffer@{buffer}}
+
+
+{\ttfamily \#include $<$buffer.\+h$>$}
+
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{structbuffer_a1fb6dcafc58a5ddc11c4d60c09a2e086}{capacity}
+\item 
+int \hyperlink{structbuffer_af5c1acadd937a2944674832497ba63ad}{offset}
+\item 
+int \hyperlink{structbuffer_ada52eab703a091ff327114b3b3b0140a}{len}
+\item 
+uint8\+\_\+t $\ast$ \hyperlink{structbuffer_a5d2300c691699fd563f7a1a280c2c2d6}{data}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Wrapper structure for dynamically allocated memory.
+
+The actual content stored in a {\ttfamily buffer} structure starts at the memory location {\ttfamily \hyperlink{structbuffer_a5d2300c691699fd563f7a1a280c2c2d6}{buffer.\+data}} {\ttfamily +} {\ttfamily \hyperlink{structbuffer_af5c1acadd937a2944674832497ba63ad}{buffer.\+offset}}, and has a length of {\ttfamily \hyperlink{structbuffer_ada52eab703a091ff327114b3b3b0140a}{buffer.\+len}} bytes. This, together with the space available before and after the content, is represented in the pseudocode below\+: 
+\begin{DoxyCode}
+uint8\_t *content\_start    = \hyperlink{structbuffer}{buffer}.\hyperlink{structbuffer_a5d2300c691699fd563f7a1a280c2c2d6}{data} + \hyperlink{structbuffer}{buffer}.\hyperlink{structbuffer_af5c1acadd937a2944674832497ba63ad}{offset};
+uint8\_t *content\_end      = \hyperlink{structbuffer}{buffer}.\hyperlink{structbuffer_a5d2300c691699fd563f7a1a280c2c2d6}{data} + \hyperlink{structbuffer}{buffer}.\hyperlink{structbuffer_af5c1acadd937a2944674832497ba63ad}{offset} + 
+      \hyperlink{structbuffer}{buffer}.\hyperlink{structbuffer_ada52eab703a091ff327114b3b3b0140a}{len};
+\textcolor{keywordtype}{int}      prepend\_capacity = \hyperlink{structbuffer}{buffer}.\hyperlink{structbuffer_af5c1acadd937a2944674832497ba63ad}{offset};
+\textcolor{keywordtype}{int}      append\_capacity  = \hyperlink{structbuffer}{buffer}.\hyperlink{structbuffer_a1fb6dcafc58a5ddc11c4d60c09a2e086}{capacity} - (\hyperlink{structbuffer}{buffer}.\hyperlink{structbuffer_af5c1acadd937a2944674832497ba63ad}{offset} + 
+      \hyperlink{structbuffer}{buffer}.\hyperlink{structbuffer_ada52eab703a091ff327114b3b3b0140a}{len});
+\end{DoxyCode}
+ 
+
+\subsection{Member Data Documentation}
+\hypertarget{structbuffer_a1fb6dcafc58a5ddc11c4d60c09a2e086}{}\index{buffer@{buffer}!capacity@{capacity}}
+\index{capacity@{capacity}!buffer@{buffer}}
+\subsubsection[{capacity}]{\setlength{\rightskip}{0pt plus 5cm}int buffer\+::capacity}\label{structbuffer_a1fb6dcafc58a5ddc11c4d60c09a2e086}
+Size in bytes of memory allocated by {\ttfamily malloc()}. \hypertarget{structbuffer_a5d2300c691699fd563f7a1a280c2c2d6}{}\index{buffer@{buffer}!data@{data}}
+\index{data@{data}!buffer@{buffer}}
+\subsubsection[{data}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t$\ast$ buffer\+::data}\label{structbuffer_a5d2300c691699fd563f7a1a280c2c2d6}
+Pointer to the allocated memory. \hypertarget{structbuffer_ada52eab703a091ff327114b3b3b0140a}{}\index{buffer@{buffer}!len@{len}}
+\index{len@{len}!buffer@{buffer}}
+\subsubsection[{len}]{\setlength{\rightskip}{0pt plus 5cm}int buffer\+::len}\label{structbuffer_ada52eab703a091ff327114b3b3b0140a}
+Length in bytes of the actual content within the allocated memory. \hypertarget{structbuffer_af5c1acadd937a2944674832497ba63ad}{}\index{buffer@{buffer}!offset@{offset}}
+\index{offset@{offset}!buffer@{buffer}}
+\subsubsection[{offset}]{\setlength{\rightskip}{0pt plus 5cm}int buffer\+::offset}\label{structbuffer_af5c1acadd937a2944674832497ba63ad}
+Offset in bytes of the actual content within the allocated memory. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/openvpn/\hyperlink{buffer_8h}{buffer.\+h}\end{DoxyCompactItemize}

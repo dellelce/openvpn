@@ -1,0 +1,49 @@
+\hypertarget{tls__crypt_8h}{}\section{src/openvpn/tls\+\_\+crypt.h File Reference}
+\label{tls__crypt_8h}\index{src/openvpn/tls\+\_\+crypt.\+h@{src/openvpn/tls\+\_\+crypt.\+h}}
+{\ttfamily \#include \char`\"{}buffer.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}crypto.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}session\+\_\+id.\+h\char`\"{}}\\*
+Include dependency graph for tls\+\_\+crypt.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{tls__crypt_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{tls__crypt_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group__tls__crypt_ga65e056054468311502b28a13b7b1a3ef}{T\+L\+S\+\_\+\+C\+R\+Y\+P\+T\+\_\+\+T\+A\+G\+\_\+\+S\+I\+Z\+E}~(256/8)
+\item 
+\#define \hyperlink{group__tls__crypt_ga55c58e2fa69ea5ffbbb71e25520618e0}{T\+L\+S\+\_\+\+C\+R\+Y\+P\+T\+\_\+\+P\+I\+D\+\_\+\+S\+I\+Z\+E}~(sizeof(\hyperlink{packet__id_8h_a345f753b1c6ea20d24409e769aadb7e6}{packet\+\_\+id\+\_\+type}) + sizeof(\hyperlink{packet__id_8h_a32b361b1d3a0fc2f92ceeff736bba97e}{net\+\_\+time\+\_\+t}))
+\item 
+\#define \hyperlink{group__tls__crypt_ga1acab4b545b3fff369cb0c05b1897c02}{T\+L\+S\+\_\+\+C\+R\+Y\+P\+T\+\_\+\+B\+L\+O\+C\+K\+\_\+\+S\+I\+Z\+E}~(128/8)
+\item 
+\#define \hyperlink{group__tls__crypt_ga7eb6b7a1658d8cf6f2f2119b5b927d29}{T\+L\+S\+\_\+\+C\+R\+Y\+P\+T\+\_\+\+O\+F\+F\+\_\+\+P\+I\+D}~(1 + \hyperlink{session__id_8h_ad1163f0bf6339f1dd003192df69052df}{S\+I\+D\+\_\+\+S\+I\+Z\+E})
+\item 
+\#define \hyperlink{group__tls__crypt_ga8fb65027448e8c403fbbce9bc3b0e056}{T\+L\+S\+\_\+\+C\+R\+Y\+P\+T\+\_\+\+O\+F\+F\+\_\+\+T\+A\+G}~(\hyperlink{group__tls__crypt_ga7eb6b7a1658d8cf6f2f2119b5b927d29}{T\+L\+S\+\_\+\+C\+R\+Y\+P\+T\+\_\+\+O\+F\+F\+\_\+\+P\+I\+D} + \hyperlink{group__tls__crypt_ga55c58e2fa69ea5ffbbb71e25520618e0}{T\+L\+S\+\_\+\+C\+R\+Y\+P\+T\+\_\+\+P\+I\+D\+\_\+\+S\+I\+Z\+E})
+\item 
+\#define \hyperlink{group__tls__crypt_gaae4cc51d2d63382d195391a4c50af92b}{T\+L\+S\+\_\+\+C\+R\+Y\+P\+T\+\_\+\+O\+F\+F\+\_\+\+C\+T}~(\hyperlink{group__tls__crypt_ga8fb65027448e8c403fbbce9bc3b0e056}{T\+L\+S\+\_\+\+C\+R\+Y\+P\+T\+\_\+\+O\+F\+F\+\_\+\+T\+A\+G} + \hyperlink{group__tls__crypt_ga65e056054468311502b28a13b7b1a3ef}{T\+L\+S\+\_\+\+C\+R\+Y\+P\+T\+\_\+\+T\+A\+G\+\_\+\+S\+I\+Z\+E})
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{group__tls__crypt_gad8a8513b53a8a5346cac69063f569680}{tls\+\_\+crypt\+\_\+init\+\_\+key} (struct \hyperlink{structkey__ctx__bi}{key\+\_\+ctx\+\_\+bi} $\ast$\hyperlink{structkey}{key}, const char $\ast$key\+\_\+file, const char $\ast$key\+\_\+inline, \hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} tls\+\_\+server)
+\item 
+int \hyperlink{group__tls__crypt_gac9c2ecaaf4e2af189ab15bb47a558bfa}{tls\+\_\+crypt\+\_\+buf\+\_\+overhead} (void)
+\item 
+void \hyperlink{group__tls__crypt_ga24b342111241c5ea9c731de4aa66fcb2}{tls\+\_\+crypt\+\_\+adjust\+\_\+frame\+\_\+parameters} (struct \hyperlink{structframe}{frame} $\ast$\hyperlink{structframe}{frame})
+\item 
+\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} \hyperlink{group__tls__crypt_gadaca5f414562a243603a60a0e3158e5a}{tls\+\_\+crypt\+\_\+wrap} (const struct \hyperlink{structbuffer}{buffer} $\ast$src, struct \hyperlink{structbuffer}{buffer} $\ast$\hyperlink{compat-lz4_8h_a961c13eb7fcda15b167b953cac1ab3ec}{dst}, struct \hyperlink{structcrypto__options}{crypto\+\_\+options} $\ast$opt)
+\item 
+\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} \hyperlink{group__tls__crypt_ga81c822ba2e5599865dddb37e01a2c20c}{tls\+\_\+crypt\+\_\+unwrap} (const struct \hyperlink{structbuffer}{buffer} $\ast$src, struct \hyperlink{structbuffer}{buffer} $\ast$\hyperlink{compat-lz4_8h_a961c13eb7fcda15b167b953cac1ab3ec}{dst}, struct \hyperlink{structcrypto__options}{crypto\+\_\+options} $\ast$opt)
+\end{DoxyCompactItemize}

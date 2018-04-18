@@ -1,0 +1,5 @@
+<map id="do_preresolve" name="do_preresolve">
+<area shape="rect" id="node2" href="$socket_8c.html#adbff197bdb9734118cdf9889650477ae" title="proto_is_dgram" alt="" coords="161,5,271,32"/>
+<area shape="rect" id="node4" href="$sig_8c.html#a32aaa7fe4ac3cc792696d77174ef8ba8" title="throw_signal_soft" alt="" coords="155,56,277,83"/>
+<area shape="rect" id="node3" href="$socket_8c.html#a86424bdc75e8f05f00a649f30f897110" title="proto_is_udp" alt="" coords="325,5,421,32"/>
+</map>

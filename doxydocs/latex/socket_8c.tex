@@ -1,0 +1,1440 @@
+\hypertarget{socket_8c}{}\section{src/openvpn/socket.c File Reference}
+\label{socket_8c}\index{src/openvpn/socket.\+c@{src/openvpn/socket.\+c}}
+{\ttfamily \#include \char`\"{}syshead.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}socket.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}fdmisc.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}misc.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}gremlin.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}plugin.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}ps.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}manage.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}openvpn.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}forward.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}memdbg.\+h\char`\"{}}\\*
+Include dependency graph for socket.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{socket_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structproto__names}{proto\+\_\+names}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{socket_8c_aedb93bcce9682d7644080b859849f59d}{I\+F\+\_\+\+N\+A\+M\+E\+S\+I\+Z\+E}~16
+\item 
+\#define \hyperlink{socket_8c_aeb4e270a084ee26fe73e799861bd0252}{U\+I\+N\+T8\+\_\+\+M\+A\+X}~0xff
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+in\+\_\+addr\+\_\+t \hyperlink{socket_8c_aed74c8b5931192c1ad5829bd90e01603}{getaddr} (unsigned int flags, const char $\ast$hostname, int resolve\+\_\+retry\+\_\+seconds, \hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} $\ast$succeeded, volatile int $\ast$signal\+\_\+received)
+\item 
+void \hyperlink{socket_8c_abd7036d683a6339013d79ec69c6f1742}{do\+\_\+preresolve} (struct \hyperlink{structcontext}{context} $\ast$c)
+\item 
+int \hyperlink{socket_8c_a02e4efd449ac0356c68ec0a4477e3342}{openvpn\+\_\+getaddrinfo} (unsigned int flags, const char $\ast$hostname, const char $\ast$servname, int resolve\+\_\+retry\+\_\+seconds, volatile int $\ast$signal\+\_\+received, int ai\+\_\+family, struct addrinfo $\ast$$\ast$res)
+\item 
+int \hyperlink{socket_8c_aac586ad698d29388acc839510e86cf81}{openvpn\+\_\+inet\+\_\+aton} (const char $\ast$dotted\+\_\+quad, struct in\+\_\+addr $\ast$addr)
+\item 
+\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} \hyperlink{socket_8c_afc4348b5986769b235fc042e964a7fb8}{ip\+\_\+addr\+\_\+dotted\+\_\+quad\+\_\+safe} (const char $\ast$dotted\+\_\+quad)
+\item 
+\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} \hyperlink{socket_8c_abc681b2985d873e13536dee7fbade6cd}{ipv6\+\_\+addr\+\_\+safe} (const char $\ast$ipv6\+\_\+text\+\_\+addr)
+\item 
+\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} \hyperlink{socket_8c_abd8b19273aa830992e49e8a9554b480b}{ip\+\_\+or\+\_\+dns\+\_\+addr\+\_\+safe} (const char $\ast$addr, const \hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} allow\+\_\+fqdn)
+\item 
+\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} \hyperlink{socket_8c_a4677e1d99ac24bc14b09bb0d2fbf709a}{mac\+\_\+addr\+\_\+safe} (const char $\ast$mac\+\_\+addr)
+\item 
+\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} \hyperlink{socket_8c_a47f7e875f90faefaede7148a7e5f3347}{link\+\_\+socket\+\_\+update\+\_\+flags} (struct \hyperlink{structlink__socket}{link\+\_\+socket} $\ast$ls, unsigned int sockflags)
+\item 
+void \hyperlink{socket_8c_a022b67c8749e8a934063231b2abc5cf6}{link\+\_\+socket\+\_\+update\+\_\+buffer\+\_\+sizes} (struct \hyperlink{structlink__socket}{link\+\_\+socket} $\ast$ls, int rcvbuf, int sndbuf)
+\item 
+\hyperlink{syshead_8h_a7433d79fe33816fe24b9c231ac75fc42}{socket\+\_\+descriptor\+\_\+t} \hyperlink{socket_8c_ac6b4488f568c386b9f495b8769f04a09}{create\+\_\+socket\+\_\+tcp} (struct addrinfo $\ast$addrinfo)
+\item 
+\hyperlink{syshead_8h_a7433d79fe33816fe24b9c231ac75fc42}{socket\+\_\+descriptor\+\_\+t} \hyperlink{socket_8c_a7bd3fb1c5f91bcd4d18174168e226eb0}{socket\+\_\+do\+\_\+accept} (\hyperlink{syshead_8h_a7433d79fe33816fe24b9c231ac75fc42}{socket\+\_\+descriptor\+\_\+t} sd, struct \hyperlink{structlink__socket__actual}{link\+\_\+socket\+\_\+actual} $\ast$act, const \hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} nowait)
+\item 
+void \hyperlink{socket_8c_ac08e0b0ddd8c2561045b8fec18870116}{socket\+\_\+bind} (\hyperlink{syshead_8h_a7433d79fe33816fe24b9c231ac75fc42}{socket\+\_\+descriptor\+\_\+t} sd, struct addrinfo $\ast$local, int ai\+\_\+family, const char $\ast$prefix, \hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} ipv6only)
+\item 
+int \hyperlink{socket_8c_aaf986563f4ab9ce6a1657c0f4fdabe10}{openvpn\+\_\+connect} (\hyperlink{syshead_8h_a7433d79fe33816fe24b9c231ac75fc42}{socket\+\_\+descriptor\+\_\+t} sd, const struct sockaddr $\ast$remote, int connect\+\_\+timeout, volatile int $\ast$signal\+\_\+received)
+\item 
+void \hyperlink{socket_8c_a3087eb3ac32539db715fa6084307bcb7}{set\+\_\+actual\+\_\+address} (struct \hyperlink{structlink__socket__actual}{link\+\_\+socket\+\_\+actual} $\ast$actual, struct addrinfo $\ast$ai)
+\item 
+void \hyperlink{socket_8c_a9f553edafb49e0efa0bc784c45412e39}{frame\+\_\+adjust\+\_\+path\+\_\+mtu} (struct \hyperlink{structframe}{frame} $\ast$\hyperlink{structframe}{frame}, int pmtu, int proto)
+\item 
+struct \hyperlink{structlink__socket}{link\+\_\+socket} $\ast$ \hyperlink{socket_8c_a41acd6256f92be22c7c94727d2b4bf1e}{link\+\_\+socket\+\_\+new} (void)
+\item 
+void \hyperlink{socket_8c_af7a1098694842ca0c089e4ef673fc5fd}{link\+\_\+socket\+\_\+init\+\_\+phase1} (struct \hyperlink{structlink__socket}{link\+\_\+socket} $\ast$sock, const char $\ast$local\+\_\+host, const char $\ast$local\+\_\+port, const char $\ast$remote\+\_\+host, const char $\ast$remote\+\_\+port, struct \hyperlink{structcached__dns__entry}{cached\+\_\+dns\+\_\+entry} $\ast$dns\+\_\+cache, int proto, \hyperlink{syshead_8h_a27a82860cef19f4a53f68516e7b2ee0e}{sa\+\_\+family\+\_\+t} af, \hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} bind\+\_\+ipv6\+\_\+only, int mode, const struct \hyperlink{structlink__socket}{link\+\_\+socket} $\ast$accept\+\_\+from, struct \hyperlink{structhttp__proxy__info}{http\+\_\+proxy\+\_\+info} $\ast$http\+\_\+proxy, struct \hyperlink{structsocks__proxy__info}{socks\+\_\+proxy\+\_\+info} $\ast$socks\+\_\+proxy, \hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} bind\+\_\+local, \hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} remote\+\_\+float, int inetd, struct \hyperlink{structlink__socket__addr}{link\+\_\+socket\+\_\+addr} $\ast$lsa, const char $\ast$ipchange\+\_\+command, const struct \hyperlink{structplugin__list}{plugin\+\_\+list} $\ast$plugins, int resolve\+\_\+retry\+\_\+seconds, int mtu\+\_\+discover\+\_\+type, int rcvbuf, int sndbuf, int mark, struct \hyperlink{structevent__timeout}{event\+\_\+timeout} $\ast$server\+\_\+poll\+\_\+timeout, unsigned int sockflags)
+\item 
+void \hyperlink{socket_8c_ad716d81ba4a413dfb1014bc9407ff2fa}{link\+\_\+socket\+\_\+init\+\_\+phase2} (struct \hyperlink{structlink__socket}{link\+\_\+socket} $\ast$sock, const struct \hyperlink{structframe}{frame} $\ast$\hyperlink{structframe}{frame}, struct \hyperlink{structsignal__info}{signal\+\_\+info} $\ast$sig\+\_\+info)
+\item 
+void \hyperlink{socket_8c_a7f6b5654e386c141071a9246f68853e9}{link\+\_\+socket\+\_\+close} (struct \hyperlink{structlink__socket}{link\+\_\+socket} $\ast$sock)
+\item 
+void \hyperlink{socket_8c_af4927a4638ad626394e1cc000cfe5466}{socket\+\_\+adjust\+\_\+frame\+\_\+parameters} (struct \hyperlink{structframe}{frame} $\ast$\hyperlink{structframe}{frame}, int proto)
+\item 
+void \hyperlink{socket_8c_aed93bf1bce64b0baebbf79c40b30bada}{setenv\+\_\+trusted} (struct \hyperlink{structenv__set}{env\+\_\+set} $\ast$es, const struct \hyperlink{structlink__socket__info}{link\+\_\+socket\+\_\+info} $\ast$info)
+\item 
+void \hyperlink{socket_8c_a4081d7c0b34bd5c2919e8cdb902b1537}{link\+\_\+socket\+\_\+connection\+\_\+initiated} (const struct \hyperlink{structbuffer}{buffer} $\ast$buf, struct \hyperlink{structlink__socket__info}{link\+\_\+socket\+\_\+info} $\ast$info, const struct \hyperlink{structlink__socket__actual}{link\+\_\+socket\+\_\+actual} $\ast$act, const char $\ast$common\+\_\+name, struct \hyperlink{structenv__set}{env\+\_\+set} $\ast$es)
+\item 
+void \hyperlink{socket_8c_abfc81cb26972c5efe7ae96036c1f3881}{link\+\_\+socket\+\_\+bad\+\_\+incoming\+\_\+addr} (struct \hyperlink{structbuffer}{buffer} $\ast$buf, const struct \hyperlink{structlink__socket__info}{link\+\_\+socket\+\_\+info} $\ast$info, const struct \hyperlink{structlink__socket__actual}{link\+\_\+socket\+\_\+actual} $\ast$from\+\_\+addr)
+\item 
+void \hyperlink{socket_8c_aa72996f078f91edc4077fbe5975de794}{link\+\_\+socket\+\_\+bad\+\_\+outgoing\+\_\+addr} (void)
+\item 
+in\+\_\+addr\+\_\+t \hyperlink{socket_8c_aac12ee565b36579ed3bd5dc9377e35b2}{link\+\_\+socket\+\_\+current\+\_\+remote} (const struct \hyperlink{structlink__socket__info}{link\+\_\+socket\+\_\+info} $\ast$info)
+\item 
+const struct in6\+\_\+addr $\ast$ \hyperlink{socket_8c_afb62f9fc3adfae5d11fcc9e57650d3ad}{link\+\_\+socket\+\_\+current\+\_\+remote\+\_\+ipv6} (const struct \hyperlink{structlink__socket__info}{link\+\_\+socket\+\_\+info} $\ast$info)
+\item 
+const char $\ast$ \hyperlink{socket_8c_a45f6ed12802df58a5627b6a7ba80b093}{socket\+\_\+stat} (const struct \hyperlink{structlink__socket}{link\+\_\+socket} $\ast$s, unsigned int rwflags, struct \hyperlink{structgc__arena}{gc\+\_\+arena} $\ast$gc)
+\item 
+void \hyperlink{socket_8c_a96ba948dd0e3d3ad6fcbde53ff44dd1d}{stream\+\_\+buf\+\_\+init} (struct \hyperlink{structstream__buf}{stream\+\_\+buf} $\ast$sb, struct \hyperlink{structbuffer}{buffer} $\ast$buf, const unsigned int sockflags, const int proto)
+\item 
+\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} \hyperlink{socket_8c_a74cecd1239fb70b980e1ca7a247bbd2e}{stream\+\_\+buf\+\_\+read\+\_\+setup\+\_\+dowork} (struct \hyperlink{structlink__socket}{link\+\_\+socket} $\ast$sock)
+\item 
+\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} \hyperlink{socket_8c_a0c43f40cf87e67746949ece97c087502}{stream\+\_\+buf\+\_\+added} (struct \hyperlink{structstream__buf}{stream\+\_\+buf} $\ast$sb, int length\+\_\+added)
+\item 
+void \hyperlink{socket_8c_a1bf7dc9366cc6344370dd08999e185b6}{stream\+\_\+buf\+\_\+close} (struct \hyperlink{structstream__buf}{stream\+\_\+buf} $\ast$sb)
+\item 
+\hyperlink{event_8h_aaf06dbc1f07c15cb5e2779d3ec2dcb4b}{event\+\_\+t} \hyperlink{socket_8c_a50798315305f70b5cc97f016d65ace82}{socket\+\_\+listen\+\_\+event\+\_\+handle} (struct \hyperlink{structlink__socket}{link\+\_\+socket} $\ast$s)
+\item 
+const char $\ast$ \hyperlink{socket_8c_a616cfadfd81ab5ba341fa3adb1e93788}{print\+\_\+sockaddr\+\_\+ex} (const struct sockaddr $\ast$sa, const char $\ast$separator, const unsigned int flags, struct \hyperlink{structgc__arena}{gc\+\_\+arena} $\ast$gc)
+\item 
+const char $\ast$ \hyperlink{socket_8c_aefe5013514f1d62a138107fb43cc74e3}{print\+\_\+link\+\_\+socket\+\_\+actual} (const struct \hyperlink{structlink__socket__actual}{link\+\_\+socket\+\_\+actual} $\ast$act, struct \hyperlink{structgc__arena}{gc\+\_\+arena} $\ast$gc)
+\item 
+const char $\ast$ \hyperlink{socket_8c_aa401d7e395acdc1d4f61f6526ef92846}{print\+\_\+link\+\_\+socket\+\_\+actual\+\_\+ex} (const struct \hyperlink{structlink__socket__actual}{link\+\_\+socket\+\_\+actual} $\ast$act, const char $\ast$separator, const unsigned int flags, struct \hyperlink{structgc__arena}{gc\+\_\+arena} $\ast$gc)
+\item 
+const char $\ast$ \hyperlink{socket_8c_a2741d6007f1e5a670409883f4304da61}{print\+\_\+in\+\_\+addr\+\_\+t} (in\+\_\+addr\+\_\+t addr, unsigned int flags, struct \hyperlink{structgc__arena}{gc\+\_\+arena} $\ast$gc)
+\item 
+const char $\ast$ \hyperlink{socket_8c_a9a911c5dde4c809f7cb3eef8e5918a8e}{print\+\_\+in6\+\_\+addr} (struct in6\+\_\+addr a6, unsigned int flags, struct \hyperlink{structgc__arena}{gc\+\_\+arena} $\ast$gc)
+\item 
+struct in6\+\_\+addr \hyperlink{socket_8c_a8f115cb754c9858c67732244b2cc0669}{add\+\_\+in6\+\_\+addr} (struct in6\+\_\+addr base, uint32\+\_\+t add)
+\item 
+void \hyperlink{socket_8c_a7db6fcb0d9f1d1ca09149554d91f979f}{setenv\+\_\+sockaddr} (struct \hyperlink{structenv__set}{env\+\_\+set} $\ast$es, const char $\ast$name\+\_\+prefix, const struct \hyperlink{structopenvpn__sockaddr}{openvpn\+\_\+sockaddr} $\ast$addr, const unsigned int flags)
+\item 
+void \hyperlink{socket_8c_a4f17a188890a7bc5a8d0dcb30355ac18}{setenv\+\_\+in\+\_\+addr\+\_\+t} (struct \hyperlink{structenv__set}{env\+\_\+set} $\ast$es, const char $\ast$name\+\_\+prefix, in\+\_\+addr\+\_\+t addr, const unsigned int flags)
+\item 
+void \hyperlink{socket_8c_a607e25972e470d65dd7f99d15953cac4}{setenv\+\_\+in6\+\_\+addr} (struct \hyperlink{structenv__set}{env\+\_\+set} $\ast$es, const char $\ast$name\+\_\+prefix, const struct in6\+\_\+addr $\ast$addr, const unsigned int flags)
+\item 
+void \hyperlink{socket_8c_a58387f8e96dacad4aa9322c3890c6001}{setenv\+\_\+link\+\_\+socket\+\_\+actual} (struct \hyperlink{structenv__set}{env\+\_\+set} $\ast$es, const char $\ast$name\+\_\+prefix, const struct \hyperlink{structlink__socket__actual}{link\+\_\+socket\+\_\+actual} $\ast$act, const unsigned int flags)
+\item 
+\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} \hyperlink{socket_8c_a9138a0cf0f761db560b22d8417ad2565}{proto\+\_\+is\+\_\+net} (int proto)
+\item 
+\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} \hyperlink{socket_8c_adbff197bdb9734118cdf9889650477ae}{proto\+\_\+is\+\_\+dgram} (int proto)
+\item 
+\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} \hyperlink{socket_8c_a86424bdc75e8f05f00a649f30f897110}{proto\+\_\+is\+\_\+udp} (int proto)
+\item 
+\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} \hyperlink{socket_8c_a14db84b6dd2dbff8084a8254b7424f68}{proto\+\_\+is\+\_\+tcp} (int proto)
+\item 
+int \hyperlink{socket_8c_ac67d5464bc20e5e6c4a962858082c8e6}{ascii2proto} (const char $\ast$proto\+\_\+name)
+\item 
+\hyperlink{syshead_8h_a27a82860cef19f4a53f68516e7b2ee0e}{sa\+\_\+family\+\_\+t} \hyperlink{socket_8c_aa27ccce78bd9b1fc9f810da9a6fdc42e}{ascii2af} (const char $\ast$proto\+\_\+name)
+\item 
+const char $\ast$ \hyperlink{socket_8c_a6ebb8e0bd35afb3cda6a0392f1479433}{proto2ascii} (int proto, \hyperlink{syshead_8h_a27a82860cef19f4a53f68516e7b2ee0e}{sa\+\_\+family\+\_\+t} af, \hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} display\+\_\+form)
+\item 
+const char $\ast$ \hyperlink{socket_8c_a40d34261451e42b8e53480f6a260fd01}{proto2ascii\+\_\+all} (struct \hyperlink{structgc__arena}{gc\+\_\+arena} $\ast$gc)
+\item 
+const char $\ast$ \hyperlink{socket_8c_a1e47d3e8956884a9ba50ec8883d45a36}{addr\+\_\+family\+\_\+name} (int af)
+\item 
+const char $\ast$ \hyperlink{socket_8c_aa8031dd7e4e961af246871041559a3a1}{proto\+\_\+remote} (int proto, \hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} remote)
+\item 
+void \hyperlink{socket_8c_a3c9ee3d6a6bacfd59ae7037e8d8e735c}{bad\+\_\+address\+\_\+length} (int actual, int expected)
+\item 
+int \hyperlink{socket_8c_aaf391f0edcd41f5642fcf0143c71dba1}{link\+\_\+socket\+\_\+read\+\_\+tcp} (struct \hyperlink{structlink__socket}{link\+\_\+socket} $\ast$sock, struct \hyperlink{structbuffer}{buffer} $\ast$buf)
+\item 
+int \hyperlink{socket_8c_a785a2d1e27057de2b7f33c410ac653a2}{link\+\_\+socket\+\_\+read\+\_\+udp\+\_\+posix} (struct \hyperlink{structlink__socket}{link\+\_\+socket} $\ast$sock, struct \hyperlink{structbuffer}{buffer} $\ast$buf, struct \hyperlink{structlink__socket__actual}{link\+\_\+socket\+\_\+actual} $\ast$from)
+\item 
+int \hyperlink{socket_8c_a4e20ef3416309fb6a98e3ad5ca3c1d9c}{link\+\_\+socket\+\_\+write\+\_\+tcp} (struct \hyperlink{structlink__socket}{link\+\_\+socket} $\ast$sock, struct \hyperlink{structbuffer}{buffer} $\ast$buf, struct \hyperlink{structlink__socket__actual}{link\+\_\+socket\+\_\+actual} $\ast$to)
+\item 
+unsigned int \hyperlink{socket_8c_ab5605eaa75bdd5f315edcfaefcd77b69}{socket\+\_\+set} (struct \hyperlink{structlink__socket}{link\+\_\+socket} $\ast$s, struct \hyperlink{structevent__set}{event\+\_\+set} $\ast$es, unsigned int rwflags, void $\ast$arg, unsigned int $\ast$persistent)
+\item 
+void \hyperlink{socket_8c_a51d1084b7790e97788d32d9833c7d31c}{sd\+\_\+close} (\hyperlink{syshead_8h_a7433d79fe33816fe24b9c231ac75fc42}{socket\+\_\+descriptor\+\_\+t} $\ast$sd)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const int \hyperlink{socket_8c_a239a24f77e4782c0d0e215a6ea3ba0e6}{proto\+\_\+overhead} \mbox{[}$\,$\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{socket_8c_aedb93bcce9682d7644080b859849f59d}{}\index{socket.\+c@{socket.\+c}!I\+F\+\_\+\+N\+A\+M\+E\+S\+I\+Z\+E@{I\+F\+\_\+\+N\+A\+M\+E\+S\+I\+Z\+E}}
+\index{I\+F\+\_\+\+N\+A\+M\+E\+S\+I\+Z\+E@{I\+F\+\_\+\+N\+A\+M\+E\+S\+I\+Z\+E}!socket.\+c@{socket.\+c}}
+\subsubsection[{I\+F\+\_\+\+N\+A\+M\+E\+S\+I\+Z\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\+F\+\_\+\+N\+A\+M\+E\+S\+I\+Z\+E~16}\label{socket_8c_aedb93bcce9682d7644080b859849f59d}
+\hypertarget{socket_8c_aeb4e270a084ee26fe73e799861bd0252}{}\index{socket.\+c@{socket.\+c}!U\+I\+N\+T8\+\_\+\+M\+A\+X@{U\+I\+N\+T8\+\_\+\+M\+A\+X}}
+\index{U\+I\+N\+T8\+\_\+\+M\+A\+X@{U\+I\+N\+T8\+\_\+\+M\+A\+X}!socket.\+c@{socket.\+c}}
+\subsubsection[{U\+I\+N\+T8\+\_\+\+M\+A\+X}]{\setlength{\rightskip}{0pt plus 5cm}\#define U\+I\+N\+T8\+\_\+\+M\+A\+X~0xff}\label{socket_8c_aeb4e270a084ee26fe73e799861bd0252}
+
+
+\subsection{Function Documentation}
+\hypertarget{socket_8c_a8f115cb754c9858c67732244b2cc0669}{}\index{socket.\+c@{socket.\+c}!add\+\_\+in6\+\_\+addr@{add\+\_\+in6\+\_\+addr}}
+\index{add\+\_\+in6\+\_\+addr@{add\+\_\+in6\+\_\+addr}!socket.\+c@{socket.\+c}}
+\subsubsection[{add\+\_\+in6\+\_\+addr(struct in6\+\_\+addr base, uint32\+\_\+t add)}]{\setlength{\rightskip}{0pt plus 5cm}struct in6\+\_\+addr add\+\_\+in6\+\_\+addr (
+\begin{DoxyParamCaption}
+\item[{struct in6\+\_\+addr}]{base, }
+\item[{uint32\+\_\+t}]{add}
+\end{DoxyParamCaption}
+)}\label{socket_8c_a8f115cb754c9858c67732244b2cc0669}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=292pt]{socket_8c_a8f115cb754c9858c67732244b2cc0669_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{socket_8c_a1e47d3e8956884a9ba50ec8883d45a36}{}\index{socket.\+c@{socket.\+c}!addr\+\_\+family\+\_\+name@{addr\+\_\+family\+\_\+name}}
+\index{addr\+\_\+family\+\_\+name@{addr\+\_\+family\+\_\+name}!socket.\+c@{socket.\+c}}
+\subsubsection[{addr\+\_\+family\+\_\+name(int af)}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ addr\+\_\+family\+\_\+name (
+\begin{DoxyParamCaption}
+\item[{int}]{af}
+\end{DoxyParamCaption}
+)}\label{socket_8c_a1e47d3e8956884a9ba50ec8883d45a36}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=332pt]{socket_8c_a1e47d3e8956884a9ba50ec8883d45a36_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{socket_8c_aa27ccce78bd9b1fc9f810da9a6fdc42e}{}\index{socket.\+c@{socket.\+c}!ascii2af@{ascii2af}}
+\index{ascii2af@{ascii2af}!socket.\+c@{socket.\+c}}
+\subsubsection[{ascii2af(const char $\ast$proto\+\_\+name)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf sa\+\_\+family\+\_\+t} ascii2af (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{proto\+\_\+name}
+\end{DoxyParamCaption}
+)}\label{socket_8c_aa27ccce78bd9b1fc9f810da9a6fdc42e}
+\hypertarget{socket_8c_ac67d5464bc20e5e6c4a962858082c8e6}{}\index{socket.\+c@{socket.\+c}!ascii2proto@{ascii2proto}}
+\index{ascii2proto@{ascii2proto}!socket.\+c@{socket.\+c}}
+\subsubsection[{ascii2proto(const char $\ast$proto\+\_\+name)}]{\setlength{\rightskip}{0pt plus 5cm}int ascii2proto (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{proto\+\_\+name}
+\end{DoxyParamCaption}
+)}\label{socket_8c_ac67d5464bc20e5e6c4a962858082c8e6}
+\hypertarget{socket_8c_a3c9ee3d6a6bacfd59ae7037e8d8e735c}{}\index{socket.\+c@{socket.\+c}!bad\+\_\+address\+\_\+length@{bad\+\_\+address\+\_\+length}}
+\index{bad\+\_\+address\+\_\+length@{bad\+\_\+address\+\_\+length}!socket.\+c@{socket.\+c}}
+\subsubsection[{bad\+\_\+address\+\_\+length(int actual, int expected)}]{\setlength{\rightskip}{0pt plus 5cm}void bad\+\_\+address\+\_\+length (
+\begin{DoxyParamCaption}
+\item[{int}]{actual, }
+\item[{int}]{expected}
+\end{DoxyParamCaption}
+)}\label{socket_8c_a3c9ee3d6a6bacfd59ae7037e8d8e735c}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=331pt]{socket_8c_a3c9ee3d6a6bacfd59ae7037e8d8e735c_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{socket_8c_ac6b4488f568c386b9f495b8769f04a09}{}\index{socket.\+c@{socket.\+c}!create\+\_\+socket\+\_\+tcp@{create\+\_\+socket\+\_\+tcp}}
+\index{create\+\_\+socket\+\_\+tcp@{create\+\_\+socket\+\_\+tcp}!socket.\+c@{socket.\+c}}
+\subsubsection[{create\+\_\+socket\+\_\+tcp(struct addrinfo $\ast$addrinfo)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf socket\+\_\+descriptor\+\_\+t} create\+\_\+socket\+\_\+tcp (
+\begin{DoxyParamCaption}
+\item[{struct addrinfo $\ast$}]{addrinfo}
+\end{DoxyParamCaption}
+)}\label{socket_8c_ac6b4488f568c386b9f495b8769f04a09}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{socket_8c_ac6b4488f568c386b9f495b8769f04a09_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{socket_8c_abd7036d683a6339013d79ec69c6f1742}{}\index{socket.\+c@{socket.\+c}!do\+\_\+preresolve@{do\+\_\+preresolve}}
+\index{do\+\_\+preresolve@{do\+\_\+preresolve}!socket.\+c@{socket.\+c}}
+\subsubsection[{do\+\_\+preresolve(struct context $\ast$c)}]{\setlength{\rightskip}{0pt plus 5cm}void do\+\_\+preresolve (
+\begin{DoxyParamCaption}
+\item[{struct {\bf context} $\ast$}]{c}
+\end{DoxyParamCaption}
+)}\label{socket_8c_abd7036d683a6339013d79ec69c6f1742}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{socket_8c_abd7036d683a6339013d79ec69c6f1742_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{socket_8c_abd7036d683a6339013d79ec69c6f1742_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{socket_8c_a9f553edafb49e0efa0bc784c45412e39}{}\index{socket.\+c@{socket.\+c}!frame\+\_\+adjust\+\_\+path\+\_\+mtu@{frame\+\_\+adjust\+\_\+path\+\_\+mtu}}
+\index{frame\+\_\+adjust\+\_\+path\+\_\+mtu@{frame\+\_\+adjust\+\_\+path\+\_\+mtu}!socket.\+c@{socket.\+c}}
+\subsubsection[{frame\+\_\+adjust\+\_\+path\+\_\+mtu(struct frame $\ast$frame, int pmtu, int proto)}]{\setlength{\rightskip}{0pt plus 5cm}void frame\+\_\+adjust\+\_\+path\+\_\+mtu (
+\begin{DoxyParamCaption}
+\item[{struct {\bf frame} $\ast$}]{frame, }
+\item[{int}]{pmtu, }
+\item[{int}]{proto}
+\end{DoxyParamCaption}
+)}\label{socket_8c_a9f553edafb49e0efa0bc784c45412e39}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{socket_8c_a9f553edafb49e0efa0bc784c45412e39_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{socket_8c_aed74c8b5931192c1ad5829bd90e01603}{}\index{socket.\+c@{socket.\+c}!getaddr@{getaddr}}
+\index{getaddr@{getaddr}!socket.\+c@{socket.\+c}}
+\subsubsection[{getaddr(unsigned int flags, const char $\ast$hostname, int resolve\+\_\+retry\+\_\+seconds, bool $\ast$succeeded, volatile int $\ast$signal\+\_\+received)}]{\setlength{\rightskip}{0pt plus 5cm}in\+\_\+addr\+\_\+t getaddr (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{flags, }
+\item[{const char $\ast$}]{hostname, }
+\item[{int}]{resolve\+\_\+retry\+\_\+seconds, }
+\item[{{\bf bool} $\ast$}]{succeeded, }
+\item[{volatile int $\ast$}]{signal\+\_\+received}
+\end{DoxyParamCaption}
+)}\label{socket_8c_aed74c8b5931192c1ad5829bd90e01603}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{socket_8c_aed74c8b5931192c1ad5829bd90e01603_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{socket_8c_aed74c8b5931192c1ad5829bd90e01603_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{socket_8c_afc4348b5986769b235fc042e964a7fb8}{}\index{socket.\+c@{socket.\+c}!ip\+\_\+addr\+\_\+dotted\+\_\+quad\+\_\+safe@{ip\+\_\+addr\+\_\+dotted\+\_\+quad\+\_\+safe}}
+\index{ip\+\_\+addr\+\_\+dotted\+\_\+quad\+\_\+safe@{ip\+\_\+addr\+\_\+dotted\+\_\+quad\+\_\+safe}!socket.\+c@{socket.\+c}}
+\subsubsection[{ip\+\_\+addr\+\_\+dotted\+\_\+quad\+\_\+safe(const char $\ast$dotted\+\_\+quad)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} ip\+\_\+addr\+\_\+dotted\+\_\+quad\+\_\+safe (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{dotted\+\_\+quad}
+\end{DoxyParamCaption}
+)}\label{socket_8c_afc4348b5986769b235fc042e964a7fb8}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{socket_8c_afc4348b5986769b235fc042e964a7fb8_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{socket_8c_afc4348b5986769b235fc042e964a7fb8_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{socket_8c_abd8b19273aa830992e49e8a9554b480b}{}\index{socket.\+c@{socket.\+c}!ip\+\_\+or\+\_\+dns\+\_\+addr\+\_\+safe@{ip\+\_\+or\+\_\+dns\+\_\+addr\+\_\+safe}}
+\index{ip\+\_\+or\+\_\+dns\+\_\+addr\+\_\+safe@{ip\+\_\+or\+\_\+dns\+\_\+addr\+\_\+safe}!socket.\+c@{socket.\+c}}
+\subsubsection[{ip\+\_\+or\+\_\+dns\+\_\+addr\+\_\+safe(const char $\ast$addr, const bool allow\+\_\+fqdn)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} ip\+\_\+or\+\_\+dns\+\_\+addr\+\_\+safe (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{addr, }
+\item[{const {\bf bool}}]{allow\+\_\+fqdn}
+\end{DoxyParamCaption}
+)}\label{socket_8c_abd8b19273aa830992e49e8a9554b480b}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{socket_8c_abd8b19273aa830992e49e8a9554b480b_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{socket_8c_abc681b2985d873e13536dee7fbade6cd}{}\index{socket.\+c@{socket.\+c}!ipv6\+\_\+addr\+\_\+safe@{ipv6\+\_\+addr\+\_\+safe}}
+\index{ipv6\+\_\+addr\+\_\+safe@{ipv6\+\_\+addr\+\_\+safe}!socket.\+c@{socket.\+c}}
+\subsubsection[{ipv6\+\_\+addr\+\_\+safe(const char $\ast$ipv6\+\_\+text\+\_\+addr)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} ipv6\+\_\+addr\+\_\+safe (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{ipv6\+\_\+text\+\_\+addr}
+\end{DoxyParamCaption}
+)}\label{socket_8c_abc681b2985d873e13536dee7fbade6cd}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=252pt]{socket_8c_abc681b2985d873e13536dee7fbade6cd_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{socket_8c_abfc81cb26972c5efe7ae96036c1f3881}{}\index{socket.\+c@{socket.\+c}!link\+\_\+socket\+\_\+bad\+\_\+incoming\+\_\+addr@{link\+\_\+socket\+\_\+bad\+\_\+incoming\+\_\+addr}}
+\index{link\+\_\+socket\+\_\+bad\+\_\+incoming\+\_\+addr@{link\+\_\+socket\+\_\+bad\+\_\+incoming\+\_\+addr}!socket.\+c@{socket.\+c}}
+\subsubsection[{link\+\_\+socket\+\_\+bad\+\_\+incoming\+\_\+addr(struct buffer $\ast$buf, const struct link\+\_\+socket\+\_\+info $\ast$info, const struct link\+\_\+socket\+\_\+actual $\ast$from\+\_\+addr)}]{\setlength{\rightskip}{0pt plus 5cm}void link\+\_\+socket\+\_\+bad\+\_\+incoming\+\_\+addr (
+\begin{DoxyParamCaption}
+\item[{struct {\bf buffer} $\ast$}]{buf, }
+\item[{const struct {\bf link\+\_\+socket\+\_\+info} $\ast$}]{info, }
+\item[{const struct {\bf link\+\_\+socket\+\_\+actual} $\ast$}]{from\+\_\+addr}
+\end{DoxyParamCaption}
+)}\label{socket_8c_abfc81cb26972c5efe7ae96036c1f3881}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{socket_8c_abfc81cb26972c5efe7ae96036c1f3881_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{socket_8c_abfc81cb26972c5efe7ae96036c1f3881_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{socket_8c_aa72996f078f91edc4077fbe5975de794}{}\index{socket.\+c@{socket.\+c}!link\+\_\+socket\+\_\+bad\+\_\+outgoing\+\_\+addr@{link\+\_\+socket\+\_\+bad\+\_\+outgoing\+\_\+addr}}
+\index{link\+\_\+socket\+\_\+bad\+\_\+outgoing\+\_\+addr@{link\+\_\+socket\+\_\+bad\+\_\+outgoing\+\_\+addr}!socket.\+c@{socket.\+c}}
+\subsubsection[{link\+\_\+socket\+\_\+bad\+\_\+outgoing\+\_\+addr(void)}]{\setlength{\rightskip}{0pt plus 5cm}void link\+\_\+socket\+\_\+bad\+\_\+outgoing\+\_\+addr (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{socket_8c_aa72996f078f91edc4077fbe5975de794}
+\hypertarget{socket_8c_a7f6b5654e386c141071a9246f68853e9}{}\index{socket.\+c@{socket.\+c}!link\+\_\+socket\+\_\+close@{link\+\_\+socket\+\_\+close}}
+\index{link\+\_\+socket\+\_\+close@{link\+\_\+socket\+\_\+close}!socket.\+c@{socket.\+c}}
+\subsubsection[{link\+\_\+socket\+\_\+close(struct link\+\_\+socket $\ast$sock)}]{\setlength{\rightskip}{0pt plus 5cm}void link\+\_\+socket\+\_\+close (
+\begin{DoxyParamCaption}
+\item[{struct {\bf link\+\_\+socket} $\ast$}]{sock}
+\end{DoxyParamCaption}
+)}\label{socket_8c_a7f6b5654e386c141071a9246f68853e9}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{socket_8c_a7f6b5654e386c141071a9246f68853e9_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{socket_8c_a4081d7c0b34bd5c2919e8cdb902b1537}{}\index{socket.\+c@{socket.\+c}!link\+\_\+socket\+\_\+connection\+\_\+initiated@{link\+\_\+socket\+\_\+connection\+\_\+initiated}}
+\index{link\+\_\+socket\+\_\+connection\+\_\+initiated@{link\+\_\+socket\+\_\+connection\+\_\+initiated}!socket.\+c@{socket.\+c}}
+\subsubsection[{link\+\_\+socket\+\_\+connection\+\_\+initiated(const struct buffer $\ast$buf, struct link\+\_\+socket\+\_\+info $\ast$info, const struct link\+\_\+socket\+\_\+actual $\ast$act, const char $\ast$common\+\_\+name, struct env\+\_\+set $\ast$es)}]{\setlength{\rightskip}{0pt plus 5cm}void link\+\_\+socket\+\_\+connection\+\_\+initiated (
+\begin{DoxyParamCaption}
+\item[{const struct {\bf buffer} $\ast$}]{buf, }
+\item[{struct {\bf link\+\_\+socket\+\_\+info} $\ast$}]{info, }
+\item[{const struct {\bf link\+\_\+socket\+\_\+actual} $\ast$}]{act, }
+\item[{const char $\ast$}]{common\+\_\+name, }
+\item[{struct {\bf env\+\_\+set} $\ast$}]{es}
+\end{DoxyParamCaption}
+)}\label{socket_8c_a4081d7c0b34bd5c2919e8cdb902b1537}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{socket_8c_a4081d7c0b34bd5c2919e8cdb902b1537_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{socket_8c_aac12ee565b36579ed3bd5dc9377e35b2}{}\index{socket.\+c@{socket.\+c}!link\+\_\+socket\+\_\+current\+\_\+remote@{link\+\_\+socket\+\_\+current\+\_\+remote}}
+\index{link\+\_\+socket\+\_\+current\+\_\+remote@{link\+\_\+socket\+\_\+current\+\_\+remote}!socket.\+c@{socket.\+c}}
+\subsubsection[{link\+\_\+socket\+\_\+current\+\_\+remote(const struct link\+\_\+socket\+\_\+info $\ast$info)}]{\setlength{\rightskip}{0pt plus 5cm}in\+\_\+addr\+\_\+t link\+\_\+socket\+\_\+current\+\_\+remote (
+\begin{DoxyParamCaption}
+\item[{const struct {\bf link\+\_\+socket\+\_\+info} $\ast$}]{info}
+\end{DoxyParamCaption}
+)}\label{socket_8c_aac12ee565b36579ed3bd5dc9377e35b2}
+\hypertarget{socket_8c_afb62f9fc3adfae5d11fcc9e57650d3ad}{}\index{socket.\+c@{socket.\+c}!link\+\_\+socket\+\_\+current\+\_\+remote\+\_\+ipv6@{link\+\_\+socket\+\_\+current\+\_\+remote\+\_\+ipv6}}
+\index{link\+\_\+socket\+\_\+current\+\_\+remote\+\_\+ipv6@{link\+\_\+socket\+\_\+current\+\_\+remote\+\_\+ipv6}!socket.\+c@{socket.\+c}}
+\subsubsection[{link\+\_\+socket\+\_\+current\+\_\+remote\+\_\+ipv6(const struct link\+\_\+socket\+\_\+info $\ast$info)}]{\setlength{\rightskip}{0pt plus 5cm}const struct in6\+\_\+addr$\ast$ link\+\_\+socket\+\_\+current\+\_\+remote\+\_\+ipv6 (
+\begin{DoxyParamCaption}
+\item[{const struct {\bf link\+\_\+socket\+\_\+info} $\ast$}]{info}
+\end{DoxyParamCaption}
+)}\label{socket_8c_afb62f9fc3adfae5d11fcc9e57650d3ad}
+\hypertarget{socket_8c_af7a1098694842ca0c089e4ef673fc5fd}{}\index{socket.\+c@{socket.\+c}!link\+\_\+socket\+\_\+init\+\_\+phase1@{link\+\_\+socket\+\_\+init\+\_\+phase1}}
+\index{link\+\_\+socket\+\_\+init\+\_\+phase1@{link\+\_\+socket\+\_\+init\+\_\+phase1}!socket.\+c@{socket.\+c}}
+\subsubsection[{link\+\_\+socket\+\_\+init\+\_\+phase1(struct link\+\_\+socket $\ast$sock, const char $\ast$local\+\_\+host, const char $\ast$local\+\_\+port, const char $\ast$remote\+\_\+host, const char $\ast$remote\+\_\+port, struct cached\+\_\+dns\+\_\+entry $\ast$dns\+\_\+cache, int proto, sa\+\_\+family\+\_\+t af, bool bind\+\_\+ipv6\+\_\+only, int mode, const struct link\+\_\+socket $\ast$accept\+\_\+from, struct http\+\_\+proxy\+\_\+info $\ast$http\+\_\+proxy, struct socks\+\_\+proxy\+\_\+info $\ast$socks\+\_\+proxy, bool bind\+\_\+local, bool remote\+\_\+float, int inetd, struct link\+\_\+socket\+\_\+addr $\ast$lsa, const char $\ast$ipchange\+\_\+command, const struct plugin\+\_\+list $\ast$plugins, int resolve\+\_\+retry\+\_\+seconds, int mtu\+\_\+discover\+\_\+type, int rcvbuf, int sndbuf, int mark, struct event\+\_\+timeout $\ast$server\+\_\+poll\+\_\+timeout, unsigned int sockflags)}]{\setlength{\rightskip}{0pt plus 5cm}void link\+\_\+socket\+\_\+init\+\_\+phase1 (
+\begin{DoxyParamCaption}
+\item[{struct {\bf link\+\_\+socket} $\ast$}]{sock, }
+\item[{const char $\ast$}]{local\+\_\+host, }
+\item[{const char $\ast$}]{local\+\_\+port, }
+\item[{const char $\ast$}]{remote\+\_\+host, }
+\item[{const char $\ast$}]{remote\+\_\+port, }
+\item[{struct {\bf cached\+\_\+dns\+\_\+entry} $\ast$}]{dns\+\_\+cache, }
+\item[{int}]{proto, }
+\item[{{\bf sa\+\_\+family\+\_\+t}}]{af, }
+\item[{{\bf bool}}]{bind\+\_\+ipv6\+\_\+only, }
+\item[{int}]{mode, }
+\item[{const struct {\bf link\+\_\+socket} $\ast$}]{accept\+\_\+from, }
+\item[{struct {\bf http\+\_\+proxy\+\_\+info} $\ast$}]{http\+\_\+proxy, }
+\item[{struct {\bf socks\+\_\+proxy\+\_\+info} $\ast$}]{socks\+\_\+proxy, }
+\item[{{\bf bool}}]{bind\+\_\+local, }
+\item[{{\bf bool}}]{remote\+\_\+float, }
+\item[{int}]{inetd, }
+\item[{struct {\bf link\+\_\+socket\+\_\+addr} $\ast$}]{lsa, }
+\item[{const char $\ast$}]{ipchange\+\_\+command, }
+\item[{const struct {\bf plugin\+\_\+list} $\ast$}]{plugins, }
+\item[{int}]{resolve\+\_\+retry\+\_\+seconds, }
+\item[{int}]{mtu\+\_\+discover\+\_\+type, }
+\item[{int}]{rcvbuf, }
+\item[{int}]{sndbuf, }
+\item[{int}]{mark, }
+\item[{struct {\bf event\+\_\+timeout} $\ast$}]{server\+\_\+poll\+\_\+timeout, }
+\item[{unsigned int}]{sockflags}
+\end{DoxyParamCaption}
+)}\label{socket_8c_af7a1098694842ca0c089e4ef673fc5fd}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{socket_8c_af7a1098694842ca0c089e4ef673fc5fd_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{socket_8c_ad716d81ba4a413dfb1014bc9407ff2fa}{}\index{socket.\+c@{socket.\+c}!link\+\_\+socket\+\_\+init\+\_\+phase2@{link\+\_\+socket\+\_\+init\+\_\+phase2}}
+\index{link\+\_\+socket\+\_\+init\+\_\+phase2@{link\+\_\+socket\+\_\+init\+\_\+phase2}!socket.\+c@{socket.\+c}}
+\subsubsection[{link\+\_\+socket\+\_\+init\+\_\+phase2(struct link\+\_\+socket $\ast$sock, const struct frame $\ast$frame, struct signal\+\_\+info $\ast$sig\+\_\+info)}]{\setlength{\rightskip}{0pt plus 5cm}void link\+\_\+socket\+\_\+init\+\_\+phase2 (
+\begin{DoxyParamCaption}
+\item[{struct {\bf link\+\_\+socket} $\ast$}]{sock, }
+\item[{const struct {\bf frame} $\ast$}]{frame, }
+\item[{struct {\bf signal\+\_\+info} $\ast$}]{sig\+\_\+info}
+\end{DoxyParamCaption}
+)}\label{socket_8c_ad716d81ba4a413dfb1014bc9407ff2fa}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=332pt]{socket_8c_ad716d81ba4a413dfb1014bc9407ff2fa_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{socket_8c_a41acd6256f92be22c7c94727d2b4bf1e}{}\index{socket.\+c@{socket.\+c}!link\+\_\+socket\+\_\+new@{link\+\_\+socket\+\_\+new}}
+\index{link\+\_\+socket\+\_\+new@{link\+\_\+socket\+\_\+new}!socket.\+c@{socket.\+c}}
+\subsubsection[{link\+\_\+socket\+\_\+new(void)}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf link\+\_\+socket}$\ast$ link\+\_\+socket\+\_\+new (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{socket_8c_a41acd6256f92be22c7c94727d2b4bf1e}
+\hypertarget{socket_8c_aaf391f0edcd41f5642fcf0143c71dba1}{}\index{socket.\+c@{socket.\+c}!link\+\_\+socket\+\_\+read\+\_\+tcp@{link\+\_\+socket\+\_\+read\+\_\+tcp}}
+\index{link\+\_\+socket\+\_\+read\+\_\+tcp@{link\+\_\+socket\+\_\+read\+\_\+tcp}!socket.\+c@{socket.\+c}}
+\subsubsection[{link\+\_\+socket\+\_\+read\+\_\+tcp(struct link\+\_\+socket $\ast$sock, struct buffer $\ast$buf)}]{\setlength{\rightskip}{0pt plus 5cm}int link\+\_\+socket\+\_\+read\+\_\+tcp (
+\begin{DoxyParamCaption}
+\item[{struct {\bf link\+\_\+socket} $\ast$}]{sock, }
+\item[{struct {\bf buffer} $\ast$}]{buf}
+\end{DoxyParamCaption}
+)}\label{socket_8c_aaf391f0edcd41f5642fcf0143c71dba1}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=321pt]{socket_8c_aaf391f0edcd41f5642fcf0143c71dba1_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{socket_8c_a785a2d1e27057de2b7f33c410ac653a2}{}\index{socket.\+c@{socket.\+c}!link\+\_\+socket\+\_\+read\+\_\+udp\+\_\+posix@{link\+\_\+socket\+\_\+read\+\_\+udp\+\_\+posix}}
+\index{link\+\_\+socket\+\_\+read\+\_\+udp\+\_\+posix@{link\+\_\+socket\+\_\+read\+\_\+udp\+\_\+posix}!socket.\+c@{socket.\+c}}
+\subsubsection[{link\+\_\+socket\+\_\+read\+\_\+udp\+\_\+posix(struct link\+\_\+socket $\ast$sock, struct buffer $\ast$buf, struct link\+\_\+socket\+\_\+actual $\ast$from)}]{\setlength{\rightskip}{0pt plus 5cm}int link\+\_\+socket\+\_\+read\+\_\+udp\+\_\+posix (
+\begin{DoxyParamCaption}
+\item[{struct {\bf link\+\_\+socket} $\ast$}]{sock, }
+\item[{struct {\bf buffer} $\ast$}]{buf, }
+\item[{struct {\bf link\+\_\+socket\+\_\+actual} $\ast$}]{from}
+\end{DoxyParamCaption}
+)}\label{socket_8c_a785a2d1e27057de2b7f33c410ac653a2}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=331pt]{socket_8c_a785a2d1e27057de2b7f33c410ac653a2_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{socket_8c_a022b67c8749e8a934063231b2abc5cf6}{}\index{socket.\+c@{socket.\+c}!link\+\_\+socket\+\_\+update\+\_\+buffer\+\_\+sizes@{link\+\_\+socket\+\_\+update\+\_\+buffer\+\_\+sizes}}
+\index{link\+\_\+socket\+\_\+update\+\_\+buffer\+\_\+sizes@{link\+\_\+socket\+\_\+update\+\_\+buffer\+\_\+sizes}!socket.\+c@{socket.\+c}}
+\subsubsection[{link\+\_\+socket\+\_\+update\+\_\+buffer\+\_\+sizes(struct link\+\_\+socket $\ast$ls, int rcvbuf, int sndbuf)}]{\setlength{\rightskip}{0pt plus 5cm}void link\+\_\+socket\+\_\+update\+\_\+buffer\+\_\+sizes (
+\begin{DoxyParamCaption}
+\item[{struct {\bf link\+\_\+socket} $\ast$}]{ls, }
+\item[{int}]{rcvbuf, }
+\item[{int}]{sndbuf}
+\end{DoxyParamCaption}
+)}\label{socket_8c_a022b67c8749e8a934063231b2abc5cf6}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{socket_8c_a022b67c8749e8a934063231b2abc5cf6_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{socket_8c_a47f7e875f90faefaede7148a7e5f3347}{}\index{socket.\+c@{socket.\+c}!link\+\_\+socket\+\_\+update\+\_\+flags@{link\+\_\+socket\+\_\+update\+\_\+flags}}
+\index{link\+\_\+socket\+\_\+update\+\_\+flags@{link\+\_\+socket\+\_\+update\+\_\+flags}!socket.\+c@{socket.\+c}}
+\subsubsection[{link\+\_\+socket\+\_\+update\+\_\+flags(struct link\+\_\+socket $\ast$ls, unsigned int sockflags)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} link\+\_\+socket\+\_\+update\+\_\+flags (
+\begin{DoxyParamCaption}
+\item[{struct {\bf link\+\_\+socket} $\ast$}]{ls, }
+\item[{unsigned int}]{sockflags}
+\end{DoxyParamCaption}
+)}\label{socket_8c_a47f7e875f90faefaede7148a7e5f3347}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{socket_8c_a47f7e875f90faefaede7148a7e5f3347_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{socket_8c_a4e20ef3416309fb6a98e3ad5ca3c1d9c}{}\index{socket.\+c@{socket.\+c}!link\+\_\+socket\+\_\+write\+\_\+tcp@{link\+\_\+socket\+\_\+write\+\_\+tcp}}
+\index{link\+\_\+socket\+\_\+write\+\_\+tcp@{link\+\_\+socket\+\_\+write\+\_\+tcp}!socket.\+c@{socket.\+c}}
+\subsubsection[{link\+\_\+socket\+\_\+write\+\_\+tcp(struct link\+\_\+socket $\ast$sock, struct buffer $\ast$buf, struct link\+\_\+socket\+\_\+actual $\ast$to)}]{\setlength{\rightskip}{0pt plus 5cm}int link\+\_\+socket\+\_\+write\+\_\+tcp (
+\begin{DoxyParamCaption}
+\item[{struct {\bf link\+\_\+socket} $\ast$}]{sock, }
+\item[{struct {\bf buffer} $\ast$}]{buf, }
+\item[{struct {\bf link\+\_\+socket\+\_\+actual} $\ast$}]{to}
+\end{DoxyParamCaption}
+)}\label{socket_8c_a4e20ef3416309fb6a98e3ad5ca3c1d9c}
+\hypertarget{socket_8c_a4677e1d99ac24bc14b09bb0d2fbf709a}{}\index{socket.\+c@{socket.\+c}!mac\+\_\+addr\+\_\+safe@{mac\+\_\+addr\+\_\+safe}}
+\index{mac\+\_\+addr\+\_\+safe@{mac\+\_\+addr\+\_\+safe}!socket.\+c@{socket.\+c}}
+\subsubsection[{mac\+\_\+addr\+\_\+safe(const char $\ast$mac\+\_\+addr)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} mac\+\_\+addr\+\_\+safe (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{mac\+\_\+addr}
+\end{DoxyParamCaption}
+)}\label{socket_8c_a4677e1d99ac24bc14b09bb0d2fbf709a}
+\hypertarget{socket_8c_aaf986563f4ab9ce6a1657c0f4fdabe10}{}\index{socket.\+c@{socket.\+c}!openvpn\+\_\+connect@{openvpn\+\_\+connect}}
+\index{openvpn\+\_\+connect@{openvpn\+\_\+connect}!socket.\+c@{socket.\+c}}
+\subsubsection[{openvpn\+\_\+connect(socket\+\_\+descriptor\+\_\+t sd, const struct sockaddr $\ast$remote, int connect\+\_\+timeout, volatile int $\ast$signal\+\_\+received)}]{\setlength{\rightskip}{0pt plus 5cm}int openvpn\+\_\+connect (
+\begin{DoxyParamCaption}
+\item[{{\bf socket\+\_\+descriptor\+\_\+t}}]{sd, }
+\item[{const struct sockaddr $\ast$}]{remote, }
+\item[{int}]{connect\+\_\+timeout, }
+\item[{volatile int $\ast$}]{signal\+\_\+received}
+\end{DoxyParamCaption}
+)}\label{socket_8c_aaf986563f4ab9ce6a1657c0f4fdabe10}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{socket_8c_aaf986563f4ab9ce6a1657c0f4fdabe10_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{socket_8c_a02e4efd449ac0356c68ec0a4477e3342}{}\index{socket.\+c@{socket.\+c}!openvpn\+\_\+getaddrinfo@{openvpn\+\_\+getaddrinfo}}
+\index{openvpn\+\_\+getaddrinfo@{openvpn\+\_\+getaddrinfo}!socket.\+c@{socket.\+c}}
+\subsubsection[{openvpn\+\_\+getaddrinfo(unsigned int flags, const char $\ast$hostname, const char $\ast$servname, int resolve\+\_\+retry\+\_\+seconds, volatile int $\ast$signal\+\_\+received, int ai\+\_\+family, struct addrinfo $\ast$$\ast$res)}]{\setlength{\rightskip}{0pt plus 5cm}int openvpn\+\_\+getaddrinfo (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{flags, }
+\item[{const char $\ast$}]{hostname, }
+\item[{const char $\ast$}]{servname, }
+\item[{int}]{resolve\+\_\+retry\+\_\+seconds, }
+\item[{volatile int $\ast$}]{signal\+\_\+received, }
+\item[{int}]{ai\+\_\+family, }
+\item[{struct addrinfo $\ast$$\ast$}]{res}
+\end{DoxyParamCaption}
+)}\label{socket_8c_a02e4efd449ac0356c68ec0a4477e3342}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{socket_8c_a02e4efd449ac0356c68ec0a4477e3342_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{socket_8c_a02e4efd449ac0356c68ec0a4477e3342_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{socket_8c_aac586ad698d29388acc839510e86cf81}{}\index{socket.\+c@{socket.\+c}!openvpn\+\_\+inet\+\_\+aton@{openvpn\+\_\+inet\+\_\+aton}}
+\index{openvpn\+\_\+inet\+\_\+aton@{openvpn\+\_\+inet\+\_\+aton}!socket.\+c@{socket.\+c}}
+\subsubsection[{openvpn\+\_\+inet\+\_\+aton(const char $\ast$dotted\+\_\+quad, struct in\+\_\+addr $\ast$addr)}]{\setlength{\rightskip}{0pt plus 5cm}int openvpn\+\_\+inet\+\_\+aton (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{dotted\+\_\+quad, }
+\item[{struct in\+\_\+addr $\ast$}]{addr}
+\end{DoxyParamCaption}
+)}\label{socket_8c_aac586ad698d29388acc839510e86cf81}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=282pt]{socket_8c_aac586ad698d29388acc839510e86cf81_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{socket_8c_aac586ad698d29388acc839510e86cf81_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{socket_8c_a9a911c5dde4c809f7cb3eef8e5918a8e}{}\index{socket.\+c@{socket.\+c}!print\+\_\+in6\+\_\+addr@{print\+\_\+in6\+\_\+addr}}
+\index{print\+\_\+in6\+\_\+addr@{print\+\_\+in6\+\_\+addr}!socket.\+c@{socket.\+c}}
+\subsubsection[{print\+\_\+in6\+\_\+addr(struct in6\+\_\+addr a6, unsigned int flags, struct gc\+\_\+arena $\ast$gc)}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ print\+\_\+in6\+\_\+addr (
+\begin{DoxyParamCaption}
+\item[{struct in6\+\_\+addr}]{a6, }
+\item[{unsigned int}]{flags, }
+\item[{struct {\bf gc\+\_\+arena} $\ast$}]{gc}
+\end{DoxyParamCaption}
+)}\label{socket_8c_a9a911c5dde4c809f7cb3eef8e5918a8e}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{socket_8c_a9a911c5dde4c809f7cb3eef8e5918a8e_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{socket_8c_a9a911c5dde4c809f7cb3eef8e5918a8e_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{socket_8c_a2741d6007f1e5a670409883f4304da61}{}\index{socket.\+c@{socket.\+c}!print\+\_\+in\+\_\+addr\+\_\+t@{print\+\_\+in\+\_\+addr\+\_\+t}}
+\index{print\+\_\+in\+\_\+addr\+\_\+t@{print\+\_\+in\+\_\+addr\+\_\+t}!socket.\+c@{socket.\+c}}
+\subsubsection[{print\+\_\+in\+\_\+addr\+\_\+t(in\+\_\+addr\+\_\+t addr, unsigned int flags, struct gc\+\_\+arena $\ast$gc)}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ print\+\_\+in\+\_\+addr\+\_\+t (
+\begin{DoxyParamCaption}
+\item[{in\+\_\+addr\+\_\+t}]{addr, }
+\item[{unsigned int}]{flags, }
+\item[{struct {\bf gc\+\_\+arena} $\ast$}]{gc}
+\end{DoxyParamCaption}
+)}\label{socket_8c_a2741d6007f1e5a670409883f4304da61}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{socket_8c_a2741d6007f1e5a670409883f4304da61_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{socket_8c_a2741d6007f1e5a670409883f4304da61_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{socket_8c_aefe5013514f1d62a138107fb43cc74e3}{}\index{socket.\+c@{socket.\+c}!print\+\_\+link\+\_\+socket\+\_\+actual@{print\+\_\+link\+\_\+socket\+\_\+actual}}
+\index{print\+\_\+link\+\_\+socket\+\_\+actual@{print\+\_\+link\+\_\+socket\+\_\+actual}!socket.\+c@{socket.\+c}}
+\subsubsection[{print\+\_\+link\+\_\+socket\+\_\+actual(const struct link\+\_\+socket\+\_\+actual $\ast$act, struct gc\+\_\+arena $\ast$gc)}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ print\+\_\+link\+\_\+socket\+\_\+actual (
+\begin{DoxyParamCaption}
+\item[{const struct {\bf link\+\_\+socket\+\_\+actual} $\ast$}]{act, }
+\item[{struct {\bf gc\+\_\+arena} $\ast$}]{gc}
+\end{DoxyParamCaption}
+)}\label{socket_8c_aefe5013514f1d62a138107fb43cc74e3}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{socket_8c_aefe5013514f1d62a138107fb43cc74e3_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{socket_8c_aefe5013514f1d62a138107fb43cc74e3_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{socket_8c_aa401d7e395acdc1d4f61f6526ef92846}{}\index{socket.\+c@{socket.\+c}!print\+\_\+link\+\_\+socket\+\_\+actual\+\_\+ex@{print\+\_\+link\+\_\+socket\+\_\+actual\+\_\+ex}}
+\index{print\+\_\+link\+\_\+socket\+\_\+actual\+\_\+ex@{print\+\_\+link\+\_\+socket\+\_\+actual\+\_\+ex}!socket.\+c@{socket.\+c}}
+\subsubsection[{print\+\_\+link\+\_\+socket\+\_\+actual\+\_\+ex(const struct link\+\_\+socket\+\_\+actual $\ast$act, const char $\ast$separator, const unsigned int flags, struct gc\+\_\+arena $\ast$gc)}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ print\+\_\+link\+\_\+socket\+\_\+actual\+\_\+ex (
+\begin{DoxyParamCaption}
+\item[{const struct {\bf link\+\_\+socket\+\_\+actual} $\ast$}]{act, }
+\item[{const char $\ast$}]{separator, }
+\item[{const unsigned int}]{flags, }
+\item[{struct {\bf gc\+\_\+arena} $\ast$}]{gc}
+\end{DoxyParamCaption}
+)}\label{socket_8c_aa401d7e395acdc1d4f61f6526ef92846}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{socket_8c_aa401d7e395acdc1d4f61f6526ef92846_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{socket_8c_aa401d7e395acdc1d4f61f6526ef92846_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{socket_8c_a616cfadfd81ab5ba341fa3adb1e93788}{}\index{socket.\+c@{socket.\+c}!print\+\_\+sockaddr\+\_\+ex@{print\+\_\+sockaddr\+\_\+ex}}
+\index{print\+\_\+sockaddr\+\_\+ex@{print\+\_\+sockaddr\+\_\+ex}!socket.\+c@{socket.\+c}}
+\subsubsection[{print\+\_\+sockaddr\+\_\+ex(const struct sockaddr $\ast$sa, const char $\ast$separator, const unsigned int flags, struct gc\+\_\+arena $\ast$gc)}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ print\+\_\+sockaddr\+\_\+ex (
+\begin{DoxyParamCaption}
+\item[{const struct sockaddr $\ast$}]{sa, }
+\item[{const char $\ast$}]{separator, }
+\item[{const unsigned int}]{flags, }
+\item[{struct {\bf gc\+\_\+arena} $\ast$}]{gc}
+\end{DoxyParamCaption}
+)}\label{socket_8c_a616cfadfd81ab5ba341fa3adb1e93788}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{socket_8c_a616cfadfd81ab5ba341fa3adb1e93788_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{socket_8c_a616cfadfd81ab5ba341fa3adb1e93788_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{socket_8c_a6ebb8e0bd35afb3cda6a0392f1479433}{}\index{socket.\+c@{socket.\+c}!proto2ascii@{proto2ascii}}
+\index{proto2ascii@{proto2ascii}!socket.\+c@{socket.\+c}}
+\subsubsection[{proto2ascii(int proto, sa\+\_\+family\+\_\+t af, bool display\+\_\+form)}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ proto2ascii (
+\begin{DoxyParamCaption}
+\item[{int}]{proto, }
+\item[{{\bf sa\+\_\+family\+\_\+t}}]{af, }
+\item[{{\bf bool}}]{display\+\_\+form}
+\end{DoxyParamCaption}
+)}\label{socket_8c_a6ebb8e0bd35afb3cda6a0392f1479433}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{socket_8c_a6ebb8e0bd35afb3cda6a0392f1479433_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{socket_8c_a40d34261451e42b8e53480f6a260fd01}{}\index{socket.\+c@{socket.\+c}!proto2ascii\+\_\+all@{proto2ascii\+\_\+all}}
+\index{proto2ascii\+\_\+all@{proto2ascii\+\_\+all}!socket.\+c@{socket.\+c}}
+\subsubsection[{proto2ascii\+\_\+all(struct gc\+\_\+arena $\ast$gc)}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ proto2ascii\+\_\+all (
+\begin{DoxyParamCaption}
+\item[{struct {\bf gc\+\_\+arena} $\ast$}]{gc}
+\end{DoxyParamCaption}
+)}\label{socket_8c_a40d34261451e42b8e53480f6a260fd01}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{socket_8c_a40d34261451e42b8e53480f6a260fd01_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{socket_8c_adbff197bdb9734118cdf9889650477ae}{}\index{socket.\+c@{socket.\+c}!proto\+\_\+is\+\_\+dgram@{proto\+\_\+is\+\_\+dgram}}
+\index{proto\+\_\+is\+\_\+dgram@{proto\+\_\+is\+\_\+dgram}!socket.\+c@{socket.\+c}}
+\subsubsection[{proto\+\_\+is\+\_\+dgram(int proto)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} proto\+\_\+is\+\_\+dgram (
+\begin{DoxyParamCaption}
+\item[{int}]{proto}
+\end{DoxyParamCaption}
+)}\label{socket_8c_adbff197bdb9734118cdf9889650477ae}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=271pt]{socket_8c_adbff197bdb9734118cdf9889650477ae_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{socket_8c_adbff197bdb9734118cdf9889650477ae_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{socket_8c_a9138a0cf0f761db560b22d8417ad2565}{}\index{socket.\+c@{socket.\+c}!proto\+\_\+is\+\_\+net@{proto\+\_\+is\+\_\+net}}
+\index{proto\+\_\+is\+\_\+net@{proto\+\_\+is\+\_\+net}!socket.\+c@{socket.\+c}}
+\subsubsection[{proto\+\_\+is\+\_\+net(int proto)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} proto\+\_\+is\+\_\+net (
+\begin{DoxyParamCaption}
+\item[{int}]{proto}
+\end{DoxyParamCaption}
+)}\label{socket_8c_a9138a0cf0f761db560b22d8417ad2565}
+\hypertarget{socket_8c_a14db84b6dd2dbff8084a8254b7424f68}{}\index{socket.\+c@{socket.\+c}!proto\+\_\+is\+\_\+tcp@{proto\+\_\+is\+\_\+tcp}}
+\index{proto\+\_\+is\+\_\+tcp@{proto\+\_\+is\+\_\+tcp}!socket.\+c@{socket.\+c}}
+\subsubsection[{proto\+\_\+is\+\_\+tcp(int proto)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} proto\+\_\+is\+\_\+tcp (
+\begin{DoxyParamCaption}
+\item[{int}]{proto}
+\end{DoxyParamCaption}
+)}\label{socket_8c_a14db84b6dd2dbff8084a8254b7424f68}
+\hypertarget{socket_8c_a86424bdc75e8f05f00a649f30f897110}{}\index{socket.\+c@{socket.\+c}!proto\+\_\+is\+\_\+udp@{proto\+\_\+is\+\_\+udp}}
+\index{proto\+\_\+is\+\_\+udp@{proto\+\_\+is\+\_\+udp}!socket.\+c@{socket.\+c}}
+\subsubsection[{proto\+\_\+is\+\_\+udp(int proto)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} proto\+\_\+is\+\_\+udp (
+\begin{DoxyParamCaption}
+\item[{int}]{proto}
+\end{DoxyParamCaption}
+)}\label{socket_8c_a86424bdc75e8f05f00a649f30f897110}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{socket_8c_a86424bdc75e8f05f00a649f30f897110_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{socket_8c_aa8031dd7e4e961af246871041559a3a1}{}\index{socket.\+c@{socket.\+c}!proto\+\_\+remote@{proto\+\_\+remote}}
+\index{proto\+\_\+remote@{proto\+\_\+remote}!socket.\+c@{socket.\+c}}
+\subsubsection[{proto\+\_\+remote(int proto, bool remote)}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ proto\+\_\+remote (
+\begin{DoxyParamCaption}
+\item[{int}]{proto, }
+\item[{{\bf bool}}]{remote}
+\end{DoxyParamCaption}
+)}\label{socket_8c_aa8031dd7e4e961af246871041559a3a1}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{socket_8c_aa8031dd7e4e961af246871041559a3a1_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{socket_8c_a51d1084b7790e97788d32d9833c7d31c}{}\index{socket.\+c@{socket.\+c}!sd\+\_\+close@{sd\+\_\+close}}
+\index{sd\+\_\+close@{sd\+\_\+close}!socket.\+c@{socket.\+c}}
+\subsubsection[{sd\+\_\+close(socket\+\_\+descriptor\+\_\+t $\ast$sd)}]{\setlength{\rightskip}{0pt plus 5cm}void sd\+\_\+close (
+\begin{DoxyParamCaption}
+\item[{{\bf socket\+\_\+descriptor\+\_\+t} $\ast$}]{sd}
+\end{DoxyParamCaption}
+)}\label{socket_8c_a51d1084b7790e97788d32d9833c7d31c}
+\hypertarget{socket_8c_a3087eb3ac32539db715fa6084307bcb7}{}\index{socket.\+c@{socket.\+c}!set\+\_\+actual\+\_\+address@{set\+\_\+actual\+\_\+address}}
+\index{set\+\_\+actual\+\_\+address@{set\+\_\+actual\+\_\+address}!socket.\+c@{socket.\+c}}
+\subsubsection[{set\+\_\+actual\+\_\+address(struct link\+\_\+socket\+\_\+actual $\ast$actual, struct addrinfo $\ast$ai)}]{\setlength{\rightskip}{0pt plus 5cm}void set\+\_\+actual\+\_\+address (
+\begin{DoxyParamCaption}
+\item[{struct {\bf link\+\_\+socket\+\_\+actual} $\ast$}]{actual, }
+\item[{struct addrinfo $\ast$}]{ai}
+\end{DoxyParamCaption}
+)}\label{socket_8c_a3087eb3ac32539db715fa6084307bcb7}
+\hypertarget{socket_8c_a607e25972e470d65dd7f99d15953cac4}{}\index{socket.\+c@{socket.\+c}!setenv\+\_\+in6\+\_\+addr@{setenv\+\_\+in6\+\_\+addr}}
+\index{setenv\+\_\+in6\+\_\+addr@{setenv\+\_\+in6\+\_\+addr}!socket.\+c@{socket.\+c}}
+\subsubsection[{setenv\+\_\+in6\+\_\+addr(struct env\+\_\+set $\ast$es, const char $\ast$name\+\_\+prefix, const struct in6\+\_\+addr $\ast$addr, const unsigned int flags)}]{\setlength{\rightskip}{0pt plus 5cm}void setenv\+\_\+in6\+\_\+addr (
+\begin{DoxyParamCaption}
+\item[{struct {\bf env\+\_\+set} $\ast$}]{es, }
+\item[{const char $\ast$}]{name\+\_\+prefix, }
+\item[{const struct in6\+\_\+addr $\ast$}]{addr, }
+\item[{const unsigned int}]{flags}
+\end{DoxyParamCaption}
+)}\label{socket_8c_a607e25972e470d65dd7f99d15953cac4}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{socket_8c_a607e25972e470d65dd7f99d15953cac4_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{socket_8c_a4f17a188890a7bc5a8d0dcb30355ac18}{}\index{socket.\+c@{socket.\+c}!setenv\+\_\+in\+\_\+addr\+\_\+t@{setenv\+\_\+in\+\_\+addr\+\_\+t}}
+\index{setenv\+\_\+in\+\_\+addr\+\_\+t@{setenv\+\_\+in\+\_\+addr\+\_\+t}!socket.\+c@{socket.\+c}}
+\subsubsection[{setenv\+\_\+in\+\_\+addr\+\_\+t(struct env\+\_\+set $\ast$es, const char $\ast$name\+\_\+prefix, in\+\_\+addr\+\_\+t addr, const unsigned int flags)}]{\setlength{\rightskip}{0pt plus 5cm}void setenv\+\_\+in\+\_\+addr\+\_\+t (
+\begin{DoxyParamCaption}
+\item[{struct {\bf env\+\_\+set} $\ast$}]{es, }
+\item[{const char $\ast$}]{name\+\_\+prefix, }
+\item[{in\+\_\+addr\+\_\+t}]{addr, }
+\item[{const unsigned int}]{flags}
+\end{DoxyParamCaption}
+)}\label{socket_8c_a4f17a188890a7bc5a8d0dcb30355ac18}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{socket_8c_a4f17a188890a7bc5a8d0dcb30355ac18_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{socket_8c_a58387f8e96dacad4aa9322c3890c6001}{}\index{socket.\+c@{socket.\+c}!setenv\+\_\+link\+\_\+socket\+\_\+actual@{setenv\+\_\+link\+\_\+socket\+\_\+actual}}
+\index{setenv\+\_\+link\+\_\+socket\+\_\+actual@{setenv\+\_\+link\+\_\+socket\+\_\+actual}!socket.\+c@{socket.\+c}}
+\subsubsection[{setenv\+\_\+link\+\_\+socket\+\_\+actual(struct env\+\_\+set $\ast$es, const char $\ast$name\+\_\+prefix, const struct link\+\_\+socket\+\_\+actual $\ast$act, const unsigned int flags)}]{\setlength{\rightskip}{0pt plus 5cm}void setenv\+\_\+link\+\_\+socket\+\_\+actual (
+\begin{DoxyParamCaption}
+\item[{struct {\bf env\+\_\+set} $\ast$}]{es, }
+\item[{const char $\ast$}]{name\+\_\+prefix, }
+\item[{const struct {\bf link\+\_\+socket\+\_\+actual} $\ast$}]{act, }
+\item[{const unsigned int}]{flags}
+\end{DoxyParamCaption}
+)}\label{socket_8c_a58387f8e96dacad4aa9322c3890c6001}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{socket_8c_a58387f8e96dacad4aa9322c3890c6001_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{socket_8c_a58387f8e96dacad4aa9322c3890c6001_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{socket_8c_a7db6fcb0d9f1d1ca09149554d91f979f}{}\index{socket.\+c@{socket.\+c}!setenv\+\_\+sockaddr@{setenv\+\_\+sockaddr}}
+\index{setenv\+\_\+sockaddr@{setenv\+\_\+sockaddr}!socket.\+c@{socket.\+c}}
+\subsubsection[{setenv\+\_\+sockaddr(struct env\+\_\+set $\ast$es, const char $\ast$name\+\_\+prefix, const struct openvpn\+\_\+sockaddr $\ast$addr, const unsigned int flags)}]{\setlength{\rightskip}{0pt plus 5cm}void setenv\+\_\+sockaddr (
+\begin{DoxyParamCaption}
+\item[{struct {\bf env\+\_\+set} $\ast$}]{es, }
+\item[{const char $\ast$}]{name\+\_\+prefix, }
+\item[{const struct {\bf openvpn\+\_\+sockaddr} $\ast$}]{addr, }
+\item[{const unsigned int}]{flags}
+\end{DoxyParamCaption}
+)}\label{socket_8c_a7db6fcb0d9f1d1ca09149554d91f979f}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{socket_8c_a7db6fcb0d9f1d1ca09149554d91f979f_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{socket_8c_a7db6fcb0d9f1d1ca09149554d91f979f_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{socket_8c_aed93bf1bce64b0baebbf79c40b30bada}{}\index{socket.\+c@{socket.\+c}!setenv\+\_\+trusted@{setenv\+\_\+trusted}}
+\index{setenv\+\_\+trusted@{setenv\+\_\+trusted}!socket.\+c@{socket.\+c}}
+\subsubsection[{setenv\+\_\+trusted(struct env\+\_\+set $\ast$es, const struct link\+\_\+socket\+\_\+info $\ast$info)}]{\setlength{\rightskip}{0pt plus 5cm}void setenv\+\_\+trusted (
+\begin{DoxyParamCaption}
+\item[{struct {\bf env\+\_\+set} $\ast$}]{es, }
+\item[{const struct {\bf link\+\_\+socket\+\_\+info} $\ast$}]{info}
+\end{DoxyParamCaption}
+)}\label{socket_8c_aed93bf1bce64b0baebbf79c40b30bada}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{socket_8c_aed93bf1bce64b0baebbf79c40b30bada_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=315pt]{socket_8c_aed93bf1bce64b0baebbf79c40b30bada_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{socket_8c_af4927a4638ad626394e1cc000cfe5466}{}\index{socket.\+c@{socket.\+c}!socket\+\_\+adjust\+\_\+frame\+\_\+parameters@{socket\+\_\+adjust\+\_\+frame\+\_\+parameters}}
+\index{socket\+\_\+adjust\+\_\+frame\+\_\+parameters@{socket\+\_\+adjust\+\_\+frame\+\_\+parameters}!socket.\+c@{socket.\+c}}
+\subsubsection[{socket\+\_\+adjust\+\_\+frame\+\_\+parameters(struct frame $\ast$frame, int proto)}]{\setlength{\rightskip}{0pt plus 5cm}void socket\+\_\+adjust\+\_\+frame\+\_\+parameters (
+\begin{DoxyParamCaption}
+\item[{struct {\bf frame} $\ast$}]{frame, }
+\item[{int}]{proto}
+\end{DoxyParamCaption}
+)}\label{socket_8c_af4927a4638ad626394e1cc000cfe5466}
+\hypertarget{socket_8c_ac08e0b0ddd8c2561045b8fec18870116}{}\index{socket.\+c@{socket.\+c}!socket\+\_\+bind@{socket\+\_\+bind}}
+\index{socket\+\_\+bind@{socket\+\_\+bind}!socket.\+c@{socket.\+c}}
+\subsubsection[{socket\+\_\+bind(socket\+\_\+descriptor\+\_\+t sd, struct addrinfo $\ast$local, int ai\+\_\+family, const char $\ast$prefix, bool ipv6only)}]{\setlength{\rightskip}{0pt plus 5cm}void socket\+\_\+bind (
+\begin{DoxyParamCaption}
+\item[{{\bf socket\+\_\+descriptor\+\_\+t}}]{sd, }
+\item[{struct addrinfo $\ast$}]{local, }
+\item[{int}]{ai\+\_\+family, }
+\item[{const char $\ast$}]{prefix, }
+\item[{{\bf bool}}]{ipv6only}
+\end{DoxyParamCaption}
+)}\label{socket_8c_ac08e0b0ddd8c2561045b8fec18870116}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{socket_8c_ac08e0b0ddd8c2561045b8fec18870116_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{socket_8c_a7bd3fb1c5f91bcd4d18174168e226eb0}{}\index{socket.\+c@{socket.\+c}!socket\+\_\+do\+\_\+accept@{socket\+\_\+do\+\_\+accept}}
+\index{socket\+\_\+do\+\_\+accept@{socket\+\_\+do\+\_\+accept}!socket.\+c@{socket.\+c}}
+\subsubsection[{socket\+\_\+do\+\_\+accept(socket\+\_\+descriptor\+\_\+t sd, struct link\+\_\+socket\+\_\+actual $\ast$act, const bool nowait)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf socket\+\_\+descriptor\+\_\+t} socket\+\_\+do\+\_\+accept (
+\begin{DoxyParamCaption}
+\item[{{\bf socket\+\_\+descriptor\+\_\+t}}]{sd, }
+\item[{struct {\bf link\+\_\+socket\+\_\+actual} $\ast$}]{act, }
+\item[{const {\bf bool}}]{nowait}
+\end{DoxyParamCaption}
+)}\label{socket_8c_a7bd3fb1c5f91bcd4d18174168e226eb0}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{socket_8c_a7bd3fb1c5f91bcd4d18174168e226eb0_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{socket_8c_a50798315305f70b5cc97f016d65ace82}{}\index{socket.\+c@{socket.\+c}!socket\+\_\+listen\+\_\+event\+\_\+handle@{socket\+\_\+listen\+\_\+event\+\_\+handle}}
+\index{socket\+\_\+listen\+\_\+event\+\_\+handle@{socket\+\_\+listen\+\_\+event\+\_\+handle}!socket.\+c@{socket.\+c}}
+\subsubsection[{socket\+\_\+listen\+\_\+event\+\_\+handle(struct link\+\_\+socket $\ast$s)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf event\+\_\+t} socket\+\_\+listen\+\_\+event\+\_\+handle (
+\begin{DoxyParamCaption}
+\item[{struct {\bf link\+\_\+socket} $\ast$}]{s}
+\end{DoxyParamCaption}
+)}\label{socket_8c_a50798315305f70b5cc97f016d65ace82}
+\hypertarget{socket_8c_ab5605eaa75bdd5f315edcfaefcd77b69}{}\index{socket.\+c@{socket.\+c}!socket\+\_\+set@{socket\+\_\+set}}
+\index{socket\+\_\+set@{socket\+\_\+set}!socket.\+c@{socket.\+c}}
+\subsubsection[{socket\+\_\+set(struct link\+\_\+socket $\ast$s, struct event\+\_\+set $\ast$es, unsigned int rwflags, void $\ast$arg, unsigned int $\ast$persistent)}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int socket\+\_\+set (
+\begin{DoxyParamCaption}
+\item[{struct {\bf link\+\_\+socket} $\ast$}]{s, }
+\item[{struct {\bf event\+\_\+set} $\ast$}]{es, }
+\item[{unsigned int}]{rwflags, }
+\item[{void $\ast$}]{arg, }
+\item[{unsigned int $\ast$}]{persistent}
+\end{DoxyParamCaption}
+)}\label{socket_8c_ab5605eaa75bdd5f315edcfaefcd77b69}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=264pt]{socket_8c_ab5605eaa75bdd5f315edcfaefcd77b69_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{socket_8c_a45f6ed12802df58a5627b6a7ba80b093}{}\index{socket.\+c@{socket.\+c}!socket\+\_\+stat@{socket\+\_\+stat}}
+\index{socket\+\_\+stat@{socket\+\_\+stat}!socket.\+c@{socket.\+c}}
+\subsubsection[{socket\+\_\+stat(const struct link\+\_\+socket $\ast$s, unsigned int rwflags, struct gc\+\_\+arena $\ast$gc)}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ socket\+\_\+stat (
+\begin{DoxyParamCaption}
+\item[{const struct {\bf link\+\_\+socket} $\ast$}]{s, }
+\item[{unsigned int}]{rwflags, }
+\item[{struct {\bf gc\+\_\+arena} $\ast$}]{gc}
+\end{DoxyParamCaption}
+)}\label{socket_8c_a45f6ed12802df58a5627b6a7ba80b093}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{socket_8c_a45f6ed12802df58a5627b6a7ba80b093_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{socket_8c_a0c43f40cf87e67746949ece97c087502}{}\index{socket.\+c@{socket.\+c}!stream\+\_\+buf\+\_\+added@{stream\+\_\+buf\+\_\+added}}
+\index{stream\+\_\+buf\+\_\+added@{stream\+\_\+buf\+\_\+added}!socket.\+c@{socket.\+c}}
+\subsubsection[{stream\+\_\+buf\+\_\+added(struct stream\+\_\+buf $\ast$sb, int length\+\_\+added)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} stream\+\_\+buf\+\_\+added (
+\begin{DoxyParamCaption}
+\item[{struct {\bf stream\+\_\+buf} $\ast$}]{sb, }
+\item[{int}]{length\+\_\+added}
+\end{DoxyParamCaption}
+)}\label{socket_8c_a0c43f40cf87e67746949ece97c087502}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=330pt]{socket_8c_a0c43f40cf87e67746949ece97c087502_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{socket_8c_a1bf7dc9366cc6344370dd08999e185b6}{}\index{socket.\+c@{socket.\+c}!stream\+\_\+buf\+\_\+close@{stream\+\_\+buf\+\_\+close}}
+\index{stream\+\_\+buf\+\_\+close@{stream\+\_\+buf\+\_\+close}!socket.\+c@{socket.\+c}}
+\subsubsection[{stream\+\_\+buf\+\_\+close(struct stream\+\_\+buf $\ast$sb)}]{\setlength{\rightskip}{0pt plus 5cm}void stream\+\_\+buf\+\_\+close (
+\begin{DoxyParamCaption}
+\item[{struct {\bf stream\+\_\+buf} $\ast$}]{sb}
+\end{DoxyParamCaption}
+)}\label{socket_8c_a1bf7dc9366cc6344370dd08999e185b6}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=259pt]{socket_8c_a1bf7dc9366cc6344370dd08999e185b6_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=304pt]{socket_8c_a1bf7dc9366cc6344370dd08999e185b6_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{socket_8c_a96ba948dd0e3d3ad6fcbde53ff44dd1d}{}\index{socket.\+c@{socket.\+c}!stream\+\_\+buf\+\_\+init@{stream\+\_\+buf\+\_\+init}}
+\index{stream\+\_\+buf\+\_\+init@{stream\+\_\+buf\+\_\+init}!socket.\+c@{socket.\+c}}
+\subsubsection[{stream\+\_\+buf\+\_\+init(struct stream\+\_\+buf $\ast$sb, struct buffer $\ast$buf, const unsigned int sockflags, const int proto)}]{\setlength{\rightskip}{0pt plus 5cm}void stream\+\_\+buf\+\_\+init (
+\begin{DoxyParamCaption}
+\item[{struct {\bf stream\+\_\+buf} $\ast$}]{sb, }
+\item[{struct {\bf buffer} $\ast$}]{buf, }
+\item[{const unsigned int}]{sockflags, }
+\item[{const int}]{proto}
+\end{DoxyParamCaption}
+)}\label{socket_8c_a96ba948dd0e3d3ad6fcbde53ff44dd1d}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{socket_8c_a96ba948dd0e3d3ad6fcbde53ff44dd1d_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{socket_8c_a74cecd1239fb70b980e1ca7a247bbd2e}{}\index{socket.\+c@{socket.\+c}!stream\+\_\+buf\+\_\+read\+\_\+setup\+\_\+dowork@{stream\+\_\+buf\+\_\+read\+\_\+setup\+\_\+dowork}}
+\index{stream\+\_\+buf\+\_\+read\+\_\+setup\+\_\+dowork@{stream\+\_\+buf\+\_\+read\+\_\+setup\+\_\+dowork}!socket.\+c@{socket.\+c}}
+\subsubsection[{stream\+\_\+buf\+\_\+read\+\_\+setup\+\_\+dowork(struct link\+\_\+socket $\ast$sock)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} stream\+\_\+buf\+\_\+read\+\_\+setup\+\_\+dowork (
+\begin{DoxyParamCaption}
+\item[{struct {\bf link\+\_\+socket} $\ast$}]{sock}
+\end{DoxyParamCaption}
+)}\label{socket_8c_a74cecd1239fb70b980e1ca7a247bbd2e}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=330pt]{socket_8c_a74cecd1239fb70b980e1ca7a247bbd2e_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Variable Documentation}
+\hypertarget{socket_8c_a239a24f77e4782c0d0e215a6ea3ba0e6}{}\index{socket.\+c@{socket.\+c}!proto\+\_\+overhead@{proto\+\_\+overhead}}
+\index{proto\+\_\+overhead@{proto\+\_\+overhead}!socket.\+c@{socket.\+c}}
+\subsubsection[{proto\+\_\+overhead}]{\setlength{\rightskip}{0pt plus 5cm}const int proto\+\_\+overhead\mbox{[}$\,$\mbox{]}}\label{socket_8c_a239a24f77e4782c0d0e215a6ea3ba0e6}
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+= \{ 
+    0,
+    \hyperlink{socket_8h_a78cb4d82ac2dbdd2456b574b49b5921d}{IPv4\_UDP\_HEADER\_SIZE}, 
+    \hyperlink{socket_8h_aeea9b150803ef560a50a5617ebeab61d}{IPv4\_TCP\_HEADER\_SIZE},
+    \hyperlink{socket_8h_aeea9b150803ef560a50a5617ebeab61d}{IPv4\_TCP\_HEADER\_SIZE},
+    \hyperlink{socket_8h_ae60d9e8affd55886bd8247a373a3bd94}{IPv6\_UDP\_HEADER\_SIZE}, 
+    \hyperlink{socket_8h_a1575cb39df49550bd45e8b5ab723e22e}{IPv6\_TCP\_HEADER\_SIZE},
+    \hyperlink{socket_8h_a1575cb39df49550bd45e8b5ab723e22e}{IPv6\_TCP\_HEADER\_SIZE},
+    \hyperlink{socket_8h_a1575cb39df49550bd45e8b5ab723e22e}{IPv6\_TCP\_HEADER\_SIZE},
+\}
+\end{DoxyCode}

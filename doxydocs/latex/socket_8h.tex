@@ -1,0 +1,1721 @@
+\hypertarget{socket_8h}{}\section{src/openvpn/socket.h File Reference}
+\label{socket_8h}\index{src/openvpn/socket.\+h@{src/openvpn/socket.\+h}}
+{\ttfamily \#include \char`\"{}buffer.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}common.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}error.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}proto.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}mtu.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}win32.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}event.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}proxy.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}socks.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}misc.\+h\char`\"{}}\\*
+Include dependency graph for socket.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{socket_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{socket_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structopenvpn__sockaddr}{openvpn\+\_\+sockaddr}
+\item 
+struct \hyperlink{structcached__dns__entry}{cached\+\_\+dns\+\_\+entry}
+\item 
+struct \hyperlink{structlink__socket__actual}{link\+\_\+socket\+\_\+actual}
+\item 
+struct \hyperlink{structlink__socket__addr}{link\+\_\+socket\+\_\+addr}
+\item 
+struct \hyperlink{structlink__socket__info}{link\+\_\+socket\+\_\+info}
+\item 
+struct \hyperlink{structstream__buf}{stream\+\_\+buf}
+\item 
+struct \hyperlink{structsocket__buffer__size}{socket\+\_\+buffer\+\_\+size}
+\item 
+struct \hyperlink{structlink__socket}{link\+\_\+socket}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{socket_8h_a9450f7aecd616dbf9b5b1b43e5e3a688}{O\+P\+E\+N\+V\+P\+N\+\_\+\+P\+O\+R\+T}~\char`\"{}1194\char`\"{}
+\item 
+\#define \hyperlink{socket_8h_a743fe9566328f4a753afe6d7d3457d61}{R\+E\+S\+O\+L\+V\+\_\+\+R\+E\+T\+R\+Y\+\_\+\+I\+N\+F\+I\+N\+I\+T\+E}~1000000000
+\item 
+\#define \hyperlink{socket_8h_ae90ab66144545a15a23d39e69627cc8d}{htonps}(x)~htons(x)
+\item 
+\#define \hyperlink{socket_8h_aca11e8f066d8600454ee8e46230091a1}{ntohps}(x)~ntohs(x)
+\item 
+\#define \hyperlink{socket_8h_aa1c1789e229d0784e709f300569e181f}{I\+N\+E\+T\+D\+\_\+\+N\+O\+N\+E}~0
+\item 
+\#define \hyperlink{socket_8h_a486c42399330d8d87964ba90862d128c}{I\+N\+E\+T\+D\+\_\+\+W\+A\+I\+T}~1
+\item 
+\#define \hyperlink{socket_8h_a4c61fca67870cd9dfd965e5976425754}{I\+N\+E\+T\+D\+\_\+\+N\+O\+W\+A\+I\+T}~2
+\item 
+\#define \hyperlink{socket_8h_a9c4bfc3d8aeda3bb49d8d3897892f3ee}{L\+S\+\_\+\+M\+O\+D\+E\+\_\+\+D\+E\+F\+A\+U\+L\+T}~0
+\item 
+\#define \hyperlink{socket_8h_ab2808d3cfa79a16107297dcacf7df779}{L\+S\+\_\+\+M\+O\+D\+E\+\_\+\+T\+C\+P\+\_\+\+L\+I\+S\+T\+E\+N}~1
+\item 
+\#define \hyperlink{socket_8h_a157c21b8cc55b246867518e68946f43d}{L\+S\+\_\+\+M\+O\+D\+E\+\_\+\+T\+C\+P\+\_\+\+A\+C\+C\+E\+P\+T\+\_\+\+F\+R\+O\+M}~2
+\item 
+\#define \hyperlink{socket_8h_a9951cd50752f73ed8db18df353ac8c40}{S\+F\+\_\+\+U\+S\+E\+\_\+\+I\+P\+\_\+\+P\+K\+T\+I\+N\+F\+O}~(1$<$$<$0)
+\item 
+\#define \hyperlink{socket_8h_a73908595a4322a54ab879938f1f9e263}{S\+F\+\_\+\+T\+C\+P\+\_\+\+N\+O\+D\+E\+L\+A\+Y}~(1$<$$<$1)
+\item 
+\#define \hyperlink{socket_8h_ab974ab73acf7192e0bb614429f79f5a1}{S\+F\+\_\+\+P\+O\+R\+T\+\_\+\+S\+H\+A\+R\+E}~(1$<$$<$2)
+\item 
+\#define \hyperlink{socket_8h_aacb7b566ab5e5d62d3c9965078776fe1}{S\+F\+\_\+\+H\+O\+S\+T\+\_\+\+R\+A\+N\+D\+O\+M\+I\+Z\+E}~(1$<$$<$3)
+\item 
+\#define \hyperlink{socket_8h_aaf7a15bb2782776251b6e76ba8aaccb6}{S\+F\+\_\+\+G\+E\+T\+A\+D\+D\+R\+I\+N\+F\+O\+\_\+\+D\+G\+R\+A\+M}~(1$<$$<$4)
+\item 
+\#define \hyperlink{socket_8h_a9f55d0e90dc8cc6b2287312435cdde48}{M\+S\+G\+\_\+\+N\+O\+S\+I\+G\+N\+A\+L}~0
+\item 
+\#define \hyperlink{socket_8h_ae5c4c61cabc795b44256b0be9850e47c}{openvpn\+\_\+close\+\_\+socket}(s)~close(s)
+\item 
+\#define \hyperlink{socket_8h_a70306f44df1e93adb70878e0406bdcc5}{P\+S\+\_\+\+S\+H\+O\+W\+\_\+\+P\+O\+R\+T\+\_\+\+I\+F\+\_\+\+D\+E\+F\+I\+N\+E\+D}~(1$<$$<$0)
+\item 
+\#define \hyperlink{socket_8h_a4dff9662b49ce11baa25dd5106578282}{P\+S\+\_\+\+S\+H\+O\+W\+\_\+\+P\+O\+R\+T}~(1$<$$<$1)
+\item 
+\#define \hyperlink{socket_8h_afde72e9cae87f24209bc4daa1d38eaf3}{P\+S\+\_\+\+S\+H\+O\+W\+\_\+\+P\+K\+T\+I\+N\+F\+O}~(1$<$$<$2)
+\item 
+\#define \hyperlink{socket_8h_a59535ffa0d88a7df13adf437a696974c}{P\+S\+\_\+\+D\+O\+N\+T\+\_\+\+S\+H\+O\+W\+\_\+\+A\+D\+D\+R}~(1$<$$<$3)
+\item 
+\#define \hyperlink{socket_8h_aced64d9c0e38849554e15e07c46d6872}{P\+S\+\_\+\+D\+O\+N\+T\+\_\+\+S\+H\+O\+W\+\_\+\+F\+A\+M\+I\+L\+Y}~(1$<$$<$4)
+\item 
+\#define \hyperlink{socket_8h_a028f76eab5f19b3be8695a451b62aed8}{I\+A\+\_\+\+E\+M\+P\+T\+Y\+\_\+\+I\+F\+\_\+\+U\+N\+D\+E\+F}~(1$<$$<$0)
+\item 
+\#define \hyperlink{socket_8h_adfe6548aae7be586bf39b3e14d408ec3}{I\+A\+\_\+\+N\+E\+T\+\_\+\+O\+R\+D\+E\+R}~(1$<$$<$1)
+\item 
+\#define \hyperlink{socket_8h_a309899d365dfbbc09e6fe96adda3661e}{S\+A\+\_\+\+I\+P\+\_\+\+P\+O\+R\+T}~(1$<$$<$0)
+\item 
+\#define \hyperlink{socket_8h_ae47aa499fcc63d510a739a678e08c575}{S\+A\+\_\+\+S\+E\+T\+\_\+\+I\+F\+\_\+\+N\+O\+N\+Z\+E\+R\+O}~(1$<$$<$1)
+\item 
+\#define \hyperlink{socket_8h_a0ce50bf99584fb5eb545e483d4c1571f}{I\+P\+V4\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+A\+D\+D\+R}~0xffffffff
+\item 
+\#define \hyperlink{socket_8h_a05014dfb6fe6c47b71b7b00f683ba924}{O\+I\+A\+\_\+\+H\+O\+S\+T\+N\+A\+M\+E}~0
+\item 
+\#define \hyperlink{socket_8h_a9e7af6bfebff6fe2906a26cf1cd0c64e}{O\+I\+A\+\_\+\+I\+P}~1
+\item 
+\#define \hyperlink{socket_8h_a64462a7bbac50f1d2ae645aae8fdec55}{O\+I\+A\+\_\+\+E\+R\+R\+O\+R}~-\/1
+\item 
+\#define \hyperlink{socket_8h_ac5f109019b64ee2519d9b3bc7f56dab0}{G\+E\+T\+A\+D\+D\+R\+\_\+\+R\+E\+S\+O\+L\+V\+E}~(1$<$$<$0)
+\item 
+\#define \hyperlink{socket_8h_a34e86fc38f89673b7f0c8a48d96b7d6a}{G\+E\+T\+A\+D\+D\+R\+\_\+\+F\+A\+T\+A\+L}~(1$<$$<$1)
+\item 
+\#define \hyperlink{socket_8h_a5b618d8716696f3ebe96642be56bec03}{G\+E\+T\+A\+D\+D\+R\+\_\+\+H\+O\+S\+T\+\_\+\+O\+R\+D\+E\+R}~(1$<$$<$2)
+\item 
+\#define \hyperlink{socket_8h_ae8e94b691014b2f7b8d1f0c85c4e71d4}{G\+E\+T\+A\+D\+D\+R\+\_\+\+M\+E\+N\+T\+I\+O\+N\+\_\+\+R\+E\+S\+O\+L\+V\+E\+\_\+\+R\+E\+T\+R\+Y}~(1$<$$<$3)
+\item 
+\#define \hyperlink{socket_8h_a7b81d0eeab47d45f1dd40386f6910424}{G\+E\+T\+A\+D\+D\+R\+\_\+\+F\+A\+T\+A\+L\+\_\+\+O\+N\+\_\+\+S\+I\+G\+N\+A\+L}~(1$<$$<$4)
+\item 
+\#define \hyperlink{socket_8h_af630c34d969ca70fcec892075a3f1e6a}{G\+E\+T\+A\+D\+D\+R\+\_\+\+W\+A\+R\+N\+\_\+\+O\+N\+\_\+\+S\+I\+G\+N\+A\+L}~(1$<$$<$5)
+\item 
+\#define \hyperlink{socket_8h_a2852b0e6ad2d5eba81db4250c5f9a7c0}{G\+E\+T\+A\+D\+D\+R\+\_\+\+M\+S\+G\+\_\+\+V\+I\+R\+T\+\_\+\+O\+U\+T}~(1$<$$<$6)
+\item 
+\#define \hyperlink{socket_8h_a29c7810ba4830f4b83b073cc27e430a6}{G\+E\+T\+A\+D\+D\+R\+\_\+\+T\+R\+Y\+\_\+\+O\+N\+C\+E}~(1$<$$<$7)
+\item 
+\#define \hyperlink{socket_8h_a370b90e5247fde413242d4bcbbb19ae3}{G\+E\+T\+A\+D\+D\+R\+\_\+\+U\+P\+D\+A\+T\+E\+\_\+\+M\+A\+N\+A\+G\+E\+M\+E\+N\+T\+\_\+\+S\+T\+A\+T\+E}~(1$<$$<$8)
+\item 
+\#define \hyperlink{socket_8h_a73bb032064480e729ef190f999c56451}{G\+E\+T\+A\+D\+D\+R\+\_\+\+R\+A\+N\+D\+O\+M\+I\+Z\+E}~(1$<$$<$9)
+\item 
+\#define \hyperlink{socket_8h_a31896acbb9c05d1701f3dce1a2e889fd}{G\+E\+T\+A\+D\+D\+R\+\_\+\+P\+A\+S\+S\+I\+V\+E}~(1$<$$<$10)
+\item 
+\#define \hyperlink{socket_8h_a756795c17659f393cbbda2518c21c42b}{G\+E\+T\+A\+D\+D\+R\+\_\+\+D\+A\+T\+A\+G\+R\+A\+M}~(1$<$$<$11)
+\item 
+\#define \hyperlink{socket_8h_a0fd3cbd8da69489cce8be2be9b6b20c0}{G\+E\+T\+A\+D\+D\+R\+\_\+\+C\+A\+C\+H\+E\+\_\+\+M\+A\+S\+K}~(\hyperlink{socket_8h_a756795c17659f393cbbda2518c21c42b}{G\+E\+T\+A\+D\+D\+R\+\_\+\+D\+A\+T\+A\+G\+R\+A\+M}$\vert$\hyperlink{socket_8h_a31896acbb9c05d1701f3dce1a2e889fd}{G\+E\+T\+A\+D\+D\+R\+\_\+\+P\+A\+S\+S\+I\+V\+E})
+\item 
+\#define \hyperlink{socket_8h_a78cb4d82ac2dbdd2456b574b49b5921d}{I\+Pv4\+\_\+\+U\+D\+P\+\_\+\+H\+E\+A\+D\+E\+R\+\_\+\+S\+I\+Z\+E}~28
+\item 
+\#define \hyperlink{socket_8h_aeea9b150803ef560a50a5617ebeab61d}{I\+Pv4\+\_\+\+T\+C\+P\+\_\+\+H\+E\+A\+D\+E\+R\+\_\+\+S\+I\+Z\+E}~40
+\item 
+\#define \hyperlink{socket_8h_ae60d9e8affd55886bd8247a373a3bd94}{I\+Pv6\+\_\+\+U\+D\+P\+\_\+\+H\+E\+A\+D\+E\+R\+\_\+\+S\+I\+Z\+E}~48
+\item 
+\#define \hyperlink{socket_8h_a1575cb39df49550bd45e8b5ab723e22e}{I\+Pv6\+\_\+\+T\+C\+P\+\_\+\+H\+E\+A\+D\+E\+R\+\_\+\+S\+I\+Z\+E}~60
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef uint16\+\_\+t \hyperlink{socket_8h_aa60fc378da5f5fe767a3f9cbf0c811f6}{packet\+\_\+size\+\_\+type}
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{socket_8h_a50ea4ad26d16eec29ff9685126f0a599}{proto\+\_\+num} \{ \\*
+\hyperlink{socket_8h_a50ea4ad26d16eec29ff9685126f0a599a13d71dc94a42ee4eecb0e0898055ebe8}{P\+R\+O\+T\+O\+\_\+\+N\+O\+N\+E}, 
+\hyperlink{socket_8h_a50ea4ad26d16eec29ff9685126f0a599a2b277c40c006345a264777529561bf93}{P\+R\+O\+T\+O\+\_\+\+U\+D\+P}, 
+\hyperlink{socket_8h_a50ea4ad26d16eec29ff9685126f0a599a44547a13166ee3f0220fb3c4fc60e544}{P\+R\+O\+T\+O\+\_\+\+T\+C\+P}, 
+\hyperlink{socket_8h_a50ea4ad26d16eec29ff9685126f0a599aeff17f4932089fddd54b29765c8cdbd7}{P\+R\+O\+T\+O\+\_\+\+T\+C\+P\+\_\+\+S\+E\+R\+V\+E\+R}, 
+\\*
+\hyperlink{socket_8h_a50ea4ad26d16eec29ff9685126f0a599a4f54544a7b77bc839a23e1124f7e9c95}{P\+R\+O\+T\+O\+\_\+\+T\+C\+P\+\_\+\+C\+L\+I\+E\+N\+T}, 
+\hyperlink{socket_8h_a50ea4ad26d16eec29ff9685126f0a599a533f3b18b75f627f4bf1bdd54613d472}{P\+R\+O\+T\+O\+\_\+\+N}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structlink__socket}{link\+\_\+socket} $\ast$ \hyperlink{socket_8h_a41acd6256f92be22c7c94727d2b4bf1e}{link\+\_\+socket\+\_\+new} (void)
+\item 
+void \hyperlink{socket_8h_ad6c91c71856195145cf9076a4bedd7e7}{socket\+\_\+bind} (\hyperlink{syshead_8h_a7433d79fe33816fe24b9c231ac75fc42}{socket\+\_\+descriptor\+\_\+t} sd, struct addrinfo $\ast$local, int af\+\_\+family, const char $\ast$prefix, \hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} ipv6only)
+\item 
+int \hyperlink{socket_8h_aaf986563f4ab9ce6a1657c0f4fdabe10}{openvpn\+\_\+connect} (\hyperlink{syshead_8h_a7433d79fe33816fe24b9c231ac75fc42}{socket\+\_\+descriptor\+\_\+t} sd, const struct sockaddr $\ast$remote, int connect\+\_\+timeout, volatile int $\ast$signal\+\_\+received)
+\item 
+void \hyperlink{socket_8h_af7a1098694842ca0c089e4ef673fc5fd}{link\+\_\+socket\+\_\+init\+\_\+phase1} (struct \hyperlink{structlink__socket}{link\+\_\+socket} $\ast$sock, const char $\ast$local\+\_\+host, const char $\ast$local\+\_\+port, const char $\ast$remote\+\_\+host, const char $\ast$remote\+\_\+port, struct \hyperlink{structcached__dns__entry}{cached\+\_\+dns\+\_\+entry} $\ast$dns\+\_\+cache, int proto, \hyperlink{syshead_8h_a27a82860cef19f4a53f68516e7b2ee0e}{sa\+\_\+family\+\_\+t} af, \hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} bind\+\_\+ipv6\+\_\+only, int mode, const struct \hyperlink{structlink__socket}{link\+\_\+socket} $\ast$accept\+\_\+from, struct \hyperlink{structhttp__proxy__info}{http\+\_\+proxy\+\_\+info} $\ast$http\+\_\+proxy, struct \hyperlink{structsocks__proxy__info}{socks\+\_\+proxy\+\_\+info} $\ast$socks\+\_\+proxy, \hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} bind\+\_\+local, \hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} remote\+\_\+float, int inetd, struct \hyperlink{structlink__socket__addr}{link\+\_\+socket\+\_\+addr} $\ast$lsa, const char $\ast$ipchange\+\_\+command, const struct \hyperlink{structplugin__list}{plugin\+\_\+list} $\ast$plugins, int resolve\+\_\+retry\+\_\+seconds, int mtu\+\_\+discover\+\_\+type, int rcvbuf, int sndbuf, int mark, struct \hyperlink{structevent__timeout}{event\+\_\+timeout} $\ast$server\+\_\+poll\+\_\+timeout, unsigned int sockflags)
+\item 
+void \hyperlink{socket_8h_ad716d81ba4a413dfb1014bc9407ff2fa}{link\+\_\+socket\+\_\+init\+\_\+phase2} (struct \hyperlink{structlink__socket}{link\+\_\+socket} $\ast$sock, const struct \hyperlink{structframe}{frame} $\ast$\hyperlink{structframe}{frame}, struct \hyperlink{structsignal__info}{signal\+\_\+info} $\ast$sig\+\_\+info)
+\item 
+void \hyperlink{socket_8h_abd7036d683a6339013d79ec69c6f1742}{do\+\_\+preresolve} (struct \hyperlink{structcontext}{context} $\ast$c)
+\item 
+void \hyperlink{socket_8h_af4927a4638ad626394e1cc000cfe5466}{socket\+\_\+adjust\+\_\+frame\+\_\+parameters} (struct \hyperlink{structframe}{frame} $\ast$\hyperlink{structframe}{frame}, int proto)
+\item 
+void \hyperlink{socket_8h_a9f553edafb49e0efa0bc784c45412e39}{frame\+\_\+adjust\+\_\+path\+\_\+mtu} (struct \hyperlink{structframe}{frame} $\ast$\hyperlink{structframe}{frame}, int pmtu, int proto)
+\item 
+void \hyperlink{socket_8h_a7f6b5654e386c141071a9246f68853e9}{link\+\_\+socket\+\_\+close} (struct \hyperlink{structlink__socket}{link\+\_\+socket} $\ast$sock)
+\item 
+void \hyperlink{socket_8h_a51d1084b7790e97788d32d9833c7d31c}{sd\+\_\+close} (\hyperlink{syshead_8h_a7433d79fe33816fe24b9c231ac75fc42}{socket\+\_\+descriptor\+\_\+t} $\ast$sd)
+\item 
+const char $\ast$ \hyperlink{socket_8h_ad70df136da1441530d99d9181ab58845}{print\+\_\+sockaddr\+\_\+ex} (const struct sockaddr $\ast$addr, const char $\ast$separator, const unsigned int flags, struct \hyperlink{structgc__arena}{gc\+\_\+arena} $\ast$gc)
+\item 
+const char $\ast$ \hyperlink{socket_8h_aa401d7e395acdc1d4f61f6526ef92846}{print\+\_\+link\+\_\+socket\+\_\+actual\+\_\+ex} (const struct \hyperlink{structlink__socket__actual}{link\+\_\+socket\+\_\+actual} $\ast$act, const char $\ast$separator, const unsigned int flags, struct \hyperlink{structgc__arena}{gc\+\_\+arena} $\ast$gc)
+\item 
+const char $\ast$ \hyperlink{socket_8h_aefe5013514f1d62a138107fb43cc74e3}{print\+\_\+link\+\_\+socket\+\_\+actual} (const struct \hyperlink{structlink__socket__actual}{link\+\_\+socket\+\_\+actual} $\ast$act, struct \hyperlink{structgc__arena}{gc\+\_\+arena} $\ast$gc)
+\item 
+const char $\ast$ \hyperlink{socket_8h_a2741d6007f1e5a670409883f4304da61}{print\+\_\+in\+\_\+addr\+\_\+t} (in\+\_\+addr\+\_\+t addr, unsigned int flags, struct \hyperlink{structgc__arena}{gc\+\_\+arena} $\ast$gc)
+\item 
+const char $\ast$ \hyperlink{socket_8h_accbe5dbcbe48bf77a5b1032c80eb91d4}{print\+\_\+in6\+\_\+addr} (struct in6\+\_\+addr addr6, unsigned int flags, struct \hyperlink{structgc__arena}{gc\+\_\+arena} $\ast$gc)
+\item 
+struct in6\+\_\+addr \hyperlink{socket_8h_a8f115cb754c9858c67732244b2cc0669}{add\+\_\+in6\+\_\+addr} (struct in6\+\_\+addr base, uint32\+\_\+t add)
+\item 
+void \hyperlink{socket_8h_a7db6fcb0d9f1d1ca09149554d91f979f}{setenv\+\_\+sockaddr} (struct \hyperlink{structenv__set}{env\+\_\+set} $\ast$es, const char $\ast$name\+\_\+prefix, const struct \hyperlink{structopenvpn__sockaddr}{openvpn\+\_\+sockaddr} $\ast$addr, const unsigned int flags)
+\item 
+void \hyperlink{socket_8h_a4f17a188890a7bc5a8d0dcb30355ac18}{setenv\+\_\+in\+\_\+addr\+\_\+t} (struct \hyperlink{structenv__set}{env\+\_\+set} $\ast$es, const char $\ast$name\+\_\+prefix, in\+\_\+addr\+\_\+t addr, const unsigned int flags)
+\item 
+void \hyperlink{socket_8h_a607e25972e470d65dd7f99d15953cac4}{setenv\+\_\+in6\+\_\+addr} (struct \hyperlink{structenv__set}{env\+\_\+set} $\ast$es, const char $\ast$name\+\_\+prefix, const struct in6\+\_\+addr $\ast$addr, const unsigned int flags)
+\item 
+void \hyperlink{socket_8h_a58387f8e96dacad4aa9322c3890c6001}{setenv\+\_\+link\+\_\+socket\+\_\+actual} (struct \hyperlink{structenv__set}{env\+\_\+set} $\ast$es, const char $\ast$name\+\_\+prefix, const struct \hyperlink{structlink__socket__actual}{link\+\_\+socket\+\_\+actual} $\ast$act, const unsigned int flags)
+\item 
+void \hyperlink{socket_8h_a3c9ee3d6a6bacfd59ae7037e8d8e735c}{bad\+\_\+address\+\_\+length} (int actual, int expected)
+\item 
+in\+\_\+addr\+\_\+t \hyperlink{socket_8h_aac12ee565b36579ed3bd5dc9377e35b2}{link\+\_\+socket\+\_\+current\+\_\+remote} (const struct \hyperlink{structlink__socket__info}{link\+\_\+socket\+\_\+info} $\ast$info)
+\item 
+const struct in6\+\_\+addr $\ast$ \hyperlink{socket_8h_afb62f9fc3adfae5d11fcc9e57650d3ad}{link\+\_\+socket\+\_\+current\+\_\+remote\+\_\+ipv6} (const struct \hyperlink{structlink__socket__info}{link\+\_\+socket\+\_\+info} $\ast$info)
+\item 
+void \hyperlink{socket_8h_a9b45c23be28d07f10f5b1253c36c1a76}{link\+\_\+socket\+\_\+connection\+\_\+initiated} (const struct \hyperlink{structbuffer}{buffer} $\ast$buf, struct \hyperlink{structlink__socket__info}{link\+\_\+socket\+\_\+info} $\ast$info, const struct \hyperlink{structlink__socket__actual}{link\+\_\+socket\+\_\+actual} $\ast$addr, const char $\ast$common\+\_\+name, struct \hyperlink{structenv__set}{env\+\_\+set} $\ast$es)
+\item 
+void \hyperlink{socket_8h_abfc81cb26972c5efe7ae96036c1f3881}{link\+\_\+socket\+\_\+bad\+\_\+incoming\+\_\+addr} (struct \hyperlink{structbuffer}{buffer} $\ast$buf, const struct \hyperlink{structlink__socket__info}{link\+\_\+socket\+\_\+info} $\ast$info, const struct \hyperlink{structlink__socket__actual}{link\+\_\+socket\+\_\+actual} $\ast$from\+\_\+addr)
+\item 
+void \hyperlink{socket_8h_a3087eb3ac32539db715fa6084307bcb7}{set\+\_\+actual\+\_\+address} (struct \hyperlink{structlink__socket__actual}{link\+\_\+socket\+\_\+actual} $\ast$actual, struct addrinfo $\ast$ai)
+\item 
+void \hyperlink{socket_8h_aa72996f078f91edc4077fbe5975de794}{link\+\_\+socket\+\_\+bad\+\_\+outgoing\+\_\+addr} (void)
+\item 
+void \hyperlink{socket_8h_aed93bf1bce64b0baebbf79c40b30bada}{setenv\+\_\+trusted} (struct \hyperlink{structenv__set}{env\+\_\+set} $\ast$es, const struct \hyperlink{structlink__socket__info}{link\+\_\+socket\+\_\+info} $\ast$info)
+\item 
+\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} \hyperlink{socket_8h_a47f7e875f90faefaede7148a7e5f3347}{link\+\_\+socket\+\_\+update\+\_\+flags} (struct \hyperlink{structlink__socket}{link\+\_\+socket} $\ast$ls, unsigned int sockflags)
+\item 
+void \hyperlink{socket_8h_a022b67c8749e8a934063231b2abc5cf6}{link\+\_\+socket\+\_\+update\+\_\+buffer\+\_\+sizes} (struct \hyperlink{structlink__socket}{link\+\_\+socket} $\ast$ls, int rcvbuf, int sndbuf)
+\item 
+int \hyperlink{socket_8h_aac586ad698d29388acc839510e86cf81}{openvpn\+\_\+inet\+\_\+aton} (const char $\ast$dotted\+\_\+quad, struct in\+\_\+addr $\ast$addr)
+\item 
+\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} \hyperlink{socket_8h_afc4348b5986769b235fc042e964a7fb8}{ip\+\_\+addr\+\_\+dotted\+\_\+quad\+\_\+safe} (const char $\ast$dotted\+\_\+quad)
+\item 
+\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} \hyperlink{socket_8h_abd8b19273aa830992e49e8a9554b480b}{ip\+\_\+or\+\_\+dns\+\_\+addr\+\_\+safe} (const char $\ast$addr, const \hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} allow\+\_\+fqdn)
+\item 
+\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} \hyperlink{socket_8h_a4677e1d99ac24bc14b09bb0d2fbf709a}{mac\+\_\+addr\+\_\+safe} (const char $\ast$mac\+\_\+addr)
+\item 
+\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} \hyperlink{socket_8h_abc681b2985d873e13536dee7fbade6cd}{ipv6\+\_\+addr\+\_\+safe} (const char $\ast$ipv6\+\_\+text\+\_\+addr)
+\item 
+\hyperlink{syshead_8h_a7433d79fe33816fe24b9c231ac75fc42}{socket\+\_\+descriptor\+\_\+t} \hyperlink{socket_8h_a69b6126858e443094c6e451e13c4faea}{create\+\_\+socket\+\_\+tcp} (struct addrinfo $\ast$)
+\item 
+\hyperlink{syshead_8h_a7433d79fe33816fe24b9c231ac75fc42}{socket\+\_\+descriptor\+\_\+t} \hyperlink{socket_8h_a7bd3fb1c5f91bcd4d18174168e226eb0}{socket\+\_\+do\+\_\+accept} (\hyperlink{syshead_8h_a7433d79fe33816fe24b9c231ac75fc42}{socket\+\_\+descriptor\+\_\+t} sd, struct \hyperlink{structlink__socket__actual}{link\+\_\+socket\+\_\+actual} $\ast$act, const \hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} nowait)
+\item 
+\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} \hyperlink{socket_8h_a9138a0cf0f761db560b22d8417ad2565}{proto\+\_\+is\+\_\+net} (int proto)
+\item 
+\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} \hyperlink{socket_8h_adbff197bdb9734118cdf9889650477ae}{proto\+\_\+is\+\_\+dgram} (int proto)
+\item 
+\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} \hyperlink{socket_8h_a86424bdc75e8f05f00a649f30f897110}{proto\+\_\+is\+\_\+udp} (int proto)
+\item 
+\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} \hyperlink{socket_8h_a14db84b6dd2dbff8084a8254b7424f68}{proto\+\_\+is\+\_\+tcp} (int proto)
+\item 
+in\+\_\+addr\+\_\+t \hyperlink{socket_8h_aed74c8b5931192c1ad5829bd90e01603}{getaddr} (unsigned int flags, const char $\ast$hostname, int resolve\+\_\+retry\+\_\+seconds, \hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} $\ast$succeeded, volatile int $\ast$signal\+\_\+received)
+\item 
+int \hyperlink{socket_8h_a02e4efd449ac0356c68ec0a4477e3342}{openvpn\+\_\+getaddrinfo} (unsigned int flags, const char $\ast$hostname, const char $\ast$servname, int resolve\+\_\+retry\+\_\+seconds, volatile int $\ast$signal\+\_\+received, int ai\+\_\+family, struct addrinfo $\ast$$\ast$res)
+\item 
+int \hyperlink{socket_8h_ac67d5464bc20e5e6c4a962858082c8e6}{ascii2proto} (const char $\ast$proto\+\_\+name)
+\item 
+\hyperlink{syshead_8h_a27a82860cef19f4a53f68516e7b2ee0e}{sa\+\_\+family\+\_\+t} \hyperlink{socket_8h_aa27ccce78bd9b1fc9f810da9a6fdc42e}{ascii2af} (const char $\ast$proto\+\_\+name)
+\item 
+const char $\ast$ \hyperlink{socket_8h_a6ebb8e0bd35afb3cda6a0392f1479433}{proto2ascii} (int proto, \hyperlink{syshead_8h_a27a82860cef19f4a53f68516e7b2ee0e}{sa\+\_\+family\+\_\+t} af, \hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} display\+\_\+form)
+\item 
+const char $\ast$ \hyperlink{socket_8h_a40d34261451e42b8e53480f6a260fd01}{proto2ascii\+\_\+all} (struct \hyperlink{structgc__arena}{gc\+\_\+arena} $\ast$gc)
+\item 
+const char $\ast$ \hyperlink{socket_8h_aa8031dd7e4e961af246871041559a3a1}{proto\+\_\+remote} (int proto, \hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} remote)
+\item 
+const char $\ast$ \hyperlink{socket_8h_a1e47d3e8956884a9ba50ec8883d45a36}{addr\+\_\+family\+\_\+name} (int af)
+\item 
+int \hyperlink{socket_8h_af7b3e525fb11f43920cf12bbbf09fdbf}{addr\+\_\+guess\+\_\+family} (\hyperlink{syshead_8h_a27a82860cef19f4a53f68516e7b2ee0e}{sa\+\_\+family\+\_\+t} af, const char $\ast$name)
+\item 
+void \hyperlink{socket_8h_a96ba948dd0e3d3ad6fcbde53ff44dd1d}{stream\+\_\+buf\+\_\+init} (struct \hyperlink{structstream__buf}{stream\+\_\+buf} $\ast$sb, struct \hyperlink{structbuffer}{buffer} $\ast$buf, const unsigned int sockflags, const int proto)
+\item 
+void \hyperlink{socket_8h_a1bf7dc9366cc6344370dd08999e185b6}{stream\+\_\+buf\+\_\+close} (struct \hyperlink{structstream__buf}{stream\+\_\+buf} $\ast$sb)
+\item 
+\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} \hyperlink{socket_8h_a0c43f40cf87e67746949ece97c087502}{stream\+\_\+buf\+\_\+added} (struct \hyperlink{structstream__buf}{stream\+\_\+buf} $\ast$sb, int length\+\_\+added)
+\item 
+int \hyperlink{socket_8h_aaf391f0edcd41f5642fcf0143c71dba1}{link\+\_\+socket\+\_\+read\+\_\+tcp} (struct \hyperlink{structlink__socket}{link\+\_\+socket} $\ast$sock, struct \hyperlink{structbuffer}{buffer} $\ast$buf)
+\item 
+int \hyperlink{socket_8h_a785a2d1e27057de2b7f33c410ac653a2}{link\+\_\+socket\+\_\+read\+\_\+udp\+\_\+posix} (struct \hyperlink{structlink__socket}{link\+\_\+socket} $\ast$sock, struct \hyperlink{structbuffer}{buffer} $\ast$buf, struct \hyperlink{structlink__socket__actual}{link\+\_\+socket\+\_\+actual} $\ast$from)
+\item 
+int \hyperlink{socket_8h_a4e20ef3416309fb6a98e3ad5ca3c1d9c}{link\+\_\+socket\+\_\+write\+\_\+tcp} (struct \hyperlink{structlink__socket}{link\+\_\+socket} $\ast$sock, struct \hyperlink{structbuffer}{buffer} $\ast$buf, struct \hyperlink{structlink__socket__actual}{link\+\_\+socket\+\_\+actual} $\ast$to)
+\item 
+\hyperlink{event_8h_aaf06dbc1f07c15cb5e2779d3ec2dcb4b}{event\+\_\+t} \hyperlink{socket_8h_a50798315305f70b5cc97f016d65ace82}{socket\+\_\+listen\+\_\+event\+\_\+handle} (struct \hyperlink{structlink__socket}{link\+\_\+socket} $\ast$s)
+\item 
+unsigned int \hyperlink{socket_8h_ab5605eaa75bdd5f315edcfaefcd77b69}{socket\+\_\+set} (struct \hyperlink{structlink__socket}{link\+\_\+socket} $\ast$s, struct \hyperlink{structevent__set}{event\+\_\+set} $\ast$es, unsigned int rwflags, void $\ast$arg, unsigned int $\ast$persistent)
+\item 
+const char $\ast$ \hyperlink{socket_8h_a45f6ed12802df58a5627b6a7ba80b093}{socket\+\_\+stat} (const struct \hyperlink{structlink__socket}{link\+\_\+socket} $\ast$s, unsigned int rwflags, struct \hyperlink{structgc__arena}{gc\+\_\+arena} $\ast$gc)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const int \hyperlink{socket_8h_a239a24f77e4782c0d0e215a6ea3ba0e6}{proto\+\_\+overhead} \mbox{[}$\,$\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{socket_8h_a0fd3cbd8da69489cce8be2be9b6b20c0}{}\index{socket.\+h@{socket.\+h}!G\+E\+T\+A\+D\+D\+R\+\_\+\+C\+A\+C\+H\+E\+\_\+\+M\+A\+S\+K@{G\+E\+T\+A\+D\+D\+R\+\_\+\+C\+A\+C\+H\+E\+\_\+\+M\+A\+S\+K}}
+\index{G\+E\+T\+A\+D\+D\+R\+\_\+\+C\+A\+C\+H\+E\+\_\+\+M\+A\+S\+K@{G\+E\+T\+A\+D\+D\+R\+\_\+\+C\+A\+C\+H\+E\+\_\+\+M\+A\+S\+K}!socket.\+h@{socket.\+h}}
+\subsubsection[{G\+E\+T\+A\+D\+D\+R\+\_\+\+C\+A\+C\+H\+E\+\_\+\+M\+A\+S\+K}]{\setlength{\rightskip}{0pt plus 5cm}\#define G\+E\+T\+A\+D\+D\+R\+\_\+\+C\+A\+C\+H\+E\+\_\+\+M\+A\+S\+K~({\bf G\+E\+T\+A\+D\+D\+R\+\_\+\+D\+A\+T\+A\+G\+R\+A\+M}$\vert${\bf G\+E\+T\+A\+D\+D\+R\+\_\+\+P\+A\+S\+S\+I\+V\+E})}\label{socket_8h_a0fd3cbd8da69489cce8be2be9b6b20c0}
+\hypertarget{socket_8h_a756795c17659f393cbbda2518c21c42b}{}\index{socket.\+h@{socket.\+h}!G\+E\+T\+A\+D\+D\+R\+\_\+\+D\+A\+T\+A\+G\+R\+A\+M@{G\+E\+T\+A\+D\+D\+R\+\_\+\+D\+A\+T\+A\+G\+R\+A\+M}}
+\index{G\+E\+T\+A\+D\+D\+R\+\_\+\+D\+A\+T\+A\+G\+R\+A\+M@{G\+E\+T\+A\+D\+D\+R\+\_\+\+D\+A\+T\+A\+G\+R\+A\+M}!socket.\+h@{socket.\+h}}
+\subsubsection[{G\+E\+T\+A\+D\+D\+R\+\_\+\+D\+A\+T\+A\+G\+R\+A\+M}]{\setlength{\rightskip}{0pt plus 5cm}\#define G\+E\+T\+A\+D\+D\+R\+\_\+\+D\+A\+T\+A\+G\+R\+A\+M~(1$<$$<$11)}\label{socket_8h_a756795c17659f393cbbda2518c21c42b}
+\hypertarget{socket_8h_a34e86fc38f89673b7f0c8a48d96b7d6a}{}\index{socket.\+h@{socket.\+h}!G\+E\+T\+A\+D\+D\+R\+\_\+\+F\+A\+T\+A\+L@{G\+E\+T\+A\+D\+D\+R\+\_\+\+F\+A\+T\+A\+L}}
+\index{G\+E\+T\+A\+D\+D\+R\+\_\+\+F\+A\+T\+A\+L@{G\+E\+T\+A\+D\+D\+R\+\_\+\+F\+A\+T\+A\+L}!socket.\+h@{socket.\+h}}
+\subsubsection[{G\+E\+T\+A\+D\+D\+R\+\_\+\+F\+A\+T\+A\+L}]{\setlength{\rightskip}{0pt plus 5cm}\#define G\+E\+T\+A\+D\+D\+R\+\_\+\+F\+A\+T\+A\+L~(1$<$$<$1)}\label{socket_8h_a34e86fc38f89673b7f0c8a48d96b7d6a}
+\hypertarget{socket_8h_a7b81d0eeab47d45f1dd40386f6910424}{}\index{socket.\+h@{socket.\+h}!G\+E\+T\+A\+D\+D\+R\+\_\+\+F\+A\+T\+A\+L\+\_\+\+O\+N\+\_\+\+S\+I\+G\+N\+A\+L@{G\+E\+T\+A\+D\+D\+R\+\_\+\+F\+A\+T\+A\+L\+\_\+\+O\+N\+\_\+\+S\+I\+G\+N\+A\+L}}
+\index{G\+E\+T\+A\+D\+D\+R\+\_\+\+F\+A\+T\+A\+L\+\_\+\+O\+N\+\_\+\+S\+I\+G\+N\+A\+L@{G\+E\+T\+A\+D\+D\+R\+\_\+\+F\+A\+T\+A\+L\+\_\+\+O\+N\+\_\+\+S\+I\+G\+N\+A\+L}!socket.\+h@{socket.\+h}}
+\subsubsection[{G\+E\+T\+A\+D\+D\+R\+\_\+\+F\+A\+T\+A\+L\+\_\+\+O\+N\+\_\+\+S\+I\+G\+N\+A\+L}]{\setlength{\rightskip}{0pt plus 5cm}\#define G\+E\+T\+A\+D\+D\+R\+\_\+\+F\+A\+T\+A\+L\+\_\+\+O\+N\+\_\+\+S\+I\+G\+N\+A\+L~(1$<$$<$4)}\label{socket_8h_a7b81d0eeab47d45f1dd40386f6910424}
+\hypertarget{socket_8h_a5b618d8716696f3ebe96642be56bec03}{}\index{socket.\+h@{socket.\+h}!G\+E\+T\+A\+D\+D\+R\+\_\+\+H\+O\+S\+T\+\_\+\+O\+R\+D\+E\+R@{G\+E\+T\+A\+D\+D\+R\+\_\+\+H\+O\+S\+T\+\_\+\+O\+R\+D\+E\+R}}
+\index{G\+E\+T\+A\+D\+D\+R\+\_\+\+H\+O\+S\+T\+\_\+\+O\+R\+D\+E\+R@{G\+E\+T\+A\+D\+D\+R\+\_\+\+H\+O\+S\+T\+\_\+\+O\+R\+D\+E\+R}!socket.\+h@{socket.\+h}}
+\subsubsection[{G\+E\+T\+A\+D\+D\+R\+\_\+\+H\+O\+S\+T\+\_\+\+O\+R\+D\+E\+R}]{\setlength{\rightskip}{0pt plus 5cm}\#define G\+E\+T\+A\+D\+D\+R\+\_\+\+H\+O\+S\+T\+\_\+\+O\+R\+D\+E\+R~(1$<$$<$2)}\label{socket_8h_a5b618d8716696f3ebe96642be56bec03}
+\hypertarget{socket_8h_ae8e94b691014b2f7b8d1f0c85c4e71d4}{}\index{socket.\+h@{socket.\+h}!G\+E\+T\+A\+D\+D\+R\+\_\+\+M\+E\+N\+T\+I\+O\+N\+\_\+\+R\+E\+S\+O\+L\+V\+E\+\_\+\+R\+E\+T\+R\+Y@{G\+E\+T\+A\+D\+D\+R\+\_\+\+M\+E\+N\+T\+I\+O\+N\+\_\+\+R\+E\+S\+O\+L\+V\+E\+\_\+\+R\+E\+T\+R\+Y}}
+\index{G\+E\+T\+A\+D\+D\+R\+\_\+\+M\+E\+N\+T\+I\+O\+N\+\_\+\+R\+E\+S\+O\+L\+V\+E\+\_\+\+R\+E\+T\+R\+Y@{G\+E\+T\+A\+D\+D\+R\+\_\+\+M\+E\+N\+T\+I\+O\+N\+\_\+\+R\+E\+S\+O\+L\+V\+E\+\_\+\+R\+E\+T\+R\+Y}!socket.\+h@{socket.\+h}}
+\subsubsection[{G\+E\+T\+A\+D\+D\+R\+\_\+\+M\+E\+N\+T\+I\+O\+N\+\_\+\+R\+E\+S\+O\+L\+V\+E\+\_\+\+R\+E\+T\+R\+Y}]{\setlength{\rightskip}{0pt plus 5cm}\#define G\+E\+T\+A\+D\+D\+R\+\_\+\+M\+E\+N\+T\+I\+O\+N\+\_\+\+R\+E\+S\+O\+L\+V\+E\+\_\+\+R\+E\+T\+R\+Y~(1$<$$<$3)}\label{socket_8h_ae8e94b691014b2f7b8d1f0c85c4e71d4}
+\hypertarget{socket_8h_a2852b0e6ad2d5eba81db4250c5f9a7c0}{}\index{socket.\+h@{socket.\+h}!G\+E\+T\+A\+D\+D\+R\+\_\+\+M\+S\+G\+\_\+\+V\+I\+R\+T\+\_\+\+O\+U\+T@{G\+E\+T\+A\+D\+D\+R\+\_\+\+M\+S\+G\+\_\+\+V\+I\+R\+T\+\_\+\+O\+U\+T}}
+\index{G\+E\+T\+A\+D\+D\+R\+\_\+\+M\+S\+G\+\_\+\+V\+I\+R\+T\+\_\+\+O\+U\+T@{G\+E\+T\+A\+D\+D\+R\+\_\+\+M\+S\+G\+\_\+\+V\+I\+R\+T\+\_\+\+O\+U\+T}!socket.\+h@{socket.\+h}}
+\subsubsection[{G\+E\+T\+A\+D\+D\+R\+\_\+\+M\+S\+G\+\_\+\+V\+I\+R\+T\+\_\+\+O\+U\+T}]{\setlength{\rightskip}{0pt plus 5cm}\#define G\+E\+T\+A\+D\+D\+R\+\_\+\+M\+S\+G\+\_\+\+V\+I\+R\+T\+\_\+\+O\+U\+T~(1$<$$<$6)}\label{socket_8h_a2852b0e6ad2d5eba81db4250c5f9a7c0}
+\hypertarget{socket_8h_a31896acbb9c05d1701f3dce1a2e889fd}{}\index{socket.\+h@{socket.\+h}!G\+E\+T\+A\+D\+D\+R\+\_\+\+P\+A\+S\+S\+I\+V\+E@{G\+E\+T\+A\+D\+D\+R\+\_\+\+P\+A\+S\+S\+I\+V\+E}}
+\index{G\+E\+T\+A\+D\+D\+R\+\_\+\+P\+A\+S\+S\+I\+V\+E@{G\+E\+T\+A\+D\+D\+R\+\_\+\+P\+A\+S\+S\+I\+V\+E}!socket.\+h@{socket.\+h}}
+\subsubsection[{G\+E\+T\+A\+D\+D\+R\+\_\+\+P\+A\+S\+S\+I\+V\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define G\+E\+T\+A\+D\+D\+R\+\_\+\+P\+A\+S\+S\+I\+V\+E~(1$<$$<$10)}\label{socket_8h_a31896acbb9c05d1701f3dce1a2e889fd}
+\hypertarget{socket_8h_a73bb032064480e729ef190f999c56451}{}\index{socket.\+h@{socket.\+h}!G\+E\+T\+A\+D\+D\+R\+\_\+\+R\+A\+N\+D\+O\+M\+I\+Z\+E@{G\+E\+T\+A\+D\+D\+R\+\_\+\+R\+A\+N\+D\+O\+M\+I\+Z\+E}}
+\index{G\+E\+T\+A\+D\+D\+R\+\_\+\+R\+A\+N\+D\+O\+M\+I\+Z\+E@{G\+E\+T\+A\+D\+D\+R\+\_\+\+R\+A\+N\+D\+O\+M\+I\+Z\+E}!socket.\+h@{socket.\+h}}
+\subsubsection[{G\+E\+T\+A\+D\+D\+R\+\_\+\+R\+A\+N\+D\+O\+M\+I\+Z\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define G\+E\+T\+A\+D\+D\+R\+\_\+\+R\+A\+N\+D\+O\+M\+I\+Z\+E~(1$<$$<$9)}\label{socket_8h_a73bb032064480e729ef190f999c56451}
+\hypertarget{socket_8h_ac5f109019b64ee2519d9b3bc7f56dab0}{}\index{socket.\+h@{socket.\+h}!G\+E\+T\+A\+D\+D\+R\+\_\+\+R\+E\+S\+O\+L\+V\+E@{G\+E\+T\+A\+D\+D\+R\+\_\+\+R\+E\+S\+O\+L\+V\+E}}
+\index{G\+E\+T\+A\+D\+D\+R\+\_\+\+R\+E\+S\+O\+L\+V\+E@{G\+E\+T\+A\+D\+D\+R\+\_\+\+R\+E\+S\+O\+L\+V\+E}!socket.\+h@{socket.\+h}}
+\subsubsection[{G\+E\+T\+A\+D\+D\+R\+\_\+\+R\+E\+S\+O\+L\+V\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define G\+E\+T\+A\+D\+D\+R\+\_\+\+R\+E\+S\+O\+L\+V\+E~(1$<$$<$0)}\label{socket_8h_ac5f109019b64ee2519d9b3bc7f56dab0}
+\hypertarget{socket_8h_a29c7810ba4830f4b83b073cc27e430a6}{}\index{socket.\+h@{socket.\+h}!G\+E\+T\+A\+D\+D\+R\+\_\+\+T\+R\+Y\+\_\+\+O\+N\+C\+E@{G\+E\+T\+A\+D\+D\+R\+\_\+\+T\+R\+Y\+\_\+\+O\+N\+C\+E}}
+\index{G\+E\+T\+A\+D\+D\+R\+\_\+\+T\+R\+Y\+\_\+\+O\+N\+C\+E@{G\+E\+T\+A\+D\+D\+R\+\_\+\+T\+R\+Y\+\_\+\+O\+N\+C\+E}!socket.\+h@{socket.\+h}}
+\subsubsection[{G\+E\+T\+A\+D\+D\+R\+\_\+\+T\+R\+Y\+\_\+\+O\+N\+C\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define G\+E\+T\+A\+D\+D\+R\+\_\+\+T\+R\+Y\+\_\+\+O\+N\+C\+E~(1$<$$<$7)}\label{socket_8h_a29c7810ba4830f4b83b073cc27e430a6}
+\hypertarget{socket_8h_a370b90e5247fde413242d4bcbbb19ae3}{}\index{socket.\+h@{socket.\+h}!G\+E\+T\+A\+D\+D\+R\+\_\+\+U\+P\+D\+A\+T\+E\+\_\+\+M\+A\+N\+A\+G\+E\+M\+E\+N\+T\+\_\+\+S\+T\+A\+T\+E@{G\+E\+T\+A\+D\+D\+R\+\_\+\+U\+P\+D\+A\+T\+E\+\_\+\+M\+A\+N\+A\+G\+E\+M\+E\+N\+T\+\_\+\+S\+T\+A\+T\+E}}
+\index{G\+E\+T\+A\+D\+D\+R\+\_\+\+U\+P\+D\+A\+T\+E\+\_\+\+M\+A\+N\+A\+G\+E\+M\+E\+N\+T\+\_\+\+S\+T\+A\+T\+E@{G\+E\+T\+A\+D\+D\+R\+\_\+\+U\+P\+D\+A\+T\+E\+\_\+\+M\+A\+N\+A\+G\+E\+M\+E\+N\+T\+\_\+\+S\+T\+A\+T\+E}!socket.\+h@{socket.\+h}}
+\subsubsection[{G\+E\+T\+A\+D\+D\+R\+\_\+\+U\+P\+D\+A\+T\+E\+\_\+\+M\+A\+N\+A\+G\+E\+M\+E\+N\+T\+\_\+\+S\+T\+A\+T\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define G\+E\+T\+A\+D\+D\+R\+\_\+\+U\+P\+D\+A\+T\+E\+\_\+\+M\+A\+N\+A\+G\+E\+M\+E\+N\+T\+\_\+\+S\+T\+A\+T\+E~(1$<$$<$8)}\label{socket_8h_a370b90e5247fde413242d4bcbbb19ae3}
+\hypertarget{socket_8h_af630c34d969ca70fcec892075a3f1e6a}{}\index{socket.\+h@{socket.\+h}!G\+E\+T\+A\+D\+D\+R\+\_\+\+W\+A\+R\+N\+\_\+\+O\+N\+\_\+\+S\+I\+G\+N\+A\+L@{G\+E\+T\+A\+D\+D\+R\+\_\+\+W\+A\+R\+N\+\_\+\+O\+N\+\_\+\+S\+I\+G\+N\+A\+L}}
+\index{G\+E\+T\+A\+D\+D\+R\+\_\+\+W\+A\+R\+N\+\_\+\+O\+N\+\_\+\+S\+I\+G\+N\+A\+L@{G\+E\+T\+A\+D\+D\+R\+\_\+\+W\+A\+R\+N\+\_\+\+O\+N\+\_\+\+S\+I\+G\+N\+A\+L}!socket.\+h@{socket.\+h}}
+\subsubsection[{G\+E\+T\+A\+D\+D\+R\+\_\+\+W\+A\+R\+N\+\_\+\+O\+N\+\_\+\+S\+I\+G\+N\+A\+L}]{\setlength{\rightskip}{0pt plus 5cm}\#define G\+E\+T\+A\+D\+D\+R\+\_\+\+W\+A\+R\+N\+\_\+\+O\+N\+\_\+\+S\+I\+G\+N\+A\+L~(1$<$$<$5)}\label{socket_8h_af630c34d969ca70fcec892075a3f1e6a}
+\hypertarget{socket_8h_ae90ab66144545a15a23d39e69627cc8d}{}\index{socket.\+h@{socket.\+h}!htonps@{htonps}}
+\index{htonps@{htonps}!socket.\+h@{socket.\+h}}
+\subsubsection[{htonps}]{\setlength{\rightskip}{0pt plus 5cm}\#define htonps(
+\begin{DoxyParamCaption}
+\item[{}]{x}
+\end{DoxyParamCaption}
+)~htons(x)}\label{socket_8h_ae90ab66144545a15a23d39e69627cc8d}
+\hypertarget{socket_8h_a028f76eab5f19b3be8695a451b62aed8}{}\index{socket.\+h@{socket.\+h}!I\+A\+\_\+\+E\+M\+P\+T\+Y\+\_\+\+I\+F\+\_\+\+U\+N\+D\+E\+F@{I\+A\+\_\+\+E\+M\+P\+T\+Y\+\_\+\+I\+F\+\_\+\+U\+N\+D\+E\+F}}
+\index{I\+A\+\_\+\+E\+M\+P\+T\+Y\+\_\+\+I\+F\+\_\+\+U\+N\+D\+E\+F@{I\+A\+\_\+\+E\+M\+P\+T\+Y\+\_\+\+I\+F\+\_\+\+U\+N\+D\+E\+F}!socket.\+h@{socket.\+h}}
+\subsubsection[{I\+A\+\_\+\+E\+M\+P\+T\+Y\+\_\+\+I\+F\+\_\+\+U\+N\+D\+E\+F}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\+A\+\_\+\+E\+M\+P\+T\+Y\+\_\+\+I\+F\+\_\+\+U\+N\+D\+E\+F~(1$<$$<$0)}\label{socket_8h_a028f76eab5f19b3be8695a451b62aed8}
+\hypertarget{socket_8h_adfe6548aae7be586bf39b3e14d408ec3}{}\index{socket.\+h@{socket.\+h}!I\+A\+\_\+\+N\+E\+T\+\_\+\+O\+R\+D\+E\+R@{I\+A\+\_\+\+N\+E\+T\+\_\+\+O\+R\+D\+E\+R}}
+\index{I\+A\+\_\+\+N\+E\+T\+\_\+\+O\+R\+D\+E\+R@{I\+A\+\_\+\+N\+E\+T\+\_\+\+O\+R\+D\+E\+R}!socket.\+h@{socket.\+h}}
+\subsubsection[{I\+A\+\_\+\+N\+E\+T\+\_\+\+O\+R\+D\+E\+R}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\+A\+\_\+\+N\+E\+T\+\_\+\+O\+R\+D\+E\+R~(1$<$$<$1)}\label{socket_8h_adfe6548aae7be586bf39b3e14d408ec3}
+\hypertarget{socket_8h_aa1c1789e229d0784e709f300569e181f}{}\index{socket.\+h@{socket.\+h}!I\+N\+E\+T\+D\+\_\+\+N\+O\+N\+E@{I\+N\+E\+T\+D\+\_\+\+N\+O\+N\+E}}
+\index{I\+N\+E\+T\+D\+\_\+\+N\+O\+N\+E@{I\+N\+E\+T\+D\+\_\+\+N\+O\+N\+E}!socket.\+h@{socket.\+h}}
+\subsubsection[{I\+N\+E\+T\+D\+\_\+\+N\+O\+N\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\+N\+E\+T\+D\+\_\+\+N\+O\+N\+E~0}\label{socket_8h_aa1c1789e229d0784e709f300569e181f}
+\hypertarget{socket_8h_a4c61fca67870cd9dfd965e5976425754}{}\index{socket.\+h@{socket.\+h}!I\+N\+E\+T\+D\+\_\+\+N\+O\+W\+A\+I\+T@{I\+N\+E\+T\+D\+\_\+\+N\+O\+W\+A\+I\+T}}
+\index{I\+N\+E\+T\+D\+\_\+\+N\+O\+W\+A\+I\+T@{I\+N\+E\+T\+D\+\_\+\+N\+O\+W\+A\+I\+T}!socket.\+h@{socket.\+h}}
+\subsubsection[{I\+N\+E\+T\+D\+\_\+\+N\+O\+W\+A\+I\+T}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\+N\+E\+T\+D\+\_\+\+N\+O\+W\+A\+I\+T~2}\label{socket_8h_a4c61fca67870cd9dfd965e5976425754}
+\hypertarget{socket_8h_a486c42399330d8d87964ba90862d128c}{}\index{socket.\+h@{socket.\+h}!I\+N\+E\+T\+D\+\_\+\+W\+A\+I\+T@{I\+N\+E\+T\+D\+\_\+\+W\+A\+I\+T}}
+\index{I\+N\+E\+T\+D\+\_\+\+W\+A\+I\+T@{I\+N\+E\+T\+D\+\_\+\+W\+A\+I\+T}!socket.\+h@{socket.\+h}}
+\subsubsection[{I\+N\+E\+T\+D\+\_\+\+W\+A\+I\+T}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\+N\+E\+T\+D\+\_\+\+W\+A\+I\+T~1}\label{socket_8h_a486c42399330d8d87964ba90862d128c}
+\hypertarget{socket_8h_a0ce50bf99584fb5eb545e483d4c1571f}{}\index{socket.\+h@{socket.\+h}!I\+P\+V4\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+A\+D\+D\+R@{I\+P\+V4\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+A\+D\+D\+R}}
+\index{I\+P\+V4\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+A\+D\+D\+R@{I\+P\+V4\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+A\+D\+D\+R}!socket.\+h@{socket.\+h}}
+\subsubsection[{I\+P\+V4\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+A\+D\+D\+R}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\+P\+V4\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+A\+D\+D\+R~0xffffffff}\label{socket_8h_a0ce50bf99584fb5eb545e483d4c1571f}
+\hypertarget{socket_8h_aeea9b150803ef560a50a5617ebeab61d}{}\index{socket.\+h@{socket.\+h}!I\+Pv4\+\_\+\+T\+C\+P\+\_\+\+H\+E\+A\+D\+E\+R\+\_\+\+S\+I\+Z\+E@{I\+Pv4\+\_\+\+T\+C\+P\+\_\+\+H\+E\+A\+D\+E\+R\+\_\+\+S\+I\+Z\+E}}
+\index{I\+Pv4\+\_\+\+T\+C\+P\+\_\+\+H\+E\+A\+D\+E\+R\+\_\+\+S\+I\+Z\+E@{I\+Pv4\+\_\+\+T\+C\+P\+\_\+\+H\+E\+A\+D\+E\+R\+\_\+\+S\+I\+Z\+E}!socket.\+h@{socket.\+h}}
+\subsubsection[{I\+Pv4\+\_\+\+T\+C\+P\+\_\+\+H\+E\+A\+D\+E\+R\+\_\+\+S\+I\+Z\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\+Pv4\+\_\+\+T\+C\+P\+\_\+\+H\+E\+A\+D\+E\+R\+\_\+\+S\+I\+Z\+E~40}\label{socket_8h_aeea9b150803ef560a50a5617ebeab61d}
+\hypertarget{socket_8h_a78cb4d82ac2dbdd2456b574b49b5921d}{}\index{socket.\+h@{socket.\+h}!I\+Pv4\+\_\+\+U\+D\+P\+\_\+\+H\+E\+A\+D\+E\+R\+\_\+\+S\+I\+Z\+E@{I\+Pv4\+\_\+\+U\+D\+P\+\_\+\+H\+E\+A\+D\+E\+R\+\_\+\+S\+I\+Z\+E}}
+\index{I\+Pv4\+\_\+\+U\+D\+P\+\_\+\+H\+E\+A\+D\+E\+R\+\_\+\+S\+I\+Z\+E@{I\+Pv4\+\_\+\+U\+D\+P\+\_\+\+H\+E\+A\+D\+E\+R\+\_\+\+S\+I\+Z\+E}!socket.\+h@{socket.\+h}}
+\subsubsection[{I\+Pv4\+\_\+\+U\+D\+P\+\_\+\+H\+E\+A\+D\+E\+R\+\_\+\+S\+I\+Z\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\+Pv4\+\_\+\+U\+D\+P\+\_\+\+H\+E\+A\+D\+E\+R\+\_\+\+S\+I\+Z\+E~28}\label{socket_8h_a78cb4d82ac2dbdd2456b574b49b5921d}
+\hypertarget{socket_8h_a1575cb39df49550bd45e8b5ab723e22e}{}\index{socket.\+h@{socket.\+h}!I\+Pv6\+\_\+\+T\+C\+P\+\_\+\+H\+E\+A\+D\+E\+R\+\_\+\+S\+I\+Z\+E@{I\+Pv6\+\_\+\+T\+C\+P\+\_\+\+H\+E\+A\+D\+E\+R\+\_\+\+S\+I\+Z\+E}}
+\index{I\+Pv6\+\_\+\+T\+C\+P\+\_\+\+H\+E\+A\+D\+E\+R\+\_\+\+S\+I\+Z\+E@{I\+Pv6\+\_\+\+T\+C\+P\+\_\+\+H\+E\+A\+D\+E\+R\+\_\+\+S\+I\+Z\+E}!socket.\+h@{socket.\+h}}
+\subsubsection[{I\+Pv6\+\_\+\+T\+C\+P\+\_\+\+H\+E\+A\+D\+E\+R\+\_\+\+S\+I\+Z\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\+Pv6\+\_\+\+T\+C\+P\+\_\+\+H\+E\+A\+D\+E\+R\+\_\+\+S\+I\+Z\+E~60}\label{socket_8h_a1575cb39df49550bd45e8b5ab723e22e}
+\hypertarget{socket_8h_ae60d9e8affd55886bd8247a373a3bd94}{}\index{socket.\+h@{socket.\+h}!I\+Pv6\+\_\+\+U\+D\+P\+\_\+\+H\+E\+A\+D\+E\+R\+\_\+\+S\+I\+Z\+E@{I\+Pv6\+\_\+\+U\+D\+P\+\_\+\+H\+E\+A\+D\+E\+R\+\_\+\+S\+I\+Z\+E}}
+\index{I\+Pv6\+\_\+\+U\+D\+P\+\_\+\+H\+E\+A\+D\+E\+R\+\_\+\+S\+I\+Z\+E@{I\+Pv6\+\_\+\+U\+D\+P\+\_\+\+H\+E\+A\+D\+E\+R\+\_\+\+S\+I\+Z\+E}!socket.\+h@{socket.\+h}}
+\subsubsection[{I\+Pv6\+\_\+\+U\+D\+P\+\_\+\+H\+E\+A\+D\+E\+R\+\_\+\+S\+I\+Z\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\+Pv6\+\_\+\+U\+D\+P\+\_\+\+H\+E\+A\+D\+E\+R\+\_\+\+S\+I\+Z\+E~48}\label{socket_8h_ae60d9e8affd55886bd8247a373a3bd94}
+\hypertarget{socket_8h_a9c4bfc3d8aeda3bb49d8d3897892f3ee}{}\index{socket.\+h@{socket.\+h}!L\+S\+\_\+\+M\+O\+D\+E\+\_\+\+D\+E\+F\+A\+U\+L\+T@{L\+S\+\_\+\+M\+O\+D\+E\+\_\+\+D\+E\+F\+A\+U\+L\+T}}
+\index{L\+S\+\_\+\+M\+O\+D\+E\+\_\+\+D\+E\+F\+A\+U\+L\+T@{L\+S\+\_\+\+M\+O\+D\+E\+\_\+\+D\+E\+F\+A\+U\+L\+T}!socket.\+h@{socket.\+h}}
+\subsubsection[{L\+S\+\_\+\+M\+O\+D\+E\+\_\+\+D\+E\+F\+A\+U\+L\+T}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\+S\+\_\+\+M\+O\+D\+E\+\_\+\+D\+E\+F\+A\+U\+L\+T~0}\label{socket_8h_a9c4bfc3d8aeda3bb49d8d3897892f3ee}
+\hypertarget{socket_8h_a157c21b8cc55b246867518e68946f43d}{}\index{socket.\+h@{socket.\+h}!L\+S\+\_\+\+M\+O\+D\+E\+\_\+\+T\+C\+P\+\_\+\+A\+C\+C\+E\+P\+T\+\_\+\+F\+R\+O\+M@{L\+S\+\_\+\+M\+O\+D\+E\+\_\+\+T\+C\+P\+\_\+\+A\+C\+C\+E\+P\+T\+\_\+\+F\+R\+O\+M}}
+\index{L\+S\+\_\+\+M\+O\+D\+E\+\_\+\+T\+C\+P\+\_\+\+A\+C\+C\+E\+P\+T\+\_\+\+F\+R\+O\+M@{L\+S\+\_\+\+M\+O\+D\+E\+\_\+\+T\+C\+P\+\_\+\+A\+C\+C\+E\+P\+T\+\_\+\+F\+R\+O\+M}!socket.\+h@{socket.\+h}}
+\subsubsection[{L\+S\+\_\+\+M\+O\+D\+E\+\_\+\+T\+C\+P\+\_\+\+A\+C\+C\+E\+P\+T\+\_\+\+F\+R\+O\+M}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\+S\+\_\+\+M\+O\+D\+E\+\_\+\+T\+C\+P\+\_\+\+A\+C\+C\+E\+P\+T\+\_\+\+F\+R\+O\+M~2}\label{socket_8h_a157c21b8cc55b246867518e68946f43d}
+\hypertarget{socket_8h_ab2808d3cfa79a16107297dcacf7df779}{}\index{socket.\+h@{socket.\+h}!L\+S\+\_\+\+M\+O\+D\+E\+\_\+\+T\+C\+P\+\_\+\+L\+I\+S\+T\+E\+N@{L\+S\+\_\+\+M\+O\+D\+E\+\_\+\+T\+C\+P\+\_\+\+L\+I\+S\+T\+E\+N}}
+\index{L\+S\+\_\+\+M\+O\+D\+E\+\_\+\+T\+C\+P\+\_\+\+L\+I\+S\+T\+E\+N@{L\+S\+\_\+\+M\+O\+D\+E\+\_\+\+T\+C\+P\+\_\+\+L\+I\+S\+T\+E\+N}!socket.\+h@{socket.\+h}}
+\subsubsection[{L\+S\+\_\+\+M\+O\+D\+E\+\_\+\+T\+C\+P\+\_\+\+L\+I\+S\+T\+E\+N}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\+S\+\_\+\+M\+O\+D\+E\+\_\+\+T\+C\+P\+\_\+\+L\+I\+S\+T\+E\+N~1}\label{socket_8h_ab2808d3cfa79a16107297dcacf7df779}
+\hypertarget{socket_8h_a9f55d0e90dc8cc6b2287312435cdde48}{}\index{socket.\+h@{socket.\+h}!M\+S\+G\+\_\+\+N\+O\+S\+I\+G\+N\+A\+L@{M\+S\+G\+\_\+\+N\+O\+S\+I\+G\+N\+A\+L}}
+\index{M\+S\+G\+\_\+\+N\+O\+S\+I\+G\+N\+A\+L@{M\+S\+G\+\_\+\+N\+O\+S\+I\+G\+N\+A\+L}!socket.\+h@{socket.\+h}}
+\subsubsection[{M\+S\+G\+\_\+\+N\+O\+S\+I\+G\+N\+A\+L}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\+S\+G\+\_\+\+N\+O\+S\+I\+G\+N\+A\+L~0}\label{socket_8h_a9f55d0e90dc8cc6b2287312435cdde48}
+\hypertarget{socket_8h_aca11e8f066d8600454ee8e46230091a1}{}\index{socket.\+h@{socket.\+h}!ntohps@{ntohps}}
+\index{ntohps@{ntohps}!socket.\+h@{socket.\+h}}
+\subsubsection[{ntohps}]{\setlength{\rightskip}{0pt plus 5cm}\#define ntohps(
+\begin{DoxyParamCaption}
+\item[{}]{x}
+\end{DoxyParamCaption}
+)~ntohs(x)}\label{socket_8h_aca11e8f066d8600454ee8e46230091a1}
+\hypertarget{socket_8h_a64462a7bbac50f1d2ae645aae8fdec55}{}\index{socket.\+h@{socket.\+h}!O\+I\+A\+\_\+\+E\+R\+R\+O\+R@{O\+I\+A\+\_\+\+E\+R\+R\+O\+R}}
+\index{O\+I\+A\+\_\+\+E\+R\+R\+O\+R@{O\+I\+A\+\_\+\+E\+R\+R\+O\+R}!socket.\+h@{socket.\+h}}
+\subsubsection[{O\+I\+A\+\_\+\+E\+R\+R\+O\+R}]{\setlength{\rightskip}{0pt plus 5cm}\#define O\+I\+A\+\_\+\+E\+R\+R\+O\+R~-\/1}\label{socket_8h_a64462a7bbac50f1d2ae645aae8fdec55}
+\hypertarget{socket_8h_a05014dfb6fe6c47b71b7b00f683ba924}{}\index{socket.\+h@{socket.\+h}!O\+I\+A\+\_\+\+H\+O\+S\+T\+N\+A\+M\+E@{O\+I\+A\+\_\+\+H\+O\+S\+T\+N\+A\+M\+E}}
+\index{O\+I\+A\+\_\+\+H\+O\+S\+T\+N\+A\+M\+E@{O\+I\+A\+\_\+\+H\+O\+S\+T\+N\+A\+M\+E}!socket.\+h@{socket.\+h}}
+\subsubsection[{O\+I\+A\+\_\+\+H\+O\+S\+T\+N\+A\+M\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define O\+I\+A\+\_\+\+H\+O\+S\+T\+N\+A\+M\+E~0}\label{socket_8h_a05014dfb6fe6c47b71b7b00f683ba924}
+\hypertarget{socket_8h_a9e7af6bfebff6fe2906a26cf1cd0c64e}{}\index{socket.\+h@{socket.\+h}!O\+I\+A\+\_\+\+I\+P@{O\+I\+A\+\_\+\+I\+P}}
+\index{O\+I\+A\+\_\+\+I\+P@{O\+I\+A\+\_\+\+I\+P}!socket.\+h@{socket.\+h}}
+\subsubsection[{O\+I\+A\+\_\+\+I\+P}]{\setlength{\rightskip}{0pt plus 5cm}\#define O\+I\+A\+\_\+\+I\+P~1}\label{socket_8h_a9e7af6bfebff6fe2906a26cf1cd0c64e}
+\hypertarget{socket_8h_ae5c4c61cabc795b44256b0be9850e47c}{}\index{socket.\+h@{socket.\+h}!openvpn\+\_\+close\+\_\+socket@{openvpn\+\_\+close\+\_\+socket}}
+\index{openvpn\+\_\+close\+\_\+socket@{openvpn\+\_\+close\+\_\+socket}!socket.\+h@{socket.\+h}}
+\subsubsection[{openvpn\+\_\+close\+\_\+socket}]{\setlength{\rightskip}{0pt plus 5cm}\#define openvpn\+\_\+close\+\_\+socket(
+\begin{DoxyParamCaption}
+\item[{}]{s}
+\end{DoxyParamCaption}
+)~close(s)}\label{socket_8h_ae5c4c61cabc795b44256b0be9850e47c}
+\hypertarget{socket_8h_a9450f7aecd616dbf9b5b1b43e5e3a688}{}\index{socket.\+h@{socket.\+h}!O\+P\+E\+N\+V\+P\+N\+\_\+\+P\+O\+R\+T@{O\+P\+E\+N\+V\+P\+N\+\_\+\+P\+O\+R\+T}}
+\index{O\+P\+E\+N\+V\+P\+N\+\_\+\+P\+O\+R\+T@{O\+P\+E\+N\+V\+P\+N\+\_\+\+P\+O\+R\+T}!socket.\+h@{socket.\+h}}
+\subsubsection[{O\+P\+E\+N\+V\+P\+N\+\_\+\+P\+O\+R\+T}]{\setlength{\rightskip}{0pt plus 5cm}\#define O\+P\+E\+N\+V\+P\+N\+\_\+\+P\+O\+R\+T~\char`\"{}1194\char`\"{}}\label{socket_8h_a9450f7aecd616dbf9b5b1b43e5e3a688}
+\hypertarget{socket_8h_a59535ffa0d88a7df13adf437a696974c}{}\index{socket.\+h@{socket.\+h}!P\+S\+\_\+\+D\+O\+N\+T\+\_\+\+S\+H\+O\+W\+\_\+\+A\+D\+D\+R@{P\+S\+\_\+\+D\+O\+N\+T\+\_\+\+S\+H\+O\+W\+\_\+\+A\+D\+D\+R}}
+\index{P\+S\+\_\+\+D\+O\+N\+T\+\_\+\+S\+H\+O\+W\+\_\+\+A\+D\+D\+R@{P\+S\+\_\+\+D\+O\+N\+T\+\_\+\+S\+H\+O\+W\+\_\+\+A\+D\+D\+R}!socket.\+h@{socket.\+h}}
+\subsubsection[{P\+S\+\_\+\+D\+O\+N\+T\+\_\+\+S\+H\+O\+W\+\_\+\+A\+D\+D\+R}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\+S\+\_\+\+D\+O\+N\+T\+\_\+\+S\+H\+O\+W\+\_\+\+A\+D\+D\+R~(1$<$$<$3)}\label{socket_8h_a59535ffa0d88a7df13adf437a696974c}
+\hypertarget{socket_8h_aced64d9c0e38849554e15e07c46d6872}{}\index{socket.\+h@{socket.\+h}!P\+S\+\_\+\+D\+O\+N\+T\+\_\+\+S\+H\+O\+W\+\_\+\+F\+A\+M\+I\+L\+Y@{P\+S\+\_\+\+D\+O\+N\+T\+\_\+\+S\+H\+O\+W\+\_\+\+F\+A\+M\+I\+L\+Y}}
+\index{P\+S\+\_\+\+D\+O\+N\+T\+\_\+\+S\+H\+O\+W\+\_\+\+F\+A\+M\+I\+L\+Y@{P\+S\+\_\+\+D\+O\+N\+T\+\_\+\+S\+H\+O\+W\+\_\+\+F\+A\+M\+I\+L\+Y}!socket.\+h@{socket.\+h}}
+\subsubsection[{P\+S\+\_\+\+D\+O\+N\+T\+\_\+\+S\+H\+O\+W\+\_\+\+F\+A\+M\+I\+L\+Y}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\+S\+\_\+\+D\+O\+N\+T\+\_\+\+S\+H\+O\+W\+\_\+\+F\+A\+M\+I\+L\+Y~(1$<$$<$4)}\label{socket_8h_aced64d9c0e38849554e15e07c46d6872}
+\hypertarget{socket_8h_afde72e9cae87f24209bc4daa1d38eaf3}{}\index{socket.\+h@{socket.\+h}!P\+S\+\_\+\+S\+H\+O\+W\+\_\+\+P\+K\+T\+I\+N\+F\+O@{P\+S\+\_\+\+S\+H\+O\+W\+\_\+\+P\+K\+T\+I\+N\+F\+O}}
+\index{P\+S\+\_\+\+S\+H\+O\+W\+\_\+\+P\+K\+T\+I\+N\+F\+O@{P\+S\+\_\+\+S\+H\+O\+W\+\_\+\+P\+K\+T\+I\+N\+F\+O}!socket.\+h@{socket.\+h}}
+\subsubsection[{P\+S\+\_\+\+S\+H\+O\+W\+\_\+\+P\+K\+T\+I\+N\+F\+O}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\+S\+\_\+\+S\+H\+O\+W\+\_\+\+P\+K\+T\+I\+N\+F\+O~(1$<$$<$2)}\label{socket_8h_afde72e9cae87f24209bc4daa1d38eaf3}
+\hypertarget{socket_8h_a4dff9662b49ce11baa25dd5106578282}{}\index{socket.\+h@{socket.\+h}!P\+S\+\_\+\+S\+H\+O\+W\+\_\+\+P\+O\+R\+T@{P\+S\+\_\+\+S\+H\+O\+W\+\_\+\+P\+O\+R\+T}}
+\index{P\+S\+\_\+\+S\+H\+O\+W\+\_\+\+P\+O\+R\+T@{P\+S\+\_\+\+S\+H\+O\+W\+\_\+\+P\+O\+R\+T}!socket.\+h@{socket.\+h}}
+\subsubsection[{P\+S\+\_\+\+S\+H\+O\+W\+\_\+\+P\+O\+R\+T}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\+S\+\_\+\+S\+H\+O\+W\+\_\+\+P\+O\+R\+T~(1$<$$<$1)}\label{socket_8h_a4dff9662b49ce11baa25dd5106578282}
+\hypertarget{socket_8h_a70306f44df1e93adb70878e0406bdcc5}{}\index{socket.\+h@{socket.\+h}!P\+S\+\_\+\+S\+H\+O\+W\+\_\+\+P\+O\+R\+T\+\_\+\+I\+F\+\_\+\+D\+E\+F\+I\+N\+E\+D@{P\+S\+\_\+\+S\+H\+O\+W\+\_\+\+P\+O\+R\+T\+\_\+\+I\+F\+\_\+\+D\+E\+F\+I\+N\+E\+D}}
+\index{P\+S\+\_\+\+S\+H\+O\+W\+\_\+\+P\+O\+R\+T\+\_\+\+I\+F\+\_\+\+D\+E\+F\+I\+N\+E\+D@{P\+S\+\_\+\+S\+H\+O\+W\+\_\+\+P\+O\+R\+T\+\_\+\+I\+F\+\_\+\+D\+E\+F\+I\+N\+E\+D}!socket.\+h@{socket.\+h}}
+\subsubsection[{P\+S\+\_\+\+S\+H\+O\+W\+\_\+\+P\+O\+R\+T\+\_\+\+I\+F\+\_\+\+D\+E\+F\+I\+N\+E\+D}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\+S\+\_\+\+S\+H\+O\+W\+\_\+\+P\+O\+R\+T\+\_\+\+I\+F\+\_\+\+D\+E\+F\+I\+N\+E\+D~(1$<$$<$0)}\label{socket_8h_a70306f44df1e93adb70878e0406bdcc5}
+\hypertarget{socket_8h_a743fe9566328f4a753afe6d7d3457d61}{}\index{socket.\+h@{socket.\+h}!R\+E\+S\+O\+L\+V\+\_\+\+R\+E\+T\+R\+Y\+\_\+\+I\+N\+F\+I\+N\+I\+T\+E@{R\+E\+S\+O\+L\+V\+\_\+\+R\+E\+T\+R\+Y\+\_\+\+I\+N\+F\+I\+N\+I\+T\+E}}
+\index{R\+E\+S\+O\+L\+V\+\_\+\+R\+E\+T\+R\+Y\+\_\+\+I\+N\+F\+I\+N\+I\+T\+E@{R\+E\+S\+O\+L\+V\+\_\+\+R\+E\+T\+R\+Y\+\_\+\+I\+N\+F\+I\+N\+I\+T\+E}!socket.\+h@{socket.\+h}}
+\subsubsection[{R\+E\+S\+O\+L\+V\+\_\+\+R\+E\+T\+R\+Y\+\_\+\+I\+N\+F\+I\+N\+I\+T\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+E\+S\+O\+L\+V\+\_\+\+R\+E\+T\+R\+Y\+\_\+\+I\+N\+F\+I\+N\+I\+T\+E~1000000000}\label{socket_8h_a743fe9566328f4a753afe6d7d3457d61}
+\hypertarget{socket_8h_a309899d365dfbbc09e6fe96adda3661e}{}\index{socket.\+h@{socket.\+h}!S\+A\+\_\+\+I\+P\+\_\+\+P\+O\+R\+T@{S\+A\+\_\+\+I\+P\+\_\+\+P\+O\+R\+T}}
+\index{S\+A\+\_\+\+I\+P\+\_\+\+P\+O\+R\+T@{S\+A\+\_\+\+I\+P\+\_\+\+P\+O\+R\+T}!socket.\+h@{socket.\+h}}
+\subsubsection[{S\+A\+\_\+\+I\+P\+\_\+\+P\+O\+R\+T}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\+A\+\_\+\+I\+P\+\_\+\+P\+O\+R\+T~(1$<$$<$0)}\label{socket_8h_a309899d365dfbbc09e6fe96adda3661e}
+\hypertarget{socket_8h_ae47aa499fcc63d510a739a678e08c575}{}\index{socket.\+h@{socket.\+h}!S\+A\+\_\+\+S\+E\+T\+\_\+\+I\+F\+\_\+\+N\+O\+N\+Z\+E\+R\+O@{S\+A\+\_\+\+S\+E\+T\+\_\+\+I\+F\+\_\+\+N\+O\+N\+Z\+E\+R\+O}}
+\index{S\+A\+\_\+\+S\+E\+T\+\_\+\+I\+F\+\_\+\+N\+O\+N\+Z\+E\+R\+O@{S\+A\+\_\+\+S\+E\+T\+\_\+\+I\+F\+\_\+\+N\+O\+N\+Z\+E\+R\+O}!socket.\+h@{socket.\+h}}
+\subsubsection[{S\+A\+\_\+\+S\+E\+T\+\_\+\+I\+F\+\_\+\+N\+O\+N\+Z\+E\+R\+O}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\+A\+\_\+\+S\+E\+T\+\_\+\+I\+F\+\_\+\+N\+O\+N\+Z\+E\+R\+O~(1$<$$<$1)}\label{socket_8h_ae47aa499fcc63d510a739a678e08c575}
+\hypertarget{socket_8h_aaf7a15bb2782776251b6e76ba8aaccb6}{}\index{socket.\+h@{socket.\+h}!S\+F\+\_\+\+G\+E\+T\+A\+D\+D\+R\+I\+N\+F\+O\+\_\+\+D\+G\+R\+A\+M@{S\+F\+\_\+\+G\+E\+T\+A\+D\+D\+R\+I\+N\+F\+O\+\_\+\+D\+G\+R\+A\+M}}
+\index{S\+F\+\_\+\+G\+E\+T\+A\+D\+D\+R\+I\+N\+F\+O\+\_\+\+D\+G\+R\+A\+M@{S\+F\+\_\+\+G\+E\+T\+A\+D\+D\+R\+I\+N\+F\+O\+\_\+\+D\+G\+R\+A\+M}!socket.\+h@{socket.\+h}}
+\subsubsection[{S\+F\+\_\+\+G\+E\+T\+A\+D\+D\+R\+I\+N\+F\+O\+\_\+\+D\+G\+R\+A\+M}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\+F\+\_\+\+G\+E\+T\+A\+D\+D\+R\+I\+N\+F\+O\+\_\+\+D\+G\+R\+A\+M~(1$<$$<$4)}\label{socket_8h_aaf7a15bb2782776251b6e76ba8aaccb6}
+\hypertarget{socket_8h_aacb7b566ab5e5d62d3c9965078776fe1}{}\index{socket.\+h@{socket.\+h}!S\+F\+\_\+\+H\+O\+S\+T\+\_\+\+R\+A\+N\+D\+O\+M\+I\+Z\+E@{S\+F\+\_\+\+H\+O\+S\+T\+\_\+\+R\+A\+N\+D\+O\+M\+I\+Z\+E}}
+\index{S\+F\+\_\+\+H\+O\+S\+T\+\_\+\+R\+A\+N\+D\+O\+M\+I\+Z\+E@{S\+F\+\_\+\+H\+O\+S\+T\+\_\+\+R\+A\+N\+D\+O\+M\+I\+Z\+E}!socket.\+h@{socket.\+h}}
+\subsubsection[{S\+F\+\_\+\+H\+O\+S\+T\+\_\+\+R\+A\+N\+D\+O\+M\+I\+Z\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\+F\+\_\+\+H\+O\+S\+T\+\_\+\+R\+A\+N\+D\+O\+M\+I\+Z\+E~(1$<$$<$3)}\label{socket_8h_aacb7b566ab5e5d62d3c9965078776fe1}
+\hypertarget{socket_8h_ab974ab73acf7192e0bb614429f79f5a1}{}\index{socket.\+h@{socket.\+h}!S\+F\+\_\+\+P\+O\+R\+T\+\_\+\+S\+H\+A\+R\+E@{S\+F\+\_\+\+P\+O\+R\+T\+\_\+\+S\+H\+A\+R\+E}}
+\index{S\+F\+\_\+\+P\+O\+R\+T\+\_\+\+S\+H\+A\+R\+E@{S\+F\+\_\+\+P\+O\+R\+T\+\_\+\+S\+H\+A\+R\+E}!socket.\+h@{socket.\+h}}
+\subsubsection[{S\+F\+\_\+\+P\+O\+R\+T\+\_\+\+S\+H\+A\+R\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\+F\+\_\+\+P\+O\+R\+T\+\_\+\+S\+H\+A\+R\+E~(1$<$$<$2)}\label{socket_8h_ab974ab73acf7192e0bb614429f79f5a1}
+\hypertarget{socket_8h_a73908595a4322a54ab879938f1f9e263}{}\index{socket.\+h@{socket.\+h}!S\+F\+\_\+\+T\+C\+P\+\_\+\+N\+O\+D\+E\+L\+A\+Y@{S\+F\+\_\+\+T\+C\+P\+\_\+\+N\+O\+D\+E\+L\+A\+Y}}
+\index{S\+F\+\_\+\+T\+C\+P\+\_\+\+N\+O\+D\+E\+L\+A\+Y@{S\+F\+\_\+\+T\+C\+P\+\_\+\+N\+O\+D\+E\+L\+A\+Y}!socket.\+h@{socket.\+h}}
+\subsubsection[{S\+F\+\_\+\+T\+C\+P\+\_\+\+N\+O\+D\+E\+L\+A\+Y}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\+F\+\_\+\+T\+C\+P\+\_\+\+N\+O\+D\+E\+L\+A\+Y~(1$<$$<$1)}\label{socket_8h_a73908595a4322a54ab879938f1f9e263}
+\hypertarget{socket_8h_a9951cd50752f73ed8db18df353ac8c40}{}\index{socket.\+h@{socket.\+h}!S\+F\+\_\+\+U\+S\+E\+\_\+\+I\+P\+\_\+\+P\+K\+T\+I\+N\+F\+O@{S\+F\+\_\+\+U\+S\+E\+\_\+\+I\+P\+\_\+\+P\+K\+T\+I\+N\+F\+O}}
+\index{S\+F\+\_\+\+U\+S\+E\+\_\+\+I\+P\+\_\+\+P\+K\+T\+I\+N\+F\+O@{S\+F\+\_\+\+U\+S\+E\+\_\+\+I\+P\+\_\+\+P\+K\+T\+I\+N\+F\+O}!socket.\+h@{socket.\+h}}
+\subsubsection[{S\+F\+\_\+\+U\+S\+E\+\_\+\+I\+P\+\_\+\+P\+K\+T\+I\+N\+F\+O}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\+F\+\_\+\+U\+S\+E\+\_\+\+I\+P\+\_\+\+P\+K\+T\+I\+N\+F\+O~(1$<$$<$0)}\label{socket_8h_a9951cd50752f73ed8db18df353ac8c40}
+
+
+\subsection{Typedef Documentation}
+\hypertarget{socket_8h_aa60fc378da5f5fe767a3f9cbf0c811f6}{}\index{socket.\+h@{socket.\+h}!packet\+\_\+size\+\_\+type@{packet\+\_\+size\+\_\+type}}
+\index{packet\+\_\+size\+\_\+type@{packet\+\_\+size\+\_\+type}!socket.\+h@{socket.\+h}}
+\subsubsection[{packet\+\_\+size\+\_\+type}]{\setlength{\rightskip}{0pt plus 5cm}typedef uint16\+\_\+t {\bf packet\+\_\+size\+\_\+type}}\label{socket_8h_aa60fc378da5f5fe767a3f9cbf0c811f6}
+
+
+\subsection{Enumeration Type Documentation}
+\hypertarget{socket_8h_a50ea4ad26d16eec29ff9685126f0a599}{}\index{socket.\+h@{socket.\+h}!proto\+\_\+num@{proto\+\_\+num}}
+\index{proto\+\_\+num@{proto\+\_\+num}!socket.\+h@{socket.\+h}}
+\subsubsection[{proto\+\_\+num}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf proto\+\_\+num}}\label{socket_8h_a50ea4ad26d16eec29ff9685126f0a599}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{P\+R\+O\+T\+O\+\_\+\+N\+O\+N\+E@{P\+R\+O\+T\+O\+\_\+\+N\+O\+N\+E}!socket.\+h@{socket.\+h}}\index{socket.\+h@{socket.\+h}!P\+R\+O\+T\+O\+\_\+\+N\+O\+N\+E@{P\+R\+O\+T\+O\+\_\+\+N\+O\+N\+E}}\item[{\em 
+\hypertarget{socket_8h_a50ea4ad26d16eec29ff9685126f0a599a13d71dc94a42ee4eecb0e0898055ebe8}{}P\+R\+O\+T\+O\+\_\+\+N\+O\+N\+E\label{socket_8h_a50ea4ad26d16eec29ff9685126f0a599a13d71dc94a42ee4eecb0e0898055ebe8}
+}]\index{P\+R\+O\+T\+O\+\_\+\+U\+D\+P@{P\+R\+O\+T\+O\+\_\+\+U\+D\+P}!socket.\+h@{socket.\+h}}\index{socket.\+h@{socket.\+h}!P\+R\+O\+T\+O\+\_\+\+U\+D\+P@{P\+R\+O\+T\+O\+\_\+\+U\+D\+P}}\item[{\em 
+\hypertarget{socket_8h_a50ea4ad26d16eec29ff9685126f0a599a2b277c40c006345a264777529561bf93}{}P\+R\+O\+T\+O\+\_\+\+U\+D\+P\label{socket_8h_a50ea4ad26d16eec29ff9685126f0a599a2b277c40c006345a264777529561bf93}
+}]\index{P\+R\+O\+T\+O\+\_\+\+T\+C\+P@{P\+R\+O\+T\+O\+\_\+\+T\+C\+P}!socket.\+h@{socket.\+h}}\index{socket.\+h@{socket.\+h}!P\+R\+O\+T\+O\+\_\+\+T\+C\+P@{P\+R\+O\+T\+O\+\_\+\+T\+C\+P}}\item[{\em 
+\hypertarget{socket_8h_a50ea4ad26d16eec29ff9685126f0a599a44547a13166ee3f0220fb3c4fc60e544}{}P\+R\+O\+T\+O\+\_\+\+T\+C\+P\label{socket_8h_a50ea4ad26d16eec29ff9685126f0a599a44547a13166ee3f0220fb3c4fc60e544}
+}]\index{P\+R\+O\+T\+O\+\_\+\+T\+C\+P\+\_\+\+S\+E\+R\+V\+E\+R@{P\+R\+O\+T\+O\+\_\+\+T\+C\+P\+\_\+\+S\+E\+R\+V\+E\+R}!socket.\+h@{socket.\+h}}\index{socket.\+h@{socket.\+h}!P\+R\+O\+T\+O\+\_\+\+T\+C\+P\+\_\+\+S\+E\+R\+V\+E\+R@{P\+R\+O\+T\+O\+\_\+\+T\+C\+P\+\_\+\+S\+E\+R\+V\+E\+R}}\item[{\em 
+\hypertarget{socket_8h_a50ea4ad26d16eec29ff9685126f0a599aeff17f4932089fddd54b29765c8cdbd7}{}P\+R\+O\+T\+O\+\_\+\+T\+C\+P\+\_\+\+S\+E\+R\+V\+E\+R\label{socket_8h_a50ea4ad26d16eec29ff9685126f0a599aeff17f4932089fddd54b29765c8cdbd7}
+}]\index{P\+R\+O\+T\+O\+\_\+\+T\+C\+P\+\_\+\+C\+L\+I\+E\+N\+T@{P\+R\+O\+T\+O\+\_\+\+T\+C\+P\+\_\+\+C\+L\+I\+E\+N\+T}!socket.\+h@{socket.\+h}}\index{socket.\+h@{socket.\+h}!P\+R\+O\+T\+O\+\_\+\+T\+C\+P\+\_\+\+C\+L\+I\+E\+N\+T@{P\+R\+O\+T\+O\+\_\+\+T\+C\+P\+\_\+\+C\+L\+I\+E\+N\+T}}\item[{\em 
+\hypertarget{socket_8h_a50ea4ad26d16eec29ff9685126f0a599a4f54544a7b77bc839a23e1124f7e9c95}{}P\+R\+O\+T\+O\+\_\+\+T\+C\+P\+\_\+\+C\+L\+I\+E\+N\+T\label{socket_8h_a50ea4ad26d16eec29ff9685126f0a599a4f54544a7b77bc839a23e1124f7e9c95}
+}]\index{P\+R\+O\+T\+O\+\_\+\+N@{P\+R\+O\+T\+O\+\_\+\+N}!socket.\+h@{socket.\+h}}\index{socket.\+h@{socket.\+h}!P\+R\+O\+T\+O\+\_\+\+N@{P\+R\+O\+T\+O\+\_\+\+N}}\item[{\em 
+\hypertarget{socket_8h_a50ea4ad26d16eec29ff9685126f0a599a533f3b18b75f627f4bf1bdd54613d472}{}P\+R\+O\+T\+O\+\_\+\+N\label{socket_8h_a50ea4ad26d16eec29ff9685126f0a599a533f3b18b75f627f4bf1bdd54613d472}
+}]\end{description}
+\end{Desc}
+
+
+\subsection{Function Documentation}
+\hypertarget{socket_8h_a8f115cb754c9858c67732244b2cc0669}{}\index{socket.\+h@{socket.\+h}!add\+\_\+in6\+\_\+addr@{add\+\_\+in6\+\_\+addr}}
+\index{add\+\_\+in6\+\_\+addr@{add\+\_\+in6\+\_\+addr}!socket.\+h@{socket.\+h}}
+\subsubsection[{add\+\_\+in6\+\_\+addr(struct in6\+\_\+addr base, uint32\+\_\+t add)}]{\setlength{\rightskip}{0pt plus 5cm}struct in6\+\_\+addr add\+\_\+in6\+\_\+addr (
+\begin{DoxyParamCaption}
+\item[{struct in6\+\_\+addr}]{base, }
+\item[{uint32\+\_\+t}]{add}
+\end{DoxyParamCaption}
+)}\label{socket_8h_a8f115cb754c9858c67732244b2cc0669}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=292pt]{socket_8h_a8f115cb754c9858c67732244b2cc0669_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{socket_8h_a1e47d3e8956884a9ba50ec8883d45a36}{}\index{socket.\+h@{socket.\+h}!addr\+\_\+family\+\_\+name@{addr\+\_\+family\+\_\+name}}
+\index{addr\+\_\+family\+\_\+name@{addr\+\_\+family\+\_\+name}!socket.\+h@{socket.\+h}}
+\subsubsection[{addr\+\_\+family\+\_\+name(int af)}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ addr\+\_\+family\+\_\+name (
+\begin{DoxyParamCaption}
+\item[{int}]{af}
+\end{DoxyParamCaption}
+)}\label{socket_8h_a1e47d3e8956884a9ba50ec8883d45a36}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=332pt]{socket_8h_a1e47d3e8956884a9ba50ec8883d45a36_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{socket_8h_af7b3e525fb11f43920cf12bbbf09fdbf}{}\index{socket.\+h@{socket.\+h}!addr\+\_\+guess\+\_\+family@{addr\+\_\+guess\+\_\+family}}
+\index{addr\+\_\+guess\+\_\+family@{addr\+\_\+guess\+\_\+family}!socket.\+h@{socket.\+h}}
+\subsubsection[{addr\+\_\+guess\+\_\+family(sa\+\_\+family\+\_\+t af, const char $\ast$name)}]{\setlength{\rightskip}{0pt plus 5cm}int addr\+\_\+guess\+\_\+family (
+\begin{DoxyParamCaption}
+\item[{{\bf sa\+\_\+family\+\_\+t}}]{af, }
+\item[{const char $\ast$}]{name}
+\end{DoxyParamCaption}
+)}\label{socket_8h_af7b3e525fb11f43920cf12bbbf09fdbf}
+\hypertarget{socket_8h_aa27ccce78bd9b1fc9f810da9a6fdc42e}{}\index{socket.\+h@{socket.\+h}!ascii2af@{ascii2af}}
+\index{ascii2af@{ascii2af}!socket.\+h@{socket.\+h}}
+\subsubsection[{ascii2af(const char $\ast$proto\+\_\+name)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf sa\+\_\+family\+\_\+t} ascii2af (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{proto\+\_\+name}
+\end{DoxyParamCaption}
+)}\label{socket_8h_aa27ccce78bd9b1fc9f810da9a6fdc42e}
+\hypertarget{socket_8h_ac67d5464bc20e5e6c4a962858082c8e6}{}\index{socket.\+h@{socket.\+h}!ascii2proto@{ascii2proto}}
+\index{ascii2proto@{ascii2proto}!socket.\+h@{socket.\+h}}
+\subsubsection[{ascii2proto(const char $\ast$proto\+\_\+name)}]{\setlength{\rightskip}{0pt plus 5cm}int ascii2proto (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{proto\+\_\+name}
+\end{DoxyParamCaption}
+)}\label{socket_8h_ac67d5464bc20e5e6c4a962858082c8e6}
+\hypertarget{socket_8h_a3c9ee3d6a6bacfd59ae7037e8d8e735c}{}\index{socket.\+h@{socket.\+h}!bad\+\_\+address\+\_\+length@{bad\+\_\+address\+\_\+length}}
+\index{bad\+\_\+address\+\_\+length@{bad\+\_\+address\+\_\+length}!socket.\+h@{socket.\+h}}
+\subsubsection[{bad\+\_\+address\+\_\+length(int actual, int expected)}]{\setlength{\rightskip}{0pt plus 5cm}void bad\+\_\+address\+\_\+length (
+\begin{DoxyParamCaption}
+\item[{int}]{actual, }
+\item[{int}]{expected}
+\end{DoxyParamCaption}
+)}\label{socket_8h_a3c9ee3d6a6bacfd59ae7037e8d8e735c}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=331pt]{socket_8h_a3c9ee3d6a6bacfd59ae7037e8d8e735c_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{socket_8h_a69b6126858e443094c6e451e13c4faea}{}\index{socket.\+h@{socket.\+h}!create\+\_\+socket\+\_\+tcp@{create\+\_\+socket\+\_\+tcp}}
+\index{create\+\_\+socket\+\_\+tcp@{create\+\_\+socket\+\_\+tcp}!socket.\+h@{socket.\+h}}
+\subsubsection[{create\+\_\+socket\+\_\+tcp(struct addrinfo $\ast$)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf socket\+\_\+descriptor\+\_\+t} create\+\_\+socket\+\_\+tcp (
+\begin{DoxyParamCaption}
+\item[{struct addrinfo $\ast$}]{}
+\end{DoxyParamCaption}
+)}\label{socket_8h_a69b6126858e443094c6e451e13c4faea}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{socket_8h_a69b6126858e443094c6e451e13c4faea_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{socket_8h_abd7036d683a6339013d79ec69c6f1742}{}\index{socket.\+h@{socket.\+h}!do\+\_\+preresolve@{do\+\_\+preresolve}}
+\index{do\+\_\+preresolve@{do\+\_\+preresolve}!socket.\+h@{socket.\+h}}
+\subsubsection[{do\+\_\+preresolve(struct context $\ast$c)}]{\setlength{\rightskip}{0pt plus 5cm}void do\+\_\+preresolve (
+\begin{DoxyParamCaption}
+\item[{struct {\bf context} $\ast$}]{c}
+\end{DoxyParamCaption}
+)}\label{socket_8h_abd7036d683a6339013d79ec69c6f1742}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{socket_8h_abd7036d683a6339013d79ec69c6f1742_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{socket_8h_abd7036d683a6339013d79ec69c6f1742_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{socket_8h_a9f553edafb49e0efa0bc784c45412e39}{}\index{socket.\+h@{socket.\+h}!frame\+\_\+adjust\+\_\+path\+\_\+mtu@{frame\+\_\+adjust\+\_\+path\+\_\+mtu}}
+\index{frame\+\_\+adjust\+\_\+path\+\_\+mtu@{frame\+\_\+adjust\+\_\+path\+\_\+mtu}!socket.\+h@{socket.\+h}}
+\subsubsection[{frame\+\_\+adjust\+\_\+path\+\_\+mtu(struct frame $\ast$frame, int pmtu, int proto)}]{\setlength{\rightskip}{0pt plus 5cm}void frame\+\_\+adjust\+\_\+path\+\_\+mtu (
+\begin{DoxyParamCaption}
+\item[{struct {\bf frame} $\ast$}]{frame, }
+\item[{int}]{pmtu, }
+\item[{int}]{proto}
+\end{DoxyParamCaption}
+)}\label{socket_8h_a9f553edafb49e0efa0bc784c45412e39}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{socket_8h_a9f553edafb49e0efa0bc784c45412e39_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{socket_8h_aed74c8b5931192c1ad5829bd90e01603}{}\index{socket.\+h@{socket.\+h}!getaddr@{getaddr}}
+\index{getaddr@{getaddr}!socket.\+h@{socket.\+h}}
+\subsubsection[{getaddr(unsigned int flags, const char $\ast$hostname, int resolve\+\_\+retry\+\_\+seconds, bool $\ast$succeeded, volatile int $\ast$signal\+\_\+received)}]{\setlength{\rightskip}{0pt plus 5cm}in\+\_\+addr\+\_\+t getaddr (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{flags, }
+\item[{const char $\ast$}]{hostname, }
+\item[{int}]{resolve\+\_\+retry\+\_\+seconds, }
+\item[{{\bf bool} $\ast$}]{succeeded, }
+\item[{volatile int $\ast$}]{signal\+\_\+received}
+\end{DoxyParamCaption}
+)}\label{socket_8h_aed74c8b5931192c1ad5829bd90e01603}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{socket_8h_aed74c8b5931192c1ad5829bd90e01603_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{socket_8h_aed74c8b5931192c1ad5829bd90e01603_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{socket_8h_afc4348b5986769b235fc042e964a7fb8}{}\index{socket.\+h@{socket.\+h}!ip\+\_\+addr\+\_\+dotted\+\_\+quad\+\_\+safe@{ip\+\_\+addr\+\_\+dotted\+\_\+quad\+\_\+safe}}
+\index{ip\+\_\+addr\+\_\+dotted\+\_\+quad\+\_\+safe@{ip\+\_\+addr\+\_\+dotted\+\_\+quad\+\_\+safe}!socket.\+h@{socket.\+h}}
+\subsubsection[{ip\+\_\+addr\+\_\+dotted\+\_\+quad\+\_\+safe(const char $\ast$dotted\+\_\+quad)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} ip\+\_\+addr\+\_\+dotted\+\_\+quad\+\_\+safe (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{dotted\+\_\+quad}
+\end{DoxyParamCaption}
+)}\label{socket_8h_afc4348b5986769b235fc042e964a7fb8}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{socket_8h_afc4348b5986769b235fc042e964a7fb8_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{socket_8h_afc4348b5986769b235fc042e964a7fb8_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{socket_8h_abd8b19273aa830992e49e8a9554b480b}{}\index{socket.\+h@{socket.\+h}!ip\+\_\+or\+\_\+dns\+\_\+addr\+\_\+safe@{ip\+\_\+or\+\_\+dns\+\_\+addr\+\_\+safe}}
+\index{ip\+\_\+or\+\_\+dns\+\_\+addr\+\_\+safe@{ip\+\_\+or\+\_\+dns\+\_\+addr\+\_\+safe}!socket.\+h@{socket.\+h}}
+\subsubsection[{ip\+\_\+or\+\_\+dns\+\_\+addr\+\_\+safe(const char $\ast$addr, const bool allow\+\_\+fqdn)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} ip\+\_\+or\+\_\+dns\+\_\+addr\+\_\+safe (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{addr, }
+\item[{const {\bf bool}}]{allow\+\_\+fqdn}
+\end{DoxyParamCaption}
+)}\label{socket_8h_abd8b19273aa830992e49e8a9554b480b}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{socket_8h_abd8b19273aa830992e49e8a9554b480b_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{socket_8h_abc681b2985d873e13536dee7fbade6cd}{}\index{socket.\+h@{socket.\+h}!ipv6\+\_\+addr\+\_\+safe@{ipv6\+\_\+addr\+\_\+safe}}
+\index{ipv6\+\_\+addr\+\_\+safe@{ipv6\+\_\+addr\+\_\+safe}!socket.\+h@{socket.\+h}}
+\subsubsection[{ipv6\+\_\+addr\+\_\+safe(const char $\ast$ipv6\+\_\+text\+\_\+addr)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} ipv6\+\_\+addr\+\_\+safe (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{ipv6\+\_\+text\+\_\+addr}
+\end{DoxyParamCaption}
+)}\label{socket_8h_abc681b2985d873e13536dee7fbade6cd}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=252pt]{socket_8h_abc681b2985d873e13536dee7fbade6cd_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{socket_8h_abfc81cb26972c5efe7ae96036c1f3881}{}\index{socket.\+h@{socket.\+h}!link\+\_\+socket\+\_\+bad\+\_\+incoming\+\_\+addr@{link\+\_\+socket\+\_\+bad\+\_\+incoming\+\_\+addr}}
+\index{link\+\_\+socket\+\_\+bad\+\_\+incoming\+\_\+addr@{link\+\_\+socket\+\_\+bad\+\_\+incoming\+\_\+addr}!socket.\+h@{socket.\+h}}
+\subsubsection[{link\+\_\+socket\+\_\+bad\+\_\+incoming\+\_\+addr(struct buffer $\ast$buf, const struct link\+\_\+socket\+\_\+info $\ast$info, const struct link\+\_\+socket\+\_\+actual $\ast$from\+\_\+addr)}]{\setlength{\rightskip}{0pt plus 5cm}void link\+\_\+socket\+\_\+bad\+\_\+incoming\+\_\+addr (
+\begin{DoxyParamCaption}
+\item[{struct {\bf buffer} $\ast$}]{buf, }
+\item[{const struct {\bf link\+\_\+socket\+\_\+info} $\ast$}]{info, }
+\item[{const struct {\bf link\+\_\+socket\+\_\+actual} $\ast$}]{from\+\_\+addr}
+\end{DoxyParamCaption}
+)}\label{socket_8h_abfc81cb26972c5efe7ae96036c1f3881}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{socket_8h_abfc81cb26972c5efe7ae96036c1f3881_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{socket_8h_abfc81cb26972c5efe7ae96036c1f3881_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{socket_8h_aa72996f078f91edc4077fbe5975de794}{}\index{socket.\+h@{socket.\+h}!link\+\_\+socket\+\_\+bad\+\_\+outgoing\+\_\+addr@{link\+\_\+socket\+\_\+bad\+\_\+outgoing\+\_\+addr}}
+\index{link\+\_\+socket\+\_\+bad\+\_\+outgoing\+\_\+addr@{link\+\_\+socket\+\_\+bad\+\_\+outgoing\+\_\+addr}!socket.\+h@{socket.\+h}}
+\subsubsection[{link\+\_\+socket\+\_\+bad\+\_\+outgoing\+\_\+addr(void)}]{\setlength{\rightskip}{0pt plus 5cm}void link\+\_\+socket\+\_\+bad\+\_\+outgoing\+\_\+addr (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{socket_8h_aa72996f078f91edc4077fbe5975de794}
+\hypertarget{socket_8h_a7f6b5654e386c141071a9246f68853e9}{}\index{socket.\+h@{socket.\+h}!link\+\_\+socket\+\_\+close@{link\+\_\+socket\+\_\+close}}
+\index{link\+\_\+socket\+\_\+close@{link\+\_\+socket\+\_\+close}!socket.\+h@{socket.\+h}}
+\subsubsection[{link\+\_\+socket\+\_\+close(struct link\+\_\+socket $\ast$sock)}]{\setlength{\rightskip}{0pt plus 5cm}void link\+\_\+socket\+\_\+close (
+\begin{DoxyParamCaption}
+\item[{struct {\bf link\+\_\+socket} $\ast$}]{sock}
+\end{DoxyParamCaption}
+)}\label{socket_8h_a7f6b5654e386c141071a9246f68853e9}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{socket_8h_a7f6b5654e386c141071a9246f68853e9_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{socket_8h_a9b45c23be28d07f10f5b1253c36c1a76}{}\index{socket.\+h@{socket.\+h}!link\+\_\+socket\+\_\+connection\+\_\+initiated@{link\+\_\+socket\+\_\+connection\+\_\+initiated}}
+\index{link\+\_\+socket\+\_\+connection\+\_\+initiated@{link\+\_\+socket\+\_\+connection\+\_\+initiated}!socket.\+h@{socket.\+h}}
+\subsubsection[{link\+\_\+socket\+\_\+connection\+\_\+initiated(const struct buffer $\ast$buf, struct link\+\_\+socket\+\_\+info $\ast$info, const struct link\+\_\+socket\+\_\+actual $\ast$addr, const char $\ast$common\+\_\+name, struct env\+\_\+set $\ast$es)}]{\setlength{\rightskip}{0pt plus 5cm}void link\+\_\+socket\+\_\+connection\+\_\+initiated (
+\begin{DoxyParamCaption}
+\item[{const struct {\bf buffer} $\ast$}]{buf, }
+\item[{struct {\bf link\+\_\+socket\+\_\+info} $\ast$}]{info, }
+\item[{const struct {\bf link\+\_\+socket\+\_\+actual} $\ast$}]{addr, }
+\item[{const char $\ast$}]{common\+\_\+name, }
+\item[{struct {\bf env\+\_\+set} $\ast$}]{es}
+\end{DoxyParamCaption}
+)}\label{socket_8h_a9b45c23be28d07f10f5b1253c36c1a76}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{socket_8h_a9b45c23be28d07f10f5b1253c36c1a76_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{socket_8h_aac12ee565b36579ed3bd5dc9377e35b2}{}\index{socket.\+h@{socket.\+h}!link\+\_\+socket\+\_\+current\+\_\+remote@{link\+\_\+socket\+\_\+current\+\_\+remote}}
+\index{link\+\_\+socket\+\_\+current\+\_\+remote@{link\+\_\+socket\+\_\+current\+\_\+remote}!socket.\+h@{socket.\+h}}
+\subsubsection[{link\+\_\+socket\+\_\+current\+\_\+remote(const struct link\+\_\+socket\+\_\+info $\ast$info)}]{\setlength{\rightskip}{0pt plus 5cm}in\+\_\+addr\+\_\+t link\+\_\+socket\+\_\+current\+\_\+remote (
+\begin{DoxyParamCaption}
+\item[{const struct {\bf link\+\_\+socket\+\_\+info} $\ast$}]{info}
+\end{DoxyParamCaption}
+)}\label{socket_8h_aac12ee565b36579ed3bd5dc9377e35b2}
+\hypertarget{socket_8h_afb62f9fc3adfae5d11fcc9e57650d3ad}{}\index{socket.\+h@{socket.\+h}!link\+\_\+socket\+\_\+current\+\_\+remote\+\_\+ipv6@{link\+\_\+socket\+\_\+current\+\_\+remote\+\_\+ipv6}}
+\index{link\+\_\+socket\+\_\+current\+\_\+remote\+\_\+ipv6@{link\+\_\+socket\+\_\+current\+\_\+remote\+\_\+ipv6}!socket.\+h@{socket.\+h}}
+\subsubsection[{link\+\_\+socket\+\_\+current\+\_\+remote\+\_\+ipv6(const struct link\+\_\+socket\+\_\+info $\ast$info)}]{\setlength{\rightskip}{0pt plus 5cm}const struct in6\+\_\+addr$\ast$ link\+\_\+socket\+\_\+current\+\_\+remote\+\_\+ipv6 (
+\begin{DoxyParamCaption}
+\item[{const struct {\bf link\+\_\+socket\+\_\+info} $\ast$}]{info}
+\end{DoxyParamCaption}
+)}\label{socket_8h_afb62f9fc3adfae5d11fcc9e57650d3ad}
+\hypertarget{socket_8h_af7a1098694842ca0c089e4ef673fc5fd}{}\index{socket.\+h@{socket.\+h}!link\+\_\+socket\+\_\+init\+\_\+phase1@{link\+\_\+socket\+\_\+init\+\_\+phase1}}
+\index{link\+\_\+socket\+\_\+init\+\_\+phase1@{link\+\_\+socket\+\_\+init\+\_\+phase1}!socket.\+h@{socket.\+h}}
+\subsubsection[{link\+\_\+socket\+\_\+init\+\_\+phase1(struct link\+\_\+socket $\ast$sock, const char $\ast$local\+\_\+host, const char $\ast$local\+\_\+port, const char $\ast$remote\+\_\+host, const char $\ast$remote\+\_\+port, struct cached\+\_\+dns\+\_\+entry $\ast$dns\+\_\+cache, int proto, sa\+\_\+family\+\_\+t af, bool bind\+\_\+ipv6\+\_\+only, int mode, const struct link\+\_\+socket $\ast$accept\+\_\+from, struct http\+\_\+proxy\+\_\+info $\ast$http\+\_\+proxy, struct socks\+\_\+proxy\+\_\+info $\ast$socks\+\_\+proxy, bool bind\+\_\+local, bool remote\+\_\+float, int inetd, struct link\+\_\+socket\+\_\+addr $\ast$lsa, const char $\ast$ipchange\+\_\+command, const struct plugin\+\_\+list $\ast$plugins, int resolve\+\_\+retry\+\_\+seconds, int mtu\+\_\+discover\+\_\+type, int rcvbuf, int sndbuf, int mark, struct event\+\_\+timeout $\ast$server\+\_\+poll\+\_\+timeout, unsigned int sockflags)}]{\setlength{\rightskip}{0pt plus 5cm}void link\+\_\+socket\+\_\+init\+\_\+phase1 (
+\begin{DoxyParamCaption}
+\item[{struct {\bf link\+\_\+socket} $\ast$}]{sock, }
+\item[{const char $\ast$}]{local\+\_\+host, }
+\item[{const char $\ast$}]{local\+\_\+port, }
+\item[{const char $\ast$}]{remote\+\_\+host, }
+\item[{const char $\ast$}]{remote\+\_\+port, }
+\item[{struct {\bf cached\+\_\+dns\+\_\+entry} $\ast$}]{dns\+\_\+cache, }
+\item[{int}]{proto, }
+\item[{{\bf sa\+\_\+family\+\_\+t}}]{af, }
+\item[{{\bf bool}}]{bind\+\_\+ipv6\+\_\+only, }
+\item[{int}]{mode, }
+\item[{const struct {\bf link\+\_\+socket} $\ast$}]{accept\+\_\+from, }
+\item[{struct {\bf http\+\_\+proxy\+\_\+info} $\ast$}]{http\+\_\+proxy, }
+\item[{struct {\bf socks\+\_\+proxy\+\_\+info} $\ast$}]{socks\+\_\+proxy, }
+\item[{{\bf bool}}]{bind\+\_\+local, }
+\item[{{\bf bool}}]{remote\+\_\+float, }
+\item[{int}]{inetd, }
+\item[{struct {\bf link\+\_\+socket\+\_\+addr} $\ast$}]{lsa, }
+\item[{const char $\ast$}]{ipchange\+\_\+command, }
+\item[{const struct {\bf plugin\+\_\+list} $\ast$}]{plugins, }
+\item[{int}]{resolve\+\_\+retry\+\_\+seconds, }
+\item[{int}]{mtu\+\_\+discover\+\_\+type, }
+\item[{int}]{rcvbuf, }
+\item[{int}]{sndbuf, }
+\item[{int}]{mark, }
+\item[{struct {\bf event\+\_\+timeout} $\ast$}]{server\+\_\+poll\+\_\+timeout, }
+\item[{unsigned int}]{sockflags}
+\end{DoxyParamCaption}
+)}\label{socket_8h_af7a1098694842ca0c089e4ef673fc5fd}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{socket_8h_af7a1098694842ca0c089e4ef673fc5fd_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{socket_8h_ad716d81ba4a413dfb1014bc9407ff2fa}{}\index{socket.\+h@{socket.\+h}!link\+\_\+socket\+\_\+init\+\_\+phase2@{link\+\_\+socket\+\_\+init\+\_\+phase2}}
+\index{link\+\_\+socket\+\_\+init\+\_\+phase2@{link\+\_\+socket\+\_\+init\+\_\+phase2}!socket.\+h@{socket.\+h}}
+\subsubsection[{link\+\_\+socket\+\_\+init\+\_\+phase2(struct link\+\_\+socket $\ast$sock, const struct frame $\ast$frame, struct signal\+\_\+info $\ast$sig\+\_\+info)}]{\setlength{\rightskip}{0pt plus 5cm}void link\+\_\+socket\+\_\+init\+\_\+phase2 (
+\begin{DoxyParamCaption}
+\item[{struct {\bf link\+\_\+socket} $\ast$}]{sock, }
+\item[{const struct {\bf frame} $\ast$}]{frame, }
+\item[{struct {\bf signal\+\_\+info} $\ast$}]{sig\+\_\+info}
+\end{DoxyParamCaption}
+)}\label{socket_8h_ad716d81ba4a413dfb1014bc9407ff2fa}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=332pt]{socket_8h_ad716d81ba4a413dfb1014bc9407ff2fa_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{socket_8h_a41acd6256f92be22c7c94727d2b4bf1e}{}\index{socket.\+h@{socket.\+h}!link\+\_\+socket\+\_\+new@{link\+\_\+socket\+\_\+new}}
+\index{link\+\_\+socket\+\_\+new@{link\+\_\+socket\+\_\+new}!socket.\+h@{socket.\+h}}
+\subsubsection[{link\+\_\+socket\+\_\+new(void)}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf link\+\_\+socket}$\ast$ link\+\_\+socket\+\_\+new (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{socket_8h_a41acd6256f92be22c7c94727d2b4bf1e}
+\hypertarget{socket_8h_aaf391f0edcd41f5642fcf0143c71dba1}{}\index{socket.\+h@{socket.\+h}!link\+\_\+socket\+\_\+read\+\_\+tcp@{link\+\_\+socket\+\_\+read\+\_\+tcp}}
+\index{link\+\_\+socket\+\_\+read\+\_\+tcp@{link\+\_\+socket\+\_\+read\+\_\+tcp}!socket.\+h@{socket.\+h}}
+\subsubsection[{link\+\_\+socket\+\_\+read\+\_\+tcp(struct link\+\_\+socket $\ast$sock, struct buffer $\ast$buf)}]{\setlength{\rightskip}{0pt plus 5cm}int link\+\_\+socket\+\_\+read\+\_\+tcp (
+\begin{DoxyParamCaption}
+\item[{struct {\bf link\+\_\+socket} $\ast$}]{sock, }
+\item[{struct {\bf buffer} $\ast$}]{buf}
+\end{DoxyParamCaption}
+)}\label{socket_8h_aaf391f0edcd41f5642fcf0143c71dba1}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=321pt]{socket_8h_aaf391f0edcd41f5642fcf0143c71dba1_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{socket_8h_a785a2d1e27057de2b7f33c410ac653a2}{}\index{socket.\+h@{socket.\+h}!link\+\_\+socket\+\_\+read\+\_\+udp\+\_\+posix@{link\+\_\+socket\+\_\+read\+\_\+udp\+\_\+posix}}
+\index{link\+\_\+socket\+\_\+read\+\_\+udp\+\_\+posix@{link\+\_\+socket\+\_\+read\+\_\+udp\+\_\+posix}!socket.\+h@{socket.\+h}}
+\subsubsection[{link\+\_\+socket\+\_\+read\+\_\+udp\+\_\+posix(struct link\+\_\+socket $\ast$sock, struct buffer $\ast$buf, struct link\+\_\+socket\+\_\+actual $\ast$from)}]{\setlength{\rightskip}{0pt plus 5cm}int link\+\_\+socket\+\_\+read\+\_\+udp\+\_\+posix (
+\begin{DoxyParamCaption}
+\item[{struct {\bf link\+\_\+socket} $\ast$}]{sock, }
+\item[{struct {\bf buffer} $\ast$}]{buf, }
+\item[{struct {\bf link\+\_\+socket\+\_\+actual} $\ast$}]{from}
+\end{DoxyParamCaption}
+)}\label{socket_8h_a785a2d1e27057de2b7f33c410ac653a2}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=331pt]{socket_8h_a785a2d1e27057de2b7f33c410ac653a2_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{socket_8h_a022b67c8749e8a934063231b2abc5cf6}{}\index{socket.\+h@{socket.\+h}!link\+\_\+socket\+\_\+update\+\_\+buffer\+\_\+sizes@{link\+\_\+socket\+\_\+update\+\_\+buffer\+\_\+sizes}}
+\index{link\+\_\+socket\+\_\+update\+\_\+buffer\+\_\+sizes@{link\+\_\+socket\+\_\+update\+\_\+buffer\+\_\+sizes}!socket.\+h@{socket.\+h}}
+\subsubsection[{link\+\_\+socket\+\_\+update\+\_\+buffer\+\_\+sizes(struct link\+\_\+socket $\ast$ls, int rcvbuf, int sndbuf)}]{\setlength{\rightskip}{0pt plus 5cm}void link\+\_\+socket\+\_\+update\+\_\+buffer\+\_\+sizes (
+\begin{DoxyParamCaption}
+\item[{struct {\bf link\+\_\+socket} $\ast$}]{ls, }
+\item[{int}]{rcvbuf, }
+\item[{int}]{sndbuf}
+\end{DoxyParamCaption}
+)}\label{socket_8h_a022b67c8749e8a934063231b2abc5cf6}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{socket_8h_a022b67c8749e8a934063231b2abc5cf6_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{socket_8h_a47f7e875f90faefaede7148a7e5f3347}{}\index{socket.\+h@{socket.\+h}!link\+\_\+socket\+\_\+update\+\_\+flags@{link\+\_\+socket\+\_\+update\+\_\+flags}}
+\index{link\+\_\+socket\+\_\+update\+\_\+flags@{link\+\_\+socket\+\_\+update\+\_\+flags}!socket.\+h@{socket.\+h}}
+\subsubsection[{link\+\_\+socket\+\_\+update\+\_\+flags(struct link\+\_\+socket $\ast$ls, unsigned int sockflags)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} link\+\_\+socket\+\_\+update\+\_\+flags (
+\begin{DoxyParamCaption}
+\item[{struct {\bf link\+\_\+socket} $\ast$}]{ls, }
+\item[{unsigned int}]{sockflags}
+\end{DoxyParamCaption}
+)}\label{socket_8h_a47f7e875f90faefaede7148a7e5f3347}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{socket_8h_a47f7e875f90faefaede7148a7e5f3347_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{socket_8h_a4e20ef3416309fb6a98e3ad5ca3c1d9c}{}\index{socket.\+h@{socket.\+h}!link\+\_\+socket\+\_\+write\+\_\+tcp@{link\+\_\+socket\+\_\+write\+\_\+tcp}}
+\index{link\+\_\+socket\+\_\+write\+\_\+tcp@{link\+\_\+socket\+\_\+write\+\_\+tcp}!socket.\+h@{socket.\+h}}
+\subsubsection[{link\+\_\+socket\+\_\+write\+\_\+tcp(struct link\+\_\+socket $\ast$sock, struct buffer $\ast$buf, struct link\+\_\+socket\+\_\+actual $\ast$to)}]{\setlength{\rightskip}{0pt plus 5cm}int link\+\_\+socket\+\_\+write\+\_\+tcp (
+\begin{DoxyParamCaption}
+\item[{struct {\bf link\+\_\+socket} $\ast$}]{sock, }
+\item[{struct {\bf buffer} $\ast$}]{buf, }
+\item[{struct {\bf link\+\_\+socket\+\_\+actual} $\ast$}]{to}
+\end{DoxyParamCaption}
+)}\label{socket_8h_a4e20ef3416309fb6a98e3ad5ca3c1d9c}
+\hypertarget{socket_8h_a4677e1d99ac24bc14b09bb0d2fbf709a}{}\index{socket.\+h@{socket.\+h}!mac\+\_\+addr\+\_\+safe@{mac\+\_\+addr\+\_\+safe}}
+\index{mac\+\_\+addr\+\_\+safe@{mac\+\_\+addr\+\_\+safe}!socket.\+h@{socket.\+h}}
+\subsubsection[{mac\+\_\+addr\+\_\+safe(const char $\ast$mac\+\_\+addr)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} mac\+\_\+addr\+\_\+safe (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{mac\+\_\+addr}
+\end{DoxyParamCaption}
+)}\label{socket_8h_a4677e1d99ac24bc14b09bb0d2fbf709a}
+\hypertarget{socket_8h_aaf986563f4ab9ce6a1657c0f4fdabe10}{}\index{socket.\+h@{socket.\+h}!openvpn\+\_\+connect@{openvpn\+\_\+connect}}
+\index{openvpn\+\_\+connect@{openvpn\+\_\+connect}!socket.\+h@{socket.\+h}}
+\subsubsection[{openvpn\+\_\+connect(socket\+\_\+descriptor\+\_\+t sd, const struct sockaddr $\ast$remote, int connect\+\_\+timeout, volatile int $\ast$signal\+\_\+received)}]{\setlength{\rightskip}{0pt plus 5cm}int openvpn\+\_\+connect (
+\begin{DoxyParamCaption}
+\item[{{\bf socket\+\_\+descriptor\+\_\+t}}]{sd, }
+\item[{const struct sockaddr $\ast$}]{remote, }
+\item[{int}]{connect\+\_\+timeout, }
+\item[{volatile int $\ast$}]{signal\+\_\+received}
+\end{DoxyParamCaption}
+)}\label{socket_8h_aaf986563f4ab9ce6a1657c0f4fdabe10}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{socket_8h_aaf986563f4ab9ce6a1657c0f4fdabe10_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{socket_8h_a02e4efd449ac0356c68ec0a4477e3342}{}\index{socket.\+h@{socket.\+h}!openvpn\+\_\+getaddrinfo@{openvpn\+\_\+getaddrinfo}}
+\index{openvpn\+\_\+getaddrinfo@{openvpn\+\_\+getaddrinfo}!socket.\+h@{socket.\+h}}
+\subsubsection[{openvpn\+\_\+getaddrinfo(unsigned int flags, const char $\ast$hostname, const char $\ast$servname, int resolve\+\_\+retry\+\_\+seconds, volatile int $\ast$signal\+\_\+received, int ai\+\_\+family, struct addrinfo $\ast$$\ast$res)}]{\setlength{\rightskip}{0pt plus 5cm}int openvpn\+\_\+getaddrinfo (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{flags, }
+\item[{const char $\ast$}]{hostname, }
+\item[{const char $\ast$}]{servname, }
+\item[{int}]{resolve\+\_\+retry\+\_\+seconds, }
+\item[{volatile int $\ast$}]{signal\+\_\+received, }
+\item[{int}]{ai\+\_\+family, }
+\item[{struct addrinfo $\ast$$\ast$}]{res}
+\end{DoxyParamCaption}
+)}\label{socket_8h_a02e4efd449ac0356c68ec0a4477e3342}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{socket_8h_a02e4efd449ac0356c68ec0a4477e3342_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{socket_8h_a02e4efd449ac0356c68ec0a4477e3342_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{socket_8h_aac586ad698d29388acc839510e86cf81}{}\index{socket.\+h@{socket.\+h}!openvpn\+\_\+inet\+\_\+aton@{openvpn\+\_\+inet\+\_\+aton}}
+\index{openvpn\+\_\+inet\+\_\+aton@{openvpn\+\_\+inet\+\_\+aton}!socket.\+h@{socket.\+h}}
+\subsubsection[{openvpn\+\_\+inet\+\_\+aton(const char $\ast$dotted\+\_\+quad, struct in\+\_\+addr $\ast$addr)}]{\setlength{\rightskip}{0pt plus 5cm}int openvpn\+\_\+inet\+\_\+aton (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{dotted\+\_\+quad, }
+\item[{struct in\+\_\+addr $\ast$}]{addr}
+\end{DoxyParamCaption}
+)}\label{socket_8h_aac586ad698d29388acc839510e86cf81}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=282pt]{socket_8h_aac586ad698d29388acc839510e86cf81_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{socket_8h_aac586ad698d29388acc839510e86cf81_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{socket_8h_accbe5dbcbe48bf77a5b1032c80eb91d4}{}\index{socket.\+h@{socket.\+h}!print\+\_\+in6\+\_\+addr@{print\+\_\+in6\+\_\+addr}}
+\index{print\+\_\+in6\+\_\+addr@{print\+\_\+in6\+\_\+addr}!socket.\+h@{socket.\+h}}
+\subsubsection[{print\+\_\+in6\+\_\+addr(struct in6\+\_\+addr addr6, unsigned int flags, struct gc\+\_\+arena $\ast$gc)}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ print\+\_\+in6\+\_\+addr (
+\begin{DoxyParamCaption}
+\item[{struct in6\+\_\+addr}]{addr6, }
+\item[{unsigned int}]{flags, }
+\item[{struct {\bf gc\+\_\+arena} $\ast$}]{gc}
+\end{DoxyParamCaption}
+)}\label{socket_8h_accbe5dbcbe48bf77a5b1032c80eb91d4}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{socket_8h_accbe5dbcbe48bf77a5b1032c80eb91d4_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{socket_8h_accbe5dbcbe48bf77a5b1032c80eb91d4_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{socket_8h_a2741d6007f1e5a670409883f4304da61}{}\index{socket.\+h@{socket.\+h}!print\+\_\+in\+\_\+addr\+\_\+t@{print\+\_\+in\+\_\+addr\+\_\+t}}
+\index{print\+\_\+in\+\_\+addr\+\_\+t@{print\+\_\+in\+\_\+addr\+\_\+t}!socket.\+h@{socket.\+h}}
+\subsubsection[{print\+\_\+in\+\_\+addr\+\_\+t(in\+\_\+addr\+\_\+t addr, unsigned int flags, struct gc\+\_\+arena $\ast$gc)}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ print\+\_\+in\+\_\+addr\+\_\+t (
+\begin{DoxyParamCaption}
+\item[{in\+\_\+addr\+\_\+t}]{addr, }
+\item[{unsigned int}]{flags, }
+\item[{struct {\bf gc\+\_\+arena} $\ast$}]{gc}
+\end{DoxyParamCaption}
+)}\label{socket_8h_a2741d6007f1e5a670409883f4304da61}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{socket_8h_a2741d6007f1e5a670409883f4304da61_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{socket_8h_a2741d6007f1e5a670409883f4304da61_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{socket_8h_aefe5013514f1d62a138107fb43cc74e3}{}\index{socket.\+h@{socket.\+h}!print\+\_\+link\+\_\+socket\+\_\+actual@{print\+\_\+link\+\_\+socket\+\_\+actual}}
+\index{print\+\_\+link\+\_\+socket\+\_\+actual@{print\+\_\+link\+\_\+socket\+\_\+actual}!socket.\+h@{socket.\+h}}
+\subsubsection[{print\+\_\+link\+\_\+socket\+\_\+actual(const struct link\+\_\+socket\+\_\+actual $\ast$act, struct gc\+\_\+arena $\ast$gc)}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ print\+\_\+link\+\_\+socket\+\_\+actual (
+\begin{DoxyParamCaption}
+\item[{const struct {\bf link\+\_\+socket\+\_\+actual} $\ast$}]{act, }
+\item[{struct {\bf gc\+\_\+arena} $\ast$}]{gc}
+\end{DoxyParamCaption}
+)}\label{socket_8h_aefe5013514f1d62a138107fb43cc74e3}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{socket_8h_aefe5013514f1d62a138107fb43cc74e3_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{socket_8h_aefe5013514f1d62a138107fb43cc74e3_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{socket_8h_aa401d7e395acdc1d4f61f6526ef92846}{}\index{socket.\+h@{socket.\+h}!print\+\_\+link\+\_\+socket\+\_\+actual\+\_\+ex@{print\+\_\+link\+\_\+socket\+\_\+actual\+\_\+ex}}
+\index{print\+\_\+link\+\_\+socket\+\_\+actual\+\_\+ex@{print\+\_\+link\+\_\+socket\+\_\+actual\+\_\+ex}!socket.\+h@{socket.\+h}}
+\subsubsection[{print\+\_\+link\+\_\+socket\+\_\+actual\+\_\+ex(const struct link\+\_\+socket\+\_\+actual $\ast$act, const char $\ast$separator, const unsigned int flags, struct gc\+\_\+arena $\ast$gc)}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ print\+\_\+link\+\_\+socket\+\_\+actual\+\_\+ex (
+\begin{DoxyParamCaption}
+\item[{const struct {\bf link\+\_\+socket\+\_\+actual} $\ast$}]{act, }
+\item[{const char $\ast$}]{separator, }
+\item[{const unsigned int}]{flags, }
+\item[{struct {\bf gc\+\_\+arena} $\ast$}]{gc}
+\end{DoxyParamCaption}
+)}\label{socket_8h_aa401d7e395acdc1d4f61f6526ef92846}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{socket_8h_aa401d7e395acdc1d4f61f6526ef92846_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{socket_8h_aa401d7e395acdc1d4f61f6526ef92846_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{socket_8h_ad70df136da1441530d99d9181ab58845}{}\index{socket.\+h@{socket.\+h}!print\+\_\+sockaddr\+\_\+ex@{print\+\_\+sockaddr\+\_\+ex}}
+\index{print\+\_\+sockaddr\+\_\+ex@{print\+\_\+sockaddr\+\_\+ex}!socket.\+h@{socket.\+h}}
+\subsubsection[{print\+\_\+sockaddr\+\_\+ex(const struct sockaddr $\ast$addr, const char $\ast$separator, const unsigned int flags, struct gc\+\_\+arena $\ast$gc)}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ print\+\_\+sockaddr\+\_\+ex (
+\begin{DoxyParamCaption}
+\item[{const struct sockaddr $\ast$}]{addr, }
+\item[{const char $\ast$}]{separator, }
+\item[{const unsigned int}]{flags, }
+\item[{struct {\bf gc\+\_\+arena} $\ast$}]{gc}
+\end{DoxyParamCaption}
+)}\label{socket_8h_ad70df136da1441530d99d9181ab58845}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{socket_8h_ad70df136da1441530d99d9181ab58845_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{socket_8h_ad70df136da1441530d99d9181ab58845_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{socket_8h_a6ebb8e0bd35afb3cda6a0392f1479433}{}\index{socket.\+h@{socket.\+h}!proto2ascii@{proto2ascii}}
+\index{proto2ascii@{proto2ascii}!socket.\+h@{socket.\+h}}
+\subsubsection[{proto2ascii(int proto, sa\+\_\+family\+\_\+t af, bool display\+\_\+form)}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ proto2ascii (
+\begin{DoxyParamCaption}
+\item[{int}]{proto, }
+\item[{{\bf sa\+\_\+family\+\_\+t}}]{af, }
+\item[{{\bf bool}}]{display\+\_\+form}
+\end{DoxyParamCaption}
+)}\label{socket_8h_a6ebb8e0bd35afb3cda6a0392f1479433}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{socket_8h_a6ebb8e0bd35afb3cda6a0392f1479433_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{socket_8h_a40d34261451e42b8e53480f6a260fd01}{}\index{socket.\+h@{socket.\+h}!proto2ascii\+\_\+all@{proto2ascii\+\_\+all}}
+\index{proto2ascii\+\_\+all@{proto2ascii\+\_\+all}!socket.\+h@{socket.\+h}}
+\subsubsection[{proto2ascii\+\_\+all(struct gc\+\_\+arena $\ast$gc)}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ proto2ascii\+\_\+all (
+\begin{DoxyParamCaption}
+\item[{struct {\bf gc\+\_\+arena} $\ast$}]{gc}
+\end{DoxyParamCaption}
+)}\label{socket_8h_a40d34261451e42b8e53480f6a260fd01}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{socket_8h_a40d34261451e42b8e53480f6a260fd01_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{socket_8h_adbff197bdb9734118cdf9889650477ae}{}\index{socket.\+h@{socket.\+h}!proto\+\_\+is\+\_\+dgram@{proto\+\_\+is\+\_\+dgram}}
+\index{proto\+\_\+is\+\_\+dgram@{proto\+\_\+is\+\_\+dgram}!socket.\+h@{socket.\+h}}
+\subsubsection[{proto\+\_\+is\+\_\+dgram(int proto)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} proto\+\_\+is\+\_\+dgram (
+\begin{DoxyParamCaption}
+\item[{int}]{proto}
+\end{DoxyParamCaption}
+)}\label{socket_8h_adbff197bdb9734118cdf9889650477ae}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=271pt]{socket_8h_adbff197bdb9734118cdf9889650477ae_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{socket_8h_adbff197bdb9734118cdf9889650477ae_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{socket_8h_a9138a0cf0f761db560b22d8417ad2565}{}\index{socket.\+h@{socket.\+h}!proto\+\_\+is\+\_\+net@{proto\+\_\+is\+\_\+net}}
+\index{proto\+\_\+is\+\_\+net@{proto\+\_\+is\+\_\+net}!socket.\+h@{socket.\+h}}
+\subsubsection[{proto\+\_\+is\+\_\+net(int proto)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} proto\+\_\+is\+\_\+net (
+\begin{DoxyParamCaption}
+\item[{int}]{proto}
+\end{DoxyParamCaption}
+)}\label{socket_8h_a9138a0cf0f761db560b22d8417ad2565}
+\hypertarget{socket_8h_a14db84b6dd2dbff8084a8254b7424f68}{}\index{socket.\+h@{socket.\+h}!proto\+\_\+is\+\_\+tcp@{proto\+\_\+is\+\_\+tcp}}
+\index{proto\+\_\+is\+\_\+tcp@{proto\+\_\+is\+\_\+tcp}!socket.\+h@{socket.\+h}}
+\subsubsection[{proto\+\_\+is\+\_\+tcp(int proto)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} proto\+\_\+is\+\_\+tcp (
+\begin{DoxyParamCaption}
+\item[{int}]{proto}
+\end{DoxyParamCaption}
+)}\label{socket_8h_a14db84b6dd2dbff8084a8254b7424f68}
+\hypertarget{socket_8h_a86424bdc75e8f05f00a649f30f897110}{}\index{socket.\+h@{socket.\+h}!proto\+\_\+is\+\_\+udp@{proto\+\_\+is\+\_\+udp}}
+\index{proto\+\_\+is\+\_\+udp@{proto\+\_\+is\+\_\+udp}!socket.\+h@{socket.\+h}}
+\subsubsection[{proto\+\_\+is\+\_\+udp(int proto)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} proto\+\_\+is\+\_\+udp (
+\begin{DoxyParamCaption}
+\item[{int}]{proto}
+\end{DoxyParamCaption}
+)}\label{socket_8h_a86424bdc75e8f05f00a649f30f897110}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{socket_8h_a86424bdc75e8f05f00a649f30f897110_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{socket_8h_aa8031dd7e4e961af246871041559a3a1}{}\index{socket.\+h@{socket.\+h}!proto\+\_\+remote@{proto\+\_\+remote}}
+\index{proto\+\_\+remote@{proto\+\_\+remote}!socket.\+h@{socket.\+h}}
+\subsubsection[{proto\+\_\+remote(int proto, bool remote)}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ proto\+\_\+remote (
+\begin{DoxyParamCaption}
+\item[{int}]{proto, }
+\item[{{\bf bool}}]{remote}
+\end{DoxyParamCaption}
+)}\label{socket_8h_aa8031dd7e4e961af246871041559a3a1}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{socket_8h_aa8031dd7e4e961af246871041559a3a1_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{socket_8h_a51d1084b7790e97788d32d9833c7d31c}{}\index{socket.\+h@{socket.\+h}!sd\+\_\+close@{sd\+\_\+close}}
+\index{sd\+\_\+close@{sd\+\_\+close}!socket.\+h@{socket.\+h}}
+\subsubsection[{sd\+\_\+close(socket\+\_\+descriptor\+\_\+t $\ast$sd)}]{\setlength{\rightskip}{0pt plus 5cm}void sd\+\_\+close (
+\begin{DoxyParamCaption}
+\item[{{\bf socket\+\_\+descriptor\+\_\+t} $\ast$}]{sd}
+\end{DoxyParamCaption}
+)}\label{socket_8h_a51d1084b7790e97788d32d9833c7d31c}
+\hypertarget{socket_8h_a3087eb3ac32539db715fa6084307bcb7}{}\index{socket.\+h@{socket.\+h}!set\+\_\+actual\+\_\+address@{set\+\_\+actual\+\_\+address}}
+\index{set\+\_\+actual\+\_\+address@{set\+\_\+actual\+\_\+address}!socket.\+h@{socket.\+h}}
+\subsubsection[{set\+\_\+actual\+\_\+address(struct link\+\_\+socket\+\_\+actual $\ast$actual, struct addrinfo $\ast$ai)}]{\setlength{\rightskip}{0pt plus 5cm}void set\+\_\+actual\+\_\+address (
+\begin{DoxyParamCaption}
+\item[{struct {\bf link\+\_\+socket\+\_\+actual} $\ast$}]{actual, }
+\item[{struct addrinfo $\ast$}]{ai}
+\end{DoxyParamCaption}
+)}\label{socket_8h_a3087eb3ac32539db715fa6084307bcb7}
+\hypertarget{socket_8h_a607e25972e470d65dd7f99d15953cac4}{}\index{socket.\+h@{socket.\+h}!setenv\+\_\+in6\+\_\+addr@{setenv\+\_\+in6\+\_\+addr}}
+\index{setenv\+\_\+in6\+\_\+addr@{setenv\+\_\+in6\+\_\+addr}!socket.\+h@{socket.\+h}}
+\subsubsection[{setenv\+\_\+in6\+\_\+addr(struct env\+\_\+set $\ast$es, const char $\ast$name\+\_\+prefix, const struct in6\+\_\+addr $\ast$addr, const unsigned int flags)}]{\setlength{\rightskip}{0pt plus 5cm}void setenv\+\_\+in6\+\_\+addr (
+\begin{DoxyParamCaption}
+\item[{struct {\bf env\+\_\+set} $\ast$}]{es, }
+\item[{const char $\ast$}]{name\+\_\+prefix, }
+\item[{const struct in6\+\_\+addr $\ast$}]{addr, }
+\item[{const unsigned int}]{flags}
+\end{DoxyParamCaption}
+)}\label{socket_8h_a607e25972e470d65dd7f99d15953cac4}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{socket_8h_a607e25972e470d65dd7f99d15953cac4_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{socket_8h_a4f17a188890a7bc5a8d0dcb30355ac18}{}\index{socket.\+h@{socket.\+h}!setenv\+\_\+in\+\_\+addr\+\_\+t@{setenv\+\_\+in\+\_\+addr\+\_\+t}}
+\index{setenv\+\_\+in\+\_\+addr\+\_\+t@{setenv\+\_\+in\+\_\+addr\+\_\+t}!socket.\+h@{socket.\+h}}
+\subsubsection[{setenv\+\_\+in\+\_\+addr\+\_\+t(struct env\+\_\+set $\ast$es, const char $\ast$name\+\_\+prefix, in\+\_\+addr\+\_\+t addr, const unsigned int flags)}]{\setlength{\rightskip}{0pt plus 5cm}void setenv\+\_\+in\+\_\+addr\+\_\+t (
+\begin{DoxyParamCaption}
+\item[{struct {\bf env\+\_\+set} $\ast$}]{es, }
+\item[{const char $\ast$}]{name\+\_\+prefix, }
+\item[{in\+\_\+addr\+\_\+t}]{addr, }
+\item[{const unsigned int}]{flags}
+\end{DoxyParamCaption}
+)}\label{socket_8h_a4f17a188890a7bc5a8d0dcb30355ac18}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{socket_8h_a4f17a188890a7bc5a8d0dcb30355ac18_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{socket_8h_a58387f8e96dacad4aa9322c3890c6001}{}\index{socket.\+h@{socket.\+h}!setenv\+\_\+link\+\_\+socket\+\_\+actual@{setenv\+\_\+link\+\_\+socket\+\_\+actual}}
+\index{setenv\+\_\+link\+\_\+socket\+\_\+actual@{setenv\+\_\+link\+\_\+socket\+\_\+actual}!socket.\+h@{socket.\+h}}
+\subsubsection[{setenv\+\_\+link\+\_\+socket\+\_\+actual(struct env\+\_\+set $\ast$es, const char $\ast$name\+\_\+prefix, const struct link\+\_\+socket\+\_\+actual $\ast$act, const unsigned int flags)}]{\setlength{\rightskip}{0pt plus 5cm}void setenv\+\_\+link\+\_\+socket\+\_\+actual (
+\begin{DoxyParamCaption}
+\item[{struct {\bf env\+\_\+set} $\ast$}]{es, }
+\item[{const char $\ast$}]{name\+\_\+prefix, }
+\item[{const struct {\bf link\+\_\+socket\+\_\+actual} $\ast$}]{act, }
+\item[{const unsigned int}]{flags}
+\end{DoxyParamCaption}
+)}\label{socket_8h_a58387f8e96dacad4aa9322c3890c6001}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{socket_8h_a58387f8e96dacad4aa9322c3890c6001_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{socket_8h_a58387f8e96dacad4aa9322c3890c6001_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{socket_8h_a7db6fcb0d9f1d1ca09149554d91f979f}{}\index{socket.\+h@{socket.\+h}!setenv\+\_\+sockaddr@{setenv\+\_\+sockaddr}}
+\index{setenv\+\_\+sockaddr@{setenv\+\_\+sockaddr}!socket.\+h@{socket.\+h}}
+\subsubsection[{setenv\+\_\+sockaddr(struct env\+\_\+set $\ast$es, const char $\ast$name\+\_\+prefix, const struct openvpn\+\_\+sockaddr $\ast$addr, const unsigned int flags)}]{\setlength{\rightskip}{0pt plus 5cm}void setenv\+\_\+sockaddr (
+\begin{DoxyParamCaption}
+\item[{struct {\bf env\+\_\+set} $\ast$}]{es, }
+\item[{const char $\ast$}]{name\+\_\+prefix, }
+\item[{const struct {\bf openvpn\+\_\+sockaddr} $\ast$}]{addr, }
+\item[{const unsigned int}]{flags}
+\end{DoxyParamCaption}
+)}\label{socket_8h_a7db6fcb0d9f1d1ca09149554d91f979f}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{socket_8h_a7db6fcb0d9f1d1ca09149554d91f979f_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{socket_8h_a7db6fcb0d9f1d1ca09149554d91f979f_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{socket_8h_aed93bf1bce64b0baebbf79c40b30bada}{}\index{socket.\+h@{socket.\+h}!setenv\+\_\+trusted@{setenv\+\_\+trusted}}
+\index{setenv\+\_\+trusted@{setenv\+\_\+trusted}!socket.\+h@{socket.\+h}}
+\subsubsection[{setenv\+\_\+trusted(struct env\+\_\+set $\ast$es, const struct link\+\_\+socket\+\_\+info $\ast$info)}]{\setlength{\rightskip}{0pt plus 5cm}void setenv\+\_\+trusted (
+\begin{DoxyParamCaption}
+\item[{struct {\bf env\+\_\+set} $\ast$}]{es, }
+\item[{const struct {\bf link\+\_\+socket\+\_\+info} $\ast$}]{info}
+\end{DoxyParamCaption}
+)}\label{socket_8h_aed93bf1bce64b0baebbf79c40b30bada}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{socket_8h_aed93bf1bce64b0baebbf79c40b30bada_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=315pt]{socket_8h_aed93bf1bce64b0baebbf79c40b30bada_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{socket_8h_af4927a4638ad626394e1cc000cfe5466}{}\index{socket.\+h@{socket.\+h}!socket\+\_\+adjust\+\_\+frame\+\_\+parameters@{socket\+\_\+adjust\+\_\+frame\+\_\+parameters}}
+\index{socket\+\_\+adjust\+\_\+frame\+\_\+parameters@{socket\+\_\+adjust\+\_\+frame\+\_\+parameters}!socket.\+h@{socket.\+h}}
+\subsubsection[{socket\+\_\+adjust\+\_\+frame\+\_\+parameters(struct frame $\ast$frame, int proto)}]{\setlength{\rightskip}{0pt plus 5cm}void socket\+\_\+adjust\+\_\+frame\+\_\+parameters (
+\begin{DoxyParamCaption}
+\item[{struct {\bf frame} $\ast$}]{frame, }
+\item[{int}]{proto}
+\end{DoxyParamCaption}
+)}\label{socket_8h_af4927a4638ad626394e1cc000cfe5466}
+\hypertarget{socket_8h_ad6c91c71856195145cf9076a4bedd7e7}{}\index{socket.\+h@{socket.\+h}!socket\+\_\+bind@{socket\+\_\+bind}}
+\index{socket\+\_\+bind@{socket\+\_\+bind}!socket.\+h@{socket.\+h}}
+\subsubsection[{socket\+\_\+bind(socket\+\_\+descriptor\+\_\+t sd, struct addrinfo $\ast$local, int af\+\_\+family, const char $\ast$prefix, bool ipv6only)}]{\setlength{\rightskip}{0pt plus 5cm}void socket\+\_\+bind (
+\begin{DoxyParamCaption}
+\item[{{\bf socket\+\_\+descriptor\+\_\+t}}]{sd, }
+\item[{struct addrinfo $\ast$}]{local, }
+\item[{int}]{af\+\_\+family, }
+\item[{const char $\ast$}]{prefix, }
+\item[{{\bf bool}}]{ipv6only}
+\end{DoxyParamCaption}
+)}\label{socket_8h_ad6c91c71856195145cf9076a4bedd7e7}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{socket_8h_ad6c91c71856195145cf9076a4bedd7e7_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{socket_8h_a7bd3fb1c5f91bcd4d18174168e226eb0}{}\index{socket.\+h@{socket.\+h}!socket\+\_\+do\+\_\+accept@{socket\+\_\+do\+\_\+accept}}
+\index{socket\+\_\+do\+\_\+accept@{socket\+\_\+do\+\_\+accept}!socket.\+h@{socket.\+h}}
+\subsubsection[{socket\+\_\+do\+\_\+accept(socket\+\_\+descriptor\+\_\+t sd, struct link\+\_\+socket\+\_\+actual $\ast$act, const bool nowait)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf socket\+\_\+descriptor\+\_\+t} socket\+\_\+do\+\_\+accept (
+\begin{DoxyParamCaption}
+\item[{{\bf socket\+\_\+descriptor\+\_\+t}}]{sd, }
+\item[{struct {\bf link\+\_\+socket\+\_\+actual} $\ast$}]{act, }
+\item[{const {\bf bool}}]{nowait}
+\end{DoxyParamCaption}
+)}\label{socket_8h_a7bd3fb1c5f91bcd4d18174168e226eb0}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{socket_8h_a7bd3fb1c5f91bcd4d18174168e226eb0_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{socket_8h_a50798315305f70b5cc97f016d65ace82}{}\index{socket.\+h@{socket.\+h}!socket\+\_\+listen\+\_\+event\+\_\+handle@{socket\+\_\+listen\+\_\+event\+\_\+handle}}
+\index{socket\+\_\+listen\+\_\+event\+\_\+handle@{socket\+\_\+listen\+\_\+event\+\_\+handle}!socket.\+h@{socket.\+h}}
+\subsubsection[{socket\+\_\+listen\+\_\+event\+\_\+handle(struct link\+\_\+socket $\ast$s)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf event\+\_\+t} socket\+\_\+listen\+\_\+event\+\_\+handle (
+\begin{DoxyParamCaption}
+\item[{struct {\bf link\+\_\+socket} $\ast$}]{s}
+\end{DoxyParamCaption}
+)}\label{socket_8h_a50798315305f70b5cc97f016d65ace82}
+\hypertarget{socket_8h_ab5605eaa75bdd5f315edcfaefcd77b69}{}\index{socket.\+h@{socket.\+h}!socket\+\_\+set@{socket\+\_\+set}}
+\index{socket\+\_\+set@{socket\+\_\+set}!socket.\+h@{socket.\+h}}
+\subsubsection[{socket\+\_\+set(struct link\+\_\+socket $\ast$s, struct event\+\_\+set $\ast$es, unsigned int rwflags, void $\ast$arg, unsigned int $\ast$persistent)}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int socket\+\_\+set (
+\begin{DoxyParamCaption}
+\item[{struct {\bf link\+\_\+socket} $\ast$}]{s, }
+\item[{struct {\bf event\+\_\+set} $\ast$}]{es, }
+\item[{unsigned int}]{rwflags, }
+\item[{void $\ast$}]{arg, }
+\item[{unsigned int $\ast$}]{persistent}
+\end{DoxyParamCaption}
+)}\label{socket_8h_ab5605eaa75bdd5f315edcfaefcd77b69}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=264pt]{socket_8h_ab5605eaa75bdd5f315edcfaefcd77b69_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{socket_8h_a45f6ed12802df58a5627b6a7ba80b093}{}\index{socket.\+h@{socket.\+h}!socket\+\_\+stat@{socket\+\_\+stat}}
+\index{socket\+\_\+stat@{socket\+\_\+stat}!socket.\+h@{socket.\+h}}
+\subsubsection[{socket\+\_\+stat(const struct link\+\_\+socket $\ast$s, unsigned int rwflags, struct gc\+\_\+arena $\ast$gc)}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ socket\+\_\+stat (
+\begin{DoxyParamCaption}
+\item[{const struct {\bf link\+\_\+socket} $\ast$}]{s, }
+\item[{unsigned int}]{rwflags, }
+\item[{struct {\bf gc\+\_\+arena} $\ast$}]{gc}
+\end{DoxyParamCaption}
+)}\label{socket_8h_a45f6ed12802df58a5627b6a7ba80b093}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{socket_8h_a45f6ed12802df58a5627b6a7ba80b093_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{socket_8h_a0c43f40cf87e67746949ece97c087502}{}\index{socket.\+h@{socket.\+h}!stream\+\_\+buf\+\_\+added@{stream\+\_\+buf\+\_\+added}}
+\index{stream\+\_\+buf\+\_\+added@{stream\+\_\+buf\+\_\+added}!socket.\+h@{socket.\+h}}
+\subsubsection[{stream\+\_\+buf\+\_\+added(struct stream\+\_\+buf $\ast$sb, int length\+\_\+added)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} stream\+\_\+buf\+\_\+added (
+\begin{DoxyParamCaption}
+\item[{struct {\bf stream\+\_\+buf} $\ast$}]{sb, }
+\item[{int}]{length\+\_\+added}
+\end{DoxyParamCaption}
+)}\label{socket_8h_a0c43f40cf87e67746949ece97c087502}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=330pt]{socket_8h_a0c43f40cf87e67746949ece97c087502_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{socket_8h_a1bf7dc9366cc6344370dd08999e185b6}{}\index{socket.\+h@{socket.\+h}!stream\+\_\+buf\+\_\+close@{stream\+\_\+buf\+\_\+close}}
+\index{stream\+\_\+buf\+\_\+close@{stream\+\_\+buf\+\_\+close}!socket.\+h@{socket.\+h}}
+\subsubsection[{stream\+\_\+buf\+\_\+close(struct stream\+\_\+buf $\ast$sb)}]{\setlength{\rightskip}{0pt plus 5cm}void stream\+\_\+buf\+\_\+close (
+\begin{DoxyParamCaption}
+\item[{struct {\bf stream\+\_\+buf} $\ast$}]{sb}
+\end{DoxyParamCaption}
+)}\label{socket_8h_a1bf7dc9366cc6344370dd08999e185b6}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=259pt]{socket_8h_a1bf7dc9366cc6344370dd08999e185b6_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=304pt]{socket_8h_a1bf7dc9366cc6344370dd08999e185b6_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{socket_8h_a96ba948dd0e3d3ad6fcbde53ff44dd1d}{}\index{socket.\+h@{socket.\+h}!stream\+\_\+buf\+\_\+init@{stream\+\_\+buf\+\_\+init}}
+\index{stream\+\_\+buf\+\_\+init@{stream\+\_\+buf\+\_\+init}!socket.\+h@{socket.\+h}}
+\subsubsection[{stream\+\_\+buf\+\_\+init(struct stream\+\_\+buf $\ast$sb, struct buffer $\ast$buf, const unsigned int sockflags, const int proto)}]{\setlength{\rightskip}{0pt plus 5cm}void stream\+\_\+buf\+\_\+init (
+\begin{DoxyParamCaption}
+\item[{struct {\bf stream\+\_\+buf} $\ast$}]{sb, }
+\item[{struct {\bf buffer} $\ast$}]{buf, }
+\item[{const unsigned int}]{sockflags, }
+\item[{const int}]{proto}
+\end{DoxyParamCaption}
+)}\label{socket_8h_a96ba948dd0e3d3ad6fcbde53ff44dd1d}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{socket_8h_a96ba948dd0e3d3ad6fcbde53ff44dd1d_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Variable Documentation}
+\hypertarget{socket_8h_a239a24f77e4782c0d0e215a6ea3ba0e6}{}\index{socket.\+h@{socket.\+h}!proto\+\_\+overhead@{proto\+\_\+overhead}}
+\index{proto\+\_\+overhead@{proto\+\_\+overhead}!socket.\+h@{socket.\+h}}
+\subsubsection[{proto\+\_\+overhead}]{\setlength{\rightskip}{0pt plus 5cm}const int proto\+\_\+overhead\mbox{[}$\,$\mbox{]}}\label{socket_8h_a239a24f77e4782c0d0e215a6ea3ba0e6}

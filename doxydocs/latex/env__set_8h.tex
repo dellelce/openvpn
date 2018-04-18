@@ -1,0 +1,504 @@
+\hypertarget{env__set_8h}{}\section{src/openvpn/env\+\_\+set.h File Reference}
+\label{env__set_8h}\index{src/openvpn/env\+\_\+set.\+h@{src/openvpn/env\+\_\+set.\+h}}
+{\ttfamily \#include \char`\"{}argv.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}basic.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}buffer.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}common.\+h\char`\"{}}\\*
+Include dependency graph for env\+\_\+set.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{env__set_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{env__set_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structenv__item}{env\+\_\+item}
+\item 
+struct \hyperlink{structenv__set}{env\+\_\+set}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{env__set_8h_a9ff3fe081db33808bf428d7af93c68ad}{setenv\+\_\+str\+\_\+ex} (struct \hyperlink{structenv__set}{env\+\_\+set} $\ast$es, const char $\ast$name, const char $\ast$value, const unsigned int name\+\_\+include, const unsigned int name\+\_\+exclude, const char name\+\_\+replace, const unsigned int value\+\_\+include, const unsigned int value\+\_\+exclude, const char value\+\_\+replace)
+\item 
+void \hyperlink{env__set_8h_a0b802482c45089ce375867ff8add7b52}{setenv\+\_\+counter} (struct \hyperlink{structenv__set}{env\+\_\+set} $\ast$es, const char $\ast$name, \hyperlink{common_8h_a00dd6fbfb368a41945c8c6b9d6fbf88f}{counter\+\_\+type} value)
+\item 
+void \hyperlink{env__set_8h_a2ee1297d7cd864a08edff8440efa4143}{setenv\+\_\+int} (struct \hyperlink{structenv__set}{env\+\_\+set} $\ast$es, const char $\ast$name, int value)
+\item 
+void \hyperlink{env__set_8h_ae930053a1640090b9ff3c85247d8fe36}{setenv\+\_\+long\+\_\+long} (struct \hyperlink{structenv__set}{env\+\_\+set} $\ast$es, const char $\ast$name, long long value)
+\item 
+void \hyperlink{env__set_8h_a872620e2e324ded9c1bc8af1c253faf9}{setenv\+\_\+str} (struct \hyperlink{structenv__set}{env\+\_\+set} $\ast$es, const char $\ast$name, const char $\ast$value)
+\item 
+void \hyperlink{env__set_8h_aaf1710955c4c7c67c92f05430e5d5096}{setenv\+\_\+str\+\_\+safe} (struct \hyperlink{structenv__set}{env\+\_\+set} $\ast$es, const char $\ast$name, const char $\ast$value)
+\item 
+void \hyperlink{env__set_8h_af94d2a99d0dc5ee3e224a891d1e5eb72}{setenv\+\_\+del} (struct \hyperlink{structenv__set}{env\+\_\+set} $\ast$es, const char $\ast$name)
+\item 
+void \hyperlink{env__set_8h_aaebf441d560234411d89b694e620e64b}{setenv\+\_\+str\+\_\+incr} (struct \hyperlink{structenv__set}{env\+\_\+set} $\ast$es, const char $\ast$name, const char $\ast$value)
+\item 
+void \hyperlink{env__set_8h_a35be79ec5f9dc2b73e31384009ffdd1e}{setenv\+\_\+int\+\_\+i} (struct \hyperlink{structenv__set}{env\+\_\+set} $\ast$es, const char $\ast$name, const int value, const int i)
+\item 
+void \hyperlink{env__set_8h_a6f53b6e579e9951fa3160107a58040b4}{setenv\+\_\+str\+\_\+i} (struct \hyperlink{structenv__set}{env\+\_\+set} $\ast$es, const char $\ast$name, const char $\ast$value, const int i)
+\item 
+struct \hyperlink{structenv__set}{env\+\_\+set} $\ast$ \hyperlink{env__set_8h_a589b54db89bdd1a4683d80b8132ce577}{env\+\_\+set\+\_\+create} (struct \hyperlink{structgc__arena}{gc\+\_\+arena} $\ast$gc)
+\item 
+void \hyperlink{env__set_8h_a2d1a7f0ea69776000aa9df3eca186f97}{env\+\_\+set\+\_\+destroy} (struct \hyperlink{structenv__set}{env\+\_\+set} $\ast$es)
+\item 
+\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} \hyperlink{env__set_8h_acb6a73dee5f207c8a86187f111b0e910}{env\+\_\+set\+\_\+del} (struct \hyperlink{structenv__set}{env\+\_\+set} $\ast$es, const char $\ast$str)
+\item 
+void \hyperlink{env__set_8h_a8f95bd5663cdc04bc9764b429538f536}{env\+\_\+set\+\_\+add} (struct \hyperlink{structenv__set}{env\+\_\+set} $\ast$es, const char $\ast$str)
+\item 
+const char $\ast$ \hyperlink{env__set_8h_a535d8f4aa60fd694efabec7acfec5668}{env\+\_\+set\+\_\+get} (const struct \hyperlink{structenv__set}{env\+\_\+set} $\ast$es, const char $\ast$name)
+\item 
+void \hyperlink{env__set_8h_a14c9ba8bed08a0df6b3191b85602c76b}{env\+\_\+set\+\_\+print} (int msglevel, const struct \hyperlink{structenv__set}{env\+\_\+set} $\ast$es)
+\item 
+void \hyperlink{env__set_8h_aa810d4e0a266484c89a2f8a6b048a33a}{env\+\_\+set\+\_\+inherit} (struct \hyperlink{structenv__set}{env\+\_\+set} $\ast$es, const struct \hyperlink{structenv__set}{env\+\_\+set} $\ast$src)
+\item 
+\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} \hyperlink{env__set_8h_ac0c2b4236916bd53b9358b7a261cb088}{env\+\_\+allowed} (const char $\ast$str)
+\item 
+const char $\ast$$\ast$ \hyperlink{env__set_8h_ac6b46e6a683798fd9d3071c909fb8c9f}{make\+\_\+env\+\_\+array} (const struct \hyperlink{structenv__set}{env\+\_\+set} $\ast$es, const \hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} check\+\_\+allowed, struct \hyperlink{structgc__arena}{gc\+\_\+arena} $\ast$gc)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{env__set_8h_ac0c2b4236916bd53b9358b7a261cb088}{}\index{env\+\_\+set.\+h@{env\+\_\+set.\+h}!env\+\_\+allowed@{env\+\_\+allowed}}
+\index{env\+\_\+allowed@{env\+\_\+allowed}!env\+\_\+set.\+h@{env\+\_\+set.\+h}}
+\subsubsection[{env\+\_\+allowed(const char $\ast$str)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} env\+\_\+allowed (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{str}
+\end{DoxyParamCaption}
+)}\label{env__set_8h_ac0c2b4236916bd53b9358b7a261cb088}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{env__set_8h_ac0c2b4236916bd53b9358b7a261cb088_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{env__set_8h_a8f95bd5663cdc04bc9764b429538f536}{}\index{env\+\_\+set.\+h@{env\+\_\+set.\+h}!env\+\_\+set\+\_\+add@{env\+\_\+set\+\_\+add}}
+\index{env\+\_\+set\+\_\+add@{env\+\_\+set\+\_\+add}!env\+\_\+set.\+h@{env\+\_\+set.\+h}}
+\subsubsection[{env\+\_\+set\+\_\+add(struct env\+\_\+set $\ast$es, const char $\ast$str)}]{\setlength{\rightskip}{0pt plus 5cm}void env\+\_\+set\+\_\+add (
+\begin{DoxyParamCaption}
+\item[{struct {\bf env\+\_\+set} $\ast$}]{es, }
+\item[{const char $\ast$}]{str}
+\end{DoxyParamCaption}
+)}\label{env__set_8h_a8f95bd5663cdc04bc9764b429538f536}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{env__set_8h_a8f95bd5663cdc04bc9764b429538f536_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{env__set_8h_a589b54db89bdd1a4683d80b8132ce577}{}\index{env\+\_\+set.\+h@{env\+\_\+set.\+h}!env\+\_\+set\+\_\+create@{env\+\_\+set\+\_\+create}}
+\index{env\+\_\+set\+\_\+create@{env\+\_\+set\+\_\+create}!env\+\_\+set.\+h@{env\+\_\+set.\+h}}
+\subsubsection[{env\+\_\+set\+\_\+create(struct gc\+\_\+arena $\ast$gc)}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf env\+\_\+set}$\ast$ env\+\_\+set\+\_\+create (
+\begin{DoxyParamCaption}
+\item[{struct {\bf gc\+\_\+arena} $\ast$}]{gc}
+\end{DoxyParamCaption}
+)}\label{env__set_8h_a589b54db89bdd1a4683d80b8132ce577}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=260pt]{env__set_8h_a589b54db89bdd1a4683d80b8132ce577_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{env__set_8h_acb6a73dee5f207c8a86187f111b0e910}{}\index{env\+\_\+set.\+h@{env\+\_\+set.\+h}!env\+\_\+set\+\_\+del@{env\+\_\+set\+\_\+del}}
+\index{env\+\_\+set\+\_\+del@{env\+\_\+set\+\_\+del}!env\+\_\+set.\+h@{env\+\_\+set.\+h}}
+\subsubsection[{env\+\_\+set\+\_\+del(struct env\+\_\+set $\ast$es, const char $\ast$str)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} env\+\_\+set\+\_\+del (
+\begin{DoxyParamCaption}
+\item[{struct {\bf env\+\_\+set} $\ast$}]{es, }
+\item[{const char $\ast$}]{str}
+\end{DoxyParamCaption}
+)}\label{env__set_8h_acb6a73dee5f207c8a86187f111b0e910}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{env__set_8h_acb6a73dee5f207c8a86187f111b0e910_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{env__set_8h_a2d1a7f0ea69776000aa9df3eca186f97}{}\index{env\+\_\+set.\+h@{env\+\_\+set.\+h}!env\+\_\+set\+\_\+destroy@{env\+\_\+set\+\_\+destroy}}
+\index{env\+\_\+set\+\_\+destroy@{env\+\_\+set\+\_\+destroy}!env\+\_\+set.\+h@{env\+\_\+set.\+h}}
+\subsubsection[{env\+\_\+set\+\_\+destroy(struct env\+\_\+set $\ast$es)}]{\setlength{\rightskip}{0pt plus 5cm}void env\+\_\+set\+\_\+destroy (
+\begin{DoxyParamCaption}
+\item[{struct {\bf env\+\_\+set} $\ast$}]{es}
+\end{DoxyParamCaption}
+)}\label{env__set_8h_a2d1a7f0ea69776000aa9df3eca186f97}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=265pt]{env__set_8h_a2d1a7f0ea69776000aa9df3eca186f97_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{env__set_8h_a535d8f4aa60fd694efabec7acfec5668}{}\index{env\+\_\+set.\+h@{env\+\_\+set.\+h}!env\+\_\+set\+\_\+get@{env\+\_\+set\+\_\+get}}
+\index{env\+\_\+set\+\_\+get@{env\+\_\+set\+\_\+get}!env\+\_\+set.\+h@{env\+\_\+set.\+h}}
+\subsubsection[{env\+\_\+set\+\_\+get(const struct env\+\_\+set $\ast$es, const char $\ast$name)}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ env\+\_\+set\+\_\+get (
+\begin{DoxyParamCaption}
+\item[{const struct {\bf env\+\_\+set} $\ast$}]{es, }
+\item[{const char $\ast$}]{name}
+\end{DoxyParamCaption}
+)}\label{env__set_8h_a535d8f4aa60fd694efabec7acfec5668}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=266pt]{env__set_8h_a535d8f4aa60fd694efabec7acfec5668_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{env__set_8h_aa810d4e0a266484c89a2f8a6b048a33a}{}\index{env\+\_\+set.\+h@{env\+\_\+set.\+h}!env\+\_\+set\+\_\+inherit@{env\+\_\+set\+\_\+inherit}}
+\index{env\+\_\+set\+\_\+inherit@{env\+\_\+set\+\_\+inherit}!env\+\_\+set.\+h@{env\+\_\+set.\+h}}
+\subsubsection[{env\+\_\+set\+\_\+inherit(struct env\+\_\+set $\ast$es, const struct env\+\_\+set $\ast$src)}]{\setlength{\rightskip}{0pt plus 5cm}void env\+\_\+set\+\_\+inherit (
+\begin{DoxyParamCaption}
+\item[{struct {\bf env\+\_\+set} $\ast$}]{es, }
+\item[{const struct {\bf env\+\_\+set} $\ast$}]{src}
+\end{DoxyParamCaption}
+)}\label{env__set_8h_aa810d4e0a266484c89a2f8a6b048a33a}
+\hypertarget{env__set_8h_a14c9ba8bed08a0df6b3191b85602c76b}{}\index{env\+\_\+set.\+h@{env\+\_\+set.\+h}!env\+\_\+set\+\_\+print@{env\+\_\+set\+\_\+print}}
+\index{env\+\_\+set\+\_\+print@{env\+\_\+set\+\_\+print}!env\+\_\+set.\+h@{env\+\_\+set.\+h}}
+\subsubsection[{env\+\_\+set\+\_\+print(int msglevel, const struct env\+\_\+set $\ast$es)}]{\setlength{\rightskip}{0pt plus 5cm}void env\+\_\+set\+\_\+print (
+\begin{DoxyParamCaption}
+\item[{int}]{msglevel, }
+\item[{const struct {\bf env\+\_\+set} $\ast$}]{es}
+\end{DoxyParamCaption}
+)}\label{env__set_8h_a14c9ba8bed08a0df6b3191b85602c76b}
+\hypertarget{env__set_8h_ac6b46e6a683798fd9d3071c909fb8c9f}{}\index{env\+\_\+set.\+h@{env\+\_\+set.\+h}!make\+\_\+env\+\_\+array@{make\+\_\+env\+\_\+array}}
+\index{make\+\_\+env\+\_\+array@{make\+\_\+env\+\_\+array}!env\+\_\+set.\+h@{env\+\_\+set.\+h}}
+\subsubsection[{make\+\_\+env\+\_\+array(const struct env\+\_\+set $\ast$es, const bool check\+\_\+allowed, struct gc\+\_\+arena $\ast$gc)}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$$\ast$ make\+\_\+env\+\_\+array (
+\begin{DoxyParamCaption}
+\item[{const struct {\bf env\+\_\+set} $\ast$}]{es, }
+\item[{const {\bf bool}}]{check\+\_\+allowed, }
+\item[{struct {\bf gc\+\_\+arena} $\ast$}]{gc}
+\end{DoxyParamCaption}
+)}\label{env__set_8h_ac6b46e6a683798fd9d3071c909fb8c9f}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=271pt]{env__set_8h_ac6b46e6a683798fd9d3071c909fb8c9f_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{env__set_8h_ac6b46e6a683798fd9d3071c909fb8c9f_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{env__set_8h_a0b802482c45089ce375867ff8add7b52}{}\index{env\+\_\+set.\+h@{env\+\_\+set.\+h}!setenv\+\_\+counter@{setenv\+\_\+counter}}
+\index{setenv\+\_\+counter@{setenv\+\_\+counter}!env\+\_\+set.\+h@{env\+\_\+set.\+h}}
+\subsubsection[{setenv\+\_\+counter(struct env\+\_\+set $\ast$es, const char $\ast$name, counter\+\_\+type value)}]{\setlength{\rightskip}{0pt plus 5cm}void setenv\+\_\+counter (
+\begin{DoxyParamCaption}
+\item[{struct {\bf env\+\_\+set} $\ast$}]{es, }
+\item[{const char $\ast$}]{name, }
+\item[{{\bf counter\+\_\+type}}]{value}
+\end{DoxyParamCaption}
+)}\label{env__set_8h_a0b802482c45089ce375867ff8add7b52}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{env__set_8h_a0b802482c45089ce375867ff8add7b52_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{env__set_8h_af94d2a99d0dc5ee3e224a891d1e5eb72}{}\index{env\+\_\+set.\+h@{env\+\_\+set.\+h}!setenv\+\_\+del@{setenv\+\_\+del}}
+\index{setenv\+\_\+del@{setenv\+\_\+del}!env\+\_\+set.\+h@{env\+\_\+set.\+h}}
+\subsubsection[{setenv\+\_\+del(struct env\+\_\+set $\ast$es, const char $\ast$name)}]{\setlength{\rightskip}{0pt plus 5cm}void setenv\+\_\+del (
+\begin{DoxyParamCaption}
+\item[{struct {\bf env\+\_\+set} $\ast$}]{es, }
+\item[{const char $\ast$}]{name}
+\end{DoxyParamCaption}
+)}\label{env__set_8h_af94d2a99d0dc5ee3e224a891d1e5eb72}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{env__set_8h_af94d2a99d0dc5ee3e224a891d1e5eb72_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{env__set_8h_a2ee1297d7cd864a08edff8440efa4143}{}\index{env\+\_\+set.\+h@{env\+\_\+set.\+h}!setenv\+\_\+int@{setenv\+\_\+int}}
+\index{setenv\+\_\+int@{setenv\+\_\+int}!env\+\_\+set.\+h@{env\+\_\+set.\+h}}
+\subsubsection[{setenv\+\_\+int(struct env\+\_\+set $\ast$es, const char $\ast$name, int value)}]{\setlength{\rightskip}{0pt plus 5cm}void setenv\+\_\+int (
+\begin{DoxyParamCaption}
+\item[{struct {\bf env\+\_\+set} $\ast$}]{es, }
+\item[{const char $\ast$}]{name, }
+\item[{int}]{value}
+\end{DoxyParamCaption}
+)}\label{env__set_8h_a2ee1297d7cd864a08edff8440efa4143}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{env__set_8h_a2ee1297d7cd864a08edff8440efa4143_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{env__set_8h_a2ee1297d7cd864a08edff8440efa4143_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{env__set_8h_a35be79ec5f9dc2b73e31384009ffdd1e}{}\index{env\+\_\+set.\+h@{env\+\_\+set.\+h}!setenv\+\_\+int\+\_\+i@{setenv\+\_\+int\+\_\+i}}
+\index{setenv\+\_\+int\+\_\+i@{setenv\+\_\+int\+\_\+i}!env\+\_\+set.\+h@{env\+\_\+set.\+h}}
+\subsubsection[{setenv\+\_\+int\+\_\+i(struct env\+\_\+set $\ast$es, const char $\ast$name, const int value, const int i)}]{\setlength{\rightskip}{0pt plus 5cm}void setenv\+\_\+int\+\_\+i (
+\begin{DoxyParamCaption}
+\item[{struct {\bf env\+\_\+set} $\ast$}]{es, }
+\item[{const char $\ast$}]{name, }
+\item[{const int}]{value, }
+\item[{const int}]{i}
+\end{DoxyParamCaption}
+)}\label{env__set_8h_a35be79ec5f9dc2b73e31384009ffdd1e}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{env__set_8h_a35be79ec5f9dc2b73e31384009ffdd1e_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{env__set_8h_ae930053a1640090b9ff3c85247d8fe36}{}\index{env\+\_\+set.\+h@{env\+\_\+set.\+h}!setenv\+\_\+long\+\_\+long@{setenv\+\_\+long\+\_\+long}}
+\index{setenv\+\_\+long\+\_\+long@{setenv\+\_\+long\+\_\+long}!env\+\_\+set.\+h@{env\+\_\+set.\+h}}
+\subsubsection[{setenv\+\_\+long\+\_\+long(struct env\+\_\+set $\ast$es, const char $\ast$name, long long value)}]{\setlength{\rightskip}{0pt plus 5cm}void setenv\+\_\+long\+\_\+long (
+\begin{DoxyParamCaption}
+\item[{struct {\bf env\+\_\+set} $\ast$}]{es, }
+\item[{const char $\ast$}]{name, }
+\item[{long long}]{value}
+\end{DoxyParamCaption}
+)}\label{env__set_8h_ae930053a1640090b9ff3c85247d8fe36}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{env__set_8h_ae930053a1640090b9ff3c85247d8fe36_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=291pt]{env__set_8h_ae930053a1640090b9ff3c85247d8fe36_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{env__set_8h_a872620e2e324ded9c1bc8af1c253faf9}{}\index{env\+\_\+set.\+h@{env\+\_\+set.\+h}!setenv\+\_\+str@{setenv\+\_\+str}}
+\index{setenv\+\_\+str@{setenv\+\_\+str}!env\+\_\+set.\+h@{env\+\_\+set.\+h}}
+\subsubsection[{setenv\+\_\+str(struct env\+\_\+set $\ast$es, const char $\ast$name, const char $\ast$value)}]{\setlength{\rightskip}{0pt plus 5cm}void setenv\+\_\+str (
+\begin{DoxyParamCaption}
+\item[{struct {\bf env\+\_\+set} $\ast$}]{es, }
+\item[{const char $\ast$}]{name, }
+\item[{const char $\ast$}]{value}
+\end{DoxyParamCaption}
+)}\label{env__set_8h_a872620e2e324ded9c1bc8af1c253faf9}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{env__set_8h_a872620e2e324ded9c1bc8af1c253faf9_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{env__set_8h_a872620e2e324ded9c1bc8af1c253faf9_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{env__set_8h_a9ff3fe081db33808bf428d7af93c68ad}{}\index{env\+\_\+set.\+h@{env\+\_\+set.\+h}!setenv\+\_\+str\+\_\+ex@{setenv\+\_\+str\+\_\+ex}}
+\index{setenv\+\_\+str\+\_\+ex@{setenv\+\_\+str\+\_\+ex}!env\+\_\+set.\+h@{env\+\_\+set.\+h}}
+\subsubsection[{setenv\+\_\+str\+\_\+ex(struct env\+\_\+set $\ast$es, const char $\ast$name, const char $\ast$value, const unsigned int name\+\_\+include, const unsigned int name\+\_\+exclude, const char name\+\_\+replace, const unsigned int value\+\_\+include, const unsigned int value\+\_\+exclude, const char value\+\_\+replace)}]{\setlength{\rightskip}{0pt plus 5cm}void setenv\+\_\+str\+\_\+ex (
+\begin{DoxyParamCaption}
+\item[{struct {\bf env\+\_\+set} $\ast$}]{es, }
+\item[{const char $\ast$}]{name, }
+\item[{const char $\ast$}]{value, }
+\item[{const unsigned int}]{name\+\_\+include, }
+\item[{const unsigned int}]{name\+\_\+exclude, }
+\item[{const char}]{name\+\_\+replace, }
+\item[{const unsigned int}]{value\+\_\+include, }
+\item[{const unsigned int}]{value\+\_\+exclude, }
+\item[{const char}]{value\+\_\+replace}
+\end{DoxyParamCaption}
+)}\label{env__set_8h_a9ff3fe081db33808bf428d7af93c68ad}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{env__set_8h_a9ff3fe081db33808bf428d7af93c68ad_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{env__set_8h_a9ff3fe081db33808bf428d7af93c68ad_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{env__set_8h_a6f53b6e579e9951fa3160107a58040b4}{}\index{env\+\_\+set.\+h@{env\+\_\+set.\+h}!setenv\+\_\+str\+\_\+i@{setenv\+\_\+str\+\_\+i}}
+\index{setenv\+\_\+str\+\_\+i@{setenv\+\_\+str\+\_\+i}!env\+\_\+set.\+h@{env\+\_\+set.\+h}}
+\subsubsection[{setenv\+\_\+str\+\_\+i(struct env\+\_\+set $\ast$es, const char $\ast$name, const char $\ast$value, const int i)}]{\setlength{\rightskip}{0pt plus 5cm}void setenv\+\_\+str\+\_\+i (
+\begin{DoxyParamCaption}
+\item[{struct {\bf env\+\_\+set} $\ast$}]{es, }
+\item[{const char $\ast$}]{name, }
+\item[{const char $\ast$}]{value, }
+\item[{const int}]{i}
+\end{DoxyParamCaption}
+)}\label{env__set_8h_a6f53b6e579e9951fa3160107a58040b4}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{env__set_8h_a6f53b6e579e9951fa3160107a58040b4_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{env__set_8h_aaebf441d560234411d89b694e620e64b}{}\index{env\+\_\+set.\+h@{env\+\_\+set.\+h}!setenv\+\_\+str\+\_\+incr@{setenv\+\_\+str\+\_\+incr}}
+\index{setenv\+\_\+str\+\_\+incr@{setenv\+\_\+str\+\_\+incr}!env\+\_\+set.\+h@{env\+\_\+set.\+h}}
+\subsubsection[{setenv\+\_\+str\+\_\+incr(struct env\+\_\+set $\ast$es, const char $\ast$name, const char $\ast$value)}]{\setlength{\rightskip}{0pt plus 5cm}void setenv\+\_\+str\+\_\+incr (
+\begin{DoxyParamCaption}
+\item[{struct {\bf env\+\_\+set} $\ast$}]{es, }
+\item[{const char $\ast$}]{name, }
+\item[{const char $\ast$}]{value}
+\end{DoxyParamCaption}
+)}\label{env__set_8h_aaebf441d560234411d89b694e620e64b}
+Store the supplied name value pair in the \hyperlink{structenv__set}{env\+\_\+set}. If the variable with the supplied name already exists, append \+\_\+\+N to the name, starting at N=1. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{env__set_8h_aaebf441d560234411d89b694e620e64b_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{env__set_8h_aaf1710955c4c7c67c92f05430e5d5096}{}\index{env\+\_\+set.\+h@{env\+\_\+set.\+h}!setenv\+\_\+str\+\_\+safe@{setenv\+\_\+str\+\_\+safe}}
+\index{setenv\+\_\+str\+\_\+safe@{setenv\+\_\+str\+\_\+safe}!env\+\_\+set.\+h@{env\+\_\+set.\+h}}
+\subsubsection[{setenv\+\_\+str\+\_\+safe(struct env\+\_\+set $\ast$es, const char $\ast$name, const char $\ast$value)}]{\setlength{\rightskip}{0pt plus 5cm}void setenv\+\_\+str\+\_\+safe (
+\begin{DoxyParamCaption}
+\item[{struct {\bf env\+\_\+set} $\ast$}]{es, }
+\item[{const char $\ast$}]{name, }
+\item[{const char $\ast$}]{value}
+\end{DoxyParamCaption}
+)}\label{env__set_8h_aaf1710955c4c7c67c92f05430e5d5096}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{env__set_8h_aaf1710955c4c7c67c92f05430e5d5096_cgraph}
+\end{center}
+\end{figure}
+
+

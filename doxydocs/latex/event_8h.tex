@@ -1,0 +1,93 @@
+\hypertarget{event_8h}{}\section{src/openvpn/event.h File Reference}
+\label{event_8h}\index{src/openvpn/event.\+h@{src/openvpn/event.\+h}}
+{\ttfamily \#include \char`\"{}win32.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}sig.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}perf.\+h\char`\"{}}\\*
+Include dependency graph for event.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{event_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{event_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structevent__set__functions}{event\+\_\+set\+\_\+functions}
+\item 
+struct \hyperlink{structevent__set__return}{event\+\_\+set\+\_\+return}
+\item 
+struct \hyperlink{structevent__set}{event\+\_\+set}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{event_8h_a67752bf0ae421219c6ad526d187db634}{E\+V\+E\+N\+T\+\_\+\+U\+N\+D\+E\+F}~4
+\item 
+\#define \hyperlink{event_8h_ac03f8506739d508e600347184b53e22c}{E\+V\+E\+N\+T\+\_\+\+R\+E\+A\+D}~(1$<$$<$0)
+\item 
+\#define \hyperlink{event_8h_a829bcc5ff94e601cfbd30e527c82f94f}{E\+V\+E\+N\+T\+\_\+\+W\+R\+I\+T\+E}~(1$<$$<$1)
+\item 
+\#define \hyperlink{event_8h_a58154c71aeed1039628d6a15573b6ff9}{E\+V\+E\+N\+T\+\_\+\+M\+E\+T\+H\+O\+D\+\_\+\+U\+S\+\_\+\+T\+I\+M\+E\+O\+U\+T}~(1$<$$<$0)
+\item 
+\#define \hyperlink{event_8h_a3cff540d052378462ac3aa42a45ce6da}{E\+V\+E\+N\+T\+\_\+\+M\+E\+T\+H\+O\+D\+\_\+\+F\+A\+S\+T}~(1$<$$<$1)
+\item 
+\#define \hyperlink{event_8h_a61fef146c5b6a6da5c88705d5cb0c205}{U\+N\+D\+E\+F\+I\+N\+E\+D\+\_\+\+E\+V\+E\+N\+T}~(-\/1)
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef int \hyperlink{event_8h_aaf06dbc1f07c15cb5e2779d3ec2dcb4b}{event\+\_\+t}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structevent__set}{event\+\_\+set} $\ast$ \hyperlink{event_8h_a6d9cc59952b108b1894417202689f4ba}{event\+\_\+set\+\_\+init} (int $\ast$maxevents, unsigned int flags)
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{event_8h_a3cff540d052378462ac3aa42a45ce6da}{}\index{event.\+h@{event.\+h}!E\+V\+E\+N\+T\+\_\+\+M\+E\+T\+H\+O\+D\+\_\+\+F\+A\+S\+T@{E\+V\+E\+N\+T\+\_\+\+M\+E\+T\+H\+O\+D\+\_\+\+F\+A\+S\+T}}
+\index{E\+V\+E\+N\+T\+\_\+\+M\+E\+T\+H\+O\+D\+\_\+\+F\+A\+S\+T@{E\+V\+E\+N\+T\+\_\+\+M\+E\+T\+H\+O\+D\+\_\+\+F\+A\+S\+T}!event.\+h@{event.\+h}}
+\subsubsection[{E\+V\+E\+N\+T\+\_\+\+M\+E\+T\+H\+O\+D\+\_\+\+F\+A\+S\+T}]{\setlength{\rightskip}{0pt plus 5cm}\#define E\+V\+E\+N\+T\+\_\+\+M\+E\+T\+H\+O\+D\+\_\+\+F\+A\+S\+T~(1$<$$<$1)}\label{event_8h_a3cff540d052378462ac3aa42a45ce6da}
+\hypertarget{event_8h_a58154c71aeed1039628d6a15573b6ff9}{}\index{event.\+h@{event.\+h}!E\+V\+E\+N\+T\+\_\+\+M\+E\+T\+H\+O\+D\+\_\+\+U\+S\+\_\+\+T\+I\+M\+E\+O\+U\+T@{E\+V\+E\+N\+T\+\_\+\+M\+E\+T\+H\+O\+D\+\_\+\+U\+S\+\_\+\+T\+I\+M\+E\+O\+U\+T}}
+\index{E\+V\+E\+N\+T\+\_\+\+M\+E\+T\+H\+O\+D\+\_\+\+U\+S\+\_\+\+T\+I\+M\+E\+O\+U\+T@{E\+V\+E\+N\+T\+\_\+\+M\+E\+T\+H\+O\+D\+\_\+\+U\+S\+\_\+\+T\+I\+M\+E\+O\+U\+T}!event.\+h@{event.\+h}}
+\subsubsection[{E\+V\+E\+N\+T\+\_\+\+M\+E\+T\+H\+O\+D\+\_\+\+U\+S\+\_\+\+T\+I\+M\+E\+O\+U\+T}]{\setlength{\rightskip}{0pt plus 5cm}\#define E\+V\+E\+N\+T\+\_\+\+M\+E\+T\+H\+O\+D\+\_\+\+U\+S\+\_\+\+T\+I\+M\+E\+O\+U\+T~(1$<$$<$0)}\label{event_8h_a58154c71aeed1039628d6a15573b6ff9}
+\hypertarget{event_8h_ac03f8506739d508e600347184b53e22c}{}\index{event.\+h@{event.\+h}!E\+V\+E\+N\+T\+\_\+\+R\+E\+A\+D@{E\+V\+E\+N\+T\+\_\+\+R\+E\+A\+D}}
+\index{E\+V\+E\+N\+T\+\_\+\+R\+E\+A\+D@{E\+V\+E\+N\+T\+\_\+\+R\+E\+A\+D}!event.\+h@{event.\+h}}
+\subsubsection[{E\+V\+E\+N\+T\+\_\+\+R\+E\+A\+D}]{\setlength{\rightskip}{0pt plus 5cm}\#define E\+V\+E\+N\+T\+\_\+\+R\+E\+A\+D~(1$<$$<$0)}\label{event_8h_ac03f8506739d508e600347184b53e22c}
+\hypertarget{event_8h_a67752bf0ae421219c6ad526d187db634}{}\index{event.\+h@{event.\+h}!E\+V\+E\+N\+T\+\_\+\+U\+N\+D\+E\+F@{E\+V\+E\+N\+T\+\_\+\+U\+N\+D\+E\+F}}
+\index{E\+V\+E\+N\+T\+\_\+\+U\+N\+D\+E\+F@{E\+V\+E\+N\+T\+\_\+\+U\+N\+D\+E\+F}!event.\+h@{event.\+h}}
+\subsubsection[{E\+V\+E\+N\+T\+\_\+\+U\+N\+D\+E\+F}]{\setlength{\rightskip}{0pt plus 5cm}\#define E\+V\+E\+N\+T\+\_\+\+U\+N\+D\+E\+F~4}\label{event_8h_a67752bf0ae421219c6ad526d187db634}
+\hypertarget{event_8h_a829bcc5ff94e601cfbd30e527c82f94f}{}\index{event.\+h@{event.\+h}!E\+V\+E\+N\+T\+\_\+\+W\+R\+I\+T\+E@{E\+V\+E\+N\+T\+\_\+\+W\+R\+I\+T\+E}}
+\index{E\+V\+E\+N\+T\+\_\+\+W\+R\+I\+T\+E@{E\+V\+E\+N\+T\+\_\+\+W\+R\+I\+T\+E}!event.\+h@{event.\+h}}
+\subsubsection[{E\+V\+E\+N\+T\+\_\+\+W\+R\+I\+T\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define E\+V\+E\+N\+T\+\_\+\+W\+R\+I\+T\+E~(1$<$$<$1)}\label{event_8h_a829bcc5ff94e601cfbd30e527c82f94f}
+\hypertarget{event_8h_a61fef146c5b6a6da5c88705d5cb0c205}{}\index{event.\+h@{event.\+h}!U\+N\+D\+E\+F\+I\+N\+E\+D\+\_\+\+E\+V\+E\+N\+T@{U\+N\+D\+E\+F\+I\+N\+E\+D\+\_\+\+E\+V\+E\+N\+T}}
+\index{U\+N\+D\+E\+F\+I\+N\+E\+D\+\_\+\+E\+V\+E\+N\+T@{U\+N\+D\+E\+F\+I\+N\+E\+D\+\_\+\+E\+V\+E\+N\+T}!event.\+h@{event.\+h}}
+\subsubsection[{U\+N\+D\+E\+F\+I\+N\+E\+D\+\_\+\+E\+V\+E\+N\+T}]{\setlength{\rightskip}{0pt plus 5cm}\#define U\+N\+D\+E\+F\+I\+N\+E\+D\+\_\+\+E\+V\+E\+N\+T~(-\/1)}\label{event_8h_a61fef146c5b6a6da5c88705d5cb0c205}
+
+
+\subsection{Typedef Documentation}
+\hypertarget{event_8h_aaf06dbc1f07c15cb5e2779d3ec2dcb4b}{}\index{event.\+h@{event.\+h}!event\+\_\+t@{event\+\_\+t}}
+\index{event\+\_\+t@{event\+\_\+t}!event.\+h@{event.\+h}}
+\subsubsection[{event\+\_\+t}]{\setlength{\rightskip}{0pt plus 5cm}typedef int {\bf event\+\_\+t}}\label{event_8h_aaf06dbc1f07c15cb5e2779d3ec2dcb4b}
+
+
+\subsection{Function Documentation}
+\hypertarget{event_8h_a6d9cc59952b108b1894417202689f4ba}{}\index{event.\+h@{event.\+h}!event\+\_\+set\+\_\+init@{event\+\_\+set\+\_\+init}}
+\index{event\+\_\+set\+\_\+init@{event\+\_\+set\+\_\+init}!event.\+h@{event.\+h}}
+\subsubsection[{event\+\_\+set\+\_\+init(int $\ast$maxevents, unsigned int flags)}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf event\+\_\+set}$\ast$ event\+\_\+set\+\_\+init (
+\begin{DoxyParamCaption}
+\item[{int $\ast$}]{maxevents, }
+\item[{unsigned int}]{flags}
+\end{DoxyParamCaption}
+)}\label{event_8h_a6d9cc59952b108b1894417202689f4ba}

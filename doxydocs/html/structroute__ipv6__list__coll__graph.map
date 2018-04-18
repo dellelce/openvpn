@@ -1,0 +1,8 @@
+<map id="route_ipv6_list" name="route_ipv6_list">
+<area shape="rect" id="node2" href="$structgc__arena.html" title="gc_arena" alt="" coords="141,124,216,151"/>
+<area shape="rect" id="node3" href="$structgc__entry__special.html" title="gc_entry_special" alt="" coords="5,13,125,39"/>
+<area shape="rect" id="node4" href="$structgc__entry.html" title="gc_entry" alt="" coords="203,13,275,39"/>
+<area shape="rect" id="node5" href="$structroute__ipv6.html" title="route_ipv6" alt="" coords="240,124,320,151"/>
+<area shape="rect" id="node6" href="$structroute__ipv6__gateway__info.html" title="route_ipv6_gateway_info" alt="" coords="397,124,560,151"/>
+<area shape="rect" id="node7" href="$structroute__ipv6__gateway__address.html" title="route_ipv6_gateway\l_address" alt="" coords="411,5,546,47"/>
+</map>

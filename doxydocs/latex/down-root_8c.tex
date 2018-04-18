@@ -1,0 +1,132 @@
+\hypertarget{down-root_8c}{}\section{src/plugins/down-\/root/down-\/root.c File Reference}
+\label{down-root_8c}\index{src/plugins/down-\/root/down-\/root.\+c@{src/plugins/down-\/root/down-\/root.\+c}}
+{\ttfamily \#include $<$stdio.\+h$>$}\\*
+{\ttfamily \#include $<$string.\+h$>$}\\*
+{\ttfamily \#include $<$unistd.\+h$>$}\\*
+{\ttfamily \#include $<$stdlib.\+h$>$}\\*
+{\ttfamily \#include $<$sys/types.\+h$>$}\\*
+{\ttfamily \#include $<$sys/socket.\+h$>$}\\*
+{\ttfamily \#include $<$sys/wait.\+h$>$}\\*
+{\ttfamily \#include $<$fcntl.\+h$>$}\\*
+{\ttfamily \#include $<$signal.\+h$>$}\\*
+{\ttfamily \#include $<$syslog.\+h$>$}\\*
+{\ttfamily \#include $<$errno.\+h$>$}\\*
+{\ttfamily \#include $<$err.\+h$>$}\\*
+{\ttfamily \#include $<$openvpn-\/plugin.\+h$>$}\\*
+Include dependency graph for down-\/root.c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{down-root_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structdown__root__context}{down\+\_\+root\+\_\+context}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{down-root_8c_ae4f3a0b12dc80d88d6d981fcb3cd5979}{D\+E\+B\+U\+G}(verb)~((verb) $>$= 7)
+\item 
+\#define \hyperlink{down-root_8c_a108a6cd1db8dec189d514272b58e548e}{C\+O\+M\+M\+A\+N\+D\+\_\+\+R\+U\+N\+\_\+\+S\+C\+R\+I\+P\+T}~1
+\item 
+\#define \hyperlink{down-root_8c_abf1cea64e3b64a73512229f7e8d7ce76}{C\+O\+M\+M\+A\+N\+D\+\_\+\+E\+X\+I\+T}~2
+\item 
+\#define \hyperlink{down-root_8c_a6b557aae80cbe59c47433a0516b2cae5}{R\+E\+S\+P\+O\+N\+S\+E\+\_\+\+I\+N\+I\+T\+\_\+\+S\+U\+C\+C\+E\+E\+D\+E\+D}~10
+\item 
+\#define \hyperlink{down-root_8c_a9328d232099241e151d520f002d559de}{R\+E\+S\+P\+O\+N\+S\+E\+\_\+\+I\+N\+I\+T\+\_\+\+F\+A\+I\+L\+E\+D}~11
+\item 
+\#define \hyperlink{down-root_8c_a74a62f8ab72e7e9fbff3b24c8dfdc309}{R\+E\+S\+P\+O\+N\+S\+E\+\_\+\+S\+C\+R\+I\+P\+T\+\_\+\+S\+U\+C\+C\+E\+E\+D\+E\+D}~12
+\item 
+\#define \hyperlink{down-root_8c_a2be2a03305afaeda936fb62a396c26b9}{R\+E\+S\+P\+O\+N\+S\+E\+\_\+\+S\+C\+R\+I\+P\+T\+\_\+\+F\+A\+I\+L\+E\+D}~13
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+O\+P\+E\+N\+V\+P\+N\+\_\+\+E\+X\+P\+O\+R\+T openvpn\+\_\+plugin\+\_\+handle\+\_\+t \hyperlink{down-root_8c_a86663289a04285e6d64b28d7b128ee30}{openvpn\+\_\+plugin\+\_\+open\+\_\+v1} (unsigned int $\ast$type\+\_\+mask, const char $\ast$\hyperlink{structargv}{argv}\mbox{[}$\,$\mbox{]}, const char $\ast$envp\mbox{[}$\,$\mbox{]})
+\item 
+O\+P\+E\+N\+V\+P\+N\+\_\+\+E\+X\+P\+O\+R\+T int \hyperlink{down-root_8c_a035baa3834038991bf6c493be0f1e774}{openvpn\+\_\+plugin\+\_\+func\+\_\+v1} (openvpn\+\_\+plugin\+\_\+handle\+\_\+t handle, const int type, const char $\ast$\hyperlink{structargv}{argv}\mbox{[}$\,$\mbox{]}, const char $\ast$envp\mbox{[}$\,$\mbox{]})
+\item 
+O\+P\+E\+N\+V\+P\+N\+\_\+\+E\+X\+P\+O\+R\+T void \hyperlink{down-root_8c_a09d524ab6e25324d37681b49d0b7abcc}{openvpn\+\_\+plugin\+\_\+close\+\_\+v1} (openvpn\+\_\+plugin\+\_\+handle\+\_\+t handle)
+\item 
+O\+P\+E\+N\+V\+P\+N\+\_\+\+E\+X\+P\+O\+R\+T void \hyperlink{down-root_8c_aa1dfa775aa39a416f5dd7e18205b7f6f}{openvpn\+\_\+plugin\+\_\+abort\+\_\+v1} (openvpn\+\_\+plugin\+\_\+handle\+\_\+t handle)
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{down-root_8c_abf1cea64e3b64a73512229f7e8d7ce76}{}\index{down-\/root.\+c@{down-\/root.\+c}!C\+O\+M\+M\+A\+N\+D\+\_\+\+E\+X\+I\+T@{C\+O\+M\+M\+A\+N\+D\+\_\+\+E\+X\+I\+T}}
+\index{C\+O\+M\+M\+A\+N\+D\+\_\+\+E\+X\+I\+T@{C\+O\+M\+M\+A\+N\+D\+\_\+\+E\+X\+I\+T}!down-\/root.\+c@{down-\/root.\+c}}
+\subsubsection[{C\+O\+M\+M\+A\+N\+D\+\_\+\+E\+X\+I\+T}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+O\+M\+M\+A\+N\+D\+\_\+\+E\+X\+I\+T~2}\label{down-root_8c_abf1cea64e3b64a73512229f7e8d7ce76}
+\hypertarget{down-root_8c_a108a6cd1db8dec189d514272b58e548e}{}\index{down-\/root.\+c@{down-\/root.\+c}!C\+O\+M\+M\+A\+N\+D\+\_\+\+R\+U\+N\+\_\+\+S\+C\+R\+I\+P\+T@{C\+O\+M\+M\+A\+N\+D\+\_\+\+R\+U\+N\+\_\+\+S\+C\+R\+I\+P\+T}}
+\index{C\+O\+M\+M\+A\+N\+D\+\_\+\+R\+U\+N\+\_\+\+S\+C\+R\+I\+P\+T@{C\+O\+M\+M\+A\+N\+D\+\_\+\+R\+U\+N\+\_\+\+S\+C\+R\+I\+P\+T}!down-\/root.\+c@{down-\/root.\+c}}
+\subsubsection[{C\+O\+M\+M\+A\+N\+D\+\_\+\+R\+U\+N\+\_\+\+S\+C\+R\+I\+P\+T}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+O\+M\+M\+A\+N\+D\+\_\+\+R\+U\+N\+\_\+\+S\+C\+R\+I\+P\+T~1}\label{down-root_8c_a108a6cd1db8dec189d514272b58e548e}
+\hypertarget{down-root_8c_ae4f3a0b12dc80d88d6d981fcb3cd5979}{}\index{down-\/root.\+c@{down-\/root.\+c}!D\+E\+B\+U\+G@{D\+E\+B\+U\+G}}
+\index{D\+E\+B\+U\+G@{D\+E\+B\+U\+G}!down-\/root.\+c@{down-\/root.\+c}}
+\subsubsection[{D\+E\+B\+U\+G}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+E\+B\+U\+G(
+\begin{DoxyParamCaption}
+\item[{}]{verb}
+\end{DoxyParamCaption}
+)~((verb) $>$= 7)}\label{down-root_8c_ae4f3a0b12dc80d88d6d981fcb3cd5979}
+\hypertarget{down-root_8c_a9328d232099241e151d520f002d559de}{}\index{down-\/root.\+c@{down-\/root.\+c}!R\+E\+S\+P\+O\+N\+S\+E\+\_\+\+I\+N\+I\+T\+\_\+\+F\+A\+I\+L\+E\+D@{R\+E\+S\+P\+O\+N\+S\+E\+\_\+\+I\+N\+I\+T\+\_\+\+F\+A\+I\+L\+E\+D}}
+\index{R\+E\+S\+P\+O\+N\+S\+E\+\_\+\+I\+N\+I\+T\+\_\+\+F\+A\+I\+L\+E\+D@{R\+E\+S\+P\+O\+N\+S\+E\+\_\+\+I\+N\+I\+T\+\_\+\+F\+A\+I\+L\+E\+D}!down-\/root.\+c@{down-\/root.\+c}}
+\subsubsection[{R\+E\+S\+P\+O\+N\+S\+E\+\_\+\+I\+N\+I\+T\+\_\+\+F\+A\+I\+L\+E\+D}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+E\+S\+P\+O\+N\+S\+E\+\_\+\+I\+N\+I\+T\+\_\+\+F\+A\+I\+L\+E\+D~11}\label{down-root_8c_a9328d232099241e151d520f002d559de}
+\hypertarget{down-root_8c_a6b557aae80cbe59c47433a0516b2cae5}{}\index{down-\/root.\+c@{down-\/root.\+c}!R\+E\+S\+P\+O\+N\+S\+E\+\_\+\+I\+N\+I\+T\+\_\+\+S\+U\+C\+C\+E\+E\+D\+E\+D@{R\+E\+S\+P\+O\+N\+S\+E\+\_\+\+I\+N\+I\+T\+\_\+\+S\+U\+C\+C\+E\+E\+D\+E\+D}}
+\index{R\+E\+S\+P\+O\+N\+S\+E\+\_\+\+I\+N\+I\+T\+\_\+\+S\+U\+C\+C\+E\+E\+D\+E\+D@{R\+E\+S\+P\+O\+N\+S\+E\+\_\+\+I\+N\+I\+T\+\_\+\+S\+U\+C\+C\+E\+E\+D\+E\+D}!down-\/root.\+c@{down-\/root.\+c}}
+\subsubsection[{R\+E\+S\+P\+O\+N\+S\+E\+\_\+\+I\+N\+I\+T\+\_\+\+S\+U\+C\+C\+E\+E\+D\+E\+D}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+E\+S\+P\+O\+N\+S\+E\+\_\+\+I\+N\+I\+T\+\_\+\+S\+U\+C\+C\+E\+E\+D\+E\+D~10}\label{down-root_8c_a6b557aae80cbe59c47433a0516b2cae5}
+\hypertarget{down-root_8c_a2be2a03305afaeda936fb62a396c26b9}{}\index{down-\/root.\+c@{down-\/root.\+c}!R\+E\+S\+P\+O\+N\+S\+E\+\_\+\+S\+C\+R\+I\+P\+T\+\_\+\+F\+A\+I\+L\+E\+D@{R\+E\+S\+P\+O\+N\+S\+E\+\_\+\+S\+C\+R\+I\+P\+T\+\_\+\+F\+A\+I\+L\+E\+D}}
+\index{R\+E\+S\+P\+O\+N\+S\+E\+\_\+\+S\+C\+R\+I\+P\+T\+\_\+\+F\+A\+I\+L\+E\+D@{R\+E\+S\+P\+O\+N\+S\+E\+\_\+\+S\+C\+R\+I\+P\+T\+\_\+\+F\+A\+I\+L\+E\+D}!down-\/root.\+c@{down-\/root.\+c}}
+\subsubsection[{R\+E\+S\+P\+O\+N\+S\+E\+\_\+\+S\+C\+R\+I\+P\+T\+\_\+\+F\+A\+I\+L\+E\+D}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+E\+S\+P\+O\+N\+S\+E\+\_\+\+S\+C\+R\+I\+P\+T\+\_\+\+F\+A\+I\+L\+E\+D~13}\label{down-root_8c_a2be2a03305afaeda936fb62a396c26b9}
+\hypertarget{down-root_8c_a74a62f8ab72e7e9fbff3b24c8dfdc309}{}\index{down-\/root.\+c@{down-\/root.\+c}!R\+E\+S\+P\+O\+N\+S\+E\+\_\+\+S\+C\+R\+I\+P\+T\+\_\+\+S\+U\+C\+C\+E\+E\+D\+E\+D@{R\+E\+S\+P\+O\+N\+S\+E\+\_\+\+S\+C\+R\+I\+P\+T\+\_\+\+S\+U\+C\+C\+E\+E\+D\+E\+D}}
+\index{R\+E\+S\+P\+O\+N\+S\+E\+\_\+\+S\+C\+R\+I\+P\+T\+\_\+\+S\+U\+C\+C\+E\+E\+D\+E\+D@{R\+E\+S\+P\+O\+N\+S\+E\+\_\+\+S\+C\+R\+I\+P\+T\+\_\+\+S\+U\+C\+C\+E\+E\+D\+E\+D}!down-\/root.\+c@{down-\/root.\+c}}
+\subsubsection[{R\+E\+S\+P\+O\+N\+S\+E\+\_\+\+S\+C\+R\+I\+P\+T\+\_\+\+S\+U\+C\+C\+E\+E\+D\+E\+D}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+E\+S\+P\+O\+N\+S\+E\+\_\+\+S\+C\+R\+I\+P\+T\+\_\+\+S\+U\+C\+C\+E\+E\+D\+E\+D~12}\label{down-root_8c_a74a62f8ab72e7e9fbff3b24c8dfdc309}
+
+
+\subsection{Function Documentation}
+\hypertarget{down-root_8c_aa1dfa775aa39a416f5dd7e18205b7f6f}{}\index{down-\/root.\+c@{down-\/root.\+c}!openvpn\+\_\+plugin\+\_\+abort\+\_\+v1@{openvpn\+\_\+plugin\+\_\+abort\+\_\+v1}}
+\index{openvpn\+\_\+plugin\+\_\+abort\+\_\+v1@{openvpn\+\_\+plugin\+\_\+abort\+\_\+v1}!down-\/root.\+c@{down-\/root.\+c}}
+\subsubsection[{openvpn\+\_\+plugin\+\_\+abort\+\_\+v1(openvpn\+\_\+plugin\+\_\+handle\+\_\+t handle)}]{\setlength{\rightskip}{0pt plus 5cm}O\+P\+E\+N\+V\+P\+N\+\_\+\+E\+X\+P\+O\+R\+T void openvpn\+\_\+plugin\+\_\+abort\+\_\+v1 (
+\begin{DoxyParamCaption}
+\item[{openvpn\+\_\+plugin\+\_\+handle\+\_\+t}]{handle}
+\end{DoxyParamCaption}
+)}\label{down-root_8c_aa1dfa775aa39a416f5dd7e18205b7f6f}
+\hypertarget{down-root_8c_a09d524ab6e25324d37681b49d0b7abcc}{}\index{down-\/root.\+c@{down-\/root.\+c}!openvpn\+\_\+plugin\+\_\+close\+\_\+v1@{openvpn\+\_\+plugin\+\_\+close\+\_\+v1}}
+\index{openvpn\+\_\+plugin\+\_\+close\+\_\+v1@{openvpn\+\_\+plugin\+\_\+close\+\_\+v1}!down-\/root.\+c@{down-\/root.\+c}}
+\subsubsection[{openvpn\+\_\+plugin\+\_\+close\+\_\+v1(openvpn\+\_\+plugin\+\_\+handle\+\_\+t handle)}]{\setlength{\rightskip}{0pt plus 5cm}O\+P\+E\+N\+V\+P\+N\+\_\+\+E\+X\+P\+O\+R\+T void openvpn\+\_\+plugin\+\_\+close\+\_\+v1 (
+\begin{DoxyParamCaption}
+\item[{openvpn\+\_\+plugin\+\_\+handle\+\_\+t}]{handle}
+\end{DoxyParamCaption}
+)}\label{down-root_8c_a09d524ab6e25324d37681b49d0b7abcc}
+\hypertarget{down-root_8c_a035baa3834038991bf6c493be0f1e774}{}\index{down-\/root.\+c@{down-\/root.\+c}!openvpn\+\_\+plugin\+\_\+func\+\_\+v1@{openvpn\+\_\+plugin\+\_\+func\+\_\+v1}}
+\index{openvpn\+\_\+plugin\+\_\+func\+\_\+v1@{openvpn\+\_\+plugin\+\_\+func\+\_\+v1}!down-\/root.\+c@{down-\/root.\+c}}
+\subsubsection[{openvpn\+\_\+plugin\+\_\+func\+\_\+v1(openvpn\+\_\+plugin\+\_\+handle\+\_\+t handle, const int type, const char $\ast$argv[], const char $\ast$envp[])}]{\setlength{\rightskip}{0pt plus 5cm}O\+P\+E\+N\+V\+P\+N\+\_\+\+E\+X\+P\+O\+R\+T int openvpn\+\_\+plugin\+\_\+func\+\_\+v1 (
+\begin{DoxyParamCaption}
+\item[{openvpn\+\_\+plugin\+\_\+handle\+\_\+t}]{handle, }
+\item[{const int}]{type, }
+\item[{const char $\ast$}]{argv\mbox{[}$\,$\mbox{]}, }
+\item[{const char $\ast$}]{envp\mbox{[}$\,$\mbox{]}}
+\end{DoxyParamCaption}
+)}\label{down-root_8c_a035baa3834038991bf6c493be0f1e774}
+\hypertarget{down-root_8c_a86663289a04285e6d64b28d7b128ee30}{}\index{down-\/root.\+c@{down-\/root.\+c}!openvpn\+\_\+plugin\+\_\+open\+\_\+v1@{openvpn\+\_\+plugin\+\_\+open\+\_\+v1}}
+\index{openvpn\+\_\+plugin\+\_\+open\+\_\+v1@{openvpn\+\_\+plugin\+\_\+open\+\_\+v1}!down-\/root.\+c@{down-\/root.\+c}}
+\subsubsection[{openvpn\+\_\+plugin\+\_\+open\+\_\+v1(unsigned int $\ast$type\+\_\+mask, const char $\ast$argv[], const char $\ast$envp[])}]{\setlength{\rightskip}{0pt plus 5cm}O\+P\+E\+N\+V\+P\+N\+\_\+\+E\+X\+P\+O\+R\+T openvpn\+\_\+plugin\+\_\+handle\+\_\+t openvpn\+\_\+plugin\+\_\+open\+\_\+v1 (
+\begin{DoxyParamCaption}
+\item[{unsigned int $\ast$}]{type\+\_\+mask, }
+\item[{const char $\ast$}]{argv\mbox{[}$\,$\mbox{]}, }
+\item[{const char $\ast$}]{envp\mbox{[}$\,$\mbox{]}}
+\end{DoxyParamCaption}
+)}\label{down-root_8c_a86663289a04285e6d64b28d7b128ee30}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=325pt]{down-root_8c_a86663289a04285e6d64b28d7b128ee30_cgraph}
+\end{center}
+\end{figure}
+
+

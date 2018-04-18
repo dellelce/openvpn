@@ -1,0 +1,19 @@
+<map id="do_ifconfig_setenv" name="do_ifconfig_setenv">
+<area shape="rect" id="node2" href="$socket_8c.html#a2741d6007f1e5a670409883f4304da61" title="print_in_addr_t" alt="" coords="180,31,287,57"/>
+<area shape="rect" id="node7" href="$tun_8c.html#add5885eccc02f0f7e9d7edb7e781fa02" title="is_tun_p2p" alt="" coords="191,233,276,260"/>
+<area shape="rect" id="node8" href="$env__set_8c.html#a872620e2e324ded9c1bc8af1c253faf9" title="setenv_str" alt="" coords="353,157,435,184"/>
+<area shape="rect" id="node15" href="$socket_8c.html#a9a911c5dde4c809f7cb3eef8e5918a8e" title="print_in6_addr" alt="" coords="182,81,285,108"/>
+<area shape="rect" id="node17" href="$env__set_8c.html#a2ee1297d7cd864a08edff8440efa4143" title="setenv_int" alt="" coords="193,183,273,209"/>
+<area shape="rect" id="node3" href="$buffer_8c.html#aa35bf7feb6a99bf5d364b2d4eba1195c" title="alloc_buf_gc" alt="" coords="347,56,441,83"/>
+<area shape="rect" id="node6" href="$buffer_8c.html#a3307f08331b1ce42168bafd2ecf7874a" title="buf_printf" alt="" coords="357,5,431,32"/>
+<area shape="rect" id="node4" href="$buffer_8c.html#acc1a4ee83a591116d331e52baacf253d" title="buf_size_error" alt="" coords="501,81,604,108"/>
+<area shape="rect" id="node5" href="$buffer_8c.html#a67f7dec7f86e113dc0744584fd80b621" title="gc_malloc" alt="" coords="961,56,1043,83"/>
+<area shape="rect" id="node9" href="$env__set_8c.html#a9ff3fe081db33808bf428d7af93c68ad" title="setenv_str_ex" alt="" coords="501,157,604,184"/>
+<area shape="rect" id="node10" href="$buffer_8c.html#a55db6b55ce08e95dc30a543ee37ecd92" title="string_mod_const" alt="" coords="652,107,777,133"/>
+<area shape="rect" id="node13" href="$env__set_8c.html#a8f95bd5663cdc04bc9764b429538f536" title="env_set_add" alt="" coords="667,157,762,184"/>
+<area shape="rect" id="node14" href="$env__set_8c.html#acb6a73dee5f207c8a86187f111b0e910" title="env_set_del" alt="" coords="669,208,760,235"/>
+<area shape="rect" id="node11" href="$buffer_8c.html#a06e0220403278399596a7a1b6b601fca" title="string_alloc" alt="" coords="825,81,913,108"/>
+<area shape="rect" id="node12" href="$buffer_8c.html#aa68699d49774055c860c609ec5d84bd5" title="string_mod" alt="" coords="826,132,913,159"/>
+<area shape="rect" id="node16" href="$compat_8h.html#a102fcb53ee2ffdbeceeec5b5ffa0cb1c" title="inet_ntop" alt="" coords="357,107,431,133"/>
+<area shape="rect" id="node18" href="$buffer_8c.html#afd2a93a0940b1ea7e093d293a05e2927" title="openvpn_snprintf" alt="" coords="335,208,453,235"/>
+</map>

@@ -1,0 +1,111 @@
+\hypertarget{occ_8c}{}\section{src/openvpn/occ.c File Reference}
+\label{occ_8c}\index{src/openvpn/occ.\+c@{src/openvpn/occ.\+c}}
+{\ttfamily \#include \char`\"{}syshead.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}occ.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}memdbg.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}forward-\/inline.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}occ-\/inline.\+h\char`\"{}}\\*
+Include dependency graph for occ.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{occ_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{occ_8c_a61884ba3e840b8bb58c0a56b425a96a9}{check\+\_\+send\+\_\+occ\+\_\+req\+\_\+dowork} (struct \hyperlink{structcontext}{context} $\ast$c)
+\item 
+void \hyperlink{occ_8c_add09292f0620eea60cc8c5e44ee99247}{check\+\_\+send\+\_\+occ\+\_\+load\+\_\+test\+\_\+dowork} (struct \hyperlink{structcontext}{context} $\ast$c)
+\item 
+void \hyperlink{occ_8c_aa2d19601aa35014bd3c32bbac4eaeab7}{check\+\_\+send\+\_\+occ\+\_\+msg\+\_\+dowork} (struct \hyperlink{structcontext}{context} $\ast$c)
+\item 
+void \hyperlink{occ_8c_a4e230d2f9a3d4523316bf229c03b2b0d}{process\+\_\+received\+\_\+occ\+\_\+msg} (struct \hyperlink{structcontext}{context} $\ast$c)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const uint8\+\_\+t \hyperlink{occ_8c_aac7f176464a471ef15c5ab351c90de76}{occ\+\_\+magic} \mbox{[}$\,$\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{occ_8c_add09292f0620eea60cc8c5e44ee99247}{}\index{occ.\+c@{occ.\+c}!check\+\_\+send\+\_\+occ\+\_\+load\+\_\+test\+\_\+dowork@{check\+\_\+send\+\_\+occ\+\_\+load\+\_\+test\+\_\+dowork}}
+\index{check\+\_\+send\+\_\+occ\+\_\+load\+\_\+test\+\_\+dowork@{check\+\_\+send\+\_\+occ\+\_\+load\+\_\+test\+\_\+dowork}!occ.\+c@{occ.\+c}}
+\subsubsection[{check\+\_\+send\+\_\+occ\+\_\+load\+\_\+test\+\_\+dowork(struct context $\ast$c)}]{\setlength{\rightskip}{0pt plus 5cm}void check\+\_\+send\+\_\+occ\+\_\+load\+\_\+test\+\_\+dowork (
+\begin{DoxyParamCaption}
+\item[{struct {\bf context} $\ast$}]{c}
+\end{DoxyParamCaption}
+)}\label{occ_8c_add09292f0620eea60cc8c5e44ee99247}
+\hypertarget{occ_8c_aa2d19601aa35014bd3c32bbac4eaeab7}{}\index{occ.\+c@{occ.\+c}!check\+\_\+send\+\_\+occ\+\_\+msg\+\_\+dowork@{check\+\_\+send\+\_\+occ\+\_\+msg\+\_\+dowork}}
+\index{check\+\_\+send\+\_\+occ\+\_\+msg\+\_\+dowork@{check\+\_\+send\+\_\+occ\+\_\+msg\+\_\+dowork}!occ.\+c@{occ.\+c}}
+\subsubsection[{check\+\_\+send\+\_\+occ\+\_\+msg\+\_\+dowork(struct context $\ast$c)}]{\setlength{\rightskip}{0pt plus 5cm}void check\+\_\+send\+\_\+occ\+\_\+msg\+\_\+dowork (
+\begin{DoxyParamCaption}
+\item[{struct {\bf context} $\ast$}]{c}
+\end{DoxyParamCaption}
+)}\label{occ_8c_aa2d19601aa35014bd3c32bbac4eaeab7}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{occ_8c_aa2d19601aa35014bd3c32bbac4eaeab7_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{occ_8c_a61884ba3e840b8bb58c0a56b425a96a9}{}\index{occ.\+c@{occ.\+c}!check\+\_\+send\+\_\+occ\+\_\+req\+\_\+dowork@{check\+\_\+send\+\_\+occ\+\_\+req\+\_\+dowork}}
+\index{check\+\_\+send\+\_\+occ\+\_\+req\+\_\+dowork@{check\+\_\+send\+\_\+occ\+\_\+req\+\_\+dowork}!occ.\+c@{occ.\+c}}
+\subsubsection[{check\+\_\+send\+\_\+occ\+\_\+req\+\_\+dowork(struct context $\ast$c)}]{\setlength{\rightskip}{0pt plus 5cm}void check\+\_\+send\+\_\+occ\+\_\+req\+\_\+dowork (
+\begin{DoxyParamCaption}
+\item[{struct {\bf context} $\ast$}]{c}
+\end{DoxyParamCaption}
+)}\label{occ_8c_a61884ba3e840b8bb58c0a56b425a96a9}
+\hypertarget{occ_8c_a4e230d2f9a3d4523316bf229c03b2b0d}{}\index{occ.\+c@{occ.\+c}!process\+\_\+received\+\_\+occ\+\_\+msg@{process\+\_\+received\+\_\+occ\+\_\+msg}}
+\index{process\+\_\+received\+\_\+occ\+\_\+msg@{process\+\_\+received\+\_\+occ\+\_\+msg}!occ.\+c@{occ.\+c}}
+\subsubsection[{process\+\_\+received\+\_\+occ\+\_\+msg(struct context $\ast$c)}]{\setlength{\rightskip}{0pt plus 5cm}void process\+\_\+received\+\_\+occ\+\_\+msg (
+\begin{DoxyParamCaption}
+\item[{struct {\bf context} $\ast$}]{c}
+\end{DoxyParamCaption}
+)}\label{occ_8c_a4e230d2f9a3d4523316bf229c03b2b0d}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{occ_8c_a4e230d2f9a3d4523316bf229c03b2b0d_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{occ_8c_a4e230d2f9a3d4523316bf229c03b2b0d_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Variable Documentation}
+\hypertarget{occ_8c_aac7f176464a471ef15c5ab351c90de76}{}\index{occ.\+c@{occ.\+c}!occ\+\_\+magic@{occ\+\_\+magic}}
+\index{occ\+\_\+magic@{occ\+\_\+magic}!occ.\+c@{occ.\+c}}
+\subsubsection[{occ\+\_\+magic}]{\setlength{\rightskip}{0pt plus 5cm}const uint8\+\_\+t occ\+\_\+magic\mbox{[}$\,$\mbox{]}}\label{occ_8c_aac7f176464a471ef15c5ab351c90de76}
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+= \{
+    0x28, 0x7f, 0x34, 0x6b, 0xd4, 0xef, 0x7a, 0x81,
+    0x2d, 0x56, 0xb8, 0xd3, 0xaf, 0xc5, 0x45, 0x9c
+\}
+\end{DoxyCode}

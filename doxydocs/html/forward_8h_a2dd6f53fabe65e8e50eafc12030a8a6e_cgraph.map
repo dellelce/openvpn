@@ -1,0 +1,17 @@
+<map id="process_outgoing_tun" name="process_outgoing_tun">
+<area shape="rect" id="node2" href="$forward_8c.html#a9d9ddd3cb647f519e56209e58fb09610" title="process_ip_header" alt="" coords="203,157,333,184"/>
+<area shape="rect" id="node16" href="$tun_8c.html#afdac6b3217749dccb863f9dc39818b9d" title="write_tun" alt="" coords="231,208,305,235"/>
+<area shape="rect" id="node3" href="$proto_8c.html#a3ff585140c0be911484f65149af51e34" title="is_ipv4" alt="" coords="435,5,497,32"/>
+<area shape="rect" id="node4" href="$mss_8c.html#a97f1f8f283390625cf3a6fe362f991a5" title="mss_fixup_ipv4" alt="" coords="411,157,521,184"/>
+<area shape="rect" id="node6" href="$clinat_8c.html#a52bde34f5246b0b54699d6ce2e0352b4" title="client_nat_transform" alt="" coords="397,107,535,133"/>
+<area shape="rect" id="node7" href="$dhcp_8c.html#a0e845631a332310acc8cd259eaf6d0f6" title="dhcp_extract_router_msg" alt="" coords="381,56,551,83"/>
+<area shape="rect" id="node13" href="$route_8c.html#a7306bd6298ac341522df4f697527e59b" title="route_list_add_vpn\l_gateway" alt="" coords="401,209,531,250"/>
+<area shape="rect" id="node14" href="$proto_8c.html#a53a4b0598de56c3bf4497c30253c5596" title="is_ipv6" alt="" coords="435,275,497,301"/>
+<area shape="rect" id="node15" href="$mss_8c.html#a7a5a47f5ac568a784816b0f8bf20be81" title="mss_fixup_ipv6" alt="" coords="411,325,521,352"/>
+<area shape="rect" id="node5" href="$mss_8c.html#a21222acb54e33e11135a9fbdf4b02b53" title="mss_fixup_dowork" alt="" coords="599,241,728,268"/>
+<area shape="rect" id="node8" href="$socket_8c.html#a2741d6007f1e5a670409883f4304da61" title="print_in_addr_t" alt="" coords="610,56,717,83"/>
+<area shape="rect" id="node9" href="$buffer_8c.html#aa35bf7feb6a99bf5d364b2d4eba1195c" title="alloc_buf_gc" alt="" coords="776,31,871,57"/>
+<area shape="rect" id="node12" href="$buffer_8c.html#a3307f08331b1ce42168bafd2ecf7874a" title="buf_printf" alt="" coords="786,81,861,108"/>
+<area shape="rect" id="node10" href="$buffer_8c.html#acc1a4ee83a591116d331e52baacf253d" title="buf_size_error" alt="" coords="919,5,1021,32"/>
+<area shape="rect" id="node11" href="$buffer_8c.html#a67f7dec7f86e113dc0744584fd80b621" title="gc_malloc" alt="" coords="929,56,1011,83"/>
+</map>

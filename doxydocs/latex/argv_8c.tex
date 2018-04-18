@@ -1,0 +1,281 @@
+\hypertarget{argv_8c}{}\section{src/openvpn/argv.c File Reference}
+\label{argv_8c}\index{src/openvpn/argv.\+c@{src/openvpn/argv.\+c}}
+{\ttfamily \#include \char`\"{}syshead.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}argv.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}integer.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}env\+\_\+set.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}options.\+h\char`\"{}}\\*
+Include dependency graph for argv.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{argv_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structargv}{argv} \hyperlink{argv_8c_ae03da330eccab6d3239253b774a92d4d}{argv\+\_\+new} (void)
+\item 
+void \hyperlink{argv_8c_a4b4a9a7a9aa1ccf301fa2e4522d75f1e}{argv\+\_\+reset} (struct \hyperlink{structargv}{argv} $\ast$a)
+\item 
+struct \hyperlink{structargv}{argv} \hyperlink{argv_8c_aebaf95471651931a3703e5441f155675}{argv\+\_\+insert\+\_\+head} (const struct \hyperlink{structargv}{argv} $\ast$a, const char $\ast$head)
+\item 
+const char $\ast$ \hyperlink{argv_8c_a969eb3c616318512e53d20ec4990dcc2}{argv\+\_\+str} (const struct \hyperlink{structargv}{argv} $\ast$a, struct \hyperlink{structgc__arena}{gc\+\_\+arena} $\ast$gc, const unsigned int flags)
+\item 
+void \hyperlink{argv_8c_a4d63823a8aeddf605a2e4a4a420e1dd4}{argv\+\_\+msg} (const int msglev, const struct \hyperlink{structargv}{argv} $\ast$a)
+\item 
+void \hyperlink{argv_8c_a58d2724394ee9bc29ac5d5ac2c1da102}{argv\+\_\+msg\+\_\+prefix} (const int msglev, const struct \hyperlink{structargv}{argv} $\ast$a, const char $\ast$prefix)
+\item 
+void \hyperlink{argv_8c_a393473b7a2c72dcd2dba4f2bcb859078}{argv\+\_\+printf} (struct \hyperlink{structargv}{argv} $\ast$a, const char $\ast$format,...)
+\item 
+void \hyperlink{argv_8c_a6b3f08ce3c4de77604f68c4699d1bdff}{argv\+\_\+printf\+\_\+cat} (struct \hyperlink{structargv}{argv} $\ast$a, const char $\ast$format,...)
+\item 
+void \hyperlink{argv_8c_a97e4b007c0ebc2cbcdc3ae1b88e3e764}{argv\+\_\+parse\+\_\+cmd} (struct \hyperlink{structargv}{argv} $\ast$a, const char $\ast$s)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{argv_8c_aebaf95471651931a3703e5441f155675}{}\index{argv.\+c@{argv.\+c}!argv\+\_\+insert\+\_\+head@{argv\+\_\+insert\+\_\+head}}
+\index{argv\+\_\+insert\+\_\+head@{argv\+\_\+insert\+\_\+head}!argv.\+c@{argv.\+c}}
+\subsubsection[{argv\+\_\+insert\+\_\+head(const struct argv $\ast$a, const char $\ast$head)}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf argv} argv\+\_\+insert\+\_\+head (
+\begin{DoxyParamCaption}
+\item[{const struct {\bf argv} $\ast$}]{a, }
+\item[{const char $\ast$}]{head}
+\end{DoxyParamCaption}
+)}\label{argv_8c_aebaf95471651931a3703e5441f155675}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{argv_8c_aebaf95471651931a3703e5441f155675_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{argv_8c_a4d63823a8aeddf605a2e4a4a420e1dd4}{}\index{argv.\+c@{argv.\+c}!argv\+\_\+msg@{argv\+\_\+msg}}
+\index{argv\+\_\+msg@{argv\+\_\+msg}!argv.\+c@{argv.\+c}}
+\subsubsection[{argv\+\_\+msg(const int msglev, const struct argv $\ast$a)}]{\setlength{\rightskip}{0pt plus 5cm}void argv\+\_\+msg (
+\begin{DoxyParamCaption}
+\item[{const int}]{msglev, }
+\item[{const struct {\bf argv} $\ast$}]{a}
+\end{DoxyParamCaption}
+)}\label{argv_8c_a4d63823a8aeddf605a2e4a4a420e1dd4}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{argv_8c_a4d63823a8aeddf605a2e4a4a420e1dd4_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{argv_8c_a4d63823a8aeddf605a2e4a4a420e1dd4_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{argv_8c_a58d2724394ee9bc29ac5d5ac2c1da102}{}\index{argv.\+c@{argv.\+c}!argv\+\_\+msg\+\_\+prefix@{argv\+\_\+msg\+\_\+prefix}}
+\index{argv\+\_\+msg\+\_\+prefix@{argv\+\_\+msg\+\_\+prefix}!argv.\+c@{argv.\+c}}
+\subsubsection[{argv\+\_\+msg\+\_\+prefix(const int msglev, const struct argv $\ast$a, const char $\ast$prefix)}]{\setlength{\rightskip}{0pt plus 5cm}void argv\+\_\+msg\+\_\+prefix (
+\begin{DoxyParamCaption}
+\item[{const int}]{msglev, }
+\item[{const struct {\bf argv} $\ast$}]{a, }
+\item[{const char $\ast$}]{prefix}
+\end{DoxyParamCaption}
+)}\label{argv_8c_a58d2724394ee9bc29ac5d5ac2c1da102}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{argv_8c_a58d2724394ee9bc29ac5d5ac2c1da102_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{argv_8c_ae03da330eccab6d3239253b774a92d4d}{}\index{argv.\+c@{argv.\+c}!argv\+\_\+new@{argv\+\_\+new}}
+\index{argv\+\_\+new@{argv\+\_\+new}!argv.\+c@{argv.\+c}}
+\subsubsection[{argv\+\_\+new(void)}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf argv} argv\+\_\+new (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{argv_8c_ae03da330eccab6d3239253b774a92d4d}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{argv_8c_ae03da330eccab6d3239253b774a92d4d_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{argv_8c_a97e4b007c0ebc2cbcdc3ae1b88e3e764}{}\index{argv.\+c@{argv.\+c}!argv\+\_\+parse\+\_\+cmd@{argv\+\_\+parse\+\_\+cmd}}
+\index{argv\+\_\+parse\+\_\+cmd@{argv\+\_\+parse\+\_\+cmd}!argv.\+c@{argv.\+c}}
+\subsubsection[{argv\+\_\+parse\+\_\+cmd(struct argv $\ast$a, const char $\ast$s)}]{\setlength{\rightskip}{0pt plus 5cm}void argv\+\_\+parse\+\_\+cmd (
+\begin{DoxyParamCaption}
+\item[{struct {\bf argv} $\ast$}]{a, }
+\item[{const char $\ast$}]{s}
+\end{DoxyParamCaption}
+)}\label{argv_8c_a97e4b007c0ebc2cbcdc3ae1b88e3e764}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{argv_8c_a97e4b007c0ebc2cbcdc3ae1b88e3e764_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=257pt]{argv_8c_a97e4b007c0ebc2cbcdc3ae1b88e3e764_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{argv_8c_a393473b7a2c72dcd2dba4f2bcb859078}{}\index{argv.\+c@{argv.\+c}!argv\+\_\+printf@{argv\+\_\+printf}}
+\index{argv\+\_\+printf@{argv\+\_\+printf}!argv.\+c@{argv.\+c}}
+\subsubsection[{argv\+\_\+printf(struct argv $\ast$a, const char $\ast$format,...)}]{\setlength{\rightskip}{0pt plus 5cm}void argv\+\_\+printf (
+\begin{DoxyParamCaption}
+\item[{struct {\bf argv} $\ast$}]{a, }
+\item[{const char $\ast$}]{format, }
+\item[{}]{...}
+\end{DoxyParamCaption}
+)}\label{argv_8c_a393473b7a2c72dcd2dba4f2bcb859078}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=330pt]{argv_8c_a393473b7a2c72dcd2dba4f2bcb859078_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{argv_8c_a393473b7a2c72dcd2dba4f2bcb859078_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{argv_8c_a6b3f08ce3c4de77604f68c4699d1bdff}{}\index{argv.\+c@{argv.\+c}!argv\+\_\+printf\+\_\+cat@{argv\+\_\+printf\+\_\+cat}}
+\index{argv\+\_\+printf\+\_\+cat@{argv\+\_\+printf\+\_\+cat}!argv.\+c@{argv.\+c}}
+\subsubsection[{argv\+\_\+printf\+\_\+cat(struct argv $\ast$a, const char $\ast$format,...)}]{\setlength{\rightskip}{0pt plus 5cm}void argv\+\_\+printf\+\_\+cat (
+\begin{DoxyParamCaption}
+\item[{struct {\bf argv} $\ast$}]{a, }
+\item[{const char $\ast$}]{format, }
+\item[{}]{...}
+\end{DoxyParamCaption}
+)}\label{argv_8c_a6b3f08ce3c4de77604f68c4699d1bdff}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{argv_8c_a6b3f08ce3c4de77604f68c4699d1bdff_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{argv_8c_a4b4a9a7a9aa1ccf301fa2e4522d75f1e}{}\index{argv.\+c@{argv.\+c}!argv\+\_\+reset@{argv\+\_\+reset}}
+\index{argv\+\_\+reset@{argv\+\_\+reset}!argv.\+c@{argv.\+c}}
+\subsubsection[{argv\+\_\+reset(struct argv $\ast$a)}]{\setlength{\rightskip}{0pt plus 5cm}void argv\+\_\+reset (
+\begin{DoxyParamCaption}
+\item[{struct {\bf argv} $\ast$}]{a}
+\end{DoxyParamCaption}
+)}\label{argv_8c_a4b4a9a7a9aa1ccf301fa2e4522d75f1e}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=234pt]{argv_8c_a4b4a9a7a9aa1ccf301fa2e4522d75f1e_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{argv_8c_a4b4a9a7a9aa1ccf301fa2e4522d75f1e_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{argv_8c_a969eb3c616318512e53d20ec4990dcc2}{}\index{argv.\+c@{argv.\+c}!argv\+\_\+str@{argv\+\_\+str}}
+\index{argv\+\_\+str@{argv\+\_\+str}!argv.\+c@{argv.\+c}}
+\subsubsection[{argv\+\_\+str(const struct argv $\ast$a, struct gc\+\_\+arena $\ast$gc, const unsigned int flags)}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ argv\+\_\+str (
+\begin{DoxyParamCaption}
+\item[{const struct {\bf argv} $\ast$}]{a, }
+\item[{struct {\bf gc\+\_\+arena} $\ast$}]{gc, }
+\item[{const unsigned int}]{flags}
+\end{DoxyParamCaption}
+)}\label{argv_8c_a969eb3c616318512e53d20ec4990dcc2}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{argv_8c_a969eb3c616318512e53d20ec4990dcc2_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{argv_8c_a969eb3c616318512e53d20ec4990dcc2_icgraph}
+\end{center}
+\end{figure}
+
+

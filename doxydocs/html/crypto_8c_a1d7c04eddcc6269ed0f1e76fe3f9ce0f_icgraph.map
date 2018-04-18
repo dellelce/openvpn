@@ -1,0 +1,18 @@
+<map id="prng_bytes" name="prng_bytes">
+<area shape="rect" id="node2" href="$misc_8h.html#a37fb65e30bd2c33564b14ad76a0c0794" title="get_random" alt="" coords="168,97,259,123"/>
+<area shape="rect" id="node4" href="$init_8h.html#aaf57aca5b6d652ab6f00af4b9a746c38" title="init_static" alt="" coords="567,147,645,174"/>
+<area shape="rect" id="node9" href="$misc_8h.html#ac6174edbe71fde417d167f81417ae36b" title="hostname_randomize" alt="" coords="140,223,287,250"/>
+<area shape="rect" id="node17" href="$session__id_8h.html#a10adac4822b0a667af4bd26cfc286a07" title="session_id_random" alt="" coords="146,274,281,301"/>
+<area shape="rect" id="node3" href="$misc_8h.html#aa10a1dd4b150f979d6f359b5625e81f5" title="create_temp_file" alt="" coords="352,122,469,149"/>
+<area shape="rect" id="node5" href="$occ_8c.html#aa2d19601aa35014bd3c32bbac4eaeab7" title="check_send_occ_msg\l_dowork" alt="" coords="335,5,487,47"/>
+<area shape="rect" id="node6" href="$packet__id_8h.html#ab5f78b3bd91dc5e3ef4946855365933a" title="packet_id_add" alt="" coords="357,71,464,98"/>
+<area shape="rect" id="node7" href="$crypto_8h.html#a1e6bbdde50a9843d441c22ada85e6345" title="crypto_check_replay" alt="" coords="535,71,677,98"/>
+<area shape="rect" id="node8" href="$group__tls__crypt.html#ga81c822ba2e5599865dddb37e01a2c20c" title="tls_crypt_unwrap" alt="" coords="761,71,881,98"/>
+<area shape="rect" id="node10" href="$socket_8h.html#a02e4efd449ac0356c68ec0a4477e3342" title="openvpn_getaddrinfo" alt="" coords="341,223,480,250"/>
+<area shape="rect" id="node11" href="$socket_8h.html#aed74c8b5931192c1ad5829bd90e01603" title="getaddr" alt="" coords="573,223,639,250"/>
+<area shape="rect" id="node12" href="$clinat_8h.html#ada00a4a102df5526cc8d0c261f82f607" title="add_client_nat_to_option_list" alt="" coords="725,223,916,250"/>
+<area shape="rect" id="node13" href="$route_8h.html#a3f534585396ea6d2712366fe917f34e3" title="init_route_list" alt="" coords="771,274,870,301"/>
+<area shape="rect" id="node14" href="$tun_8h.html#afee8026032ec0cf9c118465a970d4ac0" title="init_tun" alt="" coords="789,173,853,199"/>
+<area shape="rect" id="node15" href="$options_8c.html#a9038bb54aa94c5b93b2b28dee9bdb0bc" title="options_string" alt="" coords="964,173,1067,199"/>
+<area shape="rect" id="node16" href="$options_8h.html#a5c19843f7bda8a3cadf41ecbabb6cd6a" title="options_string_extract\l_option" alt="" coords="1115,165,1265,207"/>
+</map>

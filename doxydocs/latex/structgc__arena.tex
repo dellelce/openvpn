@@ -1,0 +1,42 @@
+\hypertarget{structgc__arena}{}\section{gc\+\_\+arena Struct Reference}
+\label{structgc__arena}\index{gc\+\_\+arena@{gc\+\_\+arena}}
+
+
+{\ttfamily \#include $<$buffer.\+h$>$}
+
+
+
+Collaboration diagram for gc\+\_\+arena\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=322pt]{structgc__arena__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structgc__entry}{gc\+\_\+entry} $\ast$ \hyperlink{structgc__arena_a88f958412dce42ad5ab9ca27bfb40d4f}{list}
+\item 
+struct \hyperlink{structgc__entry__special}{gc\+\_\+entry\+\_\+special} $\ast$ \hyperlink{structgc__arena_a31784b2c6728308bae3acc81e2a25a11}{list\+\_\+special}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Garbage collection arena used to keep track of dynamically allocated memory.
+
+This structure contains a linked list of {\ttfamily \hyperlink{structgc__entry}{gc\+\_\+entry}} structures. When a block of memory is allocated using the {\ttfamily \hyperlink{buffer_8c_a67f7dec7f86e113dc0744584fd80b621}{gc\+\_\+malloc()}} function, the allocation is registered in the function\textquotesingle{}s {\ttfamily \hyperlink{structgc__arena}{gc\+\_\+arena}} argument. All the dynamically allocated memory registered in a {\ttfamily \hyperlink{structgc__arena}{gc\+\_\+arena}} can be freed using the {\ttfamily gc\+\_\+free()} function. 
+
+\subsection{Member Data Documentation}
+\hypertarget{structgc__arena_a88f958412dce42ad5ab9ca27bfb40d4f}{}\index{gc\+\_\+arena@{gc\+\_\+arena}!list@{list}}
+\index{list@{list}!gc\+\_\+arena@{gc\+\_\+arena}}
+\subsubsection[{list}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf gc\+\_\+entry}$\ast$ gc\+\_\+arena\+::list}\label{structgc__arena_a88f958412dce42ad5ab9ca27bfb40d4f}
+First element of the linked list of {\ttfamily \hyperlink{structgc__entry}{gc\+\_\+entry}} structures. \hypertarget{structgc__arena_a31784b2c6728308bae3acc81e2a25a11}{}\index{gc\+\_\+arena@{gc\+\_\+arena}!list\+\_\+special@{list\+\_\+special}}
+\index{list\+\_\+special@{list\+\_\+special}!gc\+\_\+arena@{gc\+\_\+arena}}
+\subsubsection[{list\+\_\+special}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf gc\+\_\+entry\+\_\+special}$\ast$ gc\+\_\+arena\+::list\+\_\+special}\label{structgc__arena_a31784b2c6728308bae3acc81e2a25a11}
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/openvpn/\hyperlink{buffer_8h}{buffer.\+h}\end{DoxyCompactItemize}

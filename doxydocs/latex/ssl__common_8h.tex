@@ -1,0 +1,187 @@
+\hypertarget{ssl__common_8h}{}\section{src/openvpn/ssl\+\_\+common.h File Reference}
+\label{ssl__common_8h}\index{src/openvpn/ssl\+\_\+common.\+h@{src/openvpn/ssl\+\_\+common.\+h}}
+{\ttfamily \#include \char`\"{}session\+\_\+id.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}socket.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}packet\+\_\+id.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}crypto.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}options.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}ssl\+\_\+backend.\+h\char`\"{}}\\*
+Include dependency graph for ssl\+\_\+common.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ssl__common_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ssl__common_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structkey__source}{key\+\_\+source}
+\item 
+struct \hyperlink{structkey__source2}{key\+\_\+source2}
+\item 
+struct \hyperlink{structkey__state}{key\+\_\+state}
+\item 
+struct \hyperlink{structtls__wrap__ctx}{tls\+\_\+wrap\+\_\+ctx}
+\item 
+struct \hyperlink{structtls__options}{tls\+\_\+options}
+\item 
+struct \hyperlink{structtls__session}{tls\+\_\+session}
+\item 
+struct \hyperlink{structtls__multi}{tls\+\_\+multi}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{ssl__common_8h_ac71370f88da0ddceccb01fb990f83a0f}{U\+P\+\_\+\+T\+Y\+P\+E\+\_\+\+A\+U\+T\+H}~\char`\"{}Auth\char`\"{}
+\item 
+\#define \hyperlink{ssl__common_8h_a5b3db29f740786aae1038f06b1c29d8c}{U\+P\+\_\+\+T\+Y\+P\+E\+\_\+\+P\+R\+I\+V\+A\+T\+E\+\_\+\+K\+E\+Y}~\char`\"{}Private Key\char`\"{}
+\item 
+\#define \hyperlink{ssl__common_8h_a79b99b9c0f9ebc8eba447f03efe025a4}{S\+S\+L\+F\+\_\+\+C\+L\+I\+E\+N\+T\+\_\+\+C\+E\+R\+T\+\_\+\+N\+O\+T\+\_\+\+R\+E\+Q\+U\+I\+R\+E\+D}~(1$<$$<$0)
+\item 
+\#define \hyperlink{ssl__common_8h_a68037a33913cf35e5a4ab7f23dcd44d5}{S\+S\+L\+F\+\_\+\+C\+L\+I\+E\+N\+T\+\_\+\+C\+E\+R\+T\+\_\+\+O\+P\+T\+I\+O\+N\+A\+L}~(1$<$$<$1)
+\item 
+\#define \hyperlink{ssl__common_8h_ae2da154c11a1573f570afe3292d93cea}{S\+S\+L\+F\+\_\+\+U\+S\+E\+R\+N\+A\+M\+E\+\_\+\+A\+S\+\_\+\+C\+O\+M\+M\+O\+N\+\_\+\+N\+A\+M\+E}~(1$<$$<$2)
+\item 
+\#define \hyperlink{ssl__common_8h_a69d491b6b44ed00c735e7b19f549d694}{S\+S\+L\+F\+\_\+\+A\+U\+T\+H\+\_\+\+U\+S\+E\+R\+\_\+\+P\+A\+S\+S\+\_\+\+O\+P\+T\+I\+O\+N\+A\+L}~(1$<$$<$3)
+\item 
+\#define \hyperlink{ssl__common_8h_afd74417c832bb41feb11c396cb30cde0}{S\+S\+L\+F\+\_\+\+O\+P\+T\+\_\+\+V\+E\+R\+I\+F\+Y}~(1$<$$<$4)
+\item 
+\#define \hyperlink{ssl__common_8h_a8667290e73f2460048604b316ce2cfb0}{S\+S\+L\+F\+\_\+\+C\+R\+L\+\_\+\+V\+E\+R\+I\+F\+Y\+\_\+\+D\+I\+R}~(1$<$$<$5)
+\item 
+\#define \hyperlink{ssl__common_8h_aac269491c1672cd45001ee529066f30c}{S\+S\+L\+F\+\_\+\+T\+L\+S\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+M\+I\+N\+\_\+\+S\+H\+I\+F\+T}~6
+\item 
+\#define \hyperlink{ssl__common_8h_ae03fbb4dc3cb26d41091c9d6a7d6e898}{S\+S\+L\+F\+\_\+\+T\+L\+S\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+M\+I\+N\+\_\+\+M\+A\+S\+K}~0x\+F  /$\ast$ (uses bit positions 6 to 9) $\ast$/
+\item 
+\#define \hyperlink{ssl__common_8h_a0c4cc55535ce5ba779136c4ca4fe4bc5}{S\+S\+L\+F\+\_\+\+T\+L\+S\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+M\+A\+X\+\_\+\+S\+H\+I\+F\+T}~10
+\item 
+\#define \hyperlink{ssl__common_8h_a96349efea63f92204467f269202eeb4e}{S\+S\+L\+F\+\_\+\+T\+L\+S\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+M\+A\+X\+\_\+\+M\+A\+S\+K}~0x\+F  /$\ast$ (uses bit positions 10 to 13) $\ast$/
+\item 
+\#define \hyperlink{ssl__common_8h_a063fc3248f3c44b16c68d00d989dd55a}{A\+U\+T\+H\+\_\+\+T\+O\+K\+E\+N\+\_\+\+S\+I\+Z\+E}~32
+\item 
+\#define \hyperlink{ssl__common_8h_a1fa7da1282872926332e449e8fa35dce}{K\+E\+Y\+\_\+\+S\+C\+A\+N\+\_\+\+S\+I\+Z\+E}~3
+\item 
+\#define \hyperlink{ssl__common_8h_a18a6174d88ccec1842a8d7855288f780}{S\+H\+O\+W\+\_\+\+T\+L\+S\+\_\+\+C\+I\+P\+H\+E\+R\+\_\+\+L\+I\+S\+T\+\_\+\+W\+A\+R\+N\+I\+N\+G}
+\end{DoxyCompactItemize}
+\begin{Indent}{\bf Control channel negotiation states}\par
+{\em These states represent the different phases of control channel negotiation between Open\+V\+P\+N peers. Open\+V\+P\+N servers and clients progress through the states in a different order, because of their different roles during exchange of random material. The references to the {\ttfamily \hyperlink{structkey__source2}{key\+\_\+source2}} structure in the list below is only valid if key method 2 is being used. See the \hyperlink{}{data channel key generation} related page for more information.
+
+Clients follow this order\+:
+\begin{DoxyEnumerate}
+\item {\ttfamily S\+\_\+\+I\+N\+I\+T\+I\+A\+L}, ready to begin three-\/way handshake and control channel negotiation.
+\item {\ttfamily S\+\_\+\+P\+R\+E\+\_\+\+S\+T\+A\+R\+T}, have started three-\/way handshake, waiting for acknowledgment from remote.
+\item {\ttfamily S\+\_\+\+S\+T\+A\+R\+T}, initial three-\/way handshake complete.
+\item {\ttfamily S\+\_\+\+S\+E\+N\+T\+\_\+\+K\+E\+Y}, have sent local part of {\ttfamily \hyperlink{structkey__source2}{key\+\_\+source2}} random material.
+\item {\ttfamily S\+\_\+\+G\+O\+T\+\_\+\+K\+E\+Y}, have received remote part of {\ttfamily \hyperlink{structkey__source2}{key\+\_\+source2}} random material.
+\item {\ttfamily S\+\_\+\+A\+C\+T\+I\+V\+E}, normal operation during remaining handshake window.
+\item {\ttfamily S\+\_\+\+N\+O\+R\+M\+A\+L\+\_\+\+O\+P}, normal operation.
+\end{DoxyEnumerate}
+
+Servers follow the same order, except for {\ttfamily S\+\_\+\+S\+E\+N\+T\+\_\+\+K\+E\+Y} and {\ttfamily S\+\_\+\+G\+O\+T\+\_\+\+K\+E\+Y} being reversed, because the server first receives the client\textquotesingle{}s {\ttfamily \hyperlink{structkey__source2}{key\+\_\+source2}} random material before generating and sending its own. }\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group__control__processor_gaf6e8cab5d0642b96ef462156816c3a28}{S\+\_\+\+E\+R\+R\+O\+R}~-\/1
+\item 
+\#define \hyperlink{group__control__processor_ga5c620f0ab83a389abc17d80bfb1e0665}{S\+\_\+\+U\+N\+D\+E\+F}~0
+\item 
+\#define \hyperlink{group__control__processor_gaf80d9f1dca21e561e35220bdeee2fc1e}{S\+\_\+\+I\+N\+I\+T\+I\+A\+L}~1
+\item 
+\#define \hyperlink{group__control__processor_ga6be8de96f4d931c3be923f74f8511b02}{S\+\_\+\+P\+R\+E\+\_\+\+S\+T\+A\+R\+T}~2
+\item 
+\#define \hyperlink{group__control__processor_ga66275a3888e8a86da79d69078c27c18d}{S\+\_\+\+S\+T\+A\+R\+T}~3
+\item 
+\#define \hyperlink{group__control__processor_gadf3421bc4c6c95c3ed9824fe7c2c20d8}{S\+\_\+\+S\+E\+N\+T\+\_\+\+K\+E\+Y}~4
+\item 
+\#define \hyperlink{group__control__processor_ga66bd0f7cdbc8450a4690c519de7d75bc}{S\+\_\+\+G\+O\+T\+\_\+\+K\+E\+Y}~5
+\item 
+\#define \hyperlink{group__control__processor_ga0b9dd6c70b47159cdbfbeecb4b971197}{S\+\_\+\+A\+C\+T\+I\+V\+E}~6
+\item 
+\#define \hyperlink{group__control__processor_gaa92fb79464b68ac009946bd9cc9b8d89}{S\+\_\+\+N\+O\+R\+M\+A\+L\+\_\+\+O\+P}~7
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}{\bf Index of key\+\_\+state objects within a tls\+\_\+session structure}\par
+{\em This is the index of {\ttfamily \hyperlink{structtls__session_a1de4672c1233dd4887122a909b10c314}{tls\+\_\+session.\+key}} }\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group__control__processor_ga53a47713d8d3afdedf8826560da3e8b1}{K\+S\+\_\+\+P\+R\+I\+M\+A\+R\+Y}~0
+\item 
+\#define \hyperlink{group__control__processor_gadf097bad90fb34433800b15445db8398}{K\+S\+\_\+\+L\+A\+M\+E\+\_\+\+D\+U\+C\+K}~1
+\item 
+\#define \hyperlink{group__control__processor_ga136f3095237ae23358c30581753e4178}{K\+S\+\_\+\+S\+I\+Z\+E}~2
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}{\bf Index of tls\+\_\+session objects within a tls\+\_\+multi structure}\par
+{\em This is the index of {\ttfamily \hyperlink{structtls__multi_a74e065e432f819307a830ef38d5be73c}{tls\+\_\+multi.\+session}} 
+
+Normally three \hyperlink{structtls__session}{tls\+\_\+session} objects are maintained by an active openvpn session. The first is the current, T\+L\+S authenticated session, the second is used to process connection requests from a new client that would usurp the current session if successfully authenticated, and the third is used as a repository for a \char`\"{}lame-\/duck\char`\"{} key in the event that the primary session resets due to error while the lame-\/duck key still has time left before its expiration. Lame duck keys are used to maintain the continuity of the data channel connection while a new key is being negotiated. }\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group__control__processor_gad3c70b02a0ca4537fba1d53802e1e429}{T\+M\+\_\+\+A\+C\+T\+I\+V\+E}~0
+\item 
+\#define \hyperlink{group__control__processor_ga6575a67494af1ca3e9608941e12a5386}{T\+M\+\_\+\+U\+N\+T\+R\+U\+S\+T\+E\+D}~1
+\item 
+\#define \hyperlink{group__control__processor_ga89d765b434597e7194131ace44c605af}{T\+M\+\_\+\+L\+A\+M\+E\+\_\+\+D\+U\+C\+K}~2
+\item 
+\#define \hyperlink{group__control__processor_gaa195349d22c113d3acc88b6795e491b8}{T\+M\+\_\+\+S\+I\+Z\+E}~3
+\end{DoxyCompactItemize}
+\end{Indent}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{ssl__common_8h_a063fc3248f3c44b16c68d00d989dd55a}{}\index{ssl\+\_\+common.\+h@{ssl\+\_\+common.\+h}!A\+U\+T\+H\+\_\+\+T\+O\+K\+E\+N\+\_\+\+S\+I\+Z\+E@{A\+U\+T\+H\+\_\+\+T\+O\+K\+E\+N\+\_\+\+S\+I\+Z\+E}}
+\index{A\+U\+T\+H\+\_\+\+T\+O\+K\+E\+N\+\_\+\+S\+I\+Z\+E@{A\+U\+T\+H\+\_\+\+T\+O\+K\+E\+N\+\_\+\+S\+I\+Z\+E}!ssl\+\_\+common.\+h@{ssl\+\_\+common.\+h}}
+\subsubsection[{A\+U\+T\+H\+\_\+\+T\+O\+K\+E\+N\+\_\+\+S\+I\+Z\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\+U\+T\+H\+\_\+\+T\+O\+K\+E\+N\+\_\+\+S\+I\+Z\+E~32}\label{ssl__common_8h_a063fc3248f3c44b16c68d00d989dd55a}
+Size of server side generated auth tokens. 32 bytes == 256 bits \hypertarget{ssl__common_8h_a1fa7da1282872926332e449e8fa35dce}{}\index{ssl\+\_\+common.\+h@{ssl\+\_\+common.\+h}!K\+E\+Y\+\_\+\+S\+C\+A\+N\+\_\+\+S\+I\+Z\+E@{K\+E\+Y\+\_\+\+S\+C\+A\+N\+\_\+\+S\+I\+Z\+E}}
+\index{K\+E\+Y\+\_\+\+S\+C\+A\+N\+\_\+\+S\+I\+Z\+E@{K\+E\+Y\+\_\+\+S\+C\+A\+N\+\_\+\+S\+I\+Z\+E}!ssl\+\_\+common.\+h@{ssl\+\_\+common.\+h}}
+\subsubsection[{K\+E\+Y\+\_\+\+S\+C\+A\+N\+\_\+\+S\+I\+Z\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define K\+E\+Y\+\_\+\+S\+C\+A\+N\+\_\+\+S\+I\+Z\+E~3}\label{ssl__common_8h_a1fa7da1282872926332e449e8fa35dce}
+\hypertarget{ssl__common_8h_a18a6174d88ccec1842a8d7855288f780}{}\index{ssl\+\_\+common.\+h@{ssl\+\_\+common.\+h}!S\+H\+O\+W\+\_\+\+T\+L\+S\+\_\+\+C\+I\+P\+H\+E\+R\+\_\+\+L\+I\+S\+T\+\_\+\+W\+A\+R\+N\+I\+N\+G@{S\+H\+O\+W\+\_\+\+T\+L\+S\+\_\+\+C\+I\+P\+H\+E\+R\+\_\+\+L\+I\+S\+T\+\_\+\+W\+A\+R\+N\+I\+N\+G}}
+\index{S\+H\+O\+W\+\_\+\+T\+L\+S\+\_\+\+C\+I\+P\+H\+E\+R\+\_\+\+L\+I\+S\+T\+\_\+\+W\+A\+R\+N\+I\+N\+G@{S\+H\+O\+W\+\_\+\+T\+L\+S\+\_\+\+C\+I\+P\+H\+E\+R\+\_\+\+L\+I\+S\+T\+\_\+\+W\+A\+R\+N\+I\+N\+G}!ssl\+\_\+common.\+h@{ssl\+\_\+common.\+h}}
+\subsubsection[{S\+H\+O\+W\+\_\+\+T\+L\+S\+\_\+\+C\+I\+P\+H\+E\+R\+\_\+\+L\+I\+S\+T\+\_\+\+W\+A\+R\+N\+I\+N\+G}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\+H\+O\+W\+\_\+\+T\+L\+S\+\_\+\+C\+I\+P\+H\+E\+R\+\_\+\+L\+I\+S\+T\+\_\+\+W\+A\+R\+N\+I\+N\+G}\label{ssl__common_8h_a18a6174d88ccec1842a8d7855288f780}
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\textcolor{stringliteral}{"Be aware that that whether a cipher suite in this list can actually work\(\backslash\)n"} \(\backslash\)
+    \textcolor{stringliteral}{"depends on the specific setup of both peers. See the man page entries of\(\backslash\)n"} \(\backslash\)
+    \textcolor{stringliteral}{"--tls-cipher and --show-tls for more details.\(\backslash\)n\(\backslash\)n"}
+\end{DoxyCode}
+\hypertarget{ssl__common_8h_a69d491b6b44ed00c735e7b19f549d694}{}\index{ssl\+\_\+common.\+h@{ssl\+\_\+common.\+h}!S\+S\+L\+F\+\_\+\+A\+U\+T\+H\+\_\+\+U\+S\+E\+R\+\_\+\+P\+A\+S\+S\+\_\+\+O\+P\+T\+I\+O\+N\+A\+L@{S\+S\+L\+F\+\_\+\+A\+U\+T\+H\+\_\+\+U\+S\+E\+R\+\_\+\+P\+A\+S\+S\+\_\+\+O\+P\+T\+I\+O\+N\+A\+L}}
+\index{S\+S\+L\+F\+\_\+\+A\+U\+T\+H\+\_\+\+U\+S\+E\+R\+\_\+\+P\+A\+S\+S\+\_\+\+O\+P\+T\+I\+O\+N\+A\+L@{S\+S\+L\+F\+\_\+\+A\+U\+T\+H\+\_\+\+U\+S\+E\+R\+\_\+\+P\+A\+S\+S\+\_\+\+O\+P\+T\+I\+O\+N\+A\+L}!ssl\+\_\+common.\+h@{ssl\+\_\+common.\+h}}
+\subsubsection[{S\+S\+L\+F\+\_\+\+A\+U\+T\+H\+\_\+\+U\+S\+E\+R\+\_\+\+P\+A\+S\+S\+\_\+\+O\+P\+T\+I\+O\+N\+A\+L}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\+S\+L\+F\+\_\+\+A\+U\+T\+H\+\_\+\+U\+S\+E\+R\+\_\+\+P\+A\+S\+S\+\_\+\+O\+P\+T\+I\+O\+N\+A\+L~(1$<$$<$3)}\label{ssl__common_8h_a69d491b6b44ed00c735e7b19f549d694}
+\hypertarget{ssl__common_8h_a79b99b9c0f9ebc8eba447f03efe025a4}{}\index{ssl\+\_\+common.\+h@{ssl\+\_\+common.\+h}!S\+S\+L\+F\+\_\+\+C\+L\+I\+E\+N\+T\+\_\+\+C\+E\+R\+T\+\_\+\+N\+O\+T\+\_\+\+R\+E\+Q\+U\+I\+R\+E\+D@{S\+S\+L\+F\+\_\+\+C\+L\+I\+E\+N\+T\+\_\+\+C\+E\+R\+T\+\_\+\+N\+O\+T\+\_\+\+R\+E\+Q\+U\+I\+R\+E\+D}}
+\index{S\+S\+L\+F\+\_\+\+C\+L\+I\+E\+N\+T\+\_\+\+C\+E\+R\+T\+\_\+\+N\+O\+T\+\_\+\+R\+E\+Q\+U\+I\+R\+E\+D@{S\+S\+L\+F\+\_\+\+C\+L\+I\+E\+N\+T\+\_\+\+C\+E\+R\+T\+\_\+\+N\+O\+T\+\_\+\+R\+E\+Q\+U\+I\+R\+E\+D}!ssl\+\_\+common.\+h@{ssl\+\_\+common.\+h}}
+\subsubsection[{S\+S\+L\+F\+\_\+\+C\+L\+I\+E\+N\+T\+\_\+\+C\+E\+R\+T\+\_\+\+N\+O\+T\+\_\+\+R\+E\+Q\+U\+I\+R\+E\+D}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\+S\+L\+F\+\_\+\+C\+L\+I\+E\+N\+T\+\_\+\+C\+E\+R\+T\+\_\+\+N\+O\+T\+\_\+\+R\+E\+Q\+U\+I\+R\+E\+D~(1$<$$<$0)}\label{ssl__common_8h_a79b99b9c0f9ebc8eba447f03efe025a4}
+\hypertarget{ssl__common_8h_a68037a33913cf35e5a4ab7f23dcd44d5}{}\index{ssl\+\_\+common.\+h@{ssl\+\_\+common.\+h}!S\+S\+L\+F\+\_\+\+C\+L\+I\+E\+N\+T\+\_\+\+C\+E\+R\+T\+\_\+\+O\+P\+T\+I\+O\+N\+A\+L@{S\+S\+L\+F\+\_\+\+C\+L\+I\+E\+N\+T\+\_\+\+C\+E\+R\+T\+\_\+\+O\+P\+T\+I\+O\+N\+A\+L}}
+\index{S\+S\+L\+F\+\_\+\+C\+L\+I\+E\+N\+T\+\_\+\+C\+E\+R\+T\+\_\+\+O\+P\+T\+I\+O\+N\+A\+L@{S\+S\+L\+F\+\_\+\+C\+L\+I\+E\+N\+T\+\_\+\+C\+E\+R\+T\+\_\+\+O\+P\+T\+I\+O\+N\+A\+L}!ssl\+\_\+common.\+h@{ssl\+\_\+common.\+h}}
+\subsubsection[{S\+S\+L\+F\+\_\+\+C\+L\+I\+E\+N\+T\+\_\+\+C\+E\+R\+T\+\_\+\+O\+P\+T\+I\+O\+N\+A\+L}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\+S\+L\+F\+\_\+\+C\+L\+I\+E\+N\+T\+\_\+\+C\+E\+R\+T\+\_\+\+O\+P\+T\+I\+O\+N\+A\+L~(1$<$$<$1)}\label{ssl__common_8h_a68037a33913cf35e5a4ab7f23dcd44d5}
+\hypertarget{ssl__common_8h_a8667290e73f2460048604b316ce2cfb0}{}\index{ssl\+\_\+common.\+h@{ssl\+\_\+common.\+h}!S\+S\+L\+F\+\_\+\+C\+R\+L\+\_\+\+V\+E\+R\+I\+F\+Y\+\_\+\+D\+I\+R@{S\+S\+L\+F\+\_\+\+C\+R\+L\+\_\+\+V\+E\+R\+I\+F\+Y\+\_\+\+D\+I\+R}}
+\index{S\+S\+L\+F\+\_\+\+C\+R\+L\+\_\+\+V\+E\+R\+I\+F\+Y\+\_\+\+D\+I\+R@{S\+S\+L\+F\+\_\+\+C\+R\+L\+\_\+\+V\+E\+R\+I\+F\+Y\+\_\+\+D\+I\+R}!ssl\+\_\+common.\+h@{ssl\+\_\+common.\+h}}
+\subsubsection[{S\+S\+L\+F\+\_\+\+C\+R\+L\+\_\+\+V\+E\+R\+I\+F\+Y\+\_\+\+D\+I\+R}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\+S\+L\+F\+\_\+\+C\+R\+L\+\_\+\+V\+E\+R\+I\+F\+Y\+\_\+\+D\+I\+R~(1$<$$<$5)}\label{ssl__common_8h_a8667290e73f2460048604b316ce2cfb0}
+\hypertarget{ssl__common_8h_afd74417c832bb41feb11c396cb30cde0}{}\index{ssl\+\_\+common.\+h@{ssl\+\_\+common.\+h}!S\+S\+L\+F\+\_\+\+O\+P\+T\+\_\+\+V\+E\+R\+I\+F\+Y@{S\+S\+L\+F\+\_\+\+O\+P\+T\+\_\+\+V\+E\+R\+I\+F\+Y}}
+\index{S\+S\+L\+F\+\_\+\+O\+P\+T\+\_\+\+V\+E\+R\+I\+F\+Y@{S\+S\+L\+F\+\_\+\+O\+P\+T\+\_\+\+V\+E\+R\+I\+F\+Y}!ssl\+\_\+common.\+h@{ssl\+\_\+common.\+h}}
+\subsubsection[{S\+S\+L\+F\+\_\+\+O\+P\+T\+\_\+\+V\+E\+R\+I\+F\+Y}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\+S\+L\+F\+\_\+\+O\+P\+T\+\_\+\+V\+E\+R\+I\+F\+Y~(1$<$$<$4)}\label{ssl__common_8h_afd74417c832bb41feb11c396cb30cde0}
+\hypertarget{ssl__common_8h_a96349efea63f92204467f269202eeb4e}{}\index{ssl\+\_\+common.\+h@{ssl\+\_\+common.\+h}!S\+S\+L\+F\+\_\+\+T\+L\+S\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+M\+A\+X\+\_\+\+M\+A\+S\+K@{S\+S\+L\+F\+\_\+\+T\+L\+S\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+M\+A\+X\+\_\+\+M\+A\+S\+K}}
+\index{S\+S\+L\+F\+\_\+\+T\+L\+S\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+M\+A\+X\+\_\+\+M\+A\+S\+K@{S\+S\+L\+F\+\_\+\+T\+L\+S\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+M\+A\+X\+\_\+\+M\+A\+S\+K}!ssl\+\_\+common.\+h@{ssl\+\_\+common.\+h}}
+\subsubsection[{S\+S\+L\+F\+\_\+\+T\+L\+S\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+M\+A\+X\+\_\+\+M\+A\+S\+K}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\+S\+L\+F\+\_\+\+T\+L\+S\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+M\+A\+X\+\_\+\+M\+A\+S\+K~0x\+F  /$\ast$ (uses bit positions 10 to 13) $\ast$/}\label{ssl__common_8h_a96349efea63f92204467f269202eeb4e}
+\hypertarget{ssl__common_8h_a0c4cc55535ce5ba779136c4ca4fe4bc5}{}\index{ssl\+\_\+common.\+h@{ssl\+\_\+common.\+h}!S\+S\+L\+F\+\_\+\+T\+L\+S\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+M\+A\+X\+\_\+\+S\+H\+I\+F\+T@{S\+S\+L\+F\+\_\+\+T\+L\+S\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+M\+A\+X\+\_\+\+S\+H\+I\+F\+T}}
+\index{S\+S\+L\+F\+\_\+\+T\+L\+S\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+M\+A\+X\+\_\+\+S\+H\+I\+F\+T@{S\+S\+L\+F\+\_\+\+T\+L\+S\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+M\+A\+X\+\_\+\+S\+H\+I\+F\+T}!ssl\+\_\+common.\+h@{ssl\+\_\+common.\+h}}
+\subsubsection[{S\+S\+L\+F\+\_\+\+T\+L\+S\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+M\+A\+X\+\_\+\+S\+H\+I\+F\+T}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\+S\+L\+F\+\_\+\+T\+L\+S\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+M\+A\+X\+\_\+\+S\+H\+I\+F\+T~10}\label{ssl__common_8h_a0c4cc55535ce5ba779136c4ca4fe4bc5}
+\hypertarget{ssl__common_8h_ae03fbb4dc3cb26d41091c9d6a7d6e898}{}\index{ssl\+\_\+common.\+h@{ssl\+\_\+common.\+h}!S\+S\+L\+F\+\_\+\+T\+L\+S\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+M\+I\+N\+\_\+\+M\+A\+S\+K@{S\+S\+L\+F\+\_\+\+T\+L\+S\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+M\+I\+N\+\_\+\+M\+A\+S\+K}}
+\index{S\+S\+L\+F\+\_\+\+T\+L\+S\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+M\+I\+N\+\_\+\+M\+A\+S\+K@{S\+S\+L\+F\+\_\+\+T\+L\+S\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+M\+I\+N\+\_\+\+M\+A\+S\+K}!ssl\+\_\+common.\+h@{ssl\+\_\+common.\+h}}
+\subsubsection[{S\+S\+L\+F\+\_\+\+T\+L\+S\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+M\+I\+N\+\_\+\+M\+A\+S\+K}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\+S\+L\+F\+\_\+\+T\+L\+S\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+M\+I\+N\+\_\+\+M\+A\+S\+K~0x\+F  /$\ast$ (uses bit positions 6 to 9) $\ast$/}\label{ssl__common_8h_ae03fbb4dc3cb26d41091c9d6a7d6e898}
+\hypertarget{ssl__common_8h_aac269491c1672cd45001ee529066f30c}{}\index{ssl\+\_\+common.\+h@{ssl\+\_\+common.\+h}!S\+S\+L\+F\+\_\+\+T\+L\+S\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+M\+I\+N\+\_\+\+S\+H\+I\+F\+T@{S\+S\+L\+F\+\_\+\+T\+L\+S\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+M\+I\+N\+\_\+\+S\+H\+I\+F\+T}}
+\index{S\+S\+L\+F\+\_\+\+T\+L\+S\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+M\+I\+N\+\_\+\+S\+H\+I\+F\+T@{S\+S\+L\+F\+\_\+\+T\+L\+S\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+M\+I\+N\+\_\+\+S\+H\+I\+F\+T}!ssl\+\_\+common.\+h@{ssl\+\_\+common.\+h}}
+\subsubsection[{S\+S\+L\+F\+\_\+\+T\+L\+S\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+M\+I\+N\+\_\+\+S\+H\+I\+F\+T}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\+S\+L\+F\+\_\+\+T\+L\+S\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+M\+I\+N\+\_\+\+S\+H\+I\+F\+T~6}\label{ssl__common_8h_aac269491c1672cd45001ee529066f30c}
+\hypertarget{ssl__common_8h_ae2da154c11a1573f570afe3292d93cea}{}\index{ssl\+\_\+common.\+h@{ssl\+\_\+common.\+h}!S\+S\+L\+F\+\_\+\+U\+S\+E\+R\+N\+A\+M\+E\+\_\+\+A\+S\+\_\+\+C\+O\+M\+M\+O\+N\+\_\+\+N\+A\+M\+E@{S\+S\+L\+F\+\_\+\+U\+S\+E\+R\+N\+A\+M\+E\+\_\+\+A\+S\+\_\+\+C\+O\+M\+M\+O\+N\+\_\+\+N\+A\+M\+E}}
+\index{S\+S\+L\+F\+\_\+\+U\+S\+E\+R\+N\+A\+M\+E\+\_\+\+A\+S\+\_\+\+C\+O\+M\+M\+O\+N\+\_\+\+N\+A\+M\+E@{S\+S\+L\+F\+\_\+\+U\+S\+E\+R\+N\+A\+M\+E\+\_\+\+A\+S\+\_\+\+C\+O\+M\+M\+O\+N\+\_\+\+N\+A\+M\+E}!ssl\+\_\+common.\+h@{ssl\+\_\+common.\+h}}
+\subsubsection[{S\+S\+L\+F\+\_\+\+U\+S\+E\+R\+N\+A\+M\+E\+\_\+\+A\+S\+\_\+\+C\+O\+M\+M\+O\+N\+\_\+\+N\+A\+M\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\+S\+L\+F\+\_\+\+U\+S\+E\+R\+N\+A\+M\+E\+\_\+\+A\+S\+\_\+\+C\+O\+M\+M\+O\+N\+\_\+\+N\+A\+M\+E~(1$<$$<$2)}\label{ssl__common_8h_ae2da154c11a1573f570afe3292d93cea}
+\hypertarget{ssl__common_8h_ac71370f88da0ddceccb01fb990f83a0f}{}\index{ssl\+\_\+common.\+h@{ssl\+\_\+common.\+h}!U\+P\+\_\+\+T\+Y\+P\+E\+\_\+\+A\+U\+T\+H@{U\+P\+\_\+\+T\+Y\+P\+E\+\_\+\+A\+U\+T\+H}}
+\index{U\+P\+\_\+\+T\+Y\+P\+E\+\_\+\+A\+U\+T\+H@{U\+P\+\_\+\+T\+Y\+P\+E\+\_\+\+A\+U\+T\+H}!ssl\+\_\+common.\+h@{ssl\+\_\+common.\+h}}
+\subsubsection[{U\+P\+\_\+\+T\+Y\+P\+E\+\_\+\+A\+U\+T\+H}]{\setlength{\rightskip}{0pt plus 5cm}\#define U\+P\+\_\+\+T\+Y\+P\+E\+\_\+\+A\+U\+T\+H~\char`\"{}Auth\char`\"{}}\label{ssl__common_8h_ac71370f88da0ddceccb01fb990f83a0f}
+\hypertarget{ssl__common_8h_a5b3db29f740786aae1038f06b1c29d8c}{}\index{ssl\+\_\+common.\+h@{ssl\+\_\+common.\+h}!U\+P\+\_\+\+T\+Y\+P\+E\+\_\+\+P\+R\+I\+V\+A\+T\+E\+\_\+\+K\+E\+Y@{U\+P\+\_\+\+T\+Y\+P\+E\+\_\+\+P\+R\+I\+V\+A\+T\+E\+\_\+\+K\+E\+Y}}
+\index{U\+P\+\_\+\+T\+Y\+P\+E\+\_\+\+P\+R\+I\+V\+A\+T\+E\+\_\+\+K\+E\+Y@{U\+P\+\_\+\+T\+Y\+P\+E\+\_\+\+P\+R\+I\+V\+A\+T\+E\+\_\+\+K\+E\+Y}!ssl\+\_\+common.\+h@{ssl\+\_\+common.\+h}}
+\subsubsection[{U\+P\+\_\+\+T\+Y\+P\+E\+\_\+\+P\+R\+I\+V\+A\+T\+E\+\_\+\+K\+E\+Y}]{\setlength{\rightskip}{0pt plus 5cm}\#define U\+P\+\_\+\+T\+Y\+P\+E\+\_\+\+P\+R\+I\+V\+A\+T\+E\+\_\+\+K\+E\+Y~\char`\"{}Private Key\char`\"{}}\label{ssl__common_8h_a5b3db29f740786aae1038f06b1c29d8c}

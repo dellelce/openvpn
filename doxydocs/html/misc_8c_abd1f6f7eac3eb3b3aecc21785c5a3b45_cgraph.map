@@ -1,0 +1,5 @@
+<map id="make_arg_array" name="make_arg_array">
+<area shape="rect" id="node2" href="$buffer_8c.html#a06e0220403278399596a7a1b6b601fca" title="string_alloc" alt="" coords="168,5,256,32"/>
+<area shape="rect" id="node4" href="$options_8c.html#aa702a60af6acc222f99aa441e0b1c3c1" title="parse_line" alt="" coords="171,56,253,83"/>
+<area shape="rect" id="node3" href="$buffer_8c.html#a67f7dec7f86e113dc0744584fd80b621" title="gc_malloc" alt="" coords="304,31,385,57"/>
+</map>

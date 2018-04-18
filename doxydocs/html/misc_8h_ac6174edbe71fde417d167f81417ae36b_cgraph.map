@@ -1,0 +1,12 @@
+<map id="hostname_randomize" name="hostname_randomize">
+<area shape="rect" id="node2" href="$buffer_8c.html#aa35bf7feb6a99bf5d364b2d4eba1195c" title="alloc_buf_gc" alt="" coords="355,157,449,184"/>
+<area shape="rect" id="node5" href="$crypto_8c.html#a1d7c04eddcc6269ed0f1e76fe3f9ce0f" title="prng_bytes" alt="" coords="210,81,297,108"/>
+<area shape="rect" id="node9" href="$buffer_8c.html#a765c29b346cf601c5e0be2fd2c935a8d" title="format_hex_ex" alt="" coords="200,208,307,235"/>
+<area shape="rect" id="node10" href="$buffer_8c.html#a3307f08331b1ce42168bafd2ecf7874a" title="buf_printf" alt="" coords="365,259,439,285"/>
+<area shape="rect" id="node3" href="$buffer_8c.html#acc1a4ee83a591116d331e52baacf253d" title="buf_size_error" alt="" coords="497,132,600,159"/>
+<area shape="rect" id="node4" href="$buffer_8c.html#a67f7dec7f86e113dc0744584fd80b621" title="gc_malloc" alt="" coords="508,183,589,209"/>
+<area shape="rect" id="node6" href="$crypto__backend_8h.html#a002732eb1e19865cdb8f49a46af2cf69" title="md_kt_size" alt="" coords="357,107,447,133"/>
+<area shape="rect" id="node7" href="$crypto__backend_8h.html#a70d35559ec46dbb97b8b8a83a1e4ecbf" title="md_full" alt="" coords="371,5,433,32"/>
+<area shape="rect" id="node8" href="$crypto__backend_8h.html#a8a19f717f5824ff4455b6925af81299c" title="rand_bytes" alt="" coords="359,56,445,83"/>
+<area shape="rect" id="node11" href="$buffer_8c.html#a276febeb3ac5da2600b722b8dfb7ba0f" title="buf_catrunc" alt="" coords="357,208,447,235"/>
+</map>

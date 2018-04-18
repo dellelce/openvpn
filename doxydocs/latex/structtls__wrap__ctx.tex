@@ -1,0 +1,68 @@
+\hypertarget{structtls__wrap__ctx}{}\section{tls\+\_\+wrap\+\_\+ctx Struct Reference}
+\label{structtls__wrap__ctx}\index{tls\+\_\+wrap\+\_\+ctx@{tls\+\_\+wrap\+\_\+ctx}}
+
+
+{\ttfamily \#include $<$ssl\+\_\+common.\+h$>$}
+
+
+
+Collaboration diagram for tls\+\_\+wrap\+\_\+ctx\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{structtls__wrap__ctx__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \{ \hyperlink{structtls__wrap__ctx_a208cb4dc29cba3a00bb6a898eae2403ea7c681db449b599faa6757c538f32fcee}{T\+L\+S\+\_\+\+W\+R\+A\+P\+\_\+\+N\+O\+N\+E} = 0, 
+\hyperlink{structtls__wrap__ctx_a208cb4dc29cba3a00bb6a898eae2403ead22a5947e6b2fa7f8e5cac9bf2703a18}{T\+L\+S\+\_\+\+W\+R\+A\+P\+\_\+\+A\+U\+T\+H}, 
+\hyperlink{structtls__wrap__ctx_a208cb4dc29cba3a00bb6a898eae2403ea54693b0aabdf162f098f390a6646040b}{T\+L\+S\+\_\+\+W\+R\+A\+P\+\_\+\+C\+R\+Y\+P\+T}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+enum tls\+\_\+wrap\+\_\+ctx\+:: \{ ... \}  \hyperlink{structtls__wrap__ctx_a7d6bdbb4efeaa095e3ee138e490f684e}{mode}
+\item 
+struct \hyperlink{structcrypto__options}{crypto\+\_\+options} \hyperlink{structtls__wrap__ctx_a610411b7046f8b43a47cc92c0ef9bd6d}{opt}
+\item 
+struct \hyperlink{structbuffer}{buffer} \hyperlink{structtls__wrap__ctx_aabfcb82396ee2810549bcc8fa1c43e91}{work}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Control channel wrapping (--tls-\/auth/--tls-\/crypt) context 
+
+\subsection{Member Enumeration Documentation}
+\hypertarget{structtls__wrap__ctx_a208cb4dc29cba3a00bb6a898eae2403e}{}\subsubsection[{anonymous enum}]{\setlength{\rightskip}{0pt plus 5cm}anonymous enum}\label{structtls__wrap__ctx_a208cb4dc29cba3a00bb6a898eae2403e}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{T\+L\+S\+\_\+\+W\+R\+A\+P\+\_\+\+N\+O\+N\+E@{T\+L\+S\+\_\+\+W\+R\+A\+P\+\_\+\+N\+O\+N\+E}!tls\+\_\+wrap\+\_\+ctx@{tls\+\_\+wrap\+\_\+ctx}}\index{tls\+\_\+wrap\+\_\+ctx@{tls\+\_\+wrap\+\_\+ctx}!T\+L\+S\+\_\+\+W\+R\+A\+P\+\_\+\+N\+O\+N\+E@{T\+L\+S\+\_\+\+W\+R\+A\+P\+\_\+\+N\+O\+N\+E}}\item[{\em 
+\hypertarget{structtls__wrap__ctx_a208cb4dc29cba3a00bb6a898eae2403ea7c681db449b599faa6757c538f32fcee}{}T\+L\+S\+\_\+\+W\+R\+A\+P\+\_\+\+N\+O\+N\+E\label{structtls__wrap__ctx_a208cb4dc29cba3a00bb6a898eae2403ea7c681db449b599faa6757c538f32fcee}
+}]No control channel wrapping \index{T\+L\+S\+\_\+\+W\+R\+A\+P\+\_\+\+A\+U\+T\+H@{T\+L\+S\+\_\+\+W\+R\+A\+P\+\_\+\+A\+U\+T\+H}!tls\+\_\+wrap\+\_\+ctx@{tls\+\_\+wrap\+\_\+ctx}}\index{tls\+\_\+wrap\+\_\+ctx@{tls\+\_\+wrap\+\_\+ctx}!T\+L\+S\+\_\+\+W\+R\+A\+P\+\_\+\+A\+U\+T\+H@{T\+L\+S\+\_\+\+W\+R\+A\+P\+\_\+\+A\+U\+T\+H}}\item[{\em 
+\hypertarget{structtls__wrap__ctx_a208cb4dc29cba3a00bb6a898eae2403ead22a5947e6b2fa7f8e5cac9bf2703a18}{}T\+L\+S\+\_\+\+W\+R\+A\+P\+\_\+\+A\+U\+T\+H\label{structtls__wrap__ctx_a208cb4dc29cba3a00bb6a898eae2403ead22a5947e6b2fa7f8e5cac9bf2703a18}
+}]Control channel authentication \index{T\+L\+S\+\_\+\+W\+R\+A\+P\+\_\+\+C\+R\+Y\+P\+T@{T\+L\+S\+\_\+\+W\+R\+A\+P\+\_\+\+C\+R\+Y\+P\+T}!tls\+\_\+wrap\+\_\+ctx@{tls\+\_\+wrap\+\_\+ctx}}\index{tls\+\_\+wrap\+\_\+ctx@{tls\+\_\+wrap\+\_\+ctx}!T\+L\+S\+\_\+\+W\+R\+A\+P\+\_\+\+C\+R\+Y\+P\+T@{T\+L\+S\+\_\+\+W\+R\+A\+P\+\_\+\+C\+R\+Y\+P\+T}}\item[{\em 
+\hypertarget{structtls__wrap__ctx_a208cb4dc29cba3a00bb6a898eae2403ea54693b0aabdf162f098f390a6646040b}{}T\+L\+S\+\_\+\+W\+R\+A\+P\+\_\+\+C\+R\+Y\+P\+T\label{structtls__wrap__ctx_a208cb4dc29cba3a00bb6a898eae2403ea54693b0aabdf162f098f390a6646040b}
+}]Control channel encryption and authentication \end{description}
+\end{Desc}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{structtls__wrap__ctx_a7d6bdbb4efeaa095e3ee138e490f684e}{}\index{tls\+\_\+wrap\+\_\+ctx@{tls\+\_\+wrap\+\_\+ctx}!mode@{mode}}
+\index{mode@{mode}!tls\+\_\+wrap\+\_\+ctx@{tls\+\_\+wrap\+\_\+ctx}}
+\subsubsection[{mode}]{\setlength{\rightskip}{0pt plus 5cm}enum \{ ... \}   tls\+\_\+wrap\+\_\+ctx\+::mode}\label{structtls__wrap__ctx_a7d6bdbb4efeaa095e3ee138e490f684e}
+Control channel wrapping mode \hypertarget{structtls__wrap__ctx_a610411b7046f8b43a47cc92c0ef9bd6d}{}\index{tls\+\_\+wrap\+\_\+ctx@{tls\+\_\+wrap\+\_\+ctx}!opt@{opt}}
+\index{opt@{opt}!tls\+\_\+wrap\+\_\+ctx@{tls\+\_\+wrap\+\_\+ctx}}
+\subsubsection[{opt}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf crypto\+\_\+options} tls\+\_\+wrap\+\_\+ctx\+::opt}\label{structtls__wrap__ctx_a610411b7046f8b43a47cc92c0ef9bd6d}
+Crypto state \hypertarget{structtls__wrap__ctx_aabfcb82396ee2810549bcc8fa1c43e91}{}\index{tls\+\_\+wrap\+\_\+ctx@{tls\+\_\+wrap\+\_\+ctx}!work@{work}}
+\index{work@{work}!tls\+\_\+wrap\+\_\+ctx@{tls\+\_\+wrap\+\_\+ctx}}
+\subsubsection[{work}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf buffer} tls\+\_\+wrap\+\_\+ctx\+::work}\label{structtls__wrap__ctx_aabfcb82396ee2810549bcc8fa1c43e91}
+Work buffer (only for --tls-\/crypt) 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/openvpn/\hyperlink{ssl__common_8h}{ssl\+\_\+common.\+h}\end{DoxyCompactItemize}

@@ -1,0 +1,12 @@
+<map id="openvpn_sntprintf" name="openvpn_sntprintf">
+<area shape="rect" id="node2" href="$service_8h.html#a8c96f73e14db21ad6b4c55b30048f423" title="ServiceStartAutomatic" alt="" coords="704,57,855,84"/>
+<area shape="rect" id="node5" href="$service_8h.html#ab54be77a669fa1e3eb854462610e5521" title="GetOpenvpnSettings" alt="" coords="510,32,651,58"/>
+<area shape="rect" id="node8" href="$service_8h.html#a2610102e271fc65ae8908d593cab8afd" title="GetLastErrorText" alt="" coords="176,133,296,160"/>
+<area shape="rect" id="node9" href="$service_8h.html#a289f05e3c67a00e2f13862925dbe3df0" title="MsgToEventLog" alt="" coords="344,133,457,160"/>
+<area shape="rect" id="node3" href="$service_8h.html#a9b9e568c54b3fb102d55439192eb347a" title="ServiceStartAutomaticOwn" alt="" coords="903,82,1080,109"/>
+<area shape="rect" id="node4" href="$service_8c.html#aa3d685aaa0340b7c09d933e767f28c7f" title="_tmain" alt="" coords="1128,133,1189,160"/>
+<area shape="rect" id="node6" href="$service_8h.html#a95ed112a3321c4b0e5a2a78b4dbbb541" title="ServiceStartInteractive" alt="" coords="704,133,855,160"/>
+<area shape="rect" id="node7" href="$service_8h.html#afbdec4b55ab5c74bcadcae0cecc3900d" title="ServiceStartInteractiveOwn" alt="" coords="903,184,1079,210"/>
+<area shape="rect" id="node10" href="$service_8h.html#a9f46bc08640b6816eab1e49e72a08145" title="ReportStatusToSCMgr" alt="" coords="505,133,656,160"/>
+<area shape="rect" id="node11" href="$validate_8h.html#ad0d681ef22f3bfed2a45fc461fa8ac96" title="IsAuthorizedUser" alt="" coords="520,285,641,312"/>
+</map>

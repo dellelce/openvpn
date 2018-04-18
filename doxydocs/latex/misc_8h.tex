@@ -1,0 +1,786 @@
+\hypertarget{misc_8h}{}\section{src/openvpn/misc.h File Reference}
+\label{misc_8h}\index{src/openvpn/misc.\+h@{src/openvpn/misc.\+h}}
+{\ttfamily \#include \char`\"{}argv.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}basic.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}common.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}env\+\_\+set.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}integer.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}buffer.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}platform.\+h\char`\"{}}\\*
+Include dependency graph for misc.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{misc_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{misc_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structuser__pass}{user\+\_\+pass}
+\item 
+struct \hyperlink{structauth__challenge__info}{auth\+\_\+challenge\+\_\+info}
+\item 
+struct \hyperlink{structstatic__challenge__info}{static\+\_\+challenge\+\_\+info}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{misc_8h_af54c534e7b992a2632ef933bf4f59e3e}{I\+N\+E\+T\+D\+\_\+\+S\+O\+C\+K\+E\+T\+\_\+\+D\+E\+S\+C\+R\+I\+P\+T\+O\+R}~0
+\item 
+\#define \hyperlink{misc_8h_a72ebe4b26a6a29a181607fb99b5a02fa}{S\+\_\+\+S\+C\+R\+I\+P\+T}~(1$<$$<$0)
+\item 
+\#define \hyperlink{misc_8h_a2a6d02b9ff0a76e78bf5c76834a29d89}{S\+\_\+\+F\+A\+T\+A\+L}~(1$<$$<$1)
+\item 
+\#define \hyperlink{misc_8h_a02c5c7d8062c38c9366b379698583a92}{U\+S\+E\+R\+\_\+\+P\+A\+S\+S\+\_\+\+L\+E\+N}~128
+\item 
+\#define \hyperlink{misc_8h_a2918bca6e88a6f6a9908dfb2e4beea43}{G\+E\+T\+\_\+\+U\+S\+E\+R\+\_\+\+P\+A\+S\+S\+\_\+\+M\+A\+N\+A\+G\+E\+M\+E\+N\+T}~(1$<$$<$0)
+\item 
+\#define \hyperlink{misc_8h_a2cb1e14249fdd587db8da2b9e6df5998}{G\+E\+T\+\_\+\+U\+S\+E\+R\+\_\+\+P\+A\+S\+S\+\_\+\+P\+A\+S\+S\+W\+O\+R\+D\+\_\+\+O\+N\+L\+Y}~(1$<$$<$2)
+\item 
+\#define \hyperlink{misc_8h_aa3b9382e904cb704e27839af86ec6019}{G\+E\+T\+\_\+\+U\+S\+E\+R\+\_\+\+P\+A\+S\+S\+\_\+\+N\+E\+E\+D\+\_\+\+O\+K}~(1$<$$<$3)
+\item 
+\#define \hyperlink{misc_8h_ac64dbb7765742934cab020071f044582}{G\+E\+T\+\_\+\+U\+S\+E\+R\+\_\+\+P\+A\+S\+S\+\_\+\+N\+O\+F\+A\+T\+A\+L}~(1$<$$<$4)
+\item 
+\#define \hyperlink{misc_8h_adb5078855e108a8ac4fb62deae430630}{G\+E\+T\+\_\+\+U\+S\+E\+R\+\_\+\+P\+A\+S\+S\+\_\+\+N\+E\+E\+D\+\_\+\+S\+T\+R}~(1$<$$<$5)
+\item 
+\#define \hyperlink{misc_8h_ad9a9e03ce9db41b308d68aaf17878258}{G\+E\+T\+\_\+\+U\+S\+E\+R\+\_\+\+P\+A\+S\+S\+\_\+\+P\+R\+E\+V\+I\+O\+U\+S\+\_\+\+C\+R\+E\+D\+S\+\_\+\+F\+A\+I\+L\+E\+D}~(1$<$$<$6)
+\item 
+\#define \hyperlink{misc_8h_af5f85c3d81b73473ad9078402596b214}{G\+E\+T\+\_\+\+U\+S\+E\+R\+\_\+\+P\+A\+S\+S\+\_\+\+D\+Y\+N\+A\+M\+I\+C\+\_\+\+C\+H\+A\+L\+L\+E\+N\+G\+E}~(1$<$$<$7) /$\ast$ C\+R\+V1 protocol  -\/-\/ dynamic challenge $\ast$/
+\item 
+\#define \hyperlink{misc_8h_a9beebd282fff48237ac6e7617ba6c8c5}{G\+E\+T\+\_\+\+U\+S\+E\+R\+\_\+\+P\+A\+S\+S\+\_\+\+S\+T\+A\+T\+I\+C\+\_\+\+C\+H\+A\+L\+L\+E\+N\+G\+E}~(1$<$$<$8) /$\ast$ S\+C\+R\+V1 protocol -\/-\/ static challenge $\ast$/
+\item 
+\#define \hyperlink{misc_8h_a3c147ac7d8e8697b1a1b6ff3618cd945}{G\+E\+T\+\_\+\+U\+S\+E\+R\+\_\+\+P\+A\+S\+S\+\_\+\+S\+T\+A\+T\+I\+C\+\_\+\+C\+H\+A\+L\+L\+E\+N\+G\+E\+\_\+\+E\+C\+H\+O}~(1$<$$<$9) /$\ast$ S\+C\+R\+V1 protocol -\/-\/ echo response $\ast$/
+\item 
+\#define \hyperlink{misc_8h_a78acdf7b439f32727137b73355089b31}{G\+E\+T\+\_\+\+U\+S\+E\+R\+\_\+\+P\+A\+S\+S\+\_\+\+I\+N\+L\+I\+N\+E\+\_\+\+C\+R\+E\+D\+S}~(1$<$$<$10)  /$\ast$ indicates that auth\+\_\+file is actually inline creds $\ast$/
+\item 
+\#define \hyperlink{misc_8h_af3a5cd0b0a883602e285672b85b53598}{S\+S\+E\+C\+\_\+\+N\+O\+N\+E}~0 /$\ast$ strictly no calling of external programs $\ast$/
+\item 
+\#define \hyperlink{misc_8h_abf174381018a58379a4f3e258b5bf6a0}{S\+S\+E\+C\+\_\+\+B\+U\+I\+L\+T\+\_\+\+I\+N}~1 /$\ast$ only call built-\/in programs such as ifconfig, \hyperlink{interactive_8c_a767357491f19fc428e12e95225ac6127ac8ce842bafa47f7340ea0edbe49989f9}{route}, netsh, etc.$\ast$/
+\item 
+\#define \hyperlink{misc_8h_a3c41fae7f419ada19275d46cd6b55a1d}{S\+S\+E\+C\+\_\+\+S\+C\+R\+I\+P\+T\+S}~2 /$\ast$ allow calling of built-\/in programs and user-\/defined scripts $\ast$/
+\item 
+\#define \hyperlink{misc_8h_a8b0a9c8434191d44e4fef4e00afd60c6}{S\+S\+E\+C\+\_\+\+P\+W\+\_\+\+E\+N\+V}~3 /$\ast$ allow calling of built-\/in programs and user-\/defined scripts that may receive a password as an environmental variable $\ast$/
+\item 
+\#define \hyperlink{misc_8h_a11a9bbeaee15d7424d1a596dcf71bb7e}{C\+O\+M\+P\+A\+T\+\_\+\+F\+L\+A\+G\+\_\+\+Q\+U\+E\+R\+Y}~0       /$\ast$$\ast$ compat\+\_\+flags operator\+: Query for a flag $\ast$/
+\item 
+\#define \hyperlink{misc_8h_ae549f01ccbef37aa6dbb665c7bded9f7}{C\+O\+M\+P\+A\+T\+\_\+\+F\+L\+A\+G\+\_\+\+S\+E\+T}~(1$<$$<$0)  /$\ast$$\ast$ compat\+\_\+flags operator\+: Set a compat flag $\ast$/
+\item 
+\#define \hyperlink{misc_8h_ae57de852f8d47710e39ed4af426f7d05}{C\+O\+M\+P\+A\+T\+\_\+\+N\+A\+M\+E\+S}~(1$<$$<$1)  /$\ast$$\ast$ compat flag\+: -\/-\/compat-\/names set $\ast$/
+\item 
+\#define \hyperlink{misc_8h_a82c8d0a4447f0b340901f70825bfaf83}{C\+O\+M\+P\+A\+T\+\_\+\+N\+O\+\_\+\+N\+A\+M\+E\+\_\+\+R\+E\+M\+A\+P\+P\+I\+N\+G}~(1$<$$<$2)  /$\ast$$\ast$ compat flag\+: -\/-\/compat-\/names without char remapping $\ast$/
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+const char $\ast$ \hyperlink{misc_8h_afc03c5155ca8766ef44d3945d44b10e2}{system\+\_\+error\+\_\+message} (int, struct \hyperlink{structgc__arena}{gc\+\_\+arena} $\ast$gc)
+\item 
+int \hyperlink{misc_8h_aa6317d2c2a118c3a9519b02a23111367}{openvpn\+\_\+popen} (const struct \hyperlink{structargv}{argv} $\ast$a, const struct \hyperlink{structenv__set}{env\+\_\+set} $\ast$es)
+\item 
+int \hyperlink{misc_8h_a8596ddf7653af77837d24c74e6a59b69}{openvpn\+\_\+execve} (const struct \hyperlink{structargv}{argv} $\ast$a, const struct \hyperlink{structenv__set}{env\+\_\+set} $\ast$es, const unsigned int flags)
+\item 
+\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} \hyperlink{misc_8h_a12c490307c9e4966e41f32d08f5f3cae}{openvpn\+\_\+execve\+\_\+check} (const struct \hyperlink{structargv}{argv} $\ast$a, const struct \hyperlink{structenv__set}{env\+\_\+set} $\ast$es, const unsigned int flags, const char $\ast$error\+\_\+message)
+\item 
+\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} \hyperlink{misc_8h_a1ea73c309e8dfb9c1fc00b2977d72a75}{openvpn\+\_\+execve\+\_\+allowed} (const unsigned int flags)
+\item 
+void \hyperlink{misc_8h_a6e7deed7d2affb7c6a734ec2aea7951d}{set\+\_\+std\+\_\+files\+\_\+to\+\_\+null} (\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} stdin\+\_\+only)
+\item 
+void \hyperlink{misc_8h_a7459e81aab781d02183498da67072573}{save\+\_\+inetd\+\_\+socket\+\_\+descriptor} (void)
+\item 
+const char $\ast$$\ast$ \hyperlink{misc_8h_abd1f6f7eac3eb3b3aecc21785c5a3b45}{make\+\_\+arg\+\_\+array} (const char $\ast$first, const char $\ast$parms, struct \hyperlink{structgc__arena}{gc\+\_\+arena} $\ast$gc)
+\item 
+const char $\ast$$\ast$ \hyperlink{misc_8h_a865a40fce786c53591ae4744c6ced760}{make\+\_\+extended\+\_\+arg\+\_\+array} (char $\ast$$\ast$p, struct \hyperlink{structgc__arena}{gc\+\_\+arena} $\ast$gc)
+\item 
+long int \hyperlink{misc_8h_a37fb65e30bd2c33564b14ad76a0c0794}{get\+\_\+random} (void)
+\item 
+\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} \hyperlink{misc_8h_aa26af8ee2558835f5c8c920fb12a1db6}{test\+\_\+file} (const char $\ast$filename)
+\item 
+const char $\ast$ \hyperlink{misc_8h_aa10a1dd4b150f979d6f359b5625e81f5}{create\+\_\+temp\+\_\+file} (const char $\ast$directory, const char $\ast$prefix, struct \hyperlink{structgc__arena}{gc\+\_\+arena} $\ast$gc)
+\item 
+const char $\ast$ \hyperlink{misc_8h_ad71e3889d079e20769eb904160b243f2}{gen\+\_\+path} (const char $\ast$directory, const char $\ast$filename, struct \hyperlink{structgc__arena}{gc\+\_\+arena} $\ast$gc)
+\item 
+\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} \hyperlink{misc_8h_aaa376fd005fae1702d8121f295626ac8}{absolute\+\_\+pathname} (const char $\ast$pathname)
+\item 
+const char $\ast$ \hyperlink{misc_8h_ac6174edbe71fde417d167f81417ae36b}{hostname\+\_\+randomize} (const char $\ast$hostname, struct \hyperlink{structgc__arena}{gc\+\_\+arena} $\ast$gc)
+\item 
+\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} \hyperlink{misc_8h_a17ec57572c876bf53ca3fa0cadb9c664}{get\+\_\+user\+\_\+pass\+\_\+cr} (struct \hyperlink{structuser__pass}{user\+\_\+pass} $\ast$up, const char $\ast$auth\+\_\+file, const char $\ast$prefix, const unsigned int flags, const char $\ast$auth\+\_\+challenge)
+\item 
+void \hyperlink{misc_8h_ab9c0c8a3a8f7fd0137f1f8c02ba100f4}{fail\+\_\+user\+\_\+pass} (const char $\ast$prefix, const unsigned int flags, const char $\ast$reason)
+\item 
+void \hyperlink{misc_8h_a37c9ea488f35dc0454dbf94f7e8938fa}{purge\+\_\+user\+\_\+pass} (struct \hyperlink{structuser__pass}{user\+\_\+pass} $\ast$up, const \hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} force)
+\item 
+void \hyperlink{misc_8h_a8891fa0f7a8c069f3ed301d220559e08}{set\+\_\+auth\+\_\+token} (struct \hyperlink{structuser__pass}{user\+\_\+pass} $\ast$up, const char $\ast$token)
+\item 
+const char $\ast$ \hyperlink{misc_8h_acb1c853a22da028226b8098a81250c9a}{safe\+\_\+print} (const char $\ast$str, struct \hyperlink{structgc__arena}{gc\+\_\+arena} $\ast$gc)
+\item 
+void \hyperlink{misc_8h_a231abc8e058c29015c2a0d770250e0c0}{configure\+\_\+path} (void)
+\item 
+const char $\ast$ \hyperlink{misc_8h_a0e9d23545d601799c4f1910c9322431e}{sanitize\+\_\+control\+\_\+message} (const char $\ast$str, struct \hyperlink{structgc__arena}{gc\+\_\+arena} $\ast$gc)
+\item 
+\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} \hyperlink{misc_8h_a032f18f4fffe1b60f4d30e3bacc9fa28}{compat\+\_\+flag} (unsigned int flag)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{misc_8h_a5ad312831981e71bad906718e68acc2d}{inetd\+\_\+socket\+\_\+descriptor}
+\item 
+int \hyperlink{misc_8h_a20ae66171b79abd32459ab4b3ccb5b33}{script\+\_\+security}
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{misc_8h_a11a9bbeaee15d7424d1a596dcf71bb7e}{}\index{misc.\+h@{misc.\+h}!C\+O\+M\+P\+A\+T\+\_\+\+F\+L\+A\+G\+\_\+\+Q\+U\+E\+R\+Y@{C\+O\+M\+P\+A\+T\+\_\+\+F\+L\+A\+G\+\_\+\+Q\+U\+E\+R\+Y}}
+\index{C\+O\+M\+P\+A\+T\+\_\+\+F\+L\+A\+G\+\_\+\+Q\+U\+E\+R\+Y@{C\+O\+M\+P\+A\+T\+\_\+\+F\+L\+A\+G\+\_\+\+Q\+U\+E\+R\+Y}!misc.\+h@{misc.\+h}}
+\subsubsection[{C\+O\+M\+P\+A\+T\+\_\+\+F\+L\+A\+G\+\_\+\+Q\+U\+E\+R\+Y}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+O\+M\+P\+A\+T\+\_\+\+F\+L\+A\+G\+\_\+\+Q\+U\+E\+R\+Y~0       /$\ast$$\ast$ compat\+\_\+flags operator\+: Query for a flag $\ast$/}\label{misc_8h_a11a9bbeaee15d7424d1a596dcf71bb7e}
+\hypertarget{misc_8h_ae549f01ccbef37aa6dbb665c7bded9f7}{}\index{misc.\+h@{misc.\+h}!C\+O\+M\+P\+A\+T\+\_\+\+F\+L\+A\+G\+\_\+\+S\+E\+T@{C\+O\+M\+P\+A\+T\+\_\+\+F\+L\+A\+G\+\_\+\+S\+E\+T}}
+\index{C\+O\+M\+P\+A\+T\+\_\+\+F\+L\+A\+G\+\_\+\+S\+E\+T@{C\+O\+M\+P\+A\+T\+\_\+\+F\+L\+A\+G\+\_\+\+S\+E\+T}!misc.\+h@{misc.\+h}}
+\subsubsection[{C\+O\+M\+P\+A\+T\+\_\+\+F\+L\+A\+G\+\_\+\+S\+E\+T}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+O\+M\+P\+A\+T\+\_\+\+F\+L\+A\+G\+\_\+\+S\+E\+T~(1$<$$<$0)  /$\ast$$\ast$ compat\+\_\+flags operator\+: Set a compat flag $\ast$/}\label{misc_8h_ae549f01ccbef37aa6dbb665c7bded9f7}
+\hypertarget{misc_8h_ae57de852f8d47710e39ed4af426f7d05}{}\index{misc.\+h@{misc.\+h}!C\+O\+M\+P\+A\+T\+\_\+\+N\+A\+M\+E\+S@{C\+O\+M\+P\+A\+T\+\_\+\+N\+A\+M\+E\+S}}
+\index{C\+O\+M\+P\+A\+T\+\_\+\+N\+A\+M\+E\+S@{C\+O\+M\+P\+A\+T\+\_\+\+N\+A\+M\+E\+S}!misc.\+h@{misc.\+h}}
+\subsubsection[{C\+O\+M\+P\+A\+T\+\_\+\+N\+A\+M\+E\+S}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+O\+M\+P\+A\+T\+\_\+\+N\+A\+M\+E\+S~(1$<$$<$1)  /$\ast$$\ast$ compat flag\+: -\/-\/compat-\/names set $\ast$/}\label{misc_8h_ae57de852f8d47710e39ed4af426f7d05}
+\hypertarget{misc_8h_a82c8d0a4447f0b340901f70825bfaf83}{}\index{misc.\+h@{misc.\+h}!C\+O\+M\+P\+A\+T\+\_\+\+N\+O\+\_\+\+N\+A\+M\+E\+\_\+\+R\+E\+M\+A\+P\+P\+I\+N\+G@{C\+O\+M\+P\+A\+T\+\_\+\+N\+O\+\_\+\+N\+A\+M\+E\+\_\+\+R\+E\+M\+A\+P\+P\+I\+N\+G}}
+\index{C\+O\+M\+P\+A\+T\+\_\+\+N\+O\+\_\+\+N\+A\+M\+E\+\_\+\+R\+E\+M\+A\+P\+P\+I\+N\+G@{C\+O\+M\+P\+A\+T\+\_\+\+N\+O\+\_\+\+N\+A\+M\+E\+\_\+\+R\+E\+M\+A\+P\+P\+I\+N\+G}!misc.\+h@{misc.\+h}}
+\subsubsection[{C\+O\+M\+P\+A\+T\+\_\+\+N\+O\+\_\+\+N\+A\+M\+E\+\_\+\+R\+E\+M\+A\+P\+P\+I\+N\+G}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+O\+M\+P\+A\+T\+\_\+\+N\+O\+\_\+\+N\+A\+M\+E\+\_\+\+R\+E\+M\+A\+P\+P\+I\+N\+G~(1$<$$<$2)  /$\ast$$\ast$ compat flag\+: -\/-\/compat-\/names without char remapping $\ast$/}\label{misc_8h_a82c8d0a4447f0b340901f70825bfaf83}
+\hypertarget{misc_8h_af5f85c3d81b73473ad9078402596b214}{}\index{misc.\+h@{misc.\+h}!G\+E\+T\+\_\+\+U\+S\+E\+R\+\_\+\+P\+A\+S\+S\+\_\+\+D\+Y\+N\+A\+M\+I\+C\+\_\+\+C\+H\+A\+L\+L\+E\+N\+G\+E@{G\+E\+T\+\_\+\+U\+S\+E\+R\+\_\+\+P\+A\+S\+S\+\_\+\+D\+Y\+N\+A\+M\+I\+C\+\_\+\+C\+H\+A\+L\+L\+E\+N\+G\+E}}
+\index{G\+E\+T\+\_\+\+U\+S\+E\+R\+\_\+\+P\+A\+S\+S\+\_\+\+D\+Y\+N\+A\+M\+I\+C\+\_\+\+C\+H\+A\+L\+L\+E\+N\+G\+E@{G\+E\+T\+\_\+\+U\+S\+E\+R\+\_\+\+P\+A\+S\+S\+\_\+\+D\+Y\+N\+A\+M\+I\+C\+\_\+\+C\+H\+A\+L\+L\+E\+N\+G\+E}!misc.\+h@{misc.\+h}}
+\subsubsection[{G\+E\+T\+\_\+\+U\+S\+E\+R\+\_\+\+P\+A\+S\+S\+\_\+\+D\+Y\+N\+A\+M\+I\+C\+\_\+\+C\+H\+A\+L\+L\+E\+N\+G\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define G\+E\+T\+\_\+\+U\+S\+E\+R\+\_\+\+P\+A\+S\+S\+\_\+\+D\+Y\+N\+A\+M\+I\+C\+\_\+\+C\+H\+A\+L\+L\+E\+N\+G\+E~(1$<$$<$7) /$\ast$ C\+R\+V1 protocol  -\/-\/ dynamic challenge $\ast$/}\label{misc_8h_af5f85c3d81b73473ad9078402596b214}
+\hypertarget{misc_8h_a78acdf7b439f32727137b73355089b31}{}\index{misc.\+h@{misc.\+h}!G\+E\+T\+\_\+\+U\+S\+E\+R\+\_\+\+P\+A\+S\+S\+\_\+\+I\+N\+L\+I\+N\+E\+\_\+\+C\+R\+E\+D\+S@{G\+E\+T\+\_\+\+U\+S\+E\+R\+\_\+\+P\+A\+S\+S\+\_\+\+I\+N\+L\+I\+N\+E\+\_\+\+C\+R\+E\+D\+S}}
+\index{G\+E\+T\+\_\+\+U\+S\+E\+R\+\_\+\+P\+A\+S\+S\+\_\+\+I\+N\+L\+I\+N\+E\+\_\+\+C\+R\+E\+D\+S@{G\+E\+T\+\_\+\+U\+S\+E\+R\+\_\+\+P\+A\+S\+S\+\_\+\+I\+N\+L\+I\+N\+E\+\_\+\+C\+R\+E\+D\+S}!misc.\+h@{misc.\+h}}
+\subsubsection[{G\+E\+T\+\_\+\+U\+S\+E\+R\+\_\+\+P\+A\+S\+S\+\_\+\+I\+N\+L\+I\+N\+E\+\_\+\+C\+R\+E\+D\+S}]{\setlength{\rightskip}{0pt plus 5cm}\#define G\+E\+T\+\_\+\+U\+S\+E\+R\+\_\+\+P\+A\+S\+S\+\_\+\+I\+N\+L\+I\+N\+E\+\_\+\+C\+R\+E\+D\+S~(1$<$$<$10)  /$\ast$ indicates that auth\+\_\+file is actually inline creds $\ast$/}\label{misc_8h_a78acdf7b439f32727137b73355089b31}
+\hypertarget{misc_8h_a2918bca6e88a6f6a9908dfb2e4beea43}{}\index{misc.\+h@{misc.\+h}!G\+E\+T\+\_\+\+U\+S\+E\+R\+\_\+\+P\+A\+S\+S\+\_\+\+M\+A\+N\+A\+G\+E\+M\+E\+N\+T@{G\+E\+T\+\_\+\+U\+S\+E\+R\+\_\+\+P\+A\+S\+S\+\_\+\+M\+A\+N\+A\+G\+E\+M\+E\+N\+T}}
+\index{G\+E\+T\+\_\+\+U\+S\+E\+R\+\_\+\+P\+A\+S\+S\+\_\+\+M\+A\+N\+A\+G\+E\+M\+E\+N\+T@{G\+E\+T\+\_\+\+U\+S\+E\+R\+\_\+\+P\+A\+S\+S\+\_\+\+M\+A\+N\+A\+G\+E\+M\+E\+N\+T}!misc.\+h@{misc.\+h}}
+\subsubsection[{G\+E\+T\+\_\+\+U\+S\+E\+R\+\_\+\+P\+A\+S\+S\+\_\+\+M\+A\+N\+A\+G\+E\+M\+E\+N\+T}]{\setlength{\rightskip}{0pt plus 5cm}\#define G\+E\+T\+\_\+\+U\+S\+E\+R\+\_\+\+P\+A\+S\+S\+\_\+\+M\+A\+N\+A\+G\+E\+M\+E\+N\+T~(1$<$$<$0)}\label{misc_8h_a2918bca6e88a6f6a9908dfb2e4beea43}
+\hypertarget{misc_8h_aa3b9382e904cb704e27839af86ec6019}{}\index{misc.\+h@{misc.\+h}!G\+E\+T\+\_\+\+U\+S\+E\+R\+\_\+\+P\+A\+S\+S\+\_\+\+N\+E\+E\+D\+\_\+\+O\+K@{G\+E\+T\+\_\+\+U\+S\+E\+R\+\_\+\+P\+A\+S\+S\+\_\+\+N\+E\+E\+D\+\_\+\+O\+K}}
+\index{G\+E\+T\+\_\+\+U\+S\+E\+R\+\_\+\+P\+A\+S\+S\+\_\+\+N\+E\+E\+D\+\_\+\+O\+K@{G\+E\+T\+\_\+\+U\+S\+E\+R\+\_\+\+P\+A\+S\+S\+\_\+\+N\+E\+E\+D\+\_\+\+O\+K}!misc.\+h@{misc.\+h}}
+\subsubsection[{G\+E\+T\+\_\+\+U\+S\+E\+R\+\_\+\+P\+A\+S\+S\+\_\+\+N\+E\+E\+D\+\_\+\+O\+K}]{\setlength{\rightskip}{0pt plus 5cm}\#define G\+E\+T\+\_\+\+U\+S\+E\+R\+\_\+\+P\+A\+S\+S\+\_\+\+N\+E\+E\+D\+\_\+\+O\+K~(1$<$$<$3)}\label{misc_8h_aa3b9382e904cb704e27839af86ec6019}
+\hypertarget{misc_8h_adb5078855e108a8ac4fb62deae430630}{}\index{misc.\+h@{misc.\+h}!G\+E\+T\+\_\+\+U\+S\+E\+R\+\_\+\+P\+A\+S\+S\+\_\+\+N\+E\+E\+D\+\_\+\+S\+T\+R@{G\+E\+T\+\_\+\+U\+S\+E\+R\+\_\+\+P\+A\+S\+S\+\_\+\+N\+E\+E\+D\+\_\+\+S\+T\+R}}
+\index{G\+E\+T\+\_\+\+U\+S\+E\+R\+\_\+\+P\+A\+S\+S\+\_\+\+N\+E\+E\+D\+\_\+\+S\+T\+R@{G\+E\+T\+\_\+\+U\+S\+E\+R\+\_\+\+P\+A\+S\+S\+\_\+\+N\+E\+E\+D\+\_\+\+S\+T\+R}!misc.\+h@{misc.\+h}}
+\subsubsection[{G\+E\+T\+\_\+\+U\+S\+E\+R\+\_\+\+P\+A\+S\+S\+\_\+\+N\+E\+E\+D\+\_\+\+S\+T\+R}]{\setlength{\rightskip}{0pt plus 5cm}\#define G\+E\+T\+\_\+\+U\+S\+E\+R\+\_\+\+P\+A\+S\+S\+\_\+\+N\+E\+E\+D\+\_\+\+S\+T\+R~(1$<$$<$5)}\label{misc_8h_adb5078855e108a8ac4fb62deae430630}
+\hypertarget{misc_8h_ac64dbb7765742934cab020071f044582}{}\index{misc.\+h@{misc.\+h}!G\+E\+T\+\_\+\+U\+S\+E\+R\+\_\+\+P\+A\+S\+S\+\_\+\+N\+O\+F\+A\+T\+A\+L@{G\+E\+T\+\_\+\+U\+S\+E\+R\+\_\+\+P\+A\+S\+S\+\_\+\+N\+O\+F\+A\+T\+A\+L}}
+\index{G\+E\+T\+\_\+\+U\+S\+E\+R\+\_\+\+P\+A\+S\+S\+\_\+\+N\+O\+F\+A\+T\+A\+L@{G\+E\+T\+\_\+\+U\+S\+E\+R\+\_\+\+P\+A\+S\+S\+\_\+\+N\+O\+F\+A\+T\+A\+L}!misc.\+h@{misc.\+h}}
+\subsubsection[{G\+E\+T\+\_\+\+U\+S\+E\+R\+\_\+\+P\+A\+S\+S\+\_\+\+N\+O\+F\+A\+T\+A\+L}]{\setlength{\rightskip}{0pt plus 5cm}\#define G\+E\+T\+\_\+\+U\+S\+E\+R\+\_\+\+P\+A\+S\+S\+\_\+\+N\+O\+F\+A\+T\+A\+L~(1$<$$<$4)}\label{misc_8h_ac64dbb7765742934cab020071f044582}
+\hypertarget{misc_8h_a2cb1e14249fdd587db8da2b9e6df5998}{}\index{misc.\+h@{misc.\+h}!G\+E\+T\+\_\+\+U\+S\+E\+R\+\_\+\+P\+A\+S\+S\+\_\+\+P\+A\+S\+S\+W\+O\+R\+D\+\_\+\+O\+N\+L\+Y@{G\+E\+T\+\_\+\+U\+S\+E\+R\+\_\+\+P\+A\+S\+S\+\_\+\+P\+A\+S\+S\+W\+O\+R\+D\+\_\+\+O\+N\+L\+Y}}
+\index{G\+E\+T\+\_\+\+U\+S\+E\+R\+\_\+\+P\+A\+S\+S\+\_\+\+P\+A\+S\+S\+W\+O\+R\+D\+\_\+\+O\+N\+L\+Y@{G\+E\+T\+\_\+\+U\+S\+E\+R\+\_\+\+P\+A\+S\+S\+\_\+\+P\+A\+S\+S\+W\+O\+R\+D\+\_\+\+O\+N\+L\+Y}!misc.\+h@{misc.\+h}}
+\subsubsection[{G\+E\+T\+\_\+\+U\+S\+E\+R\+\_\+\+P\+A\+S\+S\+\_\+\+P\+A\+S\+S\+W\+O\+R\+D\+\_\+\+O\+N\+L\+Y}]{\setlength{\rightskip}{0pt plus 5cm}\#define G\+E\+T\+\_\+\+U\+S\+E\+R\+\_\+\+P\+A\+S\+S\+\_\+\+P\+A\+S\+S\+W\+O\+R\+D\+\_\+\+O\+N\+L\+Y~(1$<$$<$2)}\label{misc_8h_a2cb1e14249fdd587db8da2b9e6df5998}
+\hypertarget{misc_8h_ad9a9e03ce9db41b308d68aaf17878258}{}\index{misc.\+h@{misc.\+h}!G\+E\+T\+\_\+\+U\+S\+E\+R\+\_\+\+P\+A\+S\+S\+\_\+\+P\+R\+E\+V\+I\+O\+U\+S\+\_\+\+C\+R\+E\+D\+S\+\_\+\+F\+A\+I\+L\+E\+D@{G\+E\+T\+\_\+\+U\+S\+E\+R\+\_\+\+P\+A\+S\+S\+\_\+\+P\+R\+E\+V\+I\+O\+U\+S\+\_\+\+C\+R\+E\+D\+S\+\_\+\+F\+A\+I\+L\+E\+D}}
+\index{G\+E\+T\+\_\+\+U\+S\+E\+R\+\_\+\+P\+A\+S\+S\+\_\+\+P\+R\+E\+V\+I\+O\+U\+S\+\_\+\+C\+R\+E\+D\+S\+\_\+\+F\+A\+I\+L\+E\+D@{G\+E\+T\+\_\+\+U\+S\+E\+R\+\_\+\+P\+A\+S\+S\+\_\+\+P\+R\+E\+V\+I\+O\+U\+S\+\_\+\+C\+R\+E\+D\+S\+\_\+\+F\+A\+I\+L\+E\+D}!misc.\+h@{misc.\+h}}
+\subsubsection[{G\+E\+T\+\_\+\+U\+S\+E\+R\+\_\+\+P\+A\+S\+S\+\_\+\+P\+R\+E\+V\+I\+O\+U\+S\+\_\+\+C\+R\+E\+D\+S\+\_\+\+F\+A\+I\+L\+E\+D}]{\setlength{\rightskip}{0pt plus 5cm}\#define G\+E\+T\+\_\+\+U\+S\+E\+R\+\_\+\+P\+A\+S\+S\+\_\+\+P\+R\+E\+V\+I\+O\+U\+S\+\_\+\+C\+R\+E\+D\+S\+\_\+\+F\+A\+I\+L\+E\+D~(1$<$$<$6)}\label{misc_8h_ad9a9e03ce9db41b308d68aaf17878258}
+\hypertarget{misc_8h_a9beebd282fff48237ac6e7617ba6c8c5}{}\index{misc.\+h@{misc.\+h}!G\+E\+T\+\_\+\+U\+S\+E\+R\+\_\+\+P\+A\+S\+S\+\_\+\+S\+T\+A\+T\+I\+C\+\_\+\+C\+H\+A\+L\+L\+E\+N\+G\+E@{G\+E\+T\+\_\+\+U\+S\+E\+R\+\_\+\+P\+A\+S\+S\+\_\+\+S\+T\+A\+T\+I\+C\+\_\+\+C\+H\+A\+L\+L\+E\+N\+G\+E}}
+\index{G\+E\+T\+\_\+\+U\+S\+E\+R\+\_\+\+P\+A\+S\+S\+\_\+\+S\+T\+A\+T\+I\+C\+\_\+\+C\+H\+A\+L\+L\+E\+N\+G\+E@{G\+E\+T\+\_\+\+U\+S\+E\+R\+\_\+\+P\+A\+S\+S\+\_\+\+S\+T\+A\+T\+I\+C\+\_\+\+C\+H\+A\+L\+L\+E\+N\+G\+E}!misc.\+h@{misc.\+h}}
+\subsubsection[{G\+E\+T\+\_\+\+U\+S\+E\+R\+\_\+\+P\+A\+S\+S\+\_\+\+S\+T\+A\+T\+I\+C\+\_\+\+C\+H\+A\+L\+L\+E\+N\+G\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define G\+E\+T\+\_\+\+U\+S\+E\+R\+\_\+\+P\+A\+S\+S\+\_\+\+S\+T\+A\+T\+I\+C\+\_\+\+C\+H\+A\+L\+L\+E\+N\+G\+E~(1$<$$<$8) /$\ast$ S\+C\+R\+V1 protocol -\/-\/ static challenge $\ast$/}\label{misc_8h_a9beebd282fff48237ac6e7617ba6c8c5}
+\hypertarget{misc_8h_a3c147ac7d8e8697b1a1b6ff3618cd945}{}\index{misc.\+h@{misc.\+h}!G\+E\+T\+\_\+\+U\+S\+E\+R\+\_\+\+P\+A\+S\+S\+\_\+\+S\+T\+A\+T\+I\+C\+\_\+\+C\+H\+A\+L\+L\+E\+N\+G\+E\+\_\+\+E\+C\+H\+O@{G\+E\+T\+\_\+\+U\+S\+E\+R\+\_\+\+P\+A\+S\+S\+\_\+\+S\+T\+A\+T\+I\+C\+\_\+\+C\+H\+A\+L\+L\+E\+N\+G\+E\+\_\+\+E\+C\+H\+O}}
+\index{G\+E\+T\+\_\+\+U\+S\+E\+R\+\_\+\+P\+A\+S\+S\+\_\+\+S\+T\+A\+T\+I\+C\+\_\+\+C\+H\+A\+L\+L\+E\+N\+G\+E\+\_\+\+E\+C\+H\+O@{G\+E\+T\+\_\+\+U\+S\+E\+R\+\_\+\+P\+A\+S\+S\+\_\+\+S\+T\+A\+T\+I\+C\+\_\+\+C\+H\+A\+L\+L\+E\+N\+G\+E\+\_\+\+E\+C\+H\+O}!misc.\+h@{misc.\+h}}
+\subsubsection[{G\+E\+T\+\_\+\+U\+S\+E\+R\+\_\+\+P\+A\+S\+S\+\_\+\+S\+T\+A\+T\+I\+C\+\_\+\+C\+H\+A\+L\+L\+E\+N\+G\+E\+\_\+\+E\+C\+H\+O}]{\setlength{\rightskip}{0pt plus 5cm}\#define G\+E\+T\+\_\+\+U\+S\+E\+R\+\_\+\+P\+A\+S\+S\+\_\+\+S\+T\+A\+T\+I\+C\+\_\+\+C\+H\+A\+L\+L\+E\+N\+G\+E\+\_\+\+E\+C\+H\+O~(1$<$$<$9) /$\ast$ S\+C\+R\+V1 protocol -\/-\/ echo response $\ast$/}\label{misc_8h_a3c147ac7d8e8697b1a1b6ff3618cd945}
+\hypertarget{misc_8h_af54c534e7b992a2632ef933bf4f59e3e}{}\index{misc.\+h@{misc.\+h}!I\+N\+E\+T\+D\+\_\+\+S\+O\+C\+K\+E\+T\+\_\+\+D\+E\+S\+C\+R\+I\+P\+T\+O\+R@{I\+N\+E\+T\+D\+\_\+\+S\+O\+C\+K\+E\+T\+\_\+\+D\+E\+S\+C\+R\+I\+P\+T\+O\+R}}
+\index{I\+N\+E\+T\+D\+\_\+\+S\+O\+C\+K\+E\+T\+\_\+\+D\+E\+S\+C\+R\+I\+P\+T\+O\+R@{I\+N\+E\+T\+D\+\_\+\+S\+O\+C\+K\+E\+T\+\_\+\+D\+E\+S\+C\+R\+I\+P\+T\+O\+R}!misc.\+h@{misc.\+h}}
+\subsubsection[{I\+N\+E\+T\+D\+\_\+\+S\+O\+C\+K\+E\+T\+\_\+\+D\+E\+S\+C\+R\+I\+P\+T\+O\+R}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\+N\+E\+T\+D\+\_\+\+S\+O\+C\+K\+E\+T\+\_\+\+D\+E\+S\+C\+R\+I\+P\+T\+O\+R~0}\label{misc_8h_af54c534e7b992a2632ef933bf4f59e3e}
+\hypertarget{misc_8h_a2a6d02b9ff0a76e78bf5c76834a29d89}{}\index{misc.\+h@{misc.\+h}!S\+\_\+\+F\+A\+T\+A\+L@{S\+\_\+\+F\+A\+T\+A\+L}}
+\index{S\+\_\+\+F\+A\+T\+A\+L@{S\+\_\+\+F\+A\+T\+A\+L}!misc.\+h@{misc.\+h}}
+\subsubsection[{S\+\_\+\+F\+A\+T\+A\+L}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\+\_\+\+F\+A\+T\+A\+L~(1$<$$<$1)}\label{misc_8h_a2a6d02b9ff0a76e78bf5c76834a29d89}
+\hypertarget{misc_8h_a72ebe4b26a6a29a181607fb99b5a02fa}{}\index{misc.\+h@{misc.\+h}!S\+\_\+\+S\+C\+R\+I\+P\+T@{S\+\_\+\+S\+C\+R\+I\+P\+T}}
+\index{S\+\_\+\+S\+C\+R\+I\+P\+T@{S\+\_\+\+S\+C\+R\+I\+P\+T}!misc.\+h@{misc.\+h}}
+\subsubsection[{S\+\_\+\+S\+C\+R\+I\+P\+T}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\+\_\+\+S\+C\+R\+I\+P\+T~(1$<$$<$0)}\label{misc_8h_a72ebe4b26a6a29a181607fb99b5a02fa}
+\hypertarget{misc_8h_abf174381018a58379a4f3e258b5bf6a0}{}\index{misc.\+h@{misc.\+h}!S\+S\+E\+C\+\_\+\+B\+U\+I\+L\+T\+\_\+\+I\+N@{S\+S\+E\+C\+\_\+\+B\+U\+I\+L\+T\+\_\+\+I\+N}}
+\index{S\+S\+E\+C\+\_\+\+B\+U\+I\+L\+T\+\_\+\+I\+N@{S\+S\+E\+C\+\_\+\+B\+U\+I\+L\+T\+\_\+\+I\+N}!misc.\+h@{misc.\+h}}
+\subsubsection[{S\+S\+E\+C\+\_\+\+B\+U\+I\+L\+T\+\_\+\+I\+N}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\+S\+E\+C\+\_\+\+B\+U\+I\+L\+T\+\_\+\+I\+N~1 /$\ast$ only call built-\/in programs such as ifconfig, {\bf route}, netsh, etc.$\ast$/}\label{misc_8h_abf174381018a58379a4f3e258b5bf6a0}
+\hypertarget{misc_8h_af3a5cd0b0a883602e285672b85b53598}{}\index{misc.\+h@{misc.\+h}!S\+S\+E\+C\+\_\+\+N\+O\+N\+E@{S\+S\+E\+C\+\_\+\+N\+O\+N\+E}}
+\index{S\+S\+E\+C\+\_\+\+N\+O\+N\+E@{S\+S\+E\+C\+\_\+\+N\+O\+N\+E}!misc.\+h@{misc.\+h}}
+\subsubsection[{S\+S\+E\+C\+\_\+\+N\+O\+N\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\+S\+E\+C\+\_\+\+N\+O\+N\+E~0 /$\ast$ strictly no calling of external programs $\ast$/}\label{misc_8h_af3a5cd0b0a883602e285672b85b53598}
+\hypertarget{misc_8h_a8b0a9c8434191d44e4fef4e00afd60c6}{}\index{misc.\+h@{misc.\+h}!S\+S\+E\+C\+\_\+\+P\+W\+\_\+\+E\+N\+V@{S\+S\+E\+C\+\_\+\+P\+W\+\_\+\+E\+N\+V}}
+\index{S\+S\+E\+C\+\_\+\+P\+W\+\_\+\+E\+N\+V@{S\+S\+E\+C\+\_\+\+P\+W\+\_\+\+E\+N\+V}!misc.\+h@{misc.\+h}}
+\subsubsection[{S\+S\+E\+C\+\_\+\+P\+W\+\_\+\+E\+N\+V}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\+S\+E\+C\+\_\+\+P\+W\+\_\+\+E\+N\+V~3 /$\ast$ allow calling of built-\/in programs and user-\/defined scripts that may receive a password as an environmental variable $\ast$/}\label{misc_8h_a8b0a9c8434191d44e4fef4e00afd60c6}
+\hypertarget{misc_8h_a3c41fae7f419ada19275d46cd6b55a1d}{}\index{misc.\+h@{misc.\+h}!S\+S\+E\+C\+\_\+\+S\+C\+R\+I\+P\+T\+S@{S\+S\+E\+C\+\_\+\+S\+C\+R\+I\+P\+T\+S}}
+\index{S\+S\+E\+C\+\_\+\+S\+C\+R\+I\+P\+T\+S@{S\+S\+E\+C\+\_\+\+S\+C\+R\+I\+P\+T\+S}!misc.\+h@{misc.\+h}}
+\subsubsection[{S\+S\+E\+C\+\_\+\+S\+C\+R\+I\+P\+T\+S}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\+S\+E\+C\+\_\+\+S\+C\+R\+I\+P\+T\+S~2 /$\ast$ allow calling of built-\/in programs and user-\/defined scripts $\ast$/}\label{misc_8h_a3c41fae7f419ada19275d46cd6b55a1d}
+\hypertarget{misc_8h_a02c5c7d8062c38c9366b379698583a92}{}\index{misc.\+h@{misc.\+h}!U\+S\+E\+R\+\_\+\+P\+A\+S\+S\+\_\+\+L\+E\+N@{U\+S\+E\+R\+\_\+\+P\+A\+S\+S\+\_\+\+L\+E\+N}}
+\index{U\+S\+E\+R\+\_\+\+P\+A\+S\+S\+\_\+\+L\+E\+N@{U\+S\+E\+R\+\_\+\+P\+A\+S\+S\+\_\+\+L\+E\+N}!misc.\+h@{misc.\+h}}
+\subsubsection[{U\+S\+E\+R\+\_\+\+P\+A\+S\+S\+\_\+\+L\+E\+N}]{\setlength{\rightskip}{0pt plus 5cm}\#define U\+S\+E\+R\+\_\+\+P\+A\+S\+S\+\_\+\+L\+E\+N~128}\label{misc_8h_a02c5c7d8062c38c9366b379698583a92}
+
+
+\subsection{Function Documentation}
+\hypertarget{misc_8h_aaa376fd005fae1702d8121f295626ac8}{}\index{misc.\+h@{misc.\+h}!absolute\+\_\+pathname@{absolute\+\_\+pathname}}
+\index{absolute\+\_\+pathname@{absolute\+\_\+pathname}!misc.\+h@{misc.\+h}}
+\subsubsection[{absolute\+\_\+pathname(const char $\ast$pathname)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} absolute\+\_\+pathname (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{pathname}
+\end{DoxyParamCaption}
+)}\label{misc_8h_aaa376fd005fae1702d8121f295626ac8}
+\hypertarget{misc_8h_a032f18f4fffe1b60f4d30e3bacc9fa28}{}\index{misc.\+h@{misc.\+h}!compat\+\_\+flag@{compat\+\_\+flag}}
+\index{compat\+\_\+flag@{compat\+\_\+flag}!misc.\+h@{misc.\+h}}
+\subsubsection[{compat\+\_\+flag(unsigned int flag)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} compat\+\_\+flag (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{flag}
+\end{DoxyParamCaption}
+)}\label{misc_8h_a032f18f4fffe1b60f4d30e3bacc9fa28}
+Will set or query for a global compat flag. To modify the compat flags the C\+O\+M\+P\+A\+T\+\_\+\+F\+L\+A\+G\+\_\+\+S\+E\+T must be bitwise O\+Red together with the flag to set. If no \char`\"{}operator\char`\"{} flag is given it defaults to C\+O\+M\+P\+A\+T\+\_\+\+F\+L\+A\+G\+\_\+\+Q\+U\+E\+R\+Y, which returns the flag state.
+
+
+\begin{DoxyParams}{Parameters}
+{\em flag} & Flag to be set/queried for bitwise O\+Red with the operator flag \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns 0 if the flag is not set, otherwise the \textquotesingle{}flag\textquotesingle{} value is returned 
+\end{DoxyReturn}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=274pt]{misc_8h_a032f18f4fffe1b60f4d30e3bacc9fa28_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{misc_8h_a231abc8e058c29015c2a0d770250e0c0}{}\index{misc.\+h@{misc.\+h}!configure\+\_\+path@{configure\+\_\+path}}
+\index{configure\+\_\+path@{configure\+\_\+path}!misc.\+h@{misc.\+h}}
+\subsubsection[{configure\+\_\+path(void)}]{\setlength{\rightskip}{0pt plus 5cm}void configure\+\_\+path (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{misc_8h_a231abc8e058c29015c2a0d770250e0c0}
+\hypertarget{misc_8h_aa10a1dd4b150f979d6f359b5625e81f5}{}\index{misc.\+h@{misc.\+h}!create\+\_\+temp\+\_\+file@{create\+\_\+temp\+\_\+file}}
+\index{create\+\_\+temp\+\_\+file@{create\+\_\+temp\+\_\+file}!misc.\+h@{misc.\+h}}
+\subsubsection[{create\+\_\+temp\+\_\+file(const char $\ast$directory, const char $\ast$prefix, struct gc\+\_\+arena $\ast$gc)}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ create\+\_\+temp\+\_\+file (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{directory, }
+\item[{const char $\ast$}]{prefix, }
+\item[{struct {\bf gc\+\_\+arena} $\ast$}]{gc}
+\end{DoxyParamCaption}
+)}\label{misc_8h_aa10a1dd4b150f979d6f359b5625e81f5}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{misc_8h_aa10a1dd4b150f979d6f359b5625e81f5_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=263pt]{misc_8h_aa10a1dd4b150f979d6f359b5625e81f5_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{misc_8h_ab9c0c8a3a8f7fd0137f1f8c02ba100f4}{}\index{misc.\+h@{misc.\+h}!fail\+\_\+user\+\_\+pass@{fail\+\_\+user\+\_\+pass}}
+\index{fail\+\_\+user\+\_\+pass@{fail\+\_\+user\+\_\+pass}!misc.\+h@{misc.\+h}}
+\subsubsection[{fail\+\_\+user\+\_\+pass(const char $\ast$prefix, const unsigned int flags, const char $\ast$reason)}]{\setlength{\rightskip}{0pt plus 5cm}void fail\+\_\+user\+\_\+pass (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{prefix, }
+\item[{const unsigned int}]{flags, }
+\item[{const char $\ast$}]{reason}
+\end{DoxyParamCaption}
+)}\label{misc_8h_ab9c0c8a3a8f7fd0137f1f8c02ba100f4}
+\hypertarget{misc_8h_ad71e3889d079e20769eb904160b243f2}{}\index{misc.\+h@{misc.\+h}!gen\+\_\+path@{gen\+\_\+path}}
+\index{gen\+\_\+path@{gen\+\_\+path}!misc.\+h@{misc.\+h}}
+\subsubsection[{gen\+\_\+path(const char $\ast$directory, const char $\ast$filename, struct gc\+\_\+arena $\ast$gc)}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ gen\+\_\+path (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{directory, }
+\item[{const char $\ast$}]{filename, }
+\item[{struct {\bf gc\+\_\+arena} $\ast$}]{gc}
+\end{DoxyParamCaption}
+)}\label{misc_8h_ad71e3889d079e20769eb904160b243f2}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{misc_8h_ad71e3889d079e20769eb904160b243f2_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{misc_8h_ad71e3889d079e20769eb904160b243f2_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{misc_8h_a37fb65e30bd2c33564b14ad76a0c0794}{}\index{misc.\+h@{misc.\+h}!get\+\_\+random@{get\+\_\+random}}
+\index{get\+\_\+random@{get\+\_\+random}!misc.\+h@{misc.\+h}}
+\subsubsection[{get\+\_\+random(void)}]{\setlength{\rightskip}{0pt plus 5cm}long int get\+\_\+random (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{misc_8h_a37fb65e30bd2c33564b14ad76a0c0794}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{misc_8h_a37fb65e30bd2c33564b14ad76a0c0794_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{misc_8h_a37fb65e30bd2c33564b14ad76a0c0794_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{misc_8h_a17ec57572c876bf53ca3fa0cadb9c664}{}\index{misc.\+h@{misc.\+h}!get\+\_\+user\+\_\+pass\+\_\+cr@{get\+\_\+user\+\_\+pass\+\_\+cr}}
+\index{get\+\_\+user\+\_\+pass\+\_\+cr@{get\+\_\+user\+\_\+pass\+\_\+cr}!misc.\+h@{misc.\+h}}
+\subsubsection[{get\+\_\+user\+\_\+pass\+\_\+cr(struct user\+\_\+pass $\ast$up, const char $\ast$auth\+\_\+file, const char $\ast$prefix, const unsigned int flags, const char $\ast$auth\+\_\+challenge)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} get\+\_\+user\+\_\+pass\+\_\+cr (
+\begin{DoxyParamCaption}
+\item[{struct {\bf user\+\_\+pass} $\ast$}]{up, }
+\item[{const char $\ast$}]{auth\+\_\+file, }
+\item[{const char $\ast$}]{prefix, }
+\item[{const unsigned int}]{flags, }
+\item[{const char $\ast$}]{auth\+\_\+challenge}
+\end{DoxyParamCaption}
+)}\label{misc_8h_a17ec57572c876bf53ca3fa0cadb9c664}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{misc_8h_a17ec57572c876bf53ca3fa0cadb9c664_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{misc_8h_a17ec57572c876bf53ca3fa0cadb9c664_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{misc_8h_ac6174edbe71fde417d167f81417ae36b}{}\index{misc.\+h@{misc.\+h}!hostname\+\_\+randomize@{hostname\+\_\+randomize}}
+\index{hostname\+\_\+randomize@{hostname\+\_\+randomize}!misc.\+h@{misc.\+h}}
+\subsubsection[{hostname\+\_\+randomize(const char $\ast$hostname, struct gc\+\_\+arena $\ast$gc)}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ hostname\+\_\+randomize (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{hostname, }
+\item[{struct {\bf gc\+\_\+arena} $\ast$}]{gc}
+\end{DoxyParamCaption}
+)}\label{misc_8h_ac6174edbe71fde417d167f81417ae36b}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{misc_8h_ac6174edbe71fde417d167f81417ae36b_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{misc_8h_ac6174edbe71fde417d167f81417ae36b_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{misc_8h_abd1f6f7eac3eb3b3aecc21785c5a3b45}{}\index{misc.\+h@{misc.\+h}!make\+\_\+arg\+\_\+array@{make\+\_\+arg\+\_\+array}}
+\index{make\+\_\+arg\+\_\+array@{make\+\_\+arg\+\_\+array}!misc.\+h@{misc.\+h}}
+\subsubsection[{make\+\_\+arg\+\_\+array(const char $\ast$first, const char $\ast$parms, struct gc\+\_\+arena $\ast$gc)}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$$\ast$ make\+\_\+arg\+\_\+array (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{first, }
+\item[{const char $\ast$}]{parms, }
+\item[{struct {\bf gc\+\_\+arena} $\ast$}]{gc}
+\end{DoxyParamCaption}
+)}\label{misc_8h_abd1f6f7eac3eb3b3aecc21785c5a3b45}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{misc_8h_abd1f6f7eac3eb3b3aecc21785c5a3b45_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=333pt]{misc_8h_abd1f6f7eac3eb3b3aecc21785c5a3b45_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{misc_8h_a865a40fce786c53591ae4744c6ced760}{}\index{misc.\+h@{misc.\+h}!make\+\_\+extended\+\_\+arg\+\_\+array@{make\+\_\+extended\+\_\+arg\+\_\+array}}
+\index{make\+\_\+extended\+\_\+arg\+\_\+array@{make\+\_\+extended\+\_\+arg\+\_\+array}!misc.\+h@{misc.\+h}}
+\subsubsection[{make\+\_\+extended\+\_\+arg\+\_\+array(char $\ast$$\ast$p, struct gc\+\_\+arena $\ast$gc)}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$$\ast$ make\+\_\+extended\+\_\+arg\+\_\+array (
+\begin{DoxyParamCaption}
+\item[{char $\ast$$\ast$}]{p, }
+\item[{struct {\bf gc\+\_\+arena} $\ast$}]{gc}
+\end{DoxyParamCaption}
+)}\label{misc_8h_a865a40fce786c53591ae4744c6ced760}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{misc_8h_a865a40fce786c53591ae4744c6ced760_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{misc_8h_a8596ddf7653af77837d24c74e6a59b69}{}\index{misc.\+h@{misc.\+h}!openvpn\+\_\+execve@{openvpn\+\_\+execve}}
+\index{openvpn\+\_\+execve@{openvpn\+\_\+execve}!misc.\+h@{misc.\+h}}
+\subsubsection[{openvpn\+\_\+execve(const struct argv $\ast$a, const struct env\+\_\+set $\ast$es, const unsigned int flags)}]{\setlength{\rightskip}{0pt plus 5cm}int openvpn\+\_\+execve (
+\begin{DoxyParamCaption}
+\item[{const struct {\bf argv} $\ast$}]{a, }
+\item[{const struct {\bf env\+\_\+set} $\ast$}]{es, }
+\item[{const unsigned int}]{flags}
+\end{DoxyParamCaption}
+)}\label{misc_8h_a8596ddf7653af77837d24c74e6a59b69}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{misc_8h_a8596ddf7653af77837d24c74e6a59b69_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{misc_8h_a8596ddf7653af77837d24c74e6a59b69_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{misc_8h_a1ea73c309e8dfb9c1fc00b2977d72a75}{}\index{misc.\+h@{misc.\+h}!openvpn\+\_\+execve\+\_\+allowed@{openvpn\+\_\+execve\+\_\+allowed}}
+\index{openvpn\+\_\+execve\+\_\+allowed@{openvpn\+\_\+execve\+\_\+allowed}!misc.\+h@{misc.\+h}}
+\subsubsection[{openvpn\+\_\+execve\+\_\+allowed(const unsigned int flags)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} openvpn\+\_\+execve\+\_\+allowed (
+\begin{DoxyParamCaption}
+\item[{const unsigned int}]{flags}
+\end{DoxyParamCaption}
+)}\label{misc_8h_a1ea73c309e8dfb9c1fc00b2977d72a75}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{misc_8h_a1ea73c309e8dfb9c1fc00b2977d72a75_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{misc_8h_a12c490307c9e4966e41f32d08f5f3cae}{}\index{misc.\+h@{misc.\+h}!openvpn\+\_\+execve\+\_\+check@{openvpn\+\_\+execve\+\_\+check}}
+\index{openvpn\+\_\+execve\+\_\+check@{openvpn\+\_\+execve\+\_\+check}!misc.\+h@{misc.\+h}}
+\subsubsection[{openvpn\+\_\+execve\+\_\+check(const struct argv $\ast$a, const struct env\+\_\+set $\ast$es, const unsigned int flags, const char $\ast$error\+\_\+message)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} openvpn\+\_\+execve\+\_\+check (
+\begin{DoxyParamCaption}
+\item[{const struct {\bf argv} $\ast$}]{a, }
+\item[{const struct {\bf env\+\_\+set} $\ast$}]{es, }
+\item[{const unsigned int}]{flags, }
+\item[{const char $\ast$}]{error\+\_\+message}
+\end{DoxyParamCaption}
+)}\label{misc_8h_a12c490307c9e4966e41f32d08f5f3cae}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{misc_8h_a12c490307c9e4966e41f32d08f5f3cae_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{misc_8h_a12c490307c9e4966e41f32d08f5f3cae_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{misc_8h_aa6317d2c2a118c3a9519b02a23111367}{}\index{misc.\+h@{misc.\+h}!openvpn\+\_\+popen@{openvpn\+\_\+popen}}
+\index{openvpn\+\_\+popen@{openvpn\+\_\+popen}!misc.\+h@{misc.\+h}}
+\subsubsection[{openvpn\+\_\+popen(const struct argv $\ast$a, const struct env\+\_\+set $\ast$es)}]{\setlength{\rightskip}{0pt plus 5cm}int openvpn\+\_\+popen (
+\begin{DoxyParamCaption}
+\item[{const struct {\bf argv} $\ast$}]{a, }
+\item[{const struct {\bf env\+\_\+set} $\ast$}]{es}
+\end{DoxyParamCaption}
+)}\label{misc_8h_aa6317d2c2a118c3a9519b02a23111367}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{misc_8h_aa6317d2c2a118c3a9519b02a23111367_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{misc_8h_a37c9ea488f35dc0454dbf94f7e8938fa}{}\index{misc.\+h@{misc.\+h}!purge\+\_\+user\+\_\+pass@{purge\+\_\+user\+\_\+pass}}
+\index{purge\+\_\+user\+\_\+pass@{purge\+\_\+user\+\_\+pass}!misc.\+h@{misc.\+h}}
+\subsubsection[{purge\+\_\+user\+\_\+pass(struct user\+\_\+pass $\ast$up, const bool force)}]{\setlength{\rightskip}{0pt plus 5cm}void purge\+\_\+user\+\_\+pass (
+\begin{DoxyParamCaption}
+\item[{struct {\bf user\+\_\+pass} $\ast$}]{up, }
+\item[{const {\bf bool}}]{force}
+\end{DoxyParamCaption}
+)}\label{misc_8h_a37c9ea488f35dc0454dbf94f7e8938fa}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{misc_8h_a37c9ea488f35dc0454dbf94f7e8938fa_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{misc_8h_acb1c853a22da028226b8098a81250c9a}{}\index{misc.\+h@{misc.\+h}!safe\+\_\+print@{safe\+\_\+print}}
+\index{safe\+\_\+print@{safe\+\_\+print}!misc.\+h@{misc.\+h}}
+\subsubsection[{safe\+\_\+print(const char $\ast$str, struct gc\+\_\+arena $\ast$gc)}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ safe\+\_\+print (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{str, }
+\item[{struct {\bf gc\+\_\+arena} $\ast$}]{gc}
+\end{DoxyParamCaption}
+)}\label{misc_8h_acb1c853a22da028226b8098a81250c9a}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{misc_8h_acb1c853a22da028226b8098a81250c9a_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{misc_8h_a0e9d23545d601799c4f1910c9322431e}{}\index{misc.\+h@{misc.\+h}!sanitize\+\_\+control\+\_\+message@{sanitize\+\_\+control\+\_\+message}}
+\index{sanitize\+\_\+control\+\_\+message@{sanitize\+\_\+control\+\_\+message}!misc.\+h@{misc.\+h}}
+\subsubsection[{sanitize\+\_\+control\+\_\+message(const char $\ast$str, struct gc\+\_\+arena $\ast$gc)}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ sanitize\+\_\+control\+\_\+message (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{str, }
+\item[{struct {\bf gc\+\_\+arena} $\ast$}]{gc}
+\end{DoxyParamCaption}
+)}\label{misc_8h_a0e9d23545d601799c4f1910c9322431e}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=307pt]{misc_8h_a0e9d23545d601799c4f1910c9322431e_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{misc_8h_a0e9d23545d601799c4f1910c9322431e_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{misc_8h_a7459e81aab781d02183498da67072573}{}\index{misc.\+h@{misc.\+h}!save\+\_\+inetd\+\_\+socket\+\_\+descriptor@{save\+\_\+inetd\+\_\+socket\+\_\+descriptor}}
+\index{save\+\_\+inetd\+\_\+socket\+\_\+descriptor@{save\+\_\+inetd\+\_\+socket\+\_\+descriptor}!misc.\+h@{misc.\+h}}
+\subsubsection[{save\+\_\+inetd\+\_\+socket\+\_\+descriptor(void)}]{\setlength{\rightskip}{0pt plus 5cm}void save\+\_\+inetd\+\_\+socket\+\_\+descriptor (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{misc_8h_a7459e81aab781d02183498da67072573}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{misc_8h_a7459e81aab781d02183498da67072573_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{misc_8h_a8891fa0f7a8c069f3ed301d220559e08}{}\index{misc.\+h@{misc.\+h}!set\+\_\+auth\+\_\+token@{set\+\_\+auth\+\_\+token}}
+\index{set\+\_\+auth\+\_\+token@{set\+\_\+auth\+\_\+token}!misc.\+h@{misc.\+h}}
+\subsubsection[{set\+\_\+auth\+\_\+token(struct user\+\_\+pass $\ast$up, const char $\ast$token)}]{\setlength{\rightskip}{0pt plus 5cm}void set\+\_\+auth\+\_\+token (
+\begin{DoxyParamCaption}
+\item[{struct {\bf user\+\_\+pass} $\ast$}]{up, }
+\item[{const char $\ast$}]{token}
+\end{DoxyParamCaption}
+)}\label{misc_8h_a8891fa0f7a8c069f3ed301d220559e08}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=300pt]{misc_8h_a8891fa0f7a8c069f3ed301d220559e08_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{misc_8h_a6e7deed7d2affb7c6a734ec2aea7951d}{}\index{misc.\+h@{misc.\+h}!set\+\_\+std\+\_\+files\+\_\+to\+\_\+null@{set\+\_\+std\+\_\+files\+\_\+to\+\_\+null}}
+\index{set\+\_\+std\+\_\+files\+\_\+to\+\_\+null@{set\+\_\+std\+\_\+files\+\_\+to\+\_\+null}!misc.\+h@{misc.\+h}}
+\subsubsection[{set\+\_\+std\+\_\+files\+\_\+to\+\_\+null(bool stdin\+\_\+only)}]{\setlength{\rightskip}{0pt plus 5cm}void set\+\_\+std\+\_\+files\+\_\+to\+\_\+null (
+\begin{DoxyParamCaption}
+\item[{{\bf bool}}]{stdin\+\_\+only}
+\end{DoxyParamCaption}
+)}\label{misc_8h_a6e7deed7d2affb7c6a734ec2aea7951d}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{misc_8h_a6e7deed7d2affb7c6a734ec2aea7951d_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{misc_8h_afc03c5155ca8766ef44d3945d44b10e2}{}\index{misc.\+h@{misc.\+h}!system\+\_\+error\+\_\+message@{system\+\_\+error\+\_\+message}}
+\index{system\+\_\+error\+\_\+message@{system\+\_\+error\+\_\+message}!misc.\+h@{misc.\+h}}
+\subsubsection[{system\+\_\+error\+\_\+message(int, struct gc\+\_\+arena $\ast$gc)}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ system\+\_\+error\+\_\+message (
+\begin{DoxyParamCaption}
+\item[{int}]{, }
+\item[{struct {\bf gc\+\_\+arena} $\ast$}]{gc}
+\end{DoxyParamCaption}
+)}\label{misc_8h_afc03c5155ca8766ef44d3945d44b10e2}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{misc_8h_afc03c5155ca8766ef44d3945d44b10e2_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{misc_8h_afc03c5155ca8766ef44d3945d44b10e2_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{misc_8h_aa26af8ee2558835f5c8c920fb12a1db6}{}\index{misc.\+h@{misc.\+h}!test\+\_\+file@{test\+\_\+file}}
+\index{test\+\_\+file@{test\+\_\+file}!misc.\+h@{misc.\+h}}
+\subsubsection[{test\+\_\+file(const char $\ast$filename)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} test\+\_\+file (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{filename}
+\end{DoxyParamCaption}
+)}\label{misc_8h_aa26af8ee2558835f5c8c920fb12a1db6}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=246pt]{misc_8h_aa26af8ee2558835f5c8c920fb12a1db6_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=288pt]{misc_8h_aa26af8ee2558835f5c8c920fb12a1db6_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Variable Documentation}
+\hypertarget{misc_8h_a5ad312831981e71bad906718e68acc2d}{}\index{misc.\+h@{misc.\+h}!inetd\+\_\+socket\+\_\+descriptor@{inetd\+\_\+socket\+\_\+descriptor}}
+\index{inetd\+\_\+socket\+\_\+descriptor@{inetd\+\_\+socket\+\_\+descriptor}!misc.\+h@{misc.\+h}}
+\subsubsection[{inetd\+\_\+socket\+\_\+descriptor}]{\setlength{\rightskip}{0pt plus 5cm}int inetd\+\_\+socket\+\_\+descriptor}\label{misc_8h_a5ad312831981e71bad906718e68acc2d}
+\hypertarget{misc_8h_a20ae66171b79abd32459ab4b3ccb5b33}{}\index{misc.\+h@{misc.\+h}!script\+\_\+security@{script\+\_\+security}}
+\index{script\+\_\+security@{script\+\_\+security}!misc.\+h@{misc.\+h}}
+\subsubsection[{script\+\_\+security}]{\setlength{\rightskip}{0pt plus 5cm}int script\+\_\+security}\label{misc_8h_a20ae66171b79abd32459ab4b3ccb5b33}

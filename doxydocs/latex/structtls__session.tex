@@ -1,0 +1,108 @@
+\hypertarget{structtls__session}{}\section{tls\+\_\+session Struct Reference}
+\label{structtls__session}\index{tls\+\_\+session@{tls\+\_\+session}}
+
+
+{\ttfamily \#include $<$ssl\+\_\+common.\+h$>$}
+
+
+
+Collaboration diagram for tls\+\_\+session\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{structtls__session__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structtls__options}{tls\+\_\+options} $\ast$ \hyperlink{structtls__session_a748abaa327fa0bd6a8c23224a06f3a56}{opt}
+\item 
+\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} \hyperlink{structtls__session_ad3ba3d680dfcedd825add2385c0b0af9}{burst}
+\item 
+struct \hyperlink{structtls__wrap__ctx}{tls\+\_\+wrap\+\_\+ctx} \hyperlink{structtls__session_a8c6ee7b38824295f77feaeb35ac8e673}{tls\+\_\+wrap}
+\item 
+int \hyperlink{structtls__session_add6a01262e483abdb2cf4d6315741e6b}{initial\+\_\+opcode}
+\item 
+struct \hyperlink{structsession__id}{session\+\_\+id} \hyperlink{structtls__session_af71f7593007875222fc1bfbeeaf5d4fc}{session\+\_\+id}
+\item 
+int \hyperlink{structtls__session_a1255432a61acbfe1b94c15146e9698e0}{key\+\_\+id}
+\item 
+int \hyperlink{structtls__session_a45df56ce77e3c62ce88d6e3cdd743aab}{limit\+\_\+next}
+\item 
+int \hyperlink{structtls__session_a9b8993f2c4525caa43cb88b00a20bada}{verify\+\_\+maxlevel}
+\item 
+char $\ast$ \hyperlink{structtls__session_a83a9f4e9d176b93ca7575ff7e3e30c07}{common\+\_\+name}
+\item 
+struct \hyperlink{structcert__hash__set}{cert\+\_\+hash\+\_\+set} $\ast$ \hyperlink{structtls__session_a344489ec127b5681fe3cf90e72b85466}{cert\+\_\+hash\+\_\+set}
+\item 
+\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} \hyperlink{structtls__session_a5409c3f4b00fb0bbea119d3431f3ec8f}{verified}
+\item 
+struct \hyperlink{structlink__socket__actual}{link\+\_\+socket\+\_\+actual} \hyperlink{structtls__session_aa9bbd0222f1023fa627bc6736cc9135c}{untrusted\+\_\+addr}
+\item 
+struct \hyperlink{structkey__state}{key\+\_\+state} \hyperlink{structtls__session_a1de4672c1233dd4887122a909b10c314}{key} \mbox{[}\hyperlink{group__control__processor_ga136f3095237ae23358c30581753e4178}{K\+S\+\_\+\+S\+I\+Z\+E}\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Security parameter state of a single session within a V\+P\+N tunnel.
+
+This structure represents an Open\+V\+P\+N peer-\/to-\/peer control channel session.
+
+A {\ttfamily \hyperlink{structtls__session}{tls\+\_\+session}} remains over soft resets, but a new instance is initialized for each hard reset.
+
+\begin{DoxySeeAlso}{See also}
+
+\begin{DoxyItemize}
+\item This structure should be initialized using the {\ttfamily tls\+\_\+session\+\_\+init()} function.
+\item This structure should be cleaned up using the {\ttfamily tls\+\_\+session\+\_\+free()} function. 
+\end{DoxyItemize}
+\end{DoxySeeAlso}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{structtls__session_ad3ba3d680dfcedd825add2385c0b0af9}{}\index{tls\+\_\+session@{tls\+\_\+session}!burst@{burst}}
+\index{burst@{burst}!tls\+\_\+session@{tls\+\_\+session}}
+\subsubsection[{burst}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} tls\+\_\+session\+::burst}\label{structtls__session_ad3ba3d680dfcedd825add2385c0b0af9}
+\hypertarget{structtls__session_a344489ec127b5681fe3cf90e72b85466}{}\index{tls\+\_\+session@{tls\+\_\+session}!cert\+\_\+hash\+\_\+set@{cert\+\_\+hash\+\_\+set}}
+\index{cert\+\_\+hash\+\_\+set@{cert\+\_\+hash\+\_\+set}!tls\+\_\+session@{tls\+\_\+session}}
+\subsubsection[{cert\+\_\+hash\+\_\+set}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf cert\+\_\+hash\+\_\+set}$\ast$ tls\+\_\+session\+::cert\+\_\+hash\+\_\+set}\label{structtls__session_a344489ec127b5681fe3cf90e72b85466}
+\hypertarget{structtls__session_a83a9f4e9d176b93ca7575ff7e3e30c07}{}\index{tls\+\_\+session@{tls\+\_\+session}!common\+\_\+name@{common\+\_\+name}}
+\index{common\+\_\+name@{common\+\_\+name}!tls\+\_\+session@{tls\+\_\+session}}
+\subsubsection[{common\+\_\+name}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ tls\+\_\+session\+::common\+\_\+name}\label{structtls__session_a83a9f4e9d176b93ca7575ff7e3e30c07}
+\hypertarget{structtls__session_add6a01262e483abdb2cf4d6315741e6b}{}\index{tls\+\_\+session@{tls\+\_\+session}!initial\+\_\+opcode@{initial\+\_\+opcode}}
+\index{initial\+\_\+opcode@{initial\+\_\+opcode}!tls\+\_\+session@{tls\+\_\+session}}
+\subsubsection[{initial\+\_\+opcode}]{\setlength{\rightskip}{0pt plus 5cm}int tls\+\_\+session\+::initial\+\_\+opcode}\label{structtls__session_add6a01262e483abdb2cf4d6315741e6b}
+\hypertarget{structtls__session_a1de4672c1233dd4887122a909b10c314}{}\index{tls\+\_\+session@{tls\+\_\+session}!key@{key}}
+\index{key@{key}!tls\+\_\+session@{tls\+\_\+session}}
+\subsubsection[{key}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf key\+\_\+state} tls\+\_\+session\+::key\mbox{[}{\bf K\+S\+\_\+\+S\+I\+Z\+E}\mbox{]}}\label{structtls__session_a1de4672c1233dd4887122a909b10c314}
+\hypertarget{structtls__session_a1255432a61acbfe1b94c15146e9698e0}{}\index{tls\+\_\+session@{tls\+\_\+session}!key\+\_\+id@{key\+\_\+id}}
+\index{key\+\_\+id@{key\+\_\+id}!tls\+\_\+session@{tls\+\_\+session}}
+\subsubsection[{key\+\_\+id}]{\setlength{\rightskip}{0pt plus 5cm}int tls\+\_\+session\+::key\+\_\+id}\label{structtls__session_a1255432a61acbfe1b94c15146e9698e0}
+The current active key id, used to keep track of renegotiations. key\+\_\+id increments with each soft reset to K\+E\+Y\+\_\+\+I\+D\+\_\+\+M\+A\+S\+K then recycles back to 1. This way you know that if key\+\_\+id is 0, it is the first key. \hypertarget{structtls__session_a45df56ce77e3c62ce88d6e3cdd743aab}{}\index{tls\+\_\+session@{tls\+\_\+session}!limit\+\_\+next@{limit\+\_\+next}}
+\index{limit\+\_\+next@{limit\+\_\+next}!tls\+\_\+session@{tls\+\_\+session}}
+\subsubsection[{limit\+\_\+next}]{\setlength{\rightskip}{0pt plus 5cm}int tls\+\_\+session\+::limit\+\_\+next}\label{structtls__session_a45df56ce77e3c62ce88d6e3cdd743aab}
+\hypertarget{structtls__session_a748abaa327fa0bd6a8c23224a06f3a56}{}\index{tls\+\_\+session@{tls\+\_\+session}!opt@{opt}}
+\index{opt@{opt}!tls\+\_\+session@{tls\+\_\+session}}
+\subsubsection[{opt}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf tls\+\_\+options}$\ast$ tls\+\_\+session\+::opt}\label{structtls__session_a748abaa327fa0bd6a8c23224a06f3a56}
+\hypertarget{structtls__session_af71f7593007875222fc1bfbeeaf5d4fc}{}\index{tls\+\_\+session@{tls\+\_\+session}!session\+\_\+id@{session\+\_\+id}}
+\index{session\+\_\+id@{session\+\_\+id}!tls\+\_\+session@{tls\+\_\+session}}
+\subsubsection[{session\+\_\+id}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf session\+\_\+id} tls\+\_\+session\+::session\+\_\+id}\label{structtls__session_af71f7593007875222fc1bfbeeaf5d4fc}
+\hypertarget{structtls__session_a8c6ee7b38824295f77feaeb35ac8e673}{}\index{tls\+\_\+session@{tls\+\_\+session}!tls\+\_\+wrap@{tls\+\_\+wrap}}
+\index{tls\+\_\+wrap@{tls\+\_\+wrap}!tls\+\_\+session@{tls\+\_\+session}}
+\subsubsection[{tls\+\_\+wrap}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf tls\+\_\+wrap\+\_\+ctx} tls\+\_\+session\+::tls\+\_\+wrap}\label{structtls__session_a8c6ee7b38824295f77feaeb35ac8e673}
+\hypertarget{structtls__session_aa9bbd0222f1023fa627bc6736cc9135c}{}\index{tls\+\_\+session@{tls\+\_\+session}!untrusted\+\_\+addr@{untrusted\+\_\+addr}}
+\index{untrusted\+\_\+addr@{untrusted\+\_\+addr}!tls\+\_\+session@{tls\+\_\+session}}
+\subsubsection[{untrusted\+\_\+addr}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf link\+\_\+socket\+\_\+actual} tls\+\_\+session\+::untrusted\+\_\+addr}\label{structtls__session_aa9bbd0222f1023fa627bc6736cc9135c}
+\hypertarget{structtls__session_a5409c3f4b00fb0bbea119d3431f3ec8f}{}\index{tls\+\_\+session@{tls\+\_\+session}!verified@{verified}}
+\index{verified@{verified}!tls\+\_\+session@{tls\+\_\+session}}
+\subsubsection[{verified}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} tls\+\_\+session\+::verified}\label{structtls__session_a5409c3f4b00fb0bbea119d3431f3ec8f}
+\hypertarget{structtls__session_a9b8993f2c4525caa43cb88b00a20bada}{}\index{tls\+\_\+session@{tls\+\_\+session}!verify\+\_\+maxlevel@{verify\+\_\+maxlevel}}
+\index{verify\+\_\+maxlevel@{verify\+\_\+maxlevel}!tls\+\_\+session@{tls\+\_\+session}}
+\subsubsection[{verify\+\_\+maxlevel}]{\setlength{\rightskip}{0pt plus 5cm}int tls\+\_\+session\+::verify\+\_\+maxlevel}\label{structtls__session_a9b8993f2c4525caa43cb88b00a20bada}
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/openvpn/\hyperlink{ssl__common_8h}{ssl\+\_\+common.\+h}\end{DoxyCompactItemize}

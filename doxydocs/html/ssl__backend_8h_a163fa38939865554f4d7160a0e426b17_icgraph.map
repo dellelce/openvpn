@@ -1,0 +1,12 @@
+<map id="tls_clear_error" name="tls_clear_error">
+<area shape="rect" id="node2" href="$ssl_8h.html#a9f68d3f959ef9453ad35fe9eb321b682" title="init_ssl" alt="" coords="193,5,256,32"/>
+<area shape="rect" id="node3" href="$ssl_8h.html#ab403d9453e1b8088a89f06537ee74fcb" title="tls_multi_process" alt="" coords="163,56,287,83"/>
+<area shape="rect" id="node5" href="$ssl_8h.html#ad436aa1372a562e8be84491907531df4" title="tls_pre_decrypt" alt="" coords="169,107,280,133"/>
+<area shape="rect" id="node7" href="$group__data__crypto.html#gab1369f42e94bbec108d952d565b0f283" title="tls_pre_decrypt_lite" alt="" coords="157,157,292,184"/>
+<area shape="rect" id="node8" href="$ssl_8h.html#af2bd825809313e721a9f2d219ad59ecd" title="tls_send_payload" alt="" coords="163,208,286,235"/>
+<area shape="rect" id="node10" href="$ssl_8h.html#a63952262f279faf65f11a21e7e08fe8d" title="tls_rec_payload" alt="" coords="168,259,281,285"/>
+<area shape="rect" id="node11" href="$ssl__verify__backend_8h.html#a8574f9402b712d3051d9febde91cf220" title="verify_cert" alt="" coords="185,309,265,336"/>
+<area shape="rect" id="node4" href="$forward_8c.html#aa69b8ddc8529422bd57a2f0ac4dc1baa" title="check_tls_dowork" alt="" coords="354,52,481,79"/>
+<area shape="rect" id="node6" href="$forward_8h.html#a01bb4da24c0d75c32845ac87c5cad055" title="process_incoming_link\l_part1" alt="" coords="340,103,495,145"/>
+<area shape="rect" id="node9" href="$forward_8h.html#a7a409db050be184362b60f3ce7b56b35" title="send_control_channel\l_string" alt="" coords="343,201,491,242"/>
+</map>

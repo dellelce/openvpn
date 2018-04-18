@@ -1,0 +1,906 @@
+\hypertarget{ssl__backend_8h}{}\section{src/openvpn/ssl\+\_\+backend.h File Reference}
+\label{ssl__backend_8h}\index{src/openvpn/ssl\+\_\+backend.\+h@{src/openvpn/ssl\+\_\+backend.\+h}}
+{\ttfamily \#include \char`\"{}buffer.\+h\char`\"{}}\\*
+Include dependency graph for ssl\+\_\+backend.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ssl__backend_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ssl__backend_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structtls__cipher__name__pair}{tls\+\_\+cipher\+\_\+name\+\_\+pair}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{ssl__backend_8h_a351ac1d42f30feccbf586dc2a31311c2}{S\+S\+L\+A\+P\+I}~S\+S\+L\+A\+P\+I\+\_\+\+N\+O\+N\+E
+\item 
+\#define \hyperlink{ssl__backend_8h_a41465d5c59be26103d169db47799a056}{T\+L\+S\+\_\+\+V\+E\+R\+\_\+\+B\+A\+D}~-\/1
+\item 
+\#define \hyperlink{ssl__backend_8h_aa6a71a90ff07297908f8255b67091b43}{T\+L\+S\+\_\+\+V\+E\+R\+\_\+\+U\+N\+S\+P\+E\+C}~0 /$\ast$ default $\ast$/
+\item 
+\#define \hyperlink{ssl__backend_8h_a485c2afcde8685680825bd883f4d24d0}{T\+L\+S\+\_\+\+V\+E\+R\+\_\+1\+\_\+0}~1
+\item 
+\#define \hyperlink{ssl__backend_8h_aab247abb4387b9205411d63e630b758f}{T\+L\+S\+\_\+\+V\+E\+R\+\_\+1\+\_\+1}~2
+\item 
+\#define \hyperlink{ssl__backend_8h_a5d0da2a5c429346a71c51995ed832581}{T\+L\+S\+\_\+\+V\+E\+R\+\_\+1\+\_\+2}~3
+\item 
+\#define \hyperlink{ssl__backend_8h_a9ea31adff3174026fd7f76b80545baac}{T\+L\+S\+\_\+\+V\+E\+R\+\_\+1\+\_\+3}~4
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+const \hyperlink{structtls__cipher__name__pair}{tls\+\_\+cipher\+\_\+name\+\_\+pair} $\ast$ \hyperlink{ssl__backend_8h_a22246f88c46990f2691788c252d5032a}{tls\+\_\+get\+\_\+cipher\+\_\+name\+\_\+pair} (const char $\ast$cipher\+\_\+name, size\+\_\+t len)
+\item 
+int \hyperlink{ssl__backend_8h_a4f436fa821c56125095df634832bfd14}{pem\+\_\+password\+\_\+callback} (char $\ast$buf, int size, int rwflag, void $\ast$u)
+\item 
+void \hyperlink{ssl__backend_8h_ab16e1b1acf906d28623b0ba49b77ee87}{tls\+\_\+init\+\_\+lib} (void)
+\item 
+void \hyperlink{ssl__backend_8h_a8bc79c4c185b99d940e644bfd284b882}{tls\+\_\+free\+\_\+lib} (void)
+\item 
+void \hyperlink{ssl__backend_8h_a163fa38939865554f4d7160a0e426b17}{tls\+\_\+clear\+\_\+error} (void)
+\item 
+int \hyperlink{ssl__backend_8h_a9b69d18199f88cc201cef484a297616e}{tls\+\_\+version\+\_\+parse} (const char $\ast$vstr, const char $\ast$extra)
+\item 
+int \hyperlink{ssl__backend_8h_ab89fdadc4b221737e71944fa808fa7b4}{tls\+\_\+version\+\_\+max} (void)
+\item 
+void \hyperlink{ssl__backend_8h_a4af9fd8b9e8d24e2137c40c1230d21f7}{tls\+\_\+ctx\+\_\+server\+\_\+new} (struct \hyperlink{structtls__root__ctx}{tls\+\_\+root\+\_\+ctx} $\ast$ctx)
+\item 
+void \hyperlink{ssl__backend_8h_af52223e86a612254f82be222d171ca0b}{tls\+\_\+ctx\+\_\+client\+\_\+new} (struct \hyperlink{structtls__root__ctx}{tls\+\_\+root\+\_\+ctx} $\ast$ctx)
+\item 
+void \hyperlink{ssl__backend_8h_a0ebd940dcf50fa2bb859ac47a2b3490b}{tls\+\_\+ctx\+\_\+free} (struct \hyperlink{structtls__root__ctx}{tls\+\_\+root\+\_\+ctx} $\ast$ctx)
+\item 
+\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} \hyperlink{ssl__backend_8h_a8a8bcdcde91147e4138bc85510f22595}{tls\+\_\+ctx\+\_\+initialised} (struct \hyperlink{structtls__root__ctx}{tls\+\_\+root\+\_\+ctx} $\ast$ctx)
+\item 
+\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} \hyperlink{ssl__backend_8h_ae5d6c47b2f586769296b469664238663}{tls\+\_\+ctx\+\_\+set\+\_\+options} (struct \hyperlink{structtls__root__ctx}{tls\+\_\+root\+\_\+ctx} $\ast$ctx, unsigned int ssl\+\_\+flags)
+\item 
+void \hyperlink{ssl__backend_8h_aba221541f7cf1370207c9dc042986283}{tls\+\_\+ctx\+\_\+restrict\+\_\+ciphers} (struct \hyperlink{structtls__root__ctx}{tls\+\_\+root\+\_\+ctx} $\ast$ctx, const char $\ast$ciphers)
+\item 
+void \hyperlink{ssl__backend_8h_ac4ad93bbaf617845e60c0134374a9b94}{tls\+\_\+ctx\+\_\+set\+\_\+cert\+\_\+profile} (struct \hyperlink{structtls__root__ctx}{tls\+\_\+root\+\_\+ctx} $\ast$ctx, const char $\ast$profile)
+\item 
+void \hyperlink{ssl__backend_8h_a7b0c591c8cb4abbea285539459ed1aee}{tls\+\_\+ctx\+\_\+check\+\_\+cert\+\_\+time} (const struct \hyperlink{structtls__root__ctx}{tls\+\_\+root\+\_\+ctx} $\ast$ctx)
+\item 
+void \hyperlink{ssl__backend_8h_a8babec520c3bb9ff5ea5614b2fadbc65}{tls\+\_\+ctx\+\_\+load\+\_\+dh\+\_\+params} (struct \hyperlink{structtls__root__ctx}{tls\+\_\+root\+\_\+ctx} $\ast$ctx, const char $\ast$dh\+\_\+file, const char $\ast$dh\+\_\+file\+\_\+inline)
+\item 
+void \hyperlink{ssl__backend_8h_a9c49512dd58285c2041d1bd616bc7cf1}{tls\+\_\+ctx\+\_\+load\+\_\+ecdh\+\_\+params} (struct \hyperlink{structtls__root__ctx}{tls\+\_\+root\+\_\+ctx} $\ast$ctx, const char $\ast$curve\+\_\+name)
+\item 
+int \hyperlink{ssl__backend_8h_a6459e609a7bc791cb6ccc8c5be00c93b}{tls\+\_\+ctx\+\_\+load\+\_\+pkcs12} (struct \hyperlink{structtls__root__ctx}{tls\+\_\+root\+\_\+ctx} $\ast$ctx, const char $\ast$pkcs12\+\_\+file, const char $\ast$pkcs12\+\_\+file\+\_\+inline, \hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} load\+\_\+ca\+\_\+file)
+\item 
+void \hyperlink{ssl__backend_8h_a7dd63e4e99cfc9110ba99796b7530b58}{tls\+\_\+ctx\+\_\+load\+\_\+cert\+\_\+file} (struct \hyperlink{structtls__root__ctx}{tls\+\_\+root\+\_\+ctx} $\ast$ctx, const char $\ast$cert\+\_\+file, const char $\ast$cert\+\_\+file\+\_\+inline)
+\item 
+int \hyperlink{ssl__backend_8h_a47e6d0afaa07dc26ecd193e45b007ce5}{tls\+\_\+ctx\+\_\+load\+\_\+priv\+\_\+file} (struct \hyperlink{structtls__root__ctx}{tls\+\_\+root\+\_\+ctx} $\ast$ctx, const char $\ast$priv\+\_\+key\+\_\+file, const char $\ast$priv\+\_\+key\+\_\+file\+\_\+inline)
+\item 
+void \hyperlink{ssl__backend_8h_af6d0200c32423bda0f741f9b53fb7e93}{tls\+\_\+ctx\+\_\+load\+\_\+ca} (struct \hyperlink{structtls__root__ctx}{tls\+\_\+root\+\_\+ctx} $\ast$ctx, const char $\ast$ca\+\_\+file, const char $\ast$ca\+\_\+file\+\_\+inline, const char $\ast$ca\+\_\+path, \hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} tls\+\_\+server)
+\item 
+void \hyperlink{ssl__backend_8h_a76ca23047197ed4a1eb5413c5c266e85}{tls\+\_\+ctx\+\_\+load\+\_\+extra\+\_\+certs} (struct \hyperlink{structtls__root__ctx}{tls\+\_\+root\+\_\+ctx} $\ast$ctx, const char $\ast$extra\+\_\+certs\+\_\+file, const char $\ast$extra\+\_\+certs\+\_\+file\+\_\+inline)
+\item 
+void \hyperlink{ssl__backend_8h_a8afed7d8591df5b99475f4503031bb89}{key\+\_\+state\+\_\+ssl\+\_\+init} (struct \hyperlink{structkey__state__ssl}{key\+\_\+state\+\_\+ssl} $\ast$ks\+\_\+ssl, const struct \hyperlink{structtls__root__ctx}{tls\+\_\+root\+\_\+ctx} $\ast$ssl\+\_\+ctx, \hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} is\+\_\+server, struct \hyperlink{structtls__session}{tls\+\_\+session} $\ast$session)
+\item 
+void \hyperlink{ssl__backend_8h_a5b78057f4affe3b846f3a0ac8c0f6dac}{key\+\_\+state\+\_\+ssl\+\_\+free} (struct \hyperlink{structkey__state__ssl}{key\+\_\+state\+\_\+ssl} $\ast$ks\+\_\+ssl)
+\item 
+void \hyperlink{ssl__backend_8h_aef7bc1702c416ae70dc77bd48d907067}{backend\+\_\+tls\+\_\+ctx\+\_\+reload\+\_\+crl} (struct \hyperlink{structtls__root__ctx}{tls\+\_\+root\+\_\+ctx} $\ast$ssl\+\_\+ctx, const char $\ast$crl\+\_\+file, const char $\ast$crl\+\_\+inline)
+\item 
+void \hyperlink{ssl__backend_8h_a14424f09d407538b3f37b6a1da737ad4}{key\+\_\+state\+\_\+export\+\_\+keying\+\_\+material} (struct \hyperlink{structkey__state__ssl}{key\+\_\+state\+\_\+ssl} $\ast$ks\+\_\+ssl, struct \hyperlink{structtls__session}{tls\+\_\+session} $\ast$session) \+\_\+\+\_\+attribute\+\_\+\+\_\+((nonnull))
+\item 
+void \hyperlink{ssl__backend_8h_ab298cc3859e67ea30f9090663d0a2a69}{print\+\_\+details} (struct \hyperlink{structkey__state__ssl}{key\+\_\+state\+\_\+ssl} $\ast$ks\+\_\+ssl, const char $\ast$prefix)
+\item 
+void \hyperlink{ssl__backend_8h_a2f73b91d5244cb3c5aee1134333fdaee}{show\+\_\+available\+\_\+tls\+\_\+ciphers} (const char $\ast$cipher\+\_\+list, const char $\ast$tls\+\_\+cert\+\_\+profile)
+\item 
+void \hyperlink{ssl__backend_8h_a4c6eeb6ed5aa07f2f93d28d88c77dfb8}{show\+\_\+available\+\_\+curves} (void)
+\item 
+void \hyperlink{ssl__backend_8h_a001870e56849f7d4deda8dfce99d3bca}{get\+\_\+highest\+\_\+preference\+\_\+tls\+\_\+cipher} (char $\ast$buf, int size)
+\item 
+const char $\ast$ \hyperlink{ssl__backend_8h_a6fc4413d5c33a837fd0bee5692fdcd68}{get\+\_\+ssl\+\_\+library\+\_\+version} (void)
+\end{DoxyCompactItemize}
+\begin{Indent}{\bf Functions for packets to be sent to a remote Open\+V\+P\+N peer}\par
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{group__control__tls_gaa5438c5f4b03dafec41e663a3e5734d0}{key\+\_\+state\+\_\+write\+\_\+plaintext} (struct \hyperlink{structkey__state__ssl}{key\+\_\+state\+\_\+ssl} $\ast$ks\+\_\+ssl, struct \hyperlink{structbuffer}{buffer} $\ast$buf)
+\item 
+int \hyperlink{group__control__tls_ga67dac3b75328d8b92d3f1a69e86dacdc}{key\+\_\+state\+\_\+write\+\_\+plaintext\+\_\+const} (struct \hyperlink{structkey__state__ssl}{key\+\_\+state\+\_\+ssl} $\ast$ks\+\_\+ssl, const uint8\+\_\+t $\ast$data, int len)
+\item 
+int \hyperlink{group__control__tls_ga7260a351c5bb3bf22628278e09f2f7b3}{key\+\_\+state\+\_\+read\+\_\+ciphertext} (struct \hyperlink{structkey__state__ssl}{key\+\_\+state\+\_\+ssl} $\ast$ks\+\_\+ssl, struct \hyperlink{structbuffer}{buffer} $\ast$buf, int maxlen)
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}{\bf Functions for packets received from a remote Open\+V\+P\+N peer}\par
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{group__control__tls_ga5712e1bfbeafff1041a99b57cf4a91f4}{key\+\_\+state\+\_\+write\+\_\+ciphertext} (struct \hyperlink{structkey__state__ssl}{key\+\_\+state\+\_\+ssl} $\ast$ks\+\_\+ssl, struct \hyperlink{structbuffer}{buffer} $\ast$buf)
+\item 
+int \hyperlink{group__control__tls_gae5597992eeb64d1be998be0ccf98bf97}{key\+\_\+state\+\_\+read\+\_\+plaintext} (struct \hyperlink{structkey__state__ssl}{key\+\_\+state\+\_\+ssl} $\ast$ks\+\_\+ssl, struct \hyperlink{structbuffer}{buffer} $\ast$buf, int maxlen)
+\end{DoxyCompactItemize}
+\end{Indent}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{ssl__backend_8h_a351ac1d42f30feccbf586dc2a31311c2}{}\index{ssl\+\_\+backend.\+h@{ssl\+\_\+backend.\+h}!S\+S\+L\+A\+P\+I@{S\+S\+L\+A\+P\+I}}
+\index{S\+S\+L\+A\+P\+I@{S\+S\+L\+A\+P\+I}!ssl\+\_\+backend.\+h@{ssl\+\_\+backend.\+h}}
+\subsubsection[{S\+S\+L\+A\+P\+I}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\+S\+L\+A\+P\+I~S\+S\+L\+A\+P\+I\+\_\+\+N\+O\+N\+E}\label{ssl__backend_8h_a351ac1d42f30feccbf586dc2a31311c2}
+\hypertarget{ssl__backend_8h_a485c2afcde8685680825bd883f4d24d0}{}\index{ssl\+\_\+backend.\+h@{ssl\+\_\+backend.\+h}!T\+L\+S\+\_\+\+V\+E\+R\+\_\+1\+\_\+0@{T\+L\+S\+\_\+\+V\+E\+R\+\_\+1\+\_\+0}}
+\index{T\+L\+S\+\_\+\+V\+E\+R\+\_\+1\+\_\+0@{T\+L\+S\+\_\+\+V\+E\+R\+\_\+1\+\_\+0}!ssl\+\_\+backend.\+h@{ssl\+\_\+backend.\+h}}
+\subsubsection[{T\+L\+S\+\_\+\+V\+E\+R\+\_\+1\+\_\+0}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\+L\+S\+\_\+\+V\+E\+R\+\_\+1\+\_\+0~1}\label{ssl__backend_8h_a485c2afcde8685680825bd883f4d24d0}
+\hypertarget{ssl__backend_8h_aab247abb4387b9205411d63e630b758f}{}\index{ssl\+\_\+backend.\+h@{ssl\+\_\+backend.\+h}!T\+L\+S\+\_\+\+V\+E\+R\+\_\+1\+\_\+1@{T\+L\+S\+\_\+\+V\+E\+R\+\_\+1\+\_\+1}}
+\index{T\+L\+S\+\_\+\+V\+E\+R\+\_\+1\+\_\+1@{T\+L\+S\+\_\+\+V\+E\+R\+\_\+1\+\_\+1}!ssl\+\_\+backend.\+h@{ssl\+\_\+backend.\+h}}
+\subsubsection[{T\+L\+S\+\_\+\+V\+E\+R\+\_\+1\+\_\+1}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\+L\+S\+\_\+\+V\+E\+R\+\_\+1\+\_\+1~2}\label{ssl__backend_8h_aab247abb4387b9205411d63e630b758f}
+\hypertarget{ssl__backend_8h_a5d0da2a5c429346a71c51995ed832581}{}\index{ssl\+\_\+backend.\+h@{ssl\+\_\+backend.\+h}!T\+L\+S\+\_\+\+V\+E\+R\+\_\+1\+\_\+2@{T\+L\+S\+\_\+\+V\+E\+R\+\_\+1\+\_\+2}}
+\index{T\+L\+S\+\_\+\+V\+E\+R\+\_\+1\+\_\+2@{T\+L\+S\+\_\+\+V\+E\+R\+\_\+1\+\_\+2}!ssl\+\_\+backend.\+h@{ssl\+\_\+backend.\+h}}
+\subsubsection[{T\+L\+S\+\_\+\+V\+E\+R\+\_\+1\+\_\+2}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\+L\+S\+\_\+\+V\+E\+R\+\_\+1\+\_\+2~3}\label{ssl__backend_8h_a5d0da2a5c429346a71c51995ed832581}
+\hypertarget{ssl__backend_8h_a9ea31adff3174026fd7f76b80545baac}{}\index{ssl\+\_\+backend.\+h@{ssl\+\_\+backend.\+h}!T\+L\+S\+\_\+\+V\+E\+R\+\_\+1\+\_\+3@{T\+L\+S\+\_\+\+V\+E\+R\+\_\+1\+\_\+3}}
+\index{T\+L\+S\+\_\+\+V\+E\+R\+\_\+1\+\_\+3@{T\+L\+S\+\_\+\+V\+E\+R\+\_\+1\+\_\+3}!ssl\+\_\+backend.\+h@{ssl\+\_\+backend.\+h}}
+\subsubsection[{T\+L\+S\+\_\+\+V\+E\+R\+\_\+1\+\_\+3}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\+L\+S\+\_\+\+V\+E\+R\+\_\+1\+\_\+3~4}\label{ssl__backend_8h_a9ea31adff3174026fd7f76b80545baac}
+\hypertarget{ssl__backend_8h_a41465d5c59be26103d169db47799a056}{}\index{ssl\+\_\+backend.\+h@{ssl\+\_\+backend.\+h}!T\+L\+S\+\_\+\+V\+E\+R\+\_\+\+B\+A\+D@{T\+L\+S\+\_\+\+V\+E\+R\+\_\+\+B\+A\+D}}
+\index{T\+L\+S\+\_\+\+V\+E\+R\+\_\+\+B\+A\+D@{T\+L\+S\+\_\+\+V\+E\+R\+\_\+\+B\+A\+D}!ssl\+\_\+backend.\+h@{ssl\+\_\+backend.\+h}}
+\subsubsection[{T\+L\+S\+\_\+\+V\+E\+R\+\_\+\+B\+A\+D}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\+L\+S\+\_\+\+V\+E\+R\+\_\+\+B\+A\+D~-\/1}\label{ssl__backend_8h_a41465d5c59be26103d169db47799a056}
+Parse a T\+L\+S version specifier
+
+
+\begin{DoxyParams}{Parameters}
+{\em vstr} & The T\+L\+S version string \\
+\hline
+{\em extra} & An optional extra parameter, may be N\+U\+L\+L\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+One of the T\+L\+S\+\_\+\+V\+E\+R\+\_\+x constants or T\+L\+S\+\_\+\+V\+E\+R\+\_\+\+B\+A\+D if a parse error should be flagged. 
+\end{DoxyReturn}
+\hypertarget{ssl__backend_8h_aa6a71a90ff07297908f8255b67091b43}{}\index{ssl\+\_\+backend.\+h@{ssl\+\_\+backend.\+h}!T\+L\+S\+\_\+\+V\+E\+R\+\_\+\+U\+N\+S\+P\+E\+C@{T\+L\+S\+\_\+\+V\+E\+R\+\_\+\+U\+N\+S\+P\+E\+C}}
+\index{T\+L\+S\+\_\+\+V\+E\+R\+\_\+\+U\+N\+S\+P\+E\+C@{T\+L\+S\+\_\+\+V\+E\+R\+\_\+\+U\+N\+S\+P\+E\+C}!ssl\+\_\+backend.\+h@{ssl\+\_\+backend.\+h}}
+\subsubsection[{T\+L\+S\+\_\+\+V\+E\+R\+\_\+\+U\+N\+S\+P\+E\+C}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\+L\+S\+\_\+\+V\+E\+R\+\_\+\+U\+N\+S\+P\+E\+C~0 /$\ast$ default $\ast$/}\label{ssl__backend_8h_aa6a71a90ff07297908f8255b67091b43}
+
+
+\subsection{Function Documentation}
+\hypertarget{ssl__backend_8h_aef7bc1702c416ae70dc77bd48d907067}{}\index{ssl\+\_\+backend.\+h@{ssl\+\_\+backend.\+h}!backend\+\_\+tls\+\_\+ctx\+\_\+reload\+\_\+crl@{backend\+\_\+tls\+\_\+ctx\+\_\+reload\+\_\+crl}}
+\index{backend\+\_\+tls\+\_\+ctx\+\_\+reload\+\_\+crl@{backend\+\_\+tls\+\_\+ctx\+\_\+reload\+\_\+crl}!ssl\+\_\+backend.\+h@{ssl\+\_\+backend.\+h}}
+\subsubsection[{backend\+\_\+tls\+\_\+ctx\+\_\+reload\+\_\+crl(struct tls\+\_\+root\+\_\+ctx $\ast$ssl\+\_\+ctx, const char $\ast$crl\+\_\+file, const char $\ast$crl\+\_\+inline)}]{\setlength{\rightskip}{0pt plus 5cm}void backend\+\_\+tls\+\_\+ctx\+\_\+reload\+\_\+crl (
+\begin{DoxyParamCaption}
+\item[{struct {\bf tls\+\_\+root\+\_\+ctx} $\ast$}]{ssl\+\_\+ctx, }
+\item[{const char $\ast$}]{crl\+\_\+file, }
+\item[{const char $\ast$}]{crl\+\_\+inline}
+\end{DoxyParamCaption}
+)}\label{ssl__backend_8h_aef7bc1702c416ae70dc77bd48d907067}
+Reload the Certificate Revocation List for the S\+S\+L channel
+
+
+\begin{DoxyParams}{Parameters}
+{\em ssl\+\_\+ctx} & The T\+L\+S context to use when reloading the C\+R\+L \\
+\hline
+{\em crl\+\_\+file} & The file name to load the C\+R\+L from, or \char`\"{}\mbox{[}\mbox{[}\+I\+N\+L\+I\+N\+E\mbox{]}\mbox{]}\char`\"{} in the case of inline files. \\
+\hline
+{\em crl\+\_\+inline} & A string containing the C\+R\+L \\
+\hline
+\end{DoxyParams}
+\hypertarget{ssl__backend_8h_a001870e56849f7d4deda8dfce99d3bca}{}\index{ssl\+\_\+backend.\+h@{ssl\+\_\+backend.\+h}!get\+\_\+highest\+\_\+preference\+\_\+tls\+\_\+cipher@{get\+\_\+highest\+\_\+preference\+\_\+tls\+\_\+cipher}}
+\index{get\+\_\+highest\+\_\+preference\+\_\+tls\+\_\+cipher@{get\+\_\+highest\+\_\+preference\+\_\+tls\+\_\+cipher}!ssl\+\_\+backend.\+h@{ssl\+\_\+backend.\+h}}
+\subsubsection[{get\+\_\+highest\+\_\+preference\+\_\+tls\+\_\+cipher(char $\ast$buf, int size)}]{\setlength{\rightskip}{0pt plus 5cm}void get\+\_\+highest\+\_\+preference\+\_\+tls\+\_\+cipher (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{buf, }
+\item[{int}]{size}
+\end{DoxyParamCaption}
+)}\label{ssl__backend_8h_a001870e56849f7d4deda8dfce99d3bca}
+\hypertarget{ssl__backend_8h_a6fc4413d5c33a837fd0bee5692fdcd68}{}\index{ssl\+\_\+backend.\+h@{ssl\+\_\+backend.\+h}!get\+\_\+ssl\+\_\+library\+\_\+version@{get\+\_\+ssl\+\_\+library\+\_\+version}}
+\index{get\+\_\+ssl\+\_\+library\+\_\+version@{get\+\_\+ssl\+\_\+library\+\_\+version}!ssl\+\_\+backend.\+h@{ssl\+\_\+backend.\+h}}
+\subsubsection[{get\+\_\+ssl\+\_\+library\+\_\+version(void)}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ get\+\_\+ssl\+\_\+library\+\_\+version (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{ssl__backend_8h_a6fc4413d5c33a837fd0bee5692fdcd68}
+return a pointer to a static memory area containing the name and version number of the S\+S\+L library in use 
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=342pt]{ssl__backend_8h_a6fc4413d5c33a837fd0bee5692fdcd68_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{ssl__backend_8h_a14424f09d407538b3f37b6a1da737ad4}{}\index{ssl\+\_\+backend.\+h@{ssl\+\_\+backend.\+h}!key\+\_\+state\+\_\+export\+\_\+keying\+\_\+material@{key\+\_\+state\+\_\+export\+\_\+keying\+\_\+material}}
+\index{key\+\_\+state\+\_\+export\+\_\+keying\+\_\+material@{key\+\_\+state\+\_\+export\+\_\+keying\+\_\+material}!ssl\+\_\+backend.\+h@{ssl\+\_\+backend.\+h}}
+\subsubsection[{key\+\_\+state\+\_\+export\+\_\+keying\+\_\+material(struct key\+\_\+state\+\_\+ssl $\ast$ks\+\_\+ssl, struct tls\+\_\+session $\ast$session) \+\_\+\+\_\+attribute\+\_\+\+\_\+((nonnull))}]{\setlength{\rightskip}{0pt plus 5cm}void key\+\_\+state\+\_\+export\+\_\+keying\+\_\+material (
+\begin{DoxyParamCaption}
+\item[{struct {\bf key\+\_\+state\+\_\+ssl} $\ast$}]{ks\+\_\+ssl, }
+\item[{struct {\bf tls\+\_\+session} $\ast$}]{session}
+\end{DoxyParamCaption}
+)}\label{ssl__backend_8h_a14424f09d407538b3f37b6a1da737ad4}
+Keying Material Exporters \mbox{[}R\+F\+C 5705\mbox{]} allows additional keying material to be derived from existing T\+L\+S channel. This exported keying material can then be used for a variety of purposes.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ks\+\_\+ssl} & The S\+S\+L channel\textquotesingle{}s state info \\
+\hline
+{\em session} & The session associated with the given \hyperlink{structkey__state}{key\+\_\+state} \\
+\hline
+\end{DoxyParams}
+\hypertarget{ssl__backend_8h_a5b78057f4affe3b846f3a0ac8c0f6dac}{}\index{ssl\+\_\+backend.\+h@{ssl\+\_\+backend.\+h}!key\+\_\+state\+\_\+ssl\+\_\+free@{key\+\_\+state\+\_\+ssl\+\_\+free}}
+\index{key\+\_\+state\+\_\+ssl\+\_\+free@{key\+\_\+state\+\_\+ssl\+\_\+free}!ssl\+\_\+backend.\+h@{ssl\+\_\+backend.\+h}}
+\subsubsection[{key\+\_\+state\+\_\+ssl\+\_\+free(struct key\+\_\+state\+\_\+ssl $\ast$ks\+\_\+ssl)}]{\setlength{\rightskip}{0pt plus 5cm}void key\+\_\+state\+\_\+ssl\+\_\+free (
+\begin{DoxyParamCaption}
+\item[{struct {\bf key\+\_\+state\+\_\+ssl} $\ast$}]{ks\+\_\+ssl}
+\end{DoxyParamCaption}
+)}\label{ssl__backend_8h_a5b78057f4affe3b846f3a0ac8c0f6dac}
+Free the S\+S\+L channel part of the given key state.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ks\+\_\+ssl} & The S\+S\+L channel\textquotesingle{}s state info to free \\
+\hline
+\end{DoxyParams}
+\hypertarget{ssl__backend_8h_a8afed7d8591df5b99475f4503031bb89}{}\index{ssl\+\_\+backend.\+h@{ssl\+\_\+backend.\+h}!key\+\_\+state\+\_\+ssl\+\_\+init@{key\+\_\+state\+\_\+ssl\+\_\+init}}
+\index{key\+\_\+state\+\_\+ssl\+\_\+init@{key\+\_\+state\+\_\+ssl\+\_\+init}!ssl\+\_\+backend.\+h@{ssl\+\_\+backend.\+h}}
+\subsubsection[{key\+\_\+state\+\_\+ssl\+\_\+init(struct key\+\_\+state\+\_\+ssl $\ast$ks\+\_\+ssl, const struct tls\+\_\+root\+\_\+ctx $\ast$ssl\+\_\+ctx, bool is\+\_\+server, struct tls\+\_\+session $\ast$session)}]{\setlength{\rightskip}{0pt plus 5cm}void key\+\_\+state\+\_\+ssl\+\_\+init (
+\begin{DoxyParamCaption}
+\item[{struct {\bf key\+\_\+state\+\_\+ssl} $\ast$}]{ks\+\_\+ssl, }
+\item[{const struct {\bf tls\+\_\+root\+\_\+ctx} $\ast$}]{ssl\+\_\+ctx, }
+\item[{{\bf bool}}]{is\+\_\+server, }
+\item[{struct {\bf tls\+\_\+session} $\ast$}]{session}
+\end{DoxyParamCaption}
+)}\label{ssl__backend_8h_a8afed7d8591df5b99475f4503031bb89}
+Initialise the S\+S\+L channel part of the given key state. Settings will be loaded from a previously initialised T\+L\+S context.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ks\+\_\+ssl} & The S\+S\+L channel\textquotesingle{}s state info to initialise \\
+\hline
+{\em ssl\+\_\+ctx} & The T\+L\+S context to use when initialising the channel. \\
+\hline
+{\em is\+\_\+server} & Initialise a server? \\
+\hline
+{\em session} & The session associated with the given \hyperlink{structkey__state}{key\+\_\+state} \\
+\hline
+\end{DoxyParams}
+\hypertarget{ssl__backend_8h_a4f436fa821c56125095df634832bfd14}{}\index{ssl\+\_\+backend.\+h@{ssl\+\_\+backend.\+h}!pem\+\_\+password\+\_\+callback@{pem\+\_\+password\+\_\+callback}}
+\index{pem\+\_\+password\+\_\+callback@{pem\+\_\+password\+\_\+callback}!ssl\+\_\+backend.\+h@{ssl\+\_\+backend.\+h}}
+\subsubsection[{pem\+\_\+password\+\_\+callback(char $\ast$buf, int size, int rwflag, void $\ast$u)}]{\setlength{\rightskip}{0pt plus 5cm}int pem\+\_\+password\+\_\+callback (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{buf, }
+\item[{int}]{size, }
+\item[{int}]{rwflag, }
+\item[{void $\ast$}]{u}
+\end{DoxyParamCaption}
+)}\label{ssl__backend_8h_a4f436fa821c56125095df634832bfd14}
+Callback to retrieve the user\textquotesingle{}s password
+
+
+\begin{DoxyParams}{Parameters}
+{\em buf} & Buffer to return the password in \\
+\hline
+{\em size} & Size of the buffer \\
+\hline
+{\em rwflag} & Unused, needed for Open\+S\+S\+L compatibility \\
+\hline
+{\em u} & Unused, needed for Open\+S\+S\+L compatibility \\
+\hline
+\end{DoxyParams}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ssl__backend_8h_a4f436fa821c56125095df634832bfd14_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{ssl__backend_8h_ab298cc3859e67ea30f9090663d0a2a69}{}\index{ssl\+\_\+backend.\+h@{ssl\+\_\+backend.\+h}!print\+\_\+details@{print\+\_\+details}}
+\index{print\+\_\+details@{print\+\_\+details}!ssl\+\_\+backend.\+h@{ssl\+\_\+backend.\+h}}
+\subsubsection[{print\+\_\+details(struct key\+\_\+state\+\_\+ssl $\ast$ks\+\_\+ssl, const char $\ast$prefix)}]{\setlength{\rightskip}{0pt plus 5cm}void print\+\_\+details (
+\begin{DoxyParamCaption}
+\item[{struct {\bf key\+\_\+state\+\_\+ssl} $\ast$}]{ks\+\_\+ssl, }
+\item[{const char $\ast$}]{prefix}
+\end{DoxyParamCaption}
+)}\label{ssl__backend_8h_ab298cc3859e67ea30f9090663d0a2a69}
+\hypertarget{ssl__backend_8h_a4c6eeb6ed5aa07f2f93d28d88c77dfb8}{}\index{ssl\+\_\+backend.\+h@{ssl\+\_\+backend.\+h}!show\+\_\+available\+\_\+curves@{show\+\_\+available\+\_\+curves}}
+\index{show\+\_\+available\+\_\+curves@{show\+\_\+available\+\_\+curves}!ssl\+\_\+backend.\+h@{ssl\+\_\+backend.\+h}}
+\subsubsection[{show\+\_\+available\+\_\+curves(void)}]{\setlength{\rightskip}{0pt plus 5cm}void show\+\_\+available\+\_\+curves (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{ssl__backend_8h_a4c6eeb6ed5aa07f2f93d28d88c77dfb8}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=325pt]{ssl__backend_8h_a4c6eeb6ed5aa07f2f93d28d88c77dfb8_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{ssl__backend_8h_a2f73b91d5244cb3c5aee1134333fdaee}{}\index{ssl\+\_\+backend.\+h@{ssl\+\_\+backend.\+h}!show\+\_\+available\+\_\+tls\+\_\+ciphers@{show\+\_\+available\+\_\+tls\+\_\+ciphers}}
+\index{show\+\_\+available\+\_\+tls\+\_\+ciphers@{show\+\_\+available\+\_\+tls\+\_\+ciphers}!ssl\+\_\+backend.\+h@{ssl\+\_\+backend.\+h}}
+\subsubsection[{show\+\_\+available\+\_\+tls\+\_\+ciphers(const char $\ast$cipher\+\_\+list, const char $\ast$tls\+\_\+cert\+\_\+profile)}]{\setlength{\rightskip}{0pt plus 5cm}void show\+\_\+available\+\_\+tls\+\_\+ciphers (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{cipher\+\_\+list, }
+\item[{const char $\ast$}]{tls\+\_\+cert\+\_\+profile}
+\end{DoxyParamCaption}
+)}\label{ssl__backend_8h_a2f73b91d5244cb3c5aee1134333fdaee}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=308pt]{ssl__backend_8h_a2f73b91d5244cb3c5aee1134333fdaee_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{ssl__backend_8h_a163fa38939865554f4d7160a0e426b17}{}\index{ssl\+\_\+backend.\+h@{ssl\+\_\+backend.\+h}!tls\+\_\+clear\+\_\+error@{tls\+\_\+clear\+\_\+error}}
+\index{tls\+\_\+clear\+\_\+error@{tls\+\_\+clear\+\_\+error}!ssl\+\_\+backend.\+h@{ssl\+\_\+backend.\+h}}
+\subsubsection[{tls\+\_\+clear\+\_\+error(void)}]{\setlength{\rightskip}{0pt plus 5cm}void tls\+\_\+clear\+\_\+error (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{ssl__backend_8h_a163fa38939865554f4d7160a0e426b17}
+Clear the underlying S\+S\+L library\textquotesingle{}s error state. 
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ssl__backend_8h_a163fa38939865554f4d7160a0e426b17_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{ssl__backend_8h_a7b0c591c8cb4abbea285539459ed1aee}{}\index{ssl\+\_\+backend.\+h@{ssl\+\_\+backend.\+h}!tls\+\_\+ctx\+\_\+check\+\_\+cert\+\_\+time@{tls\+\_\+ctx\+\_\+check\+\_\+cert\+\_\+time}}
+\index{tls\+\_\+ctx\+\_\+check\+\_\+cert\+\_\+time@{tls\+\_\+ctx\+\_\+check\+\_\+cert\+\_\+time}!ssl\+\_\+backend.\+h@{ssl\+\_\+backend.\+h}}
+\subsubsection[{tls\+\_\+ctx\+\_\+check\+\_\+cert\+\_\+time(const struct tls\+\_\+root\+\_\+ctx $\ast$ctx)}]{\setlength{\rightskip}{0pt plus 5cm}void tls\+\_\+ctx\+\_\+check\+\_\+cert\+\_\+time (
+\begin{DoxyParamCaption}
+\item[{const struct {\bf tls\+\_\+root\+\_\+ctx} $\ast$}]{ctx}
+\end{DoxyParamCaption}
+)}\label{ssl__backend_8h_a7b0c591c8cb4abbea285539459ed1aee}
+Check our certificate not\+Before and not\+After fields, and warn if the cert is either not yet valid or has expired. Note that this is a non-\/fatal error, since we compare against the system time, which might be incorrect.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & T\+L\+S context to get our certificate from. \\
+\hline
+\end{DoxyParams}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=286pt]{ssl__backend_8h_a7b0c591c8cb4abbea285539459ed1aee_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{ssl__backend_8h_af52223e86a612254f82be222d171ca0b}{}\index{ssl\+\_\+backend.\+h@{ssl\+\_\+backend.\+h}!tls\+\_\+ctx\+\_\+client\+\_\+new@{tls\+\_\+ctx\+\_\+client\+\_\+new}}
+\index{tls\+\_\+ctx\+\_\+client\+\_\+new@{tls\+\_\+ctx\+\_\+client\+\_\+new}!ssl\+\_\+backend.\+h@{ssl\+\_\+backend.\+h}}
+\subsubsection[{tls\+\_\+ctx\+\_\+client\+\_\+new(struct tls\+\_\+root\+\_\+ctx $\ast$ctx)}]{\setlength{\rightskip}{0pt plus 5cm}void tls\+\_\+ctx\+\_\+client\+\_\+new (
+\begin{DoxyParamCaption}
+\item[{struct {\bf tls\+\_\+root\+\_\+ctx} $\ast$}]{ctx}
+\end{DoxyParamCaption}
+)}\label{ssl__backend_8h_af52223e86a612254f82be222d171ca0b}
+Initialises a library-\/specific T\+L\+S context for a client.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & T\+L\+S context to initialise \\
+\hline
+\end{DoxyParams}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=260pt]{ssl__backend_8h_af52223e86a612254f82be222d171ca0b_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{ssl__backend_8h_a0ebd940dcf50fa2bb859ac47a2b3490b}{}\index{ssl\+\_\+backend.\+h@{ssl\+\_\+backend.\+h}!tls\+\_\+ctx\+\_\+free@{tls\+\_\+ctx\+\_\+free}}
+\index{tls\+\_\+ctx\+\_\+free@{tls\+\_\+ctx\+\_\+free}!ssl\+\_\+backend.\+h@{ssl\+\_\+backend.\+h}}
+\subsubsection[{tls\+\_\+ctx\+\_\+free(struct tls\+\_\+root\+\_\+ctx $\ast$ctx)}]{\setlength{\rightskip}{0pt plus 5cm}void tls\+\_\+ctx\+\_\+free (
+\begin{DoxyParamCaption}
+\item[{struct {\bf tls\+\_\+root\+\_\+ctx} $\ast$}]{ctx}
+\end{DoxyParamCaption}
+)}\label{ssl__backend_8h_a0ebd940dcf50fa2bb859ac47a2b3490b}
+Frees the library-\/specific T\+L\+Sv1 context
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & T\+L\+S context to free \\
+\hline
+\end{DoxyParams}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=230pt]{ssl__backend_8h_a0ebd940dcf50fa2bb859ac47a2b3490b_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{ssl__backend_8h_a8a8bcdcde91147e4138bc85510f22595}{}\index{ssl\+\_\+backend.\+h@{ssl\+\_\+backend.\+h}!tls\+\_\+ctx\+\_\+initialised@{tls\+\_\+ctx\+\_\+initialised}}
+\index{tls\+\_\+ctx\+\_\+initialised@{tls\+\_\+ctx\+\_\+initialised}!ssl\+\_\+backend.\+h@{ssl\+\_\+backend.\+h}}
+\subsubsection[{tls\+\_\+ctx\+\_\+initialised(struct tls\+\_\+root\+\_\+ctx $\ast$ctx)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} tls\+\_\+ctx\+\_\+initialised (
+\begin{DoxyParamCaption}
+\item[{struct {\bf tls\+\_\+root\+\_\+ctx} $\ast$}]{ctx}
+\end{DoxyParamCaption}
+)}\label{ssl__backend_8h_a8a8bcdcde91147e4138bc85510f22595}
+Checks whether the given T\+L\+S context is initialised
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & T\+L\+S context to check\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the context is initialised, false if not. 
+\end{DoxyReturn}
+\hypertarget{ssl__backend_8h_af6d0200c32423bda0f741f9b53fb7e93}{}\index{ssl\+\_\+backend.\+h@{ssl\+\_\+backend.\+h}!tls\+\_\+ctx\+\_\+load\+\_\+ca@{tls\+\_\+ctx\+\_\+load\+\_\+ca}}
+\index{tls\+\_\+ctx\+\_\+load\+\_\+ca@{tls\+\_\+ctx\+\_\+load\+\_\+ca}!ssl\+\_\+backend.\+h@{ssl\+\_\+backend.\+h}}
+\subsubsection[{tls\+\_\+ctx\+\_\+load\+\_\+ca(struct tls\+\_\+root\+\_\+ctx $\ast$ctx, const char $\ast$ca\+\_\+file, const char $\ast$ca\+\_\+file\+\_\+inline, const char $\ast$ca\+\_\+path, bool tls\+\_\+server)}]{\setlength{\rightskip}{0pt plus 5cm}void tls\+\_\+ctx\+\_\+load\+\_\+ca (
+\begin{DoxyParamCaption}
+\item[{struct {\bf tls\+\_\+root\+\_\+ctx} $\ast$}]{ctx, }
+\item[{const char $\ast$}]{ca\+\_\+file, }
+\item[{const char $\ast$}]{ca\+\_\+file\+\_\+inline, }
+\item[{const char $\ast$}]{ca\+\_\+path, }
+\item[{{\bf bool}}]{tls\+\_\+server}
+\end{DoxyParamCaption}
+)}\label{ssl__backend_8h_af6d0200c32423bda0f741f9b53fb7e93}
+Load certificate authority certificates from the given file or path.
+
+Note that not all S\+S\+L libraries support loading from a path.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & T\+L\+S context to use \\
+\hline
+{\em ca\+\_\+file} & The file name to load the C\+As from, or \char`\"{}\mbox{[}\mbox{[}\+I\+N\+L\+I\+N\+E\mbox{]}\mbox{]}\char`\"{} in the case of inline files. \\
+\hline
+{\em ca\+\_\+file\+\_\+inline} & A string containing the C\+As \\
+\hline
+{\em ca\+\_\+path} & The path to load the C\+As from \\
+\hline
+\end{DoxyParams}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=248pt]{ssl__backend_8h_af6d0200c32423bda0f741f9b53fb7e93_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{ssl__backend_8h_a7dd63e4e99cfc9110ba99796b7530b58}{}\index{ssl\+\_\+backend.\+h@{ssl\+\_\+backend.\+h}!tls\+\_\+ctx\+\_\+load\+\_\+cert\+\_\+file@{tls\+\_\+ctx\+\_\+load\+\_\+cert\+\_\+file}}
+\index{tls\+\_\+ctx\+\_\+load\+\_\+cert\+\_\+file@{tls\+\_\+ctx\+\_\+load\+\_\+cert\+\_\+file}!ssl\+\_\+backend.\+h@{ssl\+\_\+backend.\+h}}
+\subsubsection[{tls\+\_\+ctx\+\_\+load\+\_\+cert\+\_\+file(struct tls\+\_\+root\+\_\+ctx $\ast$ctx, const char $\ast$cert\+\_\+file, const char $\ast$cert\+\_\+file\+\_\+inline)}]{\setlength{\rightskip}{0pt plus 5cm}void tls\+\_\+ctx\+\_\+load\+\_\+cert\+\_\+file (
+\begin{DoxyParamCaption}
+\item[{struct {\bf tls\+\_\+root\+\_\+ctx} $\ast$}]{ctx, }
+\item[{const char $\ast$}]{cert\+\_\+file, }
+\item[{const char $\ast$}]{cert\+\_\+file\+\_\+inline}
+\end{DoxyParamCaption}
+)}\label{ssl__backend_8h_a7dd63e4e99cfc9110ba99796b7530b58}
+Use Windows cryptoapi for key and cert, and add to library-\/specific T\+L\+S context.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & T\+L\+S context to use \\
+\hline
+{\em crypto\+\_\+api\+\_\+cert} & String representing the certificate to load. Load certificate file into the given T\+L\+S context. If the given certificate file contains a certificate chain, load the whole chain.\\
+\hline
+{\em ctx} & T\+L\+S context to use \\
+\hline
+{\em cert\+\_\+file} & The file name to load the certificate from, or \char`\"{}\mbox{[}\mbox{[}\+I\+N\+L\+I\+N\+E\mbox{]}\mbox{]}\char`\"{} in the case of inline files. \\
+\hline
+{\em cert\+\_\+file\+\_\+inline} & A string containing the certificate \\
+\hline
+\end{DoxyParams}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=271pt]{ssl__backend_8h_a7dd63e4e99cfc9110ba99796b7530b58_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{ssl__backend_8h_a8babec520c3bb9ff5ea5614b2fadbc65}{}\index{ssl\+\_\+backend.\+h@{ssl\+\_\+backend.\+h}!tls\+\_\+ctx\+\_\+load\+\_\+dh\+\_\+params@{tls\+\_\+ctx\+\_\+load\+\_\+dh\+\_\+params}}
+\index{tls\+\_\+ctx\+\_\+load\+\_\+dh\+\_\+params@{tls\+\_\+ctx\+\_\+load\+\_\+dh\+\_\+params}!ssl\+\_\+backend.\+h@{ssl\+\_\+backend.\+h}}
+\subsubsection[{tls\+\_\+ctx\+\_\+load\+\_\+dh\+\_\+params(struct tls\+\_\+root\+\_\+ctx $\ast$ctx, const char $\ast$dh\+\_\+file, const char $\ast$dh\+\_\+file\+\_\+inline)}]{\setlength{\rightskip}{0pt plus 5cm}void tls\+\_\+ctx\+\_\+load\+\_\+dh\+\_\+params (
+\begin{DoxyParamCaption}
+\item[{struct {\bf tls\+\_\+root\+\_\+ctx} $\ast$}]{ctx, }
+\item[{const char $\ast$}]{dh\+\_\+file, }
+\item[{const char $\ast$}]{dh\+\_\+file\+\_\+inline}
+\end{DoxyParamCaption}
+)}\label{ssl__backend_8h_a8babec520c3bb9ff5ea5614b2fadbc65}
+Load Diffie Hellman Parameters, and load them into the library-\/specific T\+L\+S context.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & T\+L\+S context to use \\
+\hline
+{\em dh\+\_\+file} & The file name to load the parameters from, or \char`\"{}\mbox{[}\mbox{[}\+I\+N\+L\+I\+N\+E\mbox{]}\mbox{]}\char`\"{} in the case of inline files. \\
+\hline
+{\em dh\+\_\+file\+\_\+inline} & A string containing the parameters \\
+\hline
+\end{DoxyParams}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=285pt]{ssl__backend_8h_a8babec520c3bb9ff5ea5614b2fadbc65_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{ssl__backend_8h_a9c49512dd58285c2041d1bd616bc7cf1}{}\index{ssl\+\_\+backend.\+h@{ssl\+\_\+backend.\+h}!tls\+\_\+ctx\+\_\+load\+\_\+ecdh\+\_\+params@{tls\+\_\+ctx\+\_\+load\+\_\+ecdh\+\_\+params}}
+\index{tls\+\_\+ctx\+\_\+load\+\_\+ecdh\+\_\+params@{tls\+\_\+ctx\+\_\+load\+\_\+ecdh\+\_\+params}!ssl\+\_\+backend.\+h@{ssl\+\_\+backend.\+h}}
+\subsubsection[{tls\+\_\+ctx\+\_\+load\+\_\+ecdh\+\_\+params(struct tls\+\_\+root\+\_\+ctx $\ast$ctx, const char $\ast$curve\+\_\+name)}]{\setlength{\rightskip}{0pt plus 5cm}void tls\+\_\+ctx\+\_\+load\+\_\+ecdh\+\_\+params (
+\begin{DoxyParamCaption}
+\item[{struct {\bf tls\+\_\+root\+\_\+ctx} $\ast$}]{ctx, }
+\item[{const char $\ast$}]{curve\+\_\+name}
+\end{DoxyParamCaption}
+)}\label{ssl__backend_8h_a9c49512dd58285c2041d1bd616bc7cf1}
+Load Elliptic Curve Parameters, and load them into the library-\/specific T\+L\+S context.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & T\+L\+S context to use \\
+\hline
+{\em curve\+\_\+name} & The name of the elliptic curve to load. \\
+\hline
+\end{DoxyParams}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=296pt]{ssl__backend_8h_a9c49512dd58285c2041d1bd616bc7cf1_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{ssl__backend_8h_a76ca23047197ed4a1eb5413c5c266e85}{}\index{ssl\+\_\+backend.\+h@{ssl\+\_\+backend.\+h}!tls\+\_\+ctx\+\_\+load\+\_\+extra\+\_\+certs@{tls\+\_\+ctx\+\_\+load\+\_\+extra\+\_\+certs}}
+\index{tls\+\_\+ctx\+\_\+load\+\_\+extra\+\_\+certs@{tls\+\_\+ctx\+\_\+load\+\_\+extra\+\_\+certs}!ssl\+\_\+backend.\+h@{ssl\+\_\+backend.\+h}}
+\subsubsection[{tls\+\_\+ctx\+\_\+load\+\_\+extra\+\_\+certs(struct tls\+\_\+root\+\_\+ctx $\ast$ctx, const char $\ast$extra\+\_\+certs\+\_\+file, const char $\ast$extra\+\_\+certs\+\_\+file\+\_\+inline)}]{\setlength{\rightskip}{0pt plus 5cm}void tls\+\_\+ctx\+\_\+load\+\_\+extra\+\_\+certs (
+\begin{DoxyParamCaption}
+\item[{struct {\bf tls\+\_\+root\+\_\+ctx} $\ast$}]{ctx, }
+\item[{const char $\ast$}]{extra\+\_\+certs\+\_\+file, }
+\item[{const char $\ast$}]{extra\+\_\+certs\+\_\+file\+\_\+inline}
+\end{DoxyParamCaption}
+)}\label{ssl__backend_8h_a76ca23047197ed4a1eb5413c5c266e85}
+Load extra certificate authority certificates from the given file or path. These Load extra certificates that are part of our own certificate chain but shouldn\textquotesingle{}t be included in the verify chain.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & T\+L\+S context to use \\
+\hline
+{\em extra\+\_\+certs\+\_\+file} & The file name to load the certs from, or \char`\"{}\mbox{[}\mbox{[}\+I\+N\+L\+I\+N\+E\mbox{]}\mbox{]}\char`\"{} in the case of inline files. \\
+\hline
+{\em extra\+\_\+certs\+\_\+file\+\_\+inline} & A string containing the certs \\
+\hline
+\end{DoxyParams}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=259pt]{ssl__backend_8h_a76ca23047197ed4a1eb5413c5c266e85_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{ssl__backend_8h_a6459e609a7bc791cb6ccc8c5be00c93b}{}\index{ssl\+\_\+backend.\+h@{ssl\+\_\+backend.\+h}!tls\+\_\+ctx\+\_\+load\+\_\+pkcs12@{tls\+\_\+ctx\+\_\+load\+\_\+pkcs12}}
+\index{tls\+\_\+ctx\+\_\+load\+\_\+pkcs12@{tls\+\_\+ctx\+\_\+load\+\_\+pkcs12}!ssl\+\_\+backend.\+h@{ssl\+\_\+backend.\+h}}
+\subsubsection[{tls\+\_\+ctx\+\_\+load\+\_\+pkcs12(struct tls\+\_\+root\+\_\+ctx $\ast$ctx, const char $\ast$pkcs12\+\_\+file, const char $\ast$pkcs12\+\_\+file\+\_\+inline, bool load\+\_\+ca\+\_\+file)}]{\setlength{\rightskip}{0pt plus 5cm}int tls\+\_\+ctx\+\_\+load\+\_\+pkcs12 (
+\begin{DoxyParamCaption}
+\item[{struct {\bf tls\+\_\+root\+\_\+ctx} $\ast$}]{ctx, }
+\item[{const char $\ast$}]{pkcs12\+\_\+file, }
+\item[{const char $\ast$}]{pkcs12\+\_\+file\+\_\+inline, }
+\item[{{\bf bool}}]{load\+\_\+ca\+\_\+file}
+\end{DoxyParamCaption}
+)}\label{ssl__backend_8h_a6459e609a7bc791cb6ccc8c5be00c93b}
+Load P\+K\+C\+S \#12 file for key, cert and (optionally) C\+A certs, and add to library-\/specific T\+L\+S context.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & T\+L\+S context to use \\
+\hline
+{\em pkcs12\+\_\+file} & The file name to load the information from, or \char`\"{}\mbox{[}\mbox{[}\+I\+N\+L\+I\+N\+E\mbox{]}\mbox{]}\char`\"{} in the case of inline files. \\
+\hline
+{\em pkcs12\+\_\+file\+\_\+inline} & A string containing the information\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 if an error occurred, 0 if parsing was successful. 
+\end{DoxyReturn}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=269pt]{ssl__backend_8h_a6459e609a7bc791cb6ccc8c5be00c93b_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{ssl__backend_8h_a47e6d0afaa07dc26ecd193e45b007ce5}{}\index{ssl\+\_\+backend.\+h@{ssl\+\_\+backend.\+h}!tls\+\_\+ctx\+\_\+load\+\_\+priv\+\_\+file@{tls\+\_\+ctx\+\_\+load\+\_\+priv\+\_\+file}}
+\index{tls\+\_\+ctx\+\_\+load\+\_\+priv\+\_\+file@{tls\+\_\+ctx\+\_\+load\+\_\+priv\+\_\+file}!ssl\+\_\+backend.\+h@{ssl\+\_\+backend.\+h}}
+\subsubsection[{tls\+\_\+ctx\+\_\+load\+\_\+priv\+\_\+file(struct tls\+\_\+root\+\_\+ctx $\ast$ctx, const char $\ast$priv\+\_\+key\+\_\+file, const char $\ast$priv\+\_\+key\+\_\+file\+\_\+inline)}]{\setlength{\rightskip}{0pt plus 5cm}int tls\+\_\+ctx\+\_\+load\+\_\+priv\+\_\+file (
+\begin{DoxyParamCaption}
+\item[{struct {\bf tls\+\_\+root\+\_\+ctx} $\ast$}]{ctx, }
+\item[{const char $\ast$}]{priv\+\_\+key\+\_\+file, }
+\item[{const char $\ast$}]{priv\+\_\+key\+\_\+file\+\_\+inline}
+\end{DoxyParamCaption}
+)}\label{ssl__backend_8h_a47e6d0afaa07dc26ecd193e45b007ce5}
+Load private key file into the given T\+L\+S context.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & T\+L\+S context to use \\
+\hline
+{\em priv\+\_\+key\+\_\+file} & The file name to load the private key from, or \char`\"{}\mbox{[}\mbox{[}\+I\+N\+L\+I\+N\+E\mbox{]}\mbox{]}\char`\"{} in the case of inline files. \\
+\hline
+{\em priv\+\_\+key\+\_\+file\+\_\+inline} & A string containing the private key\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 if an error occurred, 0 if parsing was successful. 
+\end{DoxyReturn}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=269pt]{ssl__backend_8h_a47e6d0afaa07dc26ecd193e45b007ce5_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{ssl__backend_8h_aba221541f7cf1370207c9dc042986283}{}\index{ssl\+\_\+backend.\+h@{ssl\+\_\+backend.\+h}!tls\+\_\+ctx\+\_\+restrict\+\_\+ciphers@{tls\+\_\+ctx\+\_\+restrict\+\_\+ciphers}}
+\index{tls\+\_\+ctx\+\_\+restrict\+\_\+ciphers@{tls\+\_\+ctx\+\_\+restrict\+\_\+ciphers}!ssl\+\_\+backend.\+h@{ssl\+\_\+backend.\+h}}
+\subsubsection[{tls\+\_\+ctx\+\_\+restrict\+\_\+ciphers(struct tls\+\_\+root\+\_\+ctx $\ast$ctx, const char $\ast$ciphers)}]{\setlength{\rightskip}{0pt plus 5cm}void tls\+\_\+ctx\+\_\+restrict\+\_\+ciphers (
+\begin{DoxyParamCaption}
+\item[{struct {\bf tls\+\_\+root\+\_\+ctx} $\ast$}]{ctx, }
+\item[{const char $\ast$}]{ciphers}
+\end{DoxyParamCaption}
+)}\label{ssl__backend_8h_aba221541f7cf1370207c9dc042986283}
+Restrict the list of ciphers that can be used within the T\+L\+S context.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & T\+L\+S context to restrict, must be valid. \\
+\hline
+{\em ciphers} & String containing \+: delimited cipher names, or N\+U\+L\+L to use sane defaults. \\
+\hline
+\end{DoxyParams}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=281pt]{ssl__backend_8h_aba221541f7cf1370207c9dc042986283_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{ssl__backend_8h_a4af9fd8b9e8d24e2137c40c1230d21f7}{}\index{ssl\+\_\+backend.\+h@{ssl\+\_\+backend.\+h}!tls\+\_\+ctx\+\_\+server\+\_\+new@{tls\+\_\+ctx\+\_\+server\+\_\+new}}
+\index{tls\+\_\+ctx\+\_\+server\+\_\+new@{tls\+\_\+ctx\+\_\+server\+\_\+new}!ssl\+\_\+backend.\+h@{ssl\+\_\+backend.\+h}}
+\subsubsection[{tls\+\_\+ctx\+\_\+server\+\_\+new(struct tls\+\_\+root\+\_\+ctx $\ast$ctx)}]{\setlength{\rightskip}{0pt plus 5cm}void tls\+\_\+ctx\+\_\+server\+\_\+new (
+\begin{DoxyParamCaption}
+\item[{struct {\bf tls\+\_\+root\+\_\+ctx} $\ast$}]{ctx}
+\end{DoxyParamCaption}
+)}\label{ssl__backend_8h_a4af9fd8b9e8d24e2137c40c1230d21f7}
+Initialise a library-\/specific T\+L\+S context for a server.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & T\+L\+S context to initialise \\
+\hline
+\end{DoxyParams}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=262pt]{ssl__backend_8h_a4af9fd8b9e8d24e2137c40c1230d21f7_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{ssl__backend_8h_ac4ad93bbaf617845e60c0134374a9b94}{}\index{ssl\+\_\+backend.\+h@{ssl\+\_\+backend.\+h}!tls\+\_\+ctx\+\_\+set\+\_\+cert\+\_\+profile@{tls\+\_\+ctx\+\_\+set\+\_\+cert\+\_\+profile}}
+\index{tls\+\_\+ctx\+\_\+set\+\_\+cert\+\_\+profile@{tls\+\_\+ctx\+\_\+set\+\_\+cert\+\_\+profile}!ssl\+\_\+backend.\+h@{ssl\+\_\+backend.\+h}}
+\subsubsection[{tls\+\_\+ctx\+\_\+set\+\_\+cert\+\_\+profile(struct tls\+\_\+root\+\_\+ctx $\ast$ctx, const char $\ast$profile)}]{\setlength{\rightskip}{0pt plus 5cm}void tls\+\_\+ctx\+\_\+set\+\_\+cert\+\_\+profile (
+\begin{DoxyParamCaption}
+\item[{struct {\bf tls\+\_\+root\+\_\+ctx} $\ast$}]{ctx, }
+\item[{const char $\ast$}]{profile}
+\end{DoxyParamCaption}
+)}\label{ssl__backend_8h_ac4ad93bbaf617845e60c0134374a9b94}
+Set the T\+L\+S certificate profile. The profile defines which crypto algorithms may be used in the supplied certificate.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & T\+L\+S context to restrict, must be valid. \\
+\hline
+{\em profile} & The profile name (\textquotesingle{}preferred\textquotesingle{}, \textquotesingle{}legacy\textquotesingle{} or \textquotesingle{}suiteb\textquotesingle{}). Defaults to \textquotesingle{}preferred\textquotesingle{} if N\+U\+L\+L. \\
+\hline
+\end{DoxyParams}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=280pt]{ssl__backend_8h_ac4ad93bbaf617845e60c0134374a9b94_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{ssl__backend_8h_ae5d6c47b2f586769296b469664238663}{}\index{ssl\+\_\+backend.\+h@{ssl\+\_\+backend.\+h}!tls\+\_\+ctx\+\_\+set\+\_\+options@{tls\+\_\+ctx\+\_\+set\+\_\+options}}
+\index{tls\+\_\+ctx\+\_\+set\+\_\+options@{tls\+\_\+ctx\+\_\+set\+\_\+options}!ssl\+\_\+backend.\+h@{ssl\+\_\+backend.\+h}}
+\subsubsection[{tls\+\_\+ctx\+\_\+set\+\_\+options(struct tls\+\_\+root\+\_\+ctx $\ast$ctx, unsigned int ssl\+\_\+flags)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} tls\+\_\+ctx\+\_\+set\+\_\+options (
+\begin{DoxyParamCaption}
+\item[{struct {\bf tls\+\_\+root\+\_\+ctx} $\ast$}]{ctx, }
+\item[{unsigned int}]{ssl\+\_\+flags}
+\end{DoxyParamCaption}
+)}\label{ssl__backend_8h_ae5d6c47b2f586769296b469664238663}
+Set any library specific options.
+
+Examples include disabling session caching, the password callback to use, and session verification parameters.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & T\+L\+S context to set options on \\
+\hline
+{\em ssl\+\_\+flags} & S\+S\+L flags to set\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true on success, false otherwise. 
+\end{DoxyReturn}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=264pt]{ssl__backend_8h_ae5d6c47b2f586769296b469664238663_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{ssl__backend_8h_a8bc79c4c185b99d940e644bfd284b882}{}\index{ssl\+\_\+backend.\+h@{ssl\+\_\+backend.\+h}!tls\+\_\+free\+\_\+lib@{tls\+\_\+free\+\_\+lib}}
+\index{tls\+\_\+free\+\_\+lib@{tls\+\_\+free\+\_\+lib}!ssl\+\_\+backend.\+h@{ssl\+\_\+backend.\+h}}
+\subsubsection[{tls\+\_\+free\+\_\+lib(void)}]{\setlength{\rightskip}{0pt plus 5cm}void tls\+\_\+free\+\_\+lib (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{ssl__backend_8h_a8bc79c4c185b99d940e644bfd284b882}
+Free any global S\+S\+L library-\/specific data structures. 
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=349pt]{ssl__backend_8h_a8bc79c4c185b99d940e644bfd284b882_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{ssl__backend_8h_a22246f88c46990f2691788c252d5032a}{}\index{ssl\+\_\+backend.\+h@{ssl\+\_\+backend.\+h}!tls\+\_\+get\+\_\+cipher\+\_\+name\+\_\+pair@{tls\+\_\+get\+\_\+cipher\+\_\+name\+\_\+pair}}
+\index{tls\+\_\+get\+\_\+cipher\+\_\+name\+\_\+pair@{tls\+\_\+get\+\_\+cipher\+\_\+name\+\_\+pair}!ssl\+\_\+backend.\+h@{ssl\+\_\+backend.\+h}}
+\subsubsection[{tls\+\_\+get\+\_\+cipher\+\_\+name\+\_\+pair(const char $\ast$cipher\+\_\+name, size\+\_\+t len)}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf tls\+\_\+cipher\+\_\+name\+\_\+pair}$\ast$ tls\+\_\+get\+\_\+cipher\+\_\+name\+\_\+pair (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{cipher\+\_\+name, }
+\item[{size\+\_\+t}]{len}
+\end{DoxyParamCaption}
+)}\label{ssl__backend_8h_a22246f88c46990f2691788c252d5032a}
+\hypertarget{ssl__backend_8h_ab16e1b1acf906d28623b0ba49b77ee87}{}\index{ssl\+\_\+backend.\+h@{ssl\+\_\+backend.\+h}!tls\+\_\+init\+\_\+lib@{tls\+\_\+init\+\_\+lib}}
+\index{tls\+\_\+init\+\_\+lib@{tls\+\_\+init\+\_\+lib}!ssl\+\_\+backend.\+h@{ssl\+\_\+backend.\+h}}
+\subsubsection[{tls\+\_\+init\+\_\+lib(void)}]{\setlength{\rightskip}{0pt plus 5cm}void tls\+\_\+init\+\_\+lib (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{ssl__backend_8h_ab16e1b1acf906d28623b0ba49b77ee87}
+Perform any static initialisation necessary by the library. Called on Open\+V\+P\+N initialisation 
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=333pt]{ssl__backend_8h_ab16e1b1acf906d28623b0ba49b77ee87_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{ssl__backend_8h_ab89fdadc4b221737e71944fa808fa7b4}{}\index{ssl\+\_\+backend.\+h@{ssl\+\_\+backend.\+h}!tls\+\_\+version\+\_\+max@{tls\+\_\+version\+\_\+max}}
+\index{tls\+\_\+version\+\_\+max@{tls\+\_\+version\+\_\+max}!ssl\+\_\+backend.\+h@{ssl\+\_\+backend.\+h}}
+\subsubsection[{tls\+\_\+version\+\_\+max(void)}]{\setlength{\rightskip}{0pt plus 5cm}int tls\+\_\+version\+\_\+max (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{ssl__backend_8h_ab89fdadc4b221737e71944fa808fa7b4}
+Return the maximum T\+L\+S version (as a T\+L\+S\+\_\+\+V\+E\+R\+\_\+x constant) supported by current S\+S\+L implementation
+
+\begin{DoxyReturn}{Returns}
+One of the T\+L\+S\+\_\+\+V\+E\+R\+\_\+x constants (but not T\+L\+S\+\_\+\+V\+E\+R\+\_\+\+B\+A\+D). 
+\end{DoxyReturn}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=294pt]{ssl__backend_8h_ab89fdadc4b221737e71944fa808fa7b4_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{ssl__backend_8h_a9b69d18199f88cc201cef484a297616e}{}\index{ssl\+\_\+backend.\+h@{ssl\+\_\+backend.\+h}!tls\+\_\+version\+\_\+parse@{tls\+\_\+version\+\_\+parse}}
+\index{tls\+\_\+version\+\_\+parse@{tls\+\_\+version\+\_\+parse}!ssl\+\_\+backend.\+h@{ssl\+\_\+backend.\+h}}
+\subsubsection[{tls\+\_\+version\+\_\+parse(const char $\ast$vstr, const char $\ast$extra)}]{\setlength{\rightskip}{0pt plus 5cm}int tls\+\_\+version\+\_\+parse (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{vstr, }
+\item[{const char $\ast$}]{extra}
+\end{DoxyParamCaption}
+)}\label{ssl__backend_8h_a9b69d18199f88cc201cef484a297616e}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=294pt]{ssl__backend_8h_a9b69d18199f88cc201cef484a297616e_cgraph}
+\end{center}
+\end{figure}
+
+

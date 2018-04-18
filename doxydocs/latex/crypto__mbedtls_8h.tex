@@ -1,0 +1,202 @@
+\hypertarget{crypto__mbedtls_8h}{}\section{src/openvpn/crypto\+\_\+mbedtls.h File Reference}
+\label{crypto__mbedtls_8h}\index{src/openvpn/crypto\+\_\+mbedtls.\+h@{src/openvpn/crypto\+\_\+mbedtls.\+h}}
+{\ttfamily \#include $<$mbedtls/cipher.\+h$>$}\\*
+{\ttfamily \#include $<$mbedtls/md.\+h$>$}\\*
+{\ttfamily \#include $<$mbedtls/ctr\+\_\+drbg.\+h$>$}\\*
+Include dependency graph for crypto\+\_\+mbedtls.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{crypto__mbedtls_8h__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{crypto__mbedtls_8h_ae9cda5ecb2fa1ec97a413d9ffbb0c87e}{O\+P\+E\+N\+V\+P\+N\+\_\+\+M\+A\+X\+\_\+\+I\+V\+\_\+\+L\+E\+N\+G\+T\+H}~M\+B\+E\+D\+T\+L\+S\+\_\+\+M\+A\+X\+\_\+\+I\+V\+\_\+\+L\+E\+N\+G\+T\+H
+\item 
+\#define \hyperlink{crypto__mbedtls_8h_acb69f3c245ceb88cec69889fb73a9763}{O\+P\+E\+N\+V\+P\+N\+\_\+\+M\+O\+D\+E\+\_\+\+C\+B\+C}~M\+B\+E\+D\+T\+L\+S\+\_\+\+M\+O\+D\+E\+\_\+\+C\+B\+C
+\item 
+\#define \hyperlink{crypto__mbedtls_8h_a6e0636d524db1a3f8c6941746d71d1dd}{O\+P\+E\+N\+V\+P\+N\+\_\+\+M\+O\+D\+E\+\_\+\+O\+F\+B}~M\+B\+E\+D\+T\+L\+S\+\_\+\+M\+O\+D\+E\+\_\+\+O\+F\+B
+\item 
+\#define \hyperlink{crypto__mbedtls_8h_aca7bc6d7c689c19751e1bceb0c8dde76}{O\+P\+E\+N\+V\+P\+N\+\_\+\+M\+O\+D\+E\+\_\+\+C\+F\+B}~M\+B\+E\+D\+T\+L\+S\+\_\+\+M\+O\+D\+E\+\_\+\+C\+F\+B
+\item 
+\#define \hyperlink{crypto__mbedtls_8h_ae8c0d2e0ba08f5386a604056a8a98650}{O\+P\+E\+N\+V\+P\+N\+\_\+\+M\+O\+D\+E\+\_\+\+G\+C\+M}~M\+B\+E\+D\+T\+L\+S\+\_\+\+M\+O\+D\+E\+\_\+\+G\+C\+M
+\item 
+\#define \hyperlink{crypto__mbedtls_8h_aedb62c875ead89c35e9fb22a953f49a6}{O\+P\+E\+N\+V\+P\+N\+\_\+\+O\+P\+\_\+\+E\+N\+C\+R\+Y\+P\+T}~M\+B\+E\+D\+T\+L\+S\+\_\+\+E\+N\+C\+R\+Y\+P\+T
+\item 
+\#define \hyperlink{crypto__mbedtls_8h_a3fd2a5b62ce0fb95f4975e692d433853}{O\+P\+E\+N\+V\+P\+N\+\_\+\+O\+P\+\_\+\+D\+E\+C\+R\+Y\+P\+T}~M\+B\+E\+D\+T\+L\+S\+\_\+\+D\+E\+C\+R\+Y\+P\+T
+\item 
+\#define \hyperlink{crypto__mbedtls_8h_ac91d9731e3eca871a80f7d2c494d5ee5}{M\+D4\+\_\+\+D\+I\+G\+E\+S\+T\+\_\+\+L\+E\+N\+G\+T\+H}~16
+\item 
+\#define \hyperlink{crypto__mbedtls_8h_a09a4f4b2f28cbe522d9b80153666029c}{M\+D5\+\_\+\+D\+I\+G\+E\+S\+T\+\_\+\+L\+E\+N\+G\+T\+H}~16
+\item 
+\#define \hyperlink{crypto__mbedtls_8h_a1a715db7b4403fe6c165e49a32f5fe3d}{S\+H\+A\+\_\+\+D\+I\+G\+E\+S\+T\+\_\+\+L\+E\+N\+G\+T\+H}~20
+\item 
+\#define \hyperlink{crypto__mbedtls_8h_aa9cf0abf87b30c4c63e9c7e89c590579}{S\+H\+A256\+\_\+\+D\+I\+G\+E\+S\+T\+\_\+\+L\+E\+N\+G\+T\+H}~32
+\item 
+\#define \hyperlink{crypto__mbedtls_8h_a6f4a9dcb76f52b2c9bd29dafc52c80aa}{D\+E\+S\+\_\+\+K\+E\+Y\+\_\+\+L\+E\+N\+G\+T\+H}~8
+\item 
+\#define \hyperlink{crypto__mbedtls_8h_aa91e8579acdb41cfbc348d9defc890f5}{mbed\+\_\+ok}(errval)~mbed\+\_\+log\+\_\+func\+\_\+line\+\_\+lite(\hyperlink{errlevel_8h_a82c6e0357ff0b26eaa2ad2fb17cc1268}{D\+\_\+\+C\+R\+Y\+P\+T\+\_\+\+E\+R\+R\+O\+R\+S}, errval, \+\_\+\+\_\+func\+\_\+\+\_\+, \+\_\+\+\_\+\+L\+I\+N\+E\+\_\+\+\_\+)
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef mbedtls\+\_\+cipher\+\_\+info\+\_\+t \hyperlink{crypto__mbedtls_8h_aa82c97683560a0df89eddd2a3cf6e6d4}{cipher\+\_\+kt\+\_\+t}
+\item 
+typedef mbedtls\+\_\+md\+\_\+info\+\_\+t \hyperlink{crypto__mbedtls_8h_acd12a312c79aead7af792554fb5606d5}{md\+\_\+kt\+\_\+t}
+\item 
+typedef mbedtls\+\_\+cipher\+\_\+context\+\_\+t \hyperlink{crypto__mbedtls_8h_a5fd03a052e0b72cb24747f7cccfc66dd}{cipher\+\_\+ctx\+\_\+t}
+\item 
+typedef mbedtls\+\_\+md\+\_\+context\+\_\+t \hyperlink{crypto__mbedtls_8h_a6da44e00be96174088b0ee604751629a}{md\+\_\+ctx\+\_\+t}
+\item 
+typedef mbedtls\+\_\+md\+\_\+context\+\_\+t \hyperlink{crypto__mbedtls_8h_a673f50867e637575e463123b9a6b8180}{hmac\+\_\+ctx\+\_\+t}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+mbedtls\+\_\+ctr\+\_\+drbg\+\_\+context $\ast$ \hyperlink{crypto__mbedtls_8h_af34c25be1c67c5dcad85aa8a598e42cd}{rand\+\_\+ctx\+\_\+get} (void)
+\item 
+\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} \hyperlink{crypto__mbedtls_8h_ab9d677b96133b032950a999b4868b8b1}{mbed\+\_\+log\+\_\+err} (unsigned int flags, int errval, const char $\ast$prefix)
+\item 
+\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} \hyperlink{crypto__mbedtls_8h_afb7914cae88c4b3b71e290134a785368}{mbed\+\_\+log\+\_\+func\+\_\+line} (unsigned int flags, int errval, const char $\ast$func, int line)
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{crypto__mbedtls_8h_a6f4a9dcb76f52b2c9bd29dafc52c80aa}{}\index{crypto\+\_\+mbedtls.\+h@{crypto\+\_\+mbedtls.\+h}!D\+E\+S\+\_\+\+K\+E\+Y\+\_\+\+L\+E\+N\+G\+T\+H@{D\+E\+S\+\_\+\+K\+E\+Y\+\_\+\+L\+E\+N\+G\+T\+H}}
+\index{D\+E\+S\+\_\+\+K\+E\+Y\+\_\+\+L\+E\+N\+G\+T\+H@{D\+E\+S\+\_\+\+K\+E\+Y\+\_\+\+L\+E\+N\+G\+T\+H}!crypto\+\_\+mbedtls.\+h@{crypto\+\_\+mbedtls.\+h}}
+\subsubsection[{D\+E\+S\+\_\+\+K\+E\+Y\+\_\+\+L\+E\+N\+G\+T\+H}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+E\+S\+\_\+\+K\+E\+Y\+\_\+\+L\+E\+N\+G\+T\+H~8}\label{crypto__mbedtls_8h_a6f4a9dcb76f52b2c9bd29dafc52c80aa}
+\hypertarget{crypto__mbedtls_8h_aa91e8579acdb41cfbc348d9defc890f5}{}\index{crypto\+\_\+mbedtls.\+h@{crypto\+\_\+mbedtls.\+h}!mbed\+\_\+ok@{mbed\+\_\+ok}}
+\index{mbed\+\_\+ok@{mbed\+\_\+ok}!crypto\+\_\+mbedtls.\+h@{crypto\+\_\+mbedtls.\+h}}
+\subsubsection[{mbed\+\_\+ok}]{\setlength{\rightskip}{0pt plus 5cm}\#define mbed\+\_\+ok(
+\begin{DoxyParamCaption}
+\item[{}]{errval}
+\end{DoxyParamCaption}
+)~mbed\+\_\+log\+\_\+func\+\_\+line\+\_\+lite({\bf D\+\_\+\+C\+R\+Y\+P\+T\+\_\+\+E\+R\+R\+O\+R\+S}, errval, \+\_\+\+\_\+func\+\_\+\+\_\+, \+\_\+\+\_\+\+L\+I\+N\+E\+\_\+\+\_\+)}\label{crypto__mbedtls_8h_aa91e8579acdb41cfbc348d9defc890f5}
+Check errval and log on error.
+
+Convenience wrapper to put around mbed T\+L\+S library calls, e.\+g. if (!mbed\+\_\+ok (mbedtls\+\_\+ssl\+\_\+func())) return 0; or A\+S\+S\+E\+R\+T (mbed\+\_\+ok (mbedtls\+\_\+ssl\+\_\+func()));
+
+
+\begin{DoxyParams}{Parameters}
+{\em errval} & mbed T\+L\+S error code to convert to error message.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if no errors are detected, false otherwise. 
+\end{DoxyReturn}
+\hypertarget{crypto__mbedtls_8h_ac91d9731e3eca871a80f7d2c494d5ee5}{}\index{crypto\+\_\+mbedtls.\+h@{crypto\+\_\+mbedtls.\+h}!M\+D4\+\_\+\+D\+I\+G\+E\+S\+T\+\_\+\+L\+E\+N\+G\+T\+H@{M\+D4\+\_\+\+D\+I\+G\+E\+S\+T\+\_\+\+L\+E\+N\+G\+T\+H}}
+\index{M\+D4\+\_\+\+D\+I\+G\+E\+S\+T\+\_\+\+L\+E\+N\+G\+T\+H@{M\+D4\+\_\+\+D\+I\+G\+E\+S\+T\+\_\+\+L\+E\+N\+G\+T\+H}!crypto\+\_\+mbedtls.\+h@{crypto\+\_\+mbedtls.\+h}}
+\subsubsection[{M\+D4\+\_\+\+D\+I\+G\+E\+S\+T\+\_\+\+L\+E\+N\+G\+T\+H}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\+D4\+\_\+\+D\+I\+G\+E\+S\+T\+\_\+\+L\+E\+N\+G\+T\+H~16}\label{crypto__mbedtls_8h_ac91d9731e3eca871a80f7d2c494d5ee5}
+\hypertarget{crypto__mbedtls_8h_a09a4f4b2f28cbe522d9b80153666029c}{}\index{crypto\+\_\+mbedtls.\+h@{crypto\+\_\+mbedtls.\+h}!M\+D5\+\_\+\+D\+I\+G\+E\+S\+T\+\_\+\+L\+E\+N\+G\+T\+H@{M\+D5\+\_\+\+D\+I\+G\+E\+S\+T\+\_\+\+L\+E\+N\+G\+T\+H}}
+\index{M\+D5\+\_\+\+D\+I\+G\+E\+S\+T\+\_\+\+L\+E\+N\+G\+T\+H@{M\+D5\+\_\+\+D\+I\+G\+E\+S\+T\+\_\+\+L\+E\+N\+G\+T\+H}!crypto\+\_\+mbedtls.\+h@{crypto\+\_\+mbedtls.\+h}}
+\subsubsection[{M\+D5\+\_\+\+D\+I\+G\+E\+S\+T\+\_\+\+L\+E\+N\+G\+T\+H}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\+D5\+\_\+\+D\+I\+G\+E\+S\+T\+\_\+\+L\+E\+N\+G\+T\+H~16}\label{crypto__mbedtls_8h_a09a4f4b2f28cbe522d9b80153666029c}
+\hypertarget{crypto__mbedtls_8h_ae9cda5ecb2fa1ec97a413d9ffbb0c87e}{}\index{crypto\+\_\+mbedtls.\+h@{crypto\+\_\+mbedtls.\+h}!O\+P\+E\+N\+V\+P\+N\+\_\+\+M\+A\+X\+\_\+\+I\+V\+\_\+\+L\+E\+N\+G\+T\+H@{O\+P\+E\+N\+V\+P\+N\+\_\+\+M\+A\+X\+\_\+\+I\+V\+\_\+\+L\+E\+N\+G\+T\+H}}
+\index{O\+P\+E\+N\+V\+P\+N\+\_\+\+M\+A\+X\+\_\+\+I\+V\+\_\+\+L\+E\+N\+G\+T\+H@{O\+P\+E\+N\+V\+P\+N\+\_\+\+M\+A\+X\+\_\+\+I\+V\+\_\+\+L\+E\+N\+G\+T\+H}!crypto\+\_\+mbedtls.\+h@{crypto\+\_\+mbedtls.\+h}}
+\subsubsection[{O\+P\+E\+N\+V\+P\+N\+\_\+\+M\+A\+X\+\_\+\+I\+V\+\_\+\+L\+E\+N\+G\+T\+H}]{\setlength{\rightskip}{0pt plus 5cm}\#define O\+P\+E\+N\+V\+P\+N\+\_\+\+M\+A\+X\+\_\+\+I\+V\+\_\+\+L\+E\+N\+G\+T\+H~M\+B\+E\+D\+T\+L\+S\+\_\+\+M\+A\+X\+\_\+\+I\+V\+\_\+\+L\+E\+N\+G\+T\+H}\label{crypto__mbedtls_8h_ae9cda5ecb2fa1ec97a413d9ffbb0c87e}
+Maximum length of an I\+V \hypertarget{crypto__mbedtls_8h_acb69f3c245ceb88cec69889fb73a9763}{}\index{crypto\+\_\+mbedtls.\+h@{crypto\+\_\+mbedtls.\+h}!O\+P\+E\+N\+V\+P\+N\+\_\+\+M\+O\+D\+E\+\_\+\+C\+B\+C@{O\+P\+E\+N\+V\+P\+N\+\_\+\+M\+O\+D\+E\+\_\+\+C\+B\+C}}
+\index{O\+P\+E\+N\+V\+P\+N\+\_\+\+M\+O\+D\+E\+\_\+\+C\+B\+C@{O\+P\+E\+N\+V\+P\+N\+\_\+\+M\+O\+D\+E\+\_\+\+C\+B\+C}!crypto\+\_\+mbedtls.\+h@{crypto\+\_\+mbedtls.\+h}}
+\subsubsection[{O\+P\+E\+N\+V\+P\+N\+\_\+\+M\+O\+D\+E\+\_\+\+C\+B\+C}]{\setlength{\rightskip}{0pt plus 5cm}\#define O\+P\+E\+N\+V\+P\+N\+\_\+\+M\+O\+D\+E\+\_\+\+C\+B\+C~M\+B\+E\+D\+T\+L\+S\+\_\+\+M\+O\+D\+E\+\_\+\+C\+B\+C}\label{crypto__mbedtls_8h_acb69f3c245ceb88cec69889fb73a9763}
+Cipher is in C\+B\+C mode \hypertarget{crypto__mbedtls_8h_aca7bc6d7c689c19751e1bceb0c8dde76}{}\index{crypto\+\_\+mbedtls.\+h@{crypto\+\_\+mbedtls.\+h}!O\+P\+E\+N\+V\+P\+N\+\_\+\+M\+O\+D\+E\+\_\+\+C\+F\+B@{O\+P\+E\+N\+V\+P\+N\+\_\+\+M\+O\+D\+E\+\_\+\+C\+F\+B}}
+\index{O\+P\+E\+N\+V\+P\+N\+\_\+\+M\+O\+D\+E\+\_\+\+C\+F\+B@{O\+P\+E\+N\+V\+P\+N\+\_\+\+M\+O\+D\+E\+\_\+\+C\+F\+B}!crypto\+\_\+mbedtls.\+h@{crypto\+\_\+mbedtls.\+h}}
+\subsubsection[{O\+P\+E\+N\+V\+P\+N\+\_\+\+M\+O\+D\+E\+\_\+\+C\+F\+B}]{\setlength{\rightskip}{0pt plus 5cm}\#define O\+P\+E\+N\+V\+P\+N\+\_\+\+M\+O\+D\+E\+\_\+\+C\+F\+B~M\+B\+E\+D\+T\+L\+S\+\_\+\+M\+O\+D\+E\+\_\+\+C\+F\+B}\label{crypto__mbedtls_8h_aca7bc6d7c689c19751e1bceb0c8dde76}
+Cipher is in C\+F\+B mode \hypertarget{crypto__mbedtls_8h_ae8c0d2e0ba08f5386a604056a8a98650}{}\index{crypto\+\_\+mbedtls.\+h@{crypto\+\_\+mbedtls.\+h}!O\+P\+E\+N\+V\+P\+N\+\_\+\+M\+O\+D\+E\+\_\+\+G\+C\+M@{O\+P\+E\+N\+V\+P\+N\+\_\+\+M\+O\+D\+E\+\_\+\+G\+C\+M}}
+\index{O\+P\+E\+N\+V\+P\+N\+\_\+\+M\+O\+D\+E\+\_\+\+G\+C\+M@{O\+P\+E\+N\+V\+P\+N\+\_\+\+M\+O\+D\+E\+\_\+\+G\+C\+M}!crypto\+\_\+mbedtls.\+h@{crypto\+\_\+mbedtls.\+h}}
+\subsubsection[{O\+P\+E\+N\+V\+P\+N\+\_\+\+M\+O\+D\+E\+\_\+\+G\+C\+M}]{\setlength{\rightskip}{0pt plus 5cm}\#define O\+P\+E\+N\+V\+P\+N\+\_\+\+M\+O\+D\+E\+\_\+\+G\+C\+M~M\+B\+E\+D\+T\+L\+S\+\_\+\+M\+O\+D\+E\+\_\+\+G\+C\+M}\label{crypto__mbedtls_8h_ae8c0d2e0ba08f5386a604056a8a98650}
+Cipher is in G\+C\+M mode \hypertarget{crypto__mbedtls_8h_a6e0636d524db1a3f8c6941746d71d1dd}{}\index{crypto\+\_\+mbedtls.\+h@{crypto\+\_\+mbedtls.\+h}!O\+P\+E\+N\+V\+P\+N\+\_\+\+M\+O\+D\+E\+\_\+\+O\+F\+B@{O\+P\+E\+N\+V\+P\+N\+\_\+\+M\+O\+D\+E\+\_\+\+O\+F\+B}}
+\index{O\+P\+E\+N\+V\+P\+N\+\_\+\+M\+O\+D\+E\+\_\+\+O\+F\+B@{O\+P\+E\+N\+V\+P\+N\+\_\+\+M\+O\+D\+E\+\_\+\+O\+F\+B}!crypto\+\_\+mbedtls.\+h@{crypto\+\_\+mbedtls.\+h}}
+\subsubsection[{O\+P\+E\+N\+V\+P\+N\+\_\+\+M\+O\+D\+E\+\_\+\+O\+F\+B}]{\setlength{\rightskip}{0pt plus 5cm}\#define O\+P\+E\+N\+V\+P\+N\+\_\+\+M\+O\+D\+E\+\_\+\+O\+F\+B~M\+B\+E\+D\+T\+L\+S\+\_\+\+M\+O\+D\+E\+\_\+\+O\+F\+B}\label{crypto__mbedtls_8h_a6e0636d524db1a3f8c6941746d71d1dd}
+Cipher is in O\+F\+B mode \hypertarget{crypto__mbedtls_8h_a3fd2a5b62ce0fb95f4975e692d433853}{}\index{crypto\+\_\+mbedtls.\+h@{crypto\+\_\+mbedtls.\+h}!O\+P\+E\+N\+V\+P\+N\+\_\+\+O\+P\+\_\+\+D\+E\+C\+R\+Y\+P\+T@{O\+P\+E\+N\+V\+P\+N\+\_\+\+O\+P\+\_\+\+D\+E\+C\+R\+Y\+P\+T}}
+\index{O\+P\+E\+N\+V\+P\+N\+\_\+\+O\+P\+\_\+\+D\+E\+C\+R\+Y\+P\+T@{O\+P\+E\+N\+V\+P\+N\+\_\+\+O\+P\+\_\+\+D\+E\+C\+R\+Y\+P\+T}!crypto\+\_\+mbedtls.\+h@{crypto\+\_\+mbedtls.\+h}}
+\subsubsection[{O\+P\+E\+N\+V\+P\+N\+\_\+\+O\+P\+\_\+\+D\+E\+C\+R\+Y\+P\+T}]{\setlength{\rightskip}{0pt plus 5cm}\#define O\+P\+E\+N\+V\+P\+N\+\_\+\+O\+P\+\_\+\+D\+E\+C\+R\+Y\+P\+T~M\+B\+E\+D\+T\+L\+S\+\_\+\+D\+E\+C\+R\+Y\+P\+T}\label{crypto__mbedtls_8h_a3fd2a5b62ce0fb95f4975e692d433853}
+Cipher should decrypt \hypertarget{crypto__mbedtls_8h_aedb62c875ead89c35e9fb22a953f49a6}{}\index{crypto\+\_\+mbedtls.\+h@{crypto\+\_\+mbedtls.\+h}!O\+P\+E\+N\+V\+P\+N\+\_\+\+O\+P\+\_\+\+E\+N\+C\+R\+Y\+P\+T@{O\+P\+E\+N\+V\+P\+N\+\_\+\+O\+P\+\_\+\+E\+N\+C\+R\+Y\+P\+T}}
+\index{O\+P\+E\+N\+V\+P\+N\+\_\+\+O\+P\+\_\+\+E\+N\+C\+R\+Y\+P\+T@{O\+P\+E\+N\+V\+P\+N\+\_\+\+O\+P\+\_\+\+E\+N\+C\+R\+Y\+P\+T}!crypto\+\_\+mbedtls.\+h@{crypto\+\_\+mbedtls.\+h}}
+\subsubsection[{O\+P\+E\+N\+V\+P\+N\+\_\+\+O\+P\+\_\+\+E\+N\+C\+R\+Y\+P\+T}]{\setlength{\rightskip}{0pt plus 5cm}\#define O\+P\+E\+N\+V\+P\+N\+\_\+\+O\+P\+\_\+\+E\+N\+C\+R\+Y\+P\+T~M\+B\+E\+D\+T\+L\+S\+\_\+\+E\+N\+C\+R\+Y\+P\+T}\label{crypto__mbedtls_8h_aedb62c875ead89c35e9fb22a953f49a6}
+Cipher should encrypt \hypertarget{crypto__mbedtls_8h_aa9cf0abf87b30c4c63e9c7e89c590579}{}\index{crypto\+\_\+mbedtls.\+h@{crypto\+\_\+mbedtls.\+h}!S\+H\+A256\+\_\+\+D\+I\+G\+E\+S\+T\+\_\+\+L\+E\+N\+G\+T\+H@{S\+H\+A256\+\_\+\+D\+I\+G\+E\+S\+T\+\_\+\+L\+E\+N\+G\+T\+H}}
+\index{S\+H\+A256\+\_\+\+D\+I\+G\+E\+S\+T\+\_\+\+L\+E\+N\+G\+T\+H@{S\+H\+A256\+\_\+\+D\+I\+G\+E\+S\+T\+\_\+\+L\+E\+N\+G\+T\+H}!crypto\+\_\+mbedtls.\+h@{crypto\+\_\+mbedtls.\+h}}
+\subsubsection[{S\+H\+A256\+\_\+\+D\+I\+G\+E\+S\+T\+\_\+\+L\+E\+N\+G\+T\+H}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\+H\+A256\+\_\+\+D\+I\+G\+E\+S\+T\+\_\+\+L\+E\+N\+G\+T\+H~32}\label{crypto__mbedtls_8h_aa9cf0abf87b30c4c63e9c7e89c590579}
+\hypertarget{crypto__mbedtls_8h_a1a715db7b4403fe6c165e49a32f5fe3d}{}\index{crypto\+\_\+mbedtls.\+h@{crypto\+\_\+mbedtls.\+h}!S\+H\+A\+\_\+\+D\+I\+G\+E\+S\+T\+\_\+\+L\+E\+N\+G\+T\+H@{S\+H\+A\+\_\+\+D\+I\+G\+E\+S\+T\+\_\+\+L\+E\+N\+G\+T\+H}}
+\index{S\+H\+A\+\_\+\+D\+I\+G\+E\+S\+T\+\_\+\+L\+E\+N\+G\+T\+H@{S\+H\+A\+\_\+\+D\+I\+G\+E\+S\+T\+\_\+\+L\+E\+N\+G\+T\+H}!crypto\+\_\+mbedtls.\+h@{crypto\+\_\+mbedtls.\+h}}
+\subsubsection[{S\+H\+A\+\_\+\+D\+I\+G\+E\+S\+T\+\_\+\+L\+E\+N\+G\+T\+H}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\+H\+A\+\_\+\+D\+I\+G\+E\+S\+T\+\_\+\+L\+E\+N\+G\+T\+H~20}\label{crypto__mbedtls_8h_a1a715db7b4403fe6c165e49a32f5fe3d}
+
+
+\subsection{Typedef Documentation}
+\hypertarget{crypto__mbedtls_8h_a5fd03a052e0b72cb24747f7cccfc66dd}{}\index{crypto\+\_\+mbedtls.\+h@{crypto\+\_\+mbedtls.\+h}!cipher\+\_\+ctx\+\_\+t@{cipher\+\_\+ctx\+\_\+t}}
+\index{cipher\+\_\+ctx\+\_\+t@{cipher\+\_\+ctx\+\_\+t}!crypto\+\_\+mbedtls.\+h@{crypto\+\_\+mbedtls.\+h}}
+\subsubsection[{cipher\+\_\+ctx\+\_\+t}]{\setlength{\rightskip}{0pt plus 5cm}typedef mbedtls\+\_\+cipher\+\_\+context\+\_\+t {\bf cipher\+\_\+ctx\+\_\+t}}\label{crypto__mbedtls_8h_a5fd03a052e0b72cb24747f7cccfc66dd}
+Generic cipher context. \hypertarget{crypto__mbedtls_8h_aa82c97683560a0df89eddd2a3cf6e6d4}{}\index{crypto\+\_\+mbedtls.\+h@{crypto\+\_\+mbedtls.\+h}!cipher\+\_\+kt\+\_\+t@{cipher\+\_\+kt\+\_\+t}}
+\index{cipher\+\_\+kt\+\_\+t@{cipher\+\_\+kt\+\_\+t}!crypto\+\_\+mbedtls.\+h@{crypto\+\_\+mbedtls.\+h}}
+\subsubsection[{cipher\+\_\+kt\+\_\+t}]{\setlength{\rightskip}{0pt plus 5cm}typedef mbedtls\+\_\+cipher\+\_\+info\+\_\+t {\bf cipher\+\_\+kt\+\_\+t}}\label{crypto__mbedtls_8h_aa82c97683560a0df89eddd2a3cf6e6d4}
+Generic cipher key type context. \hypertarget{crypto__mbedtls_8h_a673f50867e637575e463123b9a6b8180}{}\index{crypto\+\_\+mbedtls.\+h@{crypto\+\_\+mbedtls.\+h}!hmac\+\_\+ctx\+\_\+t@{hmac\+\_\+ctx\+\_\+t}}
+\index{hmac\+\_\+ctx\+\_\+t@{hmac\+\_\+ctx\+\_\+t}!crypto\+\_\+mbedtls.\+h@{crypto\+\_\+mbedtls.\+h}}
+\subsubsection[{hmac\+\_\+ctx\+\_\+t}]{\setlength{\rightskip}{0pt plus 5cm}typedef mbedtls\+\_\+md\+\_\+context\+\_\+t {\bf hmac\+\_\+ctx\+\_\+t}}\label{crypto__mbedtls_8h_a673f50867e637575e463123b9a6b8180}
+Generic H\+M\+A\+C context. \hypertarget{crypto__mbedtls_8h_a6da44e00be96174088b0ee604751629a}{}\index{crypto\+\_\+mbedtls.\+h@{crypto\+\_\+mbedtls.\+h}!md\+\_\+ctx\+\_\+t@{md\+\_\+ctx\+\_\+t}}
+\index{md\+\_\+ctx\+\_\+t@{md\+\_\+ctx\+\_\+t}!crypto\+\_\+mbedtls.\+h@{crypto\+\_\+mbedtls.\+h}}
+\subsubsection[{md\+\_\+ctx\+\_\+t}]{\setlength{\rightskip}{0pt plus 5cm}typedef mbedtls\+\_\+md\+\_\+context\+\_\+t {\bf md\+\_\+ctx\+\_\+t}}\label{crypto__mbedtls_8h_a6da44e00be96174088b0ee604751629a}
+Generic message digest context. \hypertarget{crypto__mbedtls_8h_acd12a312c79aead7af792554fb5606d5}{}\index{crypto\+\_\+mbedtls.\+h@{crypto\+\_\+mbedtls.\+h}!md\+\_\+kt\+\_\+t@{md\+\_\+kt\+\_\+t}}
+\index{md\+\_\+kt\+\_\+t@{md\+\_\+kt\+\_\+t}!crypto\+\_\+mbedtls.\+h@{crypto\+\_\+mbedtls.\+h}}
+\subsubsection[{md\+\_\+kt\+\_\+t}]{\setlength{\rightskip}{0pt plus 5cm}typedef mbedtls\+\_\+md\+\_\+info\+\_\+t {\bf md\+\_\+kt\+\_\+t}}\label{crypto__mbedtls_8h_acd12a312c79aead7af792554fb5606d5}
+Generic message digest key type context. 
+
+\subsection{Function Documentation}
+\hypertarget{crypto__mbedtls_8h_ab9d677b96133b032950a999b4868b8b1}{}\index{crypto\+\_\+mbedtls.\+h@{crypto\+\_\+mbedtls.\+h}!mbed\+\_\+log\+\_\+err@{mbed\+\_\+log\+\_\+err}}
+\index{mbed\+\_\+log\+\_\+err@{mbed\+\_\+log\+\_\+err}!crypto\+\_\+mbedtls.\+h@{crypto\+\_\+mbedtls.\+h}}
+\subsubsection[{mbed\+\_\+log\+\_\+err(unsigned int flags, int errval, const char $\ast$prefix)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} mbed\+\_\+log\+\_\+err (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{flags, }
+\item[{int}]{errval, }
+\item[{const char $\ast$}]{prefix}
+\end{DoxyParamCaption}
+)}\label{crypto__mbedtls_8h_ab9d677b96133b032950a999b4868b8b1}
+Log the supplied mbed T\+L\+S error, prefixed by supplied prefix.
+
+
+\begin{DoxyParams}{Parameters}
+{\em flags} & Flags to indicate error type and priority. \\
+\hline
+{\em errval} & mbed T\+L\+S error code to convert to error message. \\
+\hline
+{\em prefix} & Prefix to mbed T\+L\+S error message.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if no errors are detected, false otherwise. 
+\end{DoxyReturn}
+\hypertarget{crypto__mbedtls_8h_afb7914cae88c4b3b71e290134a785368}{}\index{crypto\+\_\+mbedtls.\+h@{crypto\+\_\+mbedtls.\+h}!mbed\+\_\+log\+\_\+func\+\_\+line@{mbed\+\_\+log\+\_\+func\+\_\+line}}
+\index{mbed\+\_\+log\+\_\+func\+\_\+line@{mbed\+\_\+log\+\_\+func\+\_\+line}!crypto\+\_\+mbedtls.\+h@{crypto\+\_\+mbedtls.\+h}}
+\subsubsection[{mbed\+\_\+log\+\_\+func\+\_\+line(unsigned int flags, int errval, const char $\ast$func, int line)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} mbed\+\_\+log\+\_\+func\+\_\+line (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{flags, }
+\item[{int}]{errval, }
+\item[{const char $\ast$}]{func, }
+\item[{int}]{line}
+\end{DoxyParamCaption}
+)}\label{crypto__mbedtls_8h_afb7914cae88c4b3b71e290134a785368}
+Log the supplied mbed T\+L\+S error, prefixed by function name and line number.
+
+
+\begin{DoxyParams}{Parameters}
+{\em flags} & Flags to indicate error type and priority. \\
+\hline
+{\em errval} & mbed T\+L\+S error code to convert to error message. \\
+\hline
+{\em func} & Function name where error was reported. \\
+\hline
+{\em line} & Line number where error was reported.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if no errors are detected, false otherwise. 
+\end{DoxyReturn}
+\hypertarget{crypto__mbedtls_8h_af34c25be1c67c5dcad85aa8a598e42cd}{}\index{crypto\+\_\+mbedtls.\+h@{crypto\+\_\+mbedtls.\+h}!rand\+\_\+ctx\+\_\+get@{rand\+\_\+ctx\+\_\+get}}
+\index{rand\+\_\+ctx\+\_\+get@{rand\+\_\+ctx\+\_\+get}!crypto\+\_\+mbedtls.\+h@{crypto\+\_\+mbedtls.\+h}}
+\subsubsection[{rand\+\_\+ctx\+\_\+get(void)}]{\setlength{\rightskip}{0pt plus 5cm}mbedtls\+\_\+ctr\+\_\+drbg\+\_\+context$\ast$ rand\+\_\+ctx\+\_\+get (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{crypto__mbedtls_8h_af34c25be1c67c5dcad85aa8a598e42cd}
+Returns a singleton instance of the mbed T\+L\+S random number generator.
+
+For Polar\+S\+S\+L/mbed T\+L\+S 1.\+1+, this is the C\+T\+R\+\_\+\+D\+R\+B\+G random number generator. If it hasn\textquotesingle{}t been initialised yet, the R\+N\+G will be initialised using the default entropy sources. Aside from the default platform entropy sources, an additional entropy source, the H\+A\+V\+E\+G\+E random number generator will also be added. During initialisation, a personalisation string will be added based on the time, the P\+I\+D, and a pointer to the random context. 

@@ -1,0 +1,27 @@
+\hypertarget{tls__crypt_8c}{}\section{src/openvpn/tls\+\_\+crypt.c File Reference}
+\label{tls__crypt_8c}\index{src/openvpn/tls\+\_\+crypt.\+c@{src/openvpn/tls\+\_\+crypt.\+c}}
+{\ttfamily \#include \char`\"{}syshead.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}crypto.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}session\+\_\+id.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}tls\+\_\+crypt.\+h\char`\"{}}\\*
+Include dependency graph for tls\+\_\+crypt.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{tls__crypt_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{group__tls__crypt_gac9c2ecaaf4e2af189ab15bb47a558bfa}{tls\+\_\+crypt\+\_\+buf\+\_\+overhead} (void)
+\item 
+void \hyperlink{group__tls__crypt_gad8a8513b53a8a5346cac69063f569680}{tls\+\_\+crypt\+\_\+init\+\_\+key} (struct \hyperlink{structkey__ctx__bi}{key\+\_\+ctx\+\_\+bi} $\ast$\hyperlink{structkey}{key}, const char $\ast$key\+\_\+file, const char $\ast$key\+\_\+inline, \hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} tls\+\_\+server)
+\item 
+void \hyperlink{group__tls__crypt_ga24b342111241c5ea9c731de4aa66fcb2}{tls\+\_\+crypt\+\_\+adjust\+\_\+frame\+\_\+parameters} (struct \hyperlink{structframe}{frame} $\ast$\hyperlink{structframe}{frame})
+\item 
+\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} \hyperlink{group__tls__crypt_gadaca5f414562a243603a60a0e3158e5a}{tls\+\_\+crypt\+\_\+wrap} (const struct \hyperlink{structbuffer}{buffer} $\ast$src, struct \hyperlink{structbuffer}{buffer} $\ast$\hyperlink{compat-lz4_8h_a961c13eb7fcda15b167b953cac1ab3ec}{dst}, struct \hyperlink{structcrypto__options}{crypto\+\_\+options} $\ast$opt)
+\item 
+\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} \hyperlink{group__tls__crypt_ga81c822ba2e5599865dddb37e01a2c20c}{tls\+\_\+crypt\+\_\+unwrap} (const struct \hyperlink{structbuffer}{buffer} $\ast$src, struct \hyperlink{structbuffer}{buffer} $\ast$\hyperlink{compat-lz4_8h_a961c13eb7fcda15b167b953cac1ab3ec}{dst}, struct \hyperlink{structcrypto__options}{crypto\+\_\+options} $\ast$opt)
+\end{DoxyCompactItemize}

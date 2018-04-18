@@ -1,0 +1,408 @@
+\hypertarget{group__data__crypto}{}\section{Data Channel Crypto module}
+\label{group__data__crypto}\index{Data Channel Crypto module@{Data Channel Crypto module}}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structcrypto__options}{crypto\+\_\+options}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group__data__crypto_ga531ce54a40ba4525b7ef859ef7425a38}{D\+E\+C\+R\+Y\+P\+T\+\_\+\+K\+E\+Y\+\_\+\+E\+N\+A\+B\+L\+E\+D}(multi,  ks)~((ks)-\/$>$state $>$= (\hyperlink{group__control__processor_ga66bd0f7cdbc8450a4690c519de7d75bc}{S\+\_\+\+G\+O\+T\+\_\+\+K\+E\+Y} -\/ (multi)-\/$>$opt.\+server))
+\end{DoxyCompactItemize}
+\subsection*{Functions for performing security operations on data channel packets}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{group__data__crypto_ga2756bad88224b98719d4e8f08cb11ef9}{openvpn\+\_\+encrypt} (struct \hyperlink{structbuffer}{buffer} $\ast$buf, struct \hyperlink{structbuffer}{buffer} work, struct \hyperlink{structcrypto__options}{crypto\+\_\+options} $\ast$opt)
+\item 
+\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} \hyperlink{group__data__crypto_gae91d99446478fcf3327672eb78ef0bf8}{openvpn\+\_\+decrypt} (struct \hyperlink{structbuffer}{buffer} $\ast$buf, struct \hyperlink{structbuffer}{buffer} work, struct \hyperlink{structcrypto__options}{crypto\+\_\+options} $\ast$opt, const struct \hyperlink{structframe}{frame} $\ast$\hyperlink{structframe}{frame}, const uint8\+\_\+t $\ast$ad\+\_\+start)
+\end{DoxyCompactItemize}
+\subsection*{Functions for managing security parameter state for data channel packets}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} \hyperlink{group__data__crypto_gab1369f42e94bbec108d952d565b0f283}{tls\+\_\+pre\+\_\+decrypt\+\_\+lite} (const struct \hyperlink{structtls__auth__standalone}{tls\+\_\+auth\+\_\+standalone} $\ast$tas, const struct \hyperlink{structlink__socket__actual}{link\+\_\+socket\+\_\+actual} $\ast$from, const struct \hyperlink{structbuffer}{buffer} $\ast$buf)
+\item 
+void \hyperlink{group__data__crypto_gaba03eaba587a89c2abda8780da7b3ac7}{tls\+\_\+pre\+\_\+encrypt} (struct \hyperlink{structtls__multi}{tls\+\_\+multi} $\ast$multi, struct \hyperlink{structbuffer}{buffer} $\ast$buf, struct \hyperlink{structcrypto__options}{crypto\+\_\+options} $\ast$$\ast$opt)
+\item 
+void \hyperlink{group__data__crypto_gaac2b3aa2c842a102804be65f28adf4b1}{tls\+\_\+prepend\+\_\+opcode\+\_\+v1} (const struct \hyperlink{structtls__multi}{tls\+\_\+multi} $\ast$multi, struct \hyperlink{structbuffer}{buffer} $\ast$buf)
+\item 
+void \hyperlink{group__data__crypto_gad27b20736f89d38d0d2e0c2e35f7a0e3}{tls\+\_\+prepend\+\_\+opcode\+\_\+v2} (const struct \hyperlink{structtls__multi}{tls\+\_\+multi} $\ast$multi, struct \hyperlink{structbuffer}{buffer} $\ast$buf)
+\item 
+void \hyperlink{group__data__crypto_ga1f2ecd39b88da77b2f8067962155ea82}{tls\+\_\+post\+\_\+encrypt} (struct \hyperlink{structtls__multi}{tls\+\_\+multi} $\ast$multi, struct \hyperlink{structbuffer}{buffer} $\ast$buf)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyParagraph}{Crypto packet formats}
+The Data Channel Crypto module supports a number of crypto modes and configurable options. The actual packet format depends on these options. A Data Channel packet can consist of\+:
+\begin{DoxyItemize}
+\item {\bfseries Opcode}, one byte specifying the packet type (see Network protocol).
+\item {\bfseries Peer-\/id}, if using the v2 data channel packet format (see Network protocol).
+\item {\bfseries H\+M\+A\+C}, covering the ciphertext I\+V + ciphertext. The H\+M\+A\+C size depends on the {\ttfamily -\/-\/auth} option. If {\ttfamily -\/-\/auth} {\ttfamily none} is specified, there is no H\+M\+A\+C at all.
+\item {\bfseries Ciphertext} {\bfseries I\+V}. The I\+V size depends on the {\ttfamily -\/-\/cipher} option.
+\item {\bfseries Packet} {\bfseries I\+D}, a 32-\/bit incrementing packet counter that provides replay protection (if not disabled by {\ttfamily -\/-\/no-\/replay}).
+\item {\bfseries Timestamp}, a 32-\/bit timestamp of the current time.
+\item {\bfseries Payload}, the plain text network packet to be encrypted (unless encryption is disabled by using {\ttfamily -\/-\/cipher} {\ttfamily none}). The payload might already be compressed (see Compression module).
+\end{DoxyItemize}
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{}
+This section does not discuss the opcode and peer-\/id, since those do not depend on the data channel crypto. See Network protocol for more information on those.
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{}
+{\itshape Legenda} ~\newline
+{\ttfamily \mbox{[} xxx \mbox{]}} = unprotected ~\newline
+{\ttfamily \mbox{[} -\/ xxx -\/ \mbox{]}} = authenticated ~\newline
+{\ttfamily \mbox{[} $\ast$ xxx $\ast$ \mbox{]}} = encrypted and authenticated
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{}
+{\bfseries C\+B\+C data channel cypto format} ~\newline
+In C\+B\+C mode, both T\+L\+S-\/mode and static key mode are supported. The I\+V consists of random bits to provide unpredictable I\+Vs. ~\newline
+{\itshape C\+B\+C I\+V format\+:} ~\newline
+{\ttfamily  \mbox{[} -\/ random -\/ \mbox{]} } ~\newline
+{\itshape C\+B\+C data channel crypto format in T\+L\+S-\/mode\+:} ~\newline
+{\ttfamily  \mbox{[} H\+M\+A\+C \mbox{]} \mbox{[} -\/ I\+V -\/ \mbox{]} \mbox{[} $\ast$ packet I\+D $\ast$ \mbox{]} \mbox{[} $\ast$ packet payload $\ast$ \mbox{]} } ~\newline
+{\itshape C\+B\+C data channel crypto format in static key mode\+:} ~\newline
+{\ttfamily  \mbox{[} H\+M\+A\+C \mbox{]} \mbox{[} -\/ I\+V -\/ \mbox{]} \mbox{[} $\ast$ packet I\+D $\ast$ \mbox{]} \mbox{[} $\ast$ timestamp $\ast$ \mbox{]} \mbox{[} $\ast$ packet payload $\ast$ \mbox{]} }
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{}
+{\bfseries C\+F\+B/\+O\+F\+B data channel crypto format} ~\newline
+C\+F\+B and O\+F\+B modes are only supported in T\+L\+S mode. In these modes, the I\+V consists of the packet counter and a timestamp. If the I\+V is more than 8 bytes long, the remaining space is filled with zeroes. The packet counter may not roll over within a single T\+L\+S sessions. This results in a unique I\+V for each packet, as required by the C\+F\+B and O\+F\+B cipher modes.
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{}
+{\itshape C\+F\+B/\+O\+F\+B I\+V format\+:} ~\newline
+{\ttfamily  \mbox{[} -\/ packet I\+D -\/ \mbox{]} \mbox{[} -\/ timestamp -\/ \mbox{]} \mbox{[} -\/ opt\+: zero-\/padding -\/ \mbox{]} }~\newline
+{\itshape C\+F\+B/\+O\+F\+B data channel crypto format\+:} ~\newline
+{\ttfamily  \mbox{[} H\+M\+A\+C \mbox{]} \mbox{[} -\/ I\+V -\/ \mbox{]} \mbox{[} $\ast$ packet payload $\ast$ \mbox{]} }
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{}
+{\bfseries G\+C\+M data channel crypto format} ~\newline
+G\+C\+M modes are only supported in T\+L\+S mode. In these modes, the I\+V consists of the 32-\/bit packet counter followed by data from the H\+M\+A\+C key. The H\+M\+A\+C key can be used as I\+V, since in G\+C\+M and C\+C\+M modes the H\+M\+A\+C key is not used for the H\+M\+A\+C. The packet counter may not roll over within a single T\+L\+S sessions. This results in a unique I\+V for each packet, as required by G\+C\+M.
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{}
+The H\+M\+A\+C key data is pre-\/shared during the connection setup, and thus can be omitted in on-\/the-\/wire packets, saving 8 bytes per packet (for G\+C\+M and C\+C\+M).
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{}
+In G\+C\+M mode, P\+\_\+\+D\+A\+T\+A\+\_\+\+V2 headers (the opcode and peer-\/id) are also authenticated as Additional Data.
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{}
+{\itshape G\+C\+M I\+V format\+:} ~\newline
+{\ttfamily  \mbox{[} -\/ packet I\+D -\/ \mbox{]} \mbox{[} -\/ H\+M\+A\+C key data -\/ \mbox{]} }~\newline
+{\itshape P\+\_\+\+D\+A\+T\+A\+\_\+\+V1 G\+C\+M data channel crypto format\+:} ~\newline
+{\ttfamily  \mbox{[} opcode \mbox{]} \mbox{[} -\/ packet I\+D -\/ \mbox{]} \mbox{[} T\+A\+G \mbox{]} \mbox{[} $\ast$ packet payload $\ast$ \mbox{]} } {\itshape P\+\_\+\+D\+A\+T\+A\+\_\+\+V2 G\+C\+M data channel crypto format\+:} ~\newline
+{\ttfamily  \mbox{[} -\/ opcode/peer-\/id -\/ \mbox{]} \mbox{[} -\/ packet I\+D -\/ \mbox{]} \mbox{[} T\+A\+G \mbox{]} \mbox{[} $\ast$ packet payload $\ast$ \mbox{]} }
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{}
+{\bfseries No-\/crypto data channel format} ~\newline
+In no-\/crypto mode ({\ttfamily -\/-\/cipher} {\ttfamily none} is specified), both T\+L\+S-\/mode and static key mode are supported. No encryption will be performed on the packet, but packets can still be authenticated. This mode does not require an I\+V.~\newline
+{\itshape No-\/crypto data channel crypto format in T\+L\+S-\/mode\+:} ~\newline
+{\ttfamily  \mbox{[} H\+M\+A\+C \mbox{]} \mbox{[} -\/ packet I\+D -\/ \mbox{]} \mbox{[} -\/ packet payload -\/ \mbox{]} } ~\newline
+{\itshape No-\/crypto data channel crypto format in static key mode\+:} ~\newline
+{\ttfamily  \mbox{[} H\+M\+A\+C \mbox{]} \mbox{[} -\/ packet I\+D -\/ \mbox{]} \mbox{[} -\/ timestamp -\/ \mbox{]} \mbox{[} -\/ packet payload -\/ \mbox{]} } 
+\end{DoxyParagraph}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{group__data__crypto_ga531ce54a40ba4525b7ef859ef7425a38}{}\index{Data Channel Crypto module@{Data Channel Crypto module}!D\+E\+C\+R\+Y\+P\+T\+\_\+\+K\+E\+Y\+\_\+\+E\+N\+A\+B\+L\+E\+D@{D\+E\+C\+R\+Y\+P\+T\+\_\+\+K\+E\+Y\+\_\+\+E\+N\+A\+B\+L\+E\+D}}
+\index{D\+E\+C\+R\+Y\+P\+T\+\_\+\+K\+E\+Y\+\_\+\+E\+N\+A\+B\+L\+E\+D@{D\+E\+C\+R\+Y\+P\+T\+\_\+\+K\+E\+Y\+\_\+\+E\+N\+A\+B\+L\+E\+D}!Data Channel Crypto module@{Data Channel Crypto module}}
+\subsubsection[{D\+E\+C\+R\+Y\+P\+T\+\_\+\+K\+E\+Y\+\_\+\+E\+N\+A\+B\+L\+E\+D}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+E\+C\+R\+Y\+P\+T\+\_\+\+K\+E\+Y\+\_\+\+E\+N\+A\+B\+L\+E\+D(
+\begin{DoxyParamCaption}
+\item[{}]{multi, }
+\item[{}]{ks}
+\end{DoxyParamCaption}
+)~((ks)-\/$>$state $>$= ({\bf S\+\_\+\+G\+O\+T\+\_\+\+K\+E\+Y} -\/ (multi)-\/$>$opt.\+server))}\label{group__data__crypto_ga531ce54a40ba4525b7ef859ef7425a38}
+Check whether the {\itshape ks} {\ttfamily \hyperlink{structkey__state}{key\+\_\+state}} is ready to receive data channel packets.
+
+If true, it is safe to assume that this session has been authenticated by T\+L\+S.
+
+\begin{DoxyNote}{Note}
+This macro only works if S\+\_\+\+S\+E\+N\+T\+\_\+\+K\+E\+Y + 1 == S\+\_\+\+G\+O\+T\+\_\+\+K\+E\+Y. 
+\end{DoxyNote}
+
+
+\subsection{Function Documentation}
+\hypertarget{group__data__crypto_gae91d99446478fcf3327672eb78ef0bf8}{}\index{Data Channel Crypto module@{Data Channel Crypto module}!openvpn\+\_\+decrypt@{openvpn\+\_\+decrypt}}
+\index{openvpn\+\_\+decrypt@{openvpn\+\_\+decrypt}!Data Channel Crypto module@{Data Channel Crypto module}}
+\subsubsection[{openvpn\+\_\+decrypt(struct buffer $\ast$buf, struct buffer work, struct crypto\+\_\+options $\ast$opt, const struct frame $\ast$frame, const uint8\+\_\+t $\ast$ad\+\_\+start)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} openvpn\+\_\+decrypt (
+\begin{DoxyParamCaption}
+\item[{struct {\bf buffer} $\ast$}]{buf, }
+\item[{struct {\bf buffer}}]{work, }
+\item[{struct {\bf crypto\+\_\+options} $\ast$}]{opt, }
+\item[{const struct {\bf frame} $\ast$}]{frame, }
+\item[{const uint8\+\_\+t $\ast$}]{ad\+\_\+start}
+\end{DoxyParamCaption}
+)}\label{group__data__crypto_gae91d99446478fcf3327672eb78ef0bf8}
+H\+M\+A\+C verify and decrypt a data channel packet received from a remote Open\+V\+P\+N peer.
+
+This function handles authenticating and decrypting a data channel packet received from a remote Open\+V\+P\+N peer. It receives the necessary security parameters in the {\itshape opt} argument, which should have been set to the correct values by the {\ttfamily \hyperlink{ssl_8c_ad436aa1372a562e8be84491907531df4}{tls\+\_\+pre\+\_\+decrypt()}} function.
+
+This function calls the {\ttfamily E\+V\+P\+\_\+\+Cipher$\ast$} and {\ttfamily H\+M\+A\+C\+\_\+$\ast$} functions of the Open\+S\+S\+L library to perform the actual security operations.
+
+If an error occurs during processing, then the {\itshape buf} buffer is set to empty.
+
+
+\begin{DoxyParams}{Parameters}
+{\em buf} & -\/ The buffer containing the packet received from a remote Open\+V\+P\+N peer on which to perform security operations. \\
+\hline
+{\em work} & -\/ A working buffer. \\
+\hline
+{\em opt} & -\/ The security parameter state for this V\+P\+N tunnel. \\
+\hline
+{\em frame} & -\/ The packet geometry parameters for this V\+P\+N tunnel. \\
+\hline
+{\em ad\+\_\+start} & -\/ A pointer into buf, indicating from where to start authenticating additional data (A\+E\+A\+D mode only).\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\begin{DoxyItemize}
+\item True, if the packet was authenticated and decrypted successfully. \item False, if an error occurred. ~\newline
+ On return, the {\itshape buf} argument will point to the resulting buffer. This buffer will either contain the plaintext packet ready for further processing, or be empty if an error occurred. \end{DoxyItemize}
+
+\end{DoxyReturn}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=330pt]{group__data__crypto_gae91d99446478fcf3327672eb78ef0bf8_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group__data__crypto_gae91d99446478fcf3327672eb78ef0bf8_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{group__data__crypto_ga2756bad88224b98719d4e8f08cb11ef9}{}\index{Data Channel Crypto module@{Data Channel Crypto module}!openvpn\+\_\+encrypt@{openvpn\+\_\+encrypt}}
+\index{openvpn\+\_\+encrypt@{openvpn\+\_\+encrypt}!Data Channel Crypto module@{Data Channel Crypto module}}
+\subsubsection[{openvpn\+\_\+encrypt(struct buffer $\ast$buf, struct buffer work, struct crypto\+\_\+options $\ast$opt)}]{\setlength{\rightskip}{0pt plus 5cm}void openvpn\+\_\+encrypt (
+\begin{DoxyParamCaption}
+\item[{struct {\bf buffer} $\ast$}]{buf, }
+\item[{struct {\bf buffer}}]{work, }
+\item[{struct {\bf crypto\+\_\+options} $\ast$}]{opt}
+\end{DoxyParamCaption}
+)}\label{group__data__crypto_ga2756bad88224b98719d4e8f08cb11ef9}
+Encrypt and H\+M\+A\+C sign a packet so that it can be sent as a data channel V\+P\+N tunnel packet to a remote Open\+V\+P\+N peer.
+
+This function handles encryption and H\+M\+A\+C signing of a data channel packet before it is sent to its remote Open\+V\+P\+N peer. It receives the necessary security parameters in the {\itshape opt} argument, which should have been set to the correct values by the {\ttfamily \hyperlink{group__data__crypto_gaba03eaba587a89c2abda8780da7b3ac7}{tls\+\_\+pre\+\_\+encrypt()}} function.
+
+This function calls the {\ttfamily E\+V\+P\+\_\+\+Cipher$\ast$} and {\ttfamily H\+M\+A\+C\+\_\+$\ast$} functions of the Open\+S\+S\+L library to perform the actual security operations.
+
+If an error occurs during processing, then the {\itshape buf} buffer is set to empty.
+
+
+\begin{DoxyParams}{Parameters}
+{\em buf} & -\/ The buffer containing the packet on which to perform security operations. \\
+\hline
+{\em work} & -\/ An initialized working buffer. \\
+\hline
+{\em opt} & -\/ The security parameter state for this V\+P\+N tunnel.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+This function returns void.~\newline
+ On return, the {\itshape buf} argument will point to the resulting buffer. This buffer will either contain the processed packet ready for sending, or be empty if an error occurred. 
+\end{DoxyReturn}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=330pt]{group__data__crypto_ga2756bad88224b98719d4e8f08cb11ef9_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group__data__crypto_ga2756bad88224b98719d4e8f08cb11ef9_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{group__data__crypto_ga1f2ecd39b88da77b2f8067962155ea82}{}\index{Data Channel Crypto module@{Data Channel Crypto module}!tls\+\_\+post\+\_\+encrypt@{tls\+\_\+post\+\_\+encrypt}}
+\index{tls\+\_\+post\+\_\+encrypt@{tls\+\_\+post\+\_\+encrypt}!Data Channel Crypto module@{Data Channel Crypto module}}
+\subsubsection[{tls\+\_\+post\+\_\+encrypt(struct tls\+\_\+multi $\ast$multi, struct buffer $\ast$buf)}]{\setlength{\rightskip}{0pt plus 5cm}void tls\+\_\+post\+\_\+encrypt (
+\begin{DoxyParamCaption}
+\item[{struct {\bf tls\+\_\+multi} $\ast$}]{multi, }
+\item[{struct {\bf buffer} $\ast$}]{buf}
+\end{DoxyParamCaption}
+)}\label{group__data__crypto_ga1f2ecd39b88da77b2f8067962155ea82}
+Perform some accounting for the key state used.
+
+
+\begin{DoxyParams}{Parameters}
+{\em multi} & -\/ The T\+L\+S state for this packet\textquotesingle{}s destination V\+P\+N tunnel. \\
+\hline
+{\em buf} & -\/ The buffer containing the outgoing packet. \\
+\hline
+\end{DoxyParams}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group__data__crypto_ga1f2ecd39b88da77b2f8067962155ea82_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{group__data__crypto_gab1369f42e94bbec108d952d565b0f283}{}\index{Data Channel Crypto module@{Data Channel Crypto module}!tls\+\_\+pre\+\_\+decrypt\+\_\+lite@{tls\+\_\+pre\+\_\+decrypt\+\_\+lite}}
+\index{tls\+\_\+pre\+\_\+decrypt\+\_\+lite@{tls\+\_\+pre\+\_\+decrypt\+\_\+lite}!Data Channel Crypto module@{Data Channel Crypto module}}
+\subsubsection[{tls\+\_\+pre\+\_\+decrypt\+\_\+lite(const struct tls\+\_\+auth\+\_\+standalone $\ast$tas, const struct link\+\_\+socket\+\_\+actual $\ast$from, const struct buffer $\ast$buf)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} tls\+\_\+pre\+\_\+decrypt\+\_\+lite (
+\begin{DoxyParamCaption}
+\item[{const struct {\bf tls\+\_\+auth\+\_\+standalone} $\ast$}]{tas, }
+\item[{const struct {\bf link\+\_\+socket\+\_\+actual} $\ast$}]{from, }
+\item[{const struct {\bf buffer} $\ast$}]{buf}
+\end{DoxyParamCaption}
+)}\label{group__data__crypto_gab1369f42e94bbec108d952d565b0f283}
+Inspect an incoming packet for which no V\+P\+N tunnel is active, and determine whether a new V\+P\+N tunnel should be created.
+
+This function receives the initial incoming packet from a client that wishes to establish a new V\+P\+N tunnel, and determines the packet is a valid initial packet. It is only used when Open\+V\+P\+N is running in server mode.
+
+The tests performed by this function are whether the packet\textquotesingle{}s opcode is correct for establishing a new V\+P\+N tunnel, whether its key I\+D is 0, and whether its size is not too large. This function also performs the initial H\+M\+A\+C firewall test, if configured to do so.
+
+The incoming packet and the local V\+P\+N tunnel state are not modified by this function. Its sole purpose is to inspect the packet and determine whether a new V\+P\+N tunnel should be created. If so, that new V\+P\+N tunnel instance will handle processing of the packet.
+
+
+\begin{DoxyParams}{Parameters}
+{\em tas} & -\/ The standalone T\+L\+S authentication setting structure for this process. \\
+\hline
+{\em from} & -\/ The source address of the packet. \\
+\hline
+{\em buf} & -\/ A buffer structure containing the incoming packet.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\begin{DoxyItemize}
+\item True if the packet is valid and a new V\+P\+N tunnel should be created for this client. \item False if the packet is not valid, did not pass the H\+M\+A\+C firewall test, or some other error occurred. \end{DoxyItemize}
+
+\end{DoxyReturn}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group__data__crypto_gab1369f42e94bbec108d952d565b0f283_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{group__data__crypto_gaba03eaba587a89c2abda8780da7b3ac7}{}\index{Data Channel Crypto module@{Data Channel Crypto module}!tls\+\_\+pre\+\_\+encrypt@{tls\+\_\+pre\+\_\+encrypt}}
+\index{tls\+\_\+pre\+\_\+encrypt@{tls\+\_\+pre\+\_\+encrypt}!Data Channel Crypto module@{Data Channel Crypto module}}
+\subsubsection[{tls\+\_\+pre\+\_\+encrypt(struct tls\+\_\+multi $\ast$multi, struct buffer $\ast$buf, struct crypto\+\_\+options $\ast$$\ast$opt)}]{\setlength{\rightskip}{0pt plus 5cm}void tls\+\_\+pre\+\_\+encrypt (
+\begin{DoxyParamCaption}
+\item[{struct {\bf tls\+\_\+multi} $\ast$}]{multi, }
+\item[{struct {\bf buffer} $\ast$}]{buf, }
+\item[{struct {\bf crypto\+\_\+options} $\ast$$\ast$}]{opt}
+\end{DoxyParamCaption}
+)}\label{group__data__crypto_gaba03eaba587a89c2abda8780da7b3ac7}
+Choose the appropriate security parameters with which to process an outgoing packet.
+
+If no appropriate security parameters can be found, or if some other error occurs, then the buffer is set to empty, and the parameters to a N\+U\+L\+L pointer.
+
+
+\begin{DoxyParams}{Parameters}
+{\em multi} & -\/ The T\+L\+S state for this packet\textquotesingle{}s destination V\+P\+N tunnel. \\
+\hline
+{\em buf} & -\/ The buffer containing the outgoing packet. \\
+\hline
+{\em opt} & -\/ Returns a crypto options structure with the security parameters. \\
+\hline
+\end{DoxyParams}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group__data__crypto_gaba03eaba587a89c2abda8780da7b3ac7_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{group__data__crypto_gaac2b3aa2c842a102804be65f28adf4b1}{}\index{Data Channel Crypto module@{Data Channel Crypto module}!tls\+\_\+prepend\+\_\+opcode\+\_\+v1@{tls\+\_\+prepend\+\_\+opcode\+\_\+v1}}
+\index{tls\+\_\+prepend\+\_\+opcode\+\_\+v1@{tls\+\_\+prepend\+\_\+opcode\+\_\+v1}!Data Channel Crypto module@{Data Channel Crypto module}}
+\subsubsection[{tls\+\_\+prepend\+\_\+opcode\+\_\+v1(const struct tls\+\_\+multi $\ast$multi, struct buffer $\ast$buf)}]{\setlength{\rightskip}{0pt plus 5cm}void tls\+\_\+prepend\+\_\+opcode\+\_\+v1 (
+\begin{DoxyParamCaption}
+\item[{const struct {\bf tls\+\_\+multi} $\ast$}]{multi, }
+\item[{struct {\bf buffer} $\ast$}]{buf}
+\end{DoxyParamCaption}
+)}\label{group__data__crypto_gaac2b3aa2c842a102804be65f28adf4b1}
+Prepend a one-\/byte Open\+V\+P\+N data channel P\+\_\+\+D\+A\+T\+A\+\_\+\+V1 opcode to the packet.
+
+The opcode identifies the packet as a V1 data channel packet and gives the low-\/permutation version of the key-\/id to the recipient, so it knows which decrypt key to use.
+
+
+\begin{DoxyParams}{Parameters}
+{\em multi} & -\/ The T\+L\+S state for this packet\textquotesingle{}s destination V\+P\+N tunnel. \\
+\hline
+{\em buf} & -\/ The buffer to write the header to. \\
+\hline
+\end{DoxyParams}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group__data__crypto_gaac2b3aa2c842a102804be65f28adf4b1_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{group__data__crypto_gad27b20736f89d38d0d2e0c2e35f7a0e3}{}\index{Data Channel Crypto module@{Data Channel Crypto module}!tls\+\_\+prepend\+\_\+opcode\+\_\+v2@{tls\+\_\+prepend\+\_\+opcode\+\_\+v2}}
+\index{tls\+\_\+prepend\+\_\+opcode\+\_\+v2@{tls\+\_\+prepend\+\_\+opcode\+\_\+v2}!Data Channel Crypto module@{Data Channel Crypto module}}
+\subsubsection[{tls\+\_\+prepend\+\_\+opcode\+\_\+v2(const struct tls\+\_\+multi $\ast$multi, struct buffer $\ast$buf)}]{\setlength{\rightskip}{0pt plus 5cm}void tls\+\_\+prepend\+\_\+opcode\+\_\+v2 (
+\begin{DoxyParamCaption}
+\item[{const struct {\bf tls\+\_\+multi} $\ast$}]{multi, }
+\item[{struct {\bf buffer} $\ast$}]{buf}
+\end{DoxyParamCaption}
+)}\label{group__data__crypto_gad27b20736f89d38d0d2e0c2e35f7a0e3}
+Prepend an Open\+V\+P\+N data channel P\+\_\+\+D\+A\+T\+A\+\_\+\+V2 header to the packet. The P\+\_\+\+D\+A\+T\+A\+\_\+\+V2 header consists of a 1-\/byte opcode, followed by a 3-\/byte peer-\/id.
+
+The opcode identifies the packet as a V2 data channel packet and gives the low-\/permutation version of the key-\/id to the recipient, so it knows which decrypt key to use.
+
+The peer-\/id is sent by clients to servers to help the server determine to select the decrypt key when the client is roaming between addresses/ports.
+
+
+\begin{DoxyParams}{Parameters}
+{\em multi} & -\/ The T\+L\+S state for this packet\textquotesingle{}s destination V\+P\+N tunnel. \\
+\hline
+{\em buf} & -\/ The buffer to write the header to. \\
+\hline
+\end{DoxyParams}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group__data__crypto_gad27b20736f89d38d0d2e0c2e35f7a0e3_icgraph}
+\end{center}
+\end{figure}
+
+

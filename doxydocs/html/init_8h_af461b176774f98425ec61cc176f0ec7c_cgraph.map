@@ -1,0 +1,35 @@
+<map id="do_deferred_options" name="do_deferred_options">
+<area shape="rect" id="node2" href="$init_8c.html#a164331d37fecc9ad095eae0e8dce53de" title="init_verb_mute" alt="" coords="207,56,312,83"/>
+<area shape="rect" id="node6" href="$socket_8c.html#a86424bdc75e8f05f00a649f30f897110" title="proto_is_udp" alt="" coords="211,107,307,133"/>
+<area shape="rect" id="node7" href="$socket_8c.html#a022b67c8749e8a934063231b2abc5cf6" title="link_socket_update\l_buffer_sizes" alt="" coords="192,158,327,199"/>
+<area shape="rect" id="node8" href="$socket_8c.html#a47f7e875f90faefaede7148a7e5f3347" title="link_socket_update\l_flags" alt="" coords="192,223,327,265"/>
+<area shape="rect" id="node9" href="$ssl_8c.html#ad14c353d14b7dd52a4b78bf75a6c781d" title="tls_poor_mans_ncp" alt="" coords="192,289,327,316"/>
+<area shape="rect" id="node13" href="$ssl_8c.html#a0f5995c0fcacdedefcc4a7c42a7f18de" title="tls_session_update\l_crypto_params" alt="" coords="192,682,327,723"/>
+<area shape="rect" id="node3" href="$error_8c.html#ab76eae70d91e60b44b8c6478c72baae5" title="set_check_status" alt="" coords="387,5,513,32"/>
+<area shape="rect" id="node4" href="$error_8c.html#af250e34abb4c2f896fcfa37e10aaeebf" title="set_debug_level" alt="" coords="393,56,507,83"/>
+<area shape="rect" id="node5" href="$error_8c.html#aa24606a2ec1cb6e454a387c4fd709545" title="set_mute_cutoff" alt="" coords="393,107,507,133"/>
+<area shape="rect" id="node10" href="$ssl_8c.html#a9e8061a56d8a114317b5f829b6cbf19b" title="tls_item_in_cipher_list" alt="" coords="375,289,525,316"/>
+<area shape="rect" id="node11" href="$buffer_8c.html#a06e0220403278399596a7a1b6b601fca" title="string_alloc" alt="" coords="611,217,699,244"/>
+<area shape="rect" id="node12" href="$buffer_8c.html#a67f7dec7f86e113dc0744584fd80b621" title="gc_malloc" alt="" coords="939,765,1020,792"/>
+<area shape="rect" id="node14" href="$crypto_8c.html#a5657fa40c2ed8eed4ac057b87902100b" title="init_key_type" alt="" coords="401,613,499,640"/>
+<area shape="rect" id="node20" href="$crypto__backend_8h.html#ac7b89b85b5ca673849476a67325d5e84" title="cipher_kt_mode_ofb_cfb" alt="" coords="574,791,737,817"/>
+<area shape="rect" id="node24" href="$crypto_8c.html#aec68a44ce58275f8f5c90363ea527288" title="crypto_max_overhead" alt="" coords="376,740,524,767"/>
+<area shape="rect" id="node25" href="$crypto_8c.html#af597e0d765df961d66a200fa33ba4faf" title="crypto_adjust_frame\l_parameters" alt="" coords="381,362,519,403"/>
+<area shape="rect" id="node28" href="$mtu_8c.html#aa4f19c6314a87fa7a3616fec2a3f1d32" title="frame_finalize" alt="" coords="399,841,501,868"/>
+<area shape="rect" id="node29" href="$mtu_8c.html#a224812036cf5be8e57a95dad7d45067e" title="frame_print" alt="" coords="612,841,699,868"/>
+<area shape="rect" id="node33" href="$mtu_8c.html#abf74c37a0e444f337bb18382ff84321b" title="frame_init_mssfix" alt="" coords="389,892,511,919"/>
+<area shape="rect" id="node15" href="$crypto__backend_8h.html#abd78a666624a9f587aa03aa446dffdb2" title="cipher_kt_get" alt="" coords="605,740,705,767"/>
+<area shape="rect" id="node16" href="$crypto_8c.html#a01bd87aec788950f324c6e4356dd1790" title="translate_cipher_name\l_from_openvpn" alt="" coords="579,471,732,513"/>
+<area shape="rect" id="node17" href="$crypto__backend_8h.html#a7f36be41d0b97d8e3d9e8d586c2213e4" title="cipher_kt_key_size" alt="" coords="588,537,723,564"/>
+<area shape="rect" id="node18" href="$crypto__backend_8h.html#a21c134671c60f2bc399a5b5a76d7e084" title="cipher_kt_mode_aead" alt="" coords="581,369,730,396"/>
+<area shape="rect" id="node19" href="$crypto__backend_8h.html#a1ab5e0809fe8a98c6ad485c1bc730f80" title="cipher_kt_mode_cbc" alt="" coords="584,588,727,615"/>
+<area shape="rect" id="node21" href="$crypto__backend_8h.html#a5b2de050c2b6a78320fbed2340b25c60" title="cipher_kt_block_size" alt="" coords="583,420,727,447"/>
+<area shape="rect" id="node22" href="$crypto__backend_8h.html#a9cbbade2b528fe5d1e6ae65bbaf1e765" title="md_kt_get" alt="" coords="614,639,697,665"/>
+<area shape="rect" id="node23" href="$crypto__backend_8h.html#a002732eb1e19865cdb8f49a46af2cf69" title="md_kt_size" alt="" coords="611,689,700,716"/>
+<area shape="rect" id="node26" href="$crypto__backend_8h.html#a902518439f09e88281986ebda8dd458b" title="cipher_kt_iv_size" alt="" coords="595,268,716,295"/>
+<area shape="rect" id="node27" href="$crypto__backend_8h.html#a04e1e83fd4bbaac94f1cd7ec40ab1d6b" title="cipher_kt_tag_size" alt="" coords="590,319,721,345"/>
+<area shape="rect" id="node30" href="$buffer_8c.html#aa35bf7feb6a99bf5d364b2d4eba1195c" title="alloc_buf_gc" alt="" coords="785,841,880,868"/>
+<area shape="rect" id="node32" href="$buffer_8c.html#a3307f08331b1ce42168bafd2ecf7874a" title="buf_printf" alt="" coords="795,791,870,817"/>
+<area shape="rect" id="node31" href="$buffer_8c.html#acc1a4ee83a591116d331e52baacf253d" title="buf_size_error" alt="" coords="928,841,1031,868"/>
+<area shape="rect" id="node34" href="$mtu_8c.html#a0d975207c7e52a23853613dd18a6eebf" title="frame_set_mtu_dynamic" alt="" coords="573,892,737,919"/>
+</map>

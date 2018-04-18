@@ -1,0 +1,587 @@
+\hypertarget{compat-lz4_8h}{}\section{src/compat/compat-\/lz4.h File Reference}
+\label{compat-lz4_8h}\index{src/compat/compat-\/lz4.\+h@{src/compat/compat-\/lz4.\+h}}
+{\ttfamily \#include $<$stddef.\+h$>$}\\*
+Include dependency graph for compat-\/lz4.h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=205pt]{compat-lz4_8h__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{struct_l_z4__stream__t__internal}{L\+Z4\+\_\+stream\+\_\+t\+\_\+internal}
+\item 
+struct \hyperlink{struct_l_z4__stream_decode__t__internal}{L\+Z4\+\_\+stream\+Decode\+\_\+t\+\_\+internal}
+\item 
+union \hyperlink{union_l_z4__stream__u}{L\+Z4\+\_\+stream\+\_\+u}
+\item 
+union \hyperlink{union_l_z4__stream_decode__u}{L\+Z4\+\_\+stream\+Decode\+\_\+u}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{compat-lz4_8h_a00a61e1435005f8a621edf4bbe0ef844}{L\+Z4\+L\+I\+B\+\_\+\+A\+P\+I}
+\item 
+\#define \hyperlink{compat-lz4_8h_a4a15eb1f8aa69834f917a50d7652413e}{L\+Z4\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+M\+A\+J\+O\+R}~1    /$\ast$ for breaking interface changes  $\ast$/
+\item 
+\#define \hyperlink{compat-lz4_8h_af16952f74f68ac445da9fc7603609909}{L\+Z4\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+M\+I\+N\+O\+R}~7    /$\ast$ for new (non-\/breaking) interface capabilities $\ast$/
+\item 
+\#define \hyperlink{compat-lz4_8h_a19d496bbe4d8448bc2d42cfb576cf525}{L\+Z4\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+R\+E\+L\+E\+A\+S\+E}~5    /$\ast$ for tweaks, bug-\/fixes, or development $\ast$/
+\item 
+\#define \hyperlink{compat-lz4_8h_aac7e910a11c45364a8b235d0d43a0265}{L\+Z4\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+N\+U\+M\+B\+E\+R}~(\hyperlink{compat-lz4_8h_a4a15eb1f8aa69834f917a50d7652413e}{L\+Z4\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+M\+A\+J\+O\+R} $\ast$100$\ast$100 + \hyperlink{compat-lz4_8h_af16952f74f68ac445da9fc7603609909}{L\+Z4\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+M\+I\+N\+O\+R} $\ast$100 + \hyperlink{compat-lz4_8h_a19d496bbe4d8448bc2d42cfb576cf525}{L\+Z4\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+R\+E\+L\+E\+A\+S\+E})
+\item 
+\#define \hyperlink{compat-lz4_8h_acefd86d684fc67bca4c3d5a0e9675268}{L\+Z4\+\_\+\+L\+I\+B\+\_\+\+V\+E\+R\+S\+I\+O\+N}~\hyperlink{compat-lz4_8h_a19d496bbe4d8448bc2d42cfb576cf525}{L\+Z4\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+M\+A\+J\+O\+R.\+L\+Z4\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+M\+I\+N\+O\+R.\+L\+Z4\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+R\+E\+L\+E\+A\+S\+E}
+\item 
+\#define \hyperlink{compat-lz4_8h_a094a758915b2bd38b0012856a45bbc10}{L\+Z4\+\_\+\+Q\+U\+O\+T\+E}(str)~\#str
+\item 
+\#define \hyperlink{compat-lz4_8h_a988eddb5b68034df6d10b3f229315606}{L\+Z4\+\_\+\+E\+X\+P\+A\+N\+D\+\_\+\+A\+N\+D\+\_\+\+Q\+U\+O\+T\+E}(str)~\hyperlink{compat-lz4_8h_a094a758915b2bd38b0012856a45bbc10}{L\+Z4\+\_\+\+Q\+U\+O\+T\+E}(str)
+\item 
+\#define \hyperlink{compat-lz4_8h_a2eab5fe1369fa5559f6ad37898ed5e1b}{L\+Z4\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+S\+T\+R\+I\+N\+G}~\hyperlink{compat-lz4_8h_a988eddb5b68034df6d10b3f229315606}{L\+Z4\+\_\+\+E\+X\+P\+A\+N\+D\+\_\+\+A\+N\+D\+\_\+\+Q\+U\+O\+T\+E}(\hyperlink{compat-lz4_8h_acefd86d684fc67bca4c3d5a0e9675268}{L\+Z4\+\_\+\+L\+I\+B\+\_\+\+V\+E\+R\+S\+I\+O\+N})
+\item 
+\#define \hyperlink{compat-lz4_8h_a24ddbc39e7379532031a91357e66a32c}{L\+Z4\+\_\+\+M\+E\+M\+O\+R\+Y\+\_\+\+U\+S\+A\+G\+E}~14
+\item 
+\#define \hyperlink{compat-lz4_8h_a88ee51e36ca74cd0533e731c20572ea6}{L\+Z4\+\_\+\+M\+A\+X\+\_\+\+I\+N\+P\+U\+T\+\_\+\+S\+I\+Z\+E}~0x7\+E000000   /$\ast$ 2 113 929 216 bytes $\ast$/
+\item 
+\#define \hyperlink{compat-lz4_8h_a2453a423fd34640a0afbbf57ed0a5399}{L\+Z4\+\_\+\+C\+O\+M\+P\+R\+E\+S\+S\+B\+O\+U\+N\+D}(isize)~((unsigned)(isize) $>$ (unsigned)\hyperlink{compat-lz4_8h_a88ee51e36ca74cd0533e731c20572ea6}{L\+Z4\+\_\+\+M\+A\+X\+\_\+\+I\+N\+P\+U\+T\+\_\+\+S\+I\+Z\+E} ? 0 \+: (isize) + ((isize)/255) + 16)
+\item 
+\#define \hyperlink{compat-lz4_8h_ac7f04539d94ce57826ef8b2f3d8408af}{L\+Z4\+\_\+\+H\+A\+S\+H\+L\+O\+G}~(\hyperlink{compat-lz4_8h_a24ddbc39e7379532031a91357e66a32c}{L\+Z4\+\_\+\+M\+E\+M\+O\+R\+Y\+\_\+\+U\+S\+A\+G\+E}-\/2)
+\item 
+\#define \hyperlink{compat-lz4_8h_a1bb7a0fa34be27b67f43ce30be0fc905}{L\+Z4\+\_\+\+H\+A\+S\+H\+T\+A\+B\+L\+E\+S\+I\+Z\+E}~(1 $<$$<$ \hyperlink{compat-lz4_8h_a24ddbc39e7379532031a91357e66a32c}{L\+Z4\+\_\+\+M\+E\+M\+O\+R\+Y\+\_\+\+U\+S\+A\+G\+E})
+\item 
+\#define \hyperlink{compat-lz4_8h_a75fa199d8ad0949f67b62054171dc473}{L\+Z4\+\_\+\+H\+A\+S\+H\+\_\+\+S\+I\+Z\+E\+\_\+\+U32}~(1 $<$$<$ \hyperlink{compat-lz4_8h_ac7f04539d94ce57826ef8b2f3d8408af}{L\+Z4\+\_\+\+H\+A\+S\+H\+L\+O\+G})       /$\ast$ required as macro for static allocation $\ast$/
+\item 
+\#define \hyperlink{compat-lz4_8h_acddbce79f3e1d413f295e97d986ab3f5}{L\+Z4\+\_\+\+S\+T\+R\+E\+A\+M\+S\+I\+Z\+E\+\_\+\+U64}~((1 $<$$<$ (\hyperlink{compat-lz4_8h_a24ddbc39e7379532031a91357e66a32c}{L\+Z4\+\_\+\+M\+E\+M\+O\+R\+Y\+\_\+\+U\+S\+A\+G\+E}-\/3)) + 4)
+\item 
+\#define \hyperlink{compat-lz4_8h_a1b76402ebadac569ceb550cb22a7a6e4}{L\+Z4\+\_\+\+S\+T\+R\+E\+A\+M\+S\+I\+Z\+E}~(\hyperlink{compat-lz4_8h_acddbce79f3e1d413f295e97d986ab3f5}{L\+Z4\+\_\+\+S\+T\+R\+E\+A\+M\+S\+I\+Z\+E\+\_\+\+U64} $\ast$ sizeof(unsigned long long))
+\item 
+\#define \hyperlink{compat-lz4_8h_a414ecb38e0607f239de5ebca5a5beef5}{L\+Z4\+\_\+\+S\+T\+R\+E\+A\+M\+D\+E\+C\+O\+D\+E\+S\+I\+Z\+E\+\_\+\+U64}~4
+\item 
+\#define \hyperlink{compat-lz4_8h_a9a08f1c4969b5e46eba93818cd7cb5a7}{L\+Z4\+\_\+\+S\+T\+R\+E\+A\+M\+D\+E\+C\+O\+D\+E\+S\+I\+Z\+E}~(\hyperlink{compat-lz4_8h_a414ecb38e0607f239de5ebca5a5beef5}{L\+Z4\+\_\+\+S\+T\+R\+E\+A\+M\+D\+E\+C\+O\+D\+E\+S\+I\+Z\+E\+\_\+\+U64} $\ast$ sizeof(unsigned long long))
+\item 
+\#define \hyperlink{compat-lz4_8h_ad592c1aaee404bea7bc9db64a0addcfd}{L\+Z4\+\_\+\+G\+C\+C\+\_\+\+V\+E\+R\+S\+I\+O\+N}~(\+\_\+\+\_\+\+G\+N\+U\+C\+\_\+\+\_\+ $\ast$ 100 + \+\_\+\+\_\+\+G\+N\+U\+C\+\_\+\+M\+I\+N\+O\+R\+\_\+\+\_\+)
+\item 
+\#define \hyperlink{compat-lz4_8h_afa2a2c9dbd9d88448d70c8fff093782b}{L\+Z4\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D}(message)
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef union \hyperlink{union_l_z4__stream__u}{L\+Z4\+\_\+stream\+\_\+u} \hyperlink{compat-lz4_8h_a4fb9ac4ce6d5e25edc9188f9d6633498}{L\+Z4\+\_\+stream\+\_\+t}
+\item 
+typedef union \hyperlink{union_l_z4__stream_decode__u}{L\+Z4\+\_\+stream\+Decode\+\_\+u} \hyperlink{compat-lz4_8h_a76a1eaa4729efddb43040217daad4d4e}{L\+Z4\+\_\+stream\+Decode\+\_\+t}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{compat-lz4_8h_a00a61e1435005f8a621edf4bbe0ef844}{L\+Z4\+L\+I\+B\+\_\+\+A\+P\+I} int \hyperlink{compat-lz4_8h_a5a98ff918f30c73b398535b8fb4c3b9b}{L\+Z4\+\_\+version\+Number} (void)
+\item 
+\hyperlink{compat-lz4_8h_a00a61e1435005f8a621edf4bbe0ef844}{L\+Z4\+L\+I\+B\+\_\+\+A\+P\+I} const char $\ast$ \hyperlink{compat-lz4_8h_a41fa97a26c1537d72b2cd5556bf01819}{L\+Z4\+\_\+version\+String} (void)
+\item 
+\hyperlink{compat-lz4_8h_a00a61e1435005f8a621edf4bbe0ef844}{L\+Z4\+L\+I\+B\+\_\+\+A\+P\+I} int \hyperlink{compat-lz4_8h_a7a99ebb0d007cb52765821274a7a5179}{L\+Z4\+\_\+compress\+\_\+default} (const char $\ast$\hyperlink{compat-lz4_8h_a0211201f992ec3f0b641c9ceff5f837a}{source}, char $\ast$\hyperlink{compat-lz4_8h_accb93c5987f80eedf1f5da3cfa1c0d22}{dest}, int \hyperlink{compat-lz4_8h_a3ec1875e6c6b9099ad690a7a4e9487b4}{source\+Size}, int max\+Dest\+Size)
+\item 
+\hyperlink{compat-lz4_8h_a00a61e1435005f8a621edf4bbe0ef844}{L\+Z4\+L\+I\+B\+\_\+\+A\+P\+I} int \hyperlink{compat-lz4_8h_aedd5ff2835959ab058b140d4437cfd7c}{L\+Z4\+\_\+decompress\+\_\+safe} (const char $\ast$\hyperlink{compat-lz4_8h_a0211201f992ec3f0b641c9ceff5f837a}{source}, char $\ast$\hyperlink{compat-lz4_8h_accb93c5987f80eedf1f5da3cfa1c0d22}{dest}, int \hyperlink{compat-lz4_8h_a0f9a0600771a3eb50c56e55266a7da49}{compressed\+Size}, int max\+Decompressed\+Size)
+\item 
+\hyperlink{compat-lz4_8h_a00a61e1435005f8a621edf4bbe0ef844}{L\+Z4\+L\+I\+B\+\_\+\+A\+P\+I} int \hyperlink{compat-lz4_8h_a7d92f596953d35893e39db626ae321ee}{L\+Z4\+\_\+compress\+Bound} (int \hyperlink{compat-lz4_8h_a8f274f682cf5ca365dd560d994011541}{input\+Size})
+\item 
+\hyperlink{compat-lz4_8h_a00a61e1435005f8a621edf4bbe0ef844}{L\+Z4\+L\+I\+B\+\_\+\+A\+P\+I} int \hyperlink{compat-lz4_8h_a4f16d7ba96053d8562595243d24b0f82}{L\+Z4\+\_\+compress\+\_\+fast} (const char $\ast$\hyperlink{compat-lz4_8h_a0211201f992ec3f0b641c9ceff5f837a}{source}, char $\ast$\hyperlink{compat-lz4_8h_accb93c5987f80eedf1f5da3cfa1c0d22}{dest}, int \hyperlink{compat-lz4_8h_a3ec1875e6c6b9099ad690a7a4e9487b4}{source\+Size}, int max\+Dest\+Size, int acceleration)
+\item 
+\hyperlink{compat-lz4_8h_a00a61e1435005f8a621edf4bbe0ef844}{L\+Z4\+L\+I\+B\+\_\+\+A\+P\+I} int \hyperlink{compat-lz4_8h_a6b79b9da156ef5597696201f2e218a5a}{L\+Z4\+\_\+sizeof\+State} (void)
+\item 
+\hyperlink{compat-lz4_8h_a00a61e1435005f8a621edf4bbe0ef844}{L\+Z4\+L\+I\+B\+\_\+\+A\+P\+I} int \hyperlink{compat-lz4_8h_adf10cb9dd113049e97bdc3ee5ce7b6ed}{L\+Z4\+\_\+compress\+\_\+fast\+\_\+ext\+State} (void $\ast$state, const char $\ast$\hyperlink{compat-lz4_8h_a0211201f992ec3f0b641c9ceff5f837a}{source}, char $\ast$\hyperlink{compat-lz4_8h_accb93c5987f80eedf1f5da3cfa1c0d22}{dest}, int \hyperlink{compat-lz4_8h_a8f274f682cf5ca365dd560d994011541}{input\+Size}, int max\+Dest\+Size, int acceleration)
+\item 
+\hyperlink{compat-lz4_8h_a00a61e1435005f8a621edf4bbe0ef844}{L\+Z4\+L\+I\+B\+\_\+\+A\+P\+I} int \hyperlink{compat-lz4_8h_ae240d134add3f1721057b5c14e3bc82c}{L\+Z4\+\_\+compress\+\_\+dest\+Size} (const char $\ast$\hyperlink{compat-lz4_8h_a0211201f992ec3f0b641c9ceff5f837a}{source}, char $\ast$\hyperlink{compat-lz4_8h_accb93c5987f80eedf1f5da3cfa1c0d22}{dest}, int $\ast$source\+Size\+Ptr, int target\+Dest\+Size)
+\item 
+\hyperlink{compat-lz4_8h_a00a61e1435005f8a621edf4bbe0ef844}{L\+Z4\+L\+I\+B\+\_\+\+A\+P\+I} int \hyperlink{compat-lz4_8h_ae35b8223a2126106ca22b79577dddd21}{L\+Z4\+\_\+decompress\+\_\+fast} (const char $\ast$\hyperlink{compat-lz4_8h_a0211201f992ec3f0b641c9ceff5f837a}{source}, char $\ast$\hyperlink{compat-lz4_8h_accb93c5987f80eedf1f5da3cfa1c0d22}{dest}, int \hyperlink{compat-lz4_8h_acb72249f2d22c1084adf0de0406d6c3d}{original\+Size})
+\item 
+\hyperlink{compat-lz4_8h_a00a61e1435005f8a621edf4bbe0ef844}{L\+Z4\+L\+I\+B\+\_\+\+A\+P\+I} int \hyperlink{compat-lz4_8h_acba496eb465f339989dc3d8a3bb7d41e}{L\+Z4\+\_\+decompress\+\_\+safe\+\_\+partial} (const char $\ast$\hyperlink{compat-lz4_8h_a0211201f992ec3f0b641c9ceff5f837a}{source}, char $\ast$\hyperlink{compat-lz4_8h_accb93c5987f80eedf1f5da3cfa1c0d22}{dest}, int \hyperlink{compat-lz4_8h_a0f9a0600771a3eb50c56e55266a7da49}{compressed\+Size}, int target\+Output\+Size, int max\+Decompressed\+Size)
+\item 
+\hyperlink{compat-lz4_8h_a00a61e1435005f8a621edf4bbe0ef844}{L\+Z4\+L\+I\+B\+\_\+\+A\+P\+I} \hyperlink{compat-lz4_8h_a4fb9ac4ce6d5e25edc9188f9d6633498}{L\+Z4\+\_\+stream\+\_\+t} $\ast$ \hyperlink{compat-lz4_8h_ae2f3cdde265f5abde4c1299bcdfbe5b8}{L\+Z4\+\_\+create\+Stream} (void)
+\item 
+\hyperlink{compat-lz4_8h_a00a61e1435005f8a621edf4bbe0ef844}{L\+Z4\+L\+I\+B\+\_\+\+A\+P\+I} int \hyperlink{compat-lz4_8h_a820a8fea119332103a839f27c14beb22}{L\+Z4\+\_\+free\+Stream} (\hyperlink{compat-lz4_8h_a4fb9ac4ce6d5e25edc9188f9d6633498}{L\+Z4\+\_\+stream\+\_\+t} $\ast$stream\+Ptr)
+\item 
+\hyperlink{compat-lz4_8h_a00a61e1435005f8a621edf4bbe0ef844}{L\+Z4\+L\+I\+B\+\_\+\+A\+P\+I} void \hyperlink{compat-lz4_8h_ac8d5c49bc84243e6b69df1ecc25d2425}{L\+Z4\+\_\+reset\+Stream} (\hyperlink{compat-lz4_8h_a4fb9ac4ce6d5e25edc9188f9d6633498}{L\+Z4\+\_\+stream\+\_\+t} $\ast$stream\+Ptr)
+\item 
+\hyperlink{compat-lz4_8h_a00a61e1435005f8a621edf4bbe0ef844}{L\+Z4\+L\+I\+B\+\_\+\+A\+P\+I} int \hyperlink{compat-lz4_8h_ac14454c14304d2df9bfeaa81216053c1}{L\+Z4\+\_\+load\+Dict} (\hyperlink{compat-lz4_8h_a4fb9ac4ce6d5e25edc9188f9d6633498}{L\+Z4\+\_\+stream\+\_\+t} $\ast$stream\+Ptr, const char $\ast$dictionary, int dict\+Size)
+\item 
+\hyperlink{compat-lz4_8h_a00a61e1435005f8a621edf4bbe0ef844}{L\+Z4\+L\+I\+B\+\_\+\+A\+P\+I} int \hyperlink{compat-lz4_8h_a7c280948702564f0620262a8eb0b6436}{L\+Z4\+\_\+compress\+\_\+fast\+\_\+continue} (\hyperlink{compat-lz4_8h_a4fb9ac4ce6d5e25edc9188f9d6633498}{L\+Z4\+\_\+stream\+\_\+t} $\ast$stream\+Ptr, const char $\ast$src, char $\ast$\hyperlink{compat-lz4_8h_a961c13eb7fcda15b167b953cac1ab3ec}{dst}, int src\+Size, int \hyperlink{compat-lz4_8h_a6c2299958529e6037c34f9b36f25f4d0}{max\+Dst\+Size}, int acceleration)
+\item 
+\hyperlink{compat-lz4_8h_a00a61e1435005f8a621edf4bbe0ef844}{L\+Z4\+L\+I\+B\+\_\+\+A\+P\+I} int \hyperlink{compat-lz4_8h_aee9e5bb8a837d840e120f666ed07c09b}{L\+Z4\+\_\+save\+Dict} (\hyperlink{compat-lz4_8h_a4fb9ac4ce6d5e25edc9188f9d6633498}{L\+Z4\+\_\+stream\+\_\+t} $\ast$stream\+Ptr, char $\ast$safe\+Buffer, int dict\+Size)
+\item 
+\hyperlink{compat-lz4_8h_a00a61e1435005f8a621edf4bbe0ef844}{L\+Z4\+L\+I\+B\+\_\+\+A\+P\+I} \hyperlink{compat-lz4_8h_a76a1eaa4729efddb43040217daad4d4e}{L\+Z4\+\_\+stream\+Decode\+\_\+t} $\ast$ \hyperlink{compat-lz4_8h_a5c6dfdf3179635d8fa92c7cc8d3532a1}{L\+Z4\+\_\+create\+Stream\+Decode} (void)
+\item 
+\hyperlink{compat-lz4_8h_a00a61e1435005f8a621edf4bbe0ef844}{L\+Z4\+L\+I\+B\+\_\+\+A\+P\+I} int \hyperlink{compat-lz4_8h_a37c487a088c1be5aa3924f51bb1529ab}{L\+Z4\+\_\+free\+Stream\+Decode} (\hyperlink{compat-lz4_8h_a76a1eaa4729efddb43040217daad4d4e}{L\+Z4\+\_\+stream\+Decode\+\_\+t} $\ast$L\+Z4\+\_\+stream)
+\item 
+\hyperlink{compat-lz4_8h_a00a61e1435005f8a621edf4bbe0ef844}{L\+Z4\+L\+I\+B\+\_\+\+A\+P\+I} int \hyperlink{compat-lz4_8h_a81965fd474a946db05698f9aff385603}{L\+Z4\+\_\+set\+Stream\+Decode} (\hyperlink{compat-lz4_8h_a76a1eaa4729efddb43040217daad4d4e}{L\+Z4\+\_\+stream\+Decode\+\_\+t} $\ast$L\+Z4\+\_\+stream\+Decode, const char $\ast$dictionary, int dict\+Size)
+\item 
+\hyperlink{compat-lz4_8h_a00a61e1435005f8a621edf4bbe0ef844}{L\+Z4\+L\+I\+B\+\_\+\+A\+P\+I} int \hyperlink{compat-lz4_8h_adc92f38c415dad5de8d79512ce025df1}{L\+Z4\+\_\+decompress\+\_\+safe\+\_\+continue} (\hyperlink{compat-lz4_8h_a76a1eaa4729efddb43040217daad4d4e}{L\+Z4\+\_\+stream\+Decode\+\_\+t} $\ast$L\+Z4\+\_\+stream\+Decode, const char $\ast$\hyperlink{compat-lz4_8h_a0211201f992ec3f0b641c9ceff5f837a}{source}, char $\ast$\hyperlink{compat-lz4_8h_accb93c5987f80eedf1f5da3cfa1c0d22}{dest}, int \hyperlink{compat-lz4_8h_a0f9a0600771a3eb50c56e55266a7da49}{compressed\+Size}, int max\+Decompressed\+Size)
+\item 
+\hyperlink{compat-lz4_8h_a00a61e1435005f8a621edf4bbe0ef844}{L\+Z4\+L\+I\+B\+\_\+\+A\+P\+I} int \hyperlink{compat-lz4_8h_a26fc9946661b00f00f4604baa034e2a6}{L\+Z4\+\_\+decompress\+\_\+fast\+\_\+continue} (\hyperlink{compat-lz4_8h_a76a1eaa4729efddb43040217daad4d4e}{L\+Z4\+\_\+stream\+Decode\+\_\+t} $\ast$L\+Z4\+\_\+stream\+Decode, const char $\ast$\hyperlink{compat-lz4_8h_a0211201f992ec3f0b641c9ceff5f837a}{source}, char $\ast$\hyperlink{compat-lz4_8h_accb93c5987f80eedf1f5da3cfa1c0d22}{dest}, int \hyperlink{compat-lz4_8h_acb72249f2d22c1084adf0de0406d6c3d}{original\+Size})
+\item 
+\hyperlink{compat-lz4_8h_a00a61e1435005f8a621edf4bbe0ef844}{L\+Z4\+L\+I\+B\+\_\+\+A\+P\+I} int \hyperlink{compat-lz4_8h_a6f859dbaf83e1e76440ba34fa3c80b75}{L\+Z4\+\_\+decompress\+\_\+safe\+\_\+using\+Dict} (const char $\ast$\hyperlink{compat-lz4_8h_a0211201f992ec3f0b641c9ceff5f837a}{source}, char $\ast$\hyperlink{compat-lz4_8h_accb93c5987f80eedf1f5da3cfa1c0d22}{dest}, int \hyperlink{compat-lz4_8h_a0f9a0600771a3eb50c56e55266a7da49}{compressed\+Size}, int max\+Decompressed\+Size, const char $\ast$dict\+Start, int dict\+Size)
+\item 
+\hyperlink{compat-lz4_8h_a00a61e1435005f8a621edf4bbe0ef844}{L\+Z4\+L\+I\+B\+\_\+\+A\+P\+I} int \hyperlink{compat-lz4_8h_a7f3f35d47e1873d6d29a0d8a1d0a9aa4}{L\+Z4\+\_\+decompress\+\_\+fast\+\_\+using\+Dict} (const char $\ast$\hyperlink{compat-lz4_8h_a0211201f992ec3f0b641c9ceff5f837a}{source}, char $\ast$\hyperlink{compat-lz4_8h_accb93c5987f80eedf1f5da3cfa1c0d22}{dest}, int \hyperlink{compat-lz4_8h_acb72249f2d22c1084adf0de0406d6c3d}{original\+Size}, const char $\ast$dict\+Start, int dict\+Size)
+\item 
+\hyperlink{compat-lz4_8h_a11e172db85d5940b8c689c0546d6df5a}{L\+Z4\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D} (\char`\"{}use \hyperlink{compat-lz4_8h_a7a99ebb0d007cb52765821274a7a5179}{L\+Z4\+\_\+compress\+\_\+default}() instead\char`\"{}) int L\+Z4\+\_\+compress(const char $\ast$\hyperlink{compat-lz4_8h_a0211201f992ec3f0b641c9ceff5f837a}{source}
+\item 
+\hyperlink{compat-lz4_8h_a3788b2a02fe98ad874485600fde9caa3}{L\+Z4\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D} (\char`\"{}use \hyperlink{compat-lz4_8h_adf10cb9dd113049e97bdc3ee5ce7b6ed}{L\+Z4\+\_\+compress\+\_\+fast\+\_\+ext\+State}() instead\char`\"{}) int L\+Z4\+\_\+compress\+\_\+with\+State(void $\ast$state
+\item 
+\hyperlink{compat-lz4_8h_abaf1151811a93dba725fdf2ecf8abf0a}{L\+Z4\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D} (\char`\"{}use \hyperlink{compat-lz4_8h_a7c280948702564f0620262a8eb0b6436}{L\+Z4\+\_\+compress\+\_\+fast\+\_\+continue}() instead\char`\"{}) int L\+Z4\+\_\+compress\+\_\+continue(\hyperlink{compat-lz4_8h_a4fb9ac4ce6d5e25edc9188f9d6633498}{L\+Z4\+\_\+stream\+\_\+t} $\ast$L\+Z4\+\_\+stream\+Ptr
+\item 
+\hyperlink{compat-lz4_8h_af4492c6b2a6f4c275c044e2d292e2900}{L\+Z4\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D} (\char`\"{}use \hyperlink{compat-lz4_8h_ae2f3cdde265f5abde4c1299bcdfbe5b8}{L\+Z4\+\_\+create\+Stream}() instead\char`\"{}) void $\ast$L\+Z4\+\_\+create(char $\ast$\hyperlink{compat-lz4_8h_a74538761f55cd8dbed4b6e62ce69876d}{input\+Buffer})
+\item 
+\hyperlink{compat-lz4_8h_a4fcd58d09cd54cae0310a362eb7f8fde}{L\+Z4\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D} (\char`\"{}use \hyperlink{compat-lz4_8h_ac8d5c49bc84243e6b69df1ecc25d2425}{L\+Z4\+\_\+reset\+Stream}() instead\char`\"{}) int L\+Z4\+\_\+reset\+Stream\+State(void $\ast$state
+\item 
+\hyperlink{compat-lz4_8h_a548d68fc3c6e57da77cc5b965a197a69}{L\+Z4\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D} (\char`\"{}use \hyperlink{compat-lz4_8h_aee9e5bb8a837d840e120f666ed07c09b}{L\+Z4\+\_\+save\+Dict}() instead\char`\"{}) char $\ast$L\+Z4\+\_\+slide\+Input\+Buffer(void $\ast$state)
+\item 
+\hyperlink{compat-lz4_8h_a223091252715f6a90b84ed7aada75b4c}{L\+Z4\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D} (\char`\"{}use \hyperlink{compat-lz4_8h_a6f859dbaf83e1e76440ba34fa3c80b75}{L\+Z4\+\_\+decompress\+\_\+safe\+\_\+using\+Dict}() instead\char`\"{}) int L\+Z4\+\_\+decompress\+\_\+safe\+\_\+with\+Prefix64k(const char $\ast$src
+\item 
+\hyperlink{compat-lz4_8h_a263e18c96be5caf1eb7758a7bbc3c5a8}{L\+Z4\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D} (\char`\"{}use \hyperlink{compat-lz4_8h_a7f3f35d47e1873d6d29a0d8a1d0a9aa4}{L\+Z4\+\_\+decompress\+\_\+fast\+\_\+using\+Dict}() instead\char`\"{}) int L\+Z4\+\_\+decompress\+\_\+fast\+\_\+with\+Prefix64k(const char $\ast$src
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+char $\ast$ \hyperlink{compat-lz4_8h_accb93c5987f80eedf1f5da3cfa1c0d22}{dest}
+\item 
+char int \hyperlink{compat-lz4_8h_a3ec1875e6c6b9099ad690a7a4e9487b4}{source\+Size}
+\item 
+char int int \hyperlink{compat-lz4_8h_a1811ec356866fa1c15a98d7a5717078c}{max\+Output\+Size}
+\item 
+const char $\ast$ \hyperlink{compat-lz4_8h_a0211201f992ec3f0b641c9ceff5f837a}{source}
+\item 
+const char char int \hyperlink{compat-lz4_8h_a8f274f682cf5ca365dd560d994011541}{input\+Size}
+\item 
+char $\ast$ \hyperlink{compat-lz4_8h_a74538761f55cd8dbed4b6e62ce69876d}{input\+Buffer}
+\item 
+char $\ast$ \hyperlink{compat-lz4_8h_a961c13eb7fcda15b167b953cac1ab3ec}{dst}
+\item 
+char int \hyperlink{compat-lz4_8h_a0f9a0600771a3eb50c56e55266a7da49}{compressed\+Size}
+\item 
+char int int \hyperlink{compat-lz4_8h_a6c2299958529e6037c34f9b36f25f4d0}{max\+Dst\+Size}
+\item 
+char int \hyperlink{compat-lz4_8h_acb72249f2d22c1084adf0de0406d6c3d}{original\+Size}
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{compat-lz4_8h_a2453a423fd34640a0afbbf57ed0a5399}{}\index{compat-\/lz4.\+h@{compat-\/lz4.\+h}!L\+Z4\+\_\+\+C\+O\+M\+P\+R\+E\+S\+S\+B\+O\+U\+N\+D@{L\+Z4\+\_\+\+C\+O\+M\+P\+R\+E\+S\+S\+B\+O\+U\+N\+D}}
+\index{L\+Z4\+\_\+\+C\+O\+M\+P\+R\+E\+S\+S\+B\+O\+U\+N\+D@{L\+Z4\+\_\+\+C\+O\+M\+P\+R\+E\+S\+S\+B\+O\+U\+N\+D}!compat-\/lz4.\+h@{compat-\/lz4.\+h}}
+\subsubsection[{L\+Z4\+\_\+\+C\+O\+M\+P\+R\+E\+S\+S\+B\+O\+U\+N\+D}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\+Z4\+\_\+\+C\+O\+M\+P\+R\+E\+S\+S\+B\+O\+U\+N\+D(
+\begin{DoxyParamCaption}
+\item[{}]{isize}
+\end{DoxyParamCaption}
+)~((unsigned)(isize) $>$ (unsigned){\bf L\+Z4\+\_\+\+M\+A\+X\+\_\+\+I\+N\+P\+U\+T\+\_\+\+S\+I\+Z\+E} ? 0 \+: (isize) + ((isize)/255) + 16)}\label{compat-lz4_8h_a2453a423fd34640a0afbbf57ed0a5399}
+\hypertarget{compat-lz4_8h_afa2a2c9dbd9d88448d70c8fff093782b}{}\index{compat-\/lz4.\+h@{compat-\/lz4.\+h}!L\+Z4\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D@{L\+Z4\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D}}
+\index{L\+Z4\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D@{L\+Z4\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D}!compat-\/lz4.\+h@{compat-\/lz4.\+h}}
+\subsubsection[{L\+Z4\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\+Z4\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D(
+\begin{DoxyParamCaption}
+\item[{}]{message}
+\end{DoxyParamCaption}
+)}\label{compat-lz4_8h_afa2a2c9dbd9d88448d70c8fff093782b}
+\hypertarget{compat-lz4_8h_a988eddb5b68034df6d10b3f229315606}{}\index{compat-\/lz4.\+h@{compat-\/lz4.\+h}!L\+Z4\+\_\+\+E\+X\+P\+A\+N\+D\+\_\+\+A\+N\+D\+\_\+\+Q\+U\+O\+T\+E@{L\+Z4\+\_\+\+E\+X\+P\+A\+N\+D\+\_\+\+A\+N\+D\+\_\+\+Q\+U\+O\+T\+E}}
+\index{L\+Z4\+\_\+\+E\+X\+P\+A\+N\+D\+\_\+\+A\+N\+D\+\_\+\+Q\+U\+O\+T\+E@{L\+Z4\+\_\+\+E\+X\+P\+A\+N\+D\+\_\+\+A\+N\+D\+\_\+\+Q\+U\+O\+T\+E}!compat-\/lz4.\+h@{compat-\/lz4.\+h}}
+\subsubsection[{L\+Z4\+\_\+\+E\+X\+P\+A\+N\+D\+\_\+\+A\+N\+D\+\_\+\+Q\+U\+O\+T\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\+Z4\+\_\+\+E\+X\+P\+A\+N\+D\+\_\+\+A\+N\+D\+\_\+\+Q\+U\+O\+T\+E(
+\begin{DoxyParamCaption}
+\item[{}]{str}
+\end{DoxyParamCaption}
+)~{\bf L\+Z4\+\_\+\+Q\+U\+O\+T\+E}(str)}\label{compat-lz4_8h_a988eddb5b68034df6d10b3f229315606}
+\hypertarget{compat-lz4_8h_ad592c1aaee404bea7bc9db64a0addcfd}{}\index{compat-\/lz4.\+h@{compat-\/lz4.\+h}!L\+Z4\+\_\+\+G\+C\+C\+\_\+\+V\+E\+R\+S\+I\+O\+N@{L\+Z4\+\_\+\+G\+C\+C\+\_\+\+V\+E\+R\+S\+I\+O\+N}}
+\index{L\+Z4\+\_\+\+G\+C\+C\+\_\+\+V\+E\+R\+S\+I\+O\+N@{L\+Z4\+\_\+\+G\+C\+C\+\_\+\+V\+E\+R\+S\+I\+O\+N}!compat-\/lz4.\+h@{compat-\/lz4.\+h}}
+\subsubsection[{L\+Z4\+\_\+\+G\+C\+C\+\_\+\+V\+E\+R\+S\+I\+O\+N}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\+Z4\+\_\+\+G\+C\+C\+\_\+\+V\+E\+R\+S\+I\+O\+N~(\+\_\+\+\_\+\+G\+N\+U\+C\+\_\+\+\_\+ $\ast$ 100 + \+\_\+\+\_\+\+G\+N\+U\+C\+\_\+\+M\+I\+N\+O\+R\+\_\+\+\_\+)}\label{compat-lz4_8h_ad592c1aaee404bea7bc9db64a0addcfd}
+\hypertarget{compat-lz4_8h_a75fa199d8ad0949f67b62054171dc473}{}\index{compat-\/lz4.\+h@{compat-\/lz4.\+h}!L\+Z4\+\_\+\+H\+A\+S\+H\+\_\+\+S\+I\+Z\+E\+\_\+\+U32@{L\+Z4\+\_\+\+H\+A\+S\+H\+\_\+\+S\+I\+Z\+E\+\_\+\+U32}}
+\index{L\+Z4\+\_\+\+H\+A\+S\+H\+\_\+\+S\+I\+Z\+E\+\_\+\+U32@{L\+Z4\+\_\+\+H\+A\+S\+H\+\_\+\+S\+I\+Z\+E\+\_\+\+U32}!compat-\/lz4.\+h@{compat-\/lz4.\+h}}
+\subsubsection[{L\+Z4\+\_\+\+H\+A\+S\+H\+\_\+\+S\+I\+Z\+E\+\_\+\+U32}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\+Z4\+\_\+\+H\+A\+S\+H\+\_\+\+S\+I\+Z\+E\+\_\+\+U32~(1 $<$$<$ {\bf L\+Z4\+\_\+\+H\+A\+S\+H\+L\+O\+G})       /$\ast$ required as macro for static allocation $\ast$/}\label{compat-lz4_8h_a75fa199d8ad0949f67b62054171dc473}
+\hypertarget{compat-lz4_8h_ac7f04539d94ce57826ef8b2f3d8408af}{}\index{compat-\/lz4.\+h@{compat-\/lz4.\+h}!L\+Z4\+\_\+\+H\+A\+S\+H\+L\+O\+G@{L\+Z4\+\_\+\+H\+A\+S\+H\+L\+O\+G}}
+\index{L\+Z4\+\_\+\+H\+A\+S\+H\+L\+O\+G@{L\+Z4\+\_\+\+H\+A\+S\+H\+L\+O\+G}!compat-\/lz4.\+h@{compat-\/lz4.\+h}}
+\subsubsection[{L\+Z4\+\_\+\+H\+A\+S\+H\+L\+O\+G}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\+Z4\+\_\+\+H\+A\+S\+H\+L\+O\+G~({\bf L\+Z4\+\_\+\+M\+E\+M\+O\+R\+Y\+\_\+\+U\+S\+A\+G\+E}-\/2)}\label{compat-lz4_8h_ac7f04539d94ce57826ef8b2f3d8408af}
+\hypertarget{compat-lz4_8h_a1bb7a0fa34be27b67f43ce30be0fc905}{}\index{compat-\/lz4.\+h@{compat-\/lz4.\+h}!L\+Z4\+\_\+\+H\+A\+S\+H\+T\+A\+B\+L\+E\+S\+I\+Z\+E@{L\+Z4\+\_\+\+H\+A\+S\+H\+T\+A\+B\+L\+E\+S\+I\+Z\+E}}
+\index{L\+Z4\+\_\+\+H\+A\+S\+H\+T\+A\+B\+L\+E\+S\+I\+Z\+E@{L\+Z4\+\_\+\+H\+A\+S\+H\+T\+A\+B\+L\+E\+S\+I\+Z\+E}!compat-\/lz4.\+h@{compat-\/lz4.\+h}}
+\subsubsection[{L\+Z4\+\_\+\+H\+A\+S\+H\+T\+A\+B\+L\+E\+S\+I\+Z\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\+Z4\+\_\+\+H\+A\+S\+H\+T\+A\+B\+L\+E\+S\+I\+Z\+E~(1 $<$$<$ {\bf L\+Z4\+\_\+\+M\+E\+M\+O\+R\+Y\+\_\+\+U\+S\+A\+G\+E})}\label{compat-lz4_8h_a1bb7a0fa34be27b67f43ce30be0fc905}
+\hypertarget{compat-lz4_8h_acefd86d684fc67bca4c3d5a0e9675268}{}\index{compat-\/lz4.\+h@{compat-\/lz4.\+h}!L\+Z4\+\_\+\+L\+I\+B\+\_\+\+V\+E\+R\+S\+I\+O\+N@{L\+Z4\+\_\+\+L\+I\+B\+\_\+\+V\+E\+R\+S\+I\+O\+N}}
+\index{L\+Z4\+\_\+\+L\+I\+B\+\_\+\+V\+E\+R\+S\+I\+O\+N@{L\+Z4\+\_\+\+L\+I\+B\+\_\+\+V\+E\+R\+S\+I\+O\+N}!compat-\/lz4.\+h@{compat-\/lz4.\+h}}
+\subsubsection[{L\+Z4\+\_\+\+L\+I\+B\+\_\+\+V\+E\+R\+S\+I\+O\+N}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\+Z4\+\_\+\+L\+I\+B\+\_\+\+V\+E\+R\+S\+I\+O\+N~{\bf L\+Z4\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+M\+A\+J\+O\+R.\+L\+Z4\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+M\+I\+N\+O\+R.\+L\+Z4\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+R\+E\+L\+E\+A\+S\+E}}\label{compat-lz4_8h_acefd86d684fc67bca4c3d5a0e9675268}
+\hypertarget{compat-lz4_8h_a88ee51e36ca74cd0533e731c20572ea6}{}\index{compat-\/lz4.\+h@{compat-\/lz4.\+h}!L\+Z4\+\_\+\+M\+A\+X\+\_\+\+I\+N\+P\+U\+T\+\_\+\+S\+I\+Z\+E@{L\+Z4\+\_\+\+M\+A\+X\+\_\+\+I\+N\+P\+U\+T\+\_\+\+S\+I\+Z\+E}}
+\index{L\+Z4\+\_\+\+M\+A\+X\+\_\+\+I\+N\+P\+U\+T\+\_\+\+S\+I\+Z\+E@{L\+Z4\+\_\+\+M\+A\+X\+\_\+\+I\+N\+P\+U\+T\+\_\+\+S\+I\+Z\+E}!compat-\/lz4.\+h@{compat-\/lz4.\+h}}
+\subsubsection[{L\+Z4\+\_\+\+M\+A\+X\+\_\+\+I\+N\+P\+U\+T\+\_\+\+S\+I\+Z\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\+Z4\+\_\+\+M\+A\+X\+\_\+\+I\+N\+P\+U\+T\+\_\+\+S\+I\+Z\+E~0x7\+E000000   /$\ast$ 2 113 929 216 bytes $\ast$/}\label{compat-lz4_8h_a88ee51e36ca74cd0533e731c20572ea6}
+\hypertarget{compat-lz4_8h_a24ddbc39e7379532031a91357e66a32c}{}\index{compat-\/lz4.\+h@{compat-\/lz4.\+h}!L\+Z4\+\_\+\+M\+E\+M\+O\+R\+Y\+\_\+\+U\+S\+A\+G\+E@{L\+Z4\+\_\+\+M\+E\+M\+O\+R\+Y\+\_\+\+U\+S\+A\+G\+E}}
+\index{L\+Z4\+\_\+\+M\+E\+M\+O\+R\+Y\+\_\+\+U\+S\+A\+G\+E@{L\+Z4\+\_\+\+M\+E\+M\+O\+R\+Y\+\_\+\+U\+S\+A\+G\+E}!compat-\/lz4.\+h@{compat-\/lz4.\+h}}
+\subsubsection[{L\+Z4\+\_\+\+M\+E\+M\+O\+R\+Y\+\_\+\+U\+S\+A\+G\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\+Z4\+\_\+\+M\+E\+M\+O\+R\+Y\+\_\+\+U\+S\+A\+G\+E~14}\label{compat-lz4_8h_a24ddbc39e7379532031a91357e66a32c}
+L\+Z4\+\_\+\+M\+E\+M\+O\+R\+Y\+\_\+\+U\+S\+A\+G\+E \+: Memory usage formula \+: N-\/$>$2$^\wedge$\+N Bytes (examples \+: 10 -\/$>$ 1\+K\+B; 12 -\/$>$ 4\+K\+B ; 16 -\/$>$ 64\+K\+B; 20 -\/$>$ 1\+M\+B; etc.) Increasing memory usage improves compression ratio Reduced memory usage can improve speed, due to cache effect Default value is 14, for 16\+K\+B, which nicely fits into Intel x86 L1 cache \hypertarget{compat-lz4_8h_a094a758915b2bd38b0012856a45bbc10}{}\index{compat-\/lz4.\+h@{compat-\/lz4.\+h}!L\+Z4\+\_\+\+Q\+U\+O\+T\+E@{L\+Z4\+\_\+\+Q\+U\+O\+T\+E}}
+\index{L\+Z4\+\_\+\+Q\+U\+O\+T\+E@{L\+Z4\+\_\+\+Q\+U\+O\+T\+E}!compat-\/lz4.\+h@{compat-\/lz4.\+h}}
+\subsubsection[{L\+Z4\+\_\+\+Q\+U\+O\+T\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\+Z4\+\_\+\+Q\+U\+O\+T\+E(
+\begin{DoxyParamCaption}
+\item[{}]{str}
+\end{DoxyParamCaption}
+)~\#str}\label{compat-lz4_8h_a094a758915b2bd38b0012856a45bbc10}
+\hypertarget{compat-lz4_8h_a9a08f1c4969b5e46eba93818cd7cb5a7}{}\index{compat-\/lz4.\+h@{compat-\/lz4.\+h}!L\+Z4\+\_\+\+S\+T\+R\+E\+A\+M\+D\+E\+C\+O\+D\+E\+S\+I\+Z\+E@{L\+Z4\+\_\+\+S\+T\+R\+E\+A\+M\+D\+E\+C\+O\+D\+E\+S\+I\+Z\+E}}
+\index{L\+Z4\+\_\+\+S\+T\+R\+E\+A\+M\+D\+E\+C\+O\+D\+E\+S\+I\+Z\+E@{L\+Z4\+\_\+\+S\+T\+R\+E\+A\+M\+D\+E\+C\+O\+D\+E\+S\+I\+Z\+E}!compat-\/lz4.\+h@{compat-\/lz4.\+h}}
+\subsubsection[{L\+Z4\+\_\+\+S\+T\+R\+E\+A\+M\+D\+E\+C\+O\+D\+E\+S\+I\+Z\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\+Z4\+\_\+\+S\+T\+R\+E\+A\+M\+D\+E\+C\+O\+D\+E\+S\+I\+Z\+E~({\bf L\+Z4\+\_\+\+S\+T\+R\+E\+A\+M\+D\+E\+C\+O\+D\+E\+S\+I\+Z\+E\+\_\+\+U64} $\ast$ sizeof(unsigned long long))}\label{compat-lz4_8h_a9a08f1c4969b5e46eba93818cd7cb5a7}
+\hypertarget{compat-lz4_8h_a414ecb38e0607f239de5ebca5a5beef5}{}\index{compat-\/lz4.\+h@{compat-\/lz4.\+h}!L\+Z4\+\_\+\+S\+T\+R\+E\+A\+M\+D\+E\+C\+O\+D\+E\+S\+I\+Z\+E\+\_\+\+U64@{L\+Z4\+\_\+\+S\+T\+R\+E\+A\+M\+D\+E\+C\+O\+D\+E\+S\+I\+Z\+E\+\_\+\+U64}}
+\index{L\+Z4\+\_\+\+S\+T\+R\+E\+A\+M\+D\+E\+C\+O\+D\+E\+S\+I\+Z\+E\+\_\+\+U64@{L\+Z4\+\_\+\+S\+T\+R\+E\+A\+M\+D\+E\+C\+O\+D\+E\+S\+I\+Z\+E\+\_\+\+U64}!compat-\/lz4.\+h@{compat-\/lz4.\+h}}
+\subsubsection[{L\+Z4\+\_\+\+S\+T\+R\+E\+A\+M\+D\+E\+C\+O\+D\+E\+S\+I\+Z\+E\+\_\+\+U64}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\+Z4\+\_\+\+S\+T\+R\+E\+A\+M\+D\+E\+C\+O\+D\+E\+S\+I\+Z\+E\+\_\+\+U64~4}\label{compat-lz4_8h_a414ecb38e0607f239de5ebca5a5beef5}
+L\+Z4\+\_\+stream\+Decode\+\_\+t \+: information structure to track an L\+Z4 stream during decompression. init this structure using L\+Z4\+\_\+set\+Stream\+Decode (or memset()) before first use note \+: only use in association with static linking ! this definition is not A\+P\+I/\+A\+B\+I safe, and may change in a future version ! \hypertarget{compat-lz4_8h_a1b76402ebadac569ceb550cb22a7a6e4}{}\index{compat-\/lz4.\+h@{compat-\/lz4.\+h}!L\+Z4\+\_\+\+S\+T\+R\+E\+A\+M\+S\+I\+Z\+E@{L\+Z4\+\_\+\+S\+T\+R\+E\+A\+M\+S\+I\+Z\+E}}
+\index{L\+Z4\+\_\+\+S\+T\+R\+E\+A\+M\+S\+I\+Z\+E@{L\+Z4\+\_\+\+S\+T\+R\+E\+A\+M\+S\+I\+Z\+E}!compat-\/lz4.\+h@{compat-\/lz4.\+h}}
+\subsubsection[{L\+Z4\+\_\+\+S\+T\+R\+E\+A\+M\+S\+I\+Z\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\+Z4\+\_\+\+S\+T\+R\+E\+A\+M\+S\+I\+Z\+E~({\bf L\+Z4\+\_\+\+S\+T\+R\+E\+A\+M\+S\+I\+Z\+E\+\_\+\+U64} $\ast$ sizeof(unsigned long long))}\label{compat-lz4_8h_a1b76402ebadac569ceb550cb22a7a6e4}
+\hypertarget{compat-lz4_8h_acddbce79f3e1d413f295e97d986ab3f5}{}\index{compat-\/lz4.\+h@{compat-\/lz4.\+h}!L\+Z4\+\_\+\+S\+T\+R\+E\+A\+M\+S\+I\+Z\+E\+\_\+\+U64@{L\+Z4\+\_\+\+S\+T\+R\+E\+A\+M\+S\+I\+Z\+E\+\_\+\+U64}}
+\index{L\+Z4\+\_\+\+S\+T\+R\+E\+A\+M\+S\+I\+Z\+E\+\_\+\+U64@{L\+Z4\+\_\+\+S\+T\+R\+E\+A\+M\+S\+I\+Z\+E\+\_\+\+U64}!compat-\/lz4.\+h@{compat-\/lz4.\+h}}
+\subsubsection[{L\+Z4\+\_\+\+S\+T\+R\+E\+A\+M\+S\+I\+Z\+E\+\_\+\+U64}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\+Z4\+\_\+\+S\+T\+R\+E\+A\+M\+S\+I\+Z\+E\+\_\+\+U64~((1 $<$$<$ ({\bf L\+Z4\+\_\+\+M\+E\+M\+O\+R\+Y\+\_\+\+U\+S\+A\+G\+E}-\/3)) + 4)}\label{compat-lz4_8h_acddbce79f3e1d413f295e97d986ab3f5}
+L\+Z4\+\_\+stream\+\_\+t \+: information structure to track an L\+Z4 stream. init this structure before first use. note \+: only use in association with static linking ! this definition is not A\+P\+I/\+A\+B\+I safe, and may change in a future version ! \hypertarget{compat-lz4_8h_a4a15eb1f8aa69834f917a50d7652413e}{}\index{compat-\/lz4.\+h@{compat-\/lz4.\+h}!L\+Z4\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+M\+A\+J\+O\+R@{L\+Z4\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+M\+A\+J\+O\+R}}
+\index{L\+Z4\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+M\+A\+J\+O\+R@{L\+Z4\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+M\+A\+J\+O\+R}!compat-\/lz4.\+h@{compat-\/lz4.\+h}}
+\subsubsection[{L\+Z4\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+M\+A\+J\+O\+R}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\+Z4\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+M\+A\+J\+O\+R~1    /$\ast$ for breaking interface changes  $\ast$/}\label{compat-lz4_8h_a4a15eb1f8aa69834f917a50d7652413e}
+\hypertarget{compat-lz4_8h_af16952f74f68ac445da9fc7603609909}{}\index{compat-\/lz4.\+h@{compat-\/lz4.\+h}!L\+Z4\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+M\+I\+N\+O\+R@{L\+Z4\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+M\+I\+N\+O\+R}}
+\index{L\+Z4\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+M\+I\+N\+O\+R@{L\+Z4\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+M\+I\+N\+O\+R}!compat-\/lz4.\+h@{compat-\/lz4.\+h}}
+\subsubsection[{L\+Z4\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+M\+I\+N\+O\+R}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\+Z4\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+M\+I\+N\+O\+R~7    /$\ast$ for new (non-\/breaking) interface capabilities $\ast$/}\label{compat-lz4_8h_af16952f74f68ac445da9fc7603609909}
+\hypertarget{compat-lz4_8h_aac7e910a11c45364a8b235d0d43a0265}{}\index{compat-\/lz4.\+h@{compat-\/lz4.\+h}!L\+Z4\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+N\+U\+M\+B\+E\+R@{L\+Z4\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+N\+U\+M\+B\+E\+R}}
+\index{L\+Z4\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+N\+U\+M\+B\+E\+R@{L\+Z4\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+N\+U\+M\+B\+E\+R}!compat-\/lz4.\+h@{compat-\/lz4.\+h}}
+\subsubsection[{L\+Z4\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+N\+U\+M\+B\+E\+R}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\+Z4\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+N\+U\+M\+B\+E\+R~({\bf L\+Z4\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+M\+A\+J\+O\+R} $\ast$100$\ast$100 + {\bf L\+Z4\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+M\+I\+N\+O\+R} $\ast$100 + {\bf L\+Z4\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+R\+E\+L\+E\+A\+S\+E})}\label{compat-lz4_8h_aac7e910a11c45364a8b235d0d43a0265}
+\hypertarget{compat-lz4_8h_a19d496bbe4d8448bc2d42cfb576cf525}{}\index{compat-\/lz4.\+h@{compat-\/lz4.\+h}!L\+Z4\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+R\+E\+L\+E\+A\+S\+E@{L\+Z4\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+R\+E\+L\+E\+A\+S\+E}}
+\index{L\+Z4\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+R\+E\+L\+E\+A\+S\+E@{L\+Z4\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+R\+E\+L\+E\+A\+S\+E}!compat-\/lz4.\+h@{compat-\/lz4.\+h}}
+\subsubsection[{L\+Z4\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+R\+E\+L\+E\+A\+S\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\+Z4\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+R\+E\+L\+E\+A\+S\+E~5    /$\ast$ for tweaks, bug-\/fixes, or development $\ast$/}\label{compat-lz4_8h_a19d496bbe4d8448bc2d42cfb576cf525}
+\hypertarget{compat-lz4_8h_a2eab5fe1369fa5559f6ad37898ed5e1b}{}\index{compat-\/lz4.\+h@{compat-\/lz4.\+h}!L\+Z4\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+S\+T\+R\+I\+N\+G@{L\+Z4\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+S\+T\+R\+I\+N\+G}}
+\index{L\+Z4\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+S\+T\+R\+I\+N\+G@{L\+Z4\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+S\+T\+R\+I\+N\+G}!compat-\/lz4.\+h@{compat-\/lz4.\+h}}
+\subsubsection[{L\+Z4\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+S\+T\+R\+I\+N\+G}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\+Z4\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+S\+T\+R\+I\+N\+G~{\bf L\+Z4\+\_\+\+E\+X\+P\+A\+N\+D\+\_\+\+A\+N\+D\+\_\+\+Q\+U\+O\+T\+E}({\bf L\+Z4\+\_\+\+L\+I\+B\+\_\+\+V\+E\+R\+S\+I\+O\+N})}\label{compat-lz4_8h_a2eab5fe1369fa5559f6ad37898ed5e1b}
+\hypertarget{compat-lz4_8h_a00a61e1435005f8a621edf4bbe0ef844}{}\index{compat-\/lz4.\+h@{compat-\/lz4.\+h}!L\+Z4\+L\+I\+B\+\_\+\+A\+P\+I@{L\+Z4\+L\+I\+B\+\_\+\+A\+P\+I}}
+\index{L\+Z4\+L\+I\+B\+\_\+\+A\+P\+I@{L\+Z4\+L\+I\+B\+\_\+\+A\+P\+I}!compat-\/lz4.\+h@{compat-\/lz4.\+h}}
+\subsubsection[{L\+Z4\+L\+I\+B\+\_\+\+A\+P\+I}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\+Z4\+L\+I\+B\+\_\+\+A\+P\+I}\label{compat-lz4_8h_a00a61e1435005f8a621edf4bbe0ef844}
+Introduction
+
+L\+Z4 is lossless compression algorithm, providing compression speed at 400 M\+B/s per core, scalable with multi-\/cores C\+P\+U. It features an extremely fast decoder, with speed in multiple G\+B/s per core, typically reaching R\+A\+M speed limits on multi-\/core systems.
+
+The L\+Z4 compression library provides in-\/memory compression and decompression functions. Compression can be done in\+:
+\begin{DoxyItemize}
+\item a single step (described as Simple Functions)
+\item a single step, reusing a context (described in Advanced Functions)
+\item unbounded multiple steps (described as Streaming compression)
+\end{DoxyItemize}
+
+lz4.\+h provides block compression functions. It gives full buffer control to user. Decompressing an lz4-\/compressed block also requires metadata (such as compressed size). Each application is free to encode such metadata in whichever way it wants.
+
+An additional format, called L\+Z4 frame specification (doc/lz4\+\_\+\+Frame\+\_\+format.\+md), take care of encoding standard metadata alongside L\+Z4-\/compressed blocks. If your application requires interoperability, it\textquotesingle{}s recommended to use it. A library is provided to take care of it, see lz4frame.\+h. 
+
+\subsection{Typedef Documentation}
+\hypertarget{compat-lz4_8h_a4fb9ac4ce6d5e25edc9188f9d6633498}{}\index{compat-\/lz4.\+h@{compat-\/lz4.\+h}!L\+Z4\+\_\+stream\+\_\+t@{L\+Z4\+\_\+stream\+\_\+t}}
+\index{L\+Z4\+\_\+stream\+\_\+t@{L\+Z4\+\_\+stream\+\_\+t}!compat-\/lz4.\+h@{compat-\/lz4.\+h}}
+\subsubsection[{L\+Z4\+\_\+stream\+\_\+t}]{\setlength{\rightskip}{0pt plus 5cm}typedef union {\bf L\+Z4\+\_\+stream\+\_\+u} {\bf L\+Z4\+\_\+stream\+\_\+t}}\label{compat-lz4_8h_a4fb9ac4ce6d5e25edc9188f9d6633498}
+\hypertarget{compat-lz4_8h_a76a1eaa4729efddb43040217daad4d4e}{}\index{compat-\/lz4.\+h@{compat-\/lz4.\+h}!L\+Z4\+\_\+stream\+Decode\+\_\+t@{L\+Z4\+\_\+stream\+Decode\+\_\+t}}
+\index{L\+Z4\+\_\+stream\+Decode\+\_\+t@{L\+Z4\+\_\+stream\+Decode\+\_\+t}!compat-\/lz4.\+h@{compat-\/lz4.\+h}}
+\subsubsection[{L\+Z4\+\_\+stream\+Decode\+\_\+t}]{\setlength{\rightskip}{0pt plus 5cm}typedef union {\bf L\+Z4\+\_\+stream\+Decode\+\_\+u} {\bf L\+Z4\+\_\+stream\+Decode\+\_\+t}}\label{compat-lz4_8h_a76a1eaa4729efddb43040217daad4d4e}
+
+
+\subsection{Function Documentation}
+\hypertarget{compat-lz4_8h_a7a99ebb0d007cb52765821274a7a5179}{}\index{compat-\/lz4.\+h@{compat-\/lz4.\+h}!L\+Z4\+\_\+compress\+\_\+default@{L\+Z4\+\_\+compress\+\_\+default}}
+\index{L\+Z4\+\_\+compress\+\_\+default@{L\+Z4\+\_\+compress\+\_\+default}!compat-\/lz4.\+h@{compat-\/lz4.\+h}}
+\subsubsection[{L\+Z4\+\_\+compress\+\_\+default(const char $\ast$source, char $\ast$dest, int source\+Size, int max\+Dest\+Size)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf L\+Z4\+L\+I\+B\+\_\+\+A\+P\+I} int L\+Z4\+\_\+compress\+\_\+default (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{source, }
+\item[{char $\ast$}]{dest, }
+\item[{int}]{source\+Size, }
+\item[{int}]{max\+Dest\+Size}
+\end{DoxyParamCaption}
+)}\label{compat-lz4_8h_a7a99ebb0d007cb52765821274a7a5179}
+\hyperlink{compat-lz4_8h_a7a99ebb0d007cb52765821274a7a5179}{L\+Z4\+\_\+compress\+\_\+default()} \+: Compresses \textquotesingle{}source\+Size\textquotesingle{} bytes from buffer \textquotesingle{}source\textquotesingle{} into already allocated \textquotesingle{}dest\textquotesingle{} buffer of size \textquotesingle{}max\+Dest\+Size\textquotesingle{}. Compression is guaranteed to succeed if \textquotesingle{}max\+Dest\+Size\textquotesingle{} $>$= L\+Z4\+\_\+compress\+Bound(source\+Size). It also runs faster, so it\textquotesingle{}s a recommended setting. If the function cannot compress \textquotesingle{}source\textquotesingle{} into a more limited \textquotesingle{}dest\textquotesingle{} budget, compression stops {\itshape immediately}, and the function result is zero. As a consequence, \textquotesingle{}dest\textquotesingle{} content is not valid. This function never writes outside \textquotesingle{}dest\textquotesingle{} buffer, nor read outside \textquotesingle{}source\textquotesingle{} buffer. source\+Size \+: Max supported value is L\+Z4\+\_\+\+M\+A\+X\+\_\+\+I\+N\+P\+U\+T\+\_\+\+V\+A\+L\+U\+E max\+Dest\+Size \+: full or partial size of buffer \textquotesingle{}dest\textquotesingle{} (which must be already allocated) return \+: the number of bytes written into buffer \textquotesingle{}dest\textquotesingle{} (necessarily $<$= max\+Output\+Size) or 0 if compression fails \hypertarget{compat-lz4_8h_ae240d134add3f1721057b5c14e3bc82c}{}\index{compat-\/lz4.\+h@{compat-\/lz4.\+h}!L\+Z4\+\_\+compress\+\_\+dest\+Size@{L\+Z4\+\_\+compress\+\_\+dest\+Size}}
+\index{L\+Z4\+\_\+compress\+\_\+dest\+Size@{L\+Z4\+\_\+compress\+\_\+dest\+Size}!compat-\/lz4.\+h@{compat-\/lz4.\+h}}
+\subsubsection[{L\+Z4\+\_\+compress\+\_\+dest\+Size(const char $\ast$source, char $\ast$dest, int $\ast$source\+Size\+Ptr, int target\+Dest\+Size)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf L\+Z4\+L\+I\+B\+\_\+\+A\+P\+I} int L\+Z4\+\_\+compress\+\_\+dest\+Size (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{source, }
+\item[{char $\ast$}]{dest, }
+\item[{int $\ast$}]{source\+Size\+Ptr, }
+\item[{int}]{target\+Dest\+Size}
+\end{DoxyParamCaption}
+)}\label{compat-lz4_8h_ae240d134add3f1721057b5c14e3bc82c}
+\hyperlink{compat-lz4_8h_ae240d134add3f1721057b5c14e3bc82c}{L\+Z4\+\_\+compress\+\_\+dest\+Size()} \+: Reverse the logic, by compressing as much data as possible from \textquotesingle{}source\textquotesingle{} buffer into already allocated buffer \textquotesingle{}dest\textquotesingle{} of size \textquotesingle{}target\+Dest\+Size\textquotesingle{}. This function either compresses the entire \textquotesingle{}source\textquotesingle{} content into \textquotesingle{}dest\textquotesingle{} if it\textquotesingle{}s large enough, or fill \textquotesingle{}dest\textquotesingle{} buffer completely with as much data as possible from \textquotesingle{}source\textquotesingle{}. source\+Size\+Ptr \+: will be modified to indicate how many bytes where read from \textquotesingle{}source\textquotesingle{} to fill \textquotesingle{}dest\textquotesingle{}. New value is necessarily $<$= old value. return \+: Nb bytes written into \textquotesingle{}dest\textquotesingle{} (necessarily $<$= target\+Dest\+Size) or 0 if compression fails \hypertarget{compat-lz4_8h_a4f16d7ba96053d8562595243d24b0f82}{}\index{compat-\/lz4.\+h@{compat-\/lz4.\+h}!L\+Z4\+\_\+compress\+\_\+fast@{L\+Z4\+\_\+compress\+\_\+fast}}
+\index{L\+Z4\+\_\+compress\+\_\+fast@{L\+Z4\+\_\+compress\+\_\+fast}!compat-\/lz4.\+h@{compat-\/lz4.\+h}}
+\subsubsection[{L\+Z4\+\_\+compress\+\_\+fast(const char $\ast$source, char $\ast$dest, int source\+Size, int max\+Dest\+Size, int acceleration)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf L\+Z4\+L\+I\+B\+\_\+\+A\+P\+I} int L\+Z4\+\_\+compress\+\_\+fast (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{source, }
+\item[{char $\ast$}]{dest, }
+\item[{int}]{source\+Size, }
+\item[{int}]{max\+Dest\+Size, }
+\item[{int}]{acceleration}
+\end{DoxyParamCaption}
+)}\label{compat-lz4_8h_a4f16d7ba96053d8562595243d24b0f82}
+\hyperlink{compat-lz4_8h_a4f16d7ba96053d8562595243d24b0f82}{L\+Z4\+\_\+compress\+\_\+fast()} \+: Same as \hyperlink{compat-lz4_8h_a7a99ebb0d007cb52765821274a7a5179}{L\+Z4\+\_\+compress\+\_\+default()}, but allows to select an \char`\"{}acceleration\char`\"{} factor. The larger the acceleration value, the faster the algorithm, but also the lesser the compression. It\textquotesingle{}s a trade-\/off. It can be fine tuned, with each successive value providing roughly +$\sim$3\% to speed. An acceleration value of \char`\"{}1\char`\"{} is the same as regular \hyperlink{compat-lz4_8h_a7a99ebb0d007cb52765821274a7a5179}{L\+Z4\+\_\+compress\+\_\+default()} Values $<$= 0 will be replaced by A\+C\+C\+E\+L\+E\+R\+A\+T\+I\+O\+N\+\_\+\+D\+E\+F\+A\+U\+L\+T (see lz4.\+c), which is 1. \hypertarget{compat-lz4_8h_a7c280948702564f0620262a8eb0b6436}{}\index{compat-\/lz4.\+h@{compat-\/lz4.\+h}!L\+Z4\+\_\+compress\+\_\+fast\+\_\+continue@{L\+Z4\+\_\+compress\+\_\+fast\+\_\+continue}}
+\index{L\+Z4\+\_\+compress\+\_\+fast\+\_\+continue@{L\+Z4\+\_\+compress\+\_\+fast\+\_\+continue}!compat-\/lz4.\+h@{compat-\/lz4.\+h}}
+\subsubsection[{L\+Z4\+\_\+compress\+\_\+fast\+\_\+continue(\+L\+Z4\+\_\+stream\+\_\+t $\ast$stream\+Ptr, const char $\ast$src, char $\ast$dst, int src\+Size, int max\+Dst\+Size, int acceleration)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf L\+Z4\+L\+I\+B\+\_\+\+A\+P\+I} int L\+Z4\+\_\+compress\+\_\+fast\+\_\+continue (
+\begin{DoxyParamCaption}
+\item[{{\bf L\+Z4\+\_\+stream\+\_\+t} $\ast$}]{stream\+Ptr, }
+\item[{const char $\ast$}]{src, }
+\item[{char $\ast$}]{dst, }
+\item[{int}]{src\+Size, }
+\item[{int}]{max\+Dst\+Size, }
+\item[{int}]{acceleration}
+\end{DoxyParamCaption}
+)}\label{compat-lz4_8h_a7c280948702564f0620262a8eb0b6436}
+\hyperlink{compat-lz4_8h_a7c280948702564f0620262a8eb0b6436}{L\+Z4\+\_\+compress\+\_\+fast\+\_\+continue()} \+: Compress buffer content \textquotesingle{}src\textquotesingle{}, using data from previously compressed blocks as dictionary to improve compression ratio. Important \+: Previous data blocks are assumed to still be present and unmodified ! \textquotesingle{}dst\textquotesingle{} buffer must be already allocated. If max\+Dst\+Size $>$= L\+Z4\+\_\+compress\+Bound(src\+Size), compression is guaranteed to succeed, and runs faster. If not, and if compressed data cannot fit into \textquotesingle{}dst\textquotesingle{} buffer size, compression stops, and function returns a zero. \hypertarget{compat-lz4_8h_adf10cb9dd113049e97bdc3ee5ce7b6ed}{}\index{compat-\/lz4.\+h@{compat-\/lz4.\+h}!L\+Z4\+\_\+compress\+\_\+fast\+\_\+ext\+State@{L\+Z4\+\_\+compress\+\_\+fast\+\_\+ext\+State}}
+\index{L\+Z4\+\_\+compress\+\_\+fast\+\_\+ext\+State@{L\+Z4\+\_\+compress\+\_\+fast\+\_\+ext\+State}!compat-\/lz4.\+h@{compat-\/lz4.\+h}}
+\subsubsection[{L\+Z4\+\_\+compress\+\_\+fast\+\_\+ext\+State(void $\ast$state, const char $\ast$source, char $\ast$dest, int input\+Size, int max\+Dest\+Size, int acceleration)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf L\+Z4\+L\+I\+B\+\_\+\+A\+P\+I} int L\+Z4\+\_\+compress\+\_\+fast\+\_\+ext\+State (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{state, }
+\item[{const char $\ast$}]{source, }
+\item[{char $\ast$}]{dest, }
+\item[{int}]{input\+Size, }
+\item[{int}]{max\+Dest\+Size, }
+\item[{int}]{acceleration}
+\end{DoxyParamCaption}
+)}\label{compat-lz4_8h_adf10cb9dd113049e97bdc3ee5ce7b6ed}
+\hypertarget{compat-lz4_8h_a7d92f596953d35893e39db626ae321ee}{}\index{compat-\/lz4.\+h@{compat-\/lz4.\+h}!L\+Z4\+\_\+compress\+Bound@{L\+Z4\+\_\+compress\+Bound}}
+\index{L\+Z4\+\_\+compress\+Bound@{L\+Z4\+\_\+compress\+Bound}!compat-\/lz4.\+h@{compat-\/lz4.\+h}}
+\subsubsection[{L\+Z4\+\_\+compress\+Bound(int input\+Size)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf L\+Z4\+L\+I\+B\+\_\+\+A\+P\+I} int L\+Z4\+\_\+compress\+Bound (
+\begin{DoxyParamCaption}
+\item[{int}]{input\+Size}
+\end{DoxyParamCaption}
+)}\label{compat-lz4_8h_a7d92f596953d35893e39db626ae321ee}
+\hyperlink{compat-lz4_8h_a7d92f596953d35893e39db626ae321ee}{L\+Z4\+\_\+compress\+Bound()} \+: Provides the maximum size that L\+Z4 compression may output in a \char`\"{}worst case\char`\"{} scenario (input data not compressible) This function is primarily useful for memory allocation purposes (destination buffer size). Macro \hyperlink{compat-lz4_8h_a2453a423fd34640a0afbbf57ed0a5399}{L\+Z4\+\_\+\+C\+O\+M\+P\+R\+E\+S\+S\+B\+O\+U\+N\+D()} is also provided for compilation-\/time evaluation (stack memory allocation for example). Note that \hyperlink{compat-lz4_8h_a7a99ebb0d007cb52765821274a7a5179}{L\+Z4\+\_\+compress\+\_\+default()} compress faster when dest buffer size is $>$= L\+Z4\+\_\+compress\+Bound(src\+Size) input\+Size \+: max supported value is L\+Z4\+\_\+\+M\+A\+X\+\_\+\+I\+N\+P\+U\+T\+\_\+\+S\+I\+Z\+E return \+: maximum output size in a \char`\"{}worst case\char`\"{} scenario or 0, if input size is too large ( $>$ L\+Z4\+\_\+\+M\+A\+X\+\_\+\+I\+N\+P\+U\+T\+\_\+\+S\+I\+Z\+E) \hypertarget{compat-lz4_8h_ae2f3cdde265f5abde4c1299bcdfbe5b8}{}\index{compat-\/lz4.\+h@{compat-\/lz4.\+h}!L\+Z4\+\_\+create\+Stream@{L\+Z4\+\_\+create\+Stream}}
+\index{L\+Z4\+\_\+create\+Stream@{L\+Z4\+\_\+create\+Stream}!compat-\/lz4.\+h@{compat-\/lz4.\+h}}
+\subsubsection[{L\+Z4\+\_\+create\+Stream(void)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf L\+Z4\+L\+I\+B\+\_\+\+A\+P\+I} {\bf L\+Z4\+\_\+stream\+\_\+t}$\ast$ L\+Z4\+\_\+create\+Stream (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{compat-lz4_8h_ae2f3cdde265f5abde4c1299bcdfbe5b8}
+\hyperlink{compat-lz4_8h_ae2f3cdde265f5abde4c1299bcdfbe5b8}{L\+Z4\+\_\+create\+Stream()} and \hyperlink{compat-lz4_8h_a820a8fea119332103a839f27c14beb22}{L\+Z4\+\_\+free\+Stream()} \+: \hyperlink{compat-lz4_8h_ae2f3cdde265f5abde4c1299bcdfbe5b8}{L\+Z4\+\_\+create\+Stream()} will allocate and initialize an {\ttfamily L\+Z4\+\_\+stream\+\_\+t} structure. \hyperlink{compat-lz4_8h_a820a8fea119332103a839f27c14beb22}{L\+Z4\+\_\+free\+Stream()} releases its memory. \hypertarget{compat-lz4_8h_a5c6dfdf3179635d8fa92c7cc8d3532a1}{}\index{compat-\/lz4.\+h@{compat-\/lz4.\+h}!L\+Z4\+\_\+create\+Stream\+Decode@{L\+Z4\+\_\+create\+Stream\+Decode}}
+\index{L\+Z4\+\_\+create\+Stream\+Decode@{L\+Z4\+\_\+create\+Stream\+Decode}!compat-\/lz4.\+h@{compat-\/lz4.\+h}}
+\subsubsection[{L\+Z4\+\_\+create\+Stream\+Decode(void)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf L\+Z4\+L\+I\+B\+\_\+\+A\+P\+I} {\bf L\+Z4\+\_\+stream\+Decode\+\_\+t}$\ast$ L\+Z4\+\_\+create\+Stream\+Decode (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{compat-lz4_8h_a5c6dfdf3179635d8fa92c7cc8d3532a1}
+\hypertarget{compat-lz4_8h_ae35b8223a2126106ca22b79577dddd21}{}\index{compat-\/lz4.\+h@{compat-\/lz4.\+h}!L\+Z4\+\_\+decompress\+\_\+fast@{L\+Z4\+\_\+decompress\+\_\+fast}}
+\index{L\+Z4\+\_\+decompress\+\_\+fast@{L\+Z4\+\_\+decompress\+\_\+fast}!compat-\/lz4.\+h@{compat-\/lz4.\+h}}
+\subsubsection[{L\+Z4\+\_\+decompress\+\_\+fast(const char $\ast$source, char $\ast$dest, int original\+Size)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf L\+Z4\+L\+I\+B\+\_\+\+A\+P\+I} int L\+Z4\+\_\+decompress\+\_\+fast (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{source, }
+\item[{char $\ast$}]{dest, }
+\item[{int}]{original\+Size}
+\end{DoxyParamCaption}
+)}\label{compat-lz4_8h_ae35b8223a2126106ca22b79577dddd21}
+\hyperlink{compat-lz4_8h_ae35b8223a2126106ca22b79577dddd21}{L\+Z4\+\_\+decompress\+\_\+fast()} \+: original\+Size \+: is the original and therefore uncompressed size return \+: the number of bytes read from the source buffer (in other words, the compressed size) If the source stream is detected malformed, the function will stop decoding and return a negative result. Destination buffer must be already allocated. Its size must be a minimum of \textquotesingle{}original\+Size\textquotesingle{} bytes. note \+: This function fully respect memory boundaries for properly formed compressed data. It is a bit faster than \hyperlink{compat-lz4_8h_aedd5ff2835959ab058b140d4437cfd7c}{L\+Z4\+\_\+decompress\+\_\+safe()}. However, it does not provide any protection against intentionally modified data stream (malicious input). Use this function in trusted environment only (data to decode comes from a trusted source). \hypertarget{compat-lz4_8h_a26fc9946661b00f00f4604baa034e2a6}{}\index{compat-\/lz4.\+h@{compat-\/lz4.\+h}!L\+Z4\+\_\+decompress\+\_\+fast\+\_\+continue@{L\+Z4\+\_\+decompress\+\_\+fast\+\_\+continue}}
+\index{L\+Z4\+\_\+decompress\+\_\+fast\+\_\+continue@{L\+Z4\+\_\+decompress\+\_\+fast\+\_\+continue}!compat-\/lz4.\+h@{compat-\/lz4.\+h}}
+\subsubsection[{L\+Z4\+\_\+decompress\+\_\+fast\+\_\+continue(\+L\+Z4\+\_\+stream\+Decode\+\_\+t $\ast$\+L\+Z4\+\_\+stream\+Decode, const char $\ast$source, char $\ast$dest, int original\+Size)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf L\+Z4\+L\+I\+B\+\_\+\+A\+P\+I} int L\+Z4\+\_\+decompress\+\_\+fast\+\_\+continue (
+\begin{DoxyParamCaption}
+\item[{{\bf L\+Z4\+\_\+stream\+Decode\+\_\+t} $\ast$}]{L\+Z4\+\_\+stream\+Decode, }
+\item[{const char $\ast$}]{source, }
+\item[{char $\ast$}]{dest, }
+\item[{int}]{original\+Size}
+\end{DoxyParamCaption}
+)}\label{compat-lz4_8h_a26fc9946661b00f00f4604baa034e2a6}
+\hypertarget{compat-lz4_8h_a7f3f35d47e1873d6d29a0d8a1d0a9aa4}{}\index{compat-\/lz4.\+h@{compat-\/lz4.\+h}!L\+Z4\+\_\+decompress\+\_\+fast\+\_\+using\+Dict@{L\+Z4\+\_\+decompress\+\_\+fast\+\_\+using\+Dict}}
+\index{L\+Z4\+\_\+decompress\+\_\+fast\+\_\+using\+Dict@{L\+Z4\+\_\+decompress\+\_\+fast\+\_\+using\+Dict}!compat-\/lz4.\+h@{compat-\/lz4.\+h}}
+\subsubsection[{L\+Z4\+\_\+decompress\+\_\+fast\+\_\+using\+Dict(const char $\ast$source, char $\ast$dest, int original\+Size, const char $\ast$dict\+Start, int dict\+Size)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf L\+Z4\+L\+I\+B\+\_\+\+A\+P\+I} int L\+Z4\+\_\+decompress\+\_\+fast\+\_\+using\+Dict (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{source, }
+\item[{char $\ast$}]{dest, }
+\item[{int}]{original\+Size, }
+\item[{const char $\ast$}]{dict\+Start, }
+\item[{int}]{dict\+Size}
+\end{DoxyParamCaption}
+)}\label{compat-lz4_8h_a7f3f35d47e1873d6d29a0d8a1d0a9aa4}
+\hypertarget{compat-lz4_8h_aedd5ff2835959ab058b140d4437cfd7c}{}\index{compat-\/lz4.\+h@{compat-\/lz4.\+h}!L\+Z4\+\_\+decompress\+\_\+safe@{L\+Z4\+\_\+decompress\+\_\+safe}}
+\index{L\+Z4\+\_\+decompress\+\_\+safe@{L\+Z4\+\_\+decompress\+\_\+safe}!compat-\/lz4.\+h@{compat-\/lz4.\+h}}
+\subsubsection[{L\+Z4\+\_\+decompress\+\_\+safe(const char $\ast$source, char $\ast$dest, int compressed\+Size, int max\+Decompressed\+Size)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf L\+Z4\+L\+I\+B\+\_\+\+A\+P\+I} int L\+Z4\+\_\+decompress\+\_\+safe (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{source, }
+\item[{char $\ast$}]{dest, }
+\item[{int}]{compressed\+Size, }
+\item[{int}]{max\+Decompressed\+Size}
+\end{DoxyParamCaption}
+)}\label{compat-lz4_8h_aedd5ff2835959ab058b140d4437cfd7c}
+\hyperlink{compat-lz4_8h_aedd5ff2835959ab058b140d4437cfd7c}{L\+Z4\+\_\+decompress\+\_\+safe()} \+: compressed\+Size \+: is the precise full size of the compressed block. max\+Decompressed\+Size \+: is the size of destination buffer, which must be already allocated. return \+: the number of bytes decompressed into destination buffer (necessarily $<$= max\+Decompressed\+Size) If destination buffer is not large enough, decoding will stop and output an error code ($<$0). If the source stream is detected malformed, the function will stop decoding and return a negative result. This function is protected against buffer overflow exploits, including malicious data packets. It never writes outside output buffer, nor reads outside input buffer. \hypertarget{compat-lz4_8h_adc92f38c415dad5de8d79512ce025df1}{}\index{compat-\/lz4.\+h@{compat-\/lz4.\+h}!L\+Z4\+\_\+decompress\+\_\+safe\+\_\+continue@{L\+Z4\+\_\+decompress\+\_\+safe\+\_\+continue}}
+\index{L\+Z4\+\_\+decompress\+\_\+safe\+\_\+continue@{L\+Z4\+\_\+decompress\+\_\+safe\+\_\+continue}!compat-\/lz4.\+h@{compat-\/lz4.\+h}}
+\subsubsection[{L\+Z4\+\_\+decompress\+\_\+safe\+\_\+continue(\+L\+Z4\+\_\+stream\+Decode\+\_\+t $\ast$\+L\+Z4\+\_\+stream\+Decode, const char $\ast$source, char $\ast$dest, int compressed\+Size, int max\+Decompressed\+Size)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf L\+Z4\+L\+I\+B\+\_\+\+A\+P\+I} int L\+Z4\+\_\+decompress\+\_\+safe\+\_\+continue (
+\begin{DoxyParamCaption}
+\item[{{\bf L\+Z4\+\_\+stream\+Decode\+\_\+t} $\ast$}]{L\+Z4\+\_\+stream\+Decode, }
+\item[{const char $\ast$}]{source, }
+\item[{char $\ast$}]{dest, }
+\item[{int}]{compressed\+Size, }
+\item[{int}]{max\+Decompressed\+Size}
+\end{DoxyParamCaption}
+)}\label{compat-lz4_8h_adc92f38c415dad5de8d79512ce025df1}
+L\+Z4\+\_\+decompress\+\_\+$\ast$\+\_\+continue() \+: These decoding functions allow decompression of multiple blocks in \char`\"{}streaming\char`\"{} mode. Previously decoded blocks {\itshape must} remain available at the memory position where they were decoded (up to 64 K\+B) In the case of a ring buffers, decoding buffer must be either \+:
+\begin{DoxyItemize}
+\item Exactly same size as encoding buffer, with same update rule (block boundaries at same positions) In which case, the decoding \& encoding ring buffer can have any size, including very small ones ( $<$ 64 K\+B).
+\item Larger than encoding buffer, by a minimum of max\+Block\+Size more bytes. max\+Block\+Size is implementation dependent. It\textquotesingle{}s the maximum size you intend to compress into a single block. In which case, encoding and decoding buffers do not need to be synchronized, and encoding ring buffer can have any size, including small ones ( $<$ 64 K\+B).
+\item {\itshape At least} 64 K\+B + 8 bytes + max\+Block\+Size. In which case, encoding and decoding buffers do not need to be synchronized, and encoding ring buffer can have any size, including larger than decoding buffer. Whenever these conditions are not possible, save the last 64\+K\+B of decoded data into a safe buffer, and indicate where it is saved using \hyperlink{compat-lz4_8h_a81965fd474a946db05698f9aff385603}{L\+Z4\+\_\+set\+Stream\+Decode()} 
+\end{DoxyItemize}\hypertarget{compat-lz4_8h_acba496eb465f339989dc3d8a3bb7d41e}{}\index{compat-\/lz4.\+h@{compat-\/lz4.\+h}!L\+Z4\+\_\+decompress\+\_\+safe\+\_\+partial@{L\+Z4\+\_\+decompress\+\_\+safe\+\_\+partial}}
+\index{L\+Z4\+\_\+decompress\+\_\+safe\+\_\+partial@{L\+Z4\+\_\+decompress\+\_\+safe\+\_\+partial}!compat-\/lz4.\+h@{compat-\/lz4.\+h}}
+\subsubsection[{L\+Z4\+\_\+decompress\+\_\+safe\+\_\+partial(const char $\ast$source, char $\ast$dest, int compressed\+Size, int target\+Output\+Size, int max\+Decompressed\+Size)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf L\+Z4\+L\+I\+B\+\_\+\+A\+P\+I} int L\+Z4\+\_\+decompress\+\_\+safe\+\_\+partial (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{source, }
+\item[{char $\ast$}]{dest, }
+\item[{int}]{compressed\+Size, }
+\item[{int}]{target\+Output\+Size, }
+\item[{int}]{max\+Decompressed\+Size}
+\end{DoxyParamCaption}
+)}\label{compat-lz4_8h_acba496eb465f339989dc3d8a3bb7d41e}
+\hyperlink{compat-lz4_8h_acba496eb465f339989dc3d8a3bb7d41e}{L\+Z4\+\_\+decompress\+\_\+safe\+\_\+partial()} \+: This function decompress a compressed block of size \textquotesingle{}compressed\+Size\textquotesingle{} at position \textquotesingle{}source\textquotesingle{} into destination buffer \textquotesingle{}dest\textquotesingle{} of size \textquotesingle{}max\+Decompressed\+Size\textquotesingle{}. The function tries to stop decompressing operation as soon as \textquotesingle{}target\+Output\+Size\textquotesingle{} has been reached, reducing decompression time. return \+: the number of bytes decoded in the destination buffer (necessarily $<$= max\+Decompressed\+Size) Note \+: this number can be $<$ \textquotesingle{}target\+Output\+Size\textquotesingle{} should the compressed block to decode be smaller. Always control how many bytes were decoded. If the source stream is detected malformed, the function will stop decoding and return a negative result. This function never writes outside of output buffer, and never reads outside of input buffer. It is therefore protected against malicious data packets \hypertarget{compat-lz4_8h_a6f859dbaf83e1e76440ba34fa3c80b75}{}\index{compat-\/lz4.\+h@{compat-\/lz4.\+h}!L\+Z4\+\_\+decompress\+\_\+safe\+\_\+using\+Dict@{L\+Z4\+\_\+decompress\+\_\+safe\+\_\+using\+Dict}}
+\index{L\+Z4\+\_\+decompress\+\_\+safe\+\_\+using\+Dict@{L\+Z4\+\_\+decompress\+\_\+safe\+\_\+using\+Dict}!compat-\/lz4.\+h@{compat-\/lz4.\+h}}
+\subsubsection[{L\+Z4\+\_\+decompress\+\_\+safe\+\_\+using\+Dict(const char $\ast$source, char $\ast$dest, int compressed\+Size, int max\+Decompressed\+Size, const char $\ast$dict\+Start, int dict\+Size)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf L\+Z4\+L\+I\+B\+\_\+\+A\+P\+I} int L\+Z4\+\_\+decompress\+\_\+safe\+\_\+using\+Dict (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{source, }
+\item[{char $\ast$}]{dest, }
+\item[{int}]{compressed\+Size, }
+\item[{int}]{max\+Decompressed\+Size, }
+\item[{const char $\ast$}]{dict\+Start, }
+\item[{int}]{dict\+Size}
+\end{DoxyParamCaption}
+)}\label{compat-lz4_8h_a6f859dbaf83e1e76440ba34fa3c80b75}
+L\+Z4\+\_\+decompress\+\_\+$\ast$\+\_\+using\+Dict() \+: These decoding functions work the same as a combination of \hyperlink{compat-lz4_8h_a81965fd474a946db05698f9aff385603}{L\+Z4\+\_\+set\+Stream\+Decode()} followed by L\+Z4\+\_\+decompress\+\_\+$\ast$\+\_\+continue() They are stand-\/alone, and don\textquotesingle{}t need an L\+Z4\+\_\+stream\+Decode\+\_\+t structure. \hypertarget{compat-lz4_8h_a11e172db85d5940b8c689c0546d6df5a}{}\index{compat-\/lz4.\+h@{compat-\/lz4.\+h}!L\+Z4\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D@{L\+Z4\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D}}
+\index{L\+Z4\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D@{L\+Z4\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D}!compat-\/lz4.\+h@{compat-\/lz4.\+h}}
+\subsubsection[{L\+Z4\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D(""use L\+Z4\+\_\+compress\+\_\+default() instead"") int L\+Z4\+\_\+compress(const char $\ast$source}]{\setlength{\rightskip}{0pt plus 5cm}L\+Z4\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D (
+\begin{DoxyParamCaption}
+\item[{\char`\"{}use {\bf L\+Z4\+\_\+compress\+\_\+default}() instead\char`\"{}}]{}
+\end{DoxyParamCaption}
+) const}\label{compat-lz4_8h_a11e172db85d5940b8c689c0546d6df5a}
+\hypertarget{compat-lz4_8h_a3788b2a02fe98ad874485600fde9caa3}{}\index{compat-\/lz4.\+h@{compat-\/lz4.\+h}!L\+Z4\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D@{L\+Z4\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D}}
+\index{L\+Z4\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D@{L\+Z4\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D}!compat-\/lz4.\+h@{compat-\/lz4.\+h}}
+\subsubsection[{L\+Z4\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D(""use L\+Z4\+\_\+compress\+\_\+fast\+\_\+ext\+State() instead"") int L\+Z4\+\_\+compress\+\_\+with\+State(void $\ast$state}]{\setlength{\rightskip}{0pt plus 5cm}L\+Z4\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D (
+\begin{DoxyParamCaption}
+\item[{\char`\"{}use {\bf L\+Z4\+\_\+compress\+\_\+fast\+\_\+ext\+State}() instead\char`\"{}}]{}
+\end{DoxyParamCaption}
+)}\label{compat-lz4_8h_a3788b2a02fe98ad874485600fde9caa3}
+\hypertarget{compat-lz4_8h_abaf1151811a93dba725fdf2ecf8abf0a}{}\index{compat-\/lz4.\+h@{compat-\/lz4.\+h}!L\+Z4\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D@{L\+Z4\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D}}
+\index{L\+Z4\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D@{L\+Z4\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D}!compat-\/lz4.\+h@{compat-\/lz4.\+h}}
+\subsubsection[{L\+Z4\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D(""use L\+Z4\+\_\+compress\+\_\+fast\+\_\+continue() instead"") int L\+Z4\+\_\+compress\+\_\+continue(\+L\+Z4\+\_\+stream\+\_\+t $\ast$\+L\+Z4\+\_\+stream\+Ptr}]{\setlength{\rightskip}{0pt plus 5cm}L\+Z4\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D (
+\begin{DoxyParamCaption}
+\item[{\char`\"{}use {\bf L\+Z4\+\_\+compress\+\_\+fast\+\_\+continue}() instead\char`\"{}}]{}
+\end{DoxyParamCaption}
+)}\label{compat-lz4_8h_abaf1151811a93dba725fdf2ecf8abf0a}
+\hypertarget{compat-lz4_8h_af4492c6b2a6f4c275c044e2d292e2900}{}\index{compat-\/lz4.\+h@{compat-\/lz4.\+h}!L\+Z4\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D@{L\+Z4\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D}}
+\index{L\+Z4\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D@{L\+Z4\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D}!compat-\/lz4.\+h@{compat-\/lz4.\+h}}
+\subsubsection[{L\+Z4\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D(""use L\+Z4\+\_\+create\+Stream() instead"") void $\ast$\+L\+Z4\+\_\+create(char $\ast$input\+Buffer)}]{\setlength{\rightskip}{0pt plus 5cm}L\+Z4\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D (
+\begin{DoxyParamCaption}
+\item[{\char`\"{}use {\bf L\+Z4\+\_\+create\+Stream}() instead\char`\"{}}]{}
+\end{DoxyParamCaption}
+)}\label{compat-lz4_8h_af4492c6b2a6f4c275c044e2d292e2900}
+\hypertarget{compat-lz4_8h_a4fcd58d09cd54cae0310a362eb7f8fde}{}\index{compat-\/lz4.\+h@{compat-\/lz4.\+h}!L\+Z4\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D@{L\+Z4\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D}}
+\index{L\+Z4\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D@{L\+Z4\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D}!compat-\/lz4.\+h@{compat-\/lz4.\+h}}
+\subsubsection[{L\+Z4\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D(""use L\+Z4\+\_\+reset\+Stream() instead"") int L\+Z4\+\_\+reset\+Stream\+State(void $\ast$state}]{\setlength{\rightskip}{0pt plus 5cm}L\+Z4\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D (
+\begin{DoxyParamCaption}
+\item[{\char`\"{}use {\bf L\+Z4\+\_\+reset\+Stream}() instead\char`\"{}}]{}
+\end{DoxyParamCaption}
+)}\label{compat-lz4_8h_a4fcd58d09cd54cae0310a362eb7f8fde}
+\hypertarget{compat-lz4_8h_a548d68fc3c6e57da77cc5b965a197a69}{}\index{compat-\/lz4.\+h@{compat-\/lz4.\+h}!L\+Z4\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D@{L\+Z4\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D}}
+\index{L\+Z4\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D@{L\+Z4\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D}!compat-\/lz4.\+h@{compat-\/lz4.\+h}}
+\subsubsection[{L\+Z4\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D(""use L\+Z4\+\_\+save\+Dict() instead"") char $\ast$\+L\+Z4\+\_\+slide\+Input\+Buffer(void $\ast$state)}]{\setlength{\rightskip}{0pt plus 5cm}L\+Z4\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D (
+\begin{DoxyParamCaption}
+\item[{\char`\"{}use {\bf L\+Z4\+\_\+save\+Dict}() instead\char`\"{}}]{}
+\end{DoxyParamCaption}
+)}\label{compat-lz4_8h_a548d68fc3c6e57da77cc5b965a197a69}
+\hypertarget{compat-lz4_8h_a223091252715f6a90b84ed7aada75b4c}{}\index{compat-\/lz4.\+h@{compat-\/lz4.\+h}!L\+Z4\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D@{L\+Z4\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D}}
+\index{L\+Z4\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D@{L\+Z4\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D}!compat-\/lz4.\+h@{compat-\/lz4.\+h}}
+\subsubsection[{L\+Z4\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D(""use L\+Z4\+\_\+decompress\+\_\+safe\+\_\+using\+Dict() instead"") int L\+Z4\+\_\+decompress\+\_\+safe\+\_\+with\+Prefix64k(const char $\ast$src}]{\setlength{\rightskip}{0pt plus 5cm}L\+Z4\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D (
+\begin{DoxyParamCaption}
+\item[{\char`\"{}use {\bf L\+Z4\+\_\+decompress\+\_\+safe\+\_\+using\+Dict}() instead\char`\"{}}]{}
+\end{DoxyParamCaption}
+) const}\label{compat-lz4_8h_a223091252715f6a90b84ed7aada75b4c}
+\hypertarget{compat-lz4_8h_a263e18c96be5caf1eb7758a7bbc3c5a8}{}\index{compat-\/lz4.\+h@{compat-\/lz4.\+h}!L\+Z4\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D@{L\+Z4\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D}}
+\index{L\+Z4\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D@{L\+Z4\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D}!compat-\/lz4.\+h@{compat-\/lz4.\+h}}
+\subsubsection[{L\+Z4\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D(""use L\+Z4\+\_\+decompress\+\_\+fast\+\_\+using\+Dict() instead"") int L\+Z4\+\_\+decompress\+\_\+fast\+\_\+with\+Prefix64k(const char $\ast$src}]{\setlength{\rightskip}{0pt plus 5cm}L\+Z4\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D (
+\begin{DoxyParamCaption}
+\item[{\char`\"{}use {\bf L\+Z4\+\_\+decompress\+\_\+fast\+\_\+using\+Dict}() instead\char`\"{}}]{}
+\end{DoxyParamCaption}
+) const}\label{compat-lz4_8h_a263e18c96be5caf1eb7758a7bbc3c5a8}
+\hypertarget{compat-lz4_8h_a820a8fea119332103a839f27c14beb22}{}\index{compat-\/lz4.\+h@{compat-\/lz4.\+h}!L\+Z4\+\_\+free\+Stream@{L\+Z4\+\_\+free\+Stream}}
+\index{L\+Z4\+\_\+free\+Stream@{L\+Z4\+\_\+free\+Stream}!compat-\/lz4.\+h@{compat-\/lz4.\+h}}
+\subsubsection[{L\+Z4\+\_\+free\+Stream(\+L\+Z4\+\_\+stream\+\_\+t $\ast$stream\+Ptr)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf L\+Z4\+L\+I\+B\+\_\+\+A\+P\+I} int L\+Z4\+\_\+free\+Stream (
+\begin{DoxyParamCaption}
+\item[{{\bf L\+Z4\+\_\+stream\+\_\+t} $\ast$}]{stream\+Ptr}
+\end{DoxyParamCaption}
+)}\label{compat-lz4_8h_a820a8fea119332103a839f27c14beb22}
+\hypertarget{compat-lz4_8h_a37c487a088c1be5aa3924f51bb1529ab}{}\index{compat-\/lz4.\+h@{compat-\/lz4.\+h}!L\+Z4\+\_\+free\+Stream\+Decode@{L\+Z4\+\_\+free\+Stream\+Decode}}
+\index{L\+Z4\+\_\+free\+Stream\+Decode@{L\+Z4\+\_\+free\+Stream\+Decode}!compat-\/lz4.\+h@{compat-\/lz4.\+h}}
+\subsubsection[{L\+Z4\+\_\+free\+Stream\+Decode(\+L\+Z4\+\_\+stream\+Decode\+\_\+t $\ast$\+L\+Z4\+\_\+stream)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf L\+Z4\+L\+I\+B\+\_\+\+A\+P\+I} int L\+Z4\+\_\+free\+Stream\+Decode (
+\begin{DoxyParamCaption}
+\item[{{\bf L\+Z4\+\_\+stream\+Decode\+\_\+t} $\ast$}]{L\+Z4\+\_\+stream}
+\end{DoxyParamCaption}
+)}\label{compat-lz4_8h_a37c487a088c1be5aa3924f51bb1529ab}
+\hypertarget{compat-lz4_8h_ac14454c14304d2df9bfeaa81216053c1}{}\index{compat-\/lz4.\+h@{compat-\/lz4.\+h}!L\+Z4\+\_\+load\+Dict@{L\+Z4\+\_\+load\+Dict}}
+\index{L\+Z4\+\_\+load\+Dict@{L\+Z4\+\_\+load\+Dict}!compat-\/lz4.\+h@{compat-\/lz4.\+h}}
+\subsubsection[{L\+Z4\+\_\+load\+Dict(\+L\+Z4\+\_\+stream\+\_\+t $\ast$stream\+Ptr, const char $\ast$dictionary, int dict\+Size)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf L\+Z4\+L\+I\+B\+\_\+\+A\+P\+I} int L\+Z4\+\_\+load\+Dict (
+\begin{DoxyParamCaption}
+\item[{{\bf L\+Z4\+\_\+stream\+\_\+t} $\ast$}]{stream\+Ptr, }
+\item[{const char $\ast$}]{dictionary, }
+\item[{int}]{dict\+Size}
+\end{DoxyParamCaption}
+)}\label{compat-lz4_8h_ac14454c14304d2df9bfeaa81216053c1}
+\hyperlink{compat-lz4_8h_ac14454c14304d2df9bfeaa81216053c1}{L\+Z4\+\_\+load\+Dict()} \+: Use this function to load a static dictionary into L\+Z4\+\_\+stream. Any previous data will be forgotten, only \textquotesingle{}dictionary\textquotesingle{} will remain in memory. Loading a size of 0 is allowed. Return \+: dictionary size, in bytes (necessarily $<$= 64 K\+B) \hypertarget{compat-lz4_8h_ac8d5c49bc84243e6b69df1ecc25d2425}{}\index{compat-\/lz4.\+h@{compat-\/lz4.\+h}!L\+Z4\+\_\+reset\+Stream@{L\+Z4\+\_\+reset\+Stream}}
+\index{L\+Z4\+\_\+reset\+Stream@{L\+Z4\+\_\+reset\+Stream}!compat-\/lz4.\+h@{compat-\/lz4.\+h}}
+\subsubsection[{L\+Z4\+\_\+reset\+Stream(\+L\+Z4\+\_\+stream\+\_\+t $\ast$stream\+Ptr)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf L\+Z4\+L\+I\+B\+\_\+\+A\+P\+I} void L\+Z4\+\_\+reset\+Stream (
+\begin{DoxyParamCaption}
+\item[{{\bf L\+Z4\+\_\+stream\+\_\+t} $\ast$}]{stream\+Ptr}
+\end{DoxyParamCaption}
+)}\label{compat-lz4_8h_ac8d5c49bc84243e6b69df1ecc25d2425}
+\hyperlink{compat-lz4_8h_ac8d5c49bc84243e6b69df1ecc25d2425}{L\+Z4\+\_\+reset\+Stream()} \+: An L\+Z4\+\_\+stream\+\_\+t structure can be allocated once and re-\/used multiple times. Use this function to init an allocated {\ttfamily L\+Z4\+\_\+stream\+\_\+t} structure and start a new compression. \hypertarget{compat-lz4_8h_aee9e5bb8a837d840e120f666ed07c09b}{}\index{compat-\/lz4.\+h@{compat-\/lz4.\+h}!L\+Z4\+\_\+save\+Dict@{L\+Z4\+\_\+save\+Dict}}
+\index{L\+Z4\+\_\+save\+Dict@{L\+Z4\+\_\+save\+Dict}!compat-\/lz4.\+h@{compat-\/lz4.\+h}}
+\subsubsection[{L\+Z4\+\_\+save\+Dict(\+L\+Z4\+\_\+stream\+\_\+t $\ast$stream\+Ptr, char $\ast$safe\+Buffer, int dict\+Size)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf L\+Z4\+L\+I\+B\+\_\+\+A\+P\+I} int L\+Z4\+\_\+save\+Dict (
+\begin{DoxyParamCaption}
+\item[{{\bf L\+Z4\+\_\+stream\+\_\+t} $\ast$}]{stream\+Ptr, }
+\item[{char $\ast$}]{safe\+Buffer, }
+\item[{int}]{dict\+Size}
+\end{DoxyParamCaption}
+)}\label{compat-lz4_8h_aee9e5bb8a837d840e120f666ed07c09b}
+\hyperlink{compat-lz4_8h_aee9e5bb8a837d840e120f666ed07c09b}{L\+Z4\+\_\+save\+Dict()} \+: If previously compressed data block is not guaranteed to remain available at its memory location, save it into a safer place (char$\ast$ safe\+Buffer). Note \+: you don\textquotesingle{}t need to call \hyperlink{compat-lz4_8h_ac14454c14304d2df9bfeaa81216053c1}{L\+Z4\+\_\+load\+Dict()} afterwards, dictionary is immediately usable, you can therefore call \hyperlink{compat-lz4_8h_a7c280948702564f0620262a8eb0b6436}{L\+Z4\+\_\+compress\+\_\+fast\+\_\+continue()}. Return \+: saved dictionary size in bytes (necessarily $<$= dict\+Size), or 0 if error. \hypertarget{compat-lz4_8h_a81965fd474a946db05698f9aff385603}{}\index{compat-\/lz4.\+h@{compat-\/lz4.\+h}!L\+Z4\+\_\+set\+Stream\+Decode@{L\+Z4\+\_\+set\+Stream\+Decode}}
+\index{L\+Z4\+\_\+set\+Stream\+Decode@{L\+Z4\+\_\+set\+Stream\+Decode}!compat-\/lz4.\+h@{compat-\/lz4.\+h}}
+\subsubsection[{L\+Z4\+\_\+set\+Stream\+Decode(\+L\+Z4\+\_\+stream\+Decode\+\_\+t $\ast$\+L\+Z4\+\_\+stream\+Decode, const char $\ast$dictionary, int dict\+Size)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf L\+Z4\+L\+I\+B\+\_\+\+A\+P\+I} int L\+Z4\+\_\+set\+Stream\+Decode (
+\begin{DoxyParamCaption}
+\item[{{\bf L\+Z4\+\_\+stream\+Decode\+\_\+t} $\ast$}]{L\+Z4\+\_\+stream\+Decode, }
+\item[{const char $\ast$}]{dictionary, }
+\item[{int}]{dict\+Size}
+\end{DoxyParamCaption}
+)}\label{compat-lz4_8h_a81965fd474a946db05698f9aff385603}
+\hyperlink{compat-lz4_8h_a81965fd474a946db05698f9aff385603}{L\+Z4\+\_\+set\+Stream\+Decode()} \+: Use this function to instruct where to find the dictionary. Setting a size of 0 is allowed (same effect as reset). \begin{DoxyReturn}{Returns}
+\+: 1 if O\+K, 0 if error 
+\end{DoxyReturn}
+\hypertarget{compat-lz4_8h_a6b79b9da156ef5597696201f2e218a5a}{}\index{compat-\/lz4.\+h@{compat-\/lz4.\+h}!L\+Z4\+\_\+sizeof\+State@{L\+Z4\+\_\+sizeof\+State}}
+\index{L\+Z4\+\_\+sizeof\+State@{L\+Z4\+\_\+sizeof\+State}!compat-\/lz4.\+h@{compat-\/lz4.\+h}}
+\subsubsection[{L\+Z4\+\_\+sizeof\+State(void)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf L\+Z4\+L\+I\+B\+\_\+\+A\+P\+I} int L\+Z4\+\_\+sizeof\+State (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{compat-lz4_8h_a6b79b9da156ef5597696201f2e218a5a}
+\hyperlink{compat-lz4_8h_adf10cb9dd113049e97bdc3ee5ce7b6ed}{L\+Z4\+\_\+compress\+\_\+fast\+\_\+ext\+State()} \+: Same compression function, just using an externally allocated memory space to store compression state. Use \hyperlink{compat-lz4_8h_a6b79b9da156ef5597696201f2e218a5a}{L\+Z4\+\_\+sizeof\+State()} to know how much memory must be allocated, and allocate it on 8-\/bytes boundaries (using malloc() typically). Then, provide it as \textquotesingle{}void$\ast$ state\textquotesingle{} to compression function. \hypertarget{compat-lz4_8h_a5a98ff918f30c73b398535b8fb4c3b9b}{}\index{compat-\/lz4.\+h@{compat-\/lz4.\+h}!L\+Z4\+\_\+version\+Number@{L\+Z4\+\_\+version\+Number}}
+\index{L\+Z4\+\_\+version\+Number@{L\+Z4\+\_\+version\+Number}!compat-\/lz4.\+h@{compat-\/lz4.\+h}}
+\subsubsection[{L\+Z4\+\_\+version\+Number(void)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf L\+Z4\+L\+I\+B\+\_\+\+A\+P\+I} int L\+Z4\+\_\+version\+Number (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{compat-lz4_8h_a5a98ff918f30c73b398535b8fb4c3b9b}
+\hypertarget{compat-lz4_8h_a41fa97a26c1537d72b2cd5556bf01819}{}\index{compat-\/lz4.\+h@{compat-\/lz4.\+h}!L\+Z4\+\_\+version\+String@{L\+Z4\+\_\+version\+String}}
+\index{L\+Z4\+\_\+version\+String@{L\+Z4\+\_\+version\+String}!compat-\/lz4.\+h@{compat-\/lz4.\+h}}
+\subsubsection[{L\+Z4\+\_\+version\+String(void)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf L\+Z4\+L\+I\+B\+\_\+\+A\+P\+I} const char$\ast$ L\+Z4\+\_\+version\+String (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{compat-lz4_8h_a41fa97a26c1537d72b2cd5556bf01819}
+
+
+\subsection{Variable Documentation}
+\hypertarget{compat-lz4_8h_a0f9a0600771a3eb50c56e55266a7da49}{}\index{compat-\/lz4.\+h@{compat-\/lz4.\+h}!compressed\+Size@{compressed\+Size}}
+\index{compressed\+Size@{compressed\+Size}!compat-\/lz4.\+h@{compat-\/lz4.\+h}}
+\subsubsection[{compressed\+Size}]{\setlength{\rightskip}{0pt plus 5cm}char int compressed\+Size}\label{compat-lz4_8h_a0f9a0600771a3eb50c56e55266a7da49}
+\hypertarget{compat-lz4_8h_accb93c5987f80eedf1f5da3cfa1c0d22}{}\index{compat-\/lz4.\+h@{compat-\/lz4.\+h}!dest@{dest}}
+\index{dest@{dest}!compat-\/lz4.\+h@{compat-\/lz4.\+h}}
+\subsubsection[{dest}]{\setlength{\rightskip}{0pt plus 5cm}const char char $\ast$ dest}\label{compat-lz4_8h_accb93c5987f80eedf1f5da3cfa1c0d22}
+\hypertarget{compat-lz4_8h_a961c13eb7fcda15b167b953cac1ab3ec}{}\index{compat-\/lz4.\+h@{compat-\/lz4.\+h}!dst@{dst}}
+\index{dst@{dst}!compat-\/lz4.\+h@{compat-\/lz4.\+h}}
+\subsubsection[{dst}]{\setlength{\rightskip}{0pt plus 5cm}char $\ast$ dst}\label{compat-lz4_8h_a961c13eb7fcda15b167b953cac1ab3ec}
+\hypertarget{compat-lz4_8h_a74538761f55cd8dbed4b6e62ce69876d}{}\index{compat-\/lz4.\+h@{compat-\/lz4.\+h}!input\+Buffer@{input\+Buffer}}
+\index{input\+Buffer@{input\+Buffer}!compat-\/lz4.\+h@{compat-\/lz4.\+h}}
+\subsubsection[{input\+Buffer}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ input\+Buffer}\label{compat-lz4_8h_a74538761f55cd8dbed4b6e62ce69876d}
+\hypertarget{compat-lz4_8h_a8f274f682cf5ca365dd560d994011541}{}\index{compat-\/lz4.\+h@{compat-\/lz4.\+h}!input\+Size@{input\+Size}}
+\index{input\+Size@{input\+Size}!compat-\/lz4.\+h@{compat-\/lz4.\+h}}
+\subsubsection[{input\+Size}]{\setlength{\rightskip}{0pt plus 5cm}const char char int input\+Size}\label{compat-lz4_8h_a8f274f682cf5ca365dd560d994011541}
+\hypertarget{compat-lz4_8h_a6c2299958529e6037c34f9b36f25f4d0}{}\index{compat-\/lz4.\+h@{compat-\/lz4.\+h}!max\+Dst\+Size@{max\+Dst\+Size}}
+\index{max\+Dst\+Size@{max\+Dst\+Size}!compat-\/lz4.\+h@{compat-\/lz4.\+h}}
+\subsubsection[{max\+Dst\+Size}]{\setlength{\rightskip}{0pt plus 5cm}char int int max\+Dst\+Size}\label{compat-lz4_8h_a6c2299958529e6037c34f9b36f25f4d0}
+\hypertarget{compat-lz4_8h_a1811ec356866fa1c15a98d7a5717078c}{}\index{compat-\/lz4.\+h@{compat-\/lz4.\+h}!max\+Output\+Size@{max\+Output\+Size}}
+\index{max\+Output\+Size@{max\+Output\+Size}!compat-\/lz4.\+h@{compat-\/lz4.\+h}}
+\subsubsection[{max\+Output\+Size}]{\setlength{\rightskip}{0pt plus 5cm}const char char int int max\+Output\+Size}\label{compat-lz4_8h_a1811ec356866fa1c15a98d7a5717078c}
+\hypertarget{compat-lz4_8h_acb72249f2d22c1084adf0de0406d6c3d}{}\index{compat-\/lz4.\+h@{compat-\/lz4.\+h}!original\+Size@{original\+Size}}
+\index{original\+Size@{original\+Size}!compat-\/lz4.\+h@{compat-\/lz4.\+h}}
+\subsubsection[{original\+Size}]{\setlength{\rightskip}{0pt plus 5cm}char int original\+Size}\label{compat-lz4_8h_acb72249f2d22c1084adf0de0406d6c3d}
+\hypertarget{compat-lz4_8h_a0211201f992ec3f0b641c9ceff5f837a}{}\index{compat-\/lz4.\+h@{compat-\/lz4.\+h}!source@{source}}
+\index{source@{source}!compat-\/lz4.\+h@{compat-\/lz4.\+h}}
+\subsubsection[{source}]{\setlength{\rightskip}{0pt plus 5cm}const char $\ast$ source}\label{compat-lz4_8h_a0211201f992ec3f0b641c9ceff5f837a}
+\hypertarget{compat-lz4_8h_a3ec1875e6c6b9099ad690a7a4e9487b4}{}\index{compat-\/lz4.\+h@{compat-\/lz4.\+h}!source\+Size@{source\+Size}}
+\index{source\+Size@{source\+Size}!compat-\/lz4.\+h@{compat-\/lz4.\+h}}
+\subsubsection[{source\+Size}]{\setlength{\rightskip}{0pt plus 5cm}char int source\+Size}\label{compat-lz4_8h_a3ec1875e6c6b9099ad690a7a4e9487b4}

@@ -1,0 +1,252 @@
+\hypertarget{group__tls__crypt}{}\section{Control channel encryption (-\/-\/tls-\/crypt)}
+\label{group__tls__crypt}\index{Control channel encryption (-\/-\/tls-\/crypt)@{Control channel encryption (-\/-\/tls-\/crypt)}}
+Collaboration diagram for Control channel encryption (-\/-\/tls-\/crypt)\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=311pt]{group__tls__crypt}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group__tls__crypt_ga65e056054468311502b28a13b7b1a3ef}{T\+L\+S\+\_\+\+C\+R\+Y\+P\+T\+\_\+\+T\+A\+G\+\_\+\+S\+I\+Z\+E}~(256/8)
+\item 
+\#define \hyperlink{group__tls__crypt_ga55c58e2fa69ea5ffbbb71e25520618e0}{T\+L\+S\+\_\+\+C\+R\+Y\+P\+T\+\_\+\+P\+I\+D\+\_\+\+S\+I\+Z\+E}~(sizeof(\hyperlink{packet__id_8h_a345f753b1c6ea20d24409e769aadb7e6}{packet\+\_\+id\+\_\+type}) + sizeof(\hyperlink{packet__id_8h_a32b361b1d3a0fc2f92ceeff736bba97e}{net\+\_\+time\+\_\+t}))
+\item 
+\#define \hyperlink{group__tls__crypt_ga1acab4b545b3fff369cb0c05b1897c02}{T\+L\+S\+\_\+\+C\+R\+Y\+P\+T\+\_\+\+B\+L\+O\+C\+K\+\_\+\+S\+I\+Z\+E}~(128/8)
+\item 
+\#define \hyperlink{group__tls__crypt_ga7eb6b7a1658d8cf6f2f2119b5b927d29}{T\+L\+S\+\_\+\+C\+R\+Y\+P\+T\+\_\+\+O\+F\+F\+\_\+\+P\+I\+D}~(1 + \hyperlink{session__id_8h_ad1163f0bf6339f1dd003192df69052df}{S\+I\+D\+\_\+\+S\+I\+Z\+E})
+\item 
+\#define \hyperlink{group__tls__crypt_ga8fb65027448e8c403fbbce9bc3b0e056}{T\+L\+S\+\_\+\+C\+R\+Y\+P\+T\+\_\+\+O\+F\+F\+\_\+\+T\+A\+G}~(\hyperlink{group__tls__crypt_ga7eb6b7a1658d8cf6f2f2119b5b927d29}{T\+L\+S\+\_\+\+C\+R\+Y\+P\+T\+\_\+\+O\+F\+F\+\_\+\+P\+I\+D} + \hyperlink{group__tls__crypt_ga55c58e2fa69ea5ffbbb71e25520618e0}{T\+L\+S\+\_\+\+C\+R\+Y\+P\+T\+\_\+\+P\+I\+D\+\_\+\+S\+I\+Z\+E})
+\item 
+\#define \hyperlink{group__tls__crypt_gaae4cc51d2d63382d195391a4c50af92b}{T\+L\+S\+\_\+\+C\+R\+Y\+P\+T\+\_\+\+O\+F\+F\+\_\+\+C\+T}~(\hyperlink{group__tls__crypt_ga8fb65027448e8c403fbbce9bc3b0e056}{T\+L\+S\+\_\+\+C\+R\+Y\+P\+T\+\_\+\+O\+F\+F\+\_\+\+T\+A\+G} + \hyperlink{group__tls__crypt_ga65e056054468311502b28a13b7b1a3ef}{T\+L\+S\+\_\+\+C\+R\+Y\+P\+T\+\_\+\+T\+A\+G\+\_\+\+S\+I\+Z\+E})
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{group__tls__crypt_gad8a8513b53a8a5346cac69063f569680}{tls\+\_\+crypt\+\_\+init\+\_\+key} (struct \hyperlink{structkey__ctx__bi}{key\+\_\+ctx\+\_\+bi} $\ast$\hyperlink{structkey}{key}, const char $\ast$key\+\_\+file, const char $\ast$key\+\_\+inline, \hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} tls\+\_\+server)
+\item 
+int \hyperlink{group__tls__crypt_gac9c2ecaaf4e2af189ab15bb47a558bfa}{tls\+\_\+crypt\+\_\+buf\+\_\+overhead} (void)
+\item 
+void \hyperlink{group__tls__crypt_ga24b342111241c5ea9c731de4aa66fcb2}{tls\+\_\+crypt\+\_\+adjust\+\_\+frame\+\_\+parameters} (struct \hyperlink{structframe}{frame} $\ast$\hyperlink{structframe}{frame})
+\item 
+\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} \hyperlink{group__tls__crypt_gadaca5f414562a243603a60a0e3158e5a}{tls\+\_\+crypt\+\_\+wrap} (const struct \hyperlink{structbuffer}{buffer} $\ast$src, struct \hyperlink{structbuffer}{buffer} $\ast$\hyperlink{compat-lz4_8h_a961c13eb7fcda15b167b953cac1ab3ec}{dst}, struct \hyperlink{structcrypto__options}{crypto\+\_\+options} $\ast$opt)
+\item 
+\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} \hyperlink{group__tls__crypt_ga81c822ba2e5599865dddb37e01a2c20c}{tls\+\_\+crypt\+\_\+unwrap} (const struct \hyperlink{structbuffer}{buffer} $\ast$src, struct \hyperlink{structbuffer}{buffer} $\ast$\hyperlink{compat-lz4_8h_a961c13eb7fcda15b167b953cac1ab3ec}{dst}, struct \hyperlink{structcrypto__options}{crypto\+\_\+options} $\ast$opt)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyParagraph}{}
+Control channel encryption uses a pre-\/shared static key (like the --tls-\/auth key) to encrypt control channel packets.
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{}
+Encrypting control channel packets has three main advantages\+:
+\begin{DoxyItemize}
+\item It provides more privacy by hiding the certificate used for the T\+L\+S connection.
+\item It is harder to identify Open\+V\+P\+N traffic as such.
+\item It provides \char`\"{}poor-\/man\textquotesingle{}s\char`\"{} post-\/quantum security, against attackers who will never know the pre-\/shared key (i.\+e. no forward secrecy).
+\end{DoxyItemize}
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{Specification}
+Control channel encryption is based on the S\+I\+V construction \mbox{[}0\mbox{]}, to achieve nonce misuse-\/resistant authenticated encryption\+:
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{}
+
+\begin{DoxyCode}
+1 msg      = control channel plaintext
+2 header   = opcode (1 byte) || session\_id (8 bytes) || packet\_id (8 bytes)
+3 Ka       = authentication key (256 bits)
+4 Ke       = encryption key (256 bits)
+5 (Ka and Ke are pre-shared keys, like with --tls-auth)
+6 
+7 auth\_tag = HMAC-SHA256(Ka, header || msg)
+8 IV       = 128 most-significant bits of auth\_tag
+9 ciph     = AES256-CTR(Ke, IV, msg)
+10 
+11 output   = Header || Tag || Ciph
+\end{DoxyCode}
+
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{}
+This boils down to the following on-\/the-\/wire packet format\+:
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{}
+
+\begin{DoxyCode}
+1 - opcode - || - session\_id - || - packet\_id - || auth\_tag || * payload *
+\end{DoxyCode}
+
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{}
+Where {\ttfamily -\/ X\+X\+X -\/} means authenticated, and {\ttfamily $\ast$ X\+X\+X $\ast$} means authenticated and encrypted. 
+\end{DoxyParagraph}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{group__tls__crypt_ga1acab4b545b3fff369cb0c05b1897c02}{}\index{Control channel encryption (-\/-\/tls-\/crypt)@{Control channel encryption (-\/-\/tls-\/crypt)}!T\+L\+S\+\_\+\+C\+R\+Y\+P\+T\+\_\+\+B\+L\+O\+C\+K\+\_\+\+S\+I\+Z\+E@{T\+L\+S\+\_\+\+C\+R\+Y\+P\+T\+\_\+\+B\+L\+O\+C\+K\+\_\+\+S\+I\+Z\+E}}
+\index{T\+L\+S\+\_\+\+C\+R\+Y\+P\+T\+\_\+\+B\+L\+O\+C\+K\+\_\+\+S\+I\+Z\+E@{T\+L\+S\+\_\+\+C\+R\+Y\+P\+T\+\_\+\+B\+L\+O\+C\+K\+\_\+\+S\+I\+Z\+E}!Control channel encryption (-\/-\/tls-\/crypt)@{Control channel encryption (-\/-\/tls-\/crypt)}}
+\subsubsection[{T\+L\+S\+\_\+\+C\+R\+Y\+P\+T\+\_\+\+B\+L\+O\+C\+K\+\_\+\+S\+I\+Z\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\+L\+S\+\_\+\+C\+R\+Y\+P\+T\+\_\+\+B\+L\+O\+C\+K\+\_\+\+S\+I\+Z\+E~(128/8)}\label{group__tls__crypt_ga1acab4b545b3fff369cb0c05b1897c02}
+\hypertarget{group__tls__crypt_gaae4cc51d2d63382d195391a4c50af92b}{}\index{Control channel encryption (-\/-\/tls-\/crypt)@{Control channel encryption (-\/-\/tls-\/crypt)}!T\+L\+S\+\_\+\+C\+R\+Y\+P\+T\+\_\+\+O\+F\+F\+\_\+\+C\+T@{T\+L\+S\+\_\+\+C\+R\+Y\+P\+T\+\_\+\+O\+F\+F\+\_\+\+C\+T}}
+\index{T\+L\+S\+\_\+\+C\+R\+Y\+P\+T\+\_\+\+O\+F\+F\+\_\+\+C\+T@{T\+L\+S\+\_\+\+C\+R\+Y\+P\+T\+\_\+\+O\+F\+F\+\_\+\+C\+T}!Control channel encryption (-\/-\/tls-\/crypt)@{Control channel encryption (-\/-\/tls-\/crypt)}}
+\subsubsection[{T\+L\+S\+\_\+\+C\+R\+Y\+P\+T\+\_\+\+O\+F\+F\+\_\+\+C\+T}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\+L\+S\+\_\+\+C\+R\+Y\+P\+T\+\_\+\+O\+F\+F\+\_\+\+C\+T~({\bf T\+L\+S\+\_\+\+C\+R\+Y\+P\+T\+\_\+\+O\+F\+F\+\_\+\+T\+A\+G} + {\bf T\+L\+S\+\_\+\+C\+R\+Y\+P\+T\+\_\+\+T\+A\+G\+\_\+\+S\+I\+Z\+E})}\label{group__tls__crypt_gaae4cc51d2d63382d195391a4c50af92b}
+\hypertarget{group__tls__crypt_ga7eb6b7a1658d8cf6f2f2119b5b927d29}{}\index{Control channel encryption (-\/-\/tls-\/crypt)@{Control channel encryption (-\/-\/tls-\/crypt)}!T\+L\+S\+\_\+\+C\+R\+Y\+P\+T\+\_\+\+O\+F\+F\+\_\+\+P\+I\+D@{T\+L\+S\+\_\+\+C\+R\+Y\+P\+T\+\_\+\+O\+F\+F\+\_\+\+P\+I\+D}}
+\index{T\+L\+S\+\_\+\+C\+R\+Y\+P\+T\+\_\+\+O\+F\+F\+\_\+\+P\+I\+D@{T\+L\+S\+\_\+\+C\+R\+Y\+P\+T\+\_\+\+O\+F\+F\+\_\+\+P\+I\+D}!Control channel encryption (-\/-\/tls-\/crypt)@{Control channel encryption (-\/-\/tls-\/crypt)}}
+\subsubsection[{T\+L\+S\+\_\+\+C\+R\+Y\+P\+T\+\_\+\+O\+F\+F\+\_\+\+P\+I\+D}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\+L\+S\+\_\+\+C\+R\+Y\+P\+T\+\_\+\+O\+F\+F\+\_\+\+P\+I\+D~(1 + {\bf S\+I\+D\+\_\+\+S\+I\+Z\+E})}\label{group__tls__crypt_ga7eb6b7a1658d8cf6f2f2119b5b927d29}
+\hypertarget{group__tls__crypt_ga8fb65027448e8c403fbbce9bc3b0e056}{}\index{Control channel encryption (-\/-\/tls-\/crypt)@{Control channel encryption (-\/-\/tls-\/crypt)}!T\+L\+S\+\_\+\+C\+R\+Y\+P\+T\+\_\+\+O\+F\+F\+\_\+\+T\+A\+G@{T\+L\+S\+\_\+\+C\+R\+Y\+P\+T\+\_\+\+O\+F\+F\+\_\+\+T\+A\+G}}
+\index{T\+L\+S\+\_\+\+C\+R\+Y\+P\+T\+\_\+\+O\+F\+F\+\_\+\+T\+A\+G@{T\+L\+S\+\_\+\+C\+R\+Y\+P\+T\+\_\+\+O\+F\+F\+\_\+\+T\+A\+G}!Control channel encryption (-\/-\/tls-\/crypt)@{Control channel encryption (-\/-\/tls-\/crypt)}}
+\subsubsection[{T\+L\+S\+\_\+\+C\+R\+Y\+P\+T\+\_\+\+O\+F\+F\+\_\+\+T\+A\+G}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\+L\+S\+\_\+\+C\+R\+Y\+P\+T\+\_\+\+O\+F\+F\+\_\+\+T\+A\+G~({\bf T\+L\+S\+\_\+\+C\+R\+Y\+P\+T\+\_\+\+O\+F\+F\+\_\+\+P\+I\+D} + {\bf T\+L\+S\+\_\+\+C\+R\+Y\+P\+T\+\_\+\+P\+I\+D\+\_\+\+S\+I\+Z\+E})}\label{group__tls__crypt_ga8fb65027448e8c403fbbce9bc3b0e056}
+\hypertarget{group__tls__crypt_ga55c58e2fa69ea5ffbbb71e25520618e0}{}\index{Control channel encryption (-\/-\/tls-\/crypt)@{Control channel encryption (-\/-\/tls-\/crypt)}!T\+L\+S\+\_\+\+C\+R\+Y\+P\+T\+\_\+\+P\+I\+D\+\_\+\+S\+I\+Z\+E@{T\+L\+S\+\_\+\+C\+R\+Y\+P\+T\+\_\+\+P\+I\+D\+\_\+\+S\+I\+Z\+E}}
+\index{T\+L\+S\+\_\+\+C\+R\+Y\+P\+T\+\_\+\+P\+I\+D\+\_\+\+S\+I\+Z\+E@{T\+L\+S\+\_\+\+C\+R\+Y\+P\+T\+\_\+\+P\+I\+D\+\_\+\+S\+I\+Z\+E}!Control channel encryption (-\/-\/tls-\/crypt)@{Control channel encryption (-\/-\/tls-\/crypt)}}
+\subsubsection[{T\+L\+S\+\_\+\+C\+R\+Y\+P\+T\+\_\+\+P\+I\+D\+\_\+\+S\+I\+Z\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\+L\+S\+\_\+\+C\+R\+Y\+P\+T\+\_\+\+P\+I\+D\+\_\+\+S\+I\+Z\+E~(sizeof({\bf packet\+\_\+id\+\_\+type}) + sizeof({\bf net\+\_\+time\+\_\+t}))}\label{group__tls__crypt_ga55c58e2fa69ea5ffbbb71e25520618e0}
+\hypertarget{group__tls__crypt_ga65e056054468311502b28a13b7b1a3ef}{}\index{Control channel encryption (-\/-\/tls-\/crypt)@{Control channel encryption (-\/-\/tls-\/crypt)}!T\+L\+S\+\_\+\+C\+R\+Y\+P\+T\+\_\+\+T\+A\+G\+\_\+\+S\+I\+Z\+E@{T\+L\+S\+\_\+\+C\+R\+Y\+P\+T\+\_\+\+T\+A\+G\+\_\+\+S\+I\+Z\+E}}
+\index{T\+L\+S\+\_\+\+C\+R\+Y\+P\+T\+\_\+\+T\+A\+G\+\_\+\+S\+I\+Z\+E@{T\+L\+S\+\_\+\+C\+R\+Y\+P\+T\+\_\+\+T\+A\+G\+\_\+\+S\+I\+Z\+E}!Control channel encryption (-\/-\/tls-\/crypt)@{Control channel encryption (-\/-\/tls-\/crypt)}}
+\subsubsection[{T\+L\+S\+\_\+\+C\+R\+Y\+P\+T\+\_\+\+T\+A\+G\+\_\+\+S\+I\+Z\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\+L\+S\+\_\+\+C\+R\+Y\+P\+T\+\_\+\+T\+A\+G\+\_\+\+S\+I\+Z\+E~(256/8)}\label{group__tls__crypt_ga65e056054468311502b28a13b7b1a3ef}
+
+
+\subsection{Function Documentation}
+\hypertarget{group__tls__crypt_ga24b342111241c5ea9c731de4aa66fcb2}{}\index{Control channel encryption (-\/-\/tls-\/crypt)@{Control channel encryption (-\/-\/tls-\/crypt)}!tls\+\_\+crypt\+\_\+adjust\+\_\+frame\+\_\+parameters@{tls\+\_\+crypt\+\_\+adjust\+\_\+frame\+\_\+parameters}}
+\index{tls\+\_\+crypt\+\_\+adjust\+\_\+frame\+\_\+parameters@{tls\+\_\+crypt\+\_\+adjust\+\_\+frame\+\_\+parameters}!Control channel encryption (-\/-\/tls-\/crypt)@{Control channel encryption (-\/-\/tls-\/crypt)}}
+\subsubsection[{tls\+\_\+crypt\+\_\+adjust\+\_\+frame\+\_\+parameters(struct frame $\ast$frame)}]{\setlength{\rightskip}{0pt plus 5cm}void tls\+\_\+crypt\+\_\+adjust\+\_\+frame\+\_\+parameters (
+\begin{DoxyParamCaption}
+\item[{struct {\bf frame} $\ast$}]{frame}
+\end{DoxyParamCaption}
+)}\label{group__tls__crypt_ga24b342111241c5ea9c731de4aa66fcb2}
+Adjust frame parameters for --tls-\/crypt overhead. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=347pt]{group__tls__crypt_ga24b342111241c5ea9c731de4aa66fcb2_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{group__tls__crypt_gac9c2ecaaf4e2af189ab15bb47a558bfa}{}\index{Control channel encryption (-\/-\/tls-\/crypt)@{Control channel encryption (-\/-\/tls-\/crypt)}!tls\+\_\+crypt\+\_\+buf\+\_\+overhead@{tls\+\_\+crypt\+\_\+buf\+\_\+overhead}}
+\index{tls\+\_\+crypt\+\_\+buf\+\_\+overhead@{tls\+\_\+crypt\+\_\+buf\+\_\+overhead}!Control channel encryption (-\/-\/tls-\/crypt)@{Control channel encryption (-\/-\/tls-\/crypt)}}
+\subsubsection[{tls\+\_\+crypt\+\_\+buf\+\_\+overhead(void)}]{\setlength{\rightskip}{0pt plus 5cm}int tls\+\_\+crypt\+\_\+buf\+\_\+overhead (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{group__tls__crypt_gac9c2ecaaf4e2af189ab15bb47a558bfa}
+Returns the maximum overhead (in bytes) added to the destination buffer by \hyperlink{group__tls__crypt_gadaca5f414562a243603a60a0e3158e5a}{tls\+\_\+crypt\+\_\+wrap()}. 
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=347pt]{group__tls__crypt_gac9c2ecaaf4e2af189ab15bb47a558bfa_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{group__tls__crypt_gad8a8513b53a8a5346cac69063f569680}{}\index{Control channel encryption (-\/-\/tls-\/crypt)@{Control channel encryption (-\/-\/tls-\/crypt)}!tls\+\_\+crypt\+\_\+init\+\_\+key@{tls\+\_\+crypt\+\_\+init\+\_\+key}}
+\index{tls\+\_\+crypt\+\_\+init\+\_\+key@{tls\+\_\+crypt\+\_\+init\+\_\+key}!Control channel encryption (-\/-\/tls-\/crypt)@{Control channel encryption (-\/-\/tls-\/crypt)}}
+\subsubsection[{tls\+\_\+crypt\+\_\+init\+\_\+key(struct key\+\_\+ctx\+\_\+bi $\ast$key, const char $\ast$key\+\_\+file, const char $\ast$key\+\_\+inline, bool tls\+\_\+server)}]{\setlength{\rightskip}{0pt plus 5cm}void tls\+\_\+crypt\+\_\+init\+\_\+key (
+\begin{DoxyParamCaption}
+\item[{struct {\bf key\+\_\+ctx\+\_\+bi} $\ast$}]{key, }
+\item[{const char $\ast$}]{key\+\_\+file, }
+\item[{const char $\ast$}]{key\+\_\+inline, }
+\item[{{\bf bool}}]{tls\+\_\+server}
+\end{DoxyParamCaption}
+)}\label{group__tls__crypt_gad8a8513b53a8a5346cac69063f569680}
+Initialize a \hyperlink{structkey__ctx__bi}{key\+\_\+ctx\+\_\+bi} structure for use with --tls-\/crypt.
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & The key context to initialize \\
+\hline
+{\em key\+\_\+file} & The file to read the key from (or the inline tag to indicate and inline key). \\
+\hline
+{\em key\+\_\+inline} & Array containing (zero-\/terminated) inline key, or N\+U\+L\+L if not used. \\
+\hline
+{\em tls\+\_\+server} & Must be set to true is this is a T\+L\+S server instance. \\
+\hline
+\end{DoxyParams}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group__tls__crypt_gad8a8513b53a8a5346cac69063f569680_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{group__tls__crypt_ga81c822ba2e5599865dddb37e01a2c20c}{}\index{Control channel encryption (-\/-\/tls-\/crypt)@{Control channel encryption (-\/-\/tls-\/crypt)}!tls\+\_\+crypt\+\_\+unwrap@{tls\+\_\+crypt\+\_\+unwrap}}
+\index{tls\+\_\+crypt\+\_\+unwrap@{tls\+\_\+crypt\+\_\+unwrap}!Control channel encryption (-\/-\/tls-\/crypt)@{Control channel encryption (-\/-\/tls-\/crypt)}}
+\subsubsection[{tls\+\_\+crypt\+\_\+unwrap(const struct buffer $\ast$src, struct buffer $\ast$dst, struct crypto\+\_\+options $\ast$opt)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} tls\+\_\+crypt\+\_\+unwrap (
+\begin{DoxyParamCaption}
+\item[{const struct {\bf buffer} $\ast$}]{src, }
+\item[{struct {\bf buffer} $\ast$}]{dst, }
+\item[{struct {\bf crypto\+\_\+options} $\ast$}]{opt}
+\end{DoxyParamCaption}
+)}\label{group__tls__crypt_ga81c822ba2e5599865dddb37e01a2c20c}
+Unwrap a control channel packet (decrypts, authenticates and performs replay checks).
+
+
+\begin{DoxyParams}{Parameters}
+{\em src} & Data to decrypt and authenticate. \\
+\hline
+{\em dst} & Returns the decrypted data, if unwrapping was successful. \\
+\hline
+{\em opt} & The crypto state for this --tls-\/crypt instance.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true iff unwrapping succeeded (data authenticated correctly and was no replay). 
+\end{DoxyReturn}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group__tls__crypt_ga81c822ba2e5599865dddb37e01a2c20c_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{group__tls__crypt_gadaca5f414562a243603a60a0e3158e5a}{}\index{Control channel encryption (-\/-\/tls-\/crypt)@{Control channel encryption (-\/-\/tls-\/crypt)}!tls\+\_\+crypt\+\_\+wrap@{tls\+\_\+crypt\+\_\+wrap}}
+\index{tls\+\_\+crypt\+\_\+wrap@{tls\+\_\+crypt\+\_\+wrap}!Control channel encryption (-\/-\/tls-\/crypt)@{Control channel encryption (-\/-\/tls-\/crypt)}}
+\subsubsection[{tls\+\_\+crypt\+\_\+wrap(const struct buffer $\ast$src, struct buffer $\ast$dst, struct crypto\+\_\+options $\ast$opt)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} tls\+\_\+crypt\+\_\+wrap (
+\begin{DoxyParamCaption}
+\item[{const struct {\bf buffer} $\ast$}]{src, }
+\item[{struct {\bf buffer} $\ast$}]{dst, }
+\item[{struct {\bf crypto\+\_\+options} $\ast$}]{opt}
+\end{DoxyParamCaption}
+)}\label{group__tls__crypt_gadaca5f414562a243603a60a0e3158e5a}
+Wrap a control channel packet (both authenticates and encrypts the data).
+
+
+\begin{DoxyParams}{Parameters}
+{\em src} & Data to authenticate and encrypt. \\
+\hline
+{\em dst} & Any data present in this buffer is first authenticated, then the wrapped packet id and data from the src buffer are appended. Must have at least \hyperlink{group__tls__crypt_gac9c2ecaaf4e2af189ab15bb47a558bfa}{tls\+\_\+crypt\+\_\+buf\+\_\+overhead()}+\+B\+L\+E\+N(src) headroom. \\
+\hline
+{\em opt} & The crypto state for this --tls-\/crypt instance.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true iff wrapping succeeded. 
+\end{DoxyReturn}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=292pt]{group__tls__crypt_gadaca5f414562a243603a60a0e3158e5a_cgraph}
+\end{center}
+\end{figure}
+
+

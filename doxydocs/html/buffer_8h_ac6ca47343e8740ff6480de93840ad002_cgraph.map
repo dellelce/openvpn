@@ -1,0 +1,8 @@
+<map id="buffer_list_file" name="buffer_list_file">
+<area shape="rect" id="node2" href="$platform_8c.html#a7da5056ce6a8a2efd54ccee6b993e0a6" title="platform_fopen" alt="" coords="156,5,263,32"/>
+<area shape="rect" id="node3" href="$buffer_8c.html#a802172b567a3ac89a544452fe02a45bf" title="buffer_list_new" alt="" coords="156,56,263,83"/>
+<area shape="rect" id="node4" href="$buffer_8c.html#ad797dd5e6257e3f4f4b4e7394dc2dfa9" title="buffer_list_push" alt="" coords="153,107,265,133"/>
+<area shape="rect" id="node5" href="$buffer_8c.html#a21d180a3513a60a724ec43cbf30cb759" title="buffer_list_push_data" alt="" coords="313,107,457,133"/>
+<area shape="rect" id="node6" href="$buffer_8c.html#aa6bae12914d41c7aecaa7b64fea1bc51" title="alloc_buf" alt="" coords="505,107,579,133"/>
+<area shape="rect" id="node7" href="$buffer_8c.html#acc1a4ee83a591116d331e52baacf253d" title="buf_size_error" alt="" coords="627,107,729,133"/>
+</map>

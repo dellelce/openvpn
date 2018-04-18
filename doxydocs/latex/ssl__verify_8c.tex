@@ -1,0 +1,341 @@
+\hypertarget{ssl__verify_8c}{}\section{src/openvpn/ssl\+\_\+verify.c File Reference}
+\label{ssl__verify_8c}\index{src/openvpn/ssl\+\_\+verify.\+c@{src/openvpn/ssl\+\_\+verify.\+c}}
+{\ttfamily \#include \char`\"{}syshead.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}misc.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}manage.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}otime.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}base64.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}ssl\+\_\+verify.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}ssl\+\_\+verify\+\_\+backend.\+h\char`\"{}}\\*
+Include dependency graph for ssl\+\_\+verify.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ssl__verify_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{ssl__verify_8c_aa3c76f18cb94ad4db806e6590c4a1986}{T\+L\+S\+\_\+\+U\+S\+E\+R\+N\+A\+M\+E\+\_\+\+L\+E\+N}~64
+\item 
+\#define \hyperlink{ssl__verify_8c_a8ab255511968638f2673e47ea8945b06}{X509\+\_\+\+N\+A\+M\+E\+\_\+\+C\+H\+A\+R\+\_\+\+C\+L\+A\+S\+S}~(\hyperlink{buffer_8h_ad7a7e5f80f56355909d658330efb5496}{C\+C\+\_\+\+A\+L\+N\+U\+M}$\vert$\hyperlink{buffer_8h_ac26c364f2691c577e013f37cfc0f911d}{C\+C\+\_\+\+U\+N\+D\+E\+R\+B\+A\+R}$\vert$\hyperlink{buffer_8h_a170ca1d95242825ed8401efbc0e3b0ce}{C\+C\+\_\+\+D\+A\+S\+H}$\vert$\hyperlink{buffer_8h_a5f0c6342107144d915c6dd17e20727e3}{C\+C\+\_\+\+D\+O\+T}$\vert$\hyperlink{buffer_8h_a41a9164d17b72fa385775bcb37403058}{C\+C\+\_\+\+A\+T}$\vert$\hyperlink{buffer_8h_ac164bf89cc180e678f266db93b813446}{C\+C\+\_\+\+S\+L\+A\+S\+H}$\vert$\hyperlink{buffer_8h_a45850b17af1a8757ec36537ca5c77bb6}{C\+C\+\_\+\+C\+O\+L\+O\+N}$\vert$\hyperlink{buffer_8h_ad8deb9103d4aa479d8238390adcb73ad}{C\+C\+\_\+\+E\+Q\+U\+A\+L})
+\item 
+\#define \hyperlink{ssl__verify_8c_aa156357bd091d908642253ae3678e0d5}{C\+O\+M\+M\+O\+N\+\_\+\+N\+A\+M\+E\+\_\+\+C\+H\+A\+R\+\_\+\+C\+L\+A\+S\+S}~(\hyperlink{buffer_8h_ad7a7e5f80f56355909d658330efb5496}{C\+C\+\_\+\+A\+L\+N\+U\+M}$\vert$\hyperlink{buffer_8h_ac26c364f2691c577e013f37cfc0f911d}{C\+C\+\_\+\+U\+N\+D\+E\+R\+B\+A\+R}$\vert$\hyperlink{buffer_8h_a170ca1d95242825ed8401efbc0e3b0ce}{C\+C\+\_\+\+D\+A\+S\+H}$\vert$\hyperlink{buffer_8h_a5f0c6342107144d915c6dd17e20727e3}{C\+C\+\_\+\+D\+O\+T}$\vert$\hyperlink{buffer_8h_a41a9164d17b72fa385775bcb37403058}{C\+C\+\_\+\+A\+T}$\vert$\hyperlink{buffer_8h_ac164bf89cc180e678f266db93b813446}{C\+C\+\_\+\+S\+L\+A\+S\+H})
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+const char $\ast$ \hyperlink{ssl__verify_8c_af3b8a3f413dbfc086e05cc5b09efb998}{tls\+\_\+common\+\_\+name} (const struct \hyperlink{structtls__multi}{tls\+\_\+multi} $\ast$multi, const \hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} null)
+\item 
+void \hyperlink{ssl__verify_8c_a85e2a6ef69ed420aae1fba8369408071}{tls\+\_\+lock\+\_\+common\+\_\+name} (struct \hyperlink{structtls__multi}{tls\+\_\+multi} $\ast$multi)
+\item 
+const char $\ast$ \hyperlink{ssl__verify_8c_add880839dd1306f5e17f2e7baabc92d9}{tls\+\_\+username} (const struct \hyperlink{structtls__multi}{tls\+\_\+multi} $\ast$multi, const \hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} null)
+\item 
+void \hyperlink{ssl__verify_8c_adb1a815a125d75d306ec1a9896e156a3}{cert\+\_\+hash\+\_\+remember} (struct \hyperlink{structtls__session}{tls\+\_\+session} $\ast$session, const int error\+\_\+depth, const struct \hyperlink{structbuffer}{buffer} $\ast$\hyperlink{structcert__hash}{cert\+\_\+hash})
+\item 
+void \hyperlink{ssl__verify_8c_af83ef415aa36cda688d9d969f68085fd}{cert\+\_\+hash\+\_\+free} (struct \hyperlink{structcert__hash__set}{cert\+\_\+hash\+\_\+set} $\ast$chs)
+\item 
+\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} \hyperlink{ssl__verify_8c_a55b28e512b6ddffa5538605a3122f521}{cert\+\_\+hash\+\_\+compare} (const struct \hyperlink{structcert__hash__set}{cert\+\_\+hash\+\_\+set} $\ast$chs1, const struct \hyperlink{structcert__hash__set}{cert\+\_\+hash\+\_\+set} $\ast$chs2)
+\item 
+void \hyperlink{ssl__verify_8c_a6fc8473f2a78fad6655bbe55b8f32aa5}{tls\+\_\+lock\+\_\+cert\+\_\+hash\+\_\+set} (struct \hyperlink{structtls__multi}{tls\+\_\+multi} $\ast$multi)
+\item 
+\hyperlink{ssl__verify__backend_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3}{result\+\_\+t} \hyperlink{ssl__verify_8c_a8574f9402b712d3051d9febde91cf220}{verify\+\_\+cert} (struct \hyperlink{structtls__session}{tls\+\_\+session} $\ast$session, \hyperlink{ssl__verify__mbedtls_8h_ad391202ae7645e5ee5bb5f1e6f24bb31}{openvpn\+\_\+x509\+\_\+cert\+\_\+t} $\ast$cert, int cert\+\_\+depth)
+\item 
+int \hyperlink{ssl__verify_8c_ac6de478954452cfd54e8352f57638772}{tls\+\_\+authentication\+\_\+status} (struct \hyperlink{structtls__multi}{tls\+\_\+multi} $\ast$multi, const int latency)
+\item 
+void \hyperlink{ssl__verify_8c_aad04670ce0b3419d381ce4348a68e45d}{verify\+\_\+user\+\_\+pass} (struct \hyperlink{structuser__pass}{user\+\_\+pass} $\ast$up, struct \hyperlink{structtls__multi}{tls\+\_\+multi} $\ast$multi, struct \hyperlink{structtls__session}{tls\+\_\+session} $\ast$session)
+\item 
+void \hyperlink{ssl__verify_8c_a923edfe06fe9d56f1b92fea3ddfecbcf}{verify\+\_\+final\+\_\+auth\+\_\+checks} (struct \hyperlink{structtls__multi}{tls\+\_\+multi} $\ast$multi, struct \hyperlink{structtls__session}{tls\+\_\+session} $\ast$session)
+\item 
+void \hyperlink{ssl__verify_8c_a562d8b5b597a5474e839c3f0e31777cd}{tls\+\_\+x509\+\_\+clear\+\_\+env} (struct \hyperlink{structenv__set}{env\+\_\+set} $\ast$es)
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{ssl__verify_8c_aa156357bd091d908642253ae3678e0d5}{}\index{ssl\+\_\+verify.\+c@{ssl\+\_\+verify.\+c}!C\+O\+M\+M\+O\+N\+\_\+\+N\+A\+M\+E\+\_\+\+C\+H\+A\+R\+\_\+\+C\+L\+A\+S\+S@{C\+O\+M\+M\+O\+N\+\_\+\+N\+A\+M\+E\+\_\+\+C\+H\+A\+R\+\_\+\+C\+L\+A\+S\+S}}
+\index{C\+O\+M\+M\+O\+N\+\_\+\+N\+A\+M\+E\+\_\+\+C\+H\+A\+R\+\_\+\+C\+L\+A\+S\+S@{C\+O\+M\+M\+O\+N\+\_\+\+N\+A\+M\+E\+\_\+\+C\+H\+A\+R\+\_\+\+C\+L\+A\+S\+S}!ssl\+\_\+verify.\+c@{ssl\+\_\+verify.\+c}}
+\subsubsection[{C\+O\+M\+M\+O\+N\+\_\+\+N\+A\+M\+E\+\_\+\+C\+H\+A\+R\+\_\+\+C\+L\+A\+S\+S}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+O\+M\+M\+O\+N\+\_\+\+N\+A\+M\+E\+\_\+\+C\+H\+A\+R\+\_\+\+C\+L\+A\+S\+S~({\bf C\+C\+\_\+\+A\+L\+N\+U\+M}$\vert${\bf C\+C\+\_\+\+U\+N\+D\+E\+R\+B\+A\+R}$\vert${\bf C\+C\+\_\+\+D\+A\+S\+H}$\vert${\bf C\+C\+\_\+\+D\+O\+T}$\vert${\bf C\+C\+\_\+\+A\+T}$\vert${\bf C\+C\+\_\+\+S\+L\+A\+S\+H})}\label{ssl__verify_8c_aa156357bd091d908642253ae3678e0d5}
+Legal characters in a common name with --compat-\/names \hypertarget{ssl__verify_8c_aa3c76f18cb94ad4db806e6590c4a1986}{}\index{ssl\+\_\+verify.\+c@{ssl\+\_\+verify.\+c}!T\+L\+S\+\_\+\+U\+S\+E\+R\+N\+A\+M\+E\+\_\+\+L\+E\+N@{T\+L\+S\+\_\+\+U\+S\+E\+R\+N\+A\+M\+E\+\_\+\+L\+E\+N}}
+\index{T\+L\+S\+\_\+\+U\+S\+E\+R\+N\+A\+M\+E\+\_\+\+L\+E\+N@{T\+L\+S\+\_\+\+U\+S\+E\+R\+N\+A\+M\+E\+\_\+\+L\+E\+N}!ssl\+\_\+verify.\+c@{ssl\+\_\+verify.\+c}}
+\subsubsection[{T\+L\+S\+\_\+\+U\+S\+E\+R\+N\+A\+M\+E\+\_\+\+L\+E\+N}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\+L\+S\+\_\+\+U\+S\+E\+R\+N\+A\+M\+E\+\_\+\+L\+E\+N~64}\label{ssl__verify_8c_aa3c76f18cb94ad4db806e6590c4a1986}
+Maximum length of common name \hypertarget{ssl__verify_8c_a8ab255511968638f2673e47ea8945b06}{}\index{ssl\+\_\+verify.\+c@{ssl\+\_\+verify.\+c}!X509\+\_\+\+N\+A\+M\+E\+\_\+\+C\+H\+A\+R\+\_\+\+C\+L\+A\+S\+S@{X509\+\_\+\+N\+A\+M\+E\+\_\+\+C\+H\+A\+R\+\_\+\+C\+L\+A\+S\+S}}
+\index{X509\+\_\+\+N\+A\+M\+E\+\_\+\+C\+H\+A\+R\+\_\+\+C\+L\+A\+S\+S@{X509\+\_\+\+N\+A\+M\+E\+\_\+\+C\+H\+A\+R\+\_\+\+C\+L\+A\+S\+S}!ssl\+\_\+verify.\+c@{ssl\+\_\+verify.\+c}}
+\subsubsection[{X509\+\_\+\+N\+A\+M\+E\+\_\+\+C\+H\+A\+R\+\_\+\+C\+L\+A\+S\+S}]{\setlength{\rightskip}{0pt plus 5cm}\#define X509\+\_\+\+N\+A\+M\+E\+\_\+\+C\+H\+A\+R\+\_\+\+C\+L\+A\+S\+S~({\bf C\+C\+\_\+\+A\+L\+N\+U\+M}$\vert${\bf C\+C\+\_\+\+U\+N\+D\+E\+R\+B\+A\+R}$\vert${\bf C\+C\+\_\+\+D\+A\+S\+H}$\vert${\bf C\+C\+\_\+\+D\+O\+T}$\vert${\bf C\+C\+\_\+\+A\+T}$\vert${\bf C\+C\+\_\+\+S\+L\+A\+S\+H}$\vert${\bf C\+C\+\_\+\+C\+O\+L\+O\+N}$\vert${\bf C\+C\+\_\+\+E\+Q\+U\+A\+L})}\label{ssl__verify_8c_a8ab255511968638f2673e47ea8945b06}
+Legal characters in an X509 name with --compat-\/names 
+
+\subsection{Function Documentation}
+\hypertarget{ssl__verify_8c_a55b28e512b6ddffa5538605a3122f521}{}\index{ssl\+\_\+verify.\+c@{ssl\+\_\+verify.\+c}!cert\+\_\+hash\+\_\+compare@{cert\+\_\+hash\+\_\+compare}}
+\index{cert\+\_\+hash\+\_\+compare@{cert\+\_\+hash\+\_\+compare}!ssl\+\_\+verify.\+c@{ssl\+\_\+verify.\+c}}
+\subsubsection[{cert\+\_\+hash\+\_\+compare(const struct cert\+\_\+hash\+\_\+set $\ast$chs1, const struct cert\+\_\+hash\+\_\+set $\ast$chs2)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} cert\+\_\+hash\+\_\+compare (
+\begin{DoxyParamCaption}
+\item[{const struct {\bf cert\+\_\+hash\+\_\+set} $\ast$}]{chs1, }
+\item[{const struct {\bf cert\+\_\+hash\+\_\+set} $\ast$}]{chs2}
+\end{DoxyParamCaption}
+)}\label{ssl__verify_8c_a55b28e512b6ddffa5538605a3122f521}
+Compares certificates hashes, returns true if hashes are equal.
+
+
+\begin{DoxyParams}{Parameters}
+{\em chs1} & cert 1 hash set \\
+\hline
+{\em chs2} & cert 2 hash set \\
+\hline
+\end{DoxyParams}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=340pt]{ssl__verify_8c_a55b28e512b6ddffa5538605a3122f521_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{ssl__verify_8c_af83ef415aa36cda688d9d969f68085fd}{}\index{ssl\+\_\+verify.\+c@{ssl\+\_\+verify.\+c}!cert\+\_\+hash\+\_\+free@{cert\+\_\+hash\+\_\+free}}
+\index{cert\+\_\+hash\+\_\+free@{cert\+\_\+hash\+\_\+free}!ssl\+\_\+verify.\+c@{ssl\+\_\+verify.\+c}}
+\subsubsection[{cert\+\_\+hash\+\_\+free(struct cert\+\_\+hash\+\_\+set $\ast$chs)}]{\setlength{\rightskip}{0pt plus 5cm}void cert\+\_\+hash\+\_\+free (
+\begin{DoxyParamCaption}
+\item[{struct {\bf cert\+\_\+hash\+\_\+set} $\ast$}]{chs}
+\end{DoxyParamCaption}
+)}\label{ssl__verify_8c_af83ef415aa36cda688d9d969f68085fd}
+Frees the given set of certificate hashes.
+
+
+\begin{DoxyParams}{Parameters}
+{\em chs} & The certificate hash set to free. \\
+\hline
+\end{DoxyParams}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=270pt]{ssl__verify_8c_af83ef415aa36cda688d9d969f68085fd_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{ssl__verify_8c_adb1a815a125d75d306ec1a9896e156a3}{}\index{ssl\+\_\+verify.\+c@{ssl\+\_\+verify.\+c}!cert\+\_\+hash\+\_\+remember@{cert\+\_\+hash\+\_\+remember}}
+\index{cert\+\_\+hash\+\_\+remember@{cert\+\_\+hash\+\_\+remember}!ssl\+\_\+verify.\+c@{ssl\+\_\+verify.\+c}}
+\subsubsection[{cert\+\_\+hash\+\_\+remember(struct tls\+\_\+session $\ast$session, const int error\+\_\+depth, const struct buffer $\ast$cert\+\_\+hash)}]{\setlength{\rightskip}{0pt plus 5cm}void cert\+\_\+hash\+\_\+remember (
+\begin{DoxyParamCaption}
+\item[{struct {\bf tls\+\_\+session} $\ast$}]{session, }
+\item[{const int}]{error\+\_\+depth, }
+\item[{const struct {\bf buffer} $\ast$}]{cert\+\_\+hash}
+\end{DoxyParamCaption}
+)}\label{ssl__verify_8c_adb1a815a125d75d306ec1a9896e156a3}
+\hypertarget{ssl__verify_8c_ac6de478954452cfd54e8352f57638772}{}\index{ssl\+\_\+verify.\+c@{ssl\+\_\+verify.\+c}!tls\+\_\+authentication\+\_\+status@{tls\+\_\+authentication\+\_\+status}}
+\index{tls\+\_\+authentication\+\_\+status@{tls\+\_\+authentication\+\_\+status}!ssl\+\_\+verify.\+c@{ssl\+\_\+verify.\+c}}
+\subsubsection[{tls\+\_\+authentication\+\_\+status(struct tls\+\_\+multi $\ast$multi, const int latency)}]{\setlength{\rightskip}{0pt plus 5cm}int tls\+\_\+authentication\+\_\+status (
+\begin{DoxyParamCaption}
+\item[{struct {\bf tls\+\_\+multi} $\ast$}]{multi, }
+\item[{const int}]{latency}
+\end{DoxyParamCaption}
+)}\label{ssl__verify_8c_ac6de478954452cfd54e8352f57638772}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ssl__verify_8c_ac6de478954452cfd54e8352f57638772_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{ssl__verify_8c_af3b8a3f413dbfc086e05cc5b09efb998}{}\index{ssl\+\_\+verify.\+c@{ssl\+\_\+verify.\+c}!tls\+\_\+common\+\_\+name@{tls\+\_\+common\+\_\+name}}
+\index{tls\+\_\+common\+\_\+name@{tls\+\_\+common\+\_\+name}!ssl\+\_\+verify.\+c@{ssl\+\_\+verify.\+c}}
+\subsubsection[{tls\+\_\+common\+\_\+name(const struct tls\+\_\+multi $\ast$multi, const bool null)}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ tls\+\_\+common\+\_\+name (
+\begin{DoxyParamCaption}
+\item[{const struct {\bf tls\+\_\+multi} $\ast$}]{multi, }
+\item[{const {\bf bool}}]{null}
+\end{DoxyParamCaption}
+)}\label{ssl__verify_8c_af3b8a3f413dbfc086e05cc5b09efb998}
+Returns the common name field for the given tunnel
+
+
+\begin{DoxyParams}{Parameters}
+{\em multi} & The tunnel to return the common name for \\
+\hline
+{\em null} & Whether null may be returned. If not, \char`\"{}\+U\+N\+D\+E\+F\char`\"{} will be returned. \\
+\hline
+\end{DoxyParams}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ssl__verify_8c_af3b8a3f413dbfc086e05cc5b09efb998_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{ssl__verify_8c_a6fc8473f2a78fad6655bbe55b8f32aa5}{}\index{ssl\+\_\+verify.\+c@{ssl\+\_\+verify.\+c}!tls\+\_\+lock\+\_\+cert\+\_\+hash\+\_\+set@{tls\+\_\+lock\+\_\+cert\+\_\+hash\+\_\+set}}
+\index{tls\+\_\+lock\+\_\+cert\+\_\+hash\+\_\+set@{tls\+\_\+lock\+\_\+cert\+\_\+hash\+\_\+set}!ssl\+\_\+verify.\+c@{ssl\+\_\+verify.\+c}}
+\subsubsection[{tls\+\_\+lock\+\_\+cert\+\_\+hash\+\_\+set(struct tls\+\_\+multi $\ast$multi)}]{\setlength{\rightskip}{0pt plus 5cm}void tls\+\_\+lock\+\_\+cert\+\_\+hash\+\_\+set (
+\begin{DoxyParamCaption}
+\item[{struct {\bf tls\+\_\+multi} $\ast$}]{multi}
+\end{DoxyParamCaption}
+)}\label{ssl__verify_8c_a6fc8473f2a78fad6655bbe55b8f32aa5}
+Locks the certificate hash set used in the given tunnel
+
+
+\begin{DoxyParams}{Parameters}
+{\em multi} & The tunnel to lock \\
+\hline
+\end{DoxyParams}
+\hypertarget{ssl__verify_8c_a85e2a6ef69ed420aae1fba8369408071}{}\index{ssl\+\_\+verify.\+c@{ssl\+\_\+verify.\+c}!tls\+\_\+lock\+\_\+common\+\_\+name@{tls\+\_\+lock\+\_\+common\+\_\+name}}
+\index{tls\+\_\+lock\+\_\+common\+\_\+name@{tls\+\_\+lock\+\_\+common\+\_\+name}!ssl\+\_\+verify.\+c@{ssl\+\_\+verify.\+c}}
+\subsubsection[{tls\+\_\+lock\+\_\+common\+\_\+name(struct tls\+\_\+multi $\ast$multi)}]{\setlength{\rightskip}{0pt plus 5cm}void tls\+\_\+lock\+\_\+common\+\_\+name (
+\begin{DoxyParamCaption}
+\item[{struct {\bf tls\+\_\+multi} $\ast$}]{multi}
+\end{DoxyParamCaption}
+)}\label{ssl__verify_8c_a85e2a6ef69ed420aae1fba8369408071}
+Locks the common name field for the given tunnel
+
+
+\begin{DoxyParams}{Parameters}
+{\em multi} & The tunnel to lock \\
+\hline
+\end{DoxyParams}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ssl__verify_8c_a85e2a6ef69ed420aae1fba8369408071_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{ssl__verify_8c_add880839dd1306f5e17f2e7baabc92d9}{}\index{ssl\+\_\+verify.\+c@{ssl\+\_\+verify.\+c}!tls\+\_\+username@{tls\+\_\+username}}
+\index{tls\+\_\+username@{tls\+\_\+username}!ssl\+\_\+verify.\+c@{ssl\+\_\+verify.\+c}}
+\subsubsection[{tls\+\_\+username(const struct tls\+\_\+multi $\ast$multi, const bool null)}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ tls\+\_\+username (
+\begin{DoxyParamCaption}
+\item[{const struct {\bf tls\+\_\+multi} $\ast$}]{multi, }
+\item[{const {\bf bool}}]{null}
+\end{DoxyParamCaption}
+)}\label{ssl__verify_8c_add880839dd1306f5e17f2e7baabc92d9}
+Returns the username field for the given tunnel
+
+
+\begin{DoxyParams}{Parameters}
+{\em multi} & The tunnel to return the username for \\
+\hline
+{\em null} & Whether null may be returned. If not, \char`\"{}\+U\+N\+D\+E\+F\char`\"{} will be returned. \\
+\hline
+\end{DoxyParams}
+\hypertarget{ssl__verify_8c_a562d8b5b597a5474e839c3f0e31777cd}{}\index{ssl\+\_\+verify.\+c@{ssl\+\_\+verify.\+c}!tls\+\_\+x509\+\_\+clear\+\_\+env@{tls\+\_\+x509\+\_\+clear\+\_\+env}}
+\index{tls\+\_\+x509\+\_\+clear\+\_\+env@{tls\+\_\+x509\+\_\+clear\+\_\+env}!ssl\+\_\+verify.\+c@{ssl\+\_\+verify.\+c}}
+\subsubsection[{tls\+\_\+x509\+\_\+clear\+\_\+env(struct env\+\_\+set $\ast$es)}]{\setlength{\rightskip}{0pt plus 5cm}void tls\+\_\+x509\+\_\+clear\+\_\+env (
+\begin{DoxyParamCaption}
+\item[{struct {\bf env\+\_\+set} $\ast$}]{es}
+\end{DoxyParamCaption}
+)}\label{ssl__verify_8c_a562d8b5b597a5474e839c3f0e31777cd}
+Remove any X509\+\_\+ env variables from \hyperlink{structenv__set}{env\+\_\+set} es 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=283pt]{ssl__verify_8c_a562d8b5b597a5474e839c3f0e31777cd_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{ssl__verify_8c_a8574f9402b712d3051d9febde91cf220}{}\index{ssl\+\_\+verify.\+c@{ssl\+\_\+verify.\+c}!verify\+\_\+cert@{verify\+\_\+cert}}
+\index{verify\+\_\+cert@{verify\+\_\+cert}!ssl\+\_\+verify.\+c@{ssl\+\_\+verify.\+c}}
+\subsubsection[{verify\+\_\+cert(struct tls\+\_\+session $\ast$session, openvpn\+\_\+x509\+\_\+cert\+\_\+t $\ast$cert, int cert\+\_\+depth)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf result\+\_\+t} verify\+\_\+cert (
+\begin{DoxyParamCaption}
+\item[{struct {\bf tls\+\_\+session} $\ast$}]{session, }
+\item[{{\bf openvpn\+\_\+x509\+\_\+cert\+\_\+t} $\ast$}]{cert, }
+\item[{int}]{cert\+\_\+depth}
+\end{DoxyParamCaption}
+)}\label{ssl__verify_8c_a8574f9402b712d3051d9febde91cf220}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=322pt]{ssl__verify_8c_a8574f9402b712d3051d9febde91cf220_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{ssl__verify_8c_a923edfe06fe9d56f1b92fea3ddfecbcf}{}\index{ssl\+\_\+verify.\+c@{ssl\+\_\+verify.\+c}!verify\+\_\+final\+\_\+auth\+\_\+checks@{verify\+\_\+final\+\_\+auth\+\_\+checks}}
+\index{verify\+\_\+final\+\_\+auth\+\_\+checks@{verify\+\_\+final\+\_\+auth\+\_\+checks}!ssl\+\_\+verify.\+c@{ssl\+\_\+verify.\+c}}
+\subsubsection[{verify\+\_\+final\+\_\+auth\+\_\+checks(struct tls\+\_\+multi $\ast$multi, struct tls\+\_\+session $\ast$session)}]{\setlength{\rightskip}{0pt plus 5cm}void verify\+\_\+final\+\_\+auth\+\_\+checks (
+\begin{DoxyParamCaption}
+\item[{struct {\bf tls\+\_\+multi} $\ast$}]{multi, }
+\item[{struct {\bf tls\+\_\+session} $\ast$}]{session}
+\end{DoxyParamCaption}
+)}\label{ssl__verify_8c_a923edfe06fe9d56f1b92fea3ddfecbcf}
+Perform final authentication checks, including locking of the cn, the allowed certificate hashes, and whether a client config entry exists in the client config directory.
+
+
+\begin{DoxyParams}{Parameters}
+{\em multi} & The T\+L\+S multi structure to verify locked structures. \\
+\hline
+{\em session} & The current T\+L\+S session \\
+\hline
+\end{DoxyParams}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ssl__verify_8c_a923edfe06fe9d56f1b92fea3ddfecbcf_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{ssl__verify_8c_aad04670ce0b3419d381ce4348a68e45d}{}\index{ssl\+\_\+verify.\+c@{ssl\+\_\+verify.\+c}!verify\+\_\+user\+\_\+pass@{verify\+\_\+user\+\_\+pass}}
+\index{verify\+\_\+user\+\_\+pass@{verify\+\_\+user\+\_\+pass}!ssl\+\_\+verify.\+c@{ssl\+\_\+verify.\+c}}
+\subsubsection[{verify\+\_\+user\+\_\+pass(struct user\+\_\+pass $\ast$up, struct tls\+\_\+multi $\ast$multi, struct tls\+\_\+session $\ast$session)}]{\setlength{\rightskip}{0pt plus 5cm}void verify\+\_\+user\+\_\+pass (
+\begin{DoxyParamCaption}
+\item[{struct {\bf user\+\_\+pass} $\ast$}]{up, }
+\item[{struct {\bf tls\+\_\+multi} $\ast$}]{multi, }
+\item[{struct {\bf tls\+\_\+session} $\ast$}]{session}
+\end{DoxyParamCaption}
+)}\label{ssl__verify_8c_aad04670ce0b3419d381ce4348a68e45d}
+Verify the given username and password, using either an external script, a plugin, or the management interface.
+
+If authentication succeeds, the appropriate state is filled into the session\textquotesingle{}s primary key state\textquotesingle{}s authenticated field. Authentication may also be deferred, in which case the key state\textquotesingle{}s auth\+\_\+deferred field is filled in.
+
+
+\begin{DoxyParams}{Parameters}
+{\em up} & The username and password to verify. \\
+\hline
+{\em multi} & The T\+L\+S multi structure to verify usernames against. \\
+\hline
+{\em session} & The current T\+L\+S session \\
+\hline
+\end{DoxyParams}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=330pt]{ssl__verify_8c_aad04670ce0b3419d381ce4348a68e45d_cgraph}
+\end{center}
+\end{figure}
+
+

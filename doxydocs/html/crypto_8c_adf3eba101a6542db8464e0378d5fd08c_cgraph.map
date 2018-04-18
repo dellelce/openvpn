@@ -1,0 +1,11 @@
+<map id="test_crypto" name="test_crypto">
+<area shape="rect" id="node2" href="$buffer_8c.html#aa35bf7feb6a99bf5d364b2d4eba1195c" title="alloc_buf_gc" alt="" coords="153,31,248,57"/>
+<area shape="rect" id="node5" href="$crypto__backend_8h.html#a56d0dd0253f889a5305beb86d2900fe7" title="cipher_ctx_get_cipher_kt" alt="" coords="309,132,476,159"/>
+<area shape="rect" id="node6" href="$crypto__backend_8h.html#a21c134671c60f2bc399a5b5a76d7e084" title="cipher_kt_mode_aead" alt="" coords="318,183,467,209"/>
+<area shape="rect" id="node7" href="$crypto__backend_8h.html#a902518439f09e88281986ebda8dd458b" title="cipher_kt_iv_size" alt="" coords="140,284,261,311"/>
+<area shape="rect" id="node8" href="$crypto__backend_8h.html#a8a19f717f5824ff4455b6925af81299c" title="rand_bytes" alt="" coords="157,335,244,361"/>
+<area shape="rect" id="node9" href="$group__data__crypto.html#ga2756bad88224b98719d4e8f08cb11ef9" title="openvpn_encrypt" alt="" coords="141,183,260,209"/>
+<area shape="rect" id="node10" href="$group__data__crypto.html#gae91d99446478fcf3327672eb78ef0bf8" title="openvpn_decrypt" alt="" coords="141,132,260,159"/>
+<area shape="rect" id="node3" href="$buffer_8c.html#acc1a4ee83a591116d331e52baacf253d" title="buf_size_error" alt="" coords="341,5,444,32"/>
+<area shape="rect" id="node4" href="$buffer_8c.html#a67f7dec7f86e113dc0744584fd80b621" title="gc_malloc" alt="" coords="352,56,433,83"/>
+</map>

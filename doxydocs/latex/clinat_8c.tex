@@ -1,0 +1,133 @@
+\hypertarget{clinat_8c}{}\section{src/openvpn/clinat.c File Reference}
+\label{clinat_8c}\index{src/openvpn/clinat.\+c@{src/openvpn/clinat.\+c}}
+{\ttfamily \#include \char`\"{}syshead.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}clinat.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}proto.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}socket.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}memdbg.\+h\char`\"{}}\\*
+Include dependency graph for clinat.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{clinat_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{clinat_8c_a2e1a9c53e38033e386c7bf2b876a8405}{print\+\_\+client\+\_\+nat\+\_\+list} (const struct \hyperlink{structclient__nat__option__list}{client\+\_\+nat\+\_\+option\+\_\+list} $\ast$list, int msglevel)
+\item 
+struct \hyperlink{structclient__nat__option__list}{client\+\_\+nat\+\_\+option\+\_\+list} $\ast$ \hyperlink{clinat_8c_a4a4868fc9d92db802f555e94cbf61e7e}{new\+\_\+client\+\_\+nat\+\_\+list} (struct \hyperlink{structgc__arena}{gc\+\_\+arena} $\ast$gc)
+\item 
+struct \hyperlink{structclient__nat__option__list}{client\+\_\+nat\+\_\+option\+\_\+list} $\ast$ \hyperlink{clinat_8c_a7412bd9fba0e55a3ec505dc7a8b2a8c7}{clone\+\_\+client\+\_\+nat\+\_\+option\+\_\+list} (const struct \hyperlink{structclient__nat__option__list}{client\+\_\+nat\+\_\+option\+\_\+list} $\ast$src, struct \hyperlink{structgc__arena}{gc\+\_\+arena} $\ast$gc)
+\item 
+void \hyperlink{clinat_8c_af939a5a219bb4c53b3693169388861d9}{copy\+\_\+client\+\_\+nat\+\_\+option\+\_\+list} (struct \hyperlink{structclient__nat__option__list}{client\+\_\+nat\+\_\+option\+\_\+list} $\ast$\hyperlink{compat-lz4_8h_accb93c5987f80eedf1f5da3cfa1c0d22}{dest}, const struct \hyperlink{structclient__nat__option__list}{client\+\_\+nat\+\_\+option\+\_\+list} $\ast$src)
+\item 
+void \hyperlink{clinat_8c_ada00a4a102df5526cc8d0c261f82f607}{add\+\_\+client\+\_\+nat\+\_\+to\+\_\+option\+\_\+list} (struct \hyperlink{structclient__nat__option__list}{client\+\_\+nat\+\_\+option\+\_\+list} $\ast$\hyperlink{compat-lz4_8h_accb93c5987f80eedf1f5da3cfa1c0d22}{dest}, const char $\ast$type, const char $\ast$network, const char $\ast$netmask, const char $\ast$foreign\+\_\+network, int msglevel)
+\item 
+void \hyperlink{clinat_8c_a52bde34f5246b0b54699d6ce2e0352b4}{client\+\_\+nat\+\_\+transform} (const struct \hyperlink{structclient__nat__option__list}{client\+\_\+nat\+\_\+option\+\_\+list} $\ast$list, struct \hyperlink{structbuffer}{buffer} $\ast$ipbuf, const int direction)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{clinat_8c_ada00a4a102df5526cc8d0c261f82f607}{}\index{clinat.\+c@{clinat.\+c}!add\+\_\+client\+\_\+nat\+\_\+to\+\_\+option\+\_\+list@{add\+\_\+client\+\_\+nat\+\_\+to\+\_\+option\+\_\+list}}
+\index{add\+\_\+client\+\_\+nat\+\_\+to\+\_\+option\+\_\+list@{add\+\_\+client\+\_\+nat\+\_\+to\+\_\+option\+\_\+list}!clinat.\+c@{clinat.\+c}}
+\subsubsection[{add\+\_\+client\+\_\+nat\+\_\+to\+\_\+option\+\_\+list(struct client\+\_\+nat\+\_\+option\+\_\+list $\ast$dest, const char $\ast$type, const char $\ast$network, const char $\ast$netmask, const char $\ast$foreign\+\_\+network, int msglevel)}]{\setlength{\rightskip}{0pt plus 5cm}void add\+\_\+client\+\_\+nat\+\_\+to\+\_\+option\+\_\+list (
+\begin{DoxyParamCaption}
+\item[{struct {\bf client\+\_\+nat\+\_\+option\+\_\+list} $\ast$}]{dest, }
+\item[{const char $\ast$}]{type, }
+\item[{const char $\ast$}]{network, }
+\item[{const char $\ast$}]{netmask, }
+\item[{const char $\ast$}]{foreign\+\_\+network, }
+\item[{int}]{msglevel}
+\end{DoxyParamCaption}
+)}\label{clinat_8c_ada00a4a102df5526cc8d0c261f82f607}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{clinat_8c_ada00a4a102df5526cc8d0c261f82f607_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{clinat_8c_a52bde34f5246b0b54699d6ce2e0352b4}{}\index{clinat.\+c@{clinat.\+c}!client\+\_\+nat\+\_\+transform@{client\+\_\+nat\+\_\+transform}}
+\index{client\+\_\+nat\+\_\+transform@{client\+\_\+nat\+\_\+transform}!clinat.\+c@{clinat.\+c}}
+\subsubsection[{client\+\_\+nat\+\_\+transform(const struct client\+\_\+nat\+\_\+option\+\_\+list $\ast$list, struct buffer $\ast$ipbuf, const int direction)}]{\setlength{\rightskip}{0pt plus 5cm}void client\+\_\+nat\+\_\+transform (
+\begin{DoxyParamCaption}
+\item[{const struct {\bf client\+\_\+nat\+\_\+option\+\_\+list} $\ast$}]{list, }
+\item[{struct {\bf buffer} $\ast$}]{ipbuf, }
+\item[{const int}]{direction}
+\end{DoxyParamCaption}
+)}\label{clinat_8c_a52bde34f5246b0b54699d6ce2e0352b4}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{clinat_8c_a52bde34f5246b0b54699d6ce2e0352b4_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{clinat_8c_a7412bd9fba0e55a3ec505dc7a8b2a8c7}{}\index{clinat.\+c@{clinat.\+c}!clone\+\_\+client\+\_\+nat\+\_\+option\+\_\+list@{clone\+\_\+client\+\_\+nat\+\_\+option\+\_\+list}}
+\index{clone\+\_\+client\+\_\+nat\+\_\+option\+\_\+list@{clone\+\_\+client\+\_\+nat\+\_\+option\+\_\+list}!clinat.\+c@{clinat.\+c}}
+\subsubsection[{clone\+\_\+client\+\_\+nat\+\_\+option\+\_\+list(const struct client\+\_\+nat\+\_\+option\+\_\+list $\ast$src, struct gc\+\_\+arena $\ast$gc)}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf client\+\_\+nat\+\_\+option\+\_\+list}$\ast$ clone\+\_\+client\+\_\+nat\+\_\+option\+\_\+list (
+\begin{DoxyParamCaption}
+\item[{const struct {\bf client\+\_\+nat\+\_\+option\+\_\+list} $\ast$}]{src, }
+\item[{struct {\bf gc\+\_\+arena} $\ast$}]{gc}
+\end{DoxyParamCaption}
+)}\label{clinat_8c_a7412bd9fba0e55a3ec505dc7a8b2a8c7}
+\hypertarget{clinat_8c_af939a5a219bb4c53b3693169388861d9}{}\index{clinat.\+c@{clinat.\+c}!copy\+\_\+client\+\_\+nat\+\_\+option\+\_\+list@{copy\+\_\+client\+\_\+nat\+\_\+option\+\_\+list}}
+\index{copy\+\_\+client\+\_\+nat\+\_\+option\+\_\+list@{copy\+\_\+client\+\_\+nat\+\_\+option\+\_\+list}!clinat.\+c@{clinat.\+c}}
+\subsubsection[{copy\+\_\+client\+\_\+nat\+\_\+option\+\_\+list(struct client\+\_\+nat\+\_\+option\+\_\+list $\ast$dest, const struct client\+\_\+nat\+\_\+option\+\_\+list $\ast$src)}]{\setlength{\rightskip}{0pt plus 5cm}void copy\+\_\+client\+\_\+nat\+\_\+option\+\_\+list (
+\begin{DoxyParamCaption}
+\item[{struct {\bf client\+\_\+nat\+\_\+option\+\_\+list} $\ast$}]{dest, }
+\item[{const struct {\bf client\+\_\+nat\+\_\+option\+\_\+list} $\ast$}]{src}
+\end{DoxyParamCaption}
+)}\label{clinat_8c_af939a5a219bb4c53b3693169388861d9}
+\hypertarget{clinat_8c_a4a4868fc9d92db802f555e94cbf61e7e}{}\index{clinat.\+c@{clinat.\+c}!new\+\_\+client\+\_\+nat\+\_\+list@{new\+\_\+client\+\_\+nat\+\_\+list}}
+\index{new\+\_\+client\+\_\+nat\+\_\+list@{new\+\_\+client\+\_\+nat\+\_\+list}!clinat.\+c@{clinat.\+c}}
+\subsubsection[{new\+\_\+client\+\_\+nat\+\_\+list(struct gc\+\_\+arena $\ast$gc)}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf client\+\_\+nat\+\_\+option\+\_\+list}$\ast$ new\+\_\+client\+\_\+nat\+\_\+list (
+\begin{DoxyParamCaption}
+\item[{struct {\bf gc\+\_\+arena} $\ast$}]{gc}
+\end{DoxyParamCaption}
+)}\label{clinat_8c_a4a4868fc9d92db802f555e94cbf61e7e}
+\hypertarget{clinat_8c_a2e1a9c53e38033e386c7bf2b876a8405}{}\index{clinat.\+c@{clinat.\+c}!print\+\_\+client\+\_\+nat\+\_\+list@{print\+\_\+client\+\_\+nat\+\_\+list}}
+\index{print\+\_\+client\+\_\+nat\+\_\+list@{print\+\_\+client\+\_\+nat\+\_\+list}!clinat.\+c@{clinat.\+c}}
+\subsubsection[{print\+\_\+client\+\_\+nat\+\_\+list(const struct client\+\_\+nat\+\_\+option\+\_\+list $\ast$list, int msglevel)}]{\setlength{\rightskip}{0pt plus 5cm}void print\+\_\+client\+\_\+nat\+\_\+list (
+\begin{DoxyParamCaption}
+\item[{const struct {\bf client\+\_\+nat\+\_\+option\+\_\+list} $\ast$}]{list, }
+\item[{int}]{msglevel}
+\end{DoxyParamCaption}
+)}\label{clinat_8c_a2e1a9c53e38033e386c7bf2b876a8405}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{clinat_8c_a2e1a9c53e38033e386c7bf2b876a8405_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=296pt]{clinat_8c_a2e1a9c53e38033e386c7bf2b876a8405_icgraph}
+\end{center}
+\end{figure}
+
+

@@ -1,0 +1,788 @@
+\hypertarget{route_8h}{}\section{src/openvpn/route.h File Reference}
+\label{route_8h}\index{src/openvpn/route.\+h@{src/openvpn/route.\+h}}
+{\ttfamily \#include \char`\"{}basic.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}tun.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}misc.\+h\char`\"{}}\\*
+Include dependency graph for route.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{route_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{route_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structroute__bypass}{route\+\_\+bypass}
+\item 
+struct \hyperlink{structroute__special__addr}{route\+\_\+special\+\_\+addr}
+\item 
+struct \hyperlink{structroute__option}{route\+\_\+option}
+\item 
+struct \hyperlink{structroute__option__list}{route\+\_\+option\+\_\+list}
+\item 
+struct \hyperlink{structroute__ipv6__option}{route\+\_\+ipv6\+\_\+option}
+\item 
+struct \hyperlink{structroute__ipv6__option__list}{route\+\_\+ipv6\+\_\+option\+\_\+list}
+\item 
+struct \hyperlink{structroute__ipv4}{route\+\_\+ipv4}
+\item 
+struct \hyperlink{structroute__ipv6}{route\+\_\+ipv6}
+\item 
+struct \hyperlink{structroute__gateway__address}{route\+\_\+gateway\+\_\+address}
+\item 
+struct \hyperlink{structroute__gateway__info}{route\+\_\+gateway\+\_\+info}
+\item 
+struct \hyperlink{structroute__ipv6__gateway__address}{route\+\_\+ipv6\+\_\+gateway\+\_\+address}
+\item 
+struct \hyperlink{structroute__ipv6__gateway__info}{route\+\_\+ipv6\+\_\+gateway\+\_\+info}
+\item 
+struct \hyperlink{structroute__list}{route\+\_\+list}
+\item 
+struct \hyperlink{structroute__ipv6__list}{route\+\_\+ipv6\+\_\+list}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{route_8h_a9000c744e917bb923e87e92a93af57ce}{R\+O\+U\+T\+E\+\_\+\+D\+E\+L\+E\+T\+E\+\_\+\+F\+I\+R\+S\+T}~(1$<$$<$2)
+\item 
+\#define \hyperlink{route_8h_a32450e8710bc0b97c69ca29ee5f7a4d2}{R\+O\+U\+T\+E\+\_\+\+R\+E\+F\+\_\+\+G\+W}~(1$<$$<$3)
+\item 
+\#define \hyperlink{route_8h_acf661cefbfb4628727e3c9d60f1771af}{N\+\_\+\+R\+O\+U\+T\+E\+\_\+\+B\+Y\+P\+A\+S\+S}~8
+\item 
+\#define \hyperlink{route_8h_a3c6f4538ad738d955fbaccfa387d1f19}{R\+T\+S\+A\+\_\+\+R\+E\+M\+O\+T\+E\+\_\+\+E\+N\+D\+P\+O\+I\+N\+T}~(1$<$$<$0)
+\item 
+\#define \hyperlink{route_8h_a619e3ae4569c93764390153f4962ad03}{R\+T\+S\+A\+\_\+\+R\+E\+M\+O\+T\+E\+\_\+\+H\+O\+S\+T}~(1$<$$<$1)
+\item 
+\#define \hyperlink{route_8h_ae15320cc73bcc377470e35851bce1859}{R\+T\+S\+A\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+M\+E\+T\+R\+I\+C}~(1$<$$<$2)
+\item 
+\#define \hyperlink{route_8h_aaf6603225a414ae4042dc51852dbf377}{R\+G\+\_\+\+E\+N\+A\+B\+L\+E}~(1$<$$<$0)
+\item 
+\#define \hyperlink{route_8h_a0680b76cbee641d003d3634fffa17fa0}{R\+G\+\_\+\+L\+O\+C\+A\+L}~(1$<$$<$1)
+\item 
+\#define \hyperlink{route_8h_aa201f4b871f152e554868553912929f3}{R\+G\+\_\+\+D\+E\+F1}~(1$<$$<$2)
+\item 
+\#define \hyperlink{route_8h_a38b7b72d5db2758146b4b2bf79c5b2ea}{R\+G\+\_\+\+B\+Y\+P\+A\+S\+S\+\_\+\+D\+H\+C\+P}~(1$<$$<$3)
+\item 
+\#define \hyperlink{route_8h_aaf452154224e0fb66029194222fe24b8}{R\+G\+\_\+\+B\+Y\+P\+A\+S\+S\+\_\+\+D\+N\+S}~(1$<$$<$4)
+\item 
+\#define \hyperlink{route_8h_ab07d6bb8e6ac70ec4345c4790b2f7945}{R\+G\+\_\+\+R\+E\+R\+O\+U\+T\+E\+\_\+\+G\+W}~(1$<$$<$5)
+\item 
+\#define \hyperlink{route_8h_abbf8d099f15ecfdc20d4d2a590032f70}{R\+G\+\_\+\+A\+U\+T\+O\+\_\+\+L\+O\+C\+A\+L}~(1$<$$<$6)
+\item 
+\#define \hyperlink{route_8h_abf48c29d0a63c77fb5c301ba0c026aa3}{R\+G\+\_\+\+B\+L\+O\+C\+K\+\_\+\+L\+O\+C\+A\+L}~(1$<$$<$7)
+\item 
+\#define \hyperlink{route_8h_ad868f081f0334c1a64d0682283139425}{R\+T\+\_\+\+D\+E\+F\+I\+N\+E\+D}~(1$<$$<$0)
+\item 
+\#define \hyperlink{route_8h_a6ec44fb3d21f1f44426b0c4893aeefeb}{R\+T\+\_\+\+A\+D\+D\+E\+D}~(1$<$$<$1)
+\item 
+\#define \hyperlink{route_8h_a7c86f9369806a6f86f30a7c3185d740a}{R\+T\+\_\+\+M\+E\+T\+R\+I\+C\+\_\+\+D\+E\+F\+I\+N\+E\+D}~(1$<$$<$2)
+\item 
+\#define \hyperlink{route_8h_a4616ff947eb600c95e2c725b418dd23d}{R\+G\+I\+\_\+\+A\+D\+D\+R\+\_\+\+D\+E\+F\+I\+N\+E\+D}~(1$<$$<$0)  /$\ast$ set if gateway.\+addr defined $\ast$/
+\item 
+\#define \hyperlink{route_8h_aecad0970615cbe7c7af3bbfbfc610c1e}{R\+G\+I\+\_\+\+N\+E\+T\+M\+A\+S\+K\+\_\+\+D\+E\+F\+I\+N\+E\+D}~(1$<$$<$1)  /$\ast$ set if gateway.\+netmask defined $\ast$/
+\item 
+\#define \hyperlink{route_8h_a4e4abd1b059ea4deb4dbff9bf9a7a789}{R\+G\+I\+\_\+\+H\+W\+A\+D\+D\+R\+\_\+\+D\+E\+F\+I\+N\+E\+D}~(1$<$$<$2)  /$\ast$ set if hwaddr is defined $\ast$/
+\item 
+\#define \hyperlink{route_8h_a662a7a4ea7055e2d6157ed3ace2d4141}{R\+G\+I\+\_\+\+I\+F\+A\+C\+E\+\_\+\+D\+E\+F\+I\+N\+E\+D}~(1$<$$<$3)  /$\ast$ set if iface is defined $\ast$/
+\item 
+\#define \hyperlink{route_8h_a2678fca1413c68a10e9c3f3e3162f52d}{R\+G\+I\+\_\+\+O\+V\+E\+R\+F\+L\+O\+W}~(1$<$$<$4)  /$\ast$ set if more interface addresses than will fit in addrs $\ast$/
+\item 
+\#define \hyperlink{route_8h_a22eb61fa3f45fb6c6c9d51587c1d5c6c}{R\+G\+I\+\_\+\+O\+N\+\_\+\+L\+I\+N\+K}~(1$<$$<$5)
+\item 
+\#define \hyperlink{route_8h_aba3fd1599b860046600710d7b1f6f82b}{R\+G\+I\+\_\+\+N\+\_\+\+A\+D\+D\+R\+E\+S\+S\+E\+S}~8
+\item 
+\#define \hyperlink{route_8h_aba3fd1599b860046600710d7b1f6f82b}{R\+G\+I\+\_\+\+N\+\_\+\+A\+D\+D\+R\+E\+S\+S\+E\+S}~8
+\item 
+\#define \hyperlink{route_8h_a31a26d459957f2bbe189ddb6b814e7de}{R\+L\+\_\+\+D\+I\+D\+\_\+\+R\+E\+D\+I\+R\+E\+C\+T\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+G\+A\+T\+E\+W\+A\+Y}~(1$<$$<$0)
+\item 
+\#define \hyperlink{route_8h_a23fdde759fa57a7c6581c77e680b8aed}{R\+L\+\_\+\+D\+I\+D\+\_\+\+L\+O\+C\+A\+L}~(1$<$$<$1)
+\item 
+\#define \hyperlink{route_8h_a46ea02531d883029dca6c02ca44d8379}{R\+L\+\_\+\+R\+O\+U\+T\+E\+S\+\_\+\+A\+D\+D\+E\+D}~(1$<$$<$2)
+\item 
+\#define \hyperlink{route_8h_ab544db6d75e095a2b43e65908e6a3d23}{T\+L\+A\+\_\+\+N\+O\+T\+\_\+\+I\+M\+P\+L\+E\+M\+E\+N\+T\+E\+D}~0
+\item 
+\#define \hyperlink{route_8h_aca1b32164d778604d691cf6b465c0f1b}{T\+L\+A\+\_\+\+N\+O\+N\+L\+O\+C\+A\+L}~1
+\item 
+\#define \hyperlink{route_8h_a1695a325737e53bf036255e960ccc373}{T\+L\+A\+\_\+\+L\+O\+C\+A\+L}~2
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structroute__option__list}{route\+\_\+option\+\_\+list} $\ast$ \hyperlink{route_8h_a583dd31400d236f7cfd28d42c7aeb333}{new\+\_\+route\+\_\+option\+\_\+list} (struct \hyperlink{structgc__arena}{gc\+\_\+arena} $\ast$a)
+\item 
+struct \hyperlink{structroute__ipv6__option__list}{route\+\_\+ipv6\+\_\+option\+\_\+list} $\ast$ \hyperlink{route_8h_ad10c49f8ef0061a64e6dc10180df2e9c}{new\+\_\+route\+\_\+ipv6\+\_\+option\+\_\+list} (struct \hyperlink{structgc__arena}{gc\+\_\+arena} $\ast$a)
+\item 
+struct \hyperlink{structroute__option__list}{route\+\_\+option\+\_\+list} $\ast$ \hyperlink{route_8h_a1d8b08b67de03194a7b20da360050e7e}{clone\+\_\+route\+\_\+option\+\_\+list} (const struct \hyperlink{structroute__option__list}{route\+\_\+option\+\_\+list} $\ast$src, struct \hyperlink{structgc__arena}{gc\+\_\+arena} $\ast$a)
+\item 
+struct \hyperlink{structroute__ipv6__option__list}{route\+\_\+ipv6\+\_\+option\+\_\+list} $\ast$ \hyperlink{route_8h_acd595f85469351030cdc59b90a7be35b}{clone\+\_\+route\+\_\+ipv6\+\_\+option\+\_\+list} (const struct \hyperlink{structroute__ipv6__option__list}{route\+\_\+ipv6\+\_\+option\+\_\+list} $\ast$src, struct \hyperlink{structgc__arena}{gc\+\_\+arena} $\ast$a)
+\item 
+void \hyperlink{route_8h_a7e06a29136366a0aa25c1cd4455ded9a}{copy\+\_\+route\+\_\+option\+\_\+list} (struct \hyperlink{structroute__option__list}{route\+\_\+option\+\_\+list} $\ast$\hyperlink{compat-lz4_8h_accb93c5987f80eedf1f5da3cfa1c0d22}{dest}, const struct \hyperlink{structroute__option__list}{route\+\_\+option\+\_\+list} $\ast$src, struct \hyperlink{structgc__arena}{gc\+\_\+arena} $\ast$a)
+\item 
+void \hyperlink{route_8h_a7edf89fc7ff02ef8464cbf288e600880}{copy\+\_\+route\+\_\+ipv6\+\_\+option\+\_\+list} (struct \hyperlink{structroute__ipv6__option__list}{route\+\_\+ipv6\+\_\+option\+\_\+list} $\ast$\hyperlink{compat-lz4_8h_accb93c5987f80eedf1f5da3cfa1c0d22}{dest}, const struct \hyperlink{structroute__ipv6__option__list}{route\+\_\+ipv6\+\_\+option\+\_\+list} $\ast$src, struct \hyperlink{structgc__arena}{gc\+\_\+arena} $\ast$a)
+\item 
+void \hyperlink{route_8h_ad7168a54dce4dd829133c755667c0c03}{route\+\_\+ipv6\+\_\+clear\+\_\+host\+\_\+bits} (struct \hyperlink{structroute__ipv6}{route\+\_\+ipv6} $\ast$r6)
+\item 
+void \hyperlink{route_8h_a788bc024ca7fd587866a9928e235b572}{add\+\_\+route\+\_\+ipv6} (struct \hyperlink{structroute__ipv6}{route\+\_\+ipv6} $\ast$r, const struct \hyperlink{structtuntap}{tuntap} $\ast$tt, unsigned int flags, const struct \hyperlink{structenv__set}{env\+\_\+set} $\ast$es)
+\item 
+void \hyperlink{route_8h_ae2a7a92e855bc9fe76625e41a5bfaa4c}{delete\+\_\+route\+\_\+ipv6} (const struct \hyperlink{structroute__ipv6}{route\+\_\+ipv6} $\ast$r, const struct \hyperlink{structtuntap}{tuntap} $\ast$tt, unsigned int flags, const struct \hyperlink{structenv__set}{env\+\_\+set} $\ast$es)
+\item 
+void \hyperlink{route_8h_ae11dbad77ecc3178ae8834c55f0f063c}{add\+\_\+route} (struct \hyperlink{structroute__ipv4}{route\+\_\+ipv4} $\ast$r, const struct \hyperlink{structtuntap}{tuntap} $\ast$tt, unsigned int flags, const struct \hyperlink{structroute__gateway__info}{route\+\_\+gateway\+\_\+info} $\ast$rgi, const struct \hyperlink{structenv__set}{env\+\_\+set} $\ast$es)
+\item 
+void \hyperlink{route_8h_a721a04baee7054c8b6dfdcf520b69006}{add\+\_\+route\+\_\+to\+\_\+option\+\_\+list} (struct \hyperlink{structroute__option__list}{route\+\_\+option\+\_\+list} $\ast$l, const char $\ast$network, const char $\ast$netmask, const char $\ast$gateway, const char $\ast$metric)
+\item 
+void \hyperlink{route_8h_a479e469a922c8a2ca4ddc596840ea9ba}{add\+\_\+route\+\_\+ipv6\+\_\+to\+\_\+option\+\_\+list} (struct \hyperlink{structroute__ipv6__option__list}{route\+\_\+ipv6\+\_\+option\+\_\+list} $\ast$l, const char $\ast$prefix, const char $\ast$gateway, const char $\ast$metric)
+\item 
+\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} \hyperlink{route_8h_a3f534585396ea6d2712366fe917f34e3}{init\+\_\+route\+\_\+list} (struct \hyperlink{structroute__list}{route\+\_\+list} $\ast$rl, const struct \hyperlink{structroute__option__list}{route\+\_\+option\+\_\+list} $\ast$opt, const char $\ast$remote\+\_\+endpoint, int default\+\_\+metric, in\+\_\+addr\+\_\+t remote\+\_\+host, struct \hyperlink{structenv__set}{env\+\_\+set} $\ast$es)
+\item 
+\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} \hyperlink{route_8h_a9621dd6fce823566c275477b02a36253}{init\+\_\+route\+\_\+ipv6\+\_\+list} (struct \hyperlink{structroute__ipv6__list}{route\+\_\+ipv6\+\_\+list} $\ast$rl6, const struct \hyperlink{structroute__ipv6__option__list}{route\+\_\+ipv6\+\_\+option\+\_\+list} $\ast$opt6, const char $\ast$remote\+\_\+endpoint, int default\+\_\+metric, const struct in6\+\_\+addr $\ast$remote\+\_\+host, struct \hyperlink{structenv__set}{env\+\_\+set} $\ast$es)
+\item 
+void \hyperlink{route_8h_a7306bd6298ac341522df4f697527e59b}{route\+\_\+list\+\_\+add\+\_\+vpn\+\_\+gateway} (struct \hyperlink{structroute__list}{route\+\_\+list} $\ast$rl, struct \hyperlink{structenv__set}{env\+\_\+set} $\ast$es, const in\+\_\+addr\+\_\+t addr)
+\item 
+void \hyperlink{route_8h_a71b6566b675a91729b168da08d71d052}{add\+\_\+routes} (struct \hyperlink{structroute__list}{route\+\_\+list} $\ast$rl, struct \hyperlink{structroute__ipv6__list}{route\+\_\+ipv6\+\_\+list} $\ast$rl6, const struct \hyperlink{structtuntap}{tuntap} $\ast$tt, unsigned int flags, const struct \hyperlink{structenv__set}{env\+\_\+set} $\ast$es)
+\item 
+void \hyperlink{route_8h_ac4f4559cc8535a9f4b2209feabb021ac}{delete\+\_\+routes} (struct \hyperlink{structroute__list}{route\+\_\+list} $\ast$rl, struct \hyperlink{structroute__ipv6__list}{route\+\_\+ipv6\+\_\+list} $\ast$rl6, const struct \hyperlink{structtuntap}{tuntap} $\ast$tt, unsigned int flags, const struct \hyperlink{structenv__set}{env\+\_\+set} $\ast$es)
+\item 
+void \hyperlink{route_8h_aef4915408d31ea4a260b875e960ef3cb}{setenv\+\_\+routes} (struct \hyperlink{structenv__set}{env\+\_\+set} $\ast$es, const struct \hyperlink{structroute__list}{route\+\_\+list} $\ast$rl)
+\item 
+void \hyperlink{route_8h_a1da011e5f99e883c8cd3e400ccb7d619}{setenv\+\_\+routes\+\_\+ipv6} (struct \hyperlink{structenv__set}{env\+\_\+set} $\ast$es, const struct \hyperlink{structroute__ipv6__list}{route\+\_\+ipv6\+\_\+list} $\ast$rl6)
+\item 
+\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} \hyperlink{route_8h_a1589ff6cfd0dcf4f4906cf7bcdafdbf6}{is\+\_\+special\+\_\+addr} (const char $\ast$addr\+\_\+str)
+\item 
+void \hyperlink{route_8h_aeacec9dc37cb7f73173d4fbf5645276e}{get\+\_\+default\+\_\+gateway} (struct \hyperlink{structroute__gateway__info}{route\+\_\+gateway\+\_\+info} $\ast$rgi)
+\item 
+void \hyperlink{route_8h_a6d5b5f9fa9ace3382e3e1e855d59068e}{get\+\_\+default\+\_\+gateway\+\_\+ipv6} (struct \hyperlink{structroute__ipv6__gateway__info}{route\+\_\+ipv6\+\_\+gateway\+\_\+info} $\ast$rgi, const struct in6\+\_\+addr $\ast$\hyperlink{compat-lz4_8h_accb93c5987f80eedf1f5da3cfa1c0d22}{dest})
+\item 
+void \hyperlink{route_8h_a7d24ae5eacf30d776d7c7dd91b43428c}{print\+\_\+default\+\_\+gateway} (const int msglevel, const struct \hyperlink{structroute__gateway__info}{route\+\_\+gateway\+\_\+info} $\ast$rgi, const struct \hyperlink{structroute__ipv6__gateway__info}{route\+\_\+ipv6\+\_\+gateway\+\_\+info} $\ast$rgi6)
+\item 
+int \hyperlink{route_8h_aacee3599cd97a0515b82dec0f872be2e}{test\+\_\+local\+\_\+addr} (const in\+\_\+addr\+\_\+t addr, const struct \hyperlink{structroute__gateway__info}{route\+\_\+gateway\+\_\+info} $\ast$rgi)
+\item 
+void \hyperlink{route_8h_a6bfb126e6133c1e2aa8d9fd121e1337f}{print\+\_\+route\+\_\+options} (const struct \hyperlink{structroute__option__list}{route\+\_\+option\+\_\+list} $\ast$rol, int level)
+\item 
+void \hyperlink{route_8h_adcafdf7f4c6d2a4eab7584fd466dbeac}{print\+\_\+routes} (const struct \hyperlink{structroute__list}{route\+\_\+list} $\ast$rl, int level)
+\item 
+\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} \hyperlink{route_8h_ae3585fb74ec54db333f0d1a54ace6e2f}{netmask\+\_\+to\+\_\+netbits} (const in\+\_\+addr\+\_\+t network, const in\+\_\+addr\+\_\+t netmask, int $\ast$netbits)
+\item 
+int \hyperlink{route_8h_a2aee01d5c10bd617615f031180ee7062}{netmask\+\_\+to\+\_\+netbits2} (in\+\_\+addr\+\_\+t netmask)
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{route_8h_acf661cefbfb4628727e3c9d60f1771af}{}\index{route.\+h@{route.\+h}!N\+\_\+\+R\+O\+U\+T\+E\+\_\+\+B\+Y\+P\+A\+S\+S@{N\+\_\+\+R\+O\+U\+T\+E\+\_\+\+B\+Y\+P\+A\+S\+S}}
+\index{N\+\_\+\+R\+O\+U\+T\+E\+\_\+\+B\+Y\+P\+A\+S\+S@{N\+\_\+\+R\+O\+U\+T\+E\+\_\+\+B\+Y\+P\+A\+S\+S}!route.\+h@{route.\+h}}
+\subsubsection[{N\+\_\+\+R\+O\+U\+T\+E\+\_\+\+B\+Y\+P\+A\+S\+S}]{\setlength{\rightskip}{0pt plus 5cm}\#define N\+\_\+\+R\+O\+U\+T\+E\+\_\+\+B\+Y\+P\+A\+S\+S~8}\label{route_8h_acf661cefbfb4628727e3c9d60f1771af}
+\hypertarget{route_8h_abbf8d099f15ecfdc20d4d2a590032f70}{}\index{route.\+h@{route.\+h}!R\+G\+\_\+\+A\+U\+T\+O\+\_\+\+L\+O\+C\+A\+L@{R\+G\+\_\+\+A\+U\+T\+O\+\_\+\+L\+O\+C\+A\+L}}
+\index{R\+G\+\_\+\+A\+U\+T\+O\+\_\+\+L\+O\+C\+A\+L@{R\+G\+\_\+\+A\+U\+T\+O\+\_\+\+L\+O\+C\+A\+L}!route.\+h@{route.\+h}}
+\subsubsection[{R\+G\+\_\+\+A\+U\+T\+O\+\_\+\+L\+O\+C\+A\+L}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+G\+\_\+\+A\+U\+T\+O\+\_\+\+L\+O\+C\+A\+L~(1$<$$<$6)}\label{route_8h_abbf8d099f15ecfdc20d4d2a590032f70}
+\hypertarget{route_8h_abf48c29d0a63c77fb5c301ba0c026aa3}{}\index{route.\+h@{route.\+h}!R\+G\+\_\+\+B\+L\+O\+C\+K\+\_\+\+L\+O\+C\+A\+L@{R\+G\+\_\+\+B\+L\+O\+C\+K\+\_\+\+L\+O\+C\+A\+L}}
+\index{R\+G\+\_\+\+B\+L\+O\+C\+K\+\_\+\+L\+O\+C\+A\+L@{R\+G\+\_\+\+B\+L\+O\+C\+K\+\_\+\+L\+O\+C\+A\+L}!route.\+h@{route.\+h}}
+\subsubsection[{R\+G\+\_\+\+B\+L\+O\+C\+K\+\_\+\+L\+O\+C\+A\+L}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+G\+\_\+\+B\+L\+O\+C\+K\+\_\+\+L\+O\+C\+A\+L~(1$<$$<$7)}\label{route_8h_abf48c29d0a63c77fb5c301ba0c026aa3}
+\hypertarget{route_8h_a38b7b72d5db2758146b4b2bf79c5b2ea}{}\index{route.\+h@{route.\+h}!R\+G\+\_\+\+B\+Y\+P\+A\+S\+S\+\_\+\+D\+H\+C\+P@{R\+G\+\_\+\+B\+Y\+P\+A\+S\+S\+\_\+\+D\+H\+C\+P}}
+\index{R\+G\+\_\+\+B\+Y\+P\+A\+S\+S\+\_\+\+D\+H\+C\+P@{R\+G\+\_\+\+B\+Y\+P\+A\+S\+S\+\_\+\+D\+H\+C\+P}!route.\+h@{route.\+h}}
+\subsubsection[{R\+G\+\_\+\+B\+Y\+P\+A\+S\+S\+\_\+\+D\+H\+C\+P}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+G\+\_\+\+B\+Y\+P\+A\+S\+S\+\_\+\+D\+H\+C\+P~(1$<$$<$3)}\label{route_8h_a38b7b72d5db2758146b4b2bf79c5b2ea}
+\hypertarget{route_8h_aaf452154224e0fb66029194222fe24b8}{}\index{route.\+h@{route.\+h}!R\+G\+\_\+\+B\+Y\+P\+A\+S\+S\+\_\+\+D\+N\+S@{R\+G\+\_\+\+B\+Y\+P\+A\+S\+S\+\_\+\+D\+N\+S}}
+\index{R\+G\+\_\+\+B\+Y\+P\+A\+S\+S\+\_\+\+D\+N\+S@{R\+G\+\_\+\+B\+Y\+P\+A\+S\+S\+\_\+\+D\+N\+S}!route.\+h@{route.\+h}}
+\subsubsection[{R\+G\+\_\+\+B\+Y\+P\+A\+S\+S\+\_\+\+D\+N\+S}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+G\+\_\+\+B\+Y\+P\+A\+S\+S\+\_\+\+D\+N\+S~(1$<$$<$4)}\label{route_8h_aaf452154224e0fb66029194222fe24b8}
+\hypertarget{route_8h_aa201f4b871f152e554868553912929f3}{}\index{route.\+h@{route.\+h}!R\+G\+\_\+\+D\+E\+F1@{R\+G\+\_\+\+D\+E\+F1}}
+\index{R\+G\+\_\+\+D\+E\+F1@{R\+G\+\_\+\+D\+E\+F1}!route.\+h@{route.\+h}}
+\subsubsection[{R\+G\+\_\+\+D\+E\+F1}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+G\+\_\+\+D\+E\+F1~(1$<$$<$2)}\label{route_8h_aa201f4b871f152e554868553912929f3}
+\hypertarget{route_8h_aaf6603225a414ae4042dc51852dbf377}{}\index{route.\+h@{route.\+h}!R\+G\+\_\+\+E\+N\+A\+B\+L\+E@{R\+G\+\_\+\+E\+N\+A\+B\+L\+E}}
+\index{R\+G\+\_\+\+E\+N\+A\+B\+L\+E@{R\+G\+\_\+\+E\+N\+A\+B\+L\+E}!route.\+h@{route.\+h}}
+\subsubsection[{R\+G\+\_\+\+E\+N\+A\+B\+L\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+G\+\_\+\+E\+N\+A\+B\+L\+E~(1$<$$<$0)}\label{route_8h_aaf6603225a414ae4042dc51852dbf377}
+\hypertarget{route_8h_a0680b76cbee641d003d3634fffa17fa0}{}\index{route.\+h@{route.\+h}!R\+G\+\_\+\+L\+O\+C\+A\+L@{R\+G\+\_\+\+L\+O\+C\+A\+L}}
+\index{R\+G\+\_\+\+L\+O\+C\+A\+L@{R\+G\+\_\+\+L\+O\+C\+A\+L}!route.\+h@{route.\+h}}
+\subsubsection[{R\+G\+\_\+\+L\+O\+C\+A\+L}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+G\+\_\+\+L\+O\+C\+A\+L~(1$<$$<$1)}\label{route_8h_a0680b76cbee641d003d3634fffa17fa0}
+\hypertarget{route_8h_ab07d6bb8e6ac70ec4345c4790b2f7945}{}\index{route.\+h@{route.\+h}!R\+G\+\_\+\+R\+E\+R\+O\+U\+T\+E\+\_\+\+G\+W@{R\+G\+\_\+\+R\+E\+R\+O\+U\+T\+E\+\_\+\+G\+W}}
+\index{R\+G\+\_\+\+R\+E\+R\+O\+U\+T\+E\+\_\+\+G\+W@{R\+G\+\_\+\+R\+E\+R\+O\+U\+T\+E\+\_\+\+G\+W}!route.\+h@{route.\+h}}
+\subsubsection[{R\+G\+\_\+\+R\+E\+R\+O\+U\+T\+E\+\_\+\+G\+W}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+G\+\_\+\+R\+E\+R\+O\+U\+T\+E\+\_\+\+G\+W~(1$<$$<$5)}\label{route_8h_ab07d6bb8e6ac70ec4345c4790b2f7945}
+\hypertarget{route_8h_a4616ff947eb600c95e2c725b418dd23d}{}\index{route.\+h@{route.\+h}!R\+G\+I\+\_\+\+A\+D\+D\+R\+\_\+\+D\+E\+F\+I\+N\+E\+D@{R\+G\+I\+\_\+\+A\+D\+D\+R\+\_\+\+D\+E\+F\+I\+N\+E\+D}}
+\index{R\+G\+I\+\_\+\+A\+D\+D\+R\+\_\+\+D\+E\+F\+I\+N\+E\+D@{R\+G\+I\+\_\+\+A\+D\+D\+R\+\_\+\+D\+E\+F\+I\+N\+E\+D}!route.\+h@{route.\+h}}
+\subsubsection[{R\+G\+I\+\_\+\+A\+D\+D\+R\+\_\+\+D\+E\+F\+I\+N\+E\+D}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+G\+I\+\_\+\+A\+D\+D\+R\+\_\+\+D\+E\+F\+I\+N\+E\+D~(1$<$$<$0)  /$\ast$ set if gateway.\+addr defined $\ast$/}\label{route_8h_a4616ff947eb600c95e2c725b418dd23d}
+\hypertarget{route_8h_a4e4abd1b059ea4deb4dbff9bf9a7a789}{}\index{route.\+h@{route.\+h}!R\+G\+I\+\_\+\+H\+W\+A\+D\+D\+R\+\_\+\+D\+E\+F\+I\+N\+E\+D@{R\+G\+I\+\_\+\+H\+W\+A\+D\+D\+R\+\_\+\+D\+E\+F\+I\+N\+E\+D}}
+\index{R\+G\+I\+\_\+\+H\+W\+A\+D\+D\+R\+\_\+\+D\+E\+F\+I\+N\+E\+D@{R\+G\+I\+\_\+\+H\+W\+A\+D\+D\+R\+\_\+\+D\+E\+F\+I\+N\+E\+D}!route.\+h@{route.\+h}}
+\subsubsection[{R\+G\+I\+\_\+\+H\+W\+A\+D\+D\+R\+\_\+\+D\+E\+F\+I\+N\+E\+D}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+G\+I\+\_\+\+H\+W\+A\+D\+D\+R\+\_\+\+D\+E\+F\+I\+N\+E\+D~(1$<$$<$2)  /$\ast$ set if hwaddr is defined $\ast$/}\label{route_8h_a4e4abd1b059ea4deb4dbff9bf9a7a789}
+\hypertarget{route_8h_a662a7a4ea7055e2d6157ed3ace2d4141}{}\index{route.\+h@{route.\+h}!R\+G\+I\+\_\+\+I\+F\+A\+C\+E\+\_\+\+D\+E\+F\+I\+N\+E\+D@{R\+G\+I\+\_\+\+I\+F\+A\+C\+E\+\_\+\+D\+E\+F\+I\+N\+E\+D}}
+\index{R\+G\+I\+\_\+\+I\+F\+A\+C\+E\+\_\+\+D\+E\+F\+I\+N\+E\+D@{R\+G\+I\+\_\+\+I\+F\+A\+C\+E\+\_\+\+D\+E\+F\+I\+N\+E\+D}!route.\+h@{route.\+h}}
+\subsubsection[{R\+G\+I\+\_\+\+I\+F\+A\+C\+E\+\_\+\+D\+E\+F\+I\+N\+E\+D}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+G\+I\+\_\+\+I\+F\+A\+C\+E\+\_\+\+D\+E\+F\+I\+N\+E\+D~(1$<$$<$3)  /$\ast$ set if iface is defined $\ast$/}\label{route_8h_a662a7a4ea7055e2d6157ed3ace2d4141}
+\hypertarget{route_8h_aba3fd1599b860046600710d7b1f6f82b}{}\index{route.\+h@{route.\+h}!R\+G\+I\+\_\+\+N\+\_\+\+A\+D\+D\+R\+E\+S\+S\+E\+S@{R\+G\+I\+\_\+\+N\+\_\+\+A\+D\+D\+R\+E\+S\+S\+E\+S}}
+\index{R\+G\+I\+\_\+\+N\+\_\+\+A\+D\+D\+R\+E\+S\+S\+E\+S@{R\+G\+I\+\_\+\+N\+\_\+\+A\+D\+D\+R\+E\+S\+S\+E\+S}!route.\+h@{route.\+h}}
+\subsubsection[{R\+G\+I\+\_\+\+N\+\_\+\+A\+D\+D\+R\+E\+S\+S\+E\+S}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+G\+I\+\_\+\+N\+\_\+\+A\+D\+D\+R\+E\+S\+S\+E\+S~8}\label{route_8h_aba3fd1599b860046600710d7b1f6f82b}
+\hypertarget{route_8h_aba3fd1599b860046600710d7b1f6f82b}{}\index{route.\+h@{route.\+h}!R\+G\+I\+\_\+\+N\+\_\+\+A\+D\+D\+R\+E\+S\+S\+E\+S@{R\+G\+I\+\_\+\+N\+\_\+\+A\+D\+D\+R\+E\+S\+S\+E\+S}}
+\index{R\+G\+I\+\_\+\+N\+\_\+\+A\+D\+D\+R\+E\+S\+S\+E\+S@{R\+G\+I\+\_\+\+N\+\_\+\+A\+D\+D\+R\+E\+S\+S\+E\+S}!route.\+h@{route.\+h}}
+\subsubsection[{R\+G\+I\+\_\+\+N\+\_\+\+A\+D\+D\+R\+E\+S\+S\+E\+S}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+G\+I\+\_\+\+N\+\_\+\+A\+D\+D\+R\+E\+S\+S\+E\+S~8}\label{route_8h_aba3fd1599b860046600710d7b1f6f82b}
+\hypertarget{route_8h_aecad0970615cbe7c7af3bbfbfc610c1e}{}\index{route.\+h@{route.\+h}!R\+G\+I\+\_\+\+N\+E\+T\+M\+A\+S\+K\+\_\+\+D\+E\+F\+I\+N\+E\+D@{R\+G\+I\+\_\+\+N\+E\+T\+M\+A\+S\+K\+\_\+\+D\+E\+F\+I\+N\+E\+D}}
+\index{R\+G\+I\+\_\+\+N\+E\+T\+M\+A\+S\+K\+\_\+\+D\+E\+F\+I\+N\+E\+D@{R\+G\+I\+\_\+\+N\+E\+T\+M\+A\+S\+K\+\_\+\+D\+E\+F\+I\+N\+E\+D}!route.\+h@{route.\+h}}
+\subsubsection[{R\+G\+I\+\_\+\+N\+E\+T\+M\+A\+S\+K\+\_\+\+D\+E\+F\+I\+N\+E\+D}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+G\+I\+\_\+\+N\+E\+T\+M\+A\+S\+K\+\_\+\+D\+E\+F\+I\+N\+E\+D~(1$<$$<$1)  /$\ast$ set if gateway.\+netmask defined $\ast$/}\label{route_8h_aecad0970615cbe7c7af3bbfbfc610c1e}
+\hypertarget{route_8h_a22eb61fa3f45fb6c6c9d51587c1d5c6c}{}\index{route.\+h@{route.\+h}!R\+G\+I\+\_\+\+O\+N\+\_\+\+L\+I\+N\+K@{R\+G\+I\+\_\+\+O\+N\+\_\+\+L\+I\+N\+K}}
+\index{R\+G\+I\+\_\+\+O\+N\+\_\+\+L\+I\+N\+K@{R\+G\+I\+\_\+\+O\+N\+\_\+\+L\+I\+N\+K}!route.\+h@{route.\+h}}
+\subsubsection[{R\+G\+I\+\_\+\+O\+N\+\_\+\+L\+I\+N\+K}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+G\+I\+\_\+\+O\+N\+\_\+\+L\+I\+N\+K~(1$<$$<$5)}\label{route_8h_a22eb61fa3f45fb6c6c9d51587c1d5c6c}
+\hypertarget{route_8h_a2678fca1413c68a10e9c3f3e3162f52d}{}\index{route.\+h@{route.\+h}!R\+G\+I\+\_\+\+O\+V\+E\+R\+F\+L\+O\+W@{R\+G\+I\+\_\+\+O\+V\+E\+R\+F\+L\+O\+W}}
+\index{R\+G\+I\+\_\+\+O\+V\+E\+R\+F\+L\+O\+W@{R\+G\+I\+\_\+\+O\+V\+E\+R\+F\+L\+O\+W}!route.\+h@{route.\+h}}
+\subsubsection[{R\+G\+I\+\_\+\+O\+V\+E\+R\+F\+L\+O\+W}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+G\+I\+\_\+\+O\+V\+E\+R\+F\+L\+O\+W~(1$<$$<$4)  /$\ast$ set if more interface addresses than will fit in addrs $\ast$/}\label{route_8h_a2678fca1413c68a10e9c3f3e3162f52d}
+\hypertarget{route_8h_a23fdde759fa57a7c6581c77e680b8aed}{}\index{route.\+h@{route.\+h}!R\+L\+\_\+\+D\+I\+D\+\_\+\+L\+O\+C\+A\+L@{R\+L\+\_\+\+D\+I\+D\+\_\+\+L\+O\+C\+A\+L}}
+\index{R\+L\+\_\+\+D\+I\+D\+\_\+\+L\+O\+C\+A\+L@{R\+L\+\_\+\+D\+I\+D\+\_\+\+L\+O\+C\+A\+L}!route.\+h@{route.\+h}}
+\subsubsection[{R\+L\+\_\+\+D\+I\+D\+\_\+\+L\+O\+C\+A\+L}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+L\+\_\+\+D\+I\+D\+\_\+\+L\+O\+C\+A\+L~(1$<$$<$1)}\label{route_8h_a23fdde759fa57a7c6581c77e680b8aed}
+\hypertarget{route_8h_a31a26d459957f2bbe189ddb6b814e7de}{}\index{route.\+h@{route.\+h}!R\+L\+\_\+\+D\+I\+D\+\_\+\+R\+E\+D\+I\+R\+E\+C\+T\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+G\+A\+T\+E\+W\+A\+Y@{R\+L\+\_\+\+D\+I\+D\+\_\+\+R\+E\+D\+I\+R\+E\+C\+T\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+G\+A\+T\+E\+W\+A\+Y}}
+\index{R\+L\+\_\+\+D\+I\+D\+\_\+\+R\+E\+D\+I\+R\+E\+C\+T\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+G\+A\+T\+E\+W\+A\+Y@{R\+L\+\_\+\+D\+I\+D\+\_\+\+R\+E\+D\+I\+R\+E\+C\+T\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+G\+A\+T\+E\+W\+A\+Y}!route.\+h@{route.\+h}}
+\subsubsection[{R\+L\+\_\+\+D\+I\+D\+\_\+\+R\+E\+D\+I\+R\+E\+C\+T\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+G\+A\+T\+E\+W\+A\+Y}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+L\+\_\+\+D\+I\+D\+\_\+\+R\+E\+D\+I\+R\+E\+C\+T\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+G\+A\+T\+E\+W\+A\+Y~(1$<$$<$0)}\label{route_8h_a31a26d459957f2bbe189ddb6b814e7de}
+\hypertarget{route_8h_a46ea02531d883029dca6c02ca44d8379}{}\index{route.\+h@{route.\+h}!R\+L\+\_\+\+R\+O\+U\+T\+E\+S\+\_\+\+A\+D\+D\+E\+D@{R\+L\+\_\+\+R\+O\+U\+T\+E\+S\+\_\+\+A\+D\+D\+E\+D}}
+\index{R\+L\+\_\+\+R\+O\+U\+T\+E\+S\+\_\+\+A\+D\+D\+E\+D@{R\+L\+\_\+\+R\+O\+U\+T\+E\+S\+\_\+\+A\+D\+D\+E\+D}!route.\+h@{route.\+h}}
+\subsubsection[{R\+L\+\_\+\+R\+O\+U\+T\+E\+S\+\_\+\+A\+D\+D\+E\+D}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+L\+\_\+\+R\+O\+U\+T\+E\+S\+\_\+\+A\+D\+D\+E\+D~(1$<$$<$2)}\label{route_8h_a46ea02531d883029dca6c02ca44d8379}
+\hypertarget{route_8h_a9000c744e917bb923e87e92a93af57ce}{}\index{route.\+h@{route.\+h}!R\+O\+U\+T\+E\+\_\+\+D\+E\+L\+E\+T\+E\+\_\+\+F\+I\+R\+S\+T@{R\+O\+U\+T\+E\+\_\+\+D\+E\+L\+E\+T\+E\+\_\+\+F\+I\+R\+S\+T}}
+\index{R\+O\+U\+T\+E\+\_\+\+D\+E\+L\+E\+T\+E\+\_\+\+F\+I\+R\+S\+T@{R\+O\+U\+T\+E\+\_\+\+D\+E\+L\+E\+T\+E\+\_\+\+F\+I\+R\+S\+T}!route.\+h@{route.\+h}}
+\subsubsection[{R\+O\+U\+T\+E\+\_\+\+D\+E\+L\+E\+T\+E\+\_\+\+F\+I\+R\+S\+T}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+O\+U\+T\+E\+\_\+\+D\+E\+L\+E\+T\+E\+\_\+\+F\+I\+R\+S\+T~(1$<$$<$2)}\label{route_8h_a9000c744e917bb923e87e92a93af57ce}
+\hypertarget{route_8h_a32450e8710bc0b97c69ca29ee5f7a4d2}{}\index{route.\+h@{route.\+h}!R\+O\+U\+T\+E\+\_\+\+R\+E\+F\+\_\+\+G\+W@{R\+O\+U\+T\+E\+\_\+\+R\+E\+F\+\_\+\+G\+W}}
+\index{R\+O\+U\+T\+E\+\_\+\+R\+E\+F\+\_\+\+G\+W@{R\+O\+U\+T\+E\+\_\+\+R\+E\+F\+\_\+\+G\+W}!route.\+h@{route.\+h}}
+\subsubsection[{R\+O\+U\+T\+E\+\_\+\+R\+E\+F\+\_\+\+G\+W}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+O\+U\+T\+E\+\_\+\+R\+E\+F\+\_\+\+G\+W~(1$<$$<$3)}\label{route_8h_a32450e8710bc0b97c69ca29ee5f7a4d2}
+\hypertarget{route_8h_a6ec44fb3d21f1f44426b0c4893aeefeb}{}\index{route.\+h@{route.\+h}!R\+T\+\_\+\+A\+D\+D\+E\+D@{R\+T\+\_\+\+A\+D\+D\+E\+D}}
+\index{R\+T\+\_\+\+A\+D\+D\+E\+D@{R\+T\+\_\+\+A\+D\+D\+E\+D}!route.\+h@{route.\+h}}
+\subsubsection[{R\+T\+\_\+\+A\+D\+D\+E\+D}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+T\+\_\+\+A\+D\+D\+E\+D~(1$<$$<$1)}\label{route_8h_a6ec44fb3d21f1f44426b0c4893aeefeb}
+\hypertarget{route_8h_ad868f081f0334c1a64d0682283139425}{}\index{route.\+h@{route.\+h}!R\+T\+\_\+\+D\+E\+F\+I\+N\+E\+D@{R\+T\+\_\+\+D\+E\+F\+I\+N\+E\+D}}
+\index{R\+T\+\_\+\+D\+E\+F\+I\+N\+E\+D@{R\+T\+\_\+\+D\+E\+F\+I\+N\+E\+D}!route.\+h@{route.\+h}}
+\subsubsection[{R\+T\+\_\+\+D\+E\+F\+I\+N\+E\+D}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+T\+\_\+\+D\+E\+F\+I\+N\+E\+D~(1$<$$<$0)}\label{route_8h_ad868f081f0334c1a64d0682283139425}
+\hypertarget{route_8h_a7c86f9369806a6f86f30a7c3185d740a}{}\index{route.\+h@{route.\+h}!R\+T\+\_\+\+M\+E\+T\+R\+I\+C\+\_\+\+D\+E\+F\+I\+N\+E\+D@{R\+T\+\_\+\+M\+E\+T\+R\+I\+C\+\_\+\+D\+E\+F\+I\+N\+E\+D}}
+\index{R\+T\+\_\+\+M\+E\+T\+R\+I\+C\+\_\+\+D\+E\+F\+I\+N\+E\+D@{R\+T\+\_\+\+M\+E\+T\+R\+I\+C\+\_\+\+D\+E\+F\+I\+N\+E\+D}!route.\+h@{route.\+h}}
+\subsubsection[{R\+T\+\_\+\+M\+E\+T\+R\+I\+C\+\_\+\+D\+E\+F\+I\+N\+E\+D}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+T\+\_\+\+M\+E\+T\+R\+I\+C\+\_\+\+D\+E\+F\+I\+N\+E\+D~(1$<$$<$2)}\label{route_8h_a7c86f9369806a6f86f30a7c3185d740a}
+\hypertarget{route_8h_ae15320cc73bcc377470e35851bce1859}{}\index{route.\+h@{route.\+h}!R\+T\+S\+A\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+M\+E\+T\+R\+I\+C@{R\+T\+S\+A\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+M\+E\+T\+R\+I\+C}}
+\index{R\+T\+S\+A\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+M\+E\+T\+R\+I\+C@{R\+T\+S\+A\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+M\+E\+T\+R\+I\+C}!route.\+h@{route.\+h}}
+\subsubsection[{R\+T\+S\+A\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+M\+E\+T\+R\+I\+C}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+T\+S\+A\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+M\+E\+T\+R\+I\+C~(1$<$$<$2)}\label{route_8h_ae15320cc73bcc377470e35851bce1859}
+\hypertarget{route_8h_a3c6f4538ad738d955fbaccfa387d1f19}{}\index{route.\+h@{route.\+h}!R\+T\+S\+A\+\_\+\+R\+E\+M\+O\+T\+E\+\_\+\+E\+N\+D\+P\+O\+I\+N\+T@{R\+T\+S\+A\+\_\+\+R\+E\+M\+O\+T\+E\+\_\+\+E\+N\+D\+P\+O\+I\+N\+T}}
+\index{R\+T\+S\+A\+\_\+\+R\+E\+M\+O\+T\+E\+\_\+\+E\+N\+D\+P\+O\+I\+N\+T@{R\+T\+S\+A\+\_\+\+R\+E\+M\+O\+T\+E\+\_\+\+E\+N\+D\+P\+O\+I\+N\+T}!route.\+h@{route.\+h}}
+\subsubsection[{R\+T\+S\+A\+\_\+\+R\+E\+M\+O\+T\+E\+\_\+\+E\+N\+D\+P\+O\+I\+N\+T}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+T\+S\+A\+\_\+\+R\+E\+M\+O\+T\+E\+\_\+\+E\+N\+D\+P\+O\+I\+N\+T~(1$<$$<$0)}\label{route_8h_a3c6f4538ad738d955fbaccfa387d1f19}
+\hypertarget{route_8h_a619e3ae4569c93764390153f4962ad03}{}\index{route.\+h@{route.\+h}!R\+T\+S\+A\+\_\+\+R\+E\+M\+O\+T\+E\+\_\+\+H\+O\+S\+T@{R\+T\+S\+A\+\_\+\+R\+E\+M\+O\+T\+E\+\_\+\+H\+O\+S\+T}}
+\index{R\+T\+S\+A\+\_\+\+R\+E\+M\+O\+T\+E\+\_\+\+H\+O\+S\+T@{R\+T\+S\+A\+\_\+\+R\+E\+M\+O\+T\+E\+\_\+\+H\+O\+S\+T}!route.\+h@{route.\+h}}
+\subsubsection[{R\+T\+S\+A\+\_\+\+R\+E\+M\+O\+T\+E\+\_\+\+H\+O\+S\+T}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+T\+S\+A\+\_\+\+R\+E\+M\+O\+T\+E\+\_\+\+H\+O\+S\+T~(1$<$$<$1)}\label{route_8h_a619e3ae4569c93764390153f4962ad03}
+\hypertarget{route_8h_a1695a325737e53bf036255e960ccc373}{}\index{route.\+h@{route.\+h}!T\+L\+A\+\_\+\+L\+O\+C\+A\+L@{T\+L\+A\+\_\+\+L\+O\+C\+A\+L}}
+\index{T\+L\+A\+\_\+\+L\+O\+C\+A\+L@{T\+L\+A\+\_\+\+L\+O\+C\+A\+L}!route.\+h@{route.\+h}}
+\subsubsection[{T\+L\+A\+\_\+\+L\+O\+C\+A\+L}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\+L\+A\+\_\+\+L\+O\+C\+A\+L~2}\label{route_8h_a1695a325737e53bf036255e960ccc373}
+\hypertarget{route_8h_aca1b32164d778604d691cf6b465c0f1b}{}\index{route.\+h@{route.\+h}!T\+L\+A\+\_\+\+N\+O\+N\+L\+O\+C\+A\+L@{T\+L\+A\+\_\+\+N\+O\+N\+L\+O\+C\+A\+L}}
+\index{T\+L\+A\+\_\+\+N\+O\+N\+L\+O\+C\+A\+L@{T\+L\+A\+\_\+\+N\+O\+N\+L\+O\+C\+A\+L}!route.\+h@{route.\+h}}
+\subsubsection[{T\+L\+A\+\_\+\+N\+O\+N\+L\+O\+C\+A\+L}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\+L\+A\+\_\+\+N\+O\+N\+L\+O\+C\+A\+L~1}\label{route_8h_aca1b32164d778604d691cf6b465c0f1b}
+\hypertarget{route_8h_ab544db6d75e095a2b43e65908e6a3d23}{}\index{route.\+h@{route.\+h}!T\+L\+A\+\_\+\+N\+O\+T\+\_\+\+I\+M\+P\+L\+E\+M\+E\+N\+T\+E\+D@{T\+L\+A\+\_\+\+N\+O\+T\+\_\+\+I\+M\+P\+L\+E\+M\+E\+N\+T\+E\+D}}
+\index{T\+L\+A\+\_\+\+N\+O\+T\+\_\+\+I\+M\+P\+L\+E\+M\+E\+N\+T\+E\+D@{T\+L\+A\+\_\+\+N\+O\+T\+\_\+\+I\+M\+P\+L\+E\+M\+E\+N\+T\+E\+D}!route.\+h@{route.\+h}}
+\subsubsection[{T\+L\+A\+\_\+\+N\+O\+T\+\_\+\+I\+M\+P\+L\+E\+M\+E\+N\+T\+E\+D}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\+L\+A\+\_\+\+N\+O\+T\+\_\+\+I\+M\+P\+L\+E\+M\+E\+N\+T\+E\+D~0}\label{route_8h_ab544db6d75e095a2b43e65908e6a3d23}
+
+
+\subsection{Function Documentation}
+\hypertarget{route_8h_ae11dbad77ecc3178ae8834c55f0f063c}{}\index{route.\+h@{route.\+h}!add\+\_\+route@{add\+\_\+route}}
+\index{add\+\_\+route@{add\+\_\+route}!route.\+h@{route.\+h}}
+\subsubsection[{add\+\_\+route(struct route\+\_\+ipv4 $\ast$r, const struct tuntap $\ast$tt, unsigned int flags, const struct route\+\_\+gateway\+\_\+info $\ast$rgi, const struct env\+\_\+set $\ast$es)}]{\setlength{\rightskip}{0pt plus 5cm}void add\+\_\+route (
+\begin{DoxyParamCaption}
+\item[{struct {\bf route\+\_\+ipv4} $\ast$}]{r, }
+\item[{const struct {\bf tuntap} $\ast$}]{tt, }
+\item[{unsigned int}]{flags, }
+\item[{const struct {\bf route\+\_\+gateway\+\_\+info} $\ast$}]{rgi, }
+\item[{const struct {\bf env\+\_\+set} $\ast$}]{es}
+\end{DoxyParamCaption}
+)}\label{route_8h_ae11dbad77ecc3178ae8834c55f0f063c}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{route_8h_ae11dbad77ecc3178ae8834c55f0f063c_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=330pt]{route_8h_ae11dbad77ecc3178ae8834c55f0f063c_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{route_8h_a788bc024ca7fd587866a9928e235b572}{}\index{route.\+h@{route.\+h}!add\+\_\+route\+\_\+ipv6@{add\+\_\+route\+\_\+ipv6}}
+\index{add\+\_\+route\+\_\+ipv6@{add\+\_\+route\+\_\+ipv6}!route.\+h@{route.\+h}}
+\subsubsection[{add\+\_\+route\+\_\+ipv6(struct route\+\_\+ipv6 $\ast$r, const struct tuntap $\ast$tt, unsigned int flags, const struct env\+\_\+set $\ast$es)}]{\setlength{\rightskip}{0pt plus 5cm}void add\+\_\+route\+\_\+ipv6 (
+\begin{DoxyParamCaption}
+\item[{struct {\bf route\+\_\+ipv6} $\ast$}]{r, }
+\item[{const struct {\bf tuntap} $\ast$}]{tt, }
+\item[{unsigned int}]{flags, }
+\item[{const struct {\bf env\+\_\+set} $\ast$}]{es}
+\end{DoxyParamCaption}
+)}\label{route_8h_a788bc024ca7fd587866a9928e235b572}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{route_8h_a788bc024ca7fd587866a9928e235b572_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{route_8h_a788bc024ca7fd587866a9928e235b572_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{route_8h_a479e469a922c8a2ca4ddc596840ea9ba}{}\index{route.\+h@{route.\+h}!add\+\_\+route\+\_\+ipv6\+\_\+to\+\_\+option\+\_\+list@{add\+\_\+route\+\_\+ipv6\+\_\+to\+\_\+option\+\_\+list}}
+\index{add\+\_\+route\+\_\+ipv6\+\_\+to\+\_\+option\+\_\+list@{add\+\_\+route\+\_\+ipv6\+\_\+to\+\_\+option\+\_\+list}!route.\+h@{route.\+h}}
+\subsubsection[{add\+\_\+route\+\_\+ipv6\+\_\+to\+\_\+option\+\_\+list(struct route\+\_\+ipv6\+\_\+option\+\_\+list $\ast$l, const char $\ast$prefix, const char $\ast$gateway, const char $\ast$metric)}]{\setlength{\rightskip}{0pt plus 5cm}void add\+\_\+route\+\_\+ipv6\+\_\+to\+\_\+option\+\_\+list (
+\begin{DoxyParamCaption}
+\item[{struct {\bf route\+\_\+ipv6\+\_\+option\+\_\+list} $\ast$}]{l, }
+\item[{const char $\ast$}]{prefix, }
+\item[{const char $\ast$}]{gateway, }
+\item[{const char $\ast$}]{metric}
+\end{DoxyParamCaption}
+)}\label{route_8h_a479e469a922c8a2ca4ddc596840ea9ba}
+\hypertarget{route_8h_a721a04baee7054c8b6dfdcf520b69006}{}\index{route.\+h@{route.\+h}!add\+\_\+route\+\_\+to\+\_\+option\+\_\+list@{add\+\_\+route\+\_\+to\+\_\+option\+\_\+list}}
+\index{add\+\_\+route\+\_\+to\+\_\+option\+\_\+list@{add\+\_\+route\+\_\+to\+\_\+option\+\_\+list}!route.\+h@{route.\+h}}
+\subsubsection[{add\+\_\+route\+\_\+to\+\_\+option\+\_\+list(struct route\+\_\+option\+\_\+list $\ast$l, const char $\ast$network, const char $\ast$netmask, const char $\ast$gateway, const char $\ast$metric)}]{\setlength{\rightskip}{0pt plus 5cm}void add\+\_\+route\+\_\+to\+\_\+option\+\_\+list (
+\begin{DoxyParamCaption}
+\item[{struct {\bf route\+\_\+option\+\_\+list} $\ast$}]{l, }
+\item[{const char $\ast$}]{network, }
+\item[{const char $\ast$}]{netmask, }
+\item[{const char $\ast$}]{gateway, }
+\item[{const char $\ast$}]{metric}
+\end{DoxyParamCaption}
+)}\label{route_8h_a721a04baee7054c8b6dfdcf520b69006}
+\hypertarget{route_8h_a71b6566b675a91729b168da08d71d052}{}\index{route.\+h@{route.\+h}!add\+\_\+routes@{add\+\_\+routes}}
+\index{add\+\_\+routes@{add\+\_\+routes}!route.\+h@{route.\+h}}
+\subsubsection[{add\+\_\+routes(struct route\+\_\+list $\ast$rl, struct route\+\_\+ipv6\+\_\+list $\ast$rl6, const struct tuntap $\ast$tt, unsigned int flags, const struct env\+\_\+set $\ast$es)}]{\setlength{\rightskip}{0pt plus 5cm}void add\+\_\+routes (
+\begin{DoxyParamCaption}
+\item[{struct {\bf route\+\_\+list} $\ast$}]{rl, }
+\item[{struct {\bf route\+\_\+ipv6\+\_\+list} $\ast$}]{rl6, }
+\item[{const struct {\bf tuntap} $\ast$}]{tt, }
+\item[{unsigned int}]{flags, }
+\item[{const struct {\bf env\+\_\+set} $\ast$}]{es}
+\end{DoxyParamCaption}
+)}\label{route_8h_a71b6566b675a91729b168da08d71d052}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{route_8h_a71b6566b675a91729b168da08d71d052_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=235pt]{route_8h_a71b6566b675a91729b168da08d71d052_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{route_8h_acd595f85469351030cdc59b90a7be35b}{}\index{route.\+h@{route.\+h}!clone\+\_\+route\+\_\+ipv6\+\_\+option\+\_\+list@{clone\+\_\+route\+\_\+ipv6\+\_\+option\+\_\+list}}
+\index{clone\+\_\+route\+\_\+ipv6\+\_\+option\+\_\+list@{clone\+\_\+route\+\_\+ipv6\+\_\+option\+\_\+list}!route.\+h@{route.\+h}}
+\subsubsection[{clone\+\_\+route\+\_\+ipv6\+\_\+option\+\_\+list(const struct route\+\_\+ipv6\+\_\+option\+\_\+list $\ast$src, struct gc\+\_\+arena $\ast$a)}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf route\+\_\+ipv6\+\_\+option\+\_\+list}$\ast$ clone\+\_\+route\+\_\+ipv6\+\_\+option\+\_\+list (
+\begin{DoxyParamCaption}
+\item[{const struct {\bf route\+\_\+ipv6\+\_\+option\+\_\+list} $\ast$}]{src, }
+\item[{struct {\bf gc\+\_\+arena} $\ast$}]{a}
+\end{DoxyParamCaption}
+)}\label{route_8h_acd595f85469351030cdc59b90a7be35b}
+\hypertarget{route_8h_a1d8b08b67de03194a7b20da360050e7e}{}\index{route.\+h@{route.\+h}!clone\+\_\+route\+\_\+option\+\_\+list@{clone\+\_\+route\+\_\+option\+\_\+list}}
+\index{clone\+\_\+route\+\_\+option\+\_\+list@{clone\+\_\+route\+\_\+option\+\_\+list}!route.\+h@{route.\+h}}
+\subsubsection[{clone\+\_\+route\+\_\+option\+\_\+list(const struct route\+\_\+option\+\_\+list $\ast$src, struct gc\+\_\+arena $\ast$a)}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf route\+\_\+option\+\_\+list}$\ast$ clone\+\_\+route\+\_\+option\+\_\+list (
+\begin{DoxyParamCaption}
+\item[{const struct {\bf route\+\_\+option\+\_\+list} $\ast$}]{src, }
+\item[{struct {\bf gc\+\_\+arena} $\ast$}]{a}
+\end{DoxyParamCaption}
+)}\label{route_8h_a1d8b08b67de03194a7b20da360050e7e}
+\hypertarget{route_8h_a7edf89fc7ff02ef8464cbf288e600880}{}\index{route.\+h@{route.\+h}!copy\+\_\+route\+\_\+ipv6\+\_\+option\+\_\+list@{copy\+\_\+route\+\_\+ipv6\+\_\+option\+\_\+list}}
+\index{copy\+\_\+route\+\_\+ipv6\+\_\+option\+\_\+list@{copy\+\_\+route\+\_\+ipv6\+\_\+option\+\_\+list}!route.\+h@{route.\+h}}
+\subsubsection[{copy\+\_\+route\+\_\+ipv6\+\_\+option\+\_\+list(struct route\+\_\+ipv6\+\_\+option\+\_\+list $\ast$dest, const struct route\+\_\+ipv6\+\_\+option\+\_\+list $\ast$src, struct gc\+\_\+arena $\ast$a)}]{\setlength{\rightskip}{0pt plus 5cm}void copy\+\_\+route\+\_\+ipv6\+\_\+option\+\_\+list (
+\begin{DoxyParamCaption}
+\item[{struct {\bf route\+\_\+ipv6\+\_\+option\+\_\+list} $\ast$}]{dest, }
+\item[{const struct {\bf route\+\_\+ipv6\+\_\+option\+\_\+list} $\ast$}]{src, }
+\item[{struct {\bf gc\+\_\+arena} $\ast$}]{a}
+\end{DoxyParamCaption}
+)}\label{route_8h_a7edf89fc7ff02ef8464cbf288e600880}
+\hypertarget{route_8h_a7e06a29136366a0aa25c1cd4455ded9a}{}\index{route.\+h@{route.\+h}!copy\+\_\+route\+\_\+option\+\_\+list@{copy\+\_\+route\+\_\+option\+\_\+list}}
+\index{copy\+\_\+route\+\_\+option\+\_\+list@{copy\+\_\+route\+\_\+option\+\_\+list}!route.\+h@{route.\+h}}
+\subsubsection[{copy\+\_\+route\+\_\+option\+\_\+list(struct route\+\_\+option\+\_\+list $\ast$dest, const struct route\+\_\+option\+\_\+list $\ast$src, struct gc\+\_\+arena $\ast$a)}]{\setlength{\rightskip}{0pt plus 5cm}void copy\+\_\+route\+\_\+option\+\_\+list (
+\begin{DoxyParamCaption}
+\item[{struct {\bf route\+\_\+option\+\_\+list} $\ast$}]{dest, }
+\item[{const struct {\bf route\+\_\+option\+\_\+list} $\ast$}]{src, }
+\item[{struct {\bf gc\+\_\+arena} $\ast$}]{a}
+\end{DoxyParamCaption}
+)}\label{route_8h_a7e06a29136366a0aa25c1cd4455ded9a}
+\hypertarget{route_8h_ae2a7a92e855bc9fe76625e41a5bfaa4c}{}\index{route.\+h@{route.\+h}!delete\+\_\+route\+\_\+ipv6@{delete\+\_\+route\+\_\+ipv6}}
+\index{delete\+\_\+route\+\_\+ipv6@{delete\+\_\+route\+\_\+ipv6}!route.\+h@{route.\+h}}
+\subsubsection[{delete\+\_\+route\+\_\+ipv6(const struct route\+\_\+ipv6 $\ast$r, const struct tuntap $\ast$tt, unsigned int flags, const struct env\+\_\+set $\ast$es)}]{\setlength{\rightskip}{0pt plus 5cm}void delete\+\_\+route\+\_\+ipv6 (
+\begin{DoxyParamCaption}
+\item[{const struct {\bf route\+\_\+ipv6} $\ast$}]{r, }
+\item[{const struct {\bf tuntap} $\ast$}]{tt, }
+\item[{unsigned int}]{flags, }
+\item[{const struct {\bf env\+\_\+set} $\ast$}]{es}
+\end{DoxyParamCaption}
+)}\label{route_8h_ae2a7a92e855bc9fe76625e41a5bfaa4c}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{route_8h_ae2a7a92e855bc9fe76625e41a5bfaa4c_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{route_8h_ae2a7a92e855bc9fe76625e41a5bfaa4c_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{route_8h_ac4f4559cc8535a9f4b2209feabb021ac}{}\index{route.\+h@{route.\+h}!delete\+\_\+routes@{delete\+\_\+routes}}
+\index{delete\+\_\+routes@{delete\+\_\+routes}!route.\+h@{route.\+h}}
+\subsubsection[{delete\+\_\+routes(struct route\+\_\+list $\ast$rl, struct route\+\_\+ipv6\+\_\+list $\ast$rl6, const struct tuntap $\ast$tt, unsigned int flags, const struct env\+\_\+set $\ast$es)}]{\setlength{\rightskip}{0pt plus 5cm}void delete\+\_\+routes (
+\begin{DoxyParamCaption}
+\item[{struct {\bf route\+\_\+list} $\ast$}]{rl, }
+\item[{struct {\bf route\+\_\+ipv6\+\_\+list} $\ast$}]{rl6, }
+\item[{const struct {\bf tuntap} $\ast$}]{tt, }
+\item[{unsigned int}]{flags, }
+\item[{const struct {\bf env\+\_\+set} $\ast$}]{es}
+\end{DoxyParamCaption}
+)}\label{route_8h_ac4f4559cc8535a9f4b2209feabb021ac}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{route_8h_ac4f4559cc8535a9f4b2209feabb021ac_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{route_8h_aeacec9dc37cb7f73173d4fbf5645276e}{}\index{route.\+h@{route.\+h}!get\+\_\+default\+\_\+gateway@{get\+\_\+default\+\_\+gateway}}
+\index{get\+\_\+default\+\_\+gateway@{get\+\_\+default\+\_\+gateway}!route.\+h@{route.\+h}}
+\subsubsection[{get\+\_\+default\+\_\+gateway(struct route\+\_\+gateway\+\_\+info $\ast$rgi)}]{\setlength{\rightskip}{0pt plus 5cm}void get\+\_\+default\+\_\+gateway (
+\begin{DoxyParamCaption}
+\item[{struct {\bf route\+\_\+gateway\+\_\+info} $\ast$}]{rgi}
+\end{DoxyParamCaption}
+)}\label{route_8h_aeacec9dc37cb7f73173d4fbf5645276e}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{route_8h_aeacec9dc37cb7f73173d4fbf5645276e_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{route_8h_a6d5b5f9fa9ace3382e3e1e855d59068e}{}\index{route.\+h@{route.\+h}!get\+\_\+default\+\_\+gateway\+\_\+ipv6@{get\+\_\+default\+\_\+gateway\+\_\+ipv6}}
+\index{get\+\_\+default\+\_\+gateway\+\_\+ipv6@{get\+\_\+default\+\_\+gateway\+\_\+ipv6}!route.\+h@{route.\+h}}
+\subsubsection[{get\+\_\+default\+\_\+gateway\+\_\+ipv6(struct route\+\_\+ipv6\+\_\+gateway\+\_\+info $\ast$rgi, const struct in6\+\_\+addr $\ast$dest)}]{\setlength{\rightskip}{0pt plus 5cm}void get\+\_\+default\+\_\+gateway\+\_\+ipv6 (
+\begin{DoxyParamCaption}
+\item[{struct {\bf route\+\_\+ipv6\+\_\+gateway\+\_\+info} $\ast$}]{rgi, }
+\item[{const struct in6\+\_\+addr $\ast$}]{dest}
+\end{DoxyParamCaption}
+)}\label{route_8h_a6d5b5f9fa9ace3382e3e1e855d59068e}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=339pt]{route_8h_a6d5b5f9fa9ace3382e3e1e855d59068e_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{route_8h_a9621dd6fce823566c275477b02a36253}{}\index{route.\+h@{route.\+h}!init\+\_\+route\+\_\+ipv6\+\_\+list@{init\+\_\+route\+\_\+ipv6\+\_\+list}}
+\index{init\+\_\+route\+\_\+ipv6\+\_\+list@{init\+\_\+route\+\_\+ipv6\+\_\+list}!route.\+h@{route.\+h}}
+\subsubsection[{init\+\_\+route\+\_\+ipv6\+\_\+list(struct route\+\_\+ipv6\+\_\+list $\ast$rl6, const struct route\+\_\+ipv6\+\_\+option\+\_\+list $\ast$opt6, const char $\ast$remote\+\_\+endpoint, int default\+\_\+metric, const struct in6\+\_\+addr $\ast$remote\+\_\+host, struct env\+\_\+set $\ast$es)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} init\+\_\+route\+\_\+ipv6\+\_\+list (
+\begin{DoxyParamCaption}
+\item[{struct {\bf route\+\_\+ipv6\+\_\+list} $\ast$}]{rl6, }
+\item[{const struct {\bf route\+\_\+ipv6\+\_\+option\+\_\+list} $\ast$}]{opt6, }
+\item[{const char $\ast$}]{remote\+\_\+endpoint, }
+\item[{int}]{default\+\_\+metric, }
+\item[{const struct in6\+\_\+addr $\ast$}]{remote\+\_\+host, }
+\item[{struct {\bf env\+\_\+set} $\ast$}]{es}
+\end{DoxyParamCaption}
+)}\label{route_8h_a9621dd6fce823566c275477b02a36253}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{route_8h_a9621dd6fce823566c275477b02a36253_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{route_8h_a3f534585396ea6d2712366fe917f34e3}{}\index{route.\+h@{route.\+h}!init\+\_\+route\+\_\+list@{init\+\_\+route\+\_\+list}}
+\index{init\+\_\+route\+\_\+list@{init\+\_\+route\+\_\+list}!route.\+h@{route.\+h}}
+\subsubsection[{init\+\_\+route\+\_\+list(struct route\+\_\+list $\ast$rl, const struct route\+\_\+option\+\_\+list $\ast$opt, const char $\ast$remote\+\_\+endpoint, int default\+\_\+metric, in\+\_\+addr\+\_\+t remote\+\_\+host, struct env\+\_\+set $\ast$es)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} init\+\_\+route\+\_\+list (
+\begin{DoxyParamCaption}
+\item[{struct {\bf route\+\_\+list} $\ast$}]{rl, }
+\item[{const struct {\bf route\+\_\+option\+\_\+list} $\ast$}]{opt, }
+\item[{const char $\ast$}]{remote\+\_\+endpoint, }
+\item[{int}]{default\+\_\+metric, }
+\item[{in\+\_\+addr\+\_\+t}]{remote\+\_\+host, }
+\item[{struct {\bf env\+\_\+set} $\ast$}]{es}
+\end{DoxyParamCaption}
+)}\label{route_8h_a3f534585396ea6d2712366fe917f34e3}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{route_8h_a3f534585396ea6d2712366fe917f34e3_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{route_8h_a1589ff6cfd0dcf4f4906cf7bcdafdbf6}{}\index{route.\+h@{route.\+h}!is\+\_\+special\+\_\+addr@{is\+\_\+special\+\_\+addr}}
+\index{is\+\_\+special\+\_\+addr@{is\+\_\+special\+\_\+addr}!route.\+h@{route.\+h}}
+\subsubsection[{is\+\_\+special\+\_\+addr(const char $\ast$addr\+\_\+str)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} is\+\_\+special\+\_\+addr (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{addr\+\_\+str}
+\end{DoxyParamCaption}
+)}\label{route_8h_a1589ff6cfd0dcf4f4906cf7bcdafdbf6}
+\hypertarget{route_8h_ae3585fb74ec54db333f0d1a54ace6e2f}{}\index{route.\+h@{route.\+h}!netmask\+\_\+to\+\_\+netbits@{netmask\+\_\+to\+\_\+netbits}}
+\index{netmask\+\_\+to\+\_\+netbits@{netmask\+\_\+to\+\_\+netbits}!route.\+h@{route.\+h}}
+\subsubsection[{netmask\+\_\+to\+\_\+netbits(const in\+\_\+addr\+\_\+t network, const in\+\_\+addr\+\_\+t netmask, int $\ast$netbits)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} netmask\+\_\+to\+\_\+netbits (
+\begin{DoxyParamCaption}
+\item[{const in\+\_\+addr\+\_\+t}]{network, }
+\item[{const in\+\_\+addr\+\_\+t}]{netmask, }
+\item[{int $\ast$}]{netbits}
+\end{DoxyParamCaption}
+)}\label{route_8h_ae3585fb74ec54db333f0d1a54ace6e2f}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=320pt]{route_8h_ae3585fb74ec54db333f0d1a54ace6e2f_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{route_8h_a2aee01d5c10bd617615f031180ee7062}{}\index{route.\+h@{route.\+h}!netmask\+\_\+to\+\_\+netbits2@{netmask\+\_\+to\+\_\+netbits2}}
+\index{netmask\+\_\+to\+\_\+netbits2@{netmask\+\_\+to\+\_\+netbits2}!route.\+h@{route.\+h}}
+\subsubsection[{netmask\+\_\+to\+\_\+netbits2(in\+\_\+addr\+\_\+t netmask)}]{\setlength{\rightskip}{0pt plus 5cm}int netmask\+\_\+to\+\_\+netbits2 (
+\begin{DoxyParamCaption}
+\item[{in\+\_\+addr\+\_\+t}]{netmask}
+\end{DoxyParamCaption}
+)}\label{route_8h_a2aee01d5c10bd617615f031180ee7062}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{route_8h_a2aee01d5c10bd617615f031180ee7062_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{route_8h_ad10c49f8ef0061a64e6dc10180df2e9c}{}\index{route.\+h@{route.\+h}!new\+\_\+route\+\_\+ipv6\+\_\+option\+\_\+list@{new\+\_\+route\+\_\+ipv6\+\_\+option\+\_\+list}}
+\index{new\+\_\+route\+\_\+ipv6\+\_\+option\+\_\+list@{new\+\_\+route\+\_\+ipv6\+\_\+option\+\_\+list}!route.\+h@{route.\+h}}
+\subsubsection[{new\+\_\+route\+\_\+ipv6\+\_\+option\+\_\+list(struct gc\+\_\+arena $\ast$a)}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf route\+\_\+ipv6\+\_\+option\+\_\+list}$\ast$ new\+\_\+route\+\_\+ipv6\+\_\+option\+\_\+list (
+\begin{DoxyParamCaption}
+\item[{struct {\bf gc\+\_\+arena} $\ast$}]{a}
+\end{DoxyParamCaption}
+)}\label{route_8h_ad10c49f8ef0061a64e6dc10180df2e9c}
+\hypertarget{route_8h_a583dd31400d236f7cfd28d42c7aeb333}{}\index{route.\+h@{route.\+h}!new\+\_\+route\+\_\+option\+\_\+list@{new\+\_\+route\+\_\+option\+\_\+list}}
+\index{new\+\_\+route\+\_\+option\+\_\+list@{new\+\_\+route\+\_\+option\+\_\+list}!route.\+h@{route.\+h}}
+\subsubsection[{new\+\_\+route\+\_\+option\+\_\+list(struct gc\+\_\+arena $\ast$a)}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf route\+\_\+option\+\_\+list}$\ast$ new\+\_\+route\+\_\+option\+\_\+list (
+\begin{DoxyParamCaption}
+\item[{struct {\bf gc\+\_\+arena} $\ast$}]{a}
+\end{DoxyParamCaption}
+)}\label{route_8h_a583dd31400d236f7cfd28d42c7aeb333}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=310pt]{route_8h_a583dd31400d236f7cfd28d42c7aeb333_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{route_8h_a7d24ae5eacf30d776d7c7dd91b43428c}{}\index{route.\+h@{route.\+h}!print\+\_\+default\+\_\+gateway@{print\+\_\+default\+\_\+gateway}}
+\index{print\+\_\+default\+\_\+gateway@{print\+\_\+default\+\_\+gateway}!route.\+h@{route.\+h}}
+\subsubsection[{print\+\_\+default\+\_\+gateway(const int msglevel, const struct route\+\_\+gateway\+\_\+info $\ast$rgi, const struct route\+\_\+ipv6\+\_\+gateway\+\_\+info $\ast$rgi6)}]{\setlength{\rightskip}{0pt plus 5cm}void print\+\_\+default\+\_\+gateway (
+\begin{DoxyParamCaption}
+\item[{const int}]{msglevel, }
+\item[{const struct {\bf route\+\_\+gateway\+\_\+info} $\ast$}]{rgi, }
+\item[{const struct {\bf route\+\_\+ipv6\+\_\+gateway\+\_\+info} $\ast$}]{rgi6}
+\end{DoxyParamCaption}
+)}\label{route_8h_a7d24ae5eacf30d776d7c7dd91b43428c}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{route_8h_a7d24ae5eacf30d776d7c7dd91b43428c_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=322pt]{route_8h_a7d24ae5eacf30d776d7c7dd91b43428c_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{route_8h_a6bfb126e6133c1e2aa8d9fd121e1337f}{}\index{route.\+h@{route.\+h}!print\+\_\+route\+\_\+options@{print\+\_\+route\+\_\+options}}
+\index{print\+\_\+route\+\_\+options@{print\+\_\+route\+\_\+options}!route.\+h@{route.\+h}}
+\subsubsection[{print\+\_\+route\+\_\+options(const struct route\+\_\+option\+\_\+list $\ast$rol, int level)}]{\setlength{\rightskip}{0pt plus 5cm}void print\+\_\+route\+\_\+options (
+\begin{DoxyParamCaption}
+\item[{const struct {\bf route\+\_\+option\+\_\+list} $\ast$}]{rol, }
+\item[{int}]{level}
+\end{DoxyParamCaption}
+)}\label{route_8h_a6bfb126e6133c1e2aa8d9fd121e1337f}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=294pt]{route_8h_a6bfb126e6133c1e2aa8d9fd121e1337f_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{route_8h_adcafdf7f4c6d2a4eab7584fd466dbeac}{}\index{route.\+h@{route.\+h}!print\+\_\+routes@{print\+\_\+routes}}
+\index{print\+\_\+routes@{print\+\_\+routes}!route.\+h@{route.\+h}}
+\subsubsection[{print\+\_\+routes(const struct route\+\_\+list $\ast$rl, int level)}]{\setlength{\rightskip}{0pt plus 5cm}void print\+\_\+routes (
+\begin{DoxyParamCaption}
+\item[{const struct {\bf route\+\_\+list} $\ast$}]{rl, }
+\item[{int}]{level}
+\end{DoxyParamCaption}
+)}\label{route_8h_adcafdf7f4c6d2a4eab7584fd466dbeac}
+\hypertarget{route_8h_ad7168a54dce4dd829133c755667c0c03}{}\index{route.\+h@{route.\+h}!route\+\_\+ipv6\+\_\+clear\+\_\+host\+\_\+bits@{route\+\_\+ipv6\+\_\+clear\+\_\+host\+\_\+bits}}
+\index{route\+\_\+ipv6\+\_\+clear\+\_\+host\+\_\+bits@{route\+\_\+ipv6\+\_\+clear\+\_\+host\+\_\+bits}!route.\+h@{route.\+h}}
+\subsubsection[{route\+\_\+ipv6\+\_\+clear\+\_\+host\+\_\+bits(struct route\+\_\+ipv6 $\ast$r6)}]{\setlength{\rightskip}{0pt plus 5cm}void route\+\_\+ipv6\+\_\+clear\+\_\+host\+\_\+bits (
+\begin{DoxyParamCaption}
+\item[{struct {\bf route\+\_\+ipv6} $\ast$}]{r6}
+\end{DoxyParamCaption}
+)}\label{route_8h_ad7168a54dce4dd829133c755667c0c03}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{route_8h_ad7168a54dce4dd829133c755667c0c03_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{route_8h_a7306bd6298ac341522df4f697527e59b}{}\index{route.\+h@{route.\+h}!route\+\_\+list\+\_\+add\+\_\+vpn\+\_\+gateway@{route\+\_\+list\+\_\+add\+\_\+vpn\+\_\+gateway}}
+\index{route\+\_\+list\+\_\+add\+\_\+vpn\+\_\+gateway@{route\+\_\+list\+\_\+add\+\_\+vpn\+\_\+gateway}!route.\+h@{route.\+h}}
+\subsubsection[{route\+\_\+list\+\_\+add\+\_\+vpn\+\_\+gateway(struct route\+\_\+list $\ast$rl, struct env\+\_\+set $\ast$es, const in\+\_\+addr\+\_\+t addr)}]{\setlength{\rightskip}{0pt plus 5cm}void route\+\_\+list\+\_\+add\+\_\+vpn\+\_\+gateway (
+\begin{DoxyParamCaption}
+\item[{struct {\bf route\+\_\+list} $\ast$}]{rl, }
+\item[{struct {\bf env\+\_\+set} $\ast$}]{es, }
+\item[{const in\+\_\+addr\+\_\+t}]{addr}
+\end{DoxyParamCaption}
+)}\label{route_8h_a7306bd6298ac341522df4f697527e59b}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{route_8h_a7306bd6298ac341522df4f697527e59b_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{route_8h_aef4915408d31ea4a260b875e960ef3cb}{}\index{route.\+h@{route.\+h}!setenv\+\_\+routes@{setenv\+\_\+routes}}
+\index{setenv\+\_\+routes@{setenv\+\_\+routes}!route.\+h@{route.\+h}}
+\subsubsection[{setenv\+\_\+routes(struct env\+\_\+set $\ast$es, const struct route\+\_\+list $\ast$rl)}]{\setlength{\rightskip}{0pt plus 5cm}void setenv\+\_\+routes (
+\begin{DoxyParamCaption}
+\item[{struct {\bf env\+\_\+set} $\ast$}]{es, }
+\item[{const struct {\bf route\+\_\+list} $\ast$}]{rl}
+\end{DoxyParamCaption}
+)}\label{route_8h_aef4915408d31ea4a260b875e960ef3cb}
+\hypertarget{route_8h_a1da011e5f99e883c8cd3e400ccb7d619}{}\index{route.\+h@{route.\+h}!setenv\+\_\+routes\+\_\+ipv6@{setenv\+\_\+routes\+\_\+ipv6}}
+\index{setenv\+\_\+routes\+\_\+ipv6@{setenv\+\_\+routes\+\_\+ipv6}!route.\+h@{route.\+h}}
+\subsubsection[{setenv\+\_\+routes\+\_\+ipv6(struct env\+\_\+set $\ast$es, const struct route\+\_\+ipv6\+\_\+list $\ast$rl6)}]{\setlength{\rightskip}{0pt plus 5cm}void setenv\+\_\+routes\+\_\+ipv6 (
+\begin{DoxyParamCaption}
+\item[{struct {\bf env\+\_\+set} $\ast$}]{es, }
+\item[{const struct {\bf route\+\_\+ipv6\+\_\+list} $\ast$}]{rl6}
+\end{DoxyParamCaption}
+)}\label{route_8h_a1da011e5f99e883c8cd3e400ccb7d619}
+\hypertarget{route_8h_aacee3599cd97a0515b82dec0f872be2e}{}\index{route.\+h@{route.\+h}!test\+\_\+local\+\_\+addr@{test\+\_\+local\+\_\+addr}}
+\index{test\+\_\+local\+\_\+addr@{test\+\_\+local\+\_\+addr}!route.\+h@{route.\+h}}
+\subsubsection[{test\+\_\+local\+\_\+addr(const in\+\_\+addr\+\_\+t addr, const struct route\+\_\+gateway\+\_\+info $\ast$rgi)}]{\setlength{\rightskip}{0pt plus 5cm}int test\+\_\+local\+\_\+addr (
+\begin{DoxyParamCaption}
+\item[{const in\+\_\+addr\+\_\+t}]{addr, }
+\item[{const struct {\bf route\+\_\+gateway\+\_\+info} $\ast$}]{rgi}
+\end{DoxyParamCaption}
+)}\label{route_8h_aacee3599cd97a0515b82dec0f872be2e}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=273pt]{route_8h_aacee3599cd97a0515b82dec0f872be2e_icgraph}
+\end{center}
+\end{figure}
+
+

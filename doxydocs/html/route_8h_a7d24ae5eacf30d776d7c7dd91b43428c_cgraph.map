@@ -1,0 +1,11 @@
+<map id="print_default_gateway" name="print_default_gateway">
+<area shape="rect" id="node2" href="$buffer_8c.html#aa35bf7feb6a99bf5d364b2d4eba1195c" title="alloc_buf_gc" alt="" coords="355,80,449,107"/>
+<area shape="rect" id="node5" href="$buffer_8c.html#a3307f08331b1ce42168bafd2ecf7874a" title="buf_printf" alt="" coords="365,131,439,158"/>
+<area shape="rect" id="node6" href="$socket_8c.html#a2741d6007f1e5a670409883f4304da61" title="print_in_addr_t" alt="" coords="200,80,307,107"/>
+<area shape="rect" id="node7" href="$buffer_8c.html#a765c29b346cf601c5e0be2fd2c935a8d" title="format_hex_ex" alt="" coords="200,30,307,56"/>
+<area shape="rect" id="node9" href="$socket_8c.html#a9a911c5dde4c809f7cb3eef8e5918a8e" title="print_in6_addr" alt="" coords="202,182,305,208"/>
+<area shape="rect" id="node3" href="$buffer_8c.html#acc1a4ee83a591116d331e52baacf253d" title="buf_size_error" alt="" coords="497,55,600,82"/>
+<area shape="rect" id="node4" href="$buffer_8c.html#a67f7dec7f86e113dc0744584fd80b621" title="gc_malloc" alt="" coords="508,106,589,132"/>
+<area shape="rect" id="node8" href="$buffer_8c.html#a276febeb3ac5da2600b722b8dfb7ba0f" title="buf_catrunc" alt="" coords="357,30,447,56"/>
+<area shape="rect" id="node10" href="$compat_8h.html#a102fcb53ee2ffdbeceeec5b5ffa0cb1c" title="inet_ntop" alt="" coords="365,182,439,208"/>
+</map>

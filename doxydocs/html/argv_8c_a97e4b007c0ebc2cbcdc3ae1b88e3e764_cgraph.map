@@ -1,0 +1,7 @@
+<map id="argv_parse_cmd" name="argv_parse_cmd">
+<area shape="rect" id="node2" href="$argv_8c.html#a4b4a9a7a9aa1ccf301fa2e4522d75f1e" title="argv_reset" alt="" coords="173,5,254,32"/>
+<area shape="rect" id="node4" href="$options_8c.html#aa702a60af6acc222f99aa441e0b1c3c1" title="parse_line" alt="" coords="173,56,254,83"/>
+<area shape="rect" id="node6" href="$buffer_8c.html#a06e0220403278399596a7a1b6b601fca" title="string_alloc" alt="" coords="169,107,257,133"/>
+<area shape="rect" id="node3" href="$structargv.html#a3fa35902580e368d0b0c875af2a8e696" title="argv::argv" alt="" coords="308,5,384,32"/>
+<area shape="rect" id="node5" href="$buffer_8c.html#a67f7dec7f86e113dc0744584fd80b621" title="gc_malloc" alt="" coords="305,81,387,108"/>
+</map>

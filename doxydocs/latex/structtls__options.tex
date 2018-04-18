@@ -1,0 +1,292 @@
+\hypertarget{structtls__options}{}\section{tls\+\_\+options Struct Reference}
+\label{structtls__options}\index{tls\+\_\+options@{tls\+\_\+options}}
+
+
+{\ttfamily \#include $<$ssl\+\_\+common.\+h$>$}
+
+
+
+Collaboration diagram for tls\+\_\+options\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{structtls__options__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structtls__root__ctx}{tls\+\_\+root\+\_\+ctx} \hyperlink{structtls__options_aba252683ca7cc18c66e8f30762f61ac0}{ssl\+\_\+ctx}
+\item 
+struct \hyperlink{structkey__type}{key\+\_\+type} \hyperlink{structtls__options_accfc424cfd53ef0905546cffc6e462ce}{key\+\_\+type}
+\item 
+\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} \hyperlink{structtls__options_a304fb76d1a8c5c3f12f94d66baa51f06}{server}
+\item 
+\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} \hyperlink{structtls__options_ac267c87257baba5792b12cb984761ded}{xmit\+\_\+hold}
+\item 
+int \hyperlink{structtls__options_a3d6203ba03626f5d17edcad17f3dc9a2}{key\+\_\+method}
+\item 
+\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} \hyperlink{structtls__options_a85250d11ac83ee6a0877ba7a6d193b61}{replay}
+\item 
+\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} \hyperlink{structtls__options_aa165f8c2301d2dc25b72ef200020ccb5}{single\+\_\+session}
+\item 
+int \hyperlink{structtls__options_a077d6739e499c8488515daf582da6021}{mode}
+\item 
+\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} \hyperlink{structtls__options_add28a119d5a28d79dd0d45e6e0df3ab2}{pull}
+\item 
+int \hyperlink{structtls__options_ad0558f94c9b567224214fdee59844be6}{push\+\_\+peer\+\_\+info\+\_\+detail}
+\item 
+int \hyperlink{structtls__options_a8679088462548aabda1f3921460e3cfe}{transition\+\_\+window}
+\item 
+int \hyperlink{structtls__options_ae0e1be267ee100554d22b027d96191db}{handshake\+\_\+window}
+\item 
+\hyperlink{common_8h_a3d8621f960ada51a5ad9ff181730481a}{interval\+\_\+t} \hyperlink{structtls__options_a3cdc00d65d70c350182145ce7f183fcd}{packet\+\_\+timeout}
+\item 
+int \hyperlink{structtls__options_ae9ff132a3c7d846e0609b807c86d064a}{renegotiate\+\_\+bytes}
+\item 
+int \hyperlink{structtls__options_acffc29afc34414d015cee78e2b238ac6}{renegotiate\+\_\+packets}
+\item 
+\hyperlink{common_8h_a3d8621f960ada51a5ad9ff181730481a}{interval\+\_\+t} \hyperlink{structtls__options_a5884f8429da3da45931f71e4c8c2aca5}{renegotiate\+\_\+seconds}
+\item 
+const char $\ast$ \hyperlink{structtls__options_a7c8367192cd2005afa4971a0468b31bf}{verify\+\_\+command}
+\item 
+const char $\ast$ \hyperlink{structtls__options_a565a61d1fe9209be7fe0c41940a46126}{verify\+\_\+export\+\_\+cert}
+\item 
+int \hyperlink{structtls__options_a9dec6251d97917d104baa69ddf27a5b3}{verify\+\_\+x509\+\_\+type}
+\item 
+const char $\ast$ \hyperlink{structtls__options_aa2b4275c8e14021d83b15a7e17e939d3}{verify\+\_\+x509\+\_\+name}
+\item 
+const char $\ast$ \hyperlink{structtls__options_ae03dbf132f7b9a09b54c516361a143da}{crl\+\_\+file}
+\item 
+const char $\ast$ \hyperlink{structtls__options_a77aa1733303bcdf9d80eeac147483050}{crl\+\_\+file\+\_\+inline}
+\item 
+int \hyperlink{structtls__options_ad872e320bb7be0b04c535cec5f21195b}{ns\+\_\+cert\+\_\+type}
+\item 
+unsigned \hyperlink{structtls__options_a3a5c52df12ac9222ea08cec7753b22b5}{remote\+\_\+cert\+\_\+ku} \mbox{[}\hyperlink{options_8h_abc112140dccf35b37370da1791c3d8c3}{M\+A\+X\+\_\+\+P\+A\+R\+M\+S}\mbox{]}
+\item 
+const char $\ast$ \hyperlink{structtls__options_aefa62cdcb579f4a6bce35311ce9da7a6}{remote\+\_\+cert\+\_\+eku}
+\item 
+uint8\+\_\+t $\ast$ \hyperlink{structtls__options_ac131aba077a096b47e8b5c32f5da0878}{verify\+\_\+hash}
+\item 
+\hyperlink{crypto__backend_8h_a1bdec30a85e44df9ee6c6ad815bccb00}{hash\+\_\+algo\+\_\+type} \hyperlink{structtls__options_ada951f04756086139587ecfb2f407b52}{verify\+\_\+hash\+\_\+algo}
+\item 
+char $\ast$ \hyperlink{structtls__options_a647ce1910e6a305011105ef5209c4969}{x509\+\_\+username\+\_\+field}
+\item 
+\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} \hyperlink{structtls__options_a18cd1b8c38bba816f1265d4a2f271930}{pass\+\_\+config\+\_\+info}
+\item 
+unsigned int \hyperlink{structtls__options_a3a022b710a7ebee3df60d348c58cbd20}{crypto\+\_\+flags}
+\item 
+int \hyperlink{structtls__options_afe554073ee6f5d94c385d43990cc0a0f}{replay\+\_\+window}
+\item 
+int \hyperlink{structtls__options_a56206642b4f35177969bfbe3ffd86714}{replay\+\_\+time}
+\item 
+\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} \hyperlink{structtls__options_aacee137fea1151534baef5463687e283}{tcp\+\_\+mode}
+\item 
+const char $\ast$ \hyperlink{structtls__options_a961267fe8e3dedb83efee7c83114c641}{config\+\_\+ciphername}
+\item 
+const char $\ast$ \hyperlink{structtls__options_a2e7b14c6cad7d95b125cba3fc8362ade}{config\+\_\+authname}
+\item 
+\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} \hyperlink{structtls__options_ac1a39709cf07e719634a1a6903547414}{ncp\+\_\+enabled}
+\item 
+struct \hyperlink{structtls__wrap__ctx}{tls\+\_\+wrap\+\_\+ctx} \hyperlink{structtls__options_a339f31e34055b262d5fc4ff59ea08cf5}{tls\+\_\+wrap}
+\item 
+struct \hyperlink{structframe}{frame} \hyperlink{structtls__options_a5cd706b37fc6ef4c738058cbe63bad78}{frame}
+\item 
+const char $\ast$ \hyperlink{structtls__options_aeb2cd80ce9217819340aa766eaed9144}{auth\+\_\+user\+\_\+pass\+\_\+verify\+\_\+script}
+\item 
+\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} \hyperlink{structtls__options_aba4fa26785baef6cf8f3d2a059c21329}{auth\+\_\+user\+\_\+pass\+\_\+verify\+\_\+script\+\_\+via\+\_\+file}
+\item 
+const char $\ast$ \hyperlink{structtls__options_a5303f93b3bc97cc9244e09c2b5b6f67a}{tmp\+\_\+dir}
+\item 
+const char $\ast$ \hyperlink{structtls__options_a40a53a0bdb1e513c6c72f86b5d4d0878}{auth\+\_\+user\+\_\+pass\+\_\+file}
+\item 
+\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} \hyperlink{structtls__options_ac372c2391af017e204af37a3e80596b4}{auth\+\_\+token\+\_\+generate}
+\item 
+unsigned int \hyperlink{structtls__options_a29eb252102c01147ec581ed6195ef810}{auth\+\_\+token\+\_\+lifetime}
+\item 
+const char $\ast$ \hyperlink{structtls__options_a6c4a92bcce9d3725e64aab48866dff34}{client\+\_\+config\+\_\+dir\+\_\+exclusive}
+\item 
+struct \hyperlink{structenv__set}{env\+\_\+set} $\ast$ \hyperlink{structtls__options_a29e88c10288d7ee1207ed626117a4ea4}{es}
+\item 
+const struct \hyperlink{structplugin__list}{plugin\+\_\+list} $\ast$ \hyperlink{structtls__options_a65cc3bb31f01ba455cf02d05d9278990}{plugins}
+\item 
+unsigned int \hyperlink{structtls__options_ac316f151e832d8d58f7e4601a56d8ec2}{ssl\+\_\+flags}
+\item 
+const struct \hyperlink{structx509__track}{x509\+\_\+track} $\ast$ \hyperlink{structtls__options_aa89186ad01664f682492681829e7fffa}{x509\+\_\+track}
+\item 
+int \hyperlink{structtls__options_a2e82573d07cb52d69a675b425a2289b0}{gremlin}
+\item 
+const char $\ast$ \hyperlink{structtls__options_a82f79817c7b40b932af6074ab2ae6248}{ekm\+\_\+label}
+\item 
+size\+\_\+t \hyperlink{structtls__options_a37f7ed366f2247399784d478243d2ce1}{ekm\+\_\+label\+\_\+size}
+\item 
+size\+\_\+t \hyperlink{structtls__options_a85a0b7f779720f69cbb54dc8c66a1f28}{ekm\+\_\+size}
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{structtls__options_ac372c2391af017e204af37a3e80596b4}{}\index{tls\+\_\+options@{tls\+\_\+options}!auth\+\_\+token\+\_\+generate@{auth\+\_\+token\+\_\+generate}}
+\index{auth\+\_\+token\+\_\+generate@{auth\+\_\+token\+\_\+generate}!tls\+\_\+options@{tls\+\_\+options}}
+\subsubsection[{auth\+\_\+token\+\_\+generate}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} tls\+\_\+options\+::auth\+\_\+token\+\_\+generate}\label{structtls__options_ac372c2391af017e204af37a3e80596b4}
+Generate auth-\/tokens on successful user/pass auth, set via options-\/$>$auth\+\_\+token\+\_\+generate. \hypertarget{structtls__options_a29eb252102c01147ec581ed6195ef810}{}\index{tls\+\_\+options@{tls\+\_\+options}!auth\+\_\+token\+\_\+lifetime@{auth\+\_\+token\+\_\+lifetime}}
+\index{auth\+\_\+token\+\_\+lifetime@{auth\+\_\+token\+\_\+lifetime}!tls\+\_\+options@{tls\+\_\+options}}
+\subsubsection[{auth\+\_\+token\+\_\+lifetime}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int tls\+\_\+options\+::auth\+\_\+token\+\_\+lifetime}\label{structtls__options_a29eb252102c01147ec581ed6195ef810}
+\hypertarget{structtls__options_a40a53a0bdb1e513c6c72f86b5d4d0878}{}\index{tls\+\_\+options@{tls\+\_\+options}!auth\+\_\+user\+\_\+pass\+\_\+file@{auth\+\_\+user\+\_\+pass\+\_\+file}}
+\index{auth\+\_\+user\+\_\+pass\+\_\+file@{auth\+\_\+user\+\_\+pass\+\_\+file}!tls\+\_\+options@{tls\+\_\+options}}
+\subsubsection[{auth\+\_\+user\+\_\+pass\+\_\+file}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ tls\+\_\+options\+::auth\+\_\+user\+\_\+pass\+\_\+file}\label{structtls__options_a40a53a0bdb1e513c6c72f86b5d4d0878}
+\hypertarget{structtls__options_aeb2cd80ce9217819340aa766eaed9144}{}\index{tls\+\_\+options@{tls\+\_\+options}!auth\+\_\+user\+\_\+pass\+\_\+verify\+\_\+script@{auth\+\_\+user\+\_\+pass\+\_\+verify\+\_\+script}}
+\index{auth\+\_\+user\+\_\+pass\+\_\+verify\+\_\+script@{auth\+\_\+user\+\_\+pass\+\_\+verify\+\_\+script}!tls\+\_\+options@{tls\+\_\+options}}
+\subsubsection[{auth\+\_\+user\+\_\+pass\+\_\+verify\+\_\+script}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ tls\+\_\+options\+::auth\+\_\+user\+\_\+pass\+\_\+verify\+\_\+script}\label{structtls__options_aeb2cd80ce9217819340aa766eaed9144}
+\hypertarget{structtls__options_aba4fa26785baef6cf8f3d2a059c21329}{}\index{tls\+\_\+options@{tls\+\_\+options}!auth\+\_\+user\+\_\+pass\+\_\+verify\+\_\+script\+\_\+via\+\_\+file@{auth\+\_\+user\+\_\+pass\+\_\+verify\+\_\+script\+\_\+via\+\_\+file}}
+\index{auth\+\_\+user\+\_\+pass\+\_\+verify\+\_\+script\+\_\+via\+\_\+file@{auth\+\_\+user\+\_\+pass\+\_\+verify\+\_\+script\+\_\+via\+\_\+file}!tls\+\_\+options@{tls\+\_\+options}}
+\subsubsection[{auth\+\_\+user\+\_\+pass\+\_\+verify\+\_\+script\+\_\+via\+\_\+file}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} tls\+\_\+options\+::auth\+\_\+user\+\_\+pass\+\_\+verify\+\_\+script\+\_\+via\+\_\+file}\label{structtls__options_aba4fa26785baef6cf8f3d2a059c21329}
+\hypertarget{structtls__options_a6c4a92bcce9d3725e64aab48866dff34}{}\index{tls\+\_\+options@{tls\+\_\+options}!client\+\_\+config\+\_\+dir\+\_\+exclusive@{client\+\_\+config\+\_\+dir\+\_\+exclusive}}
+\index{client\+\_\+config\+\_\+dir\+\_\+exclusive@{client\+\_\+config\+\_\+dir\+\_\+exclusive}!tls\+\_\+options@{tls\+\_\+options}}
+\subsubsection[{client\+\_\+config\+\_\+dir\+\_\+exclusive}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ tls\+\_\+options\+::client\+\_\+config\+\_\+dir\+\_\+exclusive}\label{structtls__options_a6c4a92bcce9d3725e64aab48866dff34}
+\hypertarget{structtls__options_a2e7b14c6cad7d95b125cba3fc8362ade}{}\index{tls\+\_\+options@{tls\+\_\+options}!config\+\_\+authname@{config\+\_\+authname}}
+\index{config\+\_\+authname@{config\+\_\+authname}!tls\+\_\+options@{tls\+\_\+options}}
+\subsubsection[{config\+\_\+authname}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ tls\+\_\+options\+::config\+\_\+authname}\label{structtls__options_a2e7b14c6cad7d95b125cba3fc8362ade}
+\hypertarget{structtls__options_a961267fe8e3dedb83efee7c83114c641}{}\index{tls\+\_\+options@{tls\+\_\+options}!config\+\_\+ciphername@{config\+\_\+ciphername}}
+\index{config\+\_\+ciphername@{config\+\_\+ciphername}!tls\+\_\+options@{tls\+\_\+options}}
+\subsubsection[{config\+\_\+ciphername}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ tls\+\_\+options\+::config\+\_\+ciphername}\label{structtls__options_a961267fe8e3dedb83efee7c83114c641}
+\hypertarget{structtls__options_ae03dbf132f7b9a09b54c516361a143da}{}\index{tls\+\_\+options@{tls\+\_\+options}!crl\+\_\+file@{crl\+\_\+file}}
+\index{crl\+\_\+file@{crl\+\_\+file}!tls\+\_\+options@{tls\+\_\+options}}
+\subsubsection[{crl\+\_\+file}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ tls\+\_\+options\+::crl\+\_\+file}\label{structtls__options_ae03dbf132f7b9a09b54c516361a143da}
+\hypertarget{structtls__options_a77aa1733303bcdf9d80eeac147483050}{}\index{tls\+\_\+options@{tls\+\_\+options}!crl\+\_\+file\+\_\+inline@{crl\+\_\+file\+\_\+inline}}
+\index{crl\+\_\+file\+\_\+inline@{crl\+\_\+file\+\_\+inline}!tls\+\_\+options@{tls\+\_\+options}}
+\subsubsection[{crl\+\_\+file\+\_\+inline}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ tls\+\_\+options\+::crl\+\_\+file\+\_\+inline}\label{structtls__options_a77aa1733303bcdf9d80eeac147483050}
+\hypertarget{structtls__options_a3a022b710a7ebee3df60d348c58cbd20}{}\index{tls\+\_\+options@{tls\+\_\+options}!crypto\+\_\+flags@{crypto\+\_\+flags}}
+\index{crypto\+\_\+flags@{crypto\+\_\+flags}!tls\+\_\+options@{tls\+\_\+options}}
+\subsubsection[{crypto\+\_\+flags}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int tls\+\_\+options\+::crypto\+\_\+flags}\label{structtls__options_a3a022b710a7ebee3df60d348c58cbd20}
+\hypertarget{structtls__options_a82f79817c7b40b932af6074ab2ae6248}{}\index{tls\+\_\+options@{tls\+\_\+options}!ekm\+\_\+label@{ekm\+\_\+label}}
+\index{ekm\+\_\+label@{ekm\+\_\+label}!tls\+\_\+options@{tls\+\_\+options}}
+\subsubsection[{ekm\+\_\+label}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ tls\+\_\+options\+::ekm\+\_\+label}\label{structtls__options_a82f79817c7b40b932af6074ab2ae6248}
+\hypertarget{structtls__options_a37f7ed366f2247399784d478243d2ce1}{}\index{tls\+\_\+options@{tls\+\_\+options}!ekm\+\_\+label\+\_\+size@{ekm\+\_\+label\+\_\+size}}
+\index{ekm\+\_\+label\+\_\+size@{ekm\+\_\+label\+\_\+size}!tls\+\_\+options@{tls\+\_\+options}}
+\subsubsection[{ekm\+\_\+label\+\_\+size}]{\setlength{\rightskip}{0pt plus 5cm}size\+\_\+t tls\+\_\+options\+::ekm\+\_\+label\+\_\+size}\label{structtls__options_a37f7ed366f2247399784d478243d2ce1}
+\hypertarget{structtls__options_a85a0b7f779720f69cbb54dc8c66a1f28}{}\index{tls\+\_\+options@{tls\+\_\+options}!ekm\+\_\+size@{ekm\+\_\+size}}
+\index{ekm\+\_\+size@{ekm\+\_\+size}!tls\+\_\+options@{tls\+\_\+options}}
+\subsubsection[{ekm\+\_\+size}]{\setlength{\rightskip}{0pt plus 5cm}size\+\_\+t tls\+\_\+options\+::ekm\+\_\+size}\label{structtls__options_a85a0b7f779720f69cbb54dc8c66a1f28}
+\hypertarget{structtls__options_a29e88c10288d7ee1207ed626117a4ea4}{}\index{tls\+\_\+options@{tls\+\_\+options}!es@{es}}
+\index{es@{es}!tls\+\_\+options@{tls\+\_\+options}}
+\subsubsection[{es}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf env\+\_\+set}$\ast$ tls\+\_\+options\+::es}\label{structtls__options_a29e88c10288d7ee1207ed626117a4ea4}
+\hypertarget{structtls__options_a5cd706b37fc6ef4c738058cbe63bad78}{}\index{tls\+\_\+options@{tls\+\_\+options}!frame@{frame}}
+\index{frame@{frame}!tls\+\_\+options@{tls\+\_\+options}}
+\subsubsection[{frame}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf frame} tls\+\_\+options\+::frame}\label{structtls__options_a5cd706b37fc6ef4c738058cbe63bad78}
+\hypertarget{structtls__options_a2e82573d07cb52d69a675b425a2289b0}{}\index{tls\+\_\+options@{tls\+\_\+options}!gremlin@{gremlin}}
+\index{gremlin@{gremlin}!tls\+\_\+options@{tls\+\_\+options}}
+\subsubsection[{gremlin}]{\setlength{\rightskip}{0pt plus 5cm}int tls\+\_\+options\+::gremlin}\label{structtls__options_a2e82573d07cb52d69a675b425a2289b0}
+\hypertarget{structtls__options_ae0e1be267ee100554d22b027d96191db}{}\index{tls\+\_\+options@{tls\+\_\+options}!handshake\+\_\+window@{handshake\+\_\+window}}
+\index{handshake\+\_\+window@{handshake\+\_\+window}!tls\+\_\+options@{tls\+\_\+options}}
+\subsubsection[{handshake\+\_\+window}]{\setlength{\rightskip}{0pt plus 5cm}int tls\+\_\+options\+::handshake\+\_\+window}\label{structtls__options_ae0e1be267ee100554d22b027d96191db}
+\hypertarget{structtls__options_a3d6203ba03626f5d17edcad17f3dc9a2}{}\index{tls\+\_\+options@{tls\+\_\+options}!key\+\_\+method@{key\+\_\+method}}
+\index{key\+\_\+method@{key\+\_\+method}!tls\+\_\+options@{tls\+\_\+options}}
+\subsubsection[{key\+\_\+method}]{\setlength{\rightskip}{0pt plus 5cm}int tls\+\_\+options\+::key\+\_\+method}\label{structtls__options_a3d6203ba03626f5d17edcad17f3dc9a2}
+\hypertarget{structtls__options_accfc424cfd53ef0905546cffc6e462ce}{}\index{tls\+\_\+options@{tls\+\_\+options}!key\+\_\+type@{key\+\_\+type}}
+\index{key\+\_\+type@{key\+\_\+type}!tls\+\_\+options@{tls\+\_\+options}}
+\subsubsection[{key\+\_\+type}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf key\+\_\+type} tls\+\_\+options\+::key\+\_\+type}\label{structtls__options_accfc424cfd53ef0905546cffc6e462ce}
+\hypertarget{structtls__options_a077d6739e499c8488515daf582da6021}{}\index{tls\+\_\+options@{tls\+\_\+options}!mode@{mode}}
+\index{mode@{mode}!tls\+\_\+options@{tls\+\_\+options}}
+\subsubsection[{mode}]{\setlength{\rightskip}{0pt plus 5cm}int tls\+\_\+options\+::mode}\label{structtls__options_a077d6739e499c8488515daf582da6021}
+\hypertarget{structtls__options_ac1a39709cf07e719634a1a6903547414}{}\index{tls\+\_\+options@{tls\+\_\+options}!ncp\+\_\+enabled@{ncp\+\_\+enabled}}
+\index{ncp\+\_\+enabled@{ncp\+\_\+enabled}!tls\+\_\+options@{tls\+\_\+options}}
+\subsubsection[{ncp\+\_\+enabled}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} tls\+\_\+options\+::ncp\+\_\+enabled}\label{structtls__options_ac1a39709cf07e719634a1a6903547414}
+\hypertarget{structtls__options_ad872e320bb7be0b04c535cec5f21195b}{}\index{tls\+\_\+options@{tls\+\_\+options}!ns\+\_\+cert\+\_\+type@{ns\+\_\+cert\+\_\+type}}
+\index{ns\+\_\+cert\+\_\+type@{ns\+\_\+cert\+\_\+type}!tls\+\_\+options@{tls\+\_\+options}}
+\subsubsection[{ns\+\_\+cert\+\_\+type}]{\setlength{\rightskip}{0pt plus 5cm}int tls\+\_\+options\+::ns\+\_\+cert\+\_\+type}\label{structtls__options_ad872e320bb7be0b04c535cec5f21195b}
+\hypertarget{structtls__options_a3cdc00d65d70c350182145ce7f183fcd}{}\index{tls\+\_\+options@{tls\+\_\+options}!packet\+\_\+timeout@{packet\+\_\+timeout}}
+\index{packet\+\_\+timeout@{packet\+\_\+timeout}!tls\+\_\+options@{tls\+\_\+options}}
+\subsubsection[{packet\+\_\+timeout}]{\setlength{\rightskip}{0pt plus 5cm}{\bf interval\+\_\+t} tls\+\_\+options\+::packet\+\_\+timeout}\label{structtls__options_a3cdc00d65d70c350182145ce7f183fcd}
+\hypertarget{structtls__options_a18cd1b8c38bba816f1265d4a2f271930}{}\index{tls\+\_\+options@{tls\+\_\+options}!pass\+\_\+config\+\_\+info@{pass\+\_\+config\+\_\+info}}
+\index{pass\+\_\+config\+\_\+info@{pass\+\_\+config\+\_\+info}!tls\+\_\+options@{tls\+\_\+options}}
+\subsubsection[{pass\+\_\+config\+\_\+info}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} tls\+\_\+options\+::pass\+\_\+config\+\_\+info}\label{structtls__options_a18cd1b8c38bba816f1265d4a2f271930}
+\hypertarget{structtls__options_a65cc3bb31f01ba455cf02d05d9278990}{}\index{tls\+\_\+options@{tls\+\_\+options}!plugins@{plugins}}
+\index{plugins@{plugins}!tls\+\_\+options@{tls\+\_\+options}}
+\subsubsection[{plugins}]{\setlength{\rightskip}{0pt plus 5cm}const struct {\bf plugin\+\_\+list}$\ast$ tls\+\_\+options\+::plugins}\label{structtls__options_a65cc3bb31f01ba455cf02d05d9278990}
+\hypertarget{structtls__options_add28a119d5a28d79dd0d45e6e0df3ab2}{}\index{tls\+\_\+options@{tls\+\_\+options}!pull@{pull}}
+\index{pull@{pull}!tls\+\_\+options@{tls\+\_\+options}}
+\subsubsection[{pull}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} tls\+\_\+options\+::pull}\label{structtls__options_add28a119d5a28d79dd0d45e6e0df3ab2}
+\hypertarget{structtls__options_ad0558f94c9b567224214fdee59844be6}{}\index{tls\+\_\+options@{tls\+\_\+options}!push\+\_\+peer\+\_\+info\+\_\+detail@{push\+\_\+peer\+\_\+info\+\_\+detail}}
+\index{push\+\_\+peer\+\_\+info\+\_\+detail@{push\+\_\+peer\+\_\+info\+\_\+detail}!tls\+\_\+options@{tls\+\_\+options}}
+\subsubsection[{push\+\_\+peer\+\_\+info\+\_\+detail}]{\setlength{\rightskip}{0pt plus 5cm}int tls\+\_\+options\+::push\+\_\+peer\+\_\+info\+\_\+detail}\label{structtls__options_ad0558f94c9b567224214fdee59844be6}
+\hypertarget{structtls__options_aefa62cdcb579f4a6bce35311ce9da7a6}{}\index{tls\+\_\+options@{tls\+\_\+options}!remote\+\_\+cert\+\_\+eku@{remote\+\_\+cert\+\_\+eku}}
+\index{remote\+\_\+cert\+\_\+eku@{remote\+\_\+cert\+\_\+eku}!tls\+\_\+options@{tls\+\_\+options}}
+\subsubsection[{remote\+\_\+cert\+\_\+eku}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ tls\+\_\+options\+::remote\+\_\+cert\+\_\+eku}\label{structtls__options_aefa62cdcb579f4a6bce35311ce9da7a6}
+\hypertarget{structtls__options_a3a5c52df12ac9222ea08cec7753b22b5}{}\index{tls\+\_\+options@{tls\+\_\+options}!remote\+\_\+cert\+\_\+ku@{remote\+\_\+cert\+\_\+ku}}
+\index{remote\+\_\+cert\+\_\+ku@{remote\+\_\+cert\+\_\+ku}!tls\+\_\+options@{tls\+\_\+options}}
+\subsubsection[{remote\+\_\+cert\+\_\+ku}]{\setlength{\rightskip}{0pt plus 5cm}unsigned tls\+\_\+options\+::remote\+\_\+cert\+\_\+ku\mbox{[}{\bf M\+A\+X\+\_\+\+P\+A\+R\+M\+S}\mbox{]}}\label{structtls__options_a3a5c52df12ac9222ea08cec7753b22b5}
+\hypertarget{structtls__options_ae9ff132a3c7d846e0609b807c86d064a}{}\index{tls\+\_\+options@{tls\+\_\+options}!renegotiate\+\_\+bytes@{renegotiate\+\_\+bytes}}
+\index{renegotiate\+\_\+bytes@{renegotiate\+\_\+bytes}!tls\+\_\+options@{tls\+\_\+options}}
+\subsubsection[{renegotiate\+\_\+bytes}]{\setlength{\rightskip}{0pt plus 5cm}int tls\+\_\+options\+::renegotiate\+\_\+bytes}\label{structtls__options_ae9ff132a3c7d846e0609b807c86d064a}
+\hypertarget{structtls__options_acffc29afc34414d015cee78e2b238ac6}{}\index{tls\+\_\+options@{tls\+\_\+options}!renegotiate\+\_\+packets@{renegotiate\+\_\+packets}}
+\index{renegotiate\+\_\+packets@{renegotiate\+\_\+packets}!tls\+\_\+options@{tls\+\_\+options}}
+\subsubsection[{renegotiate\+\_\+packets}]{\setlength{\rightskip}{0pt plus 5cm}int tls\+\_\+options\+::renegotiate\+\_\+packets}\label{structtls__options_acffc29afc34414d015cee78e2b238ac6}
+\hypertarget{structtls__options_a5884f8429da3da45931f71e4c8c2aca5}{}\index{tls\+\_\+options@{tls\+\_\+options}!renegotiate\+\_\+seconds@{renegotiate\+\_\+seconds}}
+\index{renegotiate\+\_\+seconds@{renegotiate\+\_\+seconds}!tls\+\_\+options@{tls\+\_\+options}}
+\subsubsection[{renegotiate\+\_\+seconds}]{\setlength{\rightskip}{0pt plus 5cm}{\bf interval\+\_\+t} tls\+\_\+options\+::renegotiate\+\_\+seconds}\label{structtls__options_a5884f8429da3da45931f71e4c8c2aca5}
+\hypertarget{structtls__options_a85250d11ac83ee6a0877ba7a6d193b61}{}\index{tls\+\_\+options@{tls\+\_\+options}!replay@{replay}}
+\index{replay@{replay}!tls\+\_\+options@{tls\+\_\+options}}
+\subsubsection[{replay}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} tls\+\_\+options\+::replay}\label{structtls__options_a85250d11ac83ee6a0877ba7a6d193b61}
+\hypertarget{structtls__options_a56206642b4f35177969bfbe3ffd86714}{}\index{tls\+\_\+options@{tls\+\_\+options}!replay\+\_\+time@{replay\+\_\+time}}
+\index{replay\+\_\+time@{replay\+\_\+time}!tls\+\_\+options@{tls\+\_\+options}}
+\subsubsection[{replay\+\_\+time}]{\setlength{\rightskip}{0pt plus 5cm}int tls\+\_\+options\+::replay\+\_\+time}\label{structtls__options_a56206642b4f35177969bfbe3ffd86714}
+\hypertarget{structtls__options_afe554073ee6f5d94c385d43990cc0a0f}{}\index{tls\+\_\+options@{tls\+\_\+options}!replay\+\_\+window@{replay\+\_\+window}}
+\index{replay\+\_\+window@{replay\+\_\+window}!tls\+\_\+options@{tls\+\_\+options}}
+\subsubsection[{replay\+\_\+window}]{\setlength{\rightskip}{0pt plus 5cm}int tls\+\_\+options\+::replay\+\_\+window}\label{structtls__options_afe554073ee6f5d94c385d43990cc0a0f}
+\hypertarget{structtls__options_a304fb76d1a8c5c3f12f94d66baa51f06}{}\index{tls\+\_\+options@{tls\+\_\+options}!server@{server}}
+\index{server@{server}!tls\+\_\+options@{tls\+\_\+options}}
+\subsubsection[{server}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} tls\+\_\+options\+::server}\label{structtls__options_a304fb76d1a8c5c3f12f94d66baa51f06}
+\hypertarget{structtls__options_aa165f8c2301d2dc25b72ef200020ccb5}{}\index{tls\+\_\+options@{tls\+\_\+options}!single\+\_\+session@{single\+\_\+session}}
+\index{single\+\_\+session@{single\+\_\+session}!tls\+\_\+options@{tls\+\_\+options}}
+\subsubsection[{single\+\_\+session}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} tls\+\_\+options\+::single\+\_\+session}\label{structtls__options_aa165f8c2301d2dc25b72ef200020ccb5}
+\hypertarget{structtls__options_aba252683ca7cc18c66e8f30762f61ac0}{}\index{tls\+\_\+options@{tls\+\_\+options}!ssl\+\_\+ctx@{ssl\+\_\+ctx}}
+\index{ssl\+\_\+ctx@{ssl\+\_\+ctx}!tls\+\_\+options@{tls\+\_\+options}}
+\subsubsection[{ssl\+\_\+ctx}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf tls\+\_\+root\+\_\+ctx} tls\+\_\+options\+::ssl\+\_\+ctx}\label{structtls__options_aba252683ca7cc18c66e8f30762f61ac0}
+\hypertarget{structtls__options_ac316f151e832d8d58f7e4601a56d8ec2}{}\index{tls\+\_\+options@{tls\+\_\+options}!ssl\+\_\+flags@{ssl\+\_\+flags}}
+\index{ssl\+\_\+flags@{ssl\+\_\+flags}!tls\+\_\+options@{tls\+\_\+options}}
+\subsubsection[{ssl\+\_\+flags}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int tls\+\_\+options\+::ssl\+\_\+flags}\label{structtls__options_ac316f151e832d8d58f7e4601a56d8ec2}
+\hypertarget{structtls__options_aacee137fea1151534baef5463687e283}{}\index{tls\+\_\+options@{tls\+\_\+options}!tcp\+\_\+mode@{tcp\+\_\+mode}}
+\index{tcp\+\_\+mode@{tcp\+\_\+mode}!tls\+\_\+options@{tls\+\_\+options}}
+\subsubsection[{tcp\+\_\+mode}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} tls\+\_\+options\+::tcp\+\_\+mode}\label{structtls__options_aacee137fea1151534baef5463687e283}
+\hypertarget{structtls__options_a339f31e34055b262d5fc4ff59ea08cf5}{}\index{tls\+\_\+options@{tls\+\_\+options}!tls\+\_\+wrap@{tls\+\_\+wrap}}
+\index{tls\+\_\+wrap@{tls\+\_\+wrap}!tls\+\_\+options@{tls\+\_\+options}}
+\subsubsection[{tls\+\_\+wrap}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf tls\+\_\+wrap\+\_\+ctx} tls\+\_\+options\+::tls\+\_\+wrap}\label{structtls__options_a339f31e34055b262d5fc4ff59ea08cf5}
+T\+L\+S handshake wrapping state \hypertarget{structtls__options_a5303f93b3bc97cc9244e09c2b5b6f67a}{}\index{tls\+\_\+options@{tls\+\_\+options}!tmp\+\_\+dir@{tmp\+\_\+dir}}
+\index{tmp\+\_\+dir@{tmp\+\_\+dir}!tls\+\_\+options@{tls\+\_\+options}}
+\subsubsection[{tmp\+\_\+dir}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ tls\+\_\+options\+::tmp\+\_\+dir}\label{structtls__options_a5303f93b3bc97cc9244e09c2b5b6f67a}
+\hypertarget{structtls__options_a8679088462548aabda1f3921460e3cfe}{}\index{tls\+\_\+options@{tls\+\_\+options}!transition\+\_\+window@{transition\+\_\+window}}
+\index{transition\+\_\+window@{transition\+\_\+window}!tls\+\_\+options@{tls\+\_\+options}}
+\subsubsection[{transition\+\_\+window}]{\setlength{\rightskip}{0pt plus 5cm}int tls\+\_\+options\+::transition\+\_\+window}\label{structtls__options_a8679088462548aabda1f3921460e3cfe}
+\hypertarget{structtls__options_a7c8367192cd2005afa4971a0468b31bf}{}\index{tls\+\_\+options@{tls\+\_\+options}!verify\+\_\+command@{verify\+\_\+command}}
+\index{verify\+\_\+command@{verify\+\_\+command}!tls\+\_\+options@{tls\+\_\+options}}
+\subsubsection[{verify\+\_\+command}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ tls\+\_\+options\+::verify\+\_\+command}\label{structtls__options_a7c8367192cd2005afa4971a0468b31bf}
+\hypertarget{structtls__options_a565a61d1fe9209be7fe0c41940a46126}{}\index{tls\+\_\+options@{tls\+\_\+options}!verify\+\_\+export\+\_\+cert@{verify\+\_\+export\+\_\+cert}}
+\index{verify\+\_\+export\+\_\+cert@{verify\+\_\+export\+\_\+cert}!tls\+\_\+options@{tls\+\_\+options}}
+\subsubsection[{verify\+\_\+export\+\_\+cert}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ tls\+\_\+options\+::verify\+\_\+export\+\_\+cert}\label{structtls__options_a565a61d1fe9209be7fe0c41940a46126}
+\hypertarget{structtls__options_ac131aba077a096b47e8b5c32f5da0878}{}\index{tls\+\_\+options@{tls\+\_\+options}!verify\+\_\+hash@{verify\+\_\+hash}}
+\index{verify\+\_\+hash@{verify\+\_\+hash}!tls\+\_\+options@{tls\+\_\+options}}
+\subsubsection[{verify\+\_\+hash}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t$\ast$ tls\+\_\+options\+::verify\+\_\+hash}\label{structtls__options_ac131aba077a096b47e8b5c32f5da0878}
+\hypertarget{structtls__options_ada951f04756086139587ecfb2f407b52}{}\index{tls\+\_\+options@{tls\+\_\+options}!verify\+\_\+hash\+\_\+algo@{verify\+\_\+hash\+\_\+algo}}
+\index{verify\+\_\+hash\+\_\+algo@{verify\+\_\+hash\+\_\+algo}!tls\+\_\+options@{tls\+\_\+options}}
+\subsubsection[{verify\+\_\+hash\+\_\+algo}]{\setlength{\rightskip}{0pt plus 5cm}{\bf hash\+\_\+algo\+\_\+type} tls\+\_\+options\+::verify\+\_\+hash\+\_\+algo}\label{structtls__options_ada951f04756086139587ecfb2f407b52}
+\hypertarget{structtls__options_aa2b4275c8e14021d83b15a7e17e939d3}{}\index{tls\+\_\+options@{tls\+\_\+options}!verify\+\_\+x509\+\_\+name@{verify\+\_\+x509\+\_\+name}}
+\index{verify\+\_\+x509\+\_\+name@{verify\+\_\+x509\+\_\+name}!tls\+\_\+options@{tls\+\_\+options}}
+\subsubsection[{verify\+\_\+x509\+\_\+name}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ tls\+\_\+options\+::verify\+\_\+x509\+\_\+name}\label{structtls__options_aa2b4275c8e14021d83b15a7e17e939d3}
+\hypertarget{structtls__options_a9dec6251d97917d104baa69ddf27a5b3}{}\index{tls\+\_\+options@{tls\+\_\+options}!verify\+\_\+x509\+\_\+type@{verify\+\_\+x509\+\_\+type}}
+\index{verify\+\_\+x509\+\_\+type@{verify\+\_\+x509\+\_\+type}!tls\+\_\+options@{tls\+\_\+options}}
+\subsubsection[{verify\+\_\+x509\+\_\+type}]{\setlength{\rightskip}{0pt plus 5cm}int tls\+\_\+options\+::verify\+\_\+x509\+\_\+type}\label{structtls__options_a9dec6251d97917d104baa69ddf27a5b3}
+\hypertarget{structtls__options_aa89186ad01664f682492681829e7fffa}{}\index{tls\+\_\+options@{tls\+\_\+options}!x509\+\_\+track@{x509\+\_\+track}}
+\index{x509\+\_\+track@{x509\+\_\+track}!tls\+\_\+options@{tls\+\_\+options}}
+\subsubsection[{x509\+\_\+track}]{\setlength{\rightskip}{0pt plus 5cm}const struct {\bf x509\+\_\+track}$\ast$ tls\+\_\+options\+::x509\+\_\+track}\label{structtls__options_aa89186ad01664f682492681829e7fffa}
+\hypertarget{structtls__options_a647ce1910e6a305011105ef5209c4969}{}\index{tls\+\_\+options@{tls\+\_\+options}!x509\+\_\+username\+\_\+field@{x509\+\_\+username\+\_\+field}}
+\index{x509\+\_\+username\+\_\+field@{x509\+\_\+username\+\_\+field}!tls\+\_\+options@{tls\+\_\+options}}
+\subsubsection[{x509\+\_\+username\+\_\+field}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ tls\+\_\+options\+::x509\+\_\+username\+\_\+field}\label{structtls__options_a647ce1910e6a305011105ef5209c4969}
+\hypertarget{structtls__options_ac267c87257baba5792b12cb984761ded}{}\index{tls\+\_\+options@{tls\+\_\+options}!xmit\+\_\+hold@{xmit\+\_\+hold}}
+\index{xmit\+\_\+hold@{xmit\+\_\+hold}!tls\+\_\+options@{tls\+\_\+options}}
+\subsubsection[{xmit\+\_\+hold}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} tls\+\_\+options\+::xmit\+\_\+hold}\label{structtls__options_ac267c87257baba5792b12cb984761ded}
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/openvpn/\hyperlink{ssl__common_8h}{ssl\+\_\+common.\+h}\end{DoxyCompactItemize}

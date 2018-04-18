@@ -1,0 +1,33 @@
+<map id="crypto_read_openvpn_key" name="crypto_read_openvpn_key">
+<area shape="rect" id="node2" href="$crypto_8c.html#a3482d06fa45961722769bcad30ed3407" title="read_key_file" alt="" coords="243,107,341,133"/>
+<area shape="rect" id="node11" href="$crypto_8c.html#a30a5545a94f3f5be9a828a54fae87c60" title="verify_fix_key2" alt="" coords="239,272,345,299"/>
+<area shape="rect" id="node17" href="$crypto_8c.html#abe602273d3919da32e45249dc2af3bc5" title="key_direction_state_init" alt="" coords="407,360,565,387"/>
+<area shape="rect" id="node18" href="$crypto_8c.html#a740d1036dfdb6ed93199f8bce8bbbbe9" title="must_have_n_keys" alt="" coords="225,373,359,400"/>
+<area shape="rect" id="node19" href="$crypto_8c.html#ab4bddbfa55994baf73b823dd49eb9320" title="init_key_ctx_bi" alt="" coords="237,424,347,451"/>
+<area shape="rect" id="node3" href="$buffer_8c.html#aa35bf7feb6a99bf5d364b2d4eba1195c" title="alloc_buf_gc" alt="" coords="643,31,738,57"/>
+<area shape="rect" id="node6" href="$platform_8c.html#adb289c825e8632ae08564aaa193a608d" title="platform_open" alt="" coords="435,56,537,83"/>
+<area shape="rect" id="node7" href="$buffer_8c.html#a1bb5d44eee3543955d61ffbc671d2927" title="buf_clear" alt="" coords="449,107,523,133"/>
+<area shape="rect" id="node8" href="$buffer_8c.html#a765c29b346cf601c5e0be2fd2c935a8d" title="format_hex_ex" alt="" coords="433,157,539,184"/>
+<area shape="rect" id="node4" href="$buffer_8c.html#acc1a4ee83a591116d331e52baacf253d" title="buf_size_error" alt="" coords="816,5,919,32"/>
+<area shape="rect" id="node5" href="$buffer_8c.html#a67f7dec7f86e113dc0744584fd80b621" title="gc_malloc" alt="" coords="827,56,908,83"/>
+<area shape="rect" id="node9" href="$buffer_8c.html#a3307f08331b1ce42168bafd2ecf7874a" title="buf_printf" alt="" coords="653,107,728,133"/>
+<area shape="rect" id="node10" href="$buffer_8c.html#a276febeb3ac5da2600b722b8dfb7ba0f" title="buf_catrunc" alt="" coords="646,157,735,184"/>
+<area shape="rect" id="node12" href="$crypto_8c.html#aba43c7afa9dab7d3d1bb9443a0fba6d8" title="fixup_key" alt="" coords="447,233,525,260"/>
+<area shape="rect" id="node15" href="$crypto_8c.html#a87b883dc7b32de49358a397c4e5a56a6" title="check_key" alt="" coords="443,284,529,311"/>
+<area shape="rect" id="node13" href="$crypto__backend_8h.html#ad4d9be2aec664087528e31d2bc8c00ac" title="key_des_num_cblocks" alt="" coords="613,259,768,285"/>
+<area shape="rect" id="node14" href="$crypto__backend_8h.html#a70a3e94b6fec5fdd271096aaef9f6e95" title="key_des_fixup" alt="" coords="638,208,743,235"/>
+<area shape="rect" id="node16" href="$crypto__backend_8h.html#a5cf6dcb410ea887d845852b1a486dd6e" title="key_des_check" alt="" coords="634,309,747,336"/>
+<area shape="rect" id="node20" href="$buffer_8c.html#afd2a93a0940b1ea7e093d293a05e2927" title="openvpn_snprintf" alt="" coords="427,424,545,451"/>
+<area shape="rect" id="node21" href="$crypto_8c.html#ae629299ae8c5888623e26033c1784d31" title="init_key_ctx" alt="" coords="440,604,532,631"/>
+<area shape="rect" id="node22" href="$crypto__backend_8h.html#a0a0159024929ac0960f87a6fe5293913" title="cipher_ctx_new" alt="" coords="635,360,747,387"/>
+<area shape="rect" id="node23" href="$crypto__backend_8h.html#ae5e32ed624a8747a76f28ffb6db79f51" title="cipher_ctx_init" alt="" coords="637,411,744,437"/>
+<area shape="rect" id="node24" href="$crypto_8c.html#a4f2e28840274a7b1799adb09377326df" title="translate_cipher_name\l_to_openvpn" alt="" coords="614,462,767,503"/>
+<area shape="rect" id="node25" href="$crypto__backend_8h.html#aa7653846be359a2fc26cdf1677e668dd" title="cipher_kt_name" alt="" coords="633,528,748,555"/>
+<area shape="rect" id="node26" href="$crypto__backend_8h.html#a5b2de050c2b6a78320fbed2340b25c60" title="cipher_kt_block_size" alt="" coords="619,579,763,605"/>
+<area shape="rect" id="node27" href="$crypto__backend_8h.html#a902518439f09e88281986ebda8dd458b" title="cipher_kt_iv_size" alt="" coords="630,629,751,656"/>
+<area shape="rect" id="node28" href="$crypto__backend_8h.html#ab0252aec6b1a3c1e469e36cc8648892e" title="hmac_ctx_new" alt="" coords="636,680,745,707"/>
+<area shape="rect" id="node29" href="$crypto__backend_8h.html#a3a5dca2c6f7a8a820bc3470c460a8a68" title="hmac_ctx_init" alt="" coords="639,731,742,757"/>
+<area shape="rect" id="node30" href="$crypto__backend_8h.html#a002732eb1e19865cdb8f49a46af2cf69" title="md_kt_size" alt="" coords="646,781,735,808"/>
+<area shape="rect" id="node31" href="$crypto__backend_8h.html#af596da696fc79c7839c3abab26e935f2" title="md_kt_name" alt="" coords="642,832,739,859"/>
+<area shape="rect" id="node32" href="$crypto__backend_8h.html#a8625131329a13b2097ccacb82c83b3fe" title="hmac_ctx_size" alt="" coords="635,883,746,909"/>
+</map>

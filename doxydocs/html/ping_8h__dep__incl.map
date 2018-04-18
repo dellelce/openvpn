@@ -1,0 +1,14 @@
+<map id="src/openvpn/ping.h" name="src/openvpn/ping.h">
+<area shape="rect" id="node2" href="$forward_8h.html" title="src/openvpn/forward.h" alt="" coords="583,80,729,107"/>
+<area shape="rect" id="node5" href="$init_8c.html" title="src/openvpn/init.c" alt="" coords="724,229,847,256"/>
+<area shape="rect" id="node13" href="$ping_8c.html" title="src/openvpn/ping.c" alt="" coords="1223,80,1353,107"/>
+<area shape="rect" id="node3" href="$forward_8c.html" title="src/openvpn/forward.c" alt="" coords="5,155,152,181"/>
+<area shape="rect" id="node4" href="$occ_8h.html" title="src/openvpn/occ.h" alt="" coords="177,155,303,181"/>
+<area shape="rect" id="node8" href="$helper_8c.html" title="src/openvpn/helper.c" alt="" coords="327,155,467,181"/>
+<area shape="rect" id="node9" href="$openvpn_8c.html" title="src/openvpn/openvpn.c" alt="" coords="491,155,645,181"/>
+<area shape="rect" id="node10" href="$options_8c.html" title="src/openvpn/options.c" alt="" coords="669,155,817,181"/>
+<area shape="rect" id="node11" href="$proxy_8c.html" title="src/openvpn/proxy.c" alt="" coords="841,155,978,181"/>
+<area shape="rect" id="node12" href="$socket_8c.html" title="src/openvpn/socket.c" alt="" coords="1002,155,1147,181"/>
+<area shape="rect" id="node6" href="$occ_8c.html" title="src/openvpn/occ.c" alt="" coords="102,229,229,256"/>
+<area shape="rect" id="node7" href="$sig_8c.html" title="src/openvpn/sig.c" alt="" coords="253,229,376,256"/>
+</map>

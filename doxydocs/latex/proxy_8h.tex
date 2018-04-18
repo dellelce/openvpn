@@ -1,0 +1,205 @@
+\hypertarget{proxy_8h}{}\section{src/openvpn/proxy.h File Reference}
+\label{proxy_8h}\index{src/openvpn/proxy.\+h@{src/openvpn/proxy.\+h}}
+{\ttfamily \#include \char`\"{}buffer.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}misc.\+h\char`\"{}}\\*
+Include dependency graph for proxy.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{proxy_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{proxy_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structhttp__custom__header}{http\+\_\+custom\+\_\+header}
+\item 
+struct \hyperlink{structhttp__proxy__options}{http\+\_\+proxy\+\_\+options}
+\item 
+struct \hyperlink{structhttp__proxy__options__simple}{http\+\_\+proxy\+\_\+options\+\_\+simple}
+\item 
+struct \hyperlink{structhttp__proxy__info}{http\+\_\+proxy\+\_\+info}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{proxy_8h_aa9e869498afee5012ea3c2839c95af21}{H\+T\+T\+P\+\_\+\+A\+U\+T\+H\+\_\+\+N\+O\+N\+E}~0
+\item 
+\#define \hyperlink{proxy_8h_a474767abb708ccc138ff2be7d4e668ac}{H\+T\+T\+P\+\_\+\+A\+U\+T\+H\+\_\+\+B\+A\+S\+I\+C}~1
+\item 
+\#define \hyperlink{proxy_8h_afcbab87d5cd666dbb26d731232d18a81}{H\+T\+T\+P\+\_\+\+A\+U\+T\+H\+\_\+\+D\+I\+G\+E\+S\+T}~2
+\item 
+\#define \hyperlink{proxy_8h_a264cbdee7fafe94eeb1184e20d6e83d4}{H\+T\+T\+P\+\_\+\+A\+U\+T\+H\+\_\+\+N\+T\+L\+M}~3
+\item 
+\#define \hyperlink{proxy_8h_acf1764a10e177fed4293931d50259fda}{H\+T\+T\+P\+\_\+\+A\+U\+T\+H\+\_\+\+N\+T\+L\+M2}~4
+\item 
+\#define \hyperlink{proxy_8h_a30aaba30697e3458b0fe561068faf6a6}{H\+T\+T\+P\+\_\+\+A\+U\+T\+H\+\_\+\+N}~5 /$\ast$ number of H\+T\+T\+P\+\_\+\+A\+U\+T\+H methods $\ast$/
+\item 
+\#define \hyperlink{proxy_8h_a1cc6cc2b8aebc77dbf7c535a8af630ef}{M\+A\+X\+\_\+\+C\+U\+S\+T\+O\+M\+\_\+\+H\+T\+T\+P\+\_\+\+H\+E\+A\+D\+E\+R}~10
+\item 
+\#define \hyperlink{proxy_8h_ae5ff7d10d2764eb70f0a70fb8b7225de}{P\+A\+R\+\_\+\+N\+O}~0   /$\ast$ don\textquotesingle{}t support any auth retries $\ast$/
+\item 
+\#define \hyperlink{proxy_8h_afd3fed7388af2b44a47465369b992731}{P\+A\+R\+\_\+\+A\+L\+L}~1   /$\ast$ allow all proxy auth protocols $\ast$/
+\item 
+\#define \hyperlink{proxy_8h_a1c6ead53828182f53154be4dad1a9974}{P\+A\+R\+\_\+\+N\+C\+T}~2   /$\ast$ disable cleartext proxy auth protocols $\ast$/
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structhttp__proxy__options}{http\+\_\+proxy\+\_\+options} $\ast$ \hyperlink{proxy_8h_afe1f244314792f7cb0addf0d2a9e795f}{init\+\_\+http\+\_\+proxy\+\_\+options\+\_\+once} (struct \hyperlink{structhttp__proxy__options}{http\+\_\+proxy\+\_\+options} $\ast$$\ast$hpo, struct \hyperlink{structgc__arena}{gc\+\_\+arena} $\ast$gc)
+\item 
+struct \hyperlink{structhttp__proxy__info}{http\+\_\+proxy\+\_\+info} $\ast$ \hyperlink{proxy_8h_ae8c759f7897aee01596bafa797058945}{http\+\_\+proxy\+\_\+new} (const struct \hyperlink{structhttp__proxy__options}{http\+\_\+proxy\+\_\+options} $\ast$o)
+\item 
+void \hyperlink{proxy_8h_a567500691abe4a2cb2a4d2efcd09310e}{http\+\_\+proxy\+\_\+close} (struct \hyperlink{structhttp__proxy__info}{http\+\_\+proxy\+\_\+info} $\ast$hp)
+\item 
+\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} \hyperlink{proxy_8h_a4fd6cf4c17ae3d718e163b37f0e781df}{establish\+\_\+http\+\_\+proxy\+\_\+passthru} (struct \hyperlink{structhttp__proxy__info}{http\+\_\+proxy\+\_\+info} $\ast$p, \hyperlink{syshead_8h_a7433d79fe33816fe24b9c231ac75fc42}{socket\+\_\+descriptor\+\_\+t} sd, const char $\ast$host, const char $\ast$port, struct \hyperlink{structevent__timeout}{event\+\_\+timeout} $\ast$server\+\_\+poll\+\_\+timeout, struct \hyperlink{structbuffer}{buffer} $\ast$lookahead, volatile int $\ast$signal\+\_\+received)
+\item 
+uint8\+\_\+t $\ast$ \hyperlink{proxy_8h_aeae4af9b60061fd97fb39cd5fadc1e1f}{make\+\_\+base64\+\_\+string2} (const uint8\+\_\+t $\ast$str, int str\+\_\+len, struct \hyperlink{structgc__arena}{gc\+\_\+arena} $\ast$gc)
+\item 
+uint8\+\_\+t $\ast$ \hyperlink{proxy_8h_ad78714f3ad0e9ca7b81a9c94ae6cb0c5}{make\+\_\+base64\+\_\+string} (const uint8\+\_\+t $\ast$str, struct \hyperlink{structgc__arena}{gc\+\_\+arena} $\ast$gc)
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{proxy_8h_a474767abb708ccc138ff2be7d4e668ac}{}\index{proxy.\+h@{proxy.\+h}!H\+T\+T\+P\+\_\+\+A\+U\+T\+H\+\_\+\+B\+A\+S\+I\+C@{H\+T\+T\+P\+\_\+\+A\+U\+T\+H\+\_\+\+B\+A\+S\+I\+C}}
+\index{H\+T\+T\+P\+\_\+\+A\+U\+T\+H\+\_\+\+B\+A\+S\+I\+C@{H\+T\+T\+P\+\_\+\+A\+U\+T\+H\+\_\+\+B\+A\+S\+I\+C}!proxy.\+h@{proxy.\+h}}
+\subsubsection[{H\+T\+T\+P\+\_\+\+A\+U\+T\+H\+\_\+\+B\+A\+S\+I\+C}]{\setlength{\rightskip}{0pt plus 5cm}\#define H\+T\+T\+P\+\_\+\+A\+U\+T\+H\+\_\+\+B\+A\+S\+I\+C~1}\label{proxy_8h_a474767abb708ccc138ff2be7d4e668ac}
+\hypertarget{proxy_8h_afcbab87d5cd666dbb26d731232d18a81}{}\index{proxy.\+h@{proxy.\+h}!H\+T\+T\+P\+\_\+\+A\+U\+T\+H\+\_\+\+D\+I\+G\+E\+S\+T@{H\+T\+T\+P\+\_\+\+A\+U\+T\+H\+\_\+\+D\+I\+G\+E\+S\+T}}
+\index{H\+T\+T\+P\+\_\+\+A\+U\+T\+H\+\_\+\+D\+I\+G\+E\+S\+T@{H\+T\+T\+P\+\_\+\+A\+U\+T\+H\+\_\+\+D\+I\+G\+E\+S\+T}!proxy.\+h@{proxy.\+h}}
+\subsubsection[{H\+T\+T\+P\+\_\+\+A\+U\+T\+H\+\_\+\+D\+I\+G\+E\+S\+T}]{\setlength{\rightskip}{0pt plus 5cm}\#define H\+T\+T\+P\+\_\+\+A\+U\+T\+H\+\_\+\+D\+I\+G\+E\+S\+T~2}\label{proxy_8h_afcbab87d5cd666dbb26d731232d18a81}
+\hypertarget{proxy_8h_a30aaba30697e3458b0fe561068faf6a6}{}\index{proxy.\+h@{proxy.\+h}!H\+T\+T\+P\+\_\+\+A\+U\+T\+H\+\_\+\+N@{H\+T\+T\+P\+\_\+\+A\+U\+T\+H\+\_\+\+N}}
+\index{H\+T\+T\+P\+\_\+\+A\+U\+T\+H\+\_\+\+N@{H\+T\+T\+P\+\_\+\+A\+U\+T\+H\+\_\+\+N}!proxy.\+h@{proxy.\+h}}
+\subsubsection[{H\+T\+T\+P\+\_\+\+A\+U\+T\+H\+\_\+\+N}]{\setlength{\rightskip}{0pt plus 5cm}\#define H\+T\+T\+P\+\_\+\+A\+U\+T\+H\+\_\+\+N~5 /$\ast$ number of H\+T\+T\+P\+\_\+\+A\+U\+T\+H methods $\ast$/}\label{proxy_8h_a30aaba30697e3458b0fe561068faf6a6}
+\hypertarget{proxy_8h_aa9e869498afee5012ea3c2839c95af21}{}\index{proxy.\+h@{proxy.\+h}!H\+T\+T\+P\+\_\+\+A\+U\+T\+H\+\_\+\+N\+O\+N\+E@{H\+T\+T\+P\+\_\+\+A\+U\+T\+H\+\_\+\+N\+O\+N\+E}}
+\index{H\+T\+T\+P\+\_\+\+A\+U\+T\+H\+\_\+\+N\+O\+N\+E@{H\+T\+T\+P\+\_\+\+A\+U\+T\+H\+\_\+\+N\+O\+N\+E}!proxy.\+h@{proxy.\+h}}
+\subsubsection[{H\+T\+T\+P\+\_\+\+A\+U\+T\+H\+\_\+\+N\+O\+N\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define H\+T\+T\+P\+\_\+\+A\+U\+T\+H\+\_\+\+N\+O\+N\+E~0}\label{proxy_8h_aa9e869498afee5012ea3c2839c95af21}
+\hypertarget{proxy_8h_a264cbdee7fafe94eeb1184e20d6e83d4}{}\index{proxy.\+h@{proxy.\+h}!H\+T\+T\+P\+\_\+\+A\+U\+T\+H\+\_\+\+N\+T\+L\+M@{H\+T\+T\+P\+\_\+\+A\+U\+T\+H\+\_\+\+N\+T\+L\+M}}
+\index{H\+T\+T\+P\+\_\+\+A\+U\+T\+H\+\_\+\+N\+T\+L\+M@{H\+T\+T\+P\+\_\+\+A\+U\+T\+H\+\_\+\+N\+T\+L\+M}!proxy.\+h@{proxy.\+h}}
+\subsubsection[{H\+T\+T\+P\+\_\+\+A\+U\+T\+H\+\_\+\+N\+T\+L\+M}]{\setlength{\rightskip}{0pt plus 5cm}\#define H\+T\+T\+P\+\_\+\+A\+U\+T\+H\+\_\+\+N\+T\+L\+M~3}\label{proxy_8h_a264cbdee7fafe94eeb1184e20d6e83d4}
+\hypertarget{proxy_8h_acf1764a10e177fed4293931d50259fda}{}\index{proxy.\+h@{proxy.\+h}!H\+T\+T\+P\+\_\+\+A\+U\+T\+H\+\_\+\+N\+T\+L\+M2@{H\+T\+T\+P\+\_\+\+A\+U\+T\+H\+\_\+\+N\+T\+L\+M2}}
+\index{H\+T\+T\+P\+\_\+\+A\+U\+T\+H\+\_\+\+N\+T\+L\+M2@{H\+T\+T\+P\+\_\+\+A\+U\+T\+H\+\_\+\+N\+T\+L\+M2}!proxy.\+h@{proxy.\+h}}
+\subsubsection[{H\+T\+T\+P\+\_\+\+A\+U\+T\+H\+\_\+\+N\+T\+L\+M2}]{\setlength{\rightskip}{0pt plus 5cm}\#define H\+T\+T\+P\+\_\+\+A\+U\+T\+H\+\_\+\+N\+T\+L\+M2~4}\label{proxy_8h_acf1764a10e177fed4293931d50259fda}
+\hypertarget{proxy_8h_a1cc6cc2b8aebc77dbf7c535a8af630ef}{}\index{proxy.\+h@{proxy.\+h}!M\+A\+X\+\_\+\+C\+U\+S\+T\+O\+M\+\_\+\+H\+T\+T\+P\+\_\+\+H\+E\+A\+D\+E\+R@{M\+A\+X\+\_\+\+C\+U\+S\+T\+O\+M\+\_\+\+H\+T\+T\+P\+\_\+\+H\+E\+A\+D\+E\+R}}
+\index{M\+A\+X\+\_\+\+C\+U\+S\+T\+O\+M\+\_\+\+H\+T\+T\+P\+\_\+\+H\+E\+A\+D\+E\+R@{M\+A\+X\+\_\+\+C\+U\+S\+T\+O\+M\+\_\+\+H\+T\+T\+P\+\_\+\+H\+E\+A\+D\+E\+R}!proxy.\+h@{proxy.\+h}}
+\subsubsection[{M\+A\+X\+\_\+\+C\+U\+S\+T\+O\+M\+\_\+\+H\+T\+T\+P\+\_\+\+H\+E\+A\+D\+E\+R}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\+A\+X\+\_\+\+C\+U\+S\+T\+O\+M\+\_\+\+H\+T\+T\+P\+\_\+\+H\+E\+A\+D\+E\+R~10}\label{proxy_8h_a1cc6cc2b8aebc77dbf7c535a8af630ef}
+\hypertarget{proxy_8h_afd3fed7388af2b44a47465369b992731}{}\index{proxy.\+h@{proxy.\+h}!P\+A\+R\+\_\+\+A\+L\+L@{P\+A\+R\+\_\+\+A\+L\+L}}
+\index{P\+A\+R\+\_\+\+A\+L\+L@{P\+A\+R\+\_\+\+A\+L\+L}!proxy.\+h@{proxy.\+h}}
+\subsubsection[{P\+A\+R\+\_\+\+A\+L\+L}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\+A\+R\+\_\+\+A\+L\+L~1   /$\ast$ allow all proxy auth protocols $\ast$/}\label{proxy_8h_afd3fed7388af2b44a47465369b992731}
+\hypertarget{proxy_8h_a1c6ead53828182f53154be4dad1a9974}{}\index{proxy.\+h@{proxy.\+h}!P\+A\+R\+\_\+\+N\+C\+T@{P\+A\+R\+\_\+\+N\+C\+T}}
+\index{P\+A\+R\+\_\+\+N\+C\+T@{P\+A\+R\+\_\+\+N\+C\+T}!proxy.\+h@{proxy.\+h}}
+\subsubsection[{P\+A\+R\+\_\+\+N\+C\+T}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\+A\+R\+\_\+\+N\+C\+T~2   /$\ast$ disable cleartext proxy auth protocols $\ast$/}\label{proxy_8h_a1c6ead53828182f53154be4dad1a9974}
+\hypertarget{proxy_8h_ae5ff7d10d2764eb70f0a70fb8b7225de}{}\index{proxy.\+h@{proxy.\+h}!P\+A\+R\+\_\+\+N\+O@{P\+A\+R\+\_\+\+N\+O}}
+\index{P\+A\+R\+\_\+\+N\+O@{P\+A\+R\+\_\+\+N\+O}!proxy.\+h@{proxy.\+h}}
+\subsubsection[{P\+A\+R\+\_\+\+N\+O}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\+A\+R\+\_\+\+N\+O~0   /$\ast$ don\textquotesingle{}t support any auth retries $\ast$/}\label{proxy_8h_ae5ff7d10d2764eb70f0a70fb8b7225de}
+
+
+\subsection{Function Documentation}
+\hypertarget{proxy_8h_a4fd6cf4c17ae3d718e163b37f0e781df}{}\index{proxy.\+h@{proxy.\+h}!establish\+\_\+http\+\_\+proxy\+\_\+passthru@{establish\+\_\+http\+\_\+proxy\+\_\+passthru}}
+\index{establish\+\_\+http\+\_\+proxy\+\_\+passthru@{establish\+\_\+http\+\_\+proxy\+\_\+passthru}!proxy.\+h@{proxy.\+h}}
+\subsubsection[{establish\+\_\+http\+\_\+proxy\+\_\+passthru(struct http\+\_\+proxy\+\_\+info $\ast$p, socket\+\_\+descriptor\+\_\+t sd, const char $\ast$host, const char $\ast$port, struct event\+\_\+timeout $\ast$server\+\_\+poll\+\_\+timeout, struct buffer $\ast$lookahead, volatile int $\ast$signal\+\_\+received)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} establish\+\_\+http\+\_\+proxy\+\_\+passthru (
+\begin{DoxyParamCaption}
+\item[{struct {\bf http\+\_\+proxy\+\_\+info} $\ast$}]{p, }
+\item[{{\bf socket\+\_\+descriptor\+\_\+t}}]{sd, }
+\item[{const char $\ast$}]{host, }
+\item[{const char $\ast$}]{port, }
+\item[{struct {\bf event\+\_\+timeout} $\ast$}]{server\+\_\+poll\+\_\+timeout, }
+\item[{struct {\bf buffer} $\ast$}]{lookahead, }
+\item[{volatile int $\ast$}]{signal\+\_\+received}
+\end{DoxyParamCaption}
+)}\label{proxy_8h_a4fd6cf4c17ae3d718e163b37f0e781df}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{proxy_8h_a4fd6cf4c17ae3d718e163b37f0e781df_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{proxy_8h_a567500691abe4a2cb2a4d2efcd09310e}{}\index{proxy.\+h@{proxy.\+h}!http\+\_\+proxy\+\_\+close@{http\+\_\+proxy\+\_\+close}}
+\index{http\+\_\+proxy\+\_\+close@{http\+\_\+proxy\+\_\+close}!proxy.\+h@{proxy.\+h}}
+\subsubsection[{http\+\_\+proxy\+\_\+close(struct http\+\_\+proxy\+\_\+info $\ast$hp)}]{\setlength{\rightskip}{0pt plus 5cm}void http\+\_\+proxy\+\_\+close (
+\begin{DoxyParamCaption}
+\item[{struct {\bf http\+\_\+proxy\+\_\+info} $\ast$}]{hp}
+\end{DoxyParamCaption}
+)}\label{proxy_8h_a567500691abe4a2cb2a4d2efcd09310e}
+\hypertarget{proxy_8h_ae8c759f7897aee01596bafa797058945}{}\index{proxy.\+h@{proxy.\+h}!http\+\_\+proxy\+\_\+new@{http\+\_\+proxy\+\_\+new}}
+\index{http\+\_\+proxy\+\_\+new@{http\+\_\+proxy\+\_\+new}!proxy.\+h@{proxy.\+h}}
+\subsubsection[{http\+\_\+proxy\+\_\+new(const struct http\+\_\+proxy\+\_\+options $\ast$o)}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf http\+\_\+proxy\+\_\+info}$\ast$ http\+\_\+proxy\+\_\+new (
+\begin{DoxyParamCaption}
+\item[{const struct {\bf http\+\_\+proxy\+\_\+options} $\ast$}]{o}
+\end{DoxyParamCaption}
+)}\label{proxy_8h_ae8c759f7897aee01596bafa797058945}
+\hypertarget{proxy_8h_afe1f244314792f7cb0addf0d2a9e795f}{}\index{proxy.\+h@{proxy.\+h}!init\+\_\+http\+\_\+proxy\+\_\+options\+\_\+once@{init\+\_\+http\+\_\+proxy\+\_\+options\+\_\+once}}
+\index{init\+\_\+http\+\_\+proxy\+\_\+options\+\_\+once@{init\+\_\+http\+\_\+proxy\+\_\+options\+\_\+once}!proxy.\+h@{proxy.\+h}}
+\subsubsection[{init\+\_\+http\+\_\+proxy\+\_\+options\+\_\+once(struct http\+\_\+proxy\+\_\+options $\ast$$\ast$hpo, struct gc\+\_\+arena $\ast$gc)}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf http\+\_\+proxy\+\_\+options}$\ast$ init\+\_\+http\+\_\+proxy\+\_\+options\+\_\+once (
+\begin{DoxyParamCaption}
+\item[{struct {\bf http\+\_\+proxy\+\_\+options} $\ast$$\ast$}]{hpo, }
+\item[{struct {\bf gc\+\_\+arena} $\ast$}]{gc}
+\end{DoxyParamCaption}
+)}\label{proxy_8h_afe1f244314792f7cb0addf0d2a9e795f}
+\hypertarget{proxy_8h_ad78714f3ad0e9ca7b81a9c94ae6cb0c5}{}\index{proxy.\+h@{proxy.\+h}!make\+\_\+base64\+\_\+string@{make\+\_\+base64\+\_\+string}}
+\index{make\+\_\+base64\+\_\+string@{make\+\_\+base64\+\_\+string}!proxy.\+h@{proxy.\+h}}
+\subsubsection[{make\+\_\+base64\+\_\+string(const uint8\+\_\+t $\ast$str, struct gc\+\_\+arena $\ast$gc)}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t$\ast$ make\+\_\+base64\+\_\+string (
+\begin{DoxyParamCaption}
+\item[{const uint8\+\_\+t $\ast$}]{str, }
+\item[{struct {\bf gc\+\_\+arena} $\ast$}]{gc}
+\end{DoxyParamCaption}
+)}\label{proxy_8h_ad78714f3ad0e9ca7b81a9c94ae6cb0c5}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{proxy_8h_ad78714f3ad0e9ca7b81a9c94ae6cb0c5_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{proxy_8h_aeae4af9b60061fd97fb39cd5fadc1e1f}{}\index{proxy.\+h@{proxy.\+h}!make\+\_\+base64\+\_\+string2@{make\+\_\+base64\+\_\+string2}}
+\index{make\+\_\+base64\+\_\+string2@{make\+\_\+base64\+\_\+string2}!proxy.\+h@{proxy.\+h}}
+\subsubsection[{make\+\_\+base64\+\_\+string2(const uint8\+\_\+t $\ast$str, int str\+\_\+len, struct gc\+\_\+arena $\ast$gc)}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t$\ast$ make\+\_\+base64\+\_\+string2 (
+\begin{DoxyParamCaption}
+\item[{const uint8\+\_\+t $\ast$}]{str, }
+\item[{int}]{str\+\_\+len, }
+\item[{struct {\bf gc\+\_\+arena} $\ast$}]{gc}
+\end{DoxyParamCaption}
+)}\label{proxy_8h_aeae4af9b60061fd97fb39cd5fadc1e1f}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{proxy_8h_aeae4af9b60061fd97fb39cd5fadc1e1f_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{proxy_8h_aeae4af9b60061fd97fb39cd5fadc1e1f_icgraph}
+\end{center}
+\end{figure}
+
+

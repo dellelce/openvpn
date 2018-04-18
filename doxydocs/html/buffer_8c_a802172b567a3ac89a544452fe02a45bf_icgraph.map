@@ -1,0 +1,6 @@
+<map id="buffer_list_new" name="buffer_list_new">
+<area shape="rect" id="node2" href="$buffer_8h.html#ac6ca47343e8740ff6480de93840ad002" title="buffer_list_file" alt="" coords="171,5,271,32"/>
+<area shape="rect" id="node3" href="$init_8h.html#aaf57aca5b6d652ab6f00af4b9a746c38" title="init_static" alt="" coords="182,56,261,83"/>
+<area shape="rect" id="node4" href="$ssl_8h.html#af2bd825809313e721a9f2d219ad59ecd" title="tls_send_payload" alt="" coords="160,107,283,133"/>
+<area shape="rect" id="node5" href="$forward_8h.html#a7a409db050be184362b60f3ce7b56b35" title="send_control_channel\l_string" alt="" coords="331,99,479,141"/>
+</map>

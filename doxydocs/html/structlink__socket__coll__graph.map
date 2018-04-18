@@ -1,0 +1,19 @@
+<map id="link_socket" name="link_socket">
+<area shape="rect" id="node2" href="$structlink__socket__info.html" title="link_socket_info" alt="" coords="764,109,879,136"/>
+<area shape="rect" id="node3" href="$structplugin__list.html" title="plugin_list" alt="" coords="527,109,607,136"/>
+<area shape="rect" id="node4" href="$structlink__socket__addr.html" title="link_socket_addr" alt="" coords="507,160,627,187"/>
+<area shape="rect" id="node5" href="$structlink__socket__actual.html" title="link_socket_actual" alt="" coords="217,109,347,136"/>
+<area shape="rect" id="node6" href="$structopenvpn__sockaddr.html" title="openvpn_sockaddr" alt="" coords="5,109,135,136"/>
+<area shape="rect" id="node7" href="$structevent__timeout.html" title="event_timeout" alt="" coords="770,160,873,187"/>
+<area shape="rect" id="node8" href="$structhttp__proxy__info.html" title="http_proxy_info" alt="" coords="766,211,877,237"/>
+<area shape="rect" id="node9" href="$structhttp__proxy__options.html" title="http_proxy_options" alt="" coords="501,261,633,288"/>
+<area shape="rect" id="node10" href="$structhttp__custom__header.html" title="http_custom_header" alt="" coords="212,261,352,288"/>
+<area shape="rect" id="node11" href="$structuser__pass.html" title="user_pass" alt="" coords="526,211,609,237"/>
+<area shape="rect" id="node12" href="$structname__value__list.html" title="name_value_list" alt="" coords="225,211,339,237"/>
+<area shape="rect" id="node13" href="$structname__value.html" title="name_value" alt="" coords="25,211,115,237"/>
+<area shape="rect" id="node14" href="$structcached__dns__entry.html" title="cached_dns_entry" alt="" coords="757,300,885,327"/>
+<area shape="rect" id="node15" href="$structsocks__proxy__info.html" title="socks_proxy_info" alt="" coords="760,351,883,377"/>
+<area shape="rect" id="node16" href="$structsocket__buffer__size.html" title="socket_buffer_size" alt="" coords="756,401,887,428"/>
+<area shape="rect" id="node17" href="$structbuffer.html" title="buffer" alt="" coords="541,481,594,508"/>
+<area shape="rect" id="node18" href="$structstream__buf.html" title="stream_buf" alt="" coords="778,452,865,479"/>
+</map>

@@ -1,0 +1,128 @@
+\hypertarget{fdmisc_8c}{}\section{src/openvpn/fdmisc.c File Reference}
+\label{fdmisc_8c}\index{src/openvpn/fdmisc.\+c@{src/openvpn/fdmisc.\+c}}
+{\ttfamily \#include \char`\"{}syshead.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}fdmisc.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}error.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}memdbg.\+h\char`\"{}}\\*
+Include dependency graph for fdmisc.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{fdmisc_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} \hyperlink{fdmisc_8c_aaeff25a86dead66da816cf5d5538985d}{set\+\_\+nonblock\+\_\+action} (int fd)
+\item 
+\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} \hyperlink{fdmisc_8c_a2a0bdc9a9465ff3df6ba4eb3f6d685e3}{set\+\_\+cloexec\+\_\+action} (int fd)
+\item 
+void \hyperlink{fdmisc_8c_a4bd55f9b59d6c9123787beb7431dac85}{set\+\_\+nonblock} (int fd)
+\item 
+void \hyperlink{fdmisc_8c_a09193ec56615d682308eff8c491fc791}{set\+\_\+cloexec} (int fd)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{fdmisc_8c_a09193ec56615d682308eff8c491fc791}{}\index{fdmisc.\+c@{fdmisc.\+c}!set\+\_\+cloexec@{set\+\_\+cloexec}}
+\index{set\+\_\+cloexec@{set\+\_\+cloexec}!fdmisc.\+c@{fdmisc.\+c}}
+\subsubsection[{set\+\_\+cloexec(int fd)}]{\setlength{\rightskip}{0pt plus 5cm}void set\+\_\+cloexec (
+\begin{DoxyParamCaption}
+\item[{int}]{fd}
+\end{DoxyParamCaption}
+)}\label{fdmisc_8c_a09193ec56615d682308eff8c491fc791}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=286pt]{fdmisc_8c_a09193ec56615d682308eff8c491fc791_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{fdmisc_8c_a09193ec56615d682308eff8c491fc791_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{fdmisc_8c_a2a0bdc9a9465ff3df6ba4eb3f6d685e3}{}\index{fdmisc.\+c@{fdmisc.\+c}!set\+\_\+cloexec\+\_\+action@{set\+\_\+cloexec\+\_\+action}}
+\index{set\+\_\+cloexec\+\_\+action@{set\+\_\+cloexec\+\_\+action}!fdmisc.\+c@{fdmisc.\+c}}
+\subsubsection[{set\+\_\+cloexec\+\_\+action(int fd)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} set\+\_\+cloexec\+\_\+action (
+\begin{DoxyParamCaption}
+\item[{int}]{fd}
+\end{DoxyParamCaption}
+)}\label{fdmisc_8c_a2a0bdc9a9465ff3df6ba4eb3f6d685e3}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{fdmisc_8c_a2a0bdc9a9465ff3df6ba4eb3f6d685e3_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{fdmisc_8c_a4bd55f9b59d6c9123787beb7431dac85}{}\index{fdmisc.\+c@{fdmisc.\+c}!set\+\_\+nonblock@{set\+\_\+nonblock}}
+\index{set\+\_\+nonblock@{set\+\_\+nonblock}!fdmisc.\+c@{fdmisc.\+c}}
+\subsubsection[{set\+\_\+nonblock(int fd)}]{\setlength{\rightskip}{0pt plus 5cm}void set\+\_\+nonblock (
+\begin{DoxyParamCaption}
+\item[{int}]{fd}
+\end{DoxyParamCaption}
+)}\label{fdmisc_8c_a4bd55f9b59d6c9123787beb7431dac85}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=296pt]{fdmisc_8c_a4bd55f9b59d6c9123787beb7431dac85_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=282pt]{fdmisc_8c_a4bd55f9b59d6c9123787beb7431dac85_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{fdmisc_8c_aaeff25a86dead66da816cf5d5538985d}{}\index{fdmisc.\+c@{fdmisc.\+c}!set\+\_\+nonblock\+\_\+action@{set\+\_\+nonblock\+\_\+action}}
+\index{set\+\_\+nonblock\+\_\+action@{set\+\_\+nonblock\+\_\+action}!fdmisc.\+c@{fdmisc.\+c}}
+\subsubsection[{set\+\_\+nonblock\+\_\+action(int fd)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} set\+\_\+nonblock\+\_\+action (
+\begin{DoxyParamCaption}
+\item[{int}]{fd}
+\end{DoxyParamCaption}
+)}\label{fdmisc_8c_aaeff25a86dead66da816cf5d5538985d}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{fdmisc_8c_aaeff25a86dead66da816cf5d5538985d_icgraph}
+\end{center}
+\end{figure}
+
+

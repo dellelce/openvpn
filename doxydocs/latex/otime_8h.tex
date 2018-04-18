@@ -1,0 +1,188 @@
+\hypertarget{otime_8h}{}\section{src/openvpn/otime.h File Reference}
+\label{otime_8h}\index{src/openvpn/otime.\+h@{src/openvpn/otime.\+h}}
+{\ttfamily \#include \char`\"{}common.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}integer.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}buffer.\+h\char`\"{}}\\*
+Include dependency graph for otime.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{otime_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{otime_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structfrequency__limit}{frequency\+\_\+limit}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{otime_8h_ada3b2e4334f1ea48d5c0f0634dfad8e4}{T\+V\+\_\+\+W\+I\+T\+H\+I\+N\+\_\+\+S\+I\+G\+M\+A\+\_\+\+M\+A\+X\+\_\+\+S\+E\+C}~600
+\item 
+\#define \hyperlink{otime_8h_a9868404d93a566a8c304e39e24a23503}{T\+V\+\_\+\+W\+I\+T\+H\+I\+N\+\_\+\+S\+I\+G\+M\+A\+\_\+\+M\+A\+X\+\_\+\+U\+S\+E\+C}~(\hyperlink{otime_8h_ada3b2e4334f1ea48d5c0f0634dfad8e4}{T\+V\+\_\+\+W\+I\+T\+H\+I\+N\+\_\+\+S\+I\+G\+M\+A\+\_\+\+M\+A\+X\+\_\+\+S\+E\+C} $\ast$ 1000000)
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structfrequency__limit}{frequency\+\_\+limit} $\ast$ \hyperlink{otime_8h_a3d2c4425ad502c5dab48baac11a6ad33}{frequency\+\_\+limit\+\_\+init} (int max, int per)
+\item 
+void \hyperlink{otime_8h_a68cbf568205affd5889855db8ad57a3f}{frequency\+\_\+limit\+\_\+free} (struct \hyperlink{structfrequency__limit}{frequency\+\_\+limit} $\ast$f)
+\item 
+\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} \hyperlink{otime_8h_a90623e874f811101e3e6834c11ecca87}{frequency\+\_\+limit\+\_\+event\+\_\+allowed} (struct \hyperlink{structfrequency__limit}{frequency\+\_\+limit} $\ast$f)
+\item 
+const char $\ast$ \hyperlink{otime_8h_a3235fa9248297a37174fafc4522bdbac}{time\+\_\+string} (time\+\_\+t t, int usec, \hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} show\+\_\+usec, struct \hyperlink{structgc__arena}{gc\+\_\+arena} $\ast$gc)
+\item 
+const char $\ast$ \hyperlink{otime_8h_ac875ebcbe716364c21d8721d908aa641}{tv\+\_\+string} (const struct timeval $\ast$tv, struct \hyperlink{structgc__arena}{gc\+\_\+arena} $\ast$gc)
+\item 
+const char $\ast$ \hyperlink{otime_8h_a13f68fb2939ee1a74b4e0458441f7ff6}{tv\+\_\+string\+\_\+abs} (const struct timeval $\ast$tv, struct \hyperlink{structgc__arena}{gc\+\_\+arena} $\ast$gc)
+\item 
+void \hyperlink{otime_8h_ace107c9b76ee90e28373c1a313bc11d9}{time\+\_\+test} (void)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+time\+\_\+t \hyperlink{otime_8h_a3c3ca8cc859a31aec6578f0dcf1b32a5}{now}
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{otime_8h_ada3b2e4334f1ea48d5c0f0634dfad8e4}{}\index{otime.\+h@{otime.\+h}!T\+V\+\_\+\+W\+I\+T\+H\+I\+N\+\_\+\+S\+I\+G\+M\+A\+\_\+\+M\+A\+X\+\_\+\+S\+E\+C@{T\+V\+\_\+\+W\+I\+T\+H\+I\+N\+\_\+\+S\+I\+G\+M\+A\+\_\+\+M\+A\+X\+\_\+\+S\+E\+C}}
+\index{T\+V\+\_\+\+W\+I\+T\+H\+I\+N\+\_\+\+S\+I\+G\+M\+A\+\_\+\+M\+A\+X\+\_\+\+S\+E\+C@{T\+V\+\_\+\+W\+I\+T\+H\+I\+N\+\_\+\+S\+I\+G\+M\+A\+\_\+\+M\+A\+X\+\_\+\+S\+E\+C}!otime.\+h@{otime.\+h}}
+\subsubsection[{T\+V\+\_\+\+W\+I\+T\+H\+I\+N\+\_\+\+S\+I\+G\+M\+A\+\_\+\+M\+A\+X\+\_\+\+S\+E\+C}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\+V\+\_\+\+W\+I\+T\+H\+I\+N\+\_\+\+S\+I\+G\+M\+A\+\_\+\+M\+A\+X\+\_\+\+S\+E\+C~600}\label{otime_8h_ada3b2e4334f1ea48d5c0f0634dfad8e4}
+\hypertarget{otime_8h_a9868404d93a566a8c304e39e24a23503}{}\index{otime.\+h@{otime.\+h}!T\+V\+\_\+\+W\+I\+T\+H\+I\+N\+\_\+\+S\+I\+G\+M\+A\+\_\+\+M\+A\+X\+\_\+\+U\+S\+E\+C@{T\+V\+\_\+\+W\+I\+T\+H\+I\+N\+\_\+\+S\+I\+G\+M\+A\+\_\+\+M\+A\+X\+\_\+\+U\+S\+E\+C}}
+\index{T\+V\+\_\+\+W\+I\+T\+H\+I\+N\+\_\+\+S\+I\+G\+M\+A\+\_\+\+M\+A\+X\+\_\+\+U\+S\+E\+C@{T\+V\+\_\+\+W\+I\+T\+H\+I\+N\+\_\+\+S\+I\+G\+M\+A\+\_\+\+M\+A\+X\+\_\+\+U\+S\+E\+C}!otime.\+h@{otime.\+h}}
+\subsubsection[{T\+V\+\_\+\+W\+I\+T\+H\+I\+N\+\_\+\+S\+I\+G\+M\+A\+\_\+\+M\+A\+X\+\_\+\+U\+S\+E\+C}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\+V\+\_\+\+W\+I\+T\+H\+I\+N\+\_\+\+S\+I\+G\+M\+A\+\_\+\+M\+A\+X\+\_\+\+U\+S\+E\+C~({\bf T\+V\+\_\+\+W\+I\+T\+H\+I\+N\+\_\+\+S\+I\+G\+M\+A\+\_\+\+M\+A\+X\+\_\+\+S\+E\+C} $\ast$ 1000000)}\label{otime_8h_a9868404d93a566a8c304e39e24a23503}
+
+
+\subsection{Function Documentation}
+\hypertarget{otime_8h_a90623e874f811101e3e6834c11ecca87}{}\index{otime.\+h@{otime.\+h}!frequency\+\_\+limit\+\_\+event\+\_\+allowed@{frequency\+\_\+limit\+\_\+event\+\_\+allowed}}
+\index{frequency\+\_\+limit\+\_\+event\+\_\+allowed@{frequency\+\_\+limit\+\_\+event\+\_\+allowed}!otime.\+h@{otime.\+h}}
+\subsubsection[{frequency\+\_\+limit\+\_\+event\+\_\+allowed(struct frequency\+\_\+limit $\ast$f)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} frequency\+\_\+limit\+\_\+event\+\_\+allowed (
+\begin{DoxyParamCaption}
+\item[{struct {\bf frequency\+\_\+limit} $\ast$}]{f}
+\end{DoxyParamCaption}
+)}\label{otime_8h_a90623e874f811101e3e6834c11ecca87}
+\hypertarget{otime_8h_a68cbf568205affd5889855db8ad57a3f}{}\index{otime.\+h@{otime.\+h}!frequency\+\_\+limit\+\_\+free@{frequency\+\_\+limit\+\_\+free}}
+\index{frequency\+\_\+limit\+\_\+free@{frequency\+\_\+limit\+\_\+free}!otime.\+h@{otime.\+h}}
+\subsubsection[{frequency\+\_\+limit\+\_\+free(struct frequency\+\_\+limit $\ast$f)}]{\setlength{\rightskip}{0pt plus 5cm}void frequency\+\_\+limit\+\_\+free (
+\begin{DoxyParamCaption}
+\item[{struct {\bf frequency\+\_\+limit} $\ast$}]{f}
+\end{DoxyParamCaption}
+)}\label{otime_8h_a68cbf568205affd5889855db8ad57a3f}
+\hypertarget{otime_8h_a3d2c4425ad502c5dab48baac11a6ad33}{}\index{otime.\+h@{otime.\+h}!frequency\+\_\+limit\+\_\+init@{frequency\+\_\+limit\+\_\+init}}
+\index{frequency\+\_\+limit\+\_\+init@{frequency\+\_\+limit\+\_\+init}!otime.\+h@{otime.\+h}}
+\subsubsection[{frequency\+\_\+limit\+\_\+init(int max, int per)}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf frequency\+\_\+limit}$\ast$ frequency\+\_\+limit\+\_\+init (
+\begin{DoxyParamCaption}
+\item[{int}]{max, }
+\item[{int}]{per}
+\end{DoxyParamCaption}
+)}\label{otime_8h_a3d2c4425ad502c5dab48baac11a6ad33}
+\hypertarget{otime_8h_a3235fa9248297a37174fafc4522bdbac}{}\index{otime.\+h@{otime.\+h}!time\+\_\+string@{time\+\_\+string}}
+\index{time\+\_\+string@{time\+\_\+string}!otime.\+h@{otime.\+h}}
+\subsubsection[{time\+\_\+string(time\+\_\+t t, int usec, bool show\+\_\+usec, struct gc\+\_\+arena $\ast$gc)}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ time\+\_\+string (
+\begin{DoxyParamCaption}
+\item[{time\+\_\+t}]{t, }
+\item[{int}]{usec, }
+\item[{{\bf bool}}]{show\+\_\+usec, }
+\item[{struct {\bf gc\+\_\+arena} $\ast$}]{gc}
+\end{DoxyParamCaption}
+)}\label{otime_8h_a3235fa9248297a37174fafc4522bdbac}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{otime_8h_a3235fa9248297a37174fafc4522bdbac_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{otime_8h_a3235fa9248297a37174fafc4522bdbac_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{otime_8h_ace107c9b76ee90e28373c1a313bc11d9}{}\index{otime.\+h@{otime.\+h}!time\+\_\+test@{time\+\_\+test}}
+\index{time\+\_\+test@{time\+\_\+test}!otime.\+h@{otime.\+h}}
+\subsubsection[{time\+\_\+test(void)}]{\setlength{\rightskip}{0pt plus 5cm}void time\+\_\+test (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{otime_8h_ace107c9b76ee90e28373c1a313bc11d9}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=232pt]{otime_8h_ace107c9b76ee90e28373c1a313bc11d9_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{otime_8h_ac875ebcbe716364c21d8721d908aa641}{}\index{otime.\+h@{otime.\+h}!tv\+\_\+string@{tv\+\_\+string}}
+\index{tv\+\_\+string@{tv\+\_\+string}!otime.\+h@{otime.\+h}}
+\subsubsection[{tv\+\_\+string(const struct timeval $\ast$tv, struct gc\+\_\+arena $\ast$gc)}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ tv\+\_\+string (
+\begin{DoxyParamCaption}
+\item[{const struct timeval $\ast$}]{tv, }
+\item[{struct {\bf gc\+\_\+arena} $\ast$}]{gc}
+\end{DoxyParamCaption}
+)}\label{otime_8h_ac875ebcbe716364c21d8721d908aa641}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{otime_8h_ac875ebcbe716364c21d8721d908aa641_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{otime_8h_a13f68fb2939ee1a74b4e0458441f7ff6}{}\index{otime.\+h@{otime.\+h}!tv\+\_\+string\+\_\+abs@{tv\+\_\+string\+\_\+abs}}
+\index{tv\+\_\+string\+\_\+abs@{tv\+\_\+string\+\_\+abs}!otime.\+h@{otime.\+h}}
+\subsubsection[{tv\+\_\+string\+\_\+abs(const struct timeval $\ast$tv, struct gc\+\_\+arena $\ast$gc)}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ tv\+\_\+string\+\_\+abs (
+\begin{DoxyParamCaption}
+\item[{const struct timeval $\ast$}]{tv, }
+\item[{struct {\bf gc\+\_\+arena} $\ast$}]{gc}
+\end{DoxyParamCaption}
+)}\label{otime_8h_a13f68fb2939ee1a74b4e0458441f7ff6}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{otime_8h_a13f68fb2939ee1a74b4e0458441f7ff6_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Variable Documentation}
+\hypertarget{otime_8h_a3c3ca8cc859a31aec6578f0dcf1b32a5}{}\index{otime.\+h@{otime.\+h}!now@{now}}
+\index{now@{now}!otime.\+h@{otime.\+h}}
+\subsubsection[{now}]{\setlength{\rightskip}{0pt plus 5cm}time\+\_\+t now}\label{otime_8h_a3c3ca8cc859a31aec6578f0dcf1b32a5}

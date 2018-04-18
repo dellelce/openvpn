@@ -1,0 +1,17 @@
+<map id="alloc_buf" name="alloc_buf">
+<area shape="rect" id="node2" href="$buffer_8h.html#a21d180a3513a60a724ec43cbf30cb759" title="buffer_list_push_data" alt="" coords="127,42,271,69"/>
+<area shape="rect" id="node8" href="$buffer_8h.html#a162d7ba1ba291699cd8a2643fb0fad63" title="buffer_list_aggregate\l_separator" alt="" coords="128,93,269,135"/>
+<area shape="rect" id="node10" href="$init_8h.html#acb1b090f0af0de9a05f235a61b03fc44" title="init_context_buffers" alt="" coords="131,159,266,186"/>
+<area shape="rect" id="node11" href="$mtu_8h.html#a4eed7ef3a3abff91283294cdc70a1a4e" title="alloc_buf_sock_tun" alt="" coords="132,210,265,237"/>
+<area shape="rect" id="node12" href="$options_8c.html#a9038bb54aa94c5b93b2b28dee9bdb0bc" title="options_string" alt="" coords="147,261,250,287"/>
+<area shape="rect" id="node14" href="$group__reliable.html#gab5e5ef6d6fd862187abe76f88b972ee5" title="reliable_init" alt="" coords="155,311,242,338"/>
+<area shape="rect" id="node15" href="$socket_8h.html#a96ba948dd0e3d3ad6fcbde53ff44dd1d" title="stream_buf_init" alt="" coords="143,362,254,389"/>
+<area shape="rect" id="node16" href="$status_8h.html#ab196e92cac48e356eab474978232e453" title="status_open" alt="" coords="347,366,441,393"/>
+<area shape="rect" id="node3" href="$buffer_8h.html#ad797dd5e6257e3f4f4b4e7394dc2dfa9" title="buffer_list_push" alt="" coords="338,71,450,98"/>
+<area shape="rect" id="node6" href="$ssl_8h.html#af2bd825809313e721a9f2d219ad59ecd" title="tls_send_payload" alt="" coords="333,17,455,43"/>
+<area shape="rect" id="node4" href="$buffer_8h.html#ac6ca47343e8740ff6480de93840ad002" title="buffer_list_file" alt="" coords="541,71,641,98"/>
+<area shape="rect" id="node5" href="$init_8h.html#aaf57aca5b6d652ab6f00af4b9a746c38" title="init_static" alt="" coords="552,122,631,149"/>
+<area shape="rect" id="node7" href="$forward_8h.html#a7a409db050be184362b60f3ce7b56b35" title="send_control_channel\l_string" alt="" coords="517,5,665,47"/>
+<area shape="rect" id="node9" href="$buffer_8h.html#a2269d0f9d34d67a509c29c505e44ee2b" title="buffer_list_aggregate" alt="" coords="323,122,465,149"/>
+<area shape="rect" id="node13" href="$options_8h.html#a5c19843f7bda8a3cadf41ecbabb6cd6a" title="options_string_extract\l_option" alt="" coords="319,253,469,295"/>
+</map>

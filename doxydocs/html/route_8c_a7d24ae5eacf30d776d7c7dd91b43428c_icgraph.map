@@ -1,0 +1,5 @@
+<map id="print_default_gateway" name="print_default_gateway">
+<area shape="rect" id="node2" href="$init_8h.html#aaf57aca5b6d652ab6f00af4b9a746c38" title="init_static" alt="" coords="225,5,303,32"/>
+<area shape="rect" id="node3" href="$route_8h.html#a3f534585396ea6d2712366fe917f34e3" title="init_route_list" alt="" coords="215,56,313,83"/>
+<area shape="rect" id="node4" href="$route_8h.html#a9621dd6fce823566c275477b02a36253" title="init_route_ipv6_list" alt="" coords="200,107,328,133"/>
+</map>

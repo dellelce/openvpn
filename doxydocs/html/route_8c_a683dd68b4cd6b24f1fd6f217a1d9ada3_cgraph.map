@@ -1,0 +1,21 @@
+<map id="init_route_ipv6_list" name="init_route_ipv6_list">
+<area shape="rect" id="node2" href="$socket_8c.html#a9a911c5dde4c809f7cb3eef8e5918a8e" title="print_in6_addr" alt="" coords="401,5,503,32"/>
+<area shape="rect" id="node8" href="$route_8c.html#aaee1d0a836d45a61b7e624b1ff92e8e6" title="get_default_gateway_ipv6" alt="" coords="181,208,351,235"/>
+<area shape="rect" id="node9" href="$env__set_8c.html#a872620e2e324ded9c1bc8af1c253faf9" title="setenv_str" alt="" coords="225,157,307,184"/>
+<area shape="rect" id="node16" href="$route_8c.html#a7d24ae5eacf30d776d7c7dd91b43428c" title="print_default_gateway" alt="" coords="193,107,339,133"/>
+<area shape="rect" id="node20" href="$compat_8h.html#acdce1d46efd09e8485a2f682b388ebc0" title="inet_pton" alt="" coords="229,259,303,285"/>
+<area shape="rect" id="node3" href="$buffer_8c.html#aa35bf7feb6a99bf5d364b2d4eba1195c" title="alloc_buf_gc" alt="" coords="569,107,663,133"/>
+<area shape="rect" id="node6" href="$compat_8h.html#a102fcb53ee2ffdbeceeec5b5ffa0cb1c" title="inet_ntop" alt="" coords="579,5,653,32"/>
+<area shape="rect" id="node7" href="$buffer_8c.html#a3307f08331b1ce42168bafd2ecf7874a" title="buf_printf" alt="" coords="579,56,653,83"/>
+<area shape="rect" id="node4" href="$buffer_8c.html#acc1a4ee83a591116d331e52baacf253d" title="buf_size_error" alt="" coords="727,107,829,133"/>
+<area shape="rect" id="node5" href="$buffer_8c.html#a67f7dec7f86e113dc0744584fd80b621" title="gc_malloc" alt="" coords="877,183,959,209"/>
+<area shape="rect" id="node10" href="$env__set_8c.html#a9ff3fe081db33808bf428d7af93c68ad" title="setenv_str_ex" alt="" coords="401,259,503,285"/>
+<area shape="rect" id="node11" href="$buffer_8c.html#a55db6b55ce08e95dc30a543ee37ecd92" title="string_mod_const" alt="" coords="553,259,679,285"/>
+<area shape="rect" id="node14" href="$env__set_8c.html#a8f95bd5663cdc04bc9764b429538f536" title="env_set_add" alt="" coords="569,309,663,336"/>
+<area shape="rect" id="node15" href="$env__set_8c.html#acb6a73dee5f207c8a86187f111b0e910" title="env_set_del" alt="" coords="571,208,661,235"/>
+<area shape="rect" id="node12" href="$buffer_8c.html#a06e0220403278399596a7a1b6b601fca" title="string_alloc" alt="" coords="734,208,822,235"/>
+<area shape="rect" id="node13" href="$buffer_8c.html#aa68699d49774055c860c609ec5d84bd5" title="string_mod" alt="" coords="735,259,821,285"/>
+<area shape="rect" id="node17" href="$socket_8c.html#a2741d6007f1e5a670409883f4304da61" title="print_in_addr_t" alt="" coords="399,107,505,133"/>
+<area shape="rect" id="node18" href="$buffer_8c.html#a765c29b346cf601c5e0be2fd2c935a8d" title="format_hex_ex" alt="" coords="399,157,505,184"/>
+<area shape="rect" id="node19" href="$buffer_8c.html#a276febeb3ac5da2600b722b8dfb7ba0f" title="buf_catrunc" alt="" coords="571,157,661,184"/>
+</map>

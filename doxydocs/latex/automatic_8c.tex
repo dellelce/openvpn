@@ -1,0 +1,210 @@
+\hypertarget{automatic_8c}{}\section{src/openvpnserv/automatic.c File Reference}
+\label{automatic_8c}\index{src/openvpnserv/automatic.\+c@{src/openvpnserv/automatic.\+c}}
+{\ttfamily \#include \char`\"{}service.\+h\char`\"{}}\\*
+{\ttfamily \#include $<$stdio.\+h$>$}\\*
+{\ttfamily \#include $<$stdarg.\+h$>$}\\*
+{\ttfamily \#include $<$process.\+h$>$}\\*
+Include dependency graph for automatic.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{automatic_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structsecurity__attributes}{security\+\_\+attributes}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool}~int
+\item 
+\#define \hyperlink{automatic_8c_a41f9c5fb8b08eb5dc3edce4dcb37fee7}{true}~1
+\item 
+\#define \hyperlink{automatic_8c_a65e9886d74aaee76545e83dd09011727}{false}~0
+\item 
+\#define \hyperlink{automatic_8c_ab0ba4dd6e237b96132c0a66be2fb3bc2}{C\+L\+E\+A\+R}(x)~memset(\&(x), 0, sizeof(x))
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} \hyperlink{automatic_8c_aef221066442b594355d1ed2ac80a3736}{init\+\_\+security\+\_\+attributes\+\_\+allow\+\_\+all} (struct \hyperlink{structsecurity__attributes}{security\+\_\+attributes} $\ast$obj)
+\item 
+H\+A\+N\+D\+L\+E \hyperlink{automatic_8c_a1d8f55145f1d5ef92df4e86bdf50f96f}{create\+\_\+event} (L\+P\+C\+T\+S\+T\+R name, \hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} allow\+\_\+all, \hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} initial\+\_\+state, \hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} manual\+\_\+reset)
+\item 
+void \hyperlink{automatic_8c_a2d80b9ca3afa5cacf9a2539fe91eb55e}{close\+\_\+if\+\_\+open} (H\+A\+N\+D\+L\+E h)
+\item 
+V\+O\+I\+D W\+I\+N\+A\+P\+I \hyperlink{automatic_8c_ab1d19433c584eabe144524c30d112a0b}{Service\+Start\+Automatic\+Own} (D\+W\+O\+R\+D dw\+Argc, L\+P\+T\+S\+T\+R $\ast$lpsz\+Argv)
+\item 
+V\+O\+I\+D W\+I\+N\+A\+P\+I \hyperlink{automatic_8c_a74e28f33531506012a6fece0b25ed440}{Service\+Start\+Automatic} (D\+W\+O\+R\+D dw\+Argc, L\+P\+T\+S\+T\+R $\ast$lpsz\+Argv)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structopenvpn__service__t}{openvpn\+\_\+service\+\_\+t} \hyperlink{automatic_8c_a4e79c0a9d002eefd90472b02f490445c}{automatic\+\_\+service}
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{automatic_8c_abb452686968e48b67397da5f97445f5b}{}\index{automatic.\+c@{automatic.\+c}!bool@{bool}}
+\index{bool@{bool}!automatic.\+c@{automatic.\+c}}
+\subsubsection[{bool}]{\setlength{\rightskip}{0pt plus 5cm}\#define bool~int}\label{automatic_8c_abb452686968e48b67397da5f97445f5b}
+\hypertarget{automatic_8c_ab0ba4dd6e237b96132c0a66be2fb3bc2}{}\index{automatic.\+c@{automatic.\+c}!C\+L\+E\+A\+R@{C\+L\+E\+A\+R}}
+\index{C\+L\+E\+A\+R@{C\+L\+E\+A\+R}!automatic.\+c@{automatic.\+c}}
+\subsubsection[{C\+L\+E\+A\+R}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+L\+E\+A\+R(
+\begin{DoxyParamCaption}
+\item[{}]{x}
+\end{DoxyParamCaption}
+)~memset(\&(x), 0, sizeof(x))}\label{automatic_8c_ab0ba4dd6e237b96132c0a66be2fb3bc2}
+\hypertarget{automatic_8c_a65e9886d74aaee76545e83dd09011727}{}\index{automatic.\+c@{automatic.\+c}!false@{false}}
+\index{false@{false}!automatic.\+c@{automatic.\+c}}
+\subsubsection[{false}]{\setlength{\rightskip}{0pt plus 5cm}\#define false~0}\label{automatic_8c_a65e9886d74aaee76545e83dd09011727}
+\hypertarget{automatic_8c_a41f9c5fb8b08eb5dc3edce4dcb37fee7}{}\index{automatic.\+c@{automatic.\+c}!true@{true}}
+\index{true@{true}!automatic.\+c@{automatic.\+c}}
+\subsubsection[{true}]{\setlength{\rightskip}{0pt plus 5cm}\#define true~1}\label{automatic_8c_a41f9c5fb8b08eb5dc3edce4dcb37fee7}
+
+
+\subsection{Function Documentation}
+\hypertarget{automatic_8c_a2d80b9ca3afa5cacf9a2539fe91eb55e}{}\index{automatic.\+c@{automatic.\+c}!close\+\_\+if\+\_\+open@{close\+\_\+if\+\_\+open}}
+\index{close\+\_\+if\+\_\+open@{close\+\_\+if\+\_\+open}!automatic.\+c@{automatic.\+c}}
+\subsubsection[{close\+\_\+if\+\_\+open(\+H\+A\+N\+D\+L\+E h)}]{\setlength{\rightskip}{0pt plus 5cm}void close\+\_\+if\+\_\+open (
+\begin{DoxyParamCaption}
+\item[{H\+A\+N\+D\+L\+E}]{h}
+\end{DoxyParamCaption}
+)}\label{automatic_8c_a2d80b9ca3afa5cacf9a2539fe91eb55e}
+\hypertarget{automatic_8c_a1d8f55145f1d5ef92df4e86bdf50f96f}{}\index{automatic.\+c@{automatic.\+c}!create\+\_\+event@{create\+\_\+event}}
+\index{create\+\_\+event@{create\+\_\+event}!automatic.\+c@{automatic.\+c}}
+\subsubsection[{create\+\_\+event(\+L\+P\+C\+T\+S\+T\+R name, bool allow\+\_\+all, bool initial\+\_\+state, bool manual\+\_\+reset)}]{\setlength{\rightskip}{0pt plus 5cm}H\+A\+N\+D\+L\+E create\+\_\+event (
+\begin{DoxyParamCaption}
+\item[{L\+P\+C\+T\+S\+T\+R}]{name, }
+\item[{{\bf bool}}]{allow\+\_\+all, }
+\item[{{\bf bool}}]{initial\+\_\+state, }
+\item[{{\bf bool}}]{manual\+\_\+reset}
+\end{DoxyParamCaption}
+)}\label{automatic_8c_a1d8f55145f1d5ef92df4e86bdf50f96f}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=302pt]{automatic_8c_a1d8f55145f1d5ef92df4e86bdf50f96f_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{automatic_8c_a1d8f55145f1d5ef92df4e86bdf50f96f_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{automatic_8c_aef221066442b594355d1ed2ac80a3736}{}\index{automatic.\+c@{automatic.\+c}!init\+\_\+security\+\_\+attributes\+\_\+allow\+\_\+all@{init\+\_\+security\+\_\+attributes\+\_\+allow\+\_\+all}}
+\index{init\+\_\+security\+\_\+attributes\+\_\+allow\+\_\+all@{init\+\_\+security\+\_\+attributes\+\_\+allow\+\_\+all}!automatic.\+c@{automatic.\+c}}
+\subsubsection[{init\+\_\+security\+\_\+attributes\+\_\+allow\+\_\+all(struct security\+\_\+attributes $\ast$obj)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} init\+\_\+security\+\_\+attributes\+\_\+allow\+\_\+all (
+\begin{DoxyParamCaption}
+\item[{struct {\bf security\+\_\+attributes} $\ast$}]{obj}
+\end{DoxyParamCaption}
+)}\label{automatic_8c_aef221066442b594355d1ed2ac80a3736}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{automatic_8c_aef221066442b594355d1ed2ac80a3736_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{automatic_8c_a74e28f33531506012a6fece0b25ed440}{}\index{automatic.\+c@{automatic.\+c}!Service\+Start\+Automatic@{Service\+Start\+Automatic}}
+\index{Service\+Start\+Automatic@{Service\+Start\+Automatic}!automatic.\+c@{automatic.\+c}}
+\subsubsection[{Service\+Start\+Automatic(\+D\+W\+O\+R\+D dw\+Argc, L\+P\+T\+S\+T\+R $\ast$lpsz\+Argv)}]{\setlength{\rightskip}{0pt plus 5cm}V\+O\+I\+D W\+I\+N\+A\+P\+I Service\+Start\+Automatic (
+\begin{DoxyParamCaption}
+\item[{D\+W\+O\+R\+D}]{dw\+Argc, }
+\item[{L\+P\+T\+S\+T\+R $\ast$}]{lpsz\+Argv}
+\end{DoxyParamCaption}
+)}\label{automatic_8c_a74e28f33531506012a6fece0b25ed440}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{automatic_8c_a74e28f33531506012a6fece0b25ed440_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{automatic_8c_a74e28f33531506012a6fece0b25ed440_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{automatic_8c_ab1d19433c584eabe144524c30d112a0b}{}\index{automatic.\+c@{automatic.\+c}!Service\+Start\+Automatic\+Own@{Service\+Start\+Automatic\+Own}}
+\index{Service\+Start\+Automatic\+Own@{Service\+Start\+Automatic\+Own}!automatic.\+c@{automatic.\+c}}
+\subsubsection[{Service\+Start\+Automatic\+Own(\+D\+W\+O\+R\+D dw\+Argc, L\+P\+T\+S\+T\+R $\ast$lpsz\+Argv)}]{\setlength{\rightskip}{0pt plus 5cm}V\+O\+I\+D W\+I\+N\+A\+P\+I Service\+Start\+Automatic\+Own (
+\begin{DoxyParamCaption}
+\item[{D\+W\+O\+R\+D}]{dw\+Argc, }
+\item[{L\+P\+T\+S\+T\+R $\ast$}]{lpsz\+Argv}
+\end{DoxyParamCaption}
+)}\label{automatic_8c_ab1d19433c584eabe144524c30d112a0b}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{automatic_8c_ab1d19433c584eabe144524c30d112a0b_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=295pt]{automatic_8c_ab1d19433c584eabe144524c30d112a0b_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Variable Documentation}
+\hypertarget{automatic_8c_a4e79c0a9d002eefd90472b02f490445c}{}\index{automatic.\+c@{automatic.\+c}!automatic\+\_\+service@{automatic\+\_\+service}}
+\index{automatic\+\_\+service@{automatic\+\_\+service}!automatic.\+c@{automatic.\+c}}
+\subsubsection[{automatic\+\_\+service}]{\setlength{\rightskip}{0pt plus 5cm}{\bf openvpn\+\_\+service\+\_\+t} automatic\+\_\+service}\label{automatic_8c_a4e79c0a9d002eefd90472b02f490445c}
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+= \{
+    \hyperlink{service_8h_aef1837f9e79431d8295c9ef230dfcb71a9761086e420b925e438327ad385b304d}{automatic},
+    TEXT(PACKAGE\_NAME \textcolor{stringliteral}{"ServiceLegacy"}),
+    TEXT(PACKAGE\_NAME \textcolor{stringliteral}{" Legacy Service"}),
+    TEXT(\hyperlink{service_8h_a0c406ce56eab18fb4411f5487583005e}{SERVICE\_DEPENDENCIES}),
+    SERVICE\_DEMAND\_START
+\}
+\end{DoxyCode}

@@ -1,0 +1,66 @@
+\hypertarget{structframe}{}\section{frame Struct Reference}
+\label{structframe}\index{frame@{frame}}
+
+
+{\ttfamily \#include $<$mtu.\+h$>$}
+
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{structframe_a1cb819c0d909fde0754358ab1a3efa27}{link\+\_\+mtu}
+\item 
+int \hyperlink{structframe_a6e689afc779ec821bc05750d3794e409}{link\+\_\+mtu\+\_\+dynamic}
+\item 
+int \hyperlink{structframe_ac86e1095a0ba3e1cc909aaba9ecf6360}{extra\+\_\+frame}
+\item 
+int \hyperlink{structframe_a751b9e1d0cf1c29cd4befef61d811f70}{extra\+\_\+buffer}
+\item 
+int \hyperlink{structframe_a692c06fcb8a7e839f14c44616809ce10}{extra\+\_\+tun}
+\item 
+int \hyperlink{structframe_aff384304bf6617e9326581562dd47db4}{extra\+\_\+link}
+\item 
+unsigned int \hyperlink{structframe_ae4656e48742f781f15b6887fc77ee035}{align\+\_\+flags}
+\item 
+int \hyperlink{structframe_a504f9b9d3aa50ee3424df82b7782d5fc}{align\+\_\+adjust}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Packet geometry parameters. 
+
+\subsection{Member Data Documentation}
+\hypertarget{structframe_a504f9b9d3aa50ee3424df82b7782d5fc}{}\index{frame@{frame}!align\+\_\+adjust@{align\+\_\+adjust}}
+\index{align\+\_\+adjust@{align\+\_\+adjust}!frame@{frame}}
+\subsubsection[{align\+\_\+adjust}]{\setlength{\rightskip}{0pt plus 5cm}int frame\+::align\+\_\+adjust}\label{structframe_a504f9b9d3aa50ee3424df82b7782d5fc}
+\hypertarget{structframe_ae4656e48742f781f15b6887fc77ee035}{}\index{frame@{frame}!align\+\_\+flags@{align\+\_\+flags}}
+\index{align\+\_\+flags@{align\+\_\+flags}!frame@{frame}}
+\subsubsection[{align\+\_\+flags}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int frame\+::align\+\_\+flags}\label{structframe_ae4656e48742f781f15b6887fc77ee035}
+\hypertarget{structframe_a751b9e1d0cf1c29cd4befef61d811f70}{}\index{frame@{frame}!extra\+\_\+buffer@{extra\+\_\+buffer}}
+\index{extra\+\_\+buffer@{extra\+\_\+buffer}!frame@{frame}}
+\subsubsection[{extra\+\_\+buffer}]{\setlength{\rightskip}{0pt plus 5cm}int frame\+::extra\+\_\+buffer}\label{structframe_a751b9e1d0cf1c29cd4befef61d811f70}
+Maximum number of bytes that processing steps could expand the internal work buffer.
+
+This is used by the \hyperlink{}{Data Channel Compression module} to give enough working space for worst-\/case expansion of incompressible content. \hypertarget{structframe_ac86e1095a0ba3e1cc909aaba9ecf6360}{}\index{frame@{frame}!extra\+\_\+frame@{extra\+\_\+frame}}
+\index{extra\+\_\+frame@{extra\+\_\+frame}!frame@{frame}}
+\subsubsection[{extra\+\_\+frame}]{\setlength{\rightskip}{0pt plus 5cm}int frame\+::extra\+\_\+frame}\label{structframe_ac86e1095a0ba3e1cc909aaba9ecf6360}
+Maximum number of bytes that all processing steps together could add. 
+\begin{DoxyCode}
+\hyperlink{structframe}{frame}.\hyperlink{structframe_a1cb819c0d909fde0754358ab1a3efa27}{link\_mtu} = \textcolor{stringliteral}{"socket MTU"} - \hyperlink{structframe_ac86e1095a0ba3e1cc909aaba9ecf6360}{extra\_frame};
+\end{DoxyCode}
+ \hypertarget{structframe_aff384304bf6617e9326581562dd47db4}{}\index{frame@{frame}!extra\+\_\+link@{extra\+\_\+link}}
+\index{extra\+\_\+link@{extra\+\_\+link}!frame@{frame}}
+\subsubsection[{extra\+\_\+link}]{\setlength{\rightskip}{0pt plus 5cm}int frame\+::extra\+\_\+link}\label{structframe_aff384304bf6617e9326581562dd47db4}
+Maximum number of bytes in excess of external network interface\textquotesingle{}s M\+T\+U that might be read from or written to it. \hypertarget{structframe_a692c06fcb8a7e839f14c44616809ce10}{}\index{frame@{frame}!extra\+\_\+tun@{extra\+\_\+tun}}
+\index{extra\+\_\+tun@{extra\+\_\+tun}!frame@{frame}}
+\subsubsection[{extra\+\_\+tun}]{\setlength{\rightskip}{0pt plus 5cm}int frame\+::extra\+\_\+tun}\label{structframe_a692c06fcb8a7e839f14c44616809ce10}
+Maximum number of bytes in excess of the tun/tap M\+T\+U that might be read from or written to the virtual tun/tap network interface. \hypertarget{structframe_a1cb819c0d909fde0754358ab1a3efa27}{}\index{frame@{frame}!link\+\_\+mtu@{link\+\_\+mtu}}
+\index{link\+\_\+mtu@{link\+\_\+mtu}!frame@{frame}}
+\subsubsection[{link\+\_\+mtu}]{\setlength{\rightskip}{0pt plus 5cm}int frame\+::link\+\_\+mtu}\label{structframe_a1cb819c0d909fde0754358ab1a3efa27}
+Maximum packet size to be sent over the external network interface. \hypertarget{structframe_a6e689afc779ec821bc05750d3794e409}{}\index{frame@{frame}!link\+\_\+mtu\+\_\+dynamic@{link\+\_\+mtu\+\_\+dynamic}}
+\index{link\+\_\+mtu\+\_\+dynamic@{link\+\_\+mtu\+\_\+dynamic}!frame@{frame}}
+\subsubsection[{link\+\_\+mtu\+\_\+dynamic}]{\setlength{\rightskip}{0pt plus 5cm}int frame\+::link\+\_\+mtu\+\_\+dynamic}\label{structframe_a6e689afc779ec821bc05750d3794e409}
+Dynamic M\+T\+U value for the external network interface. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/openvpn/\hyperlink{mtu_8h}{mtu.\+h}\end{DoxyCompactItemize}

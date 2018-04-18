@@ -1,0 +1,99 @@
+\hypertarget{structcontext}{}\section{context Struct Reference}
+\label{structcontext}\index{context@{context}}
+
+
+{\ttfamily \#include $<$openvpn.\+h$>$}
+
+
+
+Collaboration diagram for context\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{structcontext__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structoptions}{options} \hyperlink{structcontext_aa9a5e593e669fc88b8b1c7a9d69c5df1}{options}
+\item 
+\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} \hyperlink{structcontext_a4562924ba33d42c7c84399bc61e5634b}{first\+\_\+time}
+\item 
+int \hyperlink{structcontext_a05c5cc1b7bab3bf8fc5b1e23b38299f4}{mode}
+\item 
+struct \hyperlink{structgc__arena}{gc\+\_\+arena} \hyperlink{structcontext_ad2b1fffbd57d0ba779aa9b5ef8a9c78d}{gc}
+\item 
+struct \hyperlink{structenv__set}{env\+\_\+set} $\ast$ \hyperlink{structcontext_a9b3f2f6a6281c99c8c1e26598875d5ab}{es}
+\item 
+struct \hyperlink{structsignal__info}{signal\+\_\+info} $\ast$ \hyperlink{structcontext_a4a8aea25993019921e9568f611106773}{sig}
+\item 
+struct \hyperlink{structplugin__list}{plugin\+\_\+list} $\ast$ \hyperlink{structcontext_a7ebcb36e0e5cab031f1f3721ee39b9d3}{plugins}
+\item 
+\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} \hyperlink{structcontext_ab86d3cd4769ad44ed77c04c13c5382fb}{plugins\+\_\+owned}
+\item 
+\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} \hyperlink{structcontext_a34ef38cd7f895386a75d592fa0c820d8}{did\+\_\+we\+\_\+daemonize}
+\item 
+struct \hyperlink{structcontext__persist}{context\+\_\+persist} \hyperlink{structcontext_af52fc5d2e241fbee78d2216e9ff7ed72}{persist}
+\item 
+struct \hyperlink{structcontext__0}{context\+\_\+0} $\ast$ \hyperlink{structcontext_a1d0cd1cb672a5fee441bdc504fc0fa93}{c0}
+\item 
+struct \hyperlink{structcontext__1}{context\+\_\+1} \hyperlink{structcontext_aea116e1362b8f75f5fd13e8c06fc0cf3}{c1}
+\item 
+struct \hyperlink{structcontext__2}{context\+\_\+2} \hyperlink{structcontext_a8d609499dcba303c18f50ef7b648644c}{c2}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Contains all state information for one tunnel.
+
+This structure represents one V\+P\+N tunnel. It is used to store state information related to a V\+P\+N tunnel, but also includes process-\/wide data, such as configuration options.
+
+The Structure of V\+P\+N tunnel state storage related page describes how this structure is used in client-\/mode and server-\/mode. 
+
+\subsection{Member Data Documentation}
+\hypertarget{structcontext_a1d0cd1cb672a5fee441bdc504fc0fa93}{}\index{context@{context}!c0@{c0}}
+\index{c0@{c0}!context@{context}}
+\subsubsection[{c0}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf context\+\_\+0}$\ast$ context\+::c0}\label{structcontext_a1d0cd1cb672a5fee441bdc504fc0fa93}
+Level 0 context. \hypertarget{structcontext_aea116e1362b8f75f5fd13e8c06fc0cf3}{}\index{context@{context}!c1@{c1}}
+\index{c1@{c1}!context@{context}}
+\subsubsection[{c1}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf context\+\_\+1} context\+::c1}\label{structcontext_aea116e1362b8f75f5fd13e8c06fc0cf3}
+Level 1 context. \hypertarget{structcontext_a8d609499dcba303c18f50ef7b648644c}{}\index{context@{context}!c2@{c2}}
+\index{c2@{c2}!context@{context}}
+\subsubsection[{c2}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf context\+\_\+2} context\+::c2}\label{structcontext_a8d609499dcba303c18f50ef7b648644c}
+Level 2 context. \hypertarget{structcontext_a34ef38cd7f895386a75d592fa0c820d8}{}\index{context@{context}!did\+\_\+we\+\_\+daemonize@{did\+\_\+we\+\_\+daemonize}}
+\index{did\+\_\+we\+\_\+daemonize@{did\+\_\+we\+\_\+daemonize}!context@{context}}
+\subsubsection[{did\+\_\+we\+\_\+daemonize}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} context\+::did\+\_\+we\+\_\+daemonize}\label{structcontext_a34ef38cd7f895386a75d592fa0c820d8}
+Whether demonization has already taken place. \hypertarget{structcontext_a9b3f2f6a6281c99c8c1e26598875d5ab}{}\index{context@{context}!es@{es}}
+\index{es@{es}!context@{context}}
+\subsubsection[{es}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf env\+\_\+set}$\ast$ context\+::es}\label{structcontext_a9b3f2f6a6281c99c8c1e26598875d5ab}
+Set of environment variables. \hypertarget{structcontext_a4562924ba33d42c7c84399bc61e5634b}{}\index{context@{context}!first\+\_\+time@{first\+\_\+time}}
+\index{first\+\_\+time@{first\+\_\+time}!context@{context}}
+\subsubsection[{first\+\_\+time}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} context\+::first\+\_\+time}\label{structcontext_a4562924ba33d42c7c84399bc61e5634b}
+True on the first iteration of Open\+V\+P\+N\textquotesingle{}s main loop. \hypertarget{structcontext_ad2b1fffbd57d0ba779aa9b5ef8a9c78d}{}\index{context@{context}!gc@{gc}}
+\index{gc@{gc}!context@{context}}
+\subsubsection[{gc}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf gc\+\_\+arena} context\+::gc}\label{structcontext_ad2b1fffbd57d0ba779aa9b5ef8a9c78d}
+Garbage collection arena for allocations done in the scope of this context structure. \hypertarget{structcontext_a05c5cc1b7bab3bf8fc5b1e23b38299f4}{}\index{context@{context}!mode@{mode}}
+\index{mode@{mode}!context@{context}}
+\subsubsection[{mode}]{\setlength{\rightskip}{0pt plus 5cm}int context\+::mode}\label{structcontext_a05c5cc1b7bab3bf8fc5b1e23b38299f4}
+Role of this context within the Open\+V\+P\+N process. Valid values are {\ttfamily C\+M\+\_\+\+P2\+P}, {\ttfamily C\+M\+\_\+\+T\+O\+P}, {\ttfamily C\+M\+\_\+\+T\+O\+P\+\_\+\+C\+L\+O\+N\+E}, {\ttfamily C\+M\+\_\+\+C\+H\+I\+L\+D\+\_\+\+U\+D\+P}, and {\ttfamily C\+M\+\_\+\+C\+H\+I\+L\+D\+\_\+\+T\+C\+P}. \hypertarget{structcontext_aa9a5e593e669fc88b8b1c7a9d69c5df1}{}\index{context@{context}!options@{options}}
+\index{options@{options}!context@{context}}
+\subsubsection[{options}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf options} context\+::options}\label{structcontext_aa9a5e593e669fc88b8b1c7a9d69c5df1}
+Options loaded from command line or configuration file. \hypertarget{structcontext_af52fc5d2e241fbee78d2216e9ff7ed72}{}\index{context@{context}!persist@{persist}}
+\index{persist@{persist}!context@{context}}
+\subsubsection[{persist}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf context\+\_\+persist} context\+::persist}\label{structcontext_af52fc5d2e241fbee78d2216e9ff7ed72}
+Persistent context. \hypertarget{structcontext_a7ebcb36e0e5cab031f1f3721ee39b9d3}{}\index{context@{context}!plugins@{plugins}}
+\index{plugins@{plugins}!context@{context}}
+\subsubsection[{plugins}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf plugin\+\_\+list}$\ast$ context\+::plugins}\label{structcontext_a7ebcb36e0e5cab031f1f3721ee39b9d3}
+List of plug-\/ins. \hypertarget{structcontext_ab86d3cd4769ad44ed77c04c13c5382fb}{}\index{context@{context}!plugins\+\_\+owned@{plugins\+\_\+owned}}
+\index{plugins\+\_\+owned@{plugins\+\_\+owned}!context@{context}}
+\subsubsection[{plugins\+\_\+owned}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} context\+::plugins\+\_\+owned}\label{structcontext_ab86d3cd4769ad44ed77c04c13c5382fb}
+Whether the plug-\/ins should be cleaned up when this context is cleaned up. \hypertarget{structcontext_a4a8aea25993019921e9568f611106773}{}\index{context@{context}!sig@{sig}}
+\index{sig@{sig}!context@{context}}
+\subsubsection[{sig}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf signal\+\_\+info}$\ast$ context\+::sig}\label{structcontext_a4a8aea25993019921e9568f611106773}
+Internal error signaling object. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/openvpn/\hyperlink{openvpn_8h}{openvpn.\+h}\end{DoxyCompactItemize}

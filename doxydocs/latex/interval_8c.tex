@@ -1,0 +1,53 @@
+\hypertarget{interval_8c}{}\section{src/openvpn/interval.c File Reference}
+\label{interval_8c}\index{src/openvpn/interval.\+c@{src/openvpn/interval.\+c}}
+{\ttfamily \#include \char`\"{}syshead.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}interval.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}memdbg.\+h\char`\"{}}\\*
+Include dependency graph for interval.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{interval_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{interval_8c_aabf9bc926cf4d0888ea85e6224103c3a}{interval\+\_\+init} (struct \hyperlink{structinterval}{interval} $\ast$top, int horizon, int refresh)
+\item 
+\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} \hyperlink{interval_8c_a97d818630ab2bcfe0d44165164cd53c4}{event\+\_\+timeout\+\_\+trigger} (struct \hyperlink{structevent__timeout}{event\+\_\+timeout} $\ast$et, struct timeval $\ast$tv, const int et\+\_\+const\+\_\+retry)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{interval_8c_a97d818630ab2bcfe0d44165164cd53c4}{}\index{interval.\+c@{interval.\+c}!event\+\_\+timeout\+\_\+trigger@{event\+\_\+timeout\+\_\+trigger}}
+\index{event\+\_\+timeout\+\_\+trigger@{event\+\_\+timeout\+\_\+trigger}!interval.\+c@{interval.\+c}}
+\subsubsection[{event\+\_\+timeout\+\_\+trigger(struct event\+\_\+timeout $\ast$et, struct timeval $\ast$tv, const int et\+\_\+const\+\_\+retry)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} event\+\_\+timeout\+\_\+trigger (
+\begin{DoxyParamCaption}
+\item[{struct {\bf event\+\_\+timeout} $\ast$}]{et, }
+\item[{struct timeval $\ast$}]{tv, }
+\item[{const int}]{et\+\_\+const\+\_\+retry}
+\end{DoxyParamCaption}
+)}\label{interval_8c_a97d818630ab2bcfe0d44165164cd53c4}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{interval_8c_a97d818630ab2bcfe0d44165164cd53c4_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{interval_8c_aabf9bc926cf4d0888ea85e6224103c3a}{}\index{interval.\+c@{interval.\+c}!interval\+\_\+init@{interval\+\_\+init}}
+\index{interval\+\_\+init@{interval\+\_\+init}!interval.\+c@{interval.\+c}}
+\subsubsection[{interval\+\_\+init(struct interval $\ast$top, int horizon, int refresh)}]{\setlength{\rightskip}{0pt plus 5cm}void interval\+\_\+init (
+\begin{DoxyParamCaption}
+\item[{struct {\bf interval} $\ast$}]{top, }
+\item[{int}]{horizon, }
+\item[{int}]{refresh}
+\end{DoxyParamCaption}
+)}\label{interval_8c_aabf9bc926cf4d0888ea85e6224103c3a}

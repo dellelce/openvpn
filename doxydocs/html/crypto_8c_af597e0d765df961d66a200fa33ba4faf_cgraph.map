@@ -1,0 +1,6 @@
+<map id="crypto_adjust_frame_parameters" name="crypto_adjust_frame_parameters">
+<area shape="rect" id="node2" href="$crypto__backend_8h.html#a902518439f09e88281986ebda8dd458b" title="cipher_kt_iv_size" alt="" coords="206,5,327,32"/>
+<area shape="rect" id="node3" href="$crypto__backend_8h.html#a21c134671c60f2bc399a5b5a76d7e084" title="cipher_kt_mode_aead" alt="" coords="192,56,341,83"/>
+<area shape="rect" id="node4" href="$crypto__backend_8h.html#a04e1e83fd4bbaac94f1cd7ec40ab1d6b" title="cipher_kt_tag_size" alt="" coords="201,107,332,133"/>
+<area shape="rect" id="node5" href="$crypto__backend_8h.html#a5b2de050c2b6a78320fbed2340b25c60" title="cipher_kt_block_size" alt="" coords="195,157,339,184"/>
+</map>

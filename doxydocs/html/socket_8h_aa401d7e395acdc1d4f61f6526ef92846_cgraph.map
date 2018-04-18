@@ -1,0 +1,8 @@
+<map id="print_link_socket_actual_ex" name="print_link_socket_actual_ex">
+<area shape="rect" id="node2" href="$buffer_8c.html#aa35bf7feb6a99bf5d364b2d4eba1195c" title="alloc_buf_gc" alt="" coords="412,31,507,57"/>
+<area shape="rect" id="node5" href="$buffer_8c.html#a3307f08331b1ce42168bafd2ecf7874a" title="buf_printf" alt="" coords="422,132,497,159"/>
+<area shape="rect" id="node6" href="$socket_8c.html#a616cfadfd81ab5ba341fa3adb1e93788" title="print_sockaddr_ex" alt="" coords="236,81,364,108"/>
+<area shape="rect" id="node3" href="$buffer_8c.html#acc1a4ee83a591116d331e52baacf253d" title="buf_size_error" alt="" coords="555,5,657,32"/>
+<area shape="rect" id="node4" href="$buffer_8c.html#a67f7dec7f86e113dc0744584fd80b621" title="gc_malloc" alt="" coords="565,56,647,83"/>
+<area shape="rect" id="node7" href="$buffer_8c.html#a3856237f6bda0d132ed555c23f3b8968" title="buf_puts" alt="" coords="424,81,495,108"/>
+</map>

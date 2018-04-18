@@ -1,0 +1,9 @@
+<map id="key_des_fixup" name="key_des_fixup">
+<area shape="rect" id="node2" href="$crypto_8h.html#aba43c7afa9dab7d3d1bb9443a0fba6d8" title="fixup_key" alt="" coords="159,31,236,57"/>
+<area shape="rect" id="node3" href="$crypto_8h.html#abd4e2239c5b8afe85276885676851bcf" title="generate_key_random" alt="" coords="284,5,435,32"/>
+<area shape="rect" id="node6" href="$crypto_8h.html#a30a5545a94f3f5be9a828a54fae87c60" title="verify_fix_key2" alt="" coords="306,56,413,83"/>
+<area shape="rect" id="node4" href="$crypto_8h.html#a81c00d1ee124bc52b54b6b3082fba96e" title="write_key_file" alt="" coords="519,5,619,32"/>
+<area shape="rect" id="node5" href="$init_8h.html#a095a721e463c315c4dbdebd50358abd0" title="do_genkey" alt="" coords="722,5,807,32"/>
+<area shape="rect" id="node7" href="$crypto_8h.html#a7b8d6e163d43f5f77488c2237a184e81" title="crypto_read_openvpn_key" alt="" coords="483,56,655,83"/>
+<area shape="rect" id="node8" href="$group__tls__crypt.html#gad8a8513b53a8a5346cac69063f569680" title="tls_crypt_init_key" alt="" coords="703,56,827,83"/>
+</map>

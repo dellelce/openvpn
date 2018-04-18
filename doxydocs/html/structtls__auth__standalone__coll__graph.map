@@ -1,0 +1,12 @@
+<map id="tls_auth_standalone" name="tls_auth_standalone">
+<area shape="rect" id="node2" href="$structtls__wrap__ctx.html" title="tls_wrap_ctx" alt="" coords="307,288,401,315"/>
+<area shape="rect" id="node3" href="$structcrypto__options.html" title="crypto_options" alt="" coords="249,199,355,225"/>
+<area shape="rect" id="node4" href="$structpacket__id.html" title="packet_id" alt="" coords="155,109,233,136"/>
+<area shape="rect" id="node5" href="$structpacket__id__send.html" title="packet_id_send" alt="" coords="5,5,119,32"/>
+<area shape="rect" id="node6" href="$structpacket__id__rec.html" title="packet_id_rec" alt="" coords="143,5,245,32"/>
+<area shape="rect" id="node7" href="$structkey__ctx__bi.html" title="key_ctx_bi" alt="" coords="259,109,345,136"/>
+<area shape="rect" id="node8" href="$structkey__ctx.html" title="key_ctx" alt="" coords="269,5,337,32"/>
+<area shape="rect" id="node9" href="$structpacket__id__persist.html" title="packet_id_persist" alt="" coords="369,109,493,136"/>
+<area shape="rect" id="node10" href="$structbuffer.html" title="buffer" alt="" coords="379,199,433,225"/>
+<area shape="rect" id="node11" href="$structframe.html" title="frame" alt="" coords="425,288,480,315"/>
+</map>

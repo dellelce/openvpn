@@ -1,0 +1,350 @@
+\hypertarget{proto_8h}{}\section{src/openvpn/proto.h File Reference}
+\label{proto_8h}\index{src/openvpn/proto.\+h@{src/openvpn/proto.\+h}}
+{\ttfamily \#include \char`\"{}common.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}buffer.\+h\char`\"{}}\\*
+Include dependency graph for proto.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{proto_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{proto_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structopenvpn__ethhdr}{openvpn\+\_\+ethhdr}
+\item 
+struct \hyperlink{structopenvpn__arp}{openvpn\+\_\+arp}
+\item 
+struct \hyperlink{structopenvpn__iphdr}{openvpn\+\_\+iphdr}
+\item 
+struct \hyperlink{structopenvpn__ipv6hdr}{openvpn\+\_\+ipv6hdr}
+\item 
+struct \hyperlink{structopenvpn__udphdr}{openvpn\+\_\+udphdr}
+\item 
+struct \hyperlink{structopenvpn__tcphdr}{openvpn\+\_\+tcphdr}
+\item 
+struct \hyperlink{structip__tcp__udp__hdr}{ip\+\_\+tcp\+\_\+udp\+\_\+hdr}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{proto_8h_a44def7b94effffa8c13220d78b841d68}{D\+E\+V\+\_\+\+T\+Y\+P\+E\+\_\+\+U\+N\+D\+E\+F}~0
+\item 
+\#define \hyperlink{proto_8h_a541255b8640c189d1bd902f1168b1ee5}{D\+E\+V\+\_\+\+T\+Y\+P\+E\+\_\+\+N\+U\+L\+L}~1
+\item 
+\#define \hyperlink{proto_8h_a7bd06f1b39bc1fa6f63378e4cf00bac0}{D\+E\+V\+\_\+\+T\+Y\+P\+E\+\_\+\+T\+U\+N}~2    /$\ast$ point-\/to-\/point I\+P tunnel $\ast$/
+\item 
+\#define \hyperlink{proto_8h_a3e52229580f912055a75d0cad8eff3f5}{D\+E\+V\+\_\+\+T\+Y\+P\+E\+\_\+\+T\+A\+P}~3    /$\ast$ ethernet (802.\+3) tunnel $\ast$/
+\item 
+\#define \hyperlink{proto_8h_a4363724b0c7e2a14488bf3217d5c2c44}{T\+O\+P\+\_\+\+U\+N\+D\+E\+F}~0
+\item 
+\#define \hyperlink{proto_8h_a5432683e30ddc0abd4deb132f20477df}{T\+O\+P\+\_\+\+N\+E\+T30}~1
+\item 
+\#define \hyperlink{proto_8h_ac294ee23be7863f7b64a51ad6971bfc5}{T\+O\+P\+\_\+\+P2\+P}~2
+\item 
+\#define \hyperlink{proto_8h_af4249a88f691a14cb178b7222d35e150}{T\+O\+P\+\_\+\+S\+U\+B\+N\+E\+T}~3
+\item 
+\#define \hyperlink{proto_8h_a6324dad6dba94d99632f089372acde4a}{O\+P\+E\+N\+V\+P\+N\+\_\+\+E\+T\+H\+\_\+\+A\+L\+E\+N}~6            /$\ast$ ethernet \hyperlink{interactive_8c_a767357491f19fc428e12e95225ac6127ada7aa65619250e2ee161e4876d6f1d9e}{address} length $\ast$/
+\item 
+\#define \hyperlink{proto_8h_a867dc049c3fb7c6ec91feaf59ea1cea1}{O\+P\+E\+N\+V\+P\+N\+\_\+\+E\+T\+H\+\_\+\+P\+\_\+\+I\+P\+V4}~0x0800   /$\ast$ I\+Pv4 protocol $\ast$/
+\item 
+\#define \hyperlink{proto_8h_a737996fbcf4eb4b020e3f74ab8eec2b0}{O\+P\+E\+N\+V\+P\+N\+\_\+\+E\+T\+H\+\_\+\+P\+\_\+\+I\+P\+V6}~0x86\+D\+D   /$\ast$ I\+Pv6 protocol $\ast$/
+\item 
+\#define \hyperlink{proto_8h_a26d9253bf4687277fbd6655a6c267e39}{O\+P\+E\+N\+V\+P\+N\+\_\+\+E\+T\+H\+\_\+\+P\+\_\+\+A\+R\+P}~0x0806   /$\ast$ A\+R\+P protocol $\ast$/
+\item 
+\#define \hyperlink{proto_8h_afbe01094370f53f974389e850cade01e}{A\+R\+P\+\_\+\+M\+A\+C\+\_\+\+A\+D\+D\+R\+\_\+\+T\+Y\+P\+E}~0x0001
+\item 
+\#define \hyperlink{proto_8h_a7a7c46ffaba30477b8c9e3e61bd2e106}{A\+R\+P\+\_\+\+R\+E\+Q\+U\+E\+S\+T}~0x0001
+\item 
+\#define \hyperlink{proto_8h_a06ba7b414e718081998f2814090debf1}{A\+R\+P\+\_\+\+R\+E\+P\+L\+Y}~0x0002
+\item 
+\#define \hyperlink{proto_8h_ab6b5bc35bc49835a9d79ad0a160d6396}{O\+P\+E\+N\+V\+P\+N\+\_\+\+I\+P\+H\+\_\+\+G\+E\+T\+\_\+\+V\+E\+R}(v)~(((v) $>$$>$ 4) \& 0x0\+F)
+\item 
+\#define \hyperlink{proto_8h_a21e593925601ee7f7da66c254c533c12}{O\+P\+E\+N\+V\+P\+N\+\_\+\+I\+P\+H\+\_\+\+G\+E\+T\+\_\+\+L\+E\+N}(v)~(((v) \& 0x0\+F) $<$$<$ 2)
+\item 
+\#define \hyperlink{proto_8h_a4208bbea370c8f2397df19fb60ce44f9}{O\+P\+E\+N\+V\+P\+N\+\_\+\+I\+P\+\_\+\+O\+F\+F\+M\+A\+S\+K}~0x1fff
+\item 
+\#define \hyperlink{proto_8h_ad3b97d900e22f5b4d45ea058380c3c28}{O\+P\+E\+N\+V\+P\+N\+\_\+\+I\+P\+P\+R\+O\+T\+O\+\_\+\+I\+G\+M\+P}~2  /$\ast$ I\+G\+M\+P protocol $\ast$/
+\item 
+\#define \hyperlink{proto_8h_ae30c4c61212dd7ec5e6cbd1f388ee502}{O\+P\+E\+N\+V\+P\+N\+\_\+\+I\+P\+P\+R\+O\+T\+O\+\_\+\+T\+C\+P}~6  /$\ast$ T\+C\+P protocol $\ast$/
+\item 
+\#define \hyperlink{proto_8h_ad56ac06ef1ae466b6b46441d1b66f317}{O\+P\+E\+N\+V\+P\+N\+\_\+\+I\+P\+P\+R\+O\+T\+O\+\_\+\+U\+D\+P}~17  /$\ast$ U\+D\+P protocol $\ast$/
+\item 
+\#define \hyperlink{proto_8h_a25c7be48b9188cd8b95613e5ec73d368}{O\+P\+E\+N\+V\+P\+N\+\_\+\+T\+C\+P\+H\+\_\+\+G\+E\+T\+\_\+\+D\+O\+F\+F}(d)~(((d) \& 0x\+F0) $>$$>$ 2)
+\item 
+\#define \hyperlink{proto_8h_a020ecc7ba093589f8f30862f698f29e6}{O\+P\+E\+N\+V\+P\+N\+\_\+\+T\+C\+P\+H\+\_\+\+F\+I\+N\+\_\+\+M\+A\+S\+K}~(1$<$$<$0)
+\item 
+\#define \hyperlink{proto_8h_ab62f5c9f19e84e20a99835e670e41710}{O\+P\+E\+N\+V\+P\+N\+\_\+\+T\+C\+P\+H\+\_\+\+S\+Y\+N\+\_\+\+M\+A\+S\+K}~(1$<$$<$1)
+\item 
+\#define \hyperlink{proto_8h_a6197da3146cf5bd5ab5831b996a07d2f}{O\+P\+E\+N\+V\+P\+N\+\_\+\+T\+C\+P\+H\+\_\+\+R\+S\+T\+\_\+\+M\+A\+S\+K}~(1$<$$<$2)
+\item 
+\#define \hyperlink{proto_8h_ae3b9f79474ef2e3652862de3a8de72d7}{O\+P\+E\+N\+V\+P\+N\+\_\+\+T\+C\+P\+H\+\_\+\+P\+S\+H\+\_\+\+M\+A\+S\+K}~(1$<$$<$3)
+\item 
+\#define \hyperlink{proto_8h_a1bb5d528fd08a9767cca1a53fcfa26ed}{O\+P\+E\+N\+V\+P\+N\+\_\+\+T\+C\+P\+H\+\_\+\+A\+C\+K\+\_\+\+M\+A\+S\+K}~(1$<$$<$4)
+\item 
+\#define \hyperlink{proto_8h_ad319ceca073a9b7f58391ef20b8e506f}{O\+P\+E\+N\+V\+P\+N\+\_\+\+T\+C\+P\+H\+\_\+\+U\+R\+G\+\_\+\+M\+A\+S\+K}~(1$<$$<$5)
+\item 
+\#define \hyperlink{proto_8h_a736efb19517925e39911a685cddf40d9}{O\+P\+E\+N\+V\+P\+N\+\_\+\+T\+C\+P\+H\+\_\+\+E\+C\+E\+\_\+\+M\+A\+S\+K}~(1$<$$<$6)
+\item 
+\#define \hyperlink{proto_8h_a9e40f17094d91832c7cbdb75512078c5}{O\+P\+E\+N\+V\+P\+N\+\_\+\+T\+C\+P\+H\+\_\+\+C\+W\+R\+\_\+\+M\+A\+S\+K}~(1$<$$<$7)
+\item 
+\#define \hyperlink{proto_8h_a2d304ecded228f0cdcf3b9ca7e4798a3}{O\+P\+E\+N\+V\+P\+N\+\_\+\+T\+C\+P\+O\+P\+T\+\_\+\+E\+O\+L}~0
+\item 
+\#define \hyperlink{proto_8h_a1f9d2f51b9f2ebb5ab51247041293323}{O\+P\+E\+N\+V\+P\+N\+\_\+\+T\+C\+P\+O\+P\+T\+\_\+\+N\+O\+P}~1
+\item 
+\#define \hyperlink{proto_8h_a29010ba138d25d9f9104a92b3b7e8948}{O\+P\+E\+N\+V\+P\+N\+\_\+\+T\+C\+P\+O\+P\+T\+\_\+\+M\+A\+X\+S\+E\+G}~2
+\item 
+\#define \hyperlink{proto_8h_ad7f09fda48bdd4bdaead9ef4cc59354e}{O\+P\+E\+N\+V\+P\+N\+\_\+\+T\+C\+P\+O\+L\+E\+N\+\_\+\+M\+A\+X\+S\+E\+G}~4
+\item 
+\#define \hyperlink{proto_8h_ab3520f93ac6629ac61a85be22b2be4c6}{A\+D\+J\+U\+S\+T\+\_\+\+C\+H\+E\+C\+K\+S\+U\+M}(acc,  cksum)
+\item 
+\#define \hyperlink{proto_8h_afd5b0dab53a5aec8373262de94a34573}{A\+D\+D\+\_\+\+C\+H\+E\+C\+K\+S\+U\+M\+\_\+32}(acc,  u32)
+\item 
+\#define \hyperlink{proto_8h_a08ce6cd1ad46896c47e30fa9790a9199}{S\+U\+B\+\_\+\+C\+H\+E\+C\+K\+S\+U\+M\+\_\+32}(acc,  u32)
+\item 
+\#define \hyperlink{proto_8h_a2f6275769c07033fe0a7c1dfcca01e02}{M\+T\+U\+\_\+\+T\+O\+\_\+\+M\+S\+S}(mtu)
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} \hyperlink{proto_8h_a3ff585140c0be911484f65149af51e34}{is\+\_\+ipv4} (int tunnel\+\_\+type, struct \hyperlink{structbuffer}{buffer} $\ast$buf)
+\item 
+\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} \hyperlink{proto_8h_a53a4b0598de56c3bf4497c30253c5596}{is\+\_\+ipv6} (int tunnel\+\_\+type, struct \hyperlink{structbuffer}{buffer} $\ast$buf)
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{proto_8h_afd5b0dab53a5aec8373262de94a34573}{}\index{proto.\+h@{proto.\+h}!A\+D\+D\+\_\+\+C\+H\+E\+C\+K\+S\+U\+M\+\_\+32@{A\+D\+D\+\_\+\+C\+H\+E\+C\+K\+S\+U\+M\+\_\+32}}
+\index{A\+D\+D\+\_\+\+C\+H\+E\+C\+K\+S\+U\+M\+\_\+32@{A\+D\+D\+\_\+\+C\+H\+E\+C\+K\+S\+U\+M\+\_\+32}!proto.\+h@{proto.\+h}}
+\subsubsection[{A\+D\+D\+\_\+\+C\+H\+E\+C\+K\+S\+U\+M\+\_\+32}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\+D\+D\+\_\+\+C\+H\+E\+C\+K\+S\+U\+M\+\_\+32(
+\begin{DoxyParamCaption}
+\item[{}]{acc, }
+\item[{}]{u32}
+\end{DoxyParamCaption}
+)}\label{proto_8h_afd5b0dab53a5aec8373262de94a34573}
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\{ \(\backslash\)
+        acc += (u32) & 0xffff; \(\backslash\)
+        acc += (u32) >> 16;    \(\backslash\)
+\}
+\end{DoxyCode}
+\hypertarget{proto_8h_ab3520f93ac6629ac61a85be22b2be4c6}{}\index{proto.\+h@{proto.\+h}!A\+D\+J\+U\+S\+T\+\_\+\+C\+H\+E\+C\+K\+S\+U\+M@{A\+D\+J\+U\+S\+T\+\_\+\+C\+H\+E\+C\+K\+S\+U\+M}}
+\index{A\+D\+J\+U\+S\+T\+\_\+\+C\+H\+E\+C\+K\+S\+U\+M@{A\+D\+J\+U\+S\+T\+\_\+\+C\+H\+E\+C\+K\+S\+U\+M}!proto.\+h@{proto.\+h}}
+\subsubsection[{A\+D\+J\+U\+S\+T\+\_\+\+C\+H\+E\+C\+K\+S\+U\+M}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\+D\+J\+U\+S\+T\+\_\+\+C\+H\+E\+C\+K\+S\+U\+M(
+\begin{DoxyParamCaption}
+\item[{}]{acc, }
+\item[{}]{cksum}
+\end{DoxyParamCaption}
+)}\label{proto_8h_ab3520f93ac6629ac61a85be22b2be4c6}
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\{ \(\backslash\)
+        int \_acc = acc; \(\backslash\)
+        \_acc += (cksum); \(\backslash\)
+        if (\_acc < 0) \{ \(\backslash\)
+            \_acc = -\_acc; \(\backslash\)
+            \_acc = (\_acc >> 16) + (\_acc & 0xffff); \(\backslash\)
+            \_acc += \_acc >> 16; \(\backslash\)
+            (cksum) = (uint16\_t) ~\_acc; \(\backslash\)
+        \} \textcolor{keywordflow}{else} \{ \(\backslash\)
+            \_acc = (\_acc >> 16) + (\_acc & 0xffff); \(\backslash\)
+            \_acc += \_acc >> 16; \(\backslash\)
+            (cksum) = (uint16\_t) \_acc; \(\backslash\)
+        \} \(\backslash\)
+\}
+\end{DoxyCode}
+\hypertarget{proto_8h_afbe01094370f53f974389e850cade01e}{}\index{proto.\+h@{proto.\+h}!A\+R\+P\+\_\+\+M\+A\+C\+\_\+\+A\+D\+D\+R\+\_\+\+T\+Y\+P\+E@{A\+R\+P\+\_\+\+M\+A\+C\+\_\+\+A\+D\+D\+R\+\_\+\+T\+Y\+P\+E}}
+\index{A\+R\+P\+\_\+\+M\+A\+C\+\_\+\+A\+D\+D\+R\+\_\+\+T\+Y\+P\+E@{A\+R\+P\+\_\+\+M\+A\+C\+\_\+\+A\+D\+D\+R\+\_\+\+T\+Y\+P\+E}!proto.\+h@{proto.\+h}}
+\subsubsection[{A\+R\+P\+\_\+\+M\+A\+C\+\_\+\+A\+D\+D\+R\+\_\+\+T\+Y\+P\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\+R\+P\+\_\+\+M\+A\+C\+\_\+\+A\+D\+D\+R\+\_\+\+T\+Y\+P\+E~0x0001}\label{proto_8h_afbe01094370f53f974389e850cade01e}
+\hypertarget{proto_8h_a06ba7b414e718081998f2814090debf1}{}\index{proto.\+h@{proto.\+h}!A\+R\+P\+\_\+\+R\+E\+P\+L\+Y@{A\+R\+P\+\_\+\+R\+E\+P\+L\+Y}}
+\index{A\+R\+P\+\_\+\+R\+E\+P\+L\+Y@{A\+R\+P\+\_\+\+R\+E\+P\+L\+Y}!proto.\+h@{proto.\+h}}
+\subsubsection[{A\+R\+P\+\_\+\+R\+E\+P\+L\+Y}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\+R\+P\+\_\+\+R\+E\+P\+L\+Y~0x0002}\label{proto_8h_a06ba7b414e718081998f2814090debf1}
+\hypertarget{proto_8h_a7a7c46ffaba30477b8c9e3e61bd2e106}{}\index{proto.\+h@{proto.\+h}!A\+R\+P\+\_\+\+R\+E\+Q\+U\+E\+S\+T@{A\+R\+P\+\_\+\+R\+E\+Q\+U\+E\+S\+T}}
+\index{A\+R\+P\+\_\+\+R\+E\+Q\+U\+E\+S\+T@{A\+R\+P\+\_\+\+R\+E\+Q\+U\+E\+S\+T}!proto.\+h@{proto.\+h}}
+\subsubsection[{A\+R\+P\+\_\+\+R\+E\+Q\+U\+E\+S\+T}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\+R\+P\+\_\+\+R\+E\+Q\+U\+E\+S\+T~0x0001}\label{proto_8h_a7a7c46ffaba30477b8c9e3e61bd2e106}
+\hypertarget{proto_8h_a541255b8640c189d1bd902f1168b1ee5}{}\index{proto.\+h@{proto.\+h}!D\+E\+V\+\_\+\+T\+Y\+P\+E\+\_\+\+N\+U\+L\+L@{D\+E\+V\+\_\+\+T\+Y\+P\+E\+\_\+\+N\+U\+L\+L}}
+\index{D\+E\+V\+\_\+\+T\+Y\+P\+E\+\_\+\+N\+U\+L\+L@{D\+E\+V\+\_\+\+T\+Y\+P\+E\+\_\+\+N\+U\+L\+L}!proto.\+h@{proto.\+h}}
+\subsubsection[{D\+E\+V\+\_\+\+T\+Y\+P\+E\+\_\+\+N\+U\+L\+L}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+E\+V\+\_\+\+T\+Y\+P\+E\+\_\+\+N\+U\+L\+L~1}\label{proto_8h_a541255b8640c189d1bd902f1168b1ee5}
+\hypertarget{proto_8h_a3e52229580f912055a75d0cad8eff3f5}{}\index{proto.\+h@{proto.\+h}!D\+E\+V\+\_\+\+T\+Y\+P\+E\+\_\+\+T\+A\+P@{D\+E\+V\+\_\+\+T\+Y\+P\+E\+\_\+\+T\+A\+P}}
+\index{D\+E\+V\+\_\+\+T\+Y\+P\+E\+\_\+\+T\+A\+P@{D\+E\+V\+\_\+\+T\+Y\+P\+E\+\_\+\+T\+A\+P}!proto.\+h@{proto.\+h}}
+\subsubsection[{D\+E\+V\+\_\+\+T\+Y\+P\+E\+\_\+\+T\+A\+P}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+E\+V\+\_\+\+T\+Y\+P\+E\+\_\+\+T\+A\+P~3    /$\ast$ ethernet (802.\+3) tunnel $\ast$/}\label{proto_8h_a3e52229580f912055a75d0cad8eff3f5}
+\hypertarget{proto_8h_a7bd06f1b39bc1fa6f63378e4cf00bac0}{}\index{proto.\+h@{proto.\+h}!D\+E\+V\+\_\+\+T\+Y\+P\+E\+\_\+\+T\+U\+N@{D\+E\+V\+\_\+\+T\+Y\+P\+E\+\_\+\+T\+U\+N}}
+\index{D\+E\+V\+\_\+\+T\+Y\+P\+E\+\_\+\+T\+U\+N@{D\+E\+V\+\_\+\+T\+Y\+P\+E\+\_\+\+T\+U\+N}!proto.\+h@{proto.\+h}}
+\subsubsection[{D\+E\+V\+\_\+\+T\+Y\+P\+E\+\_\+\+T\+U\+N}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+E\+V\+\_\+\+T\+Y\+P\+E\+\_\+\+T\+U\+N~2    /$\ast$ point-\/to-\/point I\+P tunnel $\ast$/}\label{proto_8h_a7bd06f1b39bc1fa6f63378e4cf00bac0}
+\hypertarget{proto_8h_a44def7b94effffa8c13220d78b841d68}{}\index{proto.\+h@{proto.\+h}!D\+E\+V\+\_\+\+T\+Y\+P\+E\+\_\+\+U\+N\+D\+E\+F@{D\+E\+V\+\_\+\+T\+Y\+P\+E\+\_\+\+U\+N\+D\+E\+F}}
+\index{D\+E\+V\+\_\+\+T\+Y\+P\+E\+\_\+\+U\+N\+D\+E\+F@{D\+E\+V\+\_\+\+T\+Y\+P\+E\+\_\+\+U\+N\+D\+E\+F}!proto.\+h@{proto.\+h}}
+\subsubsection[{D\+E\+V\+\_\+\+T\+Y\+P\+E\+\_\+\+U\+N\+D\+E\+F}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+E\+V\+\_\+\+T\+Y\+P\+E\+\_\+\+U\+N\+D\+E\+F~0}\label{proto_8h_a44def7b94effffa8c13220d78b841d68}
+\hypertarget{proto_8h_a2f6275769c07033fe0a7c1dfcca01e02}{}\index{proto.\+h@{proto.\+h}!M\+T\+U\+\_\+\+T\+O\+\_\+\+M\+S\+S@{M\+T\+U\+\_\+\+T\+O\+\_\+\+M\+S\+S}}
+\index{M\+T\+U\+\_\+\+T\+O\+\_\+\+M\+S\+S@{M\+T\+U\+\_\+\+T\+O\+\_\+\+M\+S\+S}!proto.\+h@{proto.\+h}}
+\subsubsection[{M\+T\+U\+\_\+\+T\+O\+\_\+\+M\+S\+S}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\+T\+U\+\_\+\+T\+O\+\_\+\+M\+S\+S(
+\begin{DoxyParamCaption}
+\item[{}]{mtu}
+\end{DoxyParamCaption}
+)}\label{proto_8h_a2f6275769c07033fe0a7c1dfcca01e02}
+{\bfseries Value\+:}
+\begin{DoxyCode}
+(mtu - \textcolor{keyword}{sizeof}(\textcolor{keyword}{struct }\hyperlink{structopenvpn__iphdr}{openvpn\_iphdr}) \(\backslash\)
+                         - sizeof(struct \hyperlink{structopenvpn__tcphdr}{openvpn\_tcphdr}))
+\end{DoxyCode}
+\hypertarget{proto_8h_a6324dad6dba94d99632f089372acde4a}{}\index{proto.\+h@{proto.\+h}!O\+P\+E\+N\+V\+P\+N\+\_\+\+E\+T\+H\+\_\+\+A\+L\+E\+N@{O\+P\+E\+N\+V\+P\+N\+\_\+\+E\+T\+H\+\_\+\+A\+L\+E\+N}}
+\index{O\+P\+E\+N\+V\+P\+N\+\_\+\+E\+T\+H\+\_\+\+A\+L\+E\+N@{O\+P\+E\+N\+V\+P\+N\+\_\+\+E\+T\+H\+\_\+\+A\+L\+E\+N}!proto.\+h@{proto.\+h}}
+\subsubsection[{O\+P\+E\+N\+V\+P\+N\+\_\+\+E\+T\+H\+\_\+\+A\+L\+E\+N}]{\setlength{\rightskip}{0pt plus 5cm}\#define O\+P\+E\+N\+V\+P\+N\+\_\+\+E\+T\+H\+\_\+\+A\+L\+E\+N~6            /$\ast$ ethernet {\bf address} length $\ast$/}\label{proto_8h_a6324dad6dba94d99632f089372acde4a}
+\hypertarget{proto_8h_a26d9253bf4687277fbd6655a6c267e39}{}\index{proto.\+h@{proto.\+h}!O\+P\+E\+N\+V\+P\+N\+\_\+\+E\+T\+H\+\_\+\+P\+\_\+\+A\+R\+P@{O\+P\+E\+N\+V\+P\+N\+\_\+\+E\+T\+H\+\_\+\+P\+\_\+\+A\+R\+P}}
+\index{O\+P\+E\+N\+V\+P\+N\+\_\+\+E\+T\+H\+\_\+\+P\+\_\+\+A\+R\+P@{O\+P\+E\+N\+V\+P\+N\+\_\+\+E\+T\+H\+\_\+\+P\+\_\+\+A\+R\+P}!proto.\+h@{proto.\+h}}
+\subsubsection[{O\+P\+E\+N\+V\+P\+N\+\_\+\+E\+T\+H\+\_\+\+P\+\_\+\+A\+R\+P}]{\setlength{\rightskip}{0pt plus 5cm}\#define O\+P\+E\+N\+V\+P\+N\+\_\+\+E\+T\+H\+\_\+\+P\+\_\+\+A\+R\+P~0x0806   /$\ast$ A\+R\+P protocol $\ast$/}\label{proto_8h_a26d9253bf4687277fbd6655a6c267e39}
+\hypertarget{proto_8h_a867dc049c3fb7c6ec91feaf59ea1cea1}{}\index{proto.\+h@{proto.\+h}!O\+P\+E\+N\+V\+P\+N\+\_\+\+E\+T\+H\+\_\+\+P\+\_\+\+I\+P\+V4@{O\+P\+E\+N\+V\+P\+N\+\_\+\+E\+T\+H\+\_\+\+P\+\_\+\+I\+P\+V4}}
+\index{O\+P\+E\+N\+V\+P\+N\+\_\+\+E\+T\+H\+\_\+\+P\+\_\+\+I\+P\+V4@{O\+P\+E\+N\+V\+P\+N\+\_\+\+E\+T\+H\+\_\+\+P\+\_\+\+I\+P\+V4}!proto.\+h@{proto.\+h}}
+\subsubsection[{O\+P\+E\+N\+V\+P\+N\+\_\+\+E\+T\+H\+\_\+\+P\+\_\+\+I\+P\+V4}]{\setlength{\rightskip}{0pt plus 5cm}\#define O\+P\+E\+N\+V\+P\+N\+\_\+\+E\+T\+H\+\_\+\+P\+\_\+\+I\+P\+V4~0x0800   /$\ast$ I\+Pv4 protocol $\ast$/}\label{proto_8h_a867dc049c3fb7c6ec91feaf59ea1cea1}
+\hypertarget{proto_8h_a737996fbcf4eb4b020e3f74ab8eec2b0}{}\index{proto.\+h@{proto.\+h}!O\+P\+E\+N\+V\+P\+N\+\_\+\+E\+T\+H\+\_\+\+P\+\_\+\+I\+P\+V6@{O\+P\+E\+N\+V\+P\+N\+\_\+\+E\+T\+H\+\_\+\+P\+\_\+\+I\+P\+V6}}
+\index{O\+P\+E\+N\+V\+P\+N\+\_\+\+E\+T\+H\+\_\+\+P\+\_\+\+I\+P\+V6@{O\+P\+E\+N\+V\+P\+N\+\_\+\+E\+T\+H\+\_\+\+P\+\_\+\+I\+P\+V6}!proto.\+h@{proto.\+h}}
+\subsubsection[{O\+P\+E\+N\+V\+P\+N\+\_\+\+E\+T\+H\+\_\+\+P\+\_\+\+I\+P\+V6}]{\setlength{\rightskip}{0pt plus 5cm}\#define O\+P\+E\+N\+V\+P\+N\+\_\+\+E\+T\+H\+\_\+\+P\+\_\+\+I\+P\+V6~0x86\+D\+D   /$\ast$ I\+Pv6 protocol $\ast$/}\label{proto_8h_a737996fbcf4eb4b020e3f74ab8eec2b0}
+\hypertarget{proto_8h_a4208bbea370c8f2397df19fb60ce44f9}{}\index{proto.\+h@{proto.\+h}!O\+P\+E\+N\+V\+P\+N\+\_\+\+I\+P\+\_\+\+O\+F\+F\+M\+A\+S\+K@{O\+P\+E\+N\+V\+P\+N\+\_\+\+I\+P\+\_\+\+O\+F\+F\+M\+A\+S\+K}}
+\index{O\+P\+E\+N\+V\+P\+N\+\_\+\+I\+P\+\_\+\+O\+F\+F\+M\+A\+S\+K@{O\+P\+E\+N\+V\+P\+N\+\_\+\+I\+P\+\_\+\+O\+F\+F\+M\+A\+S\+K}!proto.\+h@{proto.\+h}}
+\subsubsection[{O\+P\+E\+N\+V\+P\+N\+\_\+\+I\+P\+\_\+\+O\+F\+F\+M\+A\+S\+K}]{\setlength{\rightskip}{0pt plus 5cm}\#define O\+P\+E\+N\+V\+P\+N\+\_\+\+I\+P\+\_\+\+O\+F\+F\+M\+A\+S\+K~0x1fff}\label{proto_8h_a4208bbea370c8f2397df19fb60ce44f9}
+\hypertarget{proto_8h_a21e593925601ee7f7da66c254c533c12}{}\index{proto.\+h@{proto.\+h}!O\+P\+E\+N\+V\+P\+N\+\_\+\+I\+P\+H\+\_\+\+G\+E\+T\+\_\+\+L\+E\+N@{O\+P\+E\+N\+V\+P\+N\+\_\+\+I\+P\+H\+\_\+\+G\+E\+T\+\_\+\+L\+E\+N}}
+\index{O\+P\+E\+N\+V\+P\+N\+\_\+\+I\+P\+H\+\_\+\+G\+E\+T\+\_\+\+L\+E\+N@{O\+P\+E\+N\+V\+P\+N\+\_\+\+I\+P\+H\+\_\+\+G\+E\+T\+\_\+\+L\+E\+N}!proto.\+h@{proto.\+h}}
+\subsubsection[{O\+P\+E\+N\+V\+P\+N\+\_\+\+I\+P\+H\+\_\+\+G\+E\+T\+\_\+\+L\+E\+N}]{\setlength{\rightskip}{0pt plus 5cm}\#define O\+P\+E\+N\+V\+P\+N\+\_\+\+I\+P\+H\+\_\+\+G\+E\+T\+\_\+\+L\+E\+N(
+\begin{DoxyParamCaption}
+\item[{}]{v}
+\end{DoxyParamCaption}
+)~(((v) \& 0x0\+F) $<$$<$ 2)}\label{proto_8h_a21e593925601ee7f7da66c254c533c12}
+\hypertarget{proto_8h_ab6b5bc35bc49835a9d79ad0a160d6396}{}\index{proto.\+h@{proto.\+h}!O\+P\+E\+N\+V\+P\+N\+\_\+\+I\+P\+H\+\_\+\+G\+E\+T\+\_\+\+V\+E\+R@{O\+P\+E\+N\+V\+P\+N\+\_\+\+I\+P\+H\+\_\+\+G\+E\+T\+\_\+\+V\+E\+R}}
+\index{O\+P\+E\+N\+V\+P\+N\+\_\+\+I\+P\+H\+\_\+\+G\+E\+T\+\_\+\+V\+E\+R@{O\+P\+E\+N\+V\+P\+N\+\_\+\+I\+P\+H\+\_\+\+G\+E\+T\+\_\+\+V\+E\+R}!proto.\+h@{proto.\+h}}
+\subsubsection[{O\+P\+E\+N\+V\+P\+N\+\_\+\+I\+P\+H\+\_\+\+G\+E\+T\+\_\+\+V\+E\+R}]{\setlength{\rightskip}{0pt plus 5cm}\#define O\+P\+E\+N\+V\+P\+N\+\_\+\+I\+P\+H\+\_\+\+G\+E\+T\+\_\+\+V\+E\+R(
+\begin{DoxyParamCaption}
+\item[{}]{v}
+\end{DoxyParamCaption}
+)~(((v) $>$$>$ 4) \& 0x0\+F)}\label{proto_8h_ab6b5bc35bc49835a9d79ad0a160d6396}
+\hypertarget{proto_8h_ad3b97d900e22f5b4d45ea058380c3c28}{}\index{proto.\+h@{proto.\+h}!O\+P\+E\+N\+V\+P\+N\+\_\+\+I\+P\+P\+R\+O\+T\+O\+\_\+\+I\+G\+M\+P@{O\+P\+E\+N\+V\+P\+N\+\_\+\+I\+P\+P\+R\+O\+T\+O\+\_\+\+I\+G\+M\+P}}
+\index{O\+P\+E\+N\+V\+P\+N\+\_\+\+I\+P\+P\+R\+O\+T\+O\+\_\+\+I\+G\+M\+P@{O\+P\+E\+N\+V\+P\+N\+\_\+\+I\+P\+P\+R\+O\+T\+O\+\_\+\+I\+G\+M\+P}!proto.\+h@{proto.\+h}}
+\subsubsection[{O\+P\+E\+N\+V\+P\+N\+\_\+\+I\+P\+P\+R\+O\+T\+O\+\_\+\+I\+G\+M\+P}]{\setlength{\rightskip}{0pt plus 5cm}\#define O\+P\+E\+N\+V\+P\+N\+\_\+\+I\+P\+P\+R\+O\+T\+O\+\_\+\+I\+G\+M\+P~2  /$\ast$ I\+G\+M\+P protocol $\ast$/}\label{proto_8h_ad3b97d900e22f5b4d45ea058380c3c28}
+\hypertarget{proto_8h_ae30c4c61212dd7ec5e6cbd1f388ee502}{}\index{proto.\+h@{proto.\+h}!O\+P\+E\+N\+V\+P\+N\+\_\+\+I\+P\+P\+R\+O\+T\+O\+\_\+\+T\+C\+P@{O\+P\+E\+N\+V\+P\+N\+\_\+\+I\+P\+P\+R\+O\+T\+O\+\_\+\+T\+C\+P}}
+\index{O\+P\+E\+N\+V\+P\+N\+\_\+\+I\+P\+P\+R\+O\+T\+O\+\_\+\+T\+C\+P@{O\+P\+E\+N\+V\+P\+N\+\_\+\+I\+P\+P\+R\+O\+T\+O\+\_\+\+T\+C\+P}!proto.\+h@{proto.\+h}}
+\subsubsection[{O\+P\+E\+N\+V\+P\+N\+\_\+\+I\+P\+P\+R\+O\+T\+O\+\_\+\+T\+C\+P}]{\setlength{\rightskip}{0pt plus 5cm}\#define O\+P\+E\+N\+V\+P\+N\+\_\+\+I\+P\+P\+R\+O\+T\+O\+\_\+\+T\+C\+P~6  /$\ast$ T\+C\+P protocol $\ast$/}\label{proto_8h_ae30c4c61212dd7ec5e6cbd1f388ee502}
+\hypertarget{proto_8h_ad56ac06ef1ae466b6b46441d1b66f317}{}\index{proto.\+h@{proto.\+h}!O\+P\+E\+N\+V\+P\+N\+\_\+\+I\+P\+P\+R\+O\+T\+O\+\_\+\+U\+D\+P@{O\+P\+E\+N\+V\+P\+N\+\_\+\+I\+P\+P\+R\+O\+T\+O\+\_\+\+U\+D\+P}}
+\index{O\+P\+E\+N\+V\+P\+N\+\_\+\+I\+P\+P\+R\+O\+T\+O\+\_\+\+U\+D\+P@{O\+P\+E\+N\+V\+P\+N\+\_\+\+I\+P\+P\+R\+O\+T\+O\+\_\+\+U\+D\+P}!proto.\+h@{proto.\+h}}
+\subsubsection[{O\+P\+E\+N\+V\+P\+N\+\_\+\+I\+P\+P\+R\+O\+T\+O\+\_\+\+U\+D\+P}]{\setlength{\rightskip}{0pt plus 5cm}\#define O\+P\+E\+N\+V\+P\+N\+\_\+\+I\+P\+P\+R\+O\+T\+O\+\_\+\+U\+D\+P~17  /$\ast$ U\+D\+P protocol $\ast$/}\label{proto_8h_ad56ac06ef1ae466b6b46441d1b66f317}
+\hypertarget{proto_8h_a1bb5d528fd08a9767cca1a53fcfa26ed}{}\index{proto.\+h@{proto.\+h}!O\+P\+E\+N\+V\+P\+N\+\_\+\+T\+C\+P\+H\+\_\+\+A\+C\+K\+\_\+\+M\+A\+S\+K@{O\+P\+E\+N\+V\+P\+N\+\_\+\+T\+C\+P\+H\+\_\+\+A\+C\+K\+\_\+\+M\+A\+S\+K}}
+\index{O\+P\+E\+N\+V\+P\+N\+\_\+\+T\+C\+P\+H\+\_\+\+A\+C\+K\+\_\+\+M\+A\+S\+K@{O\+P\+E\+N\+V\+P\+N\+\_\+\+T\+C\+P\+H\+\_\+\+A\+C\+K\+\_\+\+M\+A\+S\+K}!proto.\+h@{proto.\+h}}
+\subsubsection[{O\+P\+E\+N\+V\+P\+N\+\_\+\+T\+C\+P\+H\+\_\+\+A\+C\+K\+\_\+\+M\+A\+S\+K}]{\setlength{\rightskip}{0pt plus 5cm}\#define O\+P\+E\+N\+V\+P\+N\+\_\+\+T\+C\+P\+H\+\_\+\+A\+C\+K\+\_\+\+M\+A\+S\+K~(1$<$$<$4)}\label{proto_8h_a1bb5d528fd08a9767cca1a53fcfa26ed}
+\hypertarget{proto_8h_a9e40f17094d91832c7cbdb75512078c5}{}\index{proto.\+h@{proto.\+h}!O\+P\+E\+N\+V\+P\+N\+\_\+\+T\+C\+P\+H\+\_\+\+C\+W\+R\+\_\+\+M\+A\+S\+K@{O\+P\+E\+N\+V\+P\+N\+\_\+\+T\+C\+P\+H\+\_\+\+C\+W\+R\+\_\+\+M\+A\+S\+K}}
+\index{O\+P\+E\+N\+V\+P\+N\+\_\+\+T\+C\+P\+H\+\_\+\+C\+W\+R\+\_\+\+M\+A\+S\+K@{O\+P\+E\+N\+V\+P\+N\+\_\+\+T\+C\+P\+H\+\_\+\+C\+W\+R\+\_\+\+M\+A\+S\+K}!proto.\+h@{proto.\+h}}
+\subsubsection[{O\+P\+E\+N\+V\+P\+N\+\_\+\+T\+C\+P\+H\+\_\+\+C\+W\+R\+\_\+\+M\+A\+S\+K}]{\setlength{\rightskip}{0pt plus 5cm}\#define O\+P\+E\+N\+V\+P\+N\+\_\+\+T\+C\+P\+H\+\_\+\+C\+W\+R\+\_\+\+M\+A\+S\+K~(1$<$$<$7)}\label{proto_8h_a9e40f17094d91832c7cbdb75512078c5}
+\hypertarget{proto_8h_a736efb19517925e39911a685cddf40d9}{}\index{proto.\+h@{proto.\+h}!O\+P\+E\+N\+V\+P\+N\+\_\+\+T\+C\+P\+H\+\_\+\+E\+C\+E\+\_\+\+M\+A\+S\+K@{O\+P\+E\+N\+V\+P\+N\+\_\+\+T\+C\+P\+H\+\_\+\+E\+C\+E\+\_\+\+M\+A\+S\+K}}
+\index{O\+P\+E\+N\+V\+P\+N\+\_\+\+T\+C\+P\+H\+\_\+\+E\+C\+E\+\_\+\+M\+A\+S\+K@{O\+P\+E\+N\+V\+P\+N\+\_\+\+T\+C\+P\+H\+\_\+\+E\+C\+E\+\_\+\+M\+A\+S\+K}!proto.\+h@{proto.\+h}}
+\subsubsection[{O\+P\+E\+N\+V\+P\+N\+\_\+\+T\+C\+P\+H\+\_\+\+E\+C\+E\+\_\+\+M\+A\+S\+K}]{\setlength{\rightskip}{0pt plus 5cm}\#define O\+P\+E\+N\+V\+P\+N\+\_\+\+T\+C\+P\+H\+\_\+\+E\+C\+E\+\_\+\+M\+A\+S\+K~(1$<$$<$6)}\label{proto_8h_a736efb19517925e39911a685cddf40d9}
+\hypertarget{proto_8h_a020ecc7ba093589f8f30862f698f29e6}{}\index{proto.\+h@{proto.\+h}!O\+P\+E\+N\+V\+P\+N\+\_\+\+T\+C\+P\+H\+\_\+\+F\+I\+N\+\_\+\+M\+A\+S\+K@{O\+P\+E\+N\+V\+P\+N\+\_\+\+T\+C\+P\+H\+\_\+\+F\+I\+N\+\_\+\+M\+A\+S\+K}}
+\index{O\+P\+E\+N\+V\+P\+N\+\_\+\+T\+C\+P\+H\+\_\+\+F\+I\+N\+\_\+\+M\+A\+S\+K@{O\+P\+E\+N\+V\+P\+N\+\_\+\+T\+C\+P\+H\+\_\+\+F\+I\+N\+\_\+\+M\+A\+S\+K}!proto.\+h@{proto.\+h}}
+\subsubsection[{O\+P\+E\+N\+V\+P\+N\+\_\+\+T\+C\+P\+H\+\_\+\+F\+I\+N\+\_\+\+M\+A\+S\+K}]{\setlength{\rightskip}{0pt plus 5cm}\#define O\+P\+E\+N\+V\+P\+N\+\_\+\+T\+C\+P\+H\+\_\+\+F\+I\+N\+\_\+\+M\+A\+S\+K~(1$<$$<$0)}\label{proto_8h_a020ecc7ba093589f8f30862f698f29e6}
+\hypertarget{proto_8h_a25c7be48b9188cd8b95613e5ec73d368}{}\index{proto.\+h@{proto.\+h}!O\+P\+E\+N\+V\+P\+N\+\_\+\+T\+C\+P\+H\+\_\+\+G\+E\+T\+\_\+\+D\+O\+F\+F@{O\+P\+E\+N\+V\+P\+N\+\_\+\+T\+C\+P\+H\+\_\+\+G\+E\+T\+\_\+\+D\+O\+F\+F}}
+\index{O\+P\+E\+N\+V\+P\+N\+\_\+\+T\+C\+P\+H\+\_\+\+G\+E\+T\+\_\+\+D\+O\+F\+F@{O\+P\+E\+N\+V\+P\+N\+\_\+\+T\+C\+P\+H\+\_\+\+G\+E\+T\+\_\+\+D\+O\+F\+F}!proto.\+h@{proto.\+h}}
+\subsubsection[{O\+P\+E\+N\+V\+P\+N\+\_\+\+T\+C\+P\+H\+\_\+\+G\+E\+T\+\_\+\+D\+O\+F\+F}]{\setlength{\rightskip}{0pt plus 5cm}\#define O\+P\+E\+N\+V\+P\+N\+\_\+\+T\+C\+P\+H\+\_\+\+G\+E\+T\+\_\+\+D\+O\+F\+F(
+\begin{DoxyParamCaption}
+\item[{}]{d}
+\end{DoxyParamCaption}
+)~(((d) \& 0x\+F0) $>$$>$ 2)}\label{proto_8h_a25c7be48b9188cd8b95613e5ec73d368}
+\hypertarget{proto_8h_ae3b9f79474ef2e3652862de3a8de72d7}{}\index{proto.\+h@{proto.\+h}!O\+P\+E\+N\+V\+P\+N\+\_\+\+T\+C\+P\+H\+\_\+\+P\+S\+H\+\_\+\+M\+A\+S\+K@{O\+P\+E\+N\+V\+P\+N\+\_\+\+T\+C\+P\+H\+\_\+\+P\+S\+H\+\_\+\+M\+A\+S\+K}}
+\index{O\+P\+E\+N\+V\+P\+N\+\_\+\+T\+C\+P\+H\+\_\+\+P\+S\+H\+\_\+\+M\+A\+S\+K@{O\+P\+E\+N\+V\+P\+N\+\_\+\+T\+C\+P\+H\+\_\+\+P\+S\+H\+\_\+\+M\+A\+S\+K}!proto.\+h@{proto.\+h}}
+\subsubsection[{O\+P\+E\+N\+V\+P\+N\+\_\+\+T\+C\+P\+H\+\_\+\+P\+S\+H\+\_\+\+M\+A\+S\+K}]{\setlength{\rightskip}{0pt plus 5cm}\#define O\+P\+E\+N\+V\+P\+N\+\_\+\+T\+C\+P\+H\+\_\+\+P\+S\+H\+\_\+\+M\+A\+S\+K~(1$<$$<$3)}\label{proto_8h_ae3b9f79474ef2e3652862de3a8de72d7}
+\hypertarget{proto_8h_a6197da3146cf5bd5ab5831b996a07d2f}{}\index{proto.\+h@{proto.\+h}!O\+P\+E\+N\+V\+P\+N\+\_\+\+T\+C\+P\+H\+\_\+\+R\+S\+T\+\_\+\+M\+A\+S\+K@{O\+P\+E\+N\+V\+P\+N\+\_\+\+T\+C\+P\+H\+\_\+\+R\+S\+T\+\_\+\+M\+A\+S\+K}}
+\index{O\+P\+E\+N\+V\+P\+N\+\_\+\+T\+C\+P\+H\+\_\+\+R\+S\+T\+\_\+\+M\+A\+S\+K@{O\+P\+E\+N\+V\+P\+N\+\_\+\+T\+C\+P\+H\+\_\+\+R\+S\+T\+\_\+\+M\+A\+S\+K}!proto.\+h@{proto.\+h}}
+\subsubsection[{O\+P\+E\+N\+V\+P\+N\+\_\+\+T\+C\+P\+H\+\_\+\+R\+S\+T\+\_\+\+M\+A\+S\+K}]{\setlength{\rightskip}{0pt plus 5cm}\#define O\+P\+E\+N\+V\+P\+N\+\_\+\+T\+C\+P\+H\+\_\+\+R\+S\+T\+\_\+\+M\+A\+S\+K~(1$<$$<$2)}\label{proto_8h_a6197da3146cf5bd5ab5831b996a07d2f}
+\hypertarget{proto_8h_ab62f5c9f19e84e20a99835e670e41710}{}\index{proto.\+h@{proto.\+h}!O\+P\+E\+N\+V\+P\+N\+\_\+\+T\+C\+P\+H\+\_\+\+S\+Y\+N\+\_\+\+M\+A\+S\+K@{O\+P\+E\+N\+V\+P\+N\+\_\+\+T\+C\+P\+H\+\_\+\+S\+Y\+N\+\_\+\+M\+A\+S\+K}}
+\index{O\+P\+E\+N\+V\+P\+N\+\_\+\+T\+C\+P\+H\+\_\+\+S\+Y\+N\+\_\+\+M\+A\+S\+K@{O\+P\+E\+N\+V\+P\+N\+\_\+\+T\+C\+P\+H\+\_\+\+S\+Y\+N\+\_\+\+M\+A\+S\+K}!proto.\+h@{proto.\+h}}
+\subsubsection[{O\+P\+E\+N\+V\+P\+N\+\_\+\+T\+C\+P\+H\+\_\+\+S\+Y\+N\+\_\+\+M\+A\+S\+K}]{\setlength{\rightskip}{0pt plus 5cm}\#define O\+P\+E\+N\+V\+P\+N\+\_\+\+T\+C\+P\+H\+\_\+\+S\+Y\+N\+\_\+\+M\+A\+S\+K~(1$<$$<$1)}\label{proto_8h_ab62f5c9f19e84e20a99835e670e41710}
+\hypertarget{proto_8h_ad319ceca073a9b7f58391ef20b8e506f}{}\index{proto.\+h@{proto.\+h}!O\+P\+E\+N\+V\+P\+N\+\_\+\+T\+C\+P\+H\+\_\+\+U\+R\+G\+\_\+\+M\+A\+S\+K@{O\+P\+E\+N\+V\+P\+N\+\_\+\+T\+C\+P\+H\+\_\+\+U\+R\+G\+\_\+\+M\+A\+S\+K}}
+\index{O\+P\+E\+N\+V\+P\+N\+\_\+\+T\+C\+P\+H\+\_\+\+U\+R\+G\+\_\+\+M\+A\+S\+K@{O\+P\+E\+N\+V\+P\+N\+\_\+\+T\+C\+P\+H\+\_\+\+U\+R\+G\+\_\+\+M\+A\+S\+K}!proto.\+h@{proto.\+h}}
+\subsubsection[{O\+P\+E\+N\+V\+P\+N\+\_\+\+T\+C\+P\+H\+\_\+\+U\+R\+G\+\_\+\+M\+A\+S\+K}]{\setlength{\rightskip}{0pt plus 5cm}\#define O\+P\+E\+N\+V\+P\+N\+\_\+\+T\+C\+P\+H\+\_\+\+U\+R\+G\+\_\+\+M\+A\+S\+K~(1$<$$<$5)}\label{proto_8h_ad319ceca073a9b7f58391ef20b8e506f}
+\hypertarget{proto_8h_ad7f09fda48bdd4bdaead9ef4cc59354e}{}\index{proto.\+h@{proto.\+h}!O\+P\+E\+N\+V\+P\+N\+\_\+\+T\+C\+P\+O\+L\+E\+N\+\_\+\+M\+A\+X\+S\+E\+G@{O\+P\+E\+N\+V\+P\+N\+\_\+\+T\+C\+P\+O\+L\+E\+N\+\_\+\+M\+A\+X\+S\+E\+G}}
+\index{O\+P\+E\+N\+V\+P\+N\+\_\+\+T\+C\+P\+O\+L\+E\+N\+\_\+\+M\+A\+X\+S\+E\+G@{O\+P\+E\+N\+V\+P\+N\+\_\+\+T\+C\+P\+O\+L\+E\+N\+\_\+\+M\+A\+X\+S\+E\+G}!proto.\+h@{proto.\+h}}
+\subsubsection[{O\+P\+E\+N\+V\+P\+N\+\_\+\+T\+C\+P\+O\+L\+E\+N\+\_\+\+M\+A\+X\+S\+E\+G}]{\setlength{\rightskip}{0pt plus 5cm}\#define O\+P\+E\+N\+V\+P\+N\+\_\+\+T\+C\+P\+O\+L\+E\+N\+\_\+\+M\+A\+X\+S\+E\+G~4}\label{proto_8h_ad7f09fda48bdd4bdaead9ef4cc59354e}
+\hypertarget{proto_8h_a2d304ecded228f0cdcf3b9ca7e4798a3}{}\index{proto.\+h@{proto.\+h}!O\+P\+E\+N\+V\+P\+N\+\_\+\+T\+C\+P\+O\+P\+T\+\_\+\+E\+O\+L@{O\+P\+E\+N\+V\+P\+N\+\_\+\+T\+C\+P\+O\+P\+T\+\_\+\+E\+O\+L}}
+\index{O\+P\+E\+N\+V\+P\+N\+\_\+\+T\+C\+P\+O\+P\+T\+\_\+\+E\+O\+L@{O\+P\+E\+N\+V\+P\+N\+\_\+\+T\+C\+P\+O\+P\+T\+\_\+\+E\+O\+L}!proto.\+h@{proto.\+h}}
+\subsubsection[{O\+P\+E\+N\+V\+P\+N\+\_\+\+T\+C\+P\+O\+P\+T\+\_\+\+E\+O\+L}]{\setlength{\rightskip}{0pt plus 5cm}\#define O\+P\+E\+N\+V\+P\+N\+\_\+\+T\+C\+P\+O\+P\+T\+\_\+\+E\+O\+L~0}\label{proto_8h_a2d304ecded228f0cdcf3b9ca7e4798a3}
+\hypertarget{proto_8h_a29010ba138d25d9f9104a92b3b7e8948}{}\index{proto.\+h@{proto.\+h}!O\+P\+E\+N\+V\+P\+N\+\_\+\+T\+C\+P\+O\+P\+T\+\_\+\+M\+A\+X\+S\+E\+G@{O\+P\+E\+N\+V\+P\+N\+\_\+\+T\+C\+P\+O\+P\+T\+\_\+\+M\+A\+X\+S\+E\+G}}
+\index{O\+P\+E\+N\+V\+P\+N\+\_\+\+T\+C\+P\+O\+P\+T\+\_\+\+M\+A\+X\+S\+E\+G@{O\+P\+E\+N\+V\+P\+N\+\_\+\+T\+C\+P\+O\+P\+T\+\_\+\+M\+A\+X\+S\+E\+G}!proto.\+h@{proto.\+h}}
+\subsubsection[{O\+P\+E\+N\+V\+P\+N\+\_\+\+T\+C\+P\+O\+P\+T\+\_\+\+M\+A\+X\+S\+E\+G}]{\setlength{\rightskip}{0pt plus 5cm}\#define O\+P\+E\+N\+V\+P\+N\+\_\+\+T\+C\+P\+O\+P\+T\+\_\+\+M\+A\+X\+S\+E\+G~2}\label{proto_8h_a29010ba138d25d9f9104a92b3b7e8948}
+\hypertarget{proto_8h_a1f9d2f51b9f2ebb5ab51247041293323}{}\index{proto.\+h@{proto.\+h}!O\+P\+E\+N\+V\+P\+N\+\_\+\+T\+C\+P\+O\+P\+T\+\_\+\+N\+O\+P@{O\+P\+E\+N\+V\+P\+N\+\_\+\+T\+C\+P\+O\+P\+T\+\_\+\+N\+O\+P}}
+\index{O\+P\+E\+N\+V\+P\+N\+\_\+\+T\+C\+P\+O\+P\+T\+\_\+\+N\+O\+P@{O\+P\+E\+N\+V\+P\+N\+\_\+\+T\+C\+P\+O\+P\+T\+\_\+\+N\+O\+P}!proto.\+h@{proto.\+h}}
+\subsubsection[{O\+P\+E\+N\+V\+P\+N\+\_\+\+T\+C\+P\+O\+P\+T\+\_\+\+N\+O\+P}]{\setlength{\rightskip}{0pt plus 5cm}\#define O\+P\+E\+N\+V\+P\+N\+\_\+\+T\+C\+P\+O\+P\+T\+\_\+\+N\+O\+P~1}\label{proto_8h_a1f9d2f51b9f2ebb5ab51247041293323}
+\hypertarget{proto_8h_a08ce6cd1ad46896c47e30fa9790a9199}{}\index{proto.\+h@{proto.\+h}!S\+U\+B\+\_\+\+C\+H\+E\+C\+K\+S\+U\+M\+\_\+32@{S\+U\+B\+\_\+\+C\+H\+E\+C\+K\+S\+U\+M\+\_\+32}}
+\index{S\+U\+B\+\_\+\+C\+H\+E\+C\+K\+S\+U\+M\+\_\+32@{S\+U\+B\+\_\+\+C\+H\+E\+C\+K\+S\+U\+M\+\_\+32}!proto.\+h@{proto.\+h}}
+\subsubsection[{S\+U\+B\+\_\+\+C\+H\+E\+C\+K\+S\+U\+M\+\_\+32}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\+U\+B\+\_\+\+C\+H\+E\+C\+K\+S\+U\+M\+\_\+32(
+\begin{DoxyParamCaption}
+\item[{}]{acc, }
+\item[{}]{u32}
+\end{DoxyParamCaption}
+)}\label{proto_8h_a08ce6cd1ad46896c47e30fa9790a9199}
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\{ \(\backslash\)
+        acc -= (u32) & 0xffff; \(\backslash\)
+        acc -= (u32) >> 16;    \(\backslash\)
+\}
+\end{DoxyCode}
+\hypertarget{proto_8h_a5432683e30ddc0abd4deb132f20477df}{}\index{proto.\+h@{proto.\+h}!T\+O\+P\+\_\+\+N\+E\+T30@{T\+O\+P\+\_\+\+N\+E\+T30}}
+\index{T\+O\+P\+\_\+\+N\+E\+T30@{T\+O\+P\+\_\+\+N\+E\+T30}!proto.\+h@{proto.\+h}}
+\subsubsection[{T\+O\+P\+\_\+\+N\+E\+T30}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\+O\+P\+\_\+\+N\+E\+T30~1}\label{proto_8h_a5432683e30ddc0abd4deb132f20477df}
+\hypertarget{proto_8h_ac294ee23be7863f7b64a51ad6971bfc5}{}\index{proto.\+h@{proto.\+h}!T\+O\+P\+\_\+\+P2\+P@{T\+O\+P\+\_\+\+P2\+P}}
+\index{T\+O\+P\+\_\+\+P2\+P@{T\+O\+P\+\_\+\+P2\+P}!proto.\+h@{proto.\+h}}
+\subsubsection[{T\+O\+P\+\_\+\+P2\+P}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\+O\+P\+\_\+\+P2\+P~2}\label{proto_8h_ac294ee23be7863f7b64a51ad6971bfc5}
+\hypertarget{proto_8h_af4249a88f691a14cb178b7222d35e150}{}\index{proto.\+h@{proto.\+h}!T\+O\+P\+\_\+\+S\+U\+B\+N\+E\+T@{T\+O\+P\+\_\+\+S\+U\+B\+N\+E\+T}}
+\index{T\+O\+P\+\_\+\+S\+U\+B\+N\+E\+T@{T\+O\+P\+\_\+\+S\+U\+B\+N\+E\+T}!proto.\+h@{proto.\+h}}
+\subsubsection[{T\+O\+P\+\_\+\+S\+U\+B\+N\+E\+T}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\+O\+P\+\_\+\+S\+U\+B\+N\+E\+T~3}\label{proto_8h_af4249a88f691a14cb178b7222d35e150}
+\hypertarget{proto_8h_a4363724b0c7e2a14488bf3217d5c2c44}{}\index{proto.\+h@{proto.\+h}!T\+O\+P\+\_\+\+U\+N\+D\+E\+F@{T\+O\+P\+\_\+\+U\+N\+D\+E\+F}}
+\index{T\+O\+P\+\_\+\+U\+N\+D\+E\+F@{T\+O\+P\+\_\+\+U\+N\+D\+E\+F}!proto.\+h@{proto.\+h}}
+\subsubsection[{T\+O\+P\+\_\+\+U\+N\+D\+E\+F}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\+O\+P\+\_\+\+U\+N\+D\+E\+F~0}\label{proto_8h_a4363724b0c7e2a14488bf3217d5c2c44}
+
+
+\subsection{Function Documentation}
+\hypertarget{proto_8h_a3ff585140c0be911484f65149af51e34}{}\index{proto.\+h@{proto.\+h}!is\+\_\+ipv4@{is\+\_\+ipv4}}
+\index{is\+\_\+ipv4@{is\+\_\+ipv4}!proto.\+h@{proto.\+h}}
+\subsubsection[{is\+\_\+ipv4(int tunnel\+\_\+type, struct buffer $\ast$buf)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} is\+\_\+ipv4 (
+\begin{DoxyParamCaption}
+\item[{int}]{tunnel\+\_\+type, }
+\item[{struct {\bf buffer} $\ast$}]{buf}
+\end{DoxyParamCaption}
+)}\label{proto_8h_a3ff585140c0be911484f65149af51e34}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{proto_8h_a3ff585140c0be911484f65149af51e34_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{proto_8h_a53a4b0598de56c3bf4497c30253c5596}{}\index{proto.\+h@{proto.\+h}!is\+\_\+ipv6@{is\+\_\+ipv6}}
+\index{is\+\_\+ipv6@{is\+\_\+ipv6}!proto.\+h@{proto.\+h}}
+\subsubsection[{is\+\_\+ipv6(int tunnel\+\_\+type, struct buffer $\ast$buf)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} is\+\_\+ipv6 (
+\begin{DoxyParamCaption}
+\item[{int}]{tunnel\+\_\+type, }
+\item[{struct {\bf buffer} $\ast$}]{buf}
+\end{DoxyParamCaption}
+)}\label{proto_8h_a53a4b0598de56c3bf4497c30253c5596}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{proto_8h_a53a4b0598de56c3bf4497c30253c5596_icgraph}
+\end{center}
+\end{figure}
+
+

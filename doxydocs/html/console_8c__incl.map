@@ -1,0 +1,15 @@
+<map id="src/openvpn/console.c" name="src/openvpn/console.c">
+<area shape="rect" id="node2" href="$syshead_8h.html" title="syshead.h" alt="" coords="53,80,135,107"/>
+<area shape="rect" id="node5" href="$console_8h.html" title="console.h" alt="" coords="797,304,876,331"/>
+<area shape="rect" id="node7" href="$error_8h.html" title="error.h" alt="" coords="274,379,333,405"/>
+<area shape="rect" id="node11" href="$buffer_8h.html" title="buffer.h" alt="" coords="340,304,403,331"/>
+<area shape="rect" id="node12" href="$misc_8h.html" title="misc.h" alt="" coords="442,80,503,107"/>
+<area shape="rect" id="node3" href="$compat_8h.html" title="compat.h" alt="" coords="5,155,81,181"/>
+<area shape="rect" id="node6" href="$basic_8h.html" title="basic.h" alt="" coords="571,453,635,480"/>
+<area shape="rect" id="node10" href="$errlevel_8h.html" title="errlevel.h" alt="" coords="363,453,436,480"/>
+<area shape="rect" id="node13" href="$argv_8h.html" title="argv.h" alt="" coords="408,229,463,256"/>
+<area shape="rect" id="node14" href="$common_8h.html" title="common.h" alt="" coords="589,229,671,256"/>
+<area shape="rect" id="node15" href="$env__set_8h.html" title="env_set.h" alt="" coords="473,155,550,181"/>
+<area shape="rect" id="node16" href="$integer_8h.html" title="integer.h" alt="" coords="261,229,332,256"/>
+<area shape="rect" id="node17" href="$platform_8h.html" title="platform.h" alt="" coords="616,379,695,405"/>
+</map>

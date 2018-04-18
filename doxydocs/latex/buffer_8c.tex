@@ -1,0 +1,1309 @@
+\hypertarget{buffer_8c}{}\section{src/openvpn/buffer.c File Reference}
+\label{buffer_8c}\index{src/openvpn/buffer.\+c@{src/openvpn/buffer.\+c}}
+{\ttfamily \#include \char`\"{}syshead.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}common.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}buffer.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}error.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}mtu.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}misc.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}memdbg.\+h\char`\"{}}\\*
+Include dependency graph for buffer.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{buffer_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{buffer_8c_a44a1f935778c8a858d75d24aef0eeed9}{buf\+\_\+debug\+\_\+line}(buf)~0
+\item 
+\#define \hyperlink{buffer_8c_a28f751761c6f00d3615e055a721b772c}{buf\+\_\+debug\+\_\+file}(buf)~\char`\"{}\mbox{[}U\+N\+D\+E\+F\mbox{]}\char`\"{}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+size\+\_\+t \hyperlink{buffer_8c_a7a9775a9e943ecf19481c08f9d76ec4a}{array\+\_\+mult\+\_\+safe} (const size\+\_\+t m1, const size\+\_\+t m2, const size\+\_\+t extra)
+\item 
+void \hyperlink{buffer_8c_acc1a4ee83a591116d331e52baacf253d}{buf\+\_\+size\+\_\+error} (const size\+\_\+t size)
+\item 
+struct \hyperlink{structbuffer}{buffer} \hyperlink{buffer_8c_aa6bae12914d41c7aecaa7b64fea1bc51}{alloc\+\_\+buf} (size\+\_\+t size)
+\item 
+struct \hyperlink{structbuffer}{buffer} \hyperlink{buffer_8c_aa35bf7feb6a99bf5d364b2d4eba1195c}{alloc\+\_\+buf\+\_\+gc} (size\+\_\+t size, struct \hyperlink{structgc__arena}{gc\+\_\+arena} $\ast$gc)
+\item 
+struct \hyperlink{structbuffer}{buffer} \hyperlink{buffer_8c_a24af27c1066ce2acc17cf77a278e051d}{clone\+\_\+buf} (const struct \hyperlink{structbuffer}{buffer} $\ast$buf)
+\item 
+void \hyperlink{buffer_8c_a1bb5d44eee3543955d61ffbc671d2927}{buf\+\_\+clear} (struct \hyperlink{structbuffer}{buffer} $\ast$buf)
+\item 
+\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} \hyperlink{buffer_8c_a96403dd3aa1700a4a706f280a384c1d9}{buf\+\_\+assign} (struct \hyperlink{structbuffer}{buffer} $\ast$\hyperlink{compat-lz4_8h_accb93c5987f80eedf1f5da3cfa1c0d22}{dest}, const struct \hyperlink{structbuffer}{buffer} $\ast$src)
+\item 
+void \hyperlink{buffer_8c_a11cd36c0af3073bd1245bbed1cca9590}{free\+\_\+buf} (struct \hyperlink{structbuffer}{buffer} $\ast$buf)
+\item 
+struct \hyperlink{structbuffer}{buffer} \hyperlink{buffer_8c_a5c9b9840112ac21bbadae88170cf89df}{buf\+\_\+sub} (struct \hyperlink{structbuffer}{buffer} $\ast$buf, int size, \hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} prepend)
+\item 
+\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} \hyperlink{buffer_8c_a3307f08331b1ce42168bafd2ecf7874a}{buf\+\_\+printf} (struct \hyperlink{structbuffer}{buffer} $\ast$buf, const char $\ast$format,...)
+\item 
+\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} \hyperlink{buffer_8c_a3856237f6bda0d132ed555c23f3b8968}{buf\+\_\+puts} (struct \hyperlink{structbuffer}{buffer} $\ast$buf, const char $\ast$str)
+\item 
+\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} \hyperlink{buffer_8c_afd2a93a0940b1ea7e093d293a05e2927}{openvpn\+\_\+snprintf} (char $\ast$str, size\+\_\+t size, const char $\ast$format,...)
+\item 
+void \hyperlink{buffer_8c_a276febeb3ac5da2600b722b8dfb7ba0f}{buf\+\_\+catrunc} (struct \hyperlink{structbuffer}{buffer} $\ast$buf, const char $\ast$str)
+\item 
+void \hyperlink{buffer_8c_a930778d277bf94892a5427ac3f1bd2b4}{convert\+\_\+to\+\_\+one\+\_\+line} (struct \hyperlink{structbuffer}{buffer} $\ast$buf)
+\item 
+void \hyperlink{buffer_8c_aef9ae988bf07cf32cad83997d0c2ce8b}{buf\+\_\+write\+\_\+string\+\_\+file} (const struct \hyperlink{structbuffer}{buffer} $\ast$buf, const char $\ast$filename, int fd)
+\item 
+void $\ast$ \hyperlink{buffer_8c_a67f7dec7f86e113dc0744584fd80b621}{gc\+\_\+malloc} (size\+\_\+t size, \hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} clear, struct \hyperlink{structgc__arena}{gc\+\_\+arena} $\ast$a)
+\item 
+void \hyperlink{buffer_8c_ad83c58e4adf35fb98c5af8cdb9ab9bd6}{x\+\_\+gc\+\_\+free} (struct \hyperlink{structgc__arena}{gc\+\_\+arena} $\ast$a)
+\item 
+void \hyperlink{buffer_8c_a250879de4598f315bc25fe2c6ac5a4a9}{x\+\_\+gc\+\_\+freespecial} (struct \hyperlink{structgc__arena}{gc\+\_\+arena} $\ast$a)
+\item 
+void \hyperlink{buffer_8c_a235ec6ea044c0473b25be8714911128a}{gc\+\_\+addspecial} (void $\ast$addr, void(free\+\_\+function)(void $\ast$), struct \hyperlink{structgc__arena}{gc\+\_\+arena} $\ast$a)
+\item 
+void \hyperlink{buffer_8c_a57a8a93c24a341a8e07a4dadf26428ff}{gc\+\_\+transfer} (struct \hyperlink{structgc__arena}{gc\+\_\+arena} $\ast$\hyperlink{compat-lz4_8h_accb93c5987f80eedf1f5da3cfa1c0d22}{dest}, struct \hyperlink{structgc__arena}{gc\+\_\+arena} $\ast$src)
+\item 
+char $\ast$ \hyperlink{buffer_8c_a765c29b346cf601c5e0be2fd2c935a8d}{format\+\_\+hex\+\_\+ex} (const uint8\+\_\+t $\ast$data, int size, int maxoutput, unsigned int space\+\_\+break\+\_\+flags, const char $\ast$separator, struct \hyperlink{structgc__arena}{gc\+\_\+arena} $\ast$gc)
+\item 
+void \hyperlink{buffer_8c_ac1a4a1c2b916dd6872a12d3c65506960}{buf\+\_\+rmtail} (struct \hyperlink{structbuffer}{buffer} $\ast$buf, uint8\+\_\+t remove)
+\item 
+void \hyperlink{buffer_8c_a59b3fdf04adc47b3952b89aca4610236}{buf\+\_\+null\+\_\+terminate} (struct \hyperlink{structbuffer}{buffer} $\ast$buf)
+\item 
+void \hyperlink{buffer_8c_ad949e1c47d372ee69f15c12d14d22a37}{buf\+\_\+chomp} (struct \hyperlink{structbuffer}{buffer} $\ast$buf)
+\item 
+const char $\ast$ \hyperlink{buffer_8c_adcb3771af8fe90a6bd78a40fc363b578}{skip\+\_\+leading\+\_\+whitespace} (const char $\ast$str)
+\item 
+void \hyperlink{buffer_8c_a0fe81ecf7f73db02c0ecf3a58a34d73f}{string\+\_\+null\+\_\+terminate} (char $\ast$str, int len, int capacity)
+\item 
+void \hyperlink{buffer_8c_a6752d536938b11aa1ced5549a1cf3c7e}{chomp} (char $\ast$str)
+\item 
+void \hyperlink{buffer_8c_a0dfcbda5f8696795915dd592ee27a812}{rm\+\_\+trailing\+\_\+chars} (char $\ast$str, const char $\ast$what\+\_\+to\+\_\+delete)
+\item 
+char $\ast$ \hyperlink{buffer_8c_a06e0220403278399596a7a1b6b601fca}{string\+\_\+alloc} (const char $\ast$str, struct \hyperlink{structgc__arena}{gc\+\_\+arena} $\ast$gc)
+\item 
+void \hyperlink{buffer_8c_a41f2a5ee8d893ed30a214b2d70c5d303}{string\+\_\+clear} (char $\ast$str)
+\item 
+int \hyperlink{buffer_8c_ab469312bfaa458852347978ec899adbf}{string\+\_\+array\+\_\+len} (const char $\ast$$\ast$array)
+\item 
+char $\ast$ \hyperlink{buffer_8c_a9fa59da93f5503603025786ec8f33726}{print\+\_\+argv} (const char $\ast$$\ast$p, struct \hyperlink{structgc__arena}{gc\+\_\+arena} $\ast$gc, const unsigned int flags)
+\item 
+struct \hyperlink{structbuffer}{buffer} \hyperlink{buffer_8c_ad256a1b93cc52c5e89bef3aa836956ab}{string\+\_\+alloc\+\_\+buf} (const char $\ast$str, struct \hyperlink{structgc__arena}{gc\+\_\+arena} $\ast$gc)
+\item 
+\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} \hyperlink{buffer_8c_ade2c81fb41f1c4838dc6e85a7b1d1f3b}{buf\+\_\+string\+\_\+match\+\_\+head\+\_\+str} (const struct \hyperlink{structbuffer}{buffer} $\ast$src, const char $\ast$match)
+\item 
+\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} \hyperlink{buffer_8c_a042e9b112fb90777619ec9cd1678d5b5}{buf\+\_\+string\+\_\+compare\+\_\+advance} (struct \hyperlink{structbuffer}{buffer} $\ast$src, const char $\ast$match)
+\item 
+int \hyperlink{buffer_8c_ae9ce6f9a6e16026beb4bf0b62e3975fd}{buf\+\_\+substring\+\_\+len} (const struct \hyperlink{structbuffer}{buffer} $\ast$buf, int delim)
+\item 
+\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} \hyperlink{buffer_8c_ac55fefaff3ce0991e97c76e78725d1c9}{buf\+\_\+parse} (struct \hyperlink{structbuffer}{buffer} $\ast$buf, const int delim, char $\ast$line, const int size)
+\item 
+const char $\ast$ \hyperlink{buffer_8c_a0ba8b5b8243bee1ee03fca0b5dbbfb3c}{np} (const char $\ast$str)
+\item 
+\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} \hyperlink{buffer_8c_add3618351cc3574aad935f92710d6216}{char\+\_\+class} (const unsigned char c, const unsigned int flags)
+\item 
+\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} \hyperlink{buffer_8c_a5812c761d1e2721c86e7188336019712}{string\+\_\+class} (const char $\ast$str, const unsigned int inclusive, const unsigned int exclusive)
+\item 
+\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} \hyperlink{buffer_8c_aa68699d49774055c860c609ec5d84bd5}{string\+\_\+mod} (char $\ast$str, const unsigned int inclusive, const unsigned int exclusive, const char replace)
+\item 
+const char $\ast$ \hyperlink{buffer_8c_a55db6b55ce08e95dc30a543ee37ecd92}{string\+\_\+mod\+\_\+const} (const char $\ast$str, const unsigned int inclusive, const unsigned int exclusive, const char replace, struct \hyperlink{structgc__arena}{gc\+\_\+arena} $\ast$gc)
+\item 
+void \hyperlink{buffer_8c_a362852fe90de1d89b29fb1134564ce59}{string\+\_\+replace\+\_\+leading} (char $\ast$str, const char match, const char replace)
+\item 
+struct \hyperlink{structbuffer__list}{buffer\+\_\+list} $\ast$ \hyperlink{buffer_8c_a802172b567a3ac89a544452fe02a45bf}{buffer\+\_\+list\+\_\+new} (const int max\+\_\+size)
+\item 
+void \hyperlink{buffer_8c_a83e3bf61c9804dc763bbe7ac9fdd08b0}{buffer\+\_\+list\+\_\+free} (struct \hyperlink{structbuffer__list}{buffer\+\_\+list} $\ast$ol)
+\item 
+\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} \hyperlink{buffer_8c_a0102a5e666aaa5ab14162c12f106b932}{buffer\+\_\+list\+\_\+defined} (const struct \hyperlink{structbuffer__list}{buffer\+\_\+list} $\ast$ol)
+\item 
+void \hyperlink{buffer_8c_a1c06ccc2141824deec4af59b580e5123}{buffer\+\_\+list\+\_\+reset} (struct \hyperlink{structbuffer__list}{buffer\+\_\+list} $\ast$ol)
+\item 
+void \hyperlink{buffer_8c_ad797dd5e6257e3f4f4b4e7394dc2dfa9}{buffer\+\_\+list\+\_\+push} (struct \hyperlink{structbuffer__list}{buffer\+\_\+list} $\ast$ol, const char $\ast$str)
+\item 
+struct \hyperlink{structbuffer__entry}{buffer\+\_\+entry} $\ast$ \hyperlink{buffer_8c_a21d180a3513a60a724ec43cbf30cb759}{buffer\+\_\+list\+\_\+push\+\_\+data} (struct \hyperlink{structbuffer__list}{buffer\+\_\+list} $\ast$ol, const void $\ast$data, size\+\_\+t size)
+\item 
+struct \hyperlink{structbuffer}{buffer} $\ast$ \hyperlink{buffer_8c_a1a7d06931a18e800e86ba7c2145f2f12}{buffer\+\_\+list\+\_\+peek} (struct \hyperlink{structbuffer__list}{buffer\+\_\+list} $\ast$ol)
+\item 
+void \hyperlink{buffer_8c_a162d7ba1ba291699cd8a2643fb0fad63}{buffer\+\_\+list\+\_\+aggregate\+\_\+separator} (struct \hyperlink{structbuffer__list}{buffer\+\_\+list} $\ast$bl, const size\+\_\+t max\+\_\+len, const char $\ast$sep)
+\item 
+void \hyperlink{buffer_8c_a2269d0f9d34d67a509c29c505e44ee2b}{buffer\+\_\+list\+\_\+aggregate} (struct \hyperlink{structbuffer__list}{buffer\+\_\+list} $\ast$bl, const size\+\_\+t max)
+\item 
+void \hyperlink{buffer_8c_a31a0680f361daa374f2d7d6388eca1a9}{buffer\+\_\+list\+\_\+pop} (struct \hyperlink{structbuffer__list}{buffer\+\_\+list} $\ast$ol)
+\item 
+void \hyperlink{buffer_8c_a110fbabcea4a371d6408ac164af94367}{buffer\+\_\+list\+\_\+advance} (struct \hyperlink{structbuffer__list}{buffer\+\_\+list} $\ast$ol, int n)
+\item 
+struct \hyperlink{structbuffer__list}{buffer\+\_\+list} $\ast$ \hyperlink{buffer_8c_ac6ca47343e8740ff6480de93840ad002}{buffer\+\_\+list\+\_\+file} (const char $\ast$fn, int max\+\_\+line\+\_\+len)
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{buffer_8c_a28f751761c6f00d3615e055a721b772c}{}\index{buffer.\+c@{buffer.\+c}!buf\+\_\+debug\+\_\+file@{buf\+\_\+debug\+\_\+file}}
+\index{buf\+\_\+debug\+\_\+file@{buf\+\_\+debug\+\_\+file}!buffer.\+c@{buffer.\+c}}
+\subsubsection[{buf\+\_\+debug\+\_\+file}]{\setlength{\rightskip}{0pt plus 5cm}\#define buf\+\_\+debug\+\_\+file(
+\begin{DoxyParamCaption}
+\item[{}]{buf}
+\end{DoxyParamCaption}
+)~\char`\"{}\mbox{[}U\+N\+D\+E\+F\mbox{]}\char`\"{}}\label{buffer_8c_a28f751761c6f00d3615e055a721b772c}
+\hypertarget{buffer_8c_a44a1f935778c8a858d75d24aef0eeed9}{}\index{buffer.\+c@{buffer.\+c}!buf\+\_\+debug\+\_\+line@{buf\+\_\+debug\+\_\+line}}
+\index{buf\+\_\+debug\+\_\+line@{buf\+\_\+debug\+\_\+line}!buffer.\+c@{buffer.\+c}}
+\subsubsection[{buf\+\_\+debug\+\_\+line}]{\setlength{\rightskip}{0pt plus 5cm}\#define buf\+\_\+debug\+\_\+line(
+\begin{DoxyParamCaption}
+\item[{}]{buf}
+\end{DoxyParamCaption}
+)~0}\label{buffer_8c_a44a1f935778c8a858d75d24aef0eeed9}
+
+
+\subsection{Function Documentation}
+\hypertarget{buffer_8c_aa6bae12914d41c7aecaa7b64fea1bc51}{}\index{buffer.\+c@{buffer.\+c}!alloc\+\_\+buf@{alloc\+\_\+buf}}
+\index{alloc\+\_\+buf@{alloc\+\_\+buf}!buffer.\+c@{buffer.\+c}}
+\subsubsection[{alloc\+\_\+buf(size\+\_\+t size)}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf buffer} alloc\+\_\+buf (
+\begin{DoxyParamCaption}
+\item[{size\+\_\+t}]{size}
+\end{DoxyParamCaption}
+)}\label{buffer_8c_aa6bae12914d41c7aecaa7b64fea1bc51}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=248pt]{buffer_8c_aa6bae12914d41c7aecaa7b64fea1bc51_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{buffer_8c_aa6bae12914d41c7aecaa7b64fea1bc51_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{buffer_8c_aa35bf7feb6a99bf5d364b2d4eba1195c}{}\index{buffer.\+c@{buffer.\+c}!alloc\+\_\+buf\+\_\+gc@{alloc\+\_\+buf\+\_\+gc}}
+\index{alloc\+\_\+buf\+\_\+gc@{alloc\+\_\+buf\+\_\+gc}!buffer.\+c@{buffer.\+c}}
+\subsubsection[{alloc\+\_\+buf\+\_\+gc(size\+\_\+t size, struct gc\+\_\+arena $\ast$gc)}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf buffer} alloc\+\_\+buf\+\_\+gc (
+\begin{DoxyParamCaption}
+\item[{size\+\_\+t}]{size, }
+\item[{struct {\bf gc\+\_\+arena} $\ast$}]{gc}
+\end{DoxyParamCaption}
+)}\label{buffer_8c_aa35bf7feb6a99bf5d364b2d4eba1195c}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=264pt]{buffer_8c_aa35bf7feb6a99bf5d364b2d4eba1195c_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{buffer_8c_aa35bf7feb6a99bf5d364b2d4eba1195c_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{buffer_8c_a7a9775a9e943ecf19481c08f9d76ec4a}{}\index{buffer.\+c@{buffer.\+c}!array\+\_\+mult\+\_\+safe@{array\+\_\+mult\+\_\+safe}}
+\index{array\+\_\+mult\+\_\+safe@{array\+\_\+mult\+\_\+safe}!buffer.\+c@{buffer.\+c}}
+\subsubsection[{array\+\_\+mult\+\_\+safe(const size\+\_\+t m1, const size\+\_\+t m2, const size\+\_\+t extra)}]{\setlength{\rightskip}{0pt plus 5cm}size\+\_\+t array\+\_\+mult\+\_\+safe (
+\begin{DoxyParamCaption}
+\item[{const size\+\_\+t}]{m1, }
+\item[{const size\+\_\+t}]{m2, }
+\item[{const size\+\_\+t}]{extra}
+\end{DoxyParamCaption}
+)}\label{buffer_8c_a7a9775a9e943ecf19481c08f9d76ec4a}
+\hypertarget{buffer_8c_a96403dd3aa1700a4a706f280a384c1d9}{}\index{buffer.\+c@{buffer.\+c}!buf\+\_\+assign@{buf\+\_\+assign}}
+\index{buf\+\_\+assign@{buf\+\_\+assign}!buffer.\+c@{buffer.\+c}}
+\subsubsection[{buf\+\_\+assign(struct buffer $\ast$dest, const struct buffer $\ast$src)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} buf\+\_\+assign (
+\begin{DoxyParamCaption}
+\item[{struct {\bf buffer} $\ast$}]{dest, }
+\item[{const struct {\bf buffer} $\ast$}]{src}
+\end{DoxyParamCaption}
+)}\label{buffer_8c_a96403dd3aa1700a4a706f280a384c1d9}
+\hypertarget{buffer_8c_a276febeb3ac5da2600b722b8dfb7ba0f}{}\index{buffer.\+c@{buffer.\+c}!buf\+\_\+catrunc@{buf\+\_\+catrunc}}
+\index{buf\+\_\+catrunc@{buf\+\_\+catrunc}!buffer.\+c@{buffer.\+c}}
+\subsubsection[{buf\+\_\+catrunc(struct buffer $\ast$buf, const char $\ast$str)}]{\setlength{\rightskip}{0pt plus 5cm}void buf\+\_\+catrunc (
+\begin{DoxyParamCaption}
+\item[{struct {\bf buffer} $\ast$}]{buf, }
+\item[{const char $\ast$}]{str}
+\end{DoxyParamCaption}
+)}\label{buffer_8c_a276febeb3ac5da2600b722b8dfb7ba0f}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{buffer_8c_a276febeb3ac5da2600b722b8dfb7ba0f_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{buffer_8c_ad949e1c47d372ee69f15c12d14d22a37}{}\index{buffer.\+c@{buffer.\+c}!buf\+\_\+chomp@{buf\+\_\+chomp}}
+\index{buf\+\_\+chomp@{buf\+\_\+chomp}!buffer.\+c@{buffer.\+c}}
+\subsubsection[{buf\+\_\+chomp(struct buffer $\ast$buf)}]{\setlength{\rightskip}{0pt plus 5cm}void buf\+\_\+chomp (
+\begin{DoxyParamCaption}
+\item[{struct {\bf buffer} $\ast$}]{buf}
+\end{DoxyParamCaption}
+)}\label{buffer_8c_ad949e1c47d372ee69f15c12d14d22a37}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=275pt]{buffer_8c_ad949e1c47d372ee69f15c12d14d22a37_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{buffer_8c_a1bb5d44eee3543955d61ffbc671d2927}{}\index{buffer.\+c@{buffer.\+c}!buf\+\_\+clear@{buf\+\_\+clear}}
+\index{buf\+\_\+clear@{buf\+\_\+clear}!buffer.\+c@{buffer.\+c}}
+\subsubsection[{buf\+\_\+clear(struct buffer $\ast$buf)}]{\setlength{\rightskip}{0pt plus 5cm}void buf\+\_\+clear (
+\begin{DoxyParamCaption}
+\item[{struct {\bf buffer} $\ast$}]{buf}
+\end{DoxyParamCaption}
+)}\label{buffer_8c_a1bb5d44eee3543955d61ffbc671d2927}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{buffer_8c_a1bb5d44eee3543955d61ffbc671d2927_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{buffer_8c_a59b3fdf04adc47b3952b89aca4610236}{}\index{buffer.\+c@{buffer.\+c}!buf\+\_\+null\+\_\+terminate@{buf\+\_\+null\+\_\+terminate}}
+\index{buf\+\_\+null\+\_\+terminate@{buf\+\_\+null\+\_\+terminate}!buffer.\+c@{buffer.\+c}}
+\subsubsection[{buf\+\_\+null\+\_\+terminate(struct buffer $\ast$buf)}]{\setlength{\rightskip}{0pt plus 5cm}void buf\+\_\+null\+\_\+terminate (
+\begin{DoxyParamCaption}
+\item[{struct {\bf buffer} $\ast$}]{buf}
+\end{DoxyParamCaption}
+)}\label{buffer_8c_a59b3fdf04adc47b3952b89aca4610236}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=279pt]{buffer_8c_a59b3fdf04adc47b3952b89aca4610236_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{buffer_8c_ac55fefaff3ce0991e97c76e78725d1c9}{}\index{buffer.\+c@{buffer.\+c}!buf\+\_\+parse@{buf\+\_\+parse}}
+\index{buf\+\_\+parse@{buf\+\_\+parse}!buffer.\+c@{buffer.\+c}}
+\subsubsection[{buf\+\_\+parse(struct buffer $\ast$buf, const int delim, char $\ast$line, const int size)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} buf\+\_\+parse (
+\begin{DoxyParamCaption}
+\item[{struct {\bf buffer} $\ast$}]{buf, }
+\item[{const int}]{delim, }
+\item[{char $\ast$}]{line, }
+\item[{const int}]{size}
+\end{DoxyParamCaption}
+)}\label{buffer_8c_ac55fefaff3ce0991e97c76e78725d1c9}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{buffer_8c_ac55fefaff3ce0991e97c76e78725d1c9_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{buffer_8c_a3307f08331b1ce42168bafd2ecf7874a}{}\index{buffer.\+c@{buffer.\+c}!buf\+\_\+printf@{buf\+\_\+printf}}
+\index{buf\+\_\+printf@{buf\+\_\+printf}!buffer.\+c@{buffer.\+c}}
+\subsubsection[{buf\+\_\+printf(struct buffer $\ast$buf, const char $\ast$format,...)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} buf\+\_\+printf (
+\begin{DoxyParamCaption}
+\item[{struct {\bf buffer} $\ast$}]{buf, }
+\item[{const char $\ast$}]{format, }
+\item[{}]{...}
+\end{DoxyParamCaption}
+)}\label{buffer_8c_a3307f08331b1ce42168bafd2ecf7874a}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{buffer_8c_a3307f08331b1ce42168bafd2ecf7874a_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{buffer_8c_a3856237f6bda0d132ed555c23f3b8968}{}\index{buffer.\+c@{buffer.\+c}!buf\+\_\+puts@{buf\+\_\+puts}}
+\index{buf\+\_\+puts@{buf\+\_\+puts}!buffer.\+c@{buffer.\+c}}
+\subsubsection[{buf\+\_\+puts(struct buffer $\ast$buf, const char $\ast$str)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} buf\+\_\+puts (
+\begin{DoxyParamCaption}
+\item[{struct {\bf buffer} $\ast$}]{buf, }
+\item[{const char $\ast$}]{str}
+\end{DoxyParamCaption}
+)}\label{buffer_8c_a3856237f6bda0d132ed555c23f3b8968}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{buffer_8c_a3856237f6bda0d132ed555c23f3b8968_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{buffer_8c_ac1a4a1c2b916dd6872a12d3c65506960}{}\index{buffer.\+c@{buffer.\+c}!buf\+\_\+rmtail@{buf\+\_\+rmtail}}
+\index{buf\+\_\+rmtail@{buf\+\_\+rmtail}!buffer.\+c@{buffer.\+c}}
+\subsubsection[{buf\+\_\+rmtail(struct buffer $\ast$buf, uint8\+\_\+t remove)}]{\setlength{\rightskip}{0pt plus 5cm}void buf\+\_\+rmtail (
+\begin{DoxyParamCaption}
+\item[{struct {\bf buffer} $\ast$}]{buf, }
+\item[{uint8\+\_\+t}]{remove}
+\end{DoxyParamCaption}
+)}\label{buffer_8c_ac1a4a1c2b916dd6872a12d3c65506960}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{buffer_8c_ac1a4a1c2b916dd6872a12d3c65506960_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{buffer_8c_acc1a4ee83a591116d331e52baacf253d}{}\index{buffer.\+c@{buffer.\+c}!buf\+\_\+size\+\_\+error@{buf\+\_\+size\+\_\+error}}
+\index{buf\+\_\+size\+\_\+error@{buf\+\_\+size\+\_\+error}!buffer.\+c@{buffer.\+c}}
+\subsubsection[{buf\+\_\+size\+\_\+error(const size\+\_\+t size)}]{\setlength{\rightskip}{0pt plus 5cm}void buf\+\_\+size\+\_\+error (
+\begin{DoxyParamCaption}
+\item[{const size\+\_\+t}]{size}
+\end{DoxyParamCaption}
+)}\label{buffer_8c_acc1a4ee83a591116d331e52baacf253d}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{buffer_8c_acc1a4ee83a591116d331e52baacf253d_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{buffer_8c_a042e9b112fb90777619ec9cd1678d5b5}{}\index{buffer.\+c@{buffer.\+c}!buf\+\_\+string\+\_\+compare\+\_\+advance@{buf\+\_\+string\+\_\+compare\+\_\+advance}}
+\index{buf\+\_\+string\+\_\+compare\+\_\+advance@{buf\+\_\+string\+\_\+compare\+\_\+advance}!buffer.\+c@{buffer.\+c}}
+\subsubsection[{buf\+\_\+string\+\_\+compare\+\_\+advance(struct buffer $\ast$src, const char $\ast$match)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} buf\+\_\+string\+\_\+compare\+\_\+advance (
+\begin{DoxyParamCaption}
+\item[{struct {\bf buffer} $\ast$}]{src, }
+\item[{const char $\ast$}]{match}
+\end{DoxyParamCaption}
+)}\label{buffer_8c_a042e9b112fb90777619ec9cd1678d5b5}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{buffer_8c_a042e9b112fb90777619ec9cd1678d5b5_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{buffer_8c_ade2c81fb41f1c4838dc6e85a7b1d1f3b}{}\index{buffer.\+c@{buffer.\+c}!buf\+\_\+string\+\_\+match\+\_\+head\+\_\+str@{buf\+\_\+string\+\_\+match\+\_\+head\+\_\+str}}
+\index{buf\+\_\+string\+\_\+match\+\_\+head\+\_\+str@{buf\+\_\+string\+\_\+match\+\_\+head\+\_\+str}!buffer.\+c@{buffer.\+c}}
+\subsubsection[{buf\+\_\+string\+\_\+match\+\_\+head\+\_\+str(const struct buffer $\ast$src, const char $\ast$match)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} buf\+\_\+string\+\_\+match\+\_\+head\+\_\+str (
+\begin{DoxyParamCaption}
+\item[{const struct {\bf buffer} $\ast$}]{src, }
+\item[{const char $\ast$}]{match}
+\end{DoxyParamCaption}
+)}\label{buffer_8c_ade2c81fb41f1c4838dc6e85a7b1d1f3b}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{buffer_8c_ade2c81fb41f1c4838dc6e85a7b1d1f3b_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{buffer_8c_a5c9b9840112ac21bbadae88170cf89df}{}\index{buffer.\+c@{buffer.\+c}!buf\+\_\+sub@{buf\+\_\+sub}}
+\index{buf\+\_\+sub@{buf\+\_\+sub}!buffer.\+c@{buffer.\+c}}
+\subsubsection[{buf\+\_\+sub(struct buffer $\ast$buf, int size, bool prepend)}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf buffer} buf\+\_\+sub (
+\begin{DoxyParamCaption}
+\item[{struct {\bf buffer} $\ast$}]{buf, }
+\item[{int}]{size, }
+\item[{{\bf bool}}]{prepend}
+\end{DoxyParamCaption}
+)}\label{buffer_8c_a5c9b9840112ac21bbadae88170cf89df}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=312pt]{buffer_8c_a5c9b9840112ac21bbadae88170cf89df_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{buffer_8c_ae9ce6f9a6e16026beb4bf0b62e3975fd}{}\index{buffer.\+c@{buffer.\+c}!buf\+\_\+substring\+\_\+len@{buf\+\_\+substring\+\_\+len}}
+\index{buf\+\_\+substring\+\_\+len@{buf\+\_\+substring\+\_\+len}!buffer.\+c@{buffer.\+c}}
+\subsubsection[{buf\+\_\+substring\+\_\+len(const struct buffer $\ast$buf, int delim)}]{\setlength{\rightskip}{0pt plus 5cm}int buf\+\_\+substring\+\_\+len (
+\begin{DoxyParamCaption}
+\item[{const struct {\bf buffer} $\ast$}]{buf, }
+\item[{int}]{delim}
+\end{DoxyParamCaption}
+)}\label{buffer_8c_ae9ce6f9a6e16026beb4bf0b62e3975fd}
+\hypertarget{buffer_8c_aef9ae988bf07cf32cad83997d0c2ce8b}{}\index{buffer.\+c@{buffer.\+c}!buf\+\_\+write\+\_\+string\+\_\+file@{buf\+\_\+write\+\_\+string\+\_\+file}}
+\index{buf\+\_\+write\+\_\+string\+\_\+file@{buf\+\_\+write\+\_\+string\+\_\+file}!buffer.\+c@{buffer.\+c}}
+\subsubsection[{buf\+\_\+write\+\_\+string\+\_\+file(const struct buffer $\ast$buf, const char $\ast$filename, int fd)}]{\setlength{\rightskip}{0pt plus 5cm}void buf\+\_\+write\+\_\+string\+\_\+file (
+\begin{DoxyParamCaption}
+\item[{const struct {\bf buffer} $\ast$}]{buf, }
+\item[{const char $\ast$}]{filename, }
+\item[{int}]{fd}
+\end{DoxyParamCaption}
+)}\label{buffer_8c_aef9ae988bf07cf32cad83997d0c2ce8b}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{buffer_8c_aef9ae988bf07cf32cad83997d0c2ce8b_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{buffer_8c_a110fbabcea4a371d6408ac164af94367}{}\index{buffer.\+c@{buffer.\+c}!buffer\+\_\+list\+\_\+advance@{buffer\+\_\+list\+\_\+advance}}
+\index{buffer\+\_\+list\+\_\+advance@{buffer\+\_\+list\+\_\+advance}!buffer.\+c@{buffer.\+c}}
+\subsubsection[{buffer\+\_\+list\+\_\+advance(struct buffer\+\_\+list $\ast$ol, int n)}]{\setlength{\rightskip}{0pt plus 5cm}void buffer\+\_\+list\+\_\+advance (
+\begin{DoxyParamCaption}
+\item[{struct {\bf buffer\+\_\+list} $\ast$}]{ol, }
+\item[{int}]{n}
+\end{DoxyParamCaption}
+)}\label{buffer_8c_a110fbabcea4a371d6408ac164af94367}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{buffer_8c_a110fbabcea4a371d6408ac164af94367_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=273pt]{buffer_8c_a110fbabcea4a371d6408ac164af94367_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{buffer_8c_a2269d0f9d34d67a509c29c505e44ee2b}{}\index{buffer.\+c@{buffer.\+c}!buffer\+\_\+list\+\_\+aggregate@{buffer\+\_\+list\+\_\+aggregate}}
+\index{buffer\+\_\+list\+\_\+aggregate@{buffer\+\_\+list\+\_\+aggregate}!buffer.\+c@{buffer.\+c}}
+\subsubsection[{buffer\+\_\+list\+\_\+aggregate(struct buffer\+\_\+list $\ast$bl, const size\+\_\+t max)}]{\setlength{\rightskip}{0pt plus 5cm}void buffer\+\_\+list\+\_\+aggregate (
+\begin{DoxyParamCaption}
+\item[{struct {\bf buffer\+\_\+list} $\ast$}]{bl, }
+\item[{const size\+\_\+t}]{max}
+\end{DoxyParamCaption}
+)}\label{buffer_8c_a2269d0f9d34d67a509c29c505e44ee2b}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{buffer_8c_a2269d0f9d34d67a509c29c505e44ee2b_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=281pt]{buffer_8c_a2269d0f9d34d67a509c29c505e44ee2b_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{buffer_8c_a162d7ba1ba291699cd8a2643fb0fad63}{}\index{buffer.\+c@{buffer.\+c}!buffer\+\_\+list\+\_\+aggregate\+\_\+separator@{buffer\+\_\+list\+\_\+aggregate\+\_\+separator}}
+\index{buffer\+\_\+list\+\_\+aggregate\+\_\+separator@{buffer\+\_\+list\+\_\+aggregate\+\_\+separator}!buffer.\+c@{buffer.\+c}}
+\subsubsection[{buffer\+\_\+list\+\_\+aggregate\+\_\+separator(struct buffer\+\_\+list $\ast$bl, const size\+\_\+t max\+\_\+len, const char $\ast$sep)}]{\setlength{\rightskip}{0pt plus 5cm}void buffer\+\_\+list\+\_\+aggregate\+\_\+separator (
+\begin{DoxyParamCaption}
+\item[{struct {\bf buffer\+\_\+list} $\ast$}]{bl, }
+\item[{const size\+\_\+t}]{max\+\_\+len, }
+\item[{const char $\ast$}]{sep}
+\end{DoxyParamCaption}
+)}\label{buffer_8c_a162d7ba1ba291699cd8a2643fb0fad63}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{buffer_8c_a162d7ba1ba291699cd8a2643fb0fad63_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{buffer_8c_a162d7ba1ba291699cd8a2643fb0fad63_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{buffer_8c_a0102a5e666aaa5ab14162c12f106b932}{}\index{buffer.\+c@{buffer.\+c}!buffer\+\_\+list\+\_\+defined@{buffer\+\_\+list\+\_\+defined}}
+\index{buffer\+\_\+list\+\_\+defined@{buffer\+\_\+list\+\_\+defined}!buffer.\+c@{buffer.\+c}}
+\subsubsection[{buffer\+\_\+list\+\_\+defined(const struct buffer\+\_\+list $\ast$ol)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} buffer\+\_\+list\+\_\+defined (
+\begin{DoxyParamCaption}
+\item[{const struct {\bf buffer\+\_\+list} $\ast$}]{ol}
+\end{DoxyParamCaption}
+)}\label{buffer_8c_a0102a5e666aaa5ab14162c12f106b932}
+\hypertarget{buffer_8c_ac6ca47343e8740ff6480de93840ad002}{}\index{buffer.\+c@{buffer.\+c}!buffer\+\_\+list\+\_\+file@{buffer\+\_\+list\+\_\+file}}
+\index{buffer\+\_\+list\+\_\+file@{buffer\+\_\+list\+\_\+file}!buffer.\+c@{buffer.\+c}}
+\subsubsection[{buffer\+\_\+list\+\_\+file(const char $\ast$fn, int max\+\_\+line\+\_\+len)}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf buffer\+\_\+list}$\ast$ buffer\+\_\+list\+\_\+file (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{fn, }
+\item[{int}]{max\+\_\+line\+\_\+len}
+\end{DoxyParamCaption}
+)}\label{buffer_8c_ac6ca47343e8740ff6480de93840ad002}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{buffer_8c_ac6ca47343e8740ff6480de93840ad002_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{buffer_8c_a83e3bf61c9804dc763bbe7ac9fdd08b0}{}\index{buffer.\+c@{buffer.\+c}!buffer\+\_\+list\+\_\+free@{buffer\+\_\+list\+\_\+free}}
+\index{buffer\+\_\+list\+\_\+free@{buffer\+\_\+list\+\_\+free}!buffer.\+c@{buffer.\+c}}
+\subsubsection[{buffer\+\_\+list\+\_\+free(struct buffer\+\_\+list $\ast$ol)}]{\setlength{\rightskip}{0pt plus 5cm}void buffer\+\_\+list\+\_\+free (
+\begin{DoxyParamCaption}
+\item[{struct {\bf buffer\+\_\+list} $\ast$}]{ol}
+\end{DoxyParamCaption}
+)}\label{buffer_8c_a83e3bf61c9804dc763bbe7ac9fdd08b0}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{buffer_8c_a83e3bf61c9804dc763bbe7ac9fdd08b0_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=254pt]{buffer_8c_a83e3bf61c9804dc763bbe7ac9fdd08b0_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{buffer_8c_a802172b567a3ac89a544452fe02a45bf}{}\index{buffer.\+c@{buffer.\+c}!buffer\+\_\+list\+\_\+new@{buffer\+\_\+list\+\_\+new}}
+\index{buffer\+\_\+list\+\_\+new@{buffer\+\_\+list\+\_\+new}!buffer.\+c@{buffer.\+c}}
+\subsubsection[{buffer\+\_\+list\+\_\+new(const int max\+\_\+size)}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf buffer\+\_\+list}$\ast$ buffer\+\_\+list\+\_\+new (
+\begin{DoxyParamCaption}
+\item[{const int}]{max\+\_\+size}
+\end{DoxyParamCaption}
+)}\label{buffer_8c_a802172b567a3ac89a544452fe02a45bf}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{buffer_8c_a802172b567a3ac89a544452fe02a45bf_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{buffer_8c_a1a7d06931a18e800e86ba7c2145f2f12}{}\index{buffer.\+c@{buffer.\+c}!buffer\+\_\+list\+\_\+peek@{buffer\+\_\+list\+\_\+peek}}
+\index{buffer\+\_\+list\+\_\+peek@{buffer\+\_\+list\+\_\+peek}!buffer.\+c@{buffer.\+c}}
+\subsubsection[{buffer\+\_\+list\+\_\+peek(struct buffer\+\_\+list $\ast$ol)}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf buffer}$\ast$ buffer\+\_\+list\+\_\+peek (
+\begin{DoxyParamCaption}
+\item[{struct {\bf buffer\+\_\+list} $\ast$}]{ol}
+\end{DoxyParamCaption}
+)}\label{buffer_8c_a1a7d06931a18e800e86ba7c2145f2f12}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=259pt]{buffer_8c_a1a7d06931a18e800e86ba7c2145f2f12_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{buffer_8c_a31a0680f361daa374f2d7d6388eca1a9}{}\index{buffer.\+c@{buffer.\+c}!buffer\+\_\+list\+\_\+pop@{buffer\+\_\+list\+\_\+pop}}
+\index{buffer\+\_\+list\+\_\+pop@{buffer\+\_\+list\+\_\+pop}!buffer.\+c@{buffer.\+c}}
+\subsubsection[{buffer\+\_\+list\+\_\+pop(struct buffer\+\_\+list $\ast$ol)}]{\setlength{\rightskip}{0pt plus 5cm}void buffer\+\_\+list\+\_\+pop (
+\begin{DoxyParamCaption}
+\item[{struct {\bf buffer\+\_\+list} $\ast$}]{ol}
+\end{DoxyParamCaption}
+)}\label{buffer_8c_a31a0680f361daa374f2d7d6388eca1a9}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=245pt]{buffer_8c_a31a0680f361daa374f2d7d6388eca1a9_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{buffer_8c_a31a0680f361daa374f2d7d6388eca1a9_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{buffer_8c_ad797dd5e6257e3f4f4b4e7394dc2dfa9}{}\index{buffer.\+c@{buffer.\+c}!buffer\+\_\+list\+\_\+push@{buffer\+\_\+list\+\_\+push}}
+\index{buffer\+\_\+list\+\_\+push@{buffer\+\_\+list\+\_\+push}!buffer.\+c@{buffer.\+c}}
+\subsubsection[{buffer\+\_\+list\+\_\+push(struct buffer\+\_\+list $\ast$ol, const char $\ast$str)}]{\setlength{\rightskip}{0pt plus 5cm}void buffer\+\_\+list\+\_\+push (
+\begin{DoxyParamCaption}
+\item[{struct {\bf buffer\+\_\+list} $\ast$}]{ol, }
+\item[{const char $\ast$}]{str}
+\end{DoxyParamCaption}
+)}\label{buffer_8c_ad797dd5e6257e3f4f4b4e7394dc2dfa9}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{buffer_8c_ad797dd5e6257e3f4f4b4e7394dc2dfa9_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=275pt]{buffer_8c_ad797dd5e6257e3f4f4b4e7394dc2dfa9_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{buffer_8c_a21d180a3513a60a724ec43cbf30cb759}{}\index{buffer.\+c@{buffer.\+c}!buffer\+\_\+list\+\_\+push\+\_\+data@{buffer\+\_\+list\+\_\+push\+\_\+data}}
+\index{buffer\+\_\+list\+\_\+push\+\_\+data@{buffer\+\_\+list\+\_\+push\+\_\+data}!buffer.\+c@{buffer.\+c}}
+\subsubsection[{buffer\+\_\+list\+\_\+push\+\_\+data(struct buffer\+\_\+list $\ast$ol, const void $\ast$data, size\+\_\+t size)}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf buffer\+\_\+entry}$\ast$ buffer\+\_\+list\+\_\+push\+\_\+data (
+\begin{DoxyParamCaption}
+\item[{struct {\bf buffer\+\_\+list} $\ast$}]{ol, }
+\item[{const void $\ast$}]{data, }
+\item[{size\+\_\+t}]{size}
+\end{DoxyParamCaption}
+)}\label{buffer_8c_a21d180a3513a60a724ec43cbf30cb759}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{buffer_8c_a21d180a3513a60a724ec43cbf30cb759_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{buffer_8c_a21d180a3513a60a724ec43cbf30cb759_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{buffer_8c_a1c06ccc2141824deec4af59b580e5123}{}\index{buffer.\+c@{buffer.\+c}!buffer\+\_\+list\+\_\+reset@{buffer\+\_\+list\+\_\+reset}}
+\index{buffer\+\_\+list\+\_\+reset@{buffer\+\_\+list\+\_\+reset}!buffer.\+c@{buffer.\+c}}
+\subsubsection[{buffer\+\_\+list\+\_\+reset(struct buffer\+\_\+list $\ast$ol)}]{\setlength{\rightskip}{0pt plus 5cm}void buffer\+\_\+list\+\_\+reset (
+\begin{DoxyParamCaption}
+\item[{struct {\bf buffer\+\_\+list} $\ast$}]{ol}
+\end{DoxyParamCaption}
+)}\label{buffer_8c_a1c06ccc2141824deec4af59b580e5123}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=251pt]{buffer_8c_a1c06ccc2141824deec4af59b580e5123_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{buffer_8c_a1c06ccc2141824deec4af59b580e5123_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{buffer_8c_add3618351cc3574aad935f92710d6216}{}\index{buffer.\+c@{buffer.\+c}!char\+\_\+class@{char\+\_\+class}}
+\index{char\+\_\+class@{char\+\_\+class}!buffer.\+c@{buffer.\+c}}
+\subsubsection[{char\+\_\+class(const unsigned char c, const unsigned int flags)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} char\+\_\+class (
+\begin{DoxyParamCaption}
+\item[{const unsigned char}]{c, }
+\item[{const unsigned int}]{flags}
+\end{DoxyParamCaption}
+)}\label{buffer_8c_add3618351cc3574aad935f92710d6216}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=244pt]{buffer_8c_add3618351cc3574aad935f92710d6216_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{buffer_8c_a6752d536938b11aa1ced5549a1cf3c7e}{}\index{buffer.\+c@{buffer.\+c}!chomp@{chomp}}
+\index{chomp@{chomp}!buffer.\+c@{buffer.\+c}}
+\subsubsection[{chomp(char $\ast$str)}]{\setlength{\rightskip}{0pt plus 5cm}void chomp (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{str}
+\end{DoxyParamCaption}
+)}\label{buffer_8c_a6752d536938b11aa1ced5549a1cf3c7e}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=253pt]{buffer_8c_a6752d536938b11aa1ced5549a1cf3c7e_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{buffer_8c_a6752d536938b11aa1ced5549a1cf3c7e_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{buffer_8c_a24af27c1066ce2acc17cf77a278e051d}{}\index{buffer.\+c@{buffer.\+c}!clone\+\_\+buf@{clone\+\_\+buf}}
+\index{clone\+\_\+buf@{clone\+\_\+buf}!buffer.\+c@{buffer.\+c}}
+\subsubsection[{clone\+\_\+buf(const struct buffer $\ast$buf)}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf buffer} clone\+\_\+buf (
+\begin{DoxyParamCaption}
+\item[{const struct {\bf buffer} $\ast$}]{buf}
+\end{DoxyParamCaption}
+)}\label{buffer_8c_a24af27c1066ce2acc17cf77a278e051d}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=275pt]{buffer_8c_a24af27c1066ce2acc17cf77a278e051d_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{buffer_8c_a930778d277bf94892a5427ac3f1bd2b4}{}\index{buffer.\+c@{buffer.\+c}!convert\+\_\+to\+\_\+one\+\_\+line@{convert\+\_\+to\+\_\+one\+\_\+line}}
+\index{convert\+\_\+to\+\_\+one\+\_\+line@{convert\+\_\+to\+\_\+one\+\_\+line}!buffer.\+c@{buffer.\+c}}
+\subsubsection[{convert\+\_\+to\+\_\+one\+\_\+line(struct buffer $\ast$buf)}]{\setlength{\rightskip}{0pt plus 5cm}void convert\+\_\+to\+\_\+one\+\_\+line (
+\begin{DoxyParamCaption}
+\item[{struct {\bf buffer} $\ast$}]{buf}
+\end{DoxyParamCaption}
+)}\label{buffer_8c_a930778d277bf94892a5427ac3f1bd2b4}
+\hypertarget{buffer_8c_a765c29b346cf601c5e0be2fd2c935a8d}{}\index{buffer.\+c@{buffer.\+c}!format\+\_\+hex\+\_\+ex@{format\+\_\+hex\+\_\+ex}}
+\index{format\+\_\+hex\+\_\+ex@{format\+\_\+hex\+\_\+ex}!buffer.\+c@{buffer.\+c}}
+\subsubsection[{format\+\_\+hex\+\_\+ex(const uint8\+\_\+t $\ast$data, int size, int maxoutput, unsigned int space\+\_\+break\+\_\+flags, const char $\ast$separator, struct gc\+\_\+arena $\ast$gc)}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ format\+\_\+hex\+\_\+ex (
+\begin{DoxyParamCaption}
+\item[{const uint8\+\_\+t $\ast$}]{data, }
+\item[{int}]{size, }
+\item[{int}]{maxoutput, }
+\item[{unsigned int}]{space\+\_\+break\+\_\+flags, }
+\item[{const char $\ast$}]{separator, }
+\item[{struct {\bf gc\+\_\+arena} $\ast$}]{gc}
+\end{DoxyParamCaption}
+)}\label{buffer_8c_a765c29b346cf601c5e0be2fd2c935a8d}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{buffer_8c_a765c29b346cf601c5e0be2fd2c935a8d_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{buffer_8c_a765c29b346cf601c5e0be2fd2c935a8d_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{buffer_8c_a11cd36c0af3073bd1245bbed1cca9590}{}\index{buffer.\+c@{buffer.\+c}!free\+\_\+buf@{free\+\_\+buf}}
+\index{free\+\_\+buf@{free\+\_\+buf}!buffer.\+c@{buffer.\+c}}
+\subsubsection[{free\+\_\+buf(struct buffer $\ast$buf)}]{\setlength{\rightskip}{0pt plus 5cm}void free\+\_\+buf (
+\begin{DoxyParamCaption}
+\item[{struct {\bf buffer} $\ast$}]{buf}
+\end{DoxyParamCaption}
+)}\label{buffer_8c_a11cd36c0af3073bd1245bbed1cca9590}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{buffer_8c_a11cd36c0af3073bd1245bbed1cca9590_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{buffer_8c_a235ec6ea044c0473b25be8714911128a}{}\index{buffer.\+c@{buffer.\+c}!gc\+\_\+addspecial@{gc\+\_\+addspecial}}
+\index{gc\+\_\+addspecial@{gc\+\_\+addspecial}!buffer.\+c@{buffer.\+c}}
+\subsubsection[{gc\+\_\+addspecial(void $\ast$addr, void(free\+\_\+function)(void $\ast$), struct gc\+\_\+arena $\ast$a)}]{\setlength{\rightskip}{0pt plus 5cm}void gc\+\_\+addspecial (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{addr, }
+\item[{void(free\+\_\+function)(void $\ast$)}]{, }
+\item[{struct {\bf gc\+\_\+arena} $\ast$}]{a}
+\end{DoxyParamCaption}
+)}\label{buffer_8c_a235ec6ea044c0473b25be8714911128a}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=269pt]{buffer_8c_a235ec6ea044c0473b25be8714911128a_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{buffer_8c_a67f7dec7f86e113dc0744584fd80b621}{}\index{buffer.\+c@{buffer.\+c}!gc\+\_\+malloc@{gc\+\_\+malloc}}
+\index{gc\+\_\+malloc@{gc\+\_\+malloc}!buffer.\+c@{buffer.\+c}}
+\subsubsection[{gc\+\_\+malloc(size\+\_\+t size, bool clear, struct gc\+\_\+arena $\ast$a)}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ gc\+\_\+malloc (
+\begin{DoxyParamCaption}
+\item[{size\+\_\+t}]{size, }
+\item[{{\bf bool}}]{clear, }
+\item[{struct {\bf gc\+\_\+arena} $\ast$}]{a}
+\end{DoxyParamCaption}
+)}\label{buffer_8c_a67f7dec7f86e113dc0744584fd80b621}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{buffer_8c_a67f7dec7f86e113dc0744584fd80b621_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{buffer_8c_a57a8a93c24a341a8e07a4dadf26428ff}{}\index{buffer.\+c@{buffer.\+c}!gc\+\_\+transfer@{gc\+\_\+transfer}}
+\index{gc\+\_\+transfer@{gc\+\_\+transfer}!buffer.\+c@{buffer.\+c}}
+\subsubsection[{gc\+\_\+transfer(struct gc\+\_\+arena $\ast$dest, struct gc\+\_\+arena $\ast$src)}]{\setlength{\rightskip}{0pt plus 5cm}void gc\+\_\+transfer (
+\begin{DoxyParamCaption}
+\item[{struct {\bf gc\+\_\+arena} $\ast$}]{dest, }
+\item[{struct {\bf gc\+\_\+arena} $\ast$}]{src}
+\end{DoxyParamCaption}
+)}\label{buffer_8c_a57a8a93c24a341a8e07a4dadf26428ff}
+\hypertarget{buffer_8c_a0ba8b5b8243bee1ee03fca0b5dbbfb3c}{}\index{buffer.\+c@{buffer.\+c}!np@{np}}
+\index{np@{np}!buffer.\+c@{buffer.\+c}}
+\subsubsection[{np(const char $\ast$str)}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ np (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{str}
+\end{DoxyParamCaption}
+)}\label{buffer_8c_a0ba8b5b8243bee1ee03fca0b5dbbfb3c}
+\hypertarget{buffer_8c_afd2a93a0940b1ea7e093d293a05e2927}{}\index{buffer.\+c@{buffer.\+c}!openvpn\+\_\+snprintf@{openvpn\+\_\+snprintf}}
+\index{openvpn\+\_\+snprintf@{openvpn\+\_\+snprintf}!buffer.\+c@{buffer.\+c}}
+\subsubsection[{openvpn\+\_\+snprintf(char $\ast$str, size\+\_\+t size, const char $\ast$format,...)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} openvpn\+\_\+snprintf (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{str, }
+\item[{size\+\_\+t}]{size, }
+\item[{const char $\ast$}]{format, }
+\item[{}]{...}
+\end{DoxyParamCaption}
+)}\label{buffer_8c_afd2a93a0940b1ea7e093d293a05e2927}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{buffer_8c_afd2a93a0940b1ea7e093d293a05e2927_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{buffer_8c_a9fa59da93f5503603025786ec8f33726}{}\index{buffer.\+c@{buffer.\+c}!print\+\_\+argv@{print\+\_\+argv}}
+\index{print\+\_\+argv@{print\+\_\+argv}!buffer.\+c@{buffer.\+c}}
+\subsubsection[{print\+\_\+argv(const char $\ast$$\ast$p, struct gc\+\_\+arena $\ast$gc, const unsigned int flags)}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ print\+\_\+argv (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$$\ast$}]{p, }
+\item[{struct {\bf gc\+\_\+arena} $\ast$}]{gc, }
+\item[{const unsigned int}]{flags}
+\end{DoxyParamCaption}
+)}\label{buffer_8c_a9fa59da93f5503603025786ec8f33726}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{buffer_8c_a9fa59da93f5503603025786ec8f33726_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{buffer_8c_a9fa59da93f5503603025786ec8f33726_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{buffer_8c_a0dfcbda5f8696795915dd592ee27a812}{}\index{buffer.\+c@{buffer.\+c}!rm\+\_\+trailing\+\_\+chars@{rm\+\_\+trailing\+\_\+chars}}
+\index{rm\+\_\+trailing\+\_\+chars@{rm\+\_\+trailing\+\_\+chars}!buffer.\+c@{buffer.\+c}}
+\subsubsection[{rm\+\_\+trailing\+\_\+chars(char $\ast$str, const char $\ast$what\+\_\+to\+\_\+delete)}]{\setlength{\rightskip}{0pt plus 5cm}void rm\+\_\+trailing\+\_\+chars (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{str, }
+\item[{const char $\ast$}]{what\+\_\+to\+\_\+delete}
+\end{DoxyParamCaption}
+)}\label{buffer_8c_a0dfcbda5f8696795915dd592ee27a812}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{buffer_8c_a0dfcbda5f8696795915dd592ee27a812_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{buffer_8c_adcb3771af8fe90a6bd78a40fc363b578}{}\index{buffer.\+c@{buffer.\+c}!skip\+\_\+leading\+\_\+whitespace@{skip\+\_\+leading\+\_\+whitespace}}
+\index{skip\+\_\+leading\+\_\+whitespace@{skip\+\_\+leading\+\_\+whitespace}!buffer.\+c@{buffer.\+c}}
+\subsubsection[{skip\+\_\+leading\+\_\+whitespace(const char $\ast$str)}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ skip\+\_\+leading\+\_\+whitespace (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{str}
+\end{DoxyParamCaption}
+)}\label{buffer_8c_adcb3771af8fe90a6bd78a40fc363b578}
+\hypertarget{buffer_8c_a06e0220403278399596a7a1b6b601fca}{}\index{buffer.\+c@{buffer.\+c}!string\+\_\+alloc@{string\+\_\+alloc}}
+\index{string\+\_\+alloc@{string\+\_\+alloc}!buffer.\+c@{buffer.\+c}}
+\subsubsection[{string\+\_\+alloc(const char $\ast$str, struct gc\+\_\+arena $\ast$gc)}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ string\+\_\+alloc (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{str, }
+\item[{struct {\bf gc\+\_\+arena} $\ast$}]{gc}
+\end{DoxyParamCaption}
+)}\label{buffer_8c_a06e0220403278399596a7a1b6b601fca}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=243pt]{buffer_8c_a06e0220403278399596a7a1b6b601fca_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{buffer_8c_a06e0220403278399596a7a1b6b601fca_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{buffer_8c_ad256a1b93cc52c5e89bef3aa836956ab}{}\index{buffer.\+c@{buffer.\+c}!string\+\_\+alloc\+\_\+buf@{string\+\_\+alloc\+\_\+buf}}
+\index{string\+\_\+alloc\+\_\+buf@{string\+\_\+alloc\+\_\+buf}!buffer.\+c@{buffer.\+c}}
+\subsubsection[{string\+\_\+alloc\+\_\+buf(const char $\ast$str, struct gc\+\_\+arena $\ast$gc)}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf buffer} string\+\_\+alloc\+\_\+buf (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{str, }
+\item[{struct {\bf gc\+\_\+arena} $\ast$}]{gc}
+\end{DoxyParamCaption}
+)}\label{buffer_8c_ad256a1b93cc52c5e89bef3aa836956ab}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{buffer_8c_ad256a1b93cc52c5e89bef3aa836956ab_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{buffer_8c_ab469312bfaa458852347978ec899adbf}{}\index{buffer.\+c@{buffer.\+c}!string\+\_\+array\+\_\+len@{string\+\_\+array\+\_\+len}}
+\index{string\+\_\+array\+\_\+len@{string\+\_\+array\+\_\+len}!buffer.\+c@{buffer.\+c}}
+\subsubsection[{string\+\_\+array\+\_\+len(const char $\ast$$\ast$array)}]{\setlength{\rightskip}{0pt plus 5cm}int string\+\_\+array\+\_\+len (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$$\ast$}]{array}
+\end{DoxyParamCaption}
+)}\label{buffer_8c_ab469312bfaa458852347978ec899adbf}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=333pt]{buffer_8c_ab469312bfaa458852347978ec899adbf_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{buffer_8c_a5812c761d1e2721c86e7188336019712}{}\index{buffer.\+c@{buffer.\+c}!string\+\_\+class@{string\+\_\+class}}
+\index{string\+\_\+class@{string\+\_\+class}!buffer.\+c@{buffer.\+c}}
+\subsubsection[{string\+\_\+class(const char $\ast$str, const unsigned int inclusive, const unsigned int exclusive)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} string\+\_\+class (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{str, }
+\item[{const unsigned int}]{inclusive, }
+\item[{const unsigned int}]{exclusive}
+\end{DoxyParamCaption}
+)}\label{buffer_8c_a5812c761d1e2721c86e7188336019712}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{buffer_8c_a5812c761d1e2721c86e7188336019712_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{buffer_8c_a41f2a5ee8d893ed30a214b2d70c5d303}{}\index{buffer.\+c@{buffer.\+c}!string\+\_\+clear@{string\+\_\+clear}}
+\index{string\+\_\+clear@{string\+\_\+clear}!buffer.\+c@{buffer.\+c}}
+\subsubsection[{string\+\_\+clear(char $\ast$str)}]{\setlength{\rightskip}{0pt plus 5cm}void string\+\_\+clear (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{str}
+\end{DoxyParamCaption}
+)}\label{buffer_8c_a41f2a5ee8d893ed30a214b2d70c5d303}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{buffer_8c_a41f2a5ee8d893ed30a214b2d70c5d303_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{buffer_8c_aa68699d49774055c860c609ec5d84bd5}{}\index{buffer.\+c@{buffer.\+c}!string\+\_\+mod@{string\+\_\+mod}}
+\index{string\+\_\+mod@{string\+\_\+mod}!buffer.\+c@{buffer.\+c}}
+\subsubsection[{string\+\_\+mod(char $\ast$str, const unsigned int inclusive, const unsigned int exclusive, const char replace)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} string\+\_\+mod (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{str, }
+\item[{const unsigned int}]{inclusive, }
+\item[{const unsigned int}]{exclusive, }
+\item[{const char}]{replace}
+\end{DoxyParamCaption}
+)}\label{buffer_8c_aa68699d49774055c860c609ec5d84bd5}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{buffer_8c_aa68699d49774055c860c609ec5d84bd5_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{buffer_8c_a55db6b55ce08e95dc30a543ee37ecd92}{}\index{buffer.\+c@{buffer.\+c}!string\+\_\+mod\+\_\+const@{string\+\_\+mod\+\_\+const}}
+\index{string\+\_\+mod\+\_\+const@{string\+\_\+mod\+\_\+const}!buffer.\+c@{buffer.\+c}}
+\subsubsection[{string\+\_\+mod\+\_\+const(const char $\ast$str, const unsigned int inclusive, const unsigned int exclusive, const char replace, struct gc\+\_\+arena $\ast$gc)}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ string\+\_\+mod\+\_\+const (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{str, }
+\item[{const unsigned int}]{inclusive, }
+\item[{const unsigned int}]{exclusive, }
+\item[{const char}]{replace, }
+\item[{struct {\bf gc\+\_\+arena} $\ast$}]{gc}
+\end{DoxyParamCaption}
+)}\label{buffer_8c_a55db6b55ce08e95dc30a543ee37ecd92}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{buffer_8c_a55db6b55ce08e95dc30a543ee37ecd92_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{buffer_8c_a55db6b55ce08e95dc30a543ee37ecd92_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{buffer_8c_a0fe81ecf7f73db02c0ecf3a58a34d73f}{}\index{buffer.\+c@{buffer.\+c}!string\+\_\+null\+\_\+terminate@{string\+\_\+null\+\_\+terminate}}
+\index{string\+\_\+null\+\_\+terminate@{string\+\_\+null\+\_\+terminate}!buffer.\+c@{buffer.\+c}}
+\subsubsection[{string\+\_\+null\+\_\+terminate(char $\ast$str, int len, int capacity)}]{\setlength{\rightskip}{0pt plus 5cm}void string\+\_\+null\+\_\+terminate (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{str, }
+\item[{int}]{len, }
+\item[{int}]{capacity}
+\end{DoxyParamCaption}
+)}\label{buffer_8c_a0fe81ecf7f73db02c0ecf3a58a34d73f}
+\hypertarget{buffer_8c_a362852fe90de1d89b29fb1134564ce59}{}\index{buffer.\+c@{buffer.\+c}!string\+\_\+replace\+\_\+leading@{string\+\_\+replace\+\_\+leading}}
+\index{string\+\_\+replace\+\_\+leading@{string\+\_\+replace\+\_\+leading}!buffer.\+c@{buffer.\+c}}
+\subsubsection[{string\+\_\+replace\+\_\+leading(char $\ast$str, const char match, const char replace)}]{\setlength{\rightskip}{0pt plus 5cm}void string\+\_\+replace\+\_\+leading (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{str, }
+\item[{const char}]{match, }
+\item[{const char}]{replace}
+\end{DoxyParamCaption}
+)}\label{buffer_8c_a362852fe90de1d89b29fb1134564ce59}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=289pt]{buffer_8c_a362852fe90de1d89b29fb1134564ce59_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{buffer_8c_ad83c58e4adf35fb98c5af8cdb9ab9bd6}{}\index{buffer.\+c@{buffer.\+c}!x\+\_\+gc\+\_\+free@{x\+\_\+gc\+\_\+free}}
+\index{x\+\_\+gc\+\_\+free@{x\+\_\+gc\+\_\+free}!buffer.\+c@{buffer.\+c}}
+\subsubsection[{x\+\_\+gc\+\_\+free(struct gc\+\_\+arena $\ast$a)}]{\setlength{\rightskip}{0pt plus 5cm}void x\+\_\+gc\+\_\+free (
+\begin{DoxyParamCaption}
+\item[{struct {\bf gc\+\_\+arena} $\ast$}]{a}
+\end{DoxyParamCaption}
+)}\label{buffer_8c_ad83c58e4adf35fb98c5af8cdb9ab9bd6}
+\hypertarget{buffer_8c_a250879de4598f315bc25fe2c6ac5a4a9}{}\index{buffer.\+c@{buffer.\+c}!x\+\_\+gc\+\_\+freespecial@{x\+\_\+gc\+\_\+freespecial}}
+\index{x\+\_\+gc\+\_\+freespecial@{x\+\_\+gc\+\_\+freespecial}!buffer.\+c@{buffer.\+c}}
+\subsubsection[{x\+\_\+gc\+\_\+freespecial(struct gc\+\_\+arena $\ast$a)}]{\setlength{\rightskip}{0pt plus 5cm}void x\+\_\+gc\+\_\+freespecial (
+\begin{DoxyParamCaption}
+\item[{struct {\bf gc\+\_\+arena} $\ast$}]{a}
+\end{DoxyParamCaption}
+)}\label{buffer_8c_a250879de4598f315bc25fe2c6ac5a4a9}

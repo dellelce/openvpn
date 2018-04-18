@@ -1,0 +1,156 @@
+\hypertarget{structkey__state}{}\section{key\+\_\+state Struct Reference}
+\label{structkey__state}\index{key\+\_\+state@{key\+\_\+state}}
+
+
+{\ttfamily \#include $<$ssl\+\_\+common.\+h$>$}
+
+
+
+Collaboration diagram for key\+\_\+state\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{structkey__state__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{structkey__state_a42be32cf0cb8d287f43befbbb6715472}{state}
+\item 
+int \hyperlink{structkey__state_ab96385bedbe98845a4b5c64adb4e9f09}{key\+\_\+id}
+\item 
+struct \hyperlink{structkey__state__ssl}{key\+\_\+state\+\_\+ssl} \hyperlink{structkey__state_a8fe04c96cfdb018c1e0076355b866b39}{ks\+\_\+ssl}
+\item 
+time\+\_\+t \hyperlink{structkey__state_a7b4fcfc00225857f9d9dbd8cf8b0a213}{established}
+\item 
+time\+\_\+t \hyperlink{structkey__state_a9ab42fd298323e60f3970178fb127330}{must\+\_\+negotiate}
+\item 
+time\+\_\+t \hyperlink{structkey__state_a4dcda328566d402e1b0413df355398d6}{must\+\_\+die}
+\item 
+int \hyperlink{structkey__state_af0e663142818e5e45c4fd6b434c8c431}{initial\+\_\+opcode}
+\item 
+struct \hyperlink{structsession__id}{session\+\_\+id} \hyperlink{structkey__state_aa2f4046c0cb3757c8cc20702dc4097ad}{session\+\_\+id\+\_\+remote}
+\item 
+struct \hyperlink{structlink__socket__actual}{link\+\_\+socket\+\_\+actual} \hyperlink{structkey__state_a62d42581c267f57f88b125c70fc98439}{remote\+\_\+addr}
+\item 
+struct \hyperlink{structcrypto__options}{crypto\+\_\+options} \hyperlink{structkey__state_a2432af1bf9969f63599688a7adf3306d}{crypto\+\_\+options}
+\item 
+struct \hyperlink{structkey__source2}{key\+\_\+source2} $\ast$ \hyperlink{structkey__state_af59a9aa0960261d4ed9d816b5448b732}{key\+\_\+src}
+\item 
+struct \hyperlink{structbuffer}{buffer} \hyperlink{structkey__state_a367442f94779a58b94e7d0f3c5d56c20}{plaintext\+\_\+read\+\_\+buf}
+\item 
+struct \hyperlink{structbuffer}{buffer} \hyperlink{structkey__state_a5c5ca3ca552b1cc3718d81587bdeb9c9}{plaintext\+\_\+write\+\_\+buf}
+\item 
+struct \hyperlink{structbuffer}{buffer} \hyperlink{structkey__state_a2fbf1804a3fd7c2d50bc7582319e2bdb}{ack\+\_\+write\+\_\+buf}
+\item 
+struct \hyperlink{structreliable}{reliable} $\ast$ \hyperlink{structkey__state_ad0f7af5a94d446e54c369daa1e958f91}{send\+\_\+reliable}
+\item 
+struct \hyperlink{structreliable}{reliable} $\ast$ \hyperlink{structkey__state_aa273f201b4616a39658dcebe4ffaac14}{rec\+\_\+reliable}
+\item 
+struct \hyperlink{structreliable__ack}{reliable\+\_\+ack} $\ast$ \hyperlink{structkey__state_a9ac0c8a06752a5b8a3a9174e00731332}{rec\+\_\+ack}
+\item 
+struct \hyperlink{structbuffer__list}{buffer\+\_\+list} $\ast$ \hyperlink{structkey__state_a06941b42dfd2fcce8ec6c63884839554}{paybuf}
+\item 
+\hyperlink{common_8h_a00dd6fbfb368a41945c8c6b9d6fbf88f}{counter\+\_\+type} \hyperlink{structkey__state_af754aaae84d755b996fd939f0be15d16}{n\+\_\+bytes}
+\item 
+\hyperlink{common_8h_a00dd6fbfb368a41945c8c6b9d6fbf88f}{counter\+\_\+type} \hyperlink{structkey__state_afe288dd340ed182991a423d78de3440a}{n\+\_\+packets}
+\item 
+\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} \hyperlink{structkey__state_a0db9f9f7a64b1668c0422bcb24ee714f}{authenticated}
+\item 
+time\+\_\+t \hyperlink{structkey__state_ad8a078848dbcb00d4255b6cae875b9a4}{auth\+\_\+deferred\+\_\+expire}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Security parameter state of one T\+L\+S and data channel key session.
+
+This structure represents one security parameter session between Open\+V\+P\+N peers. It includes the control channel T\+L\+S state and the data channel crypto state. It also contains the reliability layer structures used for control channel messages.
+
+A new {\ttfamily \hyperlink{structkey__state}{key\+\_\+state}} structure is initialized for each hard or soft reset.
+
+\begin{DoxySeeAlso}{See also}
+
+\begin{DoxyItemize}
+\item This structure should be initialized using the {\ttfamily key\+\_\+state\+\_\+init()} function.
+\item This structure should be cleaned up using the {\ttfamily key\+\_\+state\+\_\+free()} function. 
+\end{DoxyItemize}
+\end{DoxySeeAlso}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{structkey__state_a2fbf1804a3fd7c2d50bc7582319e2bdb}{}\index{key\+\_\+state@{key\+\_\+state}!ack\+\_\+write\+\_\+buf@{ack\+\_\+write\+\_\+buf}}
+\index{ack\+\_\+write\+\_\+buf@{ack\+\_\+write\+\_\+buf}!key\+\_\+state@{key\+\_\+state}}
+\subsubsection[{ack\+\_\+write\+\_\+buf}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf buffer} key\+\_\+state\+::ack\+\_\+write\+\_\+buf}\label{structkey__state_a2fbf1804a3fd7c2d50bc7582319e2bdb}
+\hypertarget{structkey__state_ad8a078848dbcb00d4255b6cae875b9a4}{}\index{key\+\_\+state@{key\+\_\+state}!auth\+\_\+deferred\+\_\+expire@{auth\+\_\+deferred\+\_\+expire}}
+\index{auth\+\_\+deferred\+\_\+expire@{auth\+\_\+deferred\+\_\+expire}!key\+\_\+state@{key\+\_\+state}}
+\subsubsection[{auth\+\_\+deferred\+\_\+expire}]{\setlength{\rightskip}{0pt plus 5cm}time\+\_\+t key\+\_\+state\+::auth\+\_\+deferred\+\_\+expire}\label{structkey__state_ad8a078848dbcb00d4255b6cae875b9a4}
+\hypertarget{structkey__state_a0db9f9f7a64b1668c0422bcb24ee714f}{}\index{key\+\_\+state@{key\+\_\+state}!authenticated@{authenticated}}
+\index{authenticated@{authenticated}!key\+\_\+state@{key\+\_\+state}}
+\subsubsection[{authenticated}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} key\+\_\+state\+::authenticated}\label{structkey__state_a0db9f9f7a64b1668c0422bcb24ee714f}
+\hypertarget{structkey__state_a2432af1bf9969f63599688a7adf3306d}{}\index{key\+\_\+state@{key\+\_\+state}!crypto\+\_\+options@{crypto\+\_\+options}}
+\index{crypto\+\_\+options@{crypto\+\_\+options}!key\+\_\+state@{key\+\_\+state}}
+\subsubsection[{crypto\+\_\+options}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf crypto\+\_\+options} key\+\_\+state\+::crypto\+\_\+options}\label{structkey__state_a2432af1bf9969f63599688a7adf3306d}
+\hypertarget{structkey__state_a7b4fcfc00225857f9d9dbd8cf8b0a213}{}\index{key\+\_\+state@{key\+\_\+state}!established@{established}}
+\index{established@{established}!key\+\_\+state@{key\+\_\+state}}
+\subsubsection[{established}]{\setlength{\rightskip}{0pt plus 5cm}time\+\_\+t key\+\_\+state\+::established}\label{structkey__state_a7b4fcfc00225857f9d9dbd8cf8b0a213}
+\hypertarget{structkey__state_af0e663142818e5e45c4fd6b434c8c431}{}\index{key\+\_\+state@{key\+\_\+state}!initial\+\_\+opcode@{initial\+\_\+opcode}}
+\index{initial\+\_\+opcode@{initial\+\_\+opcode}!key\+\_\+state@{key\+\_\+state}}
+\subsubsection[{initial\+\_\+opcode}]{\setlength{\rightskip}{0pt plus 5cm}int key\+\_\+state\+::initial\+\_\+opcode}\label{structkey__state_af0e663142818e5e45c4fd6b434c8c431}
+\hypertarget{structkey__state_ab96385bedbe98845a4b5c64adb4e9f09}{}\index{key\+\_\+state@{key\+\_\+state}!key\+\_\+id@{key\+\_\+id}}
+\index{key\+\_\+id@{key\+\_\+id}!key\+\_\+state@{key\+\_\+state}}
+\subsubsection[{key\+\_\+id}]{\setlength{\rightskip}{0pt plus 5cm}int key\+\_\+state\+::key\+\_\+id}\label{structkey__state_ab96385bedbe98845a4b5c64adb4e9f09}
+Key id for this \hyperlink{structkey__state}{key\+\_\+state}, inherited from struct \hyperlink{structtls__session}{tls\+\_\+session}. \begin{DoxySeeAlso}{See also}
+\hyperlink{structtls__session_a1255432a61acbfe1b94c15146e9698e0}{tls\+\_\+session\+::key\+\_\+id}. 
+\end{DoxySeeAlso}
+\hypertarget{structkey__state_af59a9aa0960261d4ed9d816b5448b732}{}\index{key\+\_\+state@{key\+\_\+state}!key\+\_\+src@{key\+\_\+src}}
+\index{key\+\_\+src@{key\+\_\+src}!key\+\_\+state@{key\+\_\+state}}
+\subsubsection[{key\+\_\+src}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf key\+\_\+source2}$\ast$ key\+\_\+state\+::key\+\_\+src}\label{structkey__state_af59a9aa0960261d4ed9d816b5448b732}
+\hypertarget{structkey__state_a8fe04c96cfdb018c1e0076355b866b39}{}\index{key\+\_\+state@{key\+\_\+state}!ks\+\_\+ssl@{ks\+\_\+ssl}}
+\index{ks\+\_\+ssl@{ks\+\_\+ssl}!key\+\_\+state@{key\+\_\+state}}
+\subsubsection[{ks\+\_\+ssl}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf key\+\_\+state\+\_\+ssl} key\+\_\+state\+::ks\+\_\+ssl}\label{structkey__state_a8fe04c96cfdb018c1e0076355b866b39}
+\hypertarget{structkey__state_a4dcda328566d402e1b0413df355398d6}{}\index{key\+\_\+state@{key\+\_\+state}!must\+\_\+die@{must\+\_\+die}}
+\index{must\+\_\+die@{must\+\_\+die}!key\+\_\+state@{key\+\_\+state}}
+\subsubsection[{must\+\_\+die}]{\setlength{\rightskip}{0pt plus 5cm}time\+\_\+t key\+\_\+state\+::must\+\_\+die}\label{structkey__state_a4dcda328566d402e1b0413df355398d6}
+\hypertarget{structkey__state_a9ab42fd298323e60f3970178fb127330}{}\index{key\+\_\+state@{key\+\_\+state}!must\+\_\+negotiate@{must\+\_\+negotiate}}
+\index{must\+\_\+negotiate@{must\+\_\+negotiate}!key\+\_\+state@{key\+\_\+state}}
+\subsubsection[{must\+\_\+negotiate}]{\setlength{\rightskip}{0pt plus 5cm}time\+\_\+t key\+\_\+state\+::must\+\_\+negotiate}\label{structkey__state_a9ab42fd298323e60f3970178fb127330}
+\hypertarget{structkey__state_af754aaae84d755b996fd939f0be15d16}{}\index{key\+\_\+state@{key\+\_\+state}!n\+\_\+bytes@{n\+\_\+bytes}}
+\index{n\+\_\+bytes@{n\+\_\+bytes}!key\+\_\+state@{key\+\_\+state}}
+\subsubsection[{n\+\_\+bytes}]{\setlength{\rightskip}{0pt plus 5cm}{\bf counter\+\_\+type} key\+\_\+state\+::n\+\_\+bytes}\label{structkey__state_af754aaae84d755b996fd939f0be15d16}
+\hypertarget{structkey__state_afe288dd340ed182991a423d78de3440a}{}\index{key\+\_\+state@{key\+\_\+state}!n\+\_\+packets@{n\+\_\+packets}}
+\index{n\+\_\+packets@{n\+\_\+packets}!key\+\_\+state@{key\+\_\+state}}
+\subsubsection[{n\+\_\+packets}]{\setlength{\rightskip}{0pt plus 5cm}{\bf counter\+\_\+type} key\+\_\+state\+::n\+\_\+packets}\label{structkey__state_afe288dd340ed182991a423d78de3440a}
+\hypertarget{structkey__state_a06941b42dfd2fcce8ec6c63884839554}{}\index{key\+\_\+state@{key\+\_\+state}!paybuf@{paybuf}}
+\index{paybuf@{paybuf}!key\+\_\+state@{key\+\_\+state}}
+\subsubsection[{paybuf}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf buffer\+\_\+list}$\ast$ key\+\_\+state\+::paybuf}\label{structkey__state_a06941b42dfd2fcce8ec6c63884839554}
+\hypertarget{structkey__state_a367442f94779a58b94e7d0f3c5d56c20}{}\index{key\+\_\+state@{key\+\_\+state}!plaintext\+\_\+read\+\_\+buf@{plaintext\+\_\+read\+\_\+buf}}
+\index{plaintext\+\_\+read\+\_\+buf@{plaintext\+\_\+read\+\_\+buf}!key\+\_\+state@{key\+\_\+state}}
+\subsubsection[{plaintext\+\_\+read\+\_\+buf}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf buffer} key\+\_\+state\+::plaintext\+\_\+read\+\_\+buf}\label{structkey__state_a367442f94779a58b94e7d0f3c5d56c20}
+\hypertarget{structkey__state_a5c5ca3ca552b1cc3718d81587bdeb9c9}{}\index{key\+\_\+state@{key\+\_\+state}!plaintext\+\_\+write\+\_\+buf@{plaintext\+\_\+write\+\_\+buf}}
+\index{plaintext\+\_\+write\+\_\+buf@{plaintext\+\_\+write\+\_\+buf}!key\+\_\+state@{key\+\_\+state}}
+\subsubsection[{plaintext\+\_\+write\+\_\+buf}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf buffer} key\+\_\+state\+::plaintext\+\_\+write\+\_\+buf}\label{structkey__state_a5c5ca3ca552b1cc3718d81587bdeb9c9}
+\hypertarget{structkey__state_a9ac0c8a06752a5b8a3a9174e00731332}{}\index{key\+\_\+state@{key\+\_\+state}!rec\+\_\+ack@{rec\+\_\+ack}}
+\index{rec\+\_\+ack@{rec\+\_\+ack}!key\+\_\+state@{key\+\_\+state}}
+\subsubsection[{rec\+\_\+ack}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf reliable\+\_\+ack}$\ast$ key\+\_\+state\+::rec\+\_\+ack}\label{structkey__state_a9ac0c8a06752a5b8a3a9174e00731332}
+\hypertarget{structkey__state_aa273f201b4616a39658dcebe4ffaac14}{}\index{key\+\_\+state@{key\+\_\+state}!rec\+\_\+reliable@{rec\+\_\+reliable}}
+\index{rec\+\_\+reliable@{rec\+\_\+reliable}!key\+\_\+state@{key\+\_\+state}}
+\subsubsection[{rec\+\_\+reliable}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf reliable}$\ast$ key\+\_\+state\+::rec\+\_\+reliable}\label{structkey__state_aa273f201b4616a39658dcebe4ffaac14}
+\hypertarget{structkey__state_a62d42581c267f57f88b125c70fc98439}{}\index{key\+\_\+state@{key\+\_\+state}!remote\+\_\+addr@{remote\+\_\+addr}}
+\index{remote\+\_\+addr@{remote\+\_\+addr}!key\+\_\+state@{key\+\_\+state}}
+\subsubsection[{remote\+\_\+addr}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf link\+\_\+socket\+\_\+actual} key\+\_\+state\+::remote\+\_\+addr}\label{structkey__state_a62d42581c267f57f88b125c70fc98439}
+\hypertarget{structkey__state_ad0f7af5a94d446e54c369daa1e958f91}{}\index{key\+\_\+state@{key\+\_\+state}!send\+\_\+reliable@{send\+\_\+reliable}}
+\index{send\+\_\+reliable@{send\+\_\+reliable}!key\+\_\+state@{key\+\_\+state}}
+\subsubsection[{send\+\_\+reliable}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf reliable}$\ast$ key\+\_\+state\+::send\+\_\+reliable}\label{structkey__state_ad0f7af5a94d446e54c369daa1e958f91}
+\hypertarget{structkey__state_aa2f4046c0cb3757c8cc20702dc4097ad}{}\index{key\+\_\+state@{key\+\_\+state}!session\+\_\+id\+\_\+remote@{session\+\_\+id\+\_\+remote}}
+\index{session\+\_\+id\+\_\+remote@{session\+\_\+id\+\_\+remote}!key\+\_\+state@{key\+\_\+state}}
+\subsubsection[{session\+\_\+id\+\_\+remote}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf session\+\_\+id} key\+\_\+state\+::session\+\_\+id\+\_\+remote}\label{structkey__state_aa2f4046c0cb3757c8cc20702dc4097ad}
+\hypertarget{structkey__state_a42be32cf0cb8d287f43befbbb6715472}{}\index{key\+\_\+state@{key\+\_\+state}!state@{state}}
+\index{state@{state}!key\+\_\+state@{key\+\_\+state}}
+\subsubsection[{state}]{\setlength{\rightskip}{0pt plus 5cm}int key\+\_\+state\+::state}\label{structkey__state_a42be32cf0cb8d287f43befbbb6715472}
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/openvpn/\hyperlink{ssl__common_8h}{ssl\+\_\+common.\+h}\end{DoxyCompactItemize}

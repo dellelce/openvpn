@@ -1,0 +1,1589 @@
+\hypertarget{crypto__backend_8h}{}\section{src/openvpn/crypto\+\_\+backend.h File Reference}
+\label{crypto__backend_8h}\index{src/openvpn/crypto\+\_\+backend.\+h@{src/openvpn/crypto\+\_\+backend.\+h}}
+{\ttfamily \#include \char`\"{}basic.\+h\char`\"{}}\\*
+Include dependency graph for crypto\+\_\+backend.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=178pt]{crypto__backend_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{crypto__backend_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structcipher__name__pair}{cipher\+\_\+name\+\_\+pair}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{crypto__backend_8h_ab1a94e29512be06ebb06a445554f0e80}{O\+P\+E\+N\+V\+P\+N\+\_\+\+A\+E\+A\+D\+\_\+\+T\+A\+G\+\_\+\+L\+E\+N\+G\+T\+H}~16
+\item 
+\#define \hyperlink{crypto__backend_8h_ac677d8b29e5eaaf4c9ca3132475b13db}{O\+P\+E\+N\+V\+P\+N\+\_\+\+M\+A\+X\+\_\+\+C\+I\+P\+H\+E\+R\+\_\+\+B\+L\+O\+C\+K\+\_\+\+S\+I\+Z\+E}~32
+\item 
+\#define \hyperlink{crypto__backend_8h_ae6d94d4cb081cd4ee41b9aef4718faa2}{O\+P\+E\+N\+V\+P\+N\+\_\+\+M\+A\+X\+\_\+\+H\+M\+A\+C\+\_\+\+S\+I\+Z\+E}~64
+\item 
+\#define \hyperlink{crypto__backend_8h_a5ecba19b3b19dd1317e0fad83cfcd414}{M\+A\+X\+\_\+\+C\+I\+P\+H\+E\+R\+\_\+\+K\+E\+Y\+\_\+\+L\+E\+N\+G\+T\+H}~64
+\item 
+\#define \hyperlink{crypto__backend_8h_a9ce521546cb78acc7159459c101aa46b}{M\+A\+X\+\_\+\+H\+M\+A\+C\+\_\+\+K\+E\+Y\+\_\+\+L\+E\+N\+G\+T\+H}~64
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{crypto__backend_8h_a1bdec30a85e44df9ee6c6ad815bccb00}{hash\+\_\+algo\+\_\+type} \{ \hyperlink{crypto__backend_8h_a1bdec30a85e44df9ee6c6ad815bccb00ae53a331d3ddfdec0130cce49f37b04a0}{M\+D\+\_\+\+S\+H\+A1}, 
+\hyperlink{crypto__backend_8h_a1bdec30a85e44df9ee6c6ad815bccb00a0f8ae45c39bd8247c6289aed48029aa1}{M\+D\+\_\+\+S\+H\+A256}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{crypto__backend_8h_a49f4dc95c48bba251a5452f6401aed7b}{crypto\+\_\+init\+\_\+lib} (void)
+\item 
+void \hyperlink{crypto__backend_8h_a34ed7f4897a757838b8568b82f2b1a2c}{crypto\+\_\+uninit\+\_\+lib} (void)
+\item 
+void \hyperlink{crypto__backend_8h_a6a1ad0bd31811213cb9f3571deec66a4}{crypto\+\_\+clear\+\_\+error} (void)
+\item 
+void \hyperlink{crypto__backend_8h_ac8c96ccbbb4f4a96934b1b1301f152d5}{crypto\+\_\+init\+\_\+lib\+\_\+engine} (const char $\ast$engine\+\_\+name)
+\item 
+const char $\ast$ \hyperlink{crypto__backend_8h_a73d91277ab321cb423df41ac95215eba}{translate\+\_\+cipher\+\_\+name\+\_\+from\+\_\+openvpn} (const char $\ast$cipher\+\_\+name)
+\item 
+void \hyperlink{crypto__backend_8h_a3ec944116f6654d1ca69afb933f4418b}{show\+\_\+available\+\_\+ciphers} (void)
+\item 
+void \hyperlink{crypto__backend_8h_af252e66e3834a956ab00264d7aa3e282}{show\+\_\+available\+\_\+digests} (void)
+\item 
+void \hyperlink{crypto__backend_8h_a194e1ecb3b8a6267eaedd2d885114b39}{show\+\_\+available\+\_\+engines} (void)
+\item 
+int \hyperlink{crypto__backend_8h_a8a19f717f5824ff4455b6925af81299c}{rand\+\_\+bytes} (uint8\+\_\+t $\ast$output, int len)
+\item 
+int \hyperlink{crypto__backend_8h_ad4d9be2aec664087528e31d2bc8c00ac}{key\+\_\+des\+\_\+num\+\_\+cblocks} (const \hyperlink{crypto__mbedtls_8h_aa82c97683560a0df89eddd2a3cf6e6d4}{cipher\+\_\+kt\+\_\+t} $\ast$kt)
+\item 
+\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} \hyperlink{crypto__backend_8h_a5cf6dcb410ea887d845852b1a486dd6e}{key\+\_\+des\+\_\+check} (uint8\+\_\+t $\ast$\hyperlink{structkey}{key}, int key\+\_\+len, int ndc)
+\item 
+void \hyperlink{crypto__backend_8h_a70a3e94b6fec5fdd271096aaef9f6e95}{key\+\_\+des\+\_\+fixup} (uint8\+\_\+t $\ast$\hyperlink{structkey}{key}, int key\+\_\+len, int ndc)
+\item 
+void \hyperlink{crypto__backend_8h_af42edd8a673b6c5d33bc61691d7a19a9}{cipher\+\_\+des\+\_\+encrypt\+\_\+ecb} (const unsigned char \hyperlink{structkey}{key}\mbox{[}\hyperlink{crypto__openssl_8h_a6f4a9dcb76f52b2c9bd29dafc52c80aa}{D\+E\+S\+\_\+\+K\+E\+Y\+\_\+\+L\+E\+N\+G\+T\+H}\mbox{]}, unsigned char src\mbox{[}\hyperlink{crypto__openssl_8h_a6f4a9dcb76f52b2c9bd29dafc52c80aa}{D\+E\+S\+\_\+\+K\+E\+Y\+\_\+\+L\+E\+N\+G\+T\+H}\mbox{]}, unsigned char \hyperlink{compat-lz4_8h_a961c13eb7fcda15b167b953cac1ab3ec}{dst}\mbox{[}\hyperlink{crypto__openssl_8h_a6f4a9dcb76f52b2c9bd29dafc52c80aa}{D\+E\+S\+\_\+\+K\+E\+Y\+\_\+\+L\+E\+N\+G\+T\+H}\mbox{]})
+\item 
+const \hyperlink{crypto__mbedtls_8h_aa82c97683560a0df89eddd2a3cf6e6d4}{cipher\+\_\+kt\+\_\+t} $\ast$ \hyperlink{crypto__backend_8h_abd78a666624a9f587aa03aa446dffdb2}{cipher\+\_\+kt\+\_\+get} (const char $\ast$ciphername)
+\item 
+const char $\ast$ \hyperlink{crypto__backend_8h_aa7653846be359a2fc26cdf1677e668dd}{cipher\+\_\+kt\+\_\+name} (const \hyperlink{crypto__mbedtls_8h_aa82c97683560a0df89eddd2a3cf6e6d4}{cipher\+\_\+kt\+\_\+t} $\ast$cipher\+\_\+kt)
+\item 
+int \hyperlink{crypto__backend_8h_a7f36be41d0b97d8e3d9e8d586c2213e4}{cipher\+\_\+kt\+\_\+key\+\_\+size} (const \hyperlink{crypto__mbedtls_8h_aa82c97683560a0df89eddd2a3cf6e6d4}{cipher\+\_\+kt\+\_\+t} $\ast$cipher\+\_\+kt)
+\item 
+int \hyperlink{crypto__backend_8h_a902518439f09e88281986ebda8dd458b}{cipher\+\_\+kt\+\_\+iv\+\_\+size} (const \hyperlink{crypto__mbedtls_8h_aa82c97683560a0df89eddd2a3cf6e6d4}{cipher\+\_\+kt\+\_\+t} $\ast$cipher\+\_\+kt)
+\item 
+int \hyperlink{crypto__backend_8h_a5b2de050c2b6a78320fbed2340b25c60}{cipher\+\_\+kt\+\_\+block\+\_\+size} (const \hyperlink{crypto__mbedtls_8h_aa82c97683560a0df89eddd2a3cf6e6d4}{cipher\+\_\+kt\+\_\+t} $\ast$cipher\+\_\+kt)
+\item 
+int \hyperlink{crypto__backend_8h_a04e1e83fd4bbaac94f1cd7ec40ab1d6b}{cipher\+\_\+kt\+\_\+tag\+\_\+size} (const \hyperlink{crypto__mbedtls_8h_aa82c97683560a0df89eddd2a3cf6e6d4}{cipher\+\_\+kt\+\_\+t} $\ast$cipher\+\_\+kt)
+\item 
+int \hyperlink{crypto__backend_8h_aa4132058686bcb23b6cf3936cecf2ce5}{cipher\+\_\+kt\+\_\+mode} (const \hyperlink{crypto__mbedtls_8h_aa82c97683560a0df89eddd2a3cf6e6d4}{cipher\+\_\+kt\+\_\+t} $\ast$cipher\+\_\+kt)
+\item 
+\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} \hyperlink{crypto__backend_8h_a1ab5e0809fe8a98c6ad485c1bc730f80}{cipher\+\_\+kt\+\_\+mode\+\_\+cbc} (const \hyperlink{crypto__mbedtls_8h_aa82c97683560a0df89eddd2a3cf6e6d4}{cipher\+\_\+kt\+\_\+t} $\ast$cipher)
+\item 
+\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} \hyperlink{crypto__backend_8h_ac7b89b85b5ca673849476a67325d5e84}{cipher\+\_\+kt\+\_\+mode\+\_\+ofb\+\_\+cfb} (const \hyperlink{crypto__mbedtls_8h_aa82c97683560a0df89eddd2a3cf6e6d4}{cipher\+\_\+kt\+\_\+t} $\ast$cipher)
+\item 
+\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} \hyperlink{crypto__backend_8h_a21c134671c60f2bc399a5b5a76d7e084}{cipher\+\_\+kt\+\_\+mode\+\_\+aead} (const \hyperlink{crypto__mbedtls_8h_aa82c97683560a0df89eddd2a3cf6e6d4}{cipher\+\_\+kt\+\_\+t} $\ast$cipher)
+\item 
+\hyperlink{crypto__mbedtls_8h_a5fd03a052e0b72cb24747f7cccfc66dd}{cipher\+\_\+ctx\+\_\+t} $\ast$ \hyperlink{crypto__backend_8h_a0a0159024929ac0960f87a6fe5293913}{cipher\+\_\+ctx\+\_\+new} (void)
+\item 
+void \hyperlink{crypto__backend_8h_a73c6b517d2db7a437931b96c03879264}{cipher\+\_\+ctx\+\_\+free} (\hyperlink{crypto__mbedtls_8h_a5fd03a052e0b72cb24747f7cccfc66dd}{cipher\+\_\+ctx\+\_\+t} $\ast$ctx)
+\item 
+void \hyperlink{crypto__backend_8h_ae5e32ed624a8747a76f28ffb6db79f51}{cipher\+\_\+ctx\+\_\+init} (\hyperlink{crypto__mbedtls_8h_a5fd03a052e0b72cb24747f7cccfc66dd}{cipher\+\_\+ctx\+\_\+t} $\ast$ctx, const uint8\+\_\+t $\ast$\hyperlink{structkey}{key}, int key\+\_\+len, const \hyperlink{crypto__mbedtls_8h_aa82c97683560a0df89eddd2a3cf6e6d4}{cipher\+\_\+kt\+\_\+t} $\ast$kt, int enc)
+\item 
+void \hyperlink{crypto__backend_8h_a5c5dc16c7207b6e794cb96c33df52da2}{cipher\+\_\+ctx\+\_\+cleanup} (\hyperlink{crypto__mbedtls_8h_a5fd03a052e0b72cb24747f7cccfc66dd}{cipher\+\_\+ctx\+\_\+t} $\ast$ctx)
+\item 
+int \hyperlink{crypto__backend_8h_a3098c869bb01f6af89d70153aff33471}{cipher\+\_\+ctx\+\_\+iv\+\_\+length} (const \hyperlink{crypto__mbedtls_8h_a5fd03a052e0b72cb24747f7cccfc66dd}{cipher\+\_\+ctx\+\_\+t} $\ast$ctx)
+\item 
+int \hyperlink{crypto__backend_8h_abcde1e39dfed627a0161060c65675d5e}{cipher\+\_\+ctx\+\_\+get\+\_\+tag} (\hyperlink{crypto__mbedtls_8h_a5fd03a052e0b72cb24747f7cccfc66dd}{cipher\+\_\+ctx\+\_\+t} $\ast$ctx, uint8\+\_\+t $\ast$tag, int tag\+\_\+len)
+\item 
+int \hyperlink{crypto__backend_8h_a12f26bdc0e626df90ada523bb0a0fa1d}{cipher\+\_\+ctx\+\_\+block\+\_\+size} (const \hyperlink{crypto__mbedtls_8h_a5fd03a052e0b72cb24747f7cccfc66dd}{cipher\+\_\+ctx\+\_\+t} $\ast$ctx)
+\item 
+int \hyperlink{crypto__backend_8h_a78761ddd5fb61d843d227624d835fed9}{cipher\+\_\+ctx\+\_\+mode} (const \hyperlink{crypto__mbedtls_8h_a5fd03a052e0b72cb24747f7cccfc66dd}{cipher\+\_\+ctx\+\_\+t} $\ast$ctx)
+\item 
+const \hyperlink{crypto__mbedtls_8h_aa82c97683560a0df89eddd2a3cf6e6d4}{cipher\+\_\+kt\+\_\+t} $\ast$ \hyperlink{crypto__backend_8h_a56d0dd0253f889a5305beb86d2900fe7}{cipher\+\_\+ctx\+\_\+get\+\_\+cipher\+\_\+kt} (const \hyperlink{crypto__mbedtls_8h_a5fd03a052e0b72cb24747f7cccfc66dd}{cipher\+\_\+ctx\+\_\+t} $\ast$ctx)
+\item 
+int \hyperlink{crypto__backend_8h_ad42b9bea282ea0b9489d7d1e427cdb1a}{cipher\+\_\+ctx\+\_\+reset} (\hyperlink{crypto__mbedtls_8h_a5fd03a052e0b72cb24747f7cccfc66dd}{cipher\+\_\+ctx\+\_\+t} $\ast$ctx, const uint8\+\_\+t $\ast$iv\+\_\+buf)
+\item 
+int \hyperlink{crypto__backend_8h_a88cb87966c0d58f1235c41287a0fd128}{cipher\+\_\+ctx\+\_\+update\+\_\+ad} (\hyperlink{crypto__mbedtls_8h_a5fd03a052e0b72cb24747f7cccfc66dd}{cipher\+\_\+ctx\+\_\+t} $\ast$ctx, const uint8\+\_\+t $\ast$src, int src\+\_\+len)
+\item 
+int \hyperlink{crypto__backend_8h_a01630447f2e7d79d187a092a2dfda9ab}{cipher\+\_\+ctx\+\_\+update} (\hyperlink{crypto__mbedtls_8h_a5fd03a052e0b72cb24747f7cccfc66dd}{cipher\+\_\+ctx\+\_\+t} $\ast$ctx, uint8\+\_\+t $\ast$\hyperlink{compat-lz4_8h_a961c13eb7fcda15b167b953cac1ab3ec}{dst}, int $\ast$dst\+\_\+len, uint8\+\_\+t $\ast$src, int src\+\_\+len)
+\item 
+int \hyperlink{crypto__backend_8h_ae2189e6f338356e3a497a940ac4a0a32}{cipher\+\_\+ctx\+\_\+final} (\hyperlink{crypto__mbedtls_8h_a5fd03a052e0b72cb24747f7cccfc66dd}{cipher\+\_\+ctx\+\_\+t} $\ast$ctx, uint8\+\_\+t $\ast$\hyperlink{compat-lz4_8h_a961c13eb7fcda15b167b953cac1ab3ec}{dst}, int $\ast$dst\+\_\+len)
+\item 
+int \hyperlink{crypto__backend_8h_afbbc974b1c3209659305a3fca32e3322}{cipher\+\_\+ctx\+\_\+final\+\_\+check\+\_\+tag} (\hyperlink{crypto__mbedtls_8h_a5fd03a052e0b72cb24747f7cccfc66dd}{cipher\+\_\+ctx\+\_\+t} $\ast$ctx, uint8\+\_\+t $\ast$\hyperlink{compat-lz4_8h_a961c13eb7fcda15b167b953cac1ab3ec}{dst}, int $\ast$dst\+\_\+len, uint8\+\_\+t $\ast$tag, size\+\_\+t tag\+\_\+len)
+\item 
+const \hyperlink{crypto__mbedtls_8h_acd12a312c79aead7af792554fb5606d5}{md\+\_\+kt\+\_\+t} $\ast$ \hyperlink{crypto__backend_8h_a9cbbade2b528fe5d1e6ae65bbaf1e765}{md\+\_\+kt\+\_\+get} (const char $\ast$digest)
+\item 
+const char $\ast$ \hyperlink{crypto__backend_8h_af596da696fc79c7839c3abab26e935f2}{md\+\_\+kt\+\_\+name} (const \hyperlink{crypto__mbedtls_8h_acd12a312c79aead7af792554fb5606d5}{md\+\_\+kt\+\_\+t} $\ast$kt)
+\item 
+int \hyperlink{crypto__backend_8h_a002732eb1e19865cdb8f49a46af2cf69}{md\+\_\+kt\+\_\+size} (const \hyperlink{crypto__mbedtls_8h_acd12a312c79aead7af792554fb5606d5}{md\+\_\+kt\+\_\+t} $\ast$kt)
+\item 
+int \hyperlink{crypto__backend_8h_a70d35559ec46dbb97b8b8a83a1e4ecbf}{md\+\_\+full} (const \hyperlink{crypto__mbedtls_8h_acd12a312c79aead7af792554fb5606d5}{md\+\_\+kt\+\_\+t} $\ast$kt, const uint8\+\_\+t $\ast$src, int src\+\_\+len, uint8\+\_\+t $\ast$\hyperlink{compat-lz4_8h_a961c13eb7fcda15b167b953cac1ab3ec}{dst})
+\item 
+\hyperlink{crypto__mbedtls_8h_a6da44e00be96174088b0ee604751629a}{md\+\_\+ctx\+\_\+t} $\ast$ \hyperlink{crypto__backend_8h_ae9289665161bfe6af9b43dd4cfcfc578}{md\+\_\+ctx\+\_\+new} (void)
+\item 
+void \hyperlink{crypto__backend_8h_afdb937666eb44c6bbb45860ed209773d}{md\+\_\+ctx\+\_\+free} (\hyperlink{crypto__mbedtls_8h_a6da44e00be96174088b0ee604751629a}{md\+\_\+ctx\+\_\+t} $\ast$ctx)
+\item 
+void \hyperlink{crypto__backend_8h_a9c6d6b5b29ecea803113caabe525baf1}{md\+\_\+ctx\+\_\+init} (\hyperlink{crypto__mbedtls_8h_a6da44e00be96174088b0ee604751629a}{md\+\_\+ctx\+\_\+t} $\ast$ctx, const \hyperlink{crypto__mbedtls_8h_acd12a312c79aead7af792554fb5606d5}{md\+\_\+kt\+\_\+t} $\ast$kt)
+\item 
+void \hyperlink{crypto__backend_8h_ad92889d868bb18d919c8965fc4b05436}{md\+\_\+ctx\+\_\+cleanup} (\hyperlink{crypto__mbedtls_8h_a6da44e00be96174088b0ee604751629a}{md\+\_\+ctx\+\_\+t} $\ast$ctx)
+\item 
+int \hyperlink{crypto__backend_8h_a3c2b2498759c18b268b1f805b921a02c}{md\+\_\+ctx\+\_\+size} (const \hyperlink{crypto__mbedtls_8h_a6da44e00be96174088b0ee604751629a}{md\+\_\+ctx\+\_\+t} $\ast$ctx)
+\item 
+void \hyperlink{crypto__backend_8h_a36efaa6a9f49bcbf88d439c5535d20d4}{md\+\_\+ctx\+\_\+update} (\hyperlink{crypto__mbedtls_8h_a6da44e00be96174088b0ee604751629a}{md\+\_\+ctx\+\_\+t} $\ast$ctx, const uint8\+\_\+t $\ast$src, int src\+\_\+len)
+\item 
+void \hyperlink{crypto__backend_8h_ae8c3deb337af077a04d4d7ed233f54d2}{md\+\_\+ctx\+\_\+final} (\hyperlink{crypto__mbedtls_8h_a6da44e00be96174088b0ee604751629a}{md\+\_\+ctx\+\_\+t} $\ast$ctx, uint8\+\_\+t $\ast$\hyperlink{compat-lz4_8h_a961c13eb7fcda15b167b953cac1ab3ec}{dst})
+\item 
+\hyperlink{crypto__mbedtls_8h_a673f50867e637575e463123b9a6b8180}{hmac\+\_\+ctx\+\_\+t} $\ast$ \hyperlink{crypto__backend_8h_ab0252aec6b1a3c1e469e36cc8648892e}{hmac\+\_\+ctx\+\_\+new} (void)
+\item 
+void \hyperlink{crypto__backend_8h_a7e7f39d6459b1bae48d57c83f476a484}{hmac\+\_\+ctx\+\_\+free} (\hyperlink{crypto__mbedtls_8h_a673f50867e637575e463123b9a6b8180}{hmac\+\_\+ctx\+\_\+t} $\ast$ctx)
+\item 
+void \hyperlink{crypto__backend_8h_a3a5dca2c6f7a8a820bc3470c460a8a68}{hmac\+\_\+ctx\+\_\+init} (\hyperlink{crypto__mbedtls_8h_a673f50867e637575e463123b9a6b8180}{hmac\+\_\+ctx\+\_\+t} $\ast$ctx, const uint8\+\_\+t $\ast$\hyperlink{structkey}{key}, int key\+\_\+length, const \hyperlink{crypto__mbedtls_8h_acd12a312c79aead7af792554fb5606d5}{md\+\_\+kt\+\_\+t} $\ast$kt)
+\item 
+void \hyperlink{crypto__backend_8h_ac960fcce4aa9c28177a1838fb7e8600f}{hmac\+\_\+ctx\+\_\+cleanup} (\hyperlink{crypto__mbedtls_8h_a673f50867e637575e463123b9a6b8180}{hmac\+\_\+ctx\+\_\+t} $\ast$ctx)
+\item 
+int \hyperlink{crypto__backend_8h_a8625131329a13b2097ccacb82c83b3fe}{hmac\+\_\+ctx\+\_\+size} (const \hyperlink{crypto__mbedtls_8h_a673f50867e637575e463123b9a6b8180}{hmac\+\_\+ctx\+\_\+t} $\ast$ctx)
+\item 
+void \hyperlink{crypto__backend_8h_a11227ed744de3ec49ba41ebe20aecb7b}{hmac\+\_\+ctx\+\_\+reset} (\hyperlink{crypto__mbedtls_8h_a673f50867e637575e463123b9a6b8180}{hmac\+\_\+ctx\+\_\+t} $\ast$ctx)
+\item 
+void \hyperlink{crypto__backend_8h_a0a5053c34da29530f5ec4dd8a7ed8009}{hmac\+\_\+ctx\+\_\+update} (\hyperlink{crypto__mbedtls_8h_a673f50867e637575e463123b9a6b8180}{hmac\+\_\+ctx\+\_\+t} $\ast$ctx, const uint8\+\_\+t $\ast$src, int src\+\_\+len)
+\item 
+void \hyperlink{crypto__backend_8h_a253c2c692da0d3706ca0f2ac5628a90e}{hmac\+\_\+ctx\+\_\+final} (\hyperlink{crypto__mbedtls_8h_a673f50867e637575e463123b9a6b8180}{hmac\+\_\+ctx\+\_\+t} $\ast$ctx, uint8\+\_\+t $\ast$\hyperlink{compat-lz4_8h_a961c13eb7fcda15b167b953cac1ab3ec}{dst})
+\item 
+const char $\ast$ \hyperlink{crypto__backend_8h_a4f2e28840274a7b1799adb09377326df}{translate\+\_\+cipher\+\_\+name\+\_\+to\+\_\+openvpn} (const char $\ast$cipher\+\_\+name)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const \hyperlink{structcipher__name__pair}{cipher\+\_\+name\+\_\+pair} \hyperlink{crypto__backend_8h_ad5777851697132f37392345c09aae27a}{cipher\+\_\+name\+\_\+translation\+\_\+table} \mbox{[}$\,$\mbox{]}
+\item 
+const size\+\_\+t \hyperlink{crypto__backend_8h_a9822f21f79f10abd0f3d1e90c7185959}{cipher\+\_\+name\+\_\+translation\+\_\+table\+\_\+count}
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{crypto__backend_8h_a5ecba19b3b19dd1317e0fad83cfcd414}{}\index{crypto\+\_\+backend.\+h@{crypto\+\_\+backend.\+h}!M\+A\+X\+\_\+\+C\+I\+P\+H\+E\+R\+\_\+\+K\+E\+Y\+\_\+\+L\+E\+N\+G\+T\+H@{M\+A\+X\+\_\+\+C\+I\+P\+H\+E\+R\+\_\+\+K\+E\+Y\+\_\+\+L\+E\+N\+G\+T\+H}}
+\index{M\+A\+X\+\_\+\+C\+I\+P\+H\+E\+R\+\_\+\+K\+E\+Y\+\_\+\+L\+E\+N\+G\+T\+H@{M\+A\+X\+\_\+\+C\+I\+P\+H\+E\+R\+\_\+\+K\+E\+Y\+\_\+\+L\+E\+N\+G\+T\+H}!crypto\+\_\+backend.\+h@{crypto\+\_\+backend.\+h}}
+\subsubsection[{M\+A\+X\+\_\+\+C\+I\+P\+H\+E\+R\+\_\+\+K\+E\+Y\+\_\+\+L\+E\+N\+G\+T\+H}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\+A\+X\+\_\+\+C\+I\+P\+H\+E\+R\+\_\+\+K\+E\+Y\+\_\+\+L\+E\+N\+G\+T\+H~64}\label{crypto__backend_8h_a5ecba19b3b19dd1317e0fad83cfcd414}
+\hypertarget{crypto__backend_8h_a9ce521546cb78acc7159459c101aa46b}{}\index{crypto\+\_\+backend.\+h@{crypto\+\_\+backend.\+h}!M\+A\+X\+\_\+\+H\+M\+A\+C\+\_\+\+K\+E\+Y\+\_\+\+L\+E\+N\+G\+T\+H@{M\+A\+X\+\_\+\+H\+M\+A\+C\+\_\+\+K\+E\+Y\+\_\+\+L\+E\+N\+G\+T\+H}}
+\index{M\+A\+X\+\_\+\+H\+M\+A\+C\+\_\+\+K\+E\+Y\+\_\+\+L\+E\+N\+G\+T\+H@{M\+A\+X\+\_\+\+H\+M\+A\+C\+\_\+\+K\+E\+Y\+\_\+\+L\+E\+N\+G\+T\+H}!crypto\+\_\+backend.\+h@{crypto\+\_\+backend.\+h}}
+\subsubsection[{M\+A\+X\+\_\+\+H\+M\+A\+C\+\_\+\+K\+E\+Y\+\_\+\+L\+E\+N\+G\+T\+H}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\+A\+X\+\_\+\+H\+M\+A\+C\+\_\+\+K\+E\+Y\+\_\+\+L\+E\+N\+G\+T\+H~64}\label{crypto__backend_8h_a9ce521546cb78acc7159459c101aa46b}
+\hypertarget{crypto__backend_8h_ab1a94e29512be06ebb06a445554f0e80}{}\index{crypto\+\_\+backend.\+h@{crypto\+\_\+backend.\+h}!O\+P\+E\+N\+V\+P\+N\+\_\+\+A\+E\+A\+D\+\_\+\+T\+A\+G\+\_\+\+L\+E\+N\+G\+T\+H@{O\+P\+E\+N\+V\+P\+N\+\_\+\+A\+E\+A\+D\+\_\+\+T\+A\+G\+\_\+\+L\+E\+N\+G\+T\+H}}
+\index{O\+P\+E\+N\+V\+P\+N\+\_\+\+A\+E\+A\+D\+\_\+\+T\+A\+G\+\_\+\+L\+E\+N\+G\+T\+H@{O\+P\+E\+N\+V\+P\+N\+\_\+\+A\+E\+A\+D\+\_\+\+T\+A\+G\+\_\+\+L\+E\+N\+G\+T\+H}!crypto\+\_\+backend.\+h@{crypto\+\_\+backend.\+h}}
+\subsubsection[{O\+P\+E\+N\+V\+P\+N\+\_\+\+A\+E\+A\+D\+\_\+\+T\+A\+G\+\_\+\+L\+E\+N\+G\+T\+H}]{\setlength{\rightskip}{0pt plus 5cm}\#define O\+P\+E\+N\+V\+P\+N\+\_\+\+A\+E\+A\+D\+\_\+\+T\+A\+G\+\_\+\+L\+E\+N\+G\+T\+H~16}\label{crypto__backend_8h_ab1a94e29512be06ebb06a445554f0e80}
+\hypertarget{crypto__backend_8h_ac677d8b29e5eaaf4c9ca3132475b13db}{}\index{crypto\+\_\+backend.\+h@{crypto\+\_\+backend.\+h}!O\+P\+E\+N\+V\+P\+N\+\_\+\+M\+A\+X\+\_\+\+C\+I\+P\+H\+E\+R\+\_\+\+B\+L\+O\+C\+K\+\_\+\+S\+I\+Z\+E@{O\+P\+E\+N\+V\+P\+N\+\_\+\+M\+A\+X\+\_\+\+C\+I\+P\+H\+E\+R\+\_\+\+B\+L\+O\+C\+K\+\_\+\+S\+I\+Z\+E}}
+\index{O\+P\+E\+N\+V\+P\+N\+\_\+\+M\+A\+X\+\_\+\+C\+I\+P\+H\+E\+R\+\_\+\+B\+L\+O\+C\+K\+\_\+\+S\+I\+Z\+E@{O\+P\+E\+N\+V\+P\+N\+\_\+\+M\+A\+X\+\_\+\+C\+I\+P\+H\+E\+R\+\_\+\+B\+L\+O\+C\+K\+\_\+\+S\+I\+Z\+E}!crypto\+\_\+backend.\+h@{crypto\+\_\+backend.\+h}}
+\subsubsection[{O\+P\+E\+N\+V\+P\+N\+\_\+\+M\+A\+X\+\_\+\+C\+I\+P\+H\+E\+R\+\_\+\+B\+L\+O\+C\+K\+\_\+\+S\+I\+Z\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define O\+P\+E\+N\+V\+P\+N\+\_\+\+M\+A\+X\+\_\+\+C\+I\+P\+H\+E\+R\+\_\+\+B\+L\+O\+C\+K\+\_\+\+S\+I\+Z\+E~32}\label{crypto__backend_8h_ac677d8b29e5eaaf4c9ca3132475b13db}
+\hypertarget{crypto__backend_8h_ae6d94d4cb081cd4ee41b9aef4718faa2}{}\index{crypto\+\_\+backend.\+h@{crypto\+\_\+backend.\+h}!O\+P\+E\+N\+V\+P\+N\+\_\+\+M\+A\+X\+\_\+\+H\+M\+A\+C\+\_\+\+S\+I\+Z\+E@{O\+P\+E\+N\+V\+P\+N\+\_\+\+M\+A\+X\+\_\+\+H\+M\+A\+C\+\_\+\+S\+I\+Z\+E}}
+\index{O\+P\+E\+N\+V\+P\+N\+\_\+\+M\+A\+X\+\_\+\+H\+M\+A\+C\+\_\+\+S\+I\+Z\+E@{O\+P\+E\+N\+V\+P\+N\+\_\+\+M\+A\+X\+\_\+\+H\+M\+A\+C\+\_\+\+S\+I\+Z\+E}!crypto\+\_\+backend.\+h@{crypto\+\_\+backend.\+h}}
+\subsubsection[{O\+P\+E\+N\+V\+P\+N\+\_\+\+M\+A\+X\+\_\+\+H\+M\+A\+C\+\_\+\+S\+I\+Z\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define O\+P\+E\+N\+V\+P\+N\+\_\+\+M\+A\+X\+\_\+\+H\+M\+A\+C\+\_\+\+S\+I\+Z\+E~64}\label{crypto__backend_8h_ae6d94d4cb081cd4ee41b9aef4718faa2}
+
+
+\subsection{Enumeration Type Documentation}
+\hypertarget{crypto__backend_8h_a1bdec30a85e44df9ee6c6ad815bccb00}{}\index{crypto\+\_\+backend.\+h@{crypto\+\_\+backend.\+h}!hash\+\_\+algo\+\_\+type@{hash\+\_\+algo\+\_\+type}}
+\index{hash\+\_\+algo\+\_\+type@{hash\+\_\+algo\+\_\+type}!crypto\+\_\+backend.\+h@{crypto\+\_\+backend.\+h}}
+\subsubsection[{hash\+\_\+algo\+\_\+type}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf hash\+\_\+algo\+\_\+type}}\label{crypto__backend_8h_a1bdec30a85e44df9ee6c6ad815bccb00}
+Types referencing specific message digest hashing algorithms \begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{M\+D\+\_\+\+S\+H\+A1@{M\+D\+\_\+\+S\+H\+A1}!crypto\+\_\+backend.\+h@{crypto\+\_\+backend.\+h}}\index{crypto\+\_\+backend.\+h@{crypto\+\_\+backend.\+h}!M\+D\+\_\+\+S\+H\+A1@{M\+D\+\_\+\+S\+H\+A1}}\item[{\em 
+\hypertarget{crypto__backend_8h_a1bdec30a85e44df9ee6c6ad815bccb00ae53a331d3ddfdec0130cce49f37b04a0}{}M\+D\+\_\+\+S\+H\+A1\label{crypto__backend_8h_a1bdec30a85e44df9ee6c6ad815bccb00ae53a331d3ddfdec0130cce49f37b04a0}
+}]\index{M\+D\+\_\+\+S\+H\+A256@{M\+D\+\_\+\+S\+H\+A256}!crypto\+\_\+backend.\+h@{crypto\+\_\+backend.\+h}}\index{crypto\+\_\+backend.\+h@{crypto\+\_\+backend.\+h}!M\+D\+\_\+\+S\+H\+A256@{M\+D\+\_\+\+S\+H\+A256}}\item[{\em 
+\hypertarget{crypto__backend_8h_a1bdec30a85e44df9ee6c6ad815bccb00a0f8ae45c39bd8247c6289aed48029aa1}{}M\+D\+\_\+\+S\+H\+A256\label{crypto__backend_8h_a1bdec30a85e44df9ee6c6ad815bccb00a0f8ae45c39bd8247c6289aed48029aa1}
+}]\end{description}
+\end{Desc}
+
+
+\subsection{Function Documentation}
+\hypertarget{crypto__backend_8h_a12f26bdc0e626df90ada523bb0a0fa1d}{}\index{crypto\+\_\+backend.\+h@{crypto\+\_\+backend.\+h}!cipher\+\_\+ctx\+\_\+block\+\_\+size@{cipher\+\_\+ctx\+\_\+block\+\_\+size}}
+\index{cipher\+\_\+ctx\+\_\+block\+\_\+size@{cipher\+\_\+ctx\+\_\+block\+\_\+size}!crypto\+\_\+backend.\+h@{crypto\+\_\+backend.\+h}}
+\subsubsection[{cipher\+\_\+ctx\+\_\+block\+\_\+size(const cipher\+\_\+ctx\+\_\+t $\ast$ctx)}]{\setlength{\rightskip}{0pt plus 5cm}int cipher\+\_\+ctx\+\_\+block\+\_\+size (
+\begin{DoxyParamCaption}
+\item[{const {\bf cipher\+\_\+ctx\+\_\+t} $\ast$}]{ctx}
+\end{DoxyParamCaption}
+)}\label{crypto__backend_8h_a12f26bdc0e626df90ada523bb0a0fa1d}
+Returns the block size of the cipher, in bytes.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & The cipher\textquotesingle{}s context\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Block size, in bytes, or 0 if ctx was N\+U\+L\+L. 
+\end{DoxyReturn}
+\hypertarget{crypto__backend_8h_a5c5dc16c7207b6e794cb96c33df52da2}{}\index{crypto\+\_\+backend.\+h@{crypto\+\_\+backend.\+h}!cipher\+\_\+ctx\+\_\+cleanup@{cipher\+\_\+ctx\+\_\+cleanup}}
+\index{cipher\+\_\+ctx\+\_\+cleanup@{cipher\+\_\+ctx\+\_\+cleanup}!crypto\+\_\+backend.\+h@{crypto\+\_\+backend.\+h}}
+\subsubsection[{cipher\+\_\+ctx\+\_\+cleanup(cipher\+\_\+ctx\+\_\+t $\ast$ctx)}]{\setlength{\rightskip}{0pt plus 5cm}void cipher\+\_\+ctx\+\_\+cleanup (
+\begin{DoxyParamCaption}
+\item[{{\bf cipher\+\_\+ctx\+\_\+t} $\ast$}]{ctx}
+\end{DoxyParamCaption}
+)}\label{crypto__backend_8h_a5c5dc16c7207b6e794cb96c33df52da2}
+Cleanup the specified context.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & Cipher context to cleanup. \\
+\hline
+\end{DoxyParams}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{crypto__backend_8h_a5c5dc16c7207b6e794cb96c33df52da2_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{crypto__backend_8h_ae2189e6f338356e3a497a940ac4a0a32}{}\index{crypto\+\_\+backend.\+h@{crypto\+\_\+backend.\+h}!cipher\+\_\+ctx\+\_\+final@{cipher\+\_\+ctx\+\_\+final}}
+\index{cipher\+\_\+ctx\+\_\+final@{cipher\+\_\+ctx\+\_\+final}!crypto\+\_\+backend.\+h@{crypto\+\_\+backend.\+h}}
+\subsubsection[{cipher\+\_\+ctx\+\_\+final(cipher\+\_\+ctx\+\_\+t $\ast$ctx, uint8\+\_\+t $\ast$dst, int $\ast$dst\+\_\+len)}]{\setlength{\rightskip}{0pt plus 5cm}int cipher\+\_\+ctx\+\_\+final (
+\begin{DoxyParamCaption}
+\item[{{\bf cipher\+\_\+ctx\+\_\+t} $\ast$}]{ctx, }
+\item[{uint8\+\_\+t $\ast$}]{dst, }
+\item[{int $\ast$}]{dst\+\_\+len}
+\end{DoxyParamCaption}
+)}\label{crypto__backend_8h_ae2189e6f338356e3a497a940ac4a0a32}
+Pads the final cipher block using P\+K\+C\+S padding, and output to the destination buffer.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & Cipher\textquotesingle{}s context. May not be N\+U\+L\+L. \\
+\hline
+{\em dst} & Destination buffer \\
+\hline
+{\em dst\+\_\+len} & Length of the destination buffer, in bytes\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\ttfamily 0} on failure, {\ttfamily 1} on success. 
+\end{DoxyReturn}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=290pt]{crypto__backend_8h_ae2189e6f338356e3a497a940ac4a0a32_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{crypto__backend_8h_afbbc974b1c3209659305a3fca32e3322}{}\index{crypto\+\_\+backend.\+h@{crypto\+\_\+backend.\+h}!cipher\+\_\+ctx\+\_\+final\+\_\+check\+\_\+tag@{cipher\+\_\+ctx\+\_\+final\+\_\+check\+\_\+tag}}
+\index{cipher\+\_\+ctx\+\_\+final\+\_\+check\+\_\+tag@{cipher\+\_\+ctx\+\_\+final\+\_\+check\+\_\+tag}!crypto\+\_\+backend.\+h@{crypto\+\_\+backend.\+h}}
+\subsubsection[{cipher\+\_\+ctx\+\_\+final\+\_\+check\+\_\+tag(cipher\+\_\+ctx\+\_\+t $\ast$ctx, uint8\+\_\+t $\ast$dst, int $\ast$dst\+\_\+len, uint8\+\_\+t $\ast$tag, size\+\_\+t tag\+\_\+len)}]{\setlength{\rightskip}{0pt plus 5cm}int cipher\+\_\+ctx\+\_\+final\+\_\+check\+\_\+tag (
+\begin{DoxyParamCaption}
+\item[{{\bf cipher\+\_\+ctx\+\_\+t} $\ast$}]{ctx, }
+\item[{uint8\+\_\+t $\ast$}]{dst, }
+\item[{int $\ast$}]{dst\+\_\+len, }
+\item[{uint8\+\_\+t $\ast$}]{tag, }
+\item[{size\+\_\+t}]{tag\+\_\+len}
+\end{DoxyParamCaption}
+)}\label{crypto__backend_8h_afbbc974b1c3209659305a3fca32e3322}
+Like {\ttfamily cipher\+\_\+ctx\+\_\+final}, but check the computed authentication tag against the supplied (expected) tag. This function reports failure when the tags don\textquotesingle{}t match.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & Cipher\textquotesingle{}s context. May not be N\+U\+L\+L. \\
+\hline
+{\em dst} & Destination buffer. \\
+\hline
+{\em dst\+\_\+len} & Length of the destination buffer, in bytes. \\
+\hline
+{\em tag} & The expected authentication tag. \\
+\hline
+{\em tag\+\_\+len} & The length of tag, in bytes.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\ttfamily 0} on failure, {\ttfamily 1} on success. 
+\end{DoxyReturn}
+\hypertarget{crypto__backend_8h_a73c6b517d2db7a437931b96c03879264}{}\index{crypto\+\_\+backend.\+h@{crypto\+\_\+backend.\+h}!cipher\+\_\+ctx\+\_\+free@{cipher\+\_\+ctx\+\_\+free}}
+\index{cipher\+\_\+ctx\+\_\+free@{cipher\+\_\+ctx\+\_\+free}!crypto\+\_\+backend.\+h@{crypto\+\_\+backend.\+h}}
+\subsubsection[{cipher\+\_\+ctx\+\_\+free(cipher\+\_\+ctx\+\_\+t $\ast$ctx)}]{\setlength{\rightskip}{0pt plus 5cm}void cipher\+\_\+ctx\+\_\+free (
+\begin{DoxyParamCaption}
+\item[{{\bf cipher\+\_\+ctx\+\_\+t} $\ast$}]{ctx}
+\end{DoxyParamCaption}
+)}\label{crypto__backend_8h_a73c6b517d2db7a437931b96c03879264}
+Free a cipher context
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & Cipher context. \\
+\hline
+\end{DoxyParams}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{crypto__backend_8h_a73c6b517d2db7a437931b96c03879264_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{crypto__backend_8h_a56d0dd0253f889a5305beb86d2900fe7}{}\index{crypto\+\_\+backend.\+h@{crypto\+\_\+backend.\+h}!cipher\+\_\+ctx\+\_\+get\+\_\+cipher\+\_\+kt@{cipher\+\_\+ctx\+\_\+get\+\_\+cipher\+\_\+kt}}
+\index{cipher\+\_\+ctx\+\_\+get\+\_\+cipher\+\_\+kt@{cipher\+\_\+ctx\+\_\+get\+\_\+cipher\+\_\+kt}!crypto\+\_\+backend.\+h@{crypto\+\_\+backend.\+h}}
+\subsubsection[{cipher\+\_\+ctx\+\_\+get\+\_\+cipher\+\_\+kt(const cipher\+\_\+ctx\+\_\+t $\ast$ctx)}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf cipher\+\_\+kt\+\_\+t}$\ast$ cipher\+\_\+ctx\+\_\+get\+\_\+cipher\+\_\+kt (
+\begin{DoxyParamCaption}
+\item[{const {\bf cipher\+\_\+ctx\+\_\+t} $\ast$}]{ctx}
+\end{DoxyParamCaption}
+)}\label{crypto__backend_8h_a56d0dd0253f889a5305beb86d2900fe7}
+Returns the static cipher parameters for this context.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & Cipher\textquotesingle{}s context.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Static cipher parameters for the supplied context, or N\+U\+L\+L if unable to determine cipher parameters. 
+\end{DoxyReturn}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{crypto__backend_8h_a56d0dd0253f889a5305beb86d2900fe7_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{crypto__backend_8h_abcde1e39dfed627a0161060c65675d5e}{}\index{crypto\+\_\+backend.\+h@{crypto\+\_\+backend.\+h}!cipher\+\_\+ctx\+\_\+get\+\_\+tag@{cipher\+\_\+ctx\+\_\+get\+\_\+tag}}
+\index{cipher\+\_\+ctx\+\_\+get\+\_\+tag@{cipher\+\_\+ctx\+\_\+get\+\_\+tag}!crypto\+\_\+backend.\+h@{crypto\+\_\+backend.\+h}}
+\subsubsection[{cipher\+\_\+ctx\+\_\+get\+\_\+tag(cipher\+\_\+ctx\+\_\+t $\ast$ctx, uint8\+\_\+t $\ast$tag, int tag\+\_\+len)}]{\setlength{\rightskip}{0pt plus 5cm}int cipher\+\_\+ctx\+\_\+get\+\_\+tag (
+\begin{DoxyParamCaption}
+\item[{{\bf cipher\+\_\+ctx\+\_\+t} $\ast$}]{ctx, }
+\item[{uint8\+\_\+t $\ast$}]{tag, }
+\item[{int}]{tag\+\_\+len}
+\end{DoxyParamCaption}
+)}\label{crypto__backend_8h_abcde1e39dfed627a0161060c65675d5e}
+Gets the computed message authenticated code (M\+A\+C) tag for this cipher.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & The cipher\textquotesingle{}s context \\
+\hline
+{\em tag} & The buffer to write computed tag in. \\
+\hline
+{\em tag\+\_\+size} & The tag buffer size, in bytes. \\
+\hline
+\end{DoxyParams}
+\hypertarget{crypto__backend_8h_ae5e32ed624a8747a76f28ffb6db79f51}{}\index{crypto\+\_\+backend.\+h@{crypto\+\_\+backend.\+h}!cipher\+\_\+ctx\+\_\+init@{cipher\+\_\+ctx\+\_\+init}}
+\index{cipher\+\_\+ctx\+\_\+init@{cipher\+\_\+ctx\+\_\+init}!crypto\+\_\+backend.\+h@{crypto\+\_\+backend.\+h}}
+\subsubsection[{cipher\+\_\+ctx\+\_\+init(cipher\+\_\+ctx\+\_\+t $\ast$ctx, const uint8\+\_\+t $\ast$key, int key\+\_\+len, const cipher\+\_\+kt\+\_\+t $\ast$kt, int enc)}]{\setlength{\rightskip}{0pt plus 5cm}void cipher\+\_\+ctx\+\_\+init (
+\begin{DoxyParamCaption}
+\item[{{\bf cipher\+\_\+ctx\+\_\+t} $\ast$}]{ctx, }
+\item[{const uint8\+\_\+t $\ast$}]{key, }
+\item[{int}]{key\+\_\+len, }
+\item[{const {\bf cipher\+\_\+kt\+\_\+t} $\ast$}]{kt, }
+\item[{int}]{enc}
+\end{DoxyParamCaption}
+)}\label{crypto__backend_8h_ae5e32ed624a8747a76f28ffb6db79f51}
+Initialise a cipher context, based on the given key and key type.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & Cipher context. May not be N\+U\+L\+L \\
+\hline
+{\em key} & Buffer containing the key to use \\
+\hline
+{\em key\+\_\+len} & Length of the key, in bytes \\
+\hline
+{\em kt} & Static cipher parameters to use \\
+\hline
+{\em enc} & Whether to encrypt or decrypt (either {\ttfamily M\+B\+E\+D\+T\+L\+S\+\_\+\+O\+P\+\_\+\+E\+N\+C\+R\+Y\+P\+T} or {\ttfamily M\+B\+E\+D\+T\+L\+S\+\_\+\+O\+P\+\_\+\+D\+E\+C\+R\+Y\+P\+T}). \\
+\hline
+\end{DoxyParams}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{crypto__backend_8h_ae5e32ed624a8747a76f28ffb6db79f51_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{crypto__backend_8h_a3098c869bb01f6af89d70153aff33471}{}\index{crypto\+\_\+backend.\+h@{crypto\+\_\+backend.\+h}!cipher\+\_\+ctx\+\_\+iv\+\_\+length@{cipher\+\_\+ctx\+\_\+iv\+\_\+length}}
+\index{cipher\+\_\+ctx\+\_\+iv\+\_\+length@{cipher\+\_\+ctx\+\_\+iv\+\_\+length}!crypto\+\_\+backend.\+h@{crypto\+\_\+backend.\+h}}
+\subsubsection[{cipher\+\_\+ctx\+\_\+iv\+\_\+length(const cipher\+\_\+ctx\+\_\+t $\ast$ctx)}]{\setlength{\rightskip}{0pt plus 5cm}int cipher\+\_\+ctx\+\_\+iv\+\_\+length (
+\begin{DoxyParamCaption}
+\item[{const {\bf cipher\+\_\+ctx\+\_\+t} $\ast$}]{ctx}
+\end{DoxyParamCaption}
+)}\label{crypto__backend_8h_a3098c869bb01f6af89d70153aff33471}
+Returns the size of the I\+V used by the cipher, in bytes, or 0 if no I\+V is used.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & The cipher\textquotesingle{}s context\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Size of the I\+V, in bytes, or {\ttfamily 0} if the cipher does not use an I\+V or ctx was N\+U\+L\+L. 
+\end{DoxyReturn}
+\hypertarget{crypto__backend_8h_a78761ddd5fb61d843d227624d835fed9}{}\index{crypto\+\_\+backend.\+h@{crypto\+\_\+backend.\+h}!cipher\+\_\+ctx\+\_\+mode@{cipher\+\_\+ctx\+\_\+mode}}
+\index{cipher\+\_\+ctx\+\_\+mode@{cipher\+\_\+ctx\+\_\+mode}!crypto\+\_\+backend.\+h@{crypto\+\_\+backend.\+h}}
+\subsubsection[{cipher\+\_\+ctx\+\_\+mode(const cipher\+\_\+ctx\+\_\+t $\ast$ctx)}]{\setlength{\rightskip}{0pt plus 5cm}int cipher\+\_\+ctx\+\_\+mode (
+\begin{DoxyParamCaption}
+\item[{const {\bf cipher\+\_\+ctx\+\_\+t} $\ast$}]{ctx}
+\end{DoxyParamCaption}
+)}\label{crypto__backend_8h_a78761ddd5fb61d843d227624d835fed9}
+Returns the mode that the cipher runs in.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & Cipher\textquotesingle{}s context. May not be N\+U\+L\+L.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Cipher mode, either {\ttfamily O\+P\+E\+N\+V\+P\+N\+\_\+\+M\+O\+D\+E\+\_\+\+C\+B\+C}, {\ttfamily O\+P\+E\+N\+V\+P\+N\+\_\+\+M\+O\+D\+E\+\_\+\+O\+F\+B} or {\ttfamily O\+P\+E\+N\+V\+P\+N\+\_\+\+M\+O\+D\+E\+\_\+\+C\+F\+B} 
+\end{DoxyReturn}
+\hypertarget{crypto__backend_8h_a0a0159024929ac0960f87a6fe5293913}{}\index{crypto\+\_\+backend.\+h@{crypto\+\_\+backend.\+h}!cipher\+\_\+ctx\+\_\+new@{cipher\+\_\+ctx\+\_\+new}}
+\index{cipher\+\_\+ctx\+\_\+new@{cipher\+\_\+ctx\+\_\+new}!crypto\+\_\+backend.\+h@{crypto\+\_\+backend.\+h}}
+\subsubsection[{cipher\+\_\+ctx\+\_\+new(void)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf cipher\+\_\+ctx\+\_\+t}$\ast$ cipher\+\_\+ctx\+\_\+new (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{crypto__backend_8h_a0a0159024929ac0960f87a6fe5293913}
+Generic cipher functions Allocate a new cipher context
+
+\begin{DoxyReturn}{Returns}
+a new cipher context 
+\end{DoxyReturn}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{crypto__backend_8h_a0a0159024929ac0960f87a6fe5293913_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{crypto__backend_8h_ad42b9bea282ea0b9489d7d1e427cdb1a}{}\index{crypto\+\_\+backend.\+h@{crypto\+\_\+backend.\+h}!cipher\+\_\+ctx\+\_\+reset@{cipher\+\_\+ctx\+\_\+reset}}
+\index{cipher\+\_\+ctx\+\_\+reset@{cipher\+\_\+ctx\+\_\+reset}!crypto\+\_\+backend.\+h@{crypto\+\_\+backend.\+h}}
+\subsubsection[{cipher\+\_\+ctx\+\_\+reset(cipher\+\_\+ctx\+\_\+t $\ast$ctx, const uint8\+\_\+t $\ast$iv\+\_\+buf)}]{\setlength{\rightskip}{0pt plus 5cm}int cipher\+\_\+ctx\+\_\+reset (
+\begin{DoxyParamCaption}
+\item[{{\bf cipher\+\_\+ctx\+\_\+t} $\ast$}]{ctx, }
+\item[{const uint8\+\_\+t $\ast$}]{iv\+\_\+buf}
+\end{DoxyParamCaption}
+)}\label{crypto__backend_8h_ad42b9bea282ea0b9489d7d1e427cdb1a}
+Resets the given cipher context, setting the I\+V to the specified value. Preserves the associated key information.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & Cipher\textquotesingle{}s context. May not be N\+U\+L\+L. \\
+\hline
+{\em iv\+\_\+buf} & The I\+V to use.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\ttfamily 0} on failure, {\ttfamily 1} on success. 
+\end{DoxyReturn}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=295pt]{crypto__backend_8h_ad42b9bea282ea0b9489d7d1e427cdb1a_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{crypto__backend_8h_a01630447f2e7d79d187a092a2dfda9ab}{}\index{crypto\+\_\+backend.\+h@{crypto\+\_\+backend.\+h}!cipher\+\_\+ctx\+\_\+update@{cipher\+\_\+ctx\+\_\+update}}
+\index{cipher\+\_\+ctx\+\_\+update@{cipher\+\_\+ctx\+\_\+update}!crypto\+\_\+backend.\+h@{crypto\+\_\+backend.\+h}}
+\subsubsection[{cipher\+\_\+ctx\+\_\+update(cipher\+\_\+ctx\+\_\+t $\ast$ctx, uint8\+\_\+t $\ast$dst, int $\ast$dst\+\_\+len, uint8\+\_\+t $\ast$src, int src\+\_\+len)}]{\setlength{\rightskip}{0pt plus 5cm}int cipher\+\_\+ctx\+\_\+update (
+\begin{DoxyParamCaption}
+\item[{{\bf cipher\+\_\+ctx\+\_\+t} $\ast$}]{ctx, }
+\item[{uint8\+\_\+t $\ast$}]{dst, }
+\item[{int $\ast$}]{dst\+\_\+len, }
+\item[{uint8\+\_\+t $\ast$}]{src, }
+\item[{int}]{src\+\_\+len}
+\end{DoxyParamCaption}
+)}\label{crypto__backend_8h_a01630447f2e7d79d187a092a2dfda9ab}
+Updates the given cipher context, encrypting data in the source buffer, and placing any complete blocks in the destination buffer.
+
+Note that if a complete block cannot be written, data is cached in the context, and emitted at a later call to {\ttfamily cipher\+\_\+ctx\+\_\+update}, or by a call to {\ttfamily \hyperlink{crypto__backend_8h_ae2189e6f338356e3a497a940ac4a0a32}{cipher\+\_\+ctx\+\_\+final()}}. This implies that dst should have enough room for src\+\_\+len + {\ttfamily \hyperlink{crypto__backend_8h_a12f26bdc0e626df90ada523bb0a0fa1d}{cipher\+\_\+ctx\+\_\+block\+\_\+size()}}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & Cipher\textquotesingle{}s context. May not be N\+U\+L\+L. \\
+\hline
+{\em dst} & Destination buffer \\
+\hline
+{\em dst\+\_\+len} & Length of the destination buffer, in bytes \\
+\hline
+{\em src} & Source buffer \\
+\hline
+{\em src\+\_\+len} & Length of the source buffer, in bytes\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\ttfamily 0} on failure, {\ttfamily 1} on success. 
+\end{DoxyReturn}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=302pt]{crypto__backend_8h_a01630447f2e7d79d187a092a2dfda9ab_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{crypto__backend_8h_a88cb87966c0d58f1235c41287a0fd128}{}\index{crypto\+\_\+backend.\+h@{crypto\+\_\+backend.\+h}!cipher\+\_\+ctx\+\_\+update\+\_\+ad@{cipher\+\_\+ctx\+\_\+update\+\_\+ad}}
+\index{cipher\+\_\+ctx\+\_\+update\+\_\+ad@{cipher\+\_\+ctx\+\_\+update\+\_\+ad}!crypto\+\_\+backend.\+h@{crypto\+\_\+backend.\+h}}
+\subsubsection[{cipher\+\_\+ctx\+\_\+update\+\_\+ad(cipher\+\_\+ctx\+\_\+t $\ast$ctx, const uint8\+\_\+t $\ast$src, int src\+\_\+len)}]{\setlength{\rightskip}{0pt plus 5cm}int cipher\+\_\+ctx\+\_\+update\+\_\+ad (
+\begin{DoxyParamCaption}
+\item[{{\bf cipher\+\_\+ctx\+\_\+t} $\ast$}]{ctx, }
+\item[{const uint8\+\_\+t $\ast$}]{src, }
+\item[{int}]{src\+\_\+len}
+\end{DoxyParamCaption}
+)}\label{crypto__backend_8h_a88cb87966c0d58f1235c41287a0fd128}
+Updates the given cipher context, providing additional data (A\+D) for authenticated encryption with additional data (A\+E\+A\+D) cipher modes.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & Cipher\textquotesingle{}s context. May not be N\+U\+L\+L. \\
+\hline
+{\em src} & Source buffer \\
+\hline
+{\em src\+\_\+len} & Length of the source buffer, in bytes\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\ttfamily 0} on failure, {\ttfamily 1} on success. 
+\end{DoxyReturn}
+\hypertarget{crypto__backend_8h_af42edd8a673b6c5d33bc61691d7a19a9}{}\index{crypto\+\_\+backend.\+h@{crypto\+\_\+backend.\+h}!cipher\+\_\+des\+\_\+encrypt\+\_\+ecb@{cipher\+\_\+des\+\_\+encrypt\+\_\+ecb}}
+\index{cipher\+\_\+des\+\_\+encrypt\+\_\+ecb@{cipher\+\_\+des\+\_\+encrypt\+\_\+ecb}!crypto\+\_\+backend.\+h@{crypto\+\_\+backend.\+h}}
+\subsubsection[{cipher\+\_\+des\+\_\+encrypt\+\_\+ecb(const unsigned char key[D\+E\+S\+\_\+\+K\+E\+Y\+\_\+\+L\+E\+N\+G\+T\+H], unsigned char src[D\+E\+S\+\_\+\+K\+E\+Y\+\_\+\+L\+E\+N\+G\+T\+H], unsigned char dst[D\+E\+S\+\_\+\+K\+E\+Y\+\_\+\+L\+E\+N\+G\+T\+H])}]{\setlength{\rightskip}{0pt plus 5cm}void cipher\+\_\+des\+\_\+encrypt\+\_\+ecb (
+\begin{DoxyParamCaption}
+\item[{const unsigned char}]{key\mbox{[}\+D\+E\+S\+\_\+\+K\+E\+Y\+\_\+\+L\+E\+N\+G\+T\+H\mbox{]}, }
+\item[{unsigned char}]{src\mbox{[}\+D\+E\+S\+\_\+\+K\+E\+Y\+\_\+\+L\+E\+N\+G\+T\+H\mbox{]}, }
+\item[{unsigned char}]{dst\mbox{[}\+D\+E\+S\+\_\+\+K\+E\+Y\+\_\+\+L\+E\+N\+G\+T\+H\mbox{]}}
+\end{DoxyParamCaption}
+)}\label{crypto__backend_8h_af42edd8a673b6c5d33bc61691d7a19a9}
+Encrypt the given block, using D\+E\+S E\+C\+B mode
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & D\+E\+S key to use. \\
+\hline
+{\em src} & Buffer containing the 8-\/byte source. \\
+\hline
+{\em dst} & Buffer containing the 8-\/byte destination \\
+\hline
+\end{DoxyParams}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{crypto__backend_8h_af42edd8a673b6c5d33bc61691d7a19a9_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{crypto__backend_8h_a5b2de050c2b6a78320fbed2340b25c60}{}\index{crypto\+\_\+backend.\+h@{crypto\+\_\+backend.\+h}!cipher\+\_\+kt\+\_\+block\+\_\+size@{cipher\+\_\+kt\+\_\+block\+\_\+size}}
+\index{cipher\+\_\+kt\+\_\+block\+\_\+size@{cipher\+\_\+kt\+\_\+block\+\_\+size}!crypto\+\_\+backend.\+h@{crypto\+\_\+backend.\+h}}
+\subsubsection[{cipher\+\_\+kt\+\_\+block\+\_\+size(const cipher\+\_\+kt\+\_\+t $\ast$cipher\+\_\+kt)}]{\setlength{\rightskip}{0pt plus 5cm}int cipher\+\_\+kt\+\_\+block\+\_\+size (
+\begin{DoxyParamCaption}
+\item[{const {\bf cipher\+\_\+kt\+\_\+t} $\ast$}]{cipher\+\_\+kt}
+\end{DoxyParamCaption}
+)}\label{crypto__backend_8h_a5b2de050c2b6a78320fbed2340b25c60}
+Returns the block size of the cipher, in bytes.
+
+
+\begin{DoxyParams}{Parameters}
+{\em cipher\+\_\+kt} & Static cipher parameters\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Block size, in bytes. 
+\end{DoxyReturn}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{crypto__backend_8h_a5b2de050c2b6a78320fbed2340b25c60_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{crypto__backend_8h_abd78a666624a9f587aa03aa446dffdb2}{}\index{crypto\+\_\+backend.\+h@{crypto\+\_\+backend.\+h}!cipher\+\_\+kt\+\_\+get@{cipher\+\_\+kt\+\_\+get}}
+\index{cipher\+\_\+kt\+\_\+get@{cipher\+\_\+kt\+\_\+get}!crypto\+\_\+backend.\+h@{crypto\+\_\+backend.\+h}}
+\subsubsection[{cipher\+\_\+kt\+\_\+get(const char $\ast$ciphername)}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf cipher\+\_\+kt\+\_\+t}$\ast$ cipher\+\_\+kt\+\_\+get (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{ciphername}
+\end{DoxyParamCaption}
+)}\label{crypto__backend_8h_abd78a666624a9f587aa03aa446dffdb2}
+Return cipher parameters, based on the given cipher name. The contents of these parameters are library-\/specific, and can be used to initialise encryption/decryption.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ciphername} & Name of the cipher to retrieve parameters for (e.\+g. {\ttfamily A\+E\+S-\/128-\/\+C\+B\+C}).\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A statically allocated structure containing parameters for the given cipher, or N\+U\+L\+L if no matching parameters were found. 
+\end{DoxyReturn}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{crypto__backend_8h_abd78a666624a9f587aa03aa446dffdb2_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{crypto__backend_8h_a902518439f09e88281986ebda8dd458b}{}\index{crypto\+\_\+backend.\+h@{crypto\+\_\+backend.\+h}!cipher\+\_\+kt\+\_\+iv\+\_\+size@{cipher\+\_\+kt\+\_\+iv\+\_\+size}}
+\index{cipher\+\_\+kt\+\_\+iv\+\_\+size@{cipher\+\_\+kt\+\_\+iv\+\_\+size}!crypto\+\_\+backend.\+h@{crypto\+\_\+backend.\+h}}
+\subsubsection[{cipher\+\_\+kt\+\_\+iv\+\_\+size(const cipher\+\_\+kt\+\_\+t $\ast$cipher\+\_\+kt)}]{\setlength{\rightskip}{0pt plus 5cm}int cipher\+\_\+kt\+\_\+iv\+\_\+size (
+\begin{DoxyParamCaption}
+\item[{const {\bf cipher\+\_\+kt\+\_\+t} $\ast$}]{cipher\+\_\+kt}
+\end{DoxyParamCaption}
+)}\label{crypto__backend_8h_a902518439f09e88281986ebda8dd458b}
+Returns the size of the I\+V used by the cipher, in bytes, or 0 if no I\+V is used.
+
+
+\begin{DoxyParams}{Parameters}
+{\em cipher\+\_\+kt} & Static cipher parameters\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Size of the I\+V, in bytes, or 0 if the cipher does not use an I\+V. 
+\end{DoxyReturn}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{crypto__backend_8h_a902518439f09e88281986ebda8dd458b_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{crypto__backend_8h_a7f36be41d0b97d8e3d9e8d586c2213e4}{}\index{crypto\+\_\+backend.\+h@{crypto\+\_\+backend.\+h}!cipher\+\_\+kt\+\_\+key\+\_\+size@{cipher\+\_\+kt\+\_\+key\+\_\+size}}
+\index{cipher\+\_\+kt\+\_\+key\+\_\+size@{cipher\+\_\+kt\+\_\+key\+\_\+size}!crypto\+\_\+backend.\+h@{crypto\+\_\+backend.\+h}}
+\subsubsection[{cipher\+\_\+kt\+\_\+key\+\_\+size(const cipher\+\_\+kt\+\_\+t $\ast$cipher\+\_\+kt)}]{\setlength{\rightskip}{0pt plus 5cm}int cipher\+\_\+kt\+\_\+key\+\_\+size (
+\begin{DoxyParamCaption}
+\item[{const {\bf cipher\+\_\+kt\+\_\+t} $\ast$}]{cipher\+\_\+kt}
+\end{DoxyParamCaption}
+)}\label{crypto__backend_8h_a7f36be41d0b97d8e3d9e8d586c2213e4}
+Returns the size of keys used by the cipher, in bytes. If the cipher has a variable key size, return the default key size.
+
+
+\begin{DoxyParams}{Parameters}
+{\em cipher\+\_\+kt} & Static cipher parameters\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+(Default) size of keys used by the cipher, in bytes. 
+\end{DoxyReturn}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{crypto__backend_8h_a7f36be41d0b97d8e3d9e8d586c2213e4_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{crypto__backend_8h_aa4132058686bcb23b6cf3936cecf2ce5}{}\index{crypto\+\_\+backend.\+h@{crypto\+\_\+backend.\+h}!cipher\+\_\+kt\+\_\+mode@{cipher\+\_\+kt\+\_\+mode}}
+\index{cipher\+\_\+kt\+\_\+mode@{cipher\+\_\+kt\+\_\+mode}!crypto\+\_\+backend.\+h@{crypto\+\_\+backend.\+h}}
+\subsubsection[{cipher\+\_\+kt\+\_\+mode(const cipher\+\_\+kt\+\_\+t $\ast$cipher\+\_\+kt)}]{\setlength{\rightskip}{0pt plus 5cm}int cipher\+\_\+kt\+\_\+mode (
+\begin{DoxyParamCaption}
+\item[{const {\bf cipher\+\_\+kt\+\_\+t} $\ast$}]{cipher\+\_\+kt}
+\end{DoxyParamCaption}
+)}\label{crypto__backend_8h_aa4132058686bcb23b6cf3936cecf2ce5}
+Returns the mode that the cipher runs in.
+
+
+\begin{DoxyParams}{Parameters}
+{\em cipher\+\_\+kt} & Static cipher parameters. May not be N\+U\+L\+L.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Cipher mode, either {\ttfamily O\+P\+E\+N\+V\+P\+N\+\_\+\+M\+O\+D\+E\+\_\+\+C\+B\+C}, {\ttfamily O\+P\+E\+N\+V\+P\+N\+\_\+\+M\+O\+D\+E\+\_\+\+O\+F\+B} or {\ttfamily O\+P\+E\+N\+V\+P\+N\+\_\+\+M\+O\+D\+E\+\_\+\+C\+F\+B} 
+\end{DoxyReturn}
+\hypertarget{crypto__backend_8h_a21c134671c60f2bc399a5b5a76d7e084}{}\index{crypto\+\_\+backend.\+h@{crypto\+\_\+backend.\+h}!cipher\+\_\+kt\+\_\+mode\+\_\+aead@{cipher\+\_\+kt\+\_\+mode\+\_\+aead}}
+\index{cipher\+\_\+kt\+\_\+mode\+\_\+aead@{cipher\+\_\+kt\+\_\+mode\+\_\+aead}!crypto\+\_\+backend.\+h@{crypto\+\_\+backend.\+h}}
+\subsubsection[{cipher\+\_\+kt\+\_\+mode\+\_\+aead(const cipher\+\_\+kt\+\_\+t $\ast$cipher)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} cipher\+\_\+kt\+\_\+mode\+\_\+aead (
+\begin{DoxyParamCaption}
+\item[{const {\bf cipher\+\_\+kt\+\_\+t} $\ast$}]{cipher}
+\end{DoxyParamCaption}
+)}\label{crypto__backend_8h_a21c134671c60f2bc399a5b5a76d7e084}
+Check if the supplied cipher is a supported A\+E\+A\+D mode cipher.
+
+
+\begin{DoxyParams}{Parameters}
+{\em cipher} & Static cipher parameters.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true iff the cipher is a A\+E\+A\+D mode cipher. 
+\end{DoxyReturn}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{crypto__backend_8h_a21c134671c60f2bc399a5b5a76d7e084_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{crypto__backend_8h_a1ab5e0809fe8a98c6ad485c1bc730f80}{}\index{crypto\+\_\+backend.\+h@{crypto\+\_\+backend.\+h}!cipher\+\_\+kt\+\_\+mode\+\_\+cbc@{cipher\+\_\+kt\+\_\+mode\+\_\+cbc}}
+\index{cipher\+\_\+kt\+\_\+mode\+\_\+cbc@{cipher\+\_\+kt\+\_\+mode\+\_\+cbc}!crypto\+\_\+backend.\+h@{crypto\+\_\+backend.\+h}}
+\subsubsection[{cipher\+\_\+kt\+\_\+mode\+\_\+cbc(const cipher\+\_\+kt\+\_\+t $\ast$cipher)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} cipher\+\_\+kt\+\_\+mode\+\_\+cbc (
+\begin{DoxyParamCaption}
+\item[{const {\bf cipher\+\_\+kt\+\_\+t} $\ast$}]{cipher}
+\end{DoxyParamCaption}
+)}\label{crypto__backend_8h_a1ab5e0809fe8a98c6ad485c1bc730f80}
+Check if the supplied cipher is a supported C\+B\+C mode cipher.
+
+
+\begin{DoxyParams}{Parameters}
+{\em cipher} & Static cipher parameters.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true iff the cipher is a C\+B\+C mode cipher. 
+\end{DoxyReturn}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{crypto__backend_8h_a1ab5e0809fe8a98c6ad485c1bc730f80_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{crypto__backend_8h_ac7b89b85b5ca673849476a67325d5e84}{}\index{crypto\+\_\+backend.\+h@{crypto\+\_\+backend.\+h}!cipher\+\_\+kt\+\_\+mode\+\_\+ofb\+\_\+cfb@{cipher\+\_\+kt\+\_\+mode\+\_\+ofb\+\_\+cfb}}
+\index{cipher\+\_\+kt\+\_\+mode\+\_\+ofb\+\_\+cfb@{cipher\+\_\+kt\+\_\+mode\+\_\+ofb\+\_\+cfb}!crypto\+\_\+backend.\+h@{crypto\+\_\+backend.\+h}}
+\subsubsection[{cipher\+\_\+kt\+\_\+mode\+\_\+ofb\+\_\+cfb(const cipher\+\_\+kt\+\_\+t $\ast$cipher)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} cipher\+\_\+kt\+\_\+mode\+\_\+ofb\+\_\+cfb (
+\begin{DoxyParamCaption}
+\item[{const {\bf cipher\+\_\+kt\+\_\+t} $\ast$}]{cipher}
+\end{DoxyParamCaption}
+)}\label{crypto__backend_8h_ac7b89b85b5ca673849476a67325d5e84}
+Check if the supplied cipher is a supported O\+F\+B or C\+F\+B mode cipher.
+
+
+\begin{DoxyParams}{Parameters}
+{\em cipher} & Static cipher parameters.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true iff the cipher is a O\+F\+B or C\+F\+B mode cipher. 
+\end{DoxyReturn}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{crypto__backend_8h_ac7b89b85b5ca673849476a67325d5e84_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{crypto__backend_8h_aa7653846be359a2fc26cdf1677e668dd}{}\index{crypto\+\_\+backend.\+h@{crypto\+\_\+backend.\+h}!cipher\+\_\+kt\+\_\+name@{cipher\+\_\+kt\+\_\+name}}
+\index{cipher\+\_\+kt\+\_\+name@{cipher\+\_\+kt\+\_\+name}!crypto\+\_\+backend.\+h@{crypto\+\_\+backend.\+h}}
+\subsubsection[{cipher\+\_\+kt\+\_\+name(const cipher\+\_\+kt\+\_\+t $\ast$cipher\+\_\+kt)}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ cipher\+\_\+kt\+\_\+name (
+\begin{DoxyParamCaption}
+\item[{const {\bf cipher\+\_\+kt\+\_\+t} $\ast$}]{cipher\+\_\+kt}
+\end{DoxyParamCaption}
+)}\label{crypto__backend_8h_aa7653846be359a2fc26cdf1677e668dd}
+Retrieve a string describing the cipher (e.\+g. {\ttfamily A\+E\+S-\/128-\/\+C\+B\+C}).
+
+
+\begin{DoxyParams}{Parameters}
+{\em cipher\+\_\+kt} & Static cipher parameters\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a statically allocated string describing the cipher. 
+\end{DoxyReturn}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{crypto__backend_8h_aa7653846be359a2fc26cdf1677e668dd_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{crypto__backend_8h_a04e1e83fd4bbaac94f1cd7ec40ab1d6b}{}\index{crypto\+\_\+backend.\+h@{crypto\+\_\+backend.\+h}!cipher\+\_\+kt\+\_\+tag\+\_\+size@{cipher\+\_\+kt\+\_\+tag\+\_\+size}}
+\index{cipher\+\_\+kt\+\_\+tag\+\_\+size@{cipher\+\_\+kt\+\_\+tag\+\_\+size}!crypto\+\_\+backend.\+h@{crypto\+\_\+backend.\+h}}
+\subsubsection[{cipher\+\_\+kt\+\_\+tag\+\_\+size(const cipher\+\_\+kt\+\_\+t $\ast$cipher\+\_\+kt)}]{\setlength{\rightskip}{0pt plus 5cm}int cipher\+\_\+kt\+\_\+tag\+\_\+size (
+\begin{DoxyParamCaption}
+\item[{const {\bf cipher\+\_\+kt\+\_\+t} $\ast$}]{cipher\+\_\+kt}
+\end{DoxyParamCaption}
+)}\label{crypto__backend_8h_a04e1e83fd4bbaac94f1cd7ec40ab1d6b}
+Returns the M\+A\+C tag size of the cipher, in bytes.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & Static cipher parameters.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Tag size in bytes, or 0 if the tag size could not be determined. 
+\end{DoxyReturn}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{crypto__backend_8h_a04e1e83fd4bbaac94f1cd7ec40ab1d6b_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{crypto__backend_8h_a6a1ad0bd31811213cb9f3571deec66a4}{}\index{crypto\+\_\+backend.\+h@{crypto\+\_\+backend.\+h}!crypto\+\_\+clear\+\_\+error@{crypto\+\_\+clear\+\_\+error}}
+\index{crypto\+\_\+clear\+\_\+error@{crypto\+\_\+clear\+\_\+error}!crypto\+\_\+backend.\+h@{crypto\+\_\+backend.\+h}}
+\subsubsection[{crypto\+\_\+clear\+\_\+error(void)}]{\setlength{\rightskip}{0pt plus 5cm}void crypto\+\_\+clear\+\_\+error (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{crypto__backend_8h_a6a1ad0bd31811213cb9f3571deec66a4}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=301pt]{crypto__backend_8h_a6a1ad0bd31811213cb9f3571deec66a4_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{crypto__backend_8h_a49f4dc95c48bba251a5452f6401aed7b}{}\index{crypto\+\_\+backend.\+h@{crypto\+\_\+backend.\+h}!crypto\+\_\+init\+\_\+lib@{crypto\+\_\+init\+\_\+lib}}
+\index{crypto\+\_\+init\+\_\+lib@{crypto\+\_\+init\+\_\+lib}!crypto\+\_\+backend.\+h@{crypto\+\_\+backend.\+h}}
+\subsubsection[{crypto\+\_\+init\+\_\+lib(void)}]{\setlength{\rightskip}{0pt plus 5cm}void crypto\+\_\+init\+\_\+lib (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{crypto__backend_8h_a49f4dc95c48bba251a5452f6401aed7b}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{crypto__backend_8h_a49f4dc95c48bba251a5452f6401aed7b_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{crypto__backend_8h_ac8c96ccbbb4f4a96934b1b1301f152d5}{}\index{crypto\+\_\+backend.\+h@{crypto\+\_\+backend.\+h}!crypto\+\_\+init\+\_\+lib\+\_\+engine@{crypto\+\_\+init\+\_\+lib\+\_\+engine}}
+\index{crypto\+\_\+init\+\_\+lib\+\_\+engine@{crypto\+\_\+init\+\_\+lib\+\_\+engine}!crypto\+\_\+backend.\+h@{crypto\+\_\+backend.\+h}}
+\subsubsection[{crypto\+\_\+init\+\_\+lib\+\_\+engine(const char $\ast$engine\+\_\+name)}]{\setlength{\rightskip}{0pt plus 5cm}void crypto\+\_\+init\+\_\+lib\+\_\+engine (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{engine\+\_\+name}
+\end{DoxyParamCaption}
+)}\label{crypto__backend_8h_ac8c96ccbbb4f4a96934b1b1301f152d5}
+\hypertarget{crypto__backend_8h_a34ed7f4897a757838b8568b82f2b1a2c}{}\index{crypto\+\_\+backend.\+h@{crypto\+\_\+backend.\+h}!crypto\+\_\+uninit\+\_\+lib@{crypto\+\_\+uninit\+\_\+lib}}
+\index{crypto\+\_\+uninit\+\_\+lib@{crypto\+\_\+uninit\+\_\+lib}!crypto\+\_\+backend.\+h@{crypto\+\_\+backend.\+h}}
+\subsubsection[{crypto\+\_\+uninit\+\_\+lib(void)}]{\setlength{\rightskip}{0pt plus 5cm}void crypto\+\_\+uninit\+\_\+lib (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{crypto__backend_8h_a34ed7f4897a757838b8568b82f2b1a2c}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{crypto__backend_8h_a34ed7f4897a757838b8568b82f2b1a2c_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{crypto__backend_8h_ac960fcce4aa9c28177a1838fb7e8600f}{}\index{crypto\+\_\+backend.\+h@{crypto\+\_\+backend.\+h}!hmac\+\_\+ctx\+\_\+cleanup@{hmac\+\_\+ctx\+\_\+cleanup}}
+\index{hmac\+\_\+ctx\+\_\+cleanup@{hmac\+\_\+ctx\+\_\+cleanup}!crypto\+\_\+backend.\+h@{crypto\+\_\+backend.\+h}}
+\subsubsection[{hmac\+\_\+ctx\+\_\+cleanup(hmac\+\_\+ctx\+\_\+t $\ast$ctx)}]{\setlength{\rightskip}{0pt plus 5cm}void hmac\+\_\+ctx\+\_\+cleanup (
+\begin{DoxyParamCaption}
+\item[{{\bf hmac\+\_\+ctx\+\_\+t} $\ast$}]{ctx}
+\end{DoxyParamCaption}
+)}\label{crypto__backend_8h_ac960fcce4aa9c28177a1838fb7e8600f}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{crypto__backend_8h_ac960fcce4aa9c28177a1838fb7e8600f_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{crypto__backend_8h_a253c2c692da0d3706ca0f2ac5628a90e}{}\index{crypto\+\_\+backend.\+h@{crypto\+\_\+backend.\+h}!hmac\+\_\+ctx\+\_\+final@{hmac\+\_\+ctx\+\_\+final}}
+\index{hmac\+\_\+ctx\+\_\+final@{hmac\+\_\+ctx\+\_\+final}!crypto\+\_\+backend.\+h@{crypto\+\_\+backend.\+h}}
+\subsubsection[{hmac\+\_\+ctx\+\_\+final(hmac\+\_\+ctx\+\_\+t $\ast$ctx, uint8\+\_\+t $\ast$dst)}]{\setlength{\rightskip}{0pt plus 5cm}void hmac\+\_\+ctx\+\_\+final (
+\begin{DoxyParamCaption}
+\item[{{\bf hmac\+\_\+ctx\+\_\+t} $\ast$}]{ctx, }
+\item[{uint8\+\_\+t $\ast$}]{dst}
+\end{DoxyParamCaption}
+)}\label{crypto__backend_8h_a253c2c692da0d3706ca0f2ac5628a90e}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=288pt]{crypto__backend_8h_a253c2c692da0d3706ca0f2ac5628a90e_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{crypto__backend_8h_a7e7f39d6459b1bae48d57c83f476a484}{}\index{crypto\+\_\+backend.\+h@{crypto\+\_\+backend.\+h}!hmac\+\_\+ctx\+\_\+free@{hmac\+\_\+ctx\+\_\+free}}
+\index{hmac\+\_\+ctx\+\_\+free@{hmac\+\_\+ctx\+\_\+free}!crypto\+\_\+backend.\+h@{crypto\+\_\+backend.\+h}}
+\subsubsection[{hmac\+\_\+ctx\+\_\+free(hmac\+\_\+ctx\+\_\+t $\ast$ctx)}]{\setlength{\rightskip}{0pt plus 5cm}void hmac\+\_\+ctx\+\_\+free (
+\begin{DoxyParamCaption}
+\item[{{\bf hmac\+\_\+ctx\+\_\+t} $\ast$}]{ctx}
+\end{DoxyParamCaption}
+)}\label{crypto__backend_8h_a7e7f39d6459b1bae48d57c83f476a484}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{crypto__backend_8h_a7e7f39d6459b1bae48d57c83f476a484_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{crypto__backend_8h_a3a5dca2c6f7a8a820bc3470c460a8a68}{}\index{crypto\+\_\+backend.\+h@{crypto\+\_\+backend.\+h}!hmac\+\_\+ctx\+\_\+init@{hmac\+\_\+ctx\+\_\+init}}
+\index{hmac\+\_\+ctx\+\_\+init@{hmac\+\_\+ctx\+\_\+init}!crypto\+\_\+backend.\+h@{crypto\+\_\+backend.\+h}}
+\subsubsection[{hmac\+\_\+ctx\+\_\+init(hmac\+\_\+ctx\+\_\+t $\ast$ctx, const uint8\+\_\+t $\ast$key, int key\+\_\+length, const md\+\_\+kt\+\_\+t $\ast$kt)}]{\setlength{\rightskip}{0pt plus 5cm}void hmac\+\_\+ctx\+\_\+init (
+\begin{DoxyParamCaption}
+\item[{{\bf hmac\+\_\+ctx\+\_\+t} $\ast$}]{ctx, }
+\item[{const uint8\+\_\+t $\ast$}]{key, }
+\item[{int}]{key\+\_\+length, }
+\item[{const {\bf md\+\_\+kt\+\_\+t} $\ast$}]{kt}
+\end{DoxyParamCaption}
+)}\label{crypto__backend_8h_a3a5dca2c6f7a8a820bc3470c460a8a68}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{crypto__backend_8h_a3a5dca2c6f7a8a820bc3470c460a8a68_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{crypto__backend_8h_ab0252aec6b1a3c1e469e36cc8648892e}{}\index{crypto\+\_\+backend.\+h@{crypto\+\_\+backend.\+h}!hmac\+\_\+ctx\+\_\+new@{hmac\+\_\+ctx\+\_\+new}}
+\index{hmac\+\_\+ctx\+\_\+new@{hmac\+\_\+ctx\+\_\+new}!crypto\+\_\+backend.\+h@{crypto\+\_\+backend.\+h}}
+\subsubsection[{hmac\+\_\+ctx\+\_\+new(void)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf hmac\+\_\+ctx\+\_\+t}$\ast$ hmac\+\_\+ctx\+\_\+new (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{crypto__backend_8h_ab0252aec6b1a3c1e469e36cc8648892e}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{crypto__backend_8h_ab0252aec6b1a3c1e469e36cc8648892e_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{crypto__backend_8h_a11227ed744de3ec49ba41ebe20aecb7b}{}\index{crypto\+\_\+backend.\+h@{crypto\+\_\+backend.\+h}!hmac\+\_\+ctx\+\_\+reset@{hmac\+\_\+ctx\+\_\+reset}}
+\index{hmac\+\_\+ctx\+\_\+reset@{hmac\+\_\+ctx\+\_\+reset}!crypto\+\_\+backend.\+h@{crypto\+\_\+backend.\+h}}
+\subsubsection[{hmac\+\_\+ctx\+\_\+reset(hmac\+\_\+ctx\+\_\+t $\ast$ctx)}]{\setlength{\rightskip}{0pt plus 5cm}void hmac\+\_\+ctx\+\_\+reset (
+\begin{DoxyParamCaption}
+\item[{{\bf hmac\+\_\+ctx\+\_\+t} $\ast$}]{ctx}
+\end{DoxyParamCaption}
+)}\label{crypto__backend_8h_a11227ed744de3ec49ba41ebe20aecb7b}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=292pt]{crypto__backend_8h_a11227ed744de3ec49ba41ebe20aecb7b_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{crypto__backend_8h_a8625131329a13b2097ccacb82c83b3fe}{}\index{crypto\+\_\+backend.\+h@{crypto\+\_\+backend.\+h}!hmac\+\_\+ctx\+\_\+size@{hmac\+\_\+ctx\+\_\+size}}
+\index{hmac\+\_\+ctx\+\_\+size@{hmac\+\_\+ctx\+\_\+size}!crypto\+\_\+backend.\+h@{crypto\+\_\+backend.\+h}}
+\subsubsection[{hmac\+\_\+ctx\+\_\+size(const hmac\+\_\+ctx\+\_\+t $\ast$ctx)}]{\setlength{\rightskip}{0pt plus 5cm}int hmac\+\_\+ctx\+\_\+size (
+\begin{DoxyParamCaption}
+\item[{const {\bf hmac\+\_\+ctx\+\_\+t} $\ast$}]{ctx}
+\end{DoxyParamCaption}
+)}\label{crypto__backend_8h_a8625131329a13b2097ccacb82c83b3fe}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{crypto__backend_8h_a8625131329a13b2097ccacb82c83b3fe_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{crypto__backend_8h_a0a5053c34da29530f5ec4dd8a7ed8009}{}\index{crypto\+\_\+backend.\+h@{crypto\+\_\+backend.\+h}!hmac\+\_\+ctx\+\_\+update@{hmac\+\_\+ctx\+\_\+update}}
+\index{hmac\+\_\+ctx\+\_\+update@{hmac\+\_\+ctx\+\_\+update}!crypto\+\_\+backend.\+h@{crypto\+\_\+backend.\+h}}
+\subsubsection[{hmac\+\_\+ctx\+\_\+update(hmac\+\_\+ctx\+\_\+t $\ast$ctx, const uint8\+\_\+t $\ast$src, int src\+\_\+len)}]{\setlength{\rightskip}{0pt plus 5cm}void hmac\+\_\+ctx\+\_\+update (
+\begin{DoxyParamCaption}
+\item[{{\bf hmac\+\_\+ctx\+\_\+t} $\ast$}]{ctx, }
+\item[{const uint8\+\_\+t $\ast$}]{src, }
+\item[{int}]{src\+\_\+len}
+\end{DoxyParamCaption}
+)}\label{crypto__backend_8h_a0a5053c34da29530f5ec4dd8a7ed8009}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=300pt]{crypto__backend_8h_a0a5053c34da29530f5ec4dd8a7ed8009_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{crypto__backend_8h_a5cf6dcb410ea887d845852b1a486dd6e}{}\index{crypto\+\_\+backend.\+h@{crypto\+\_\+backend.\+h}!key\+\_\+des\+\_\+check@{key\+\_\+des\+\_\+check}}
+\index{key\+\_\+des\+\_\+check@{key\+\_\+des\+\_\+check}!crypto\+\_\+backend.\+h@{crypto\+\_\+backend.\+h}}
+\subsubsection[{key\+\_\+des\+\_\+check(uint8\+\_\+t $\ast$key, int key\+\_\+len, int ndc)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} key\+\_\+des\+\_\+check (
+\begin{DoxyParamCaption}
+\item[{uint8\+\_\+t $\ast$}]{key, }
+\item[{int}]{key\+\_\+len, }
+\item[{int}]{ndc}
+\end{DoxyParamCaption}
+)}\label{crypto__backend_8h_a5cf6dcb410ea887d845852b1a486dd6e}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{crypto__backend_8h_a5cf6dcb410ea887d845852b1a486dd6e_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{crypto__backend_8h_a70a3e94b6fec5fdd271096aaef9f6e95}{}\index{crypto\+\_\+backend.\+h@{crypto\+\_\+backend.\+h}!key\+\_\+des\+\_\+fixup@{key\+\_\+des\+\_\+fixup}}
+\index{key\+\_\+des\+\_\+fixup@{key\+\_\+des\+\_\+fixup}!crypto\+\_\+backend.\+h@{crypto\+\_\+backend.\+h}}
+\subsubsection[{key\+\_\+des\+\_\+fixup(uint8\+\_\+t $\ast$key, int key\+\_\+len, int ndc)}]{\setlength{\rightskip}{0pt plus 5cm}void key\+\_\+des\+\_\+fixup (
+\begin{DoxyParamCaption}
+\item[{uint8\+\_\+t $\ast$}]{key, }
+\item[{int}]{key\+\_\+len, }
+\item[{int}]{ndc}
+\end{DoxyParamCaption}
+)}\label{crypto__backend_8h_a70a3e94b6fec5fdd271096aaef9f6e95}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{crypto__backend_8h_a70a3e94b6fec5fdd271096aaef9f6e95_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{crypto__backend_8h_ad4d9be2aec664087528e31d2bc8c00ac}{}\index{crypto\+\_\+backend.\+h@{crypto\+\_\+backend.\+h}!key\+\_\+des\+\_\+num\+\_\+cblocks@{key\+\_\+des\+\_\+num\+\_\+cblocks}}
+\index{key\+\_\+des\+\_\+num\+\_\+cblocks@{key\+\_\+des\+\_\+num\+\_\+cblocks}!crypto\+\_\+backend.\+h@{crypto\+\_\+backend.\+h}}
+\subsubsection[{key\+\_\+des\+\_\+num\+\_\+cblocks(const cipher\+\_\+kt\+\_\+t $\ast$kt)}]{\setlength{\rightskip}{0pt plus 5cm}int key\+\_\+des\+\_\+num\+\_\+cblocks (
+\begin{DoxyParamCaption}
+\item[{const {\bf cipher\+\_\+kt\+\_\+t} $\ast$}]{kt}
+\end{DoxyParamCaption}
+)}\label{crypto__backend_8h_ad4d9be2aec664087528e31d2bc8c00ac}
+Return number of D\+E\+S cblocks (1 cblock = length of a single-\/\+D\+E\+S key) for the current key type or 0 if not a D\+E\+S cipher.
+
+
+\begin{DoxyParams}{Parameters}
+{\em kt} & Type of key\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Number of D\+E\+S cblocks that the key consists of, or 0. 
+\end{DoxyReturn}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{crypto__backend_8h_ad4d9be2aec664087528e31d2bc8c00ac_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{crypto__backend_8h_ad92889d868bb18d919c8965fc4b05436}{}\index{crypto\+\_\+backend.\+h@{crypto\+\_\+backend.\+h}!md\+\_\+ctx\+\_\+cleanup@{md\+\_\+ctx\+\_\+cleanup}}
+\index{md\+\_\+ctx\+\_\+cleanup@{md\+\_\+ctx\+\_\+cleanup}!crypto\+\_\+backend.\+h@{crypto\+\_\+backend.\+h}}
+\subsubsection[{md\+\_\+ctx\+\_\+cleanup(md\+\_\+ctx\+\_\+t $\ast$ctx)}]{\setlength{\rightskip}{0pt plus 5cm}void md\+\_\+ctx\+\_\+cleanup (
+\begin{DoxyParamCaption}
+\item[{{\bf md\+\_\+ctx\+\_\+t} $\ast$}]{ctx}
+\end{DoxyParamCaption}
+)}\label{crypto__backend_8h_ad92889d868bb18d919c8965fc4b05436}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{crypto__backend_8h_ad92889d868bb18d919c8965fc4b05436_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{crypto__backend_8h_ae8c3deb337af077a04d4d7ed233f54d2}{}\index{crypto\+\_\+backend.\+h@{crypto\+\_\+backend.\+h}!md\+\_\+ctx\+\_\+final@{md\+\_\+ctx\+\_\+final}}
+\index{md\+\_\+ctx\+\_\+final@{md\+\_\+ctx\+\_\+final}!crypto\+\_\+backend.\+h@{crypto\+\_\+backend.\+h}}
+\subsubsection[{md\+\_\+ctx\+\_\+final(md\+\_\+ctx\+\_\+t $\ast$ctx, uint8\+\_\+t $\ast$dst)}]{\setlength{\rightskip}{0pt plus 5cm}void md\+\_\+ctx\+\_\+final (
+\begin{DoxyParamCaption}
+\item[{{\bf md\+\_\+ctx\+\_\+t} $\ast$}]{ctx, }
+\item[{uint8\+\_\+t $\ast$}]{dst}
+\end{DoxyParamCaption}
+)}\label{crypto__backend_8h_ae8c3deb337af077a04d4d7ed233f54d2}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{crypto__backend_8h_ae8c3deb337af077a04d4d7ed233f54d2_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{crypto__backend_8h_afdb937666eb44c6bbb45860ed209773d}{}\index{crypto\+\_\+backend.\+h@{crypto\+\_\+backend.\+h}!md\+\_\+ctx\+\_\+free@{md\+\_\+ctx\+\_\+free}}
+\index{md\+\_\+ctx\+\_\+free@{md\+\_\+ctx\+\_\+free}!crypto\+\_\+backend.\+h@{crypto\+\_\+backend.\+h}}
+\subsubsection[{md\+\_\+ctx\+\_\+free(md\+\_\+ctx\+\_\+t $\ast$ctx)}]{\setlength{\rightskip}{0pt plus 5cm}void md\+\_\+ctx\+\_\+free (
+\begin{DoxyParamCaption}
+\item[{{\bf md\+\_\+ctx\+\_\+t} $\ast$}]{ctx}
+\end{DoxyParamCaption}
+)}\label{crypto__backend_8h_afdb937666eb44c6bbb45860ed209773d}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{crypto__backend_8h_afdb937666eb44c6bbb45860ed209773d_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{crypto__backend_8h_a9c6d6b5b29ecea803113caabe525baf1}{}\index{crypto\+\_\+backend.\+h@{crypto\+\_\+backend.\+h}!md\+\_\+ctx\+\_\+init@{md\+\_\+ctx\+\_\+init}}
+\index{md\+\_\+ctx\+\_\+init@{md\+\_\+ctx\+\_\+init}!crypto\+\_\+backend.\+h@{crypto\+\_\+backend.\+h}}
+\subsubsection[{md\+\_\+ctx\+\_\+init(md\+\_\+ctx\+\_\+t $\ast$ctx, const md\+\_\+kt\+\_\+t $\ast$kt)}]{\setlength{\rightskip}{0pt plus 5cm}void md\+\_\+ctx\+\_\+init (
+\begin{DoxyParamCaption}
+\item[{{\bf md\+\_\+ctx\+\_\+t} $\ast$}]{ctx, }
+\item[{const {\bf md\+\_\+kt\+\_\+t} $\ast$}]{kt}
+\end{DoxyParamCaption}
+)}\label{crypto__backend_8h_a9c6d6b5b29ecea803113caabe525baf1}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{crypto__backend_8h_a9c6d6b5b29ecea803113caabe525baf1_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{crypto__backend_8h_ae9289665161bfe6af9b43dd4cfcfc578}{}\index{crypto\+\_\+backend.\+h@{crypto\+\_\+backend.\+h}!md\+\_\+ctx\+\_\+new@{md\+\_\+ctx\+\_\+new}}
+\index{md\+\_\+ctx\+\_\+new@{md\+\_\+ctx\+\_\+new}!crypto\+\_\+backend.\+h@{crypto\+\_\+backend.\+h}}
+\subsubsection[{md\+\_\+ctx\+\_\+new(void)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf md\+\_\+ctx\+\_\+t}$\ast$ md\+\_\+ctx\+\_\+new (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{crypto__backend_8h_ae9289665161bfe6af9b43dd4cfcfc578}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{crypto__backend_8h_ae9289665161bfe6af9b43dd4cfcfc578_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{crypto__backend_8h_a3c2b2498759c18b268b1f805b921a02c}{}\index{crypto\+\_\+backend.\+h@{crypto\+\_\+backend.\+h}!md\+\_\+ctx\+\_\+size@{md\+\_\+ctx\+\_\+size}}
+\index{md\+\_\+ctx\+\_\+size@{md\+\_\+ctx\+\_\+size}!crypto\+\_\+backend.\+h@{crypto\+\_\+backend.\+h}}
+\subsubsection[{md\+\_\+ctx\+\_\+size(const md\+\_\+ctx\+\_\+t $\ast$ctx)}]{\setlength{\rightskip}{0pt plus 5cm}int md\+\_\+ctx\+\_\+size (
+\begin{DoxyParamCaption}
+\item[{const {\bf md\+\_\+ctx\+\_\+t} $\ast$}]{ctx}
+\end{DoxyParamCaption}
+)}\label{crypto__backend_8h_a3c2b2498759c18b268b1f805b921a02c}
+\hypertarget{crypto__backend_8h_a36efaa6a9f49bcbf88d439c5535d20d4}{}\index{crypto\+\_\+backend.\+h@{crypto\+\_\+backend.\+h}!md\+\_\+ctx\+\_\+update@{md\+\_\+ctx\+\_\+update}}
+\index{md\+\_\+ctx\+\_\+update@{md\+\_\+ctx\+\_\+update}!crypto\+\_\+backend.\+h@{crypto\+\_\+backend.\+h}}
+\subsubsection[{md\+\_\+ctx\+\_\+update(md\+\_\+ctx\+\_\+t $\ast$ctx, const uint8\+\_\+t $\ast$src, int src\+\_\+len)}]{\setlength{\rightskip}{0pt plus 5cm}void md\+\_\+ctx\+\_\+update (
+\begin{DoxyParamCaption}
+\item[{{\bf md\+\_\+ctx\+\_\+t} $\ast$}]{ctx, }
+\item[{const uint8\+\_\+t $\ast$}]{src, }
+\item[{int}]{src\+\_\+len}
+\end{DoxyParamCaption}
+)}\label{crypto__backend_8h_a36efaa6a9f49bcbf88d439c5535d20d4}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{crypto__backend_8h_a36efaa6a9f49bcbf88d439c5535d20d4_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{crypto__backend_8h_a70d35559ec46dbb97b8b8a83a1e4ecbf}{}\index{crypto\+\_\+backend.\+h@{crypto\+\_\+backend.\+h}!md\+\_\+full@{md\+\_\+full}}
+\index{md\+\_\+full@{md\+\_\+full}!crypto\+\_\+backend.\+h@{crypto\+\_\+backend.\+h}}
+\subsubsection[{md\+\_\+full(const md\+\_\+kt\+\_\+t $\ast$kt, const uint8\+\_\+t $\ast$src, int src\+\_\+len, uint8\+\_\+t $\ast$dst)}]{\setlength{\rightskip}{0pt plus 5cm}int md\+\_\+full (
+\begin{DoxyParamCaption}
+\item[{const {\bf md\+\_\+kt\+\_\+t} $\ast$}]{kt, }
+\item[{const uint8\+\_\+t $\ast$}]{src, }
+\item[{int}]{src\+\_\+len, }
+\item[{uint8\+\_\+t $\ast$}]{dst}
+\end{DoxyParamCaption}
+)}\label{crypto__backend_8h_a70d35559ec46dbb97b8b8a83a1e4ecbf}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{crypto__backend_8h_a70d35559ec46dbb97b8b8a83a1e4ecbf_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{crypto__backend_8h_a9cbbade2b528fe5d1e6ae65bbaf1e765}{}\index{crypto\+\_\+backend.\+h@{crypto\+\_\+backend.\+h}!md\+\_\+kt\+\_\+get@{md\+\_\+kt\+\_\+get}}
+\index{md\+\_\+kt\+\_\+get@{md\+\_\+kt\+\_\+get}!crypto\+\_\+backend.\+h@{crypto\+\_\+backend.\+h}}
+\subsubsection[{md\+\_\+kt\+\_\+get(const char $\ast$digest)}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf md\+\_\+kt\+\_\+t}$\ast$ md\+\_\+kt\+\_\+get (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{digest}
+\end{DoxyParamCaption}
+)}\label{crypto__backend_8h_a9cbbade2b528fe5d1e6ae65bbaf1e765}
+Return message digest parameters, based on the given digest name. The contents of these parameters are library-\/specific, and can be used to initialise H\+M\+A\+C or message digest operations.
+
+
+\begin{DoxyParams}{Parameters}
+{\em digest} & Name of the digest to retrieve parameters for (e.\+g. {\ttfamily M\+D5}).\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A statically allocated structure containing parameters for the given message digest. 
+\end{DoxyReturn}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{crypto__backend_8h_a9cbbade2b528fe5d1e6ae65bbaf1e765_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{crypto__backend_8h_af596da696fc79c7839c3abab26e935f2}{}\index{crypto\+\_\+backend.\+h@{crypto\+\_\+backend.\+h}!md\+\_\+kt\+\_\+name@{md\+\_\+kt\+\_\+name}}
+\index{md\+\_\+kt\+\_\+name@{md\+\_\+kt\+\_\+name}!crypto\+\_\+backend.\+h@{crypto\+\_\+backend.\+h}}
+\subsubsection[{md\+\_\+kt\+\_\+name(const md\+\_\+kt\+\_\+t $\ast$kt)}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ md\+\_\+kt\+\_\+name (
+\begin{DoxyParamCaption}
+\item[{const {\bf md\+\_\+kt\+\_\+t} $\ast$}]{kt}
+\end{DoxyParamCaption}
+)}\label{crypto__backend_8h_af596da696fc79c7839c3abab26e935f2}
+Retrieve a string describing the digest digest (e.\+g. {\ttfamily S\+H\+A1}).
+
+
+\begin{DoxyParams}{Parameters}
+{\em kt} & Static message digest parameters\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Statically allocated string describing the message digest. 
+\end{DoxyReturn}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{crypto__backend_8h_af596da696fc79c7839c3abab26e935f2_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{crypto__backend_8h_a002732eb1e19865cdb8f49a46af2cf69}{}\index{crypto\+\_\+backend.\+h@{crypto\+\_\+backend.\+h}!md\+\_\+kt\+\_\+size@{md\+\_\+kt\+\_\+size}}
+\index{md\+\_\+kt\+\_\+size@{md\+\_\+kt\+\_\+size}!crypto\+\_\+backend.\+h@{crypto\+\_\+backend.\+h}}
+\subsubsection[{md\+\_\+kt\+\_\+size(const md\+\_\+kt\+\_\+t $\ast$kt)}]{\setlength{\rightskip}{0pt plus 5cm}int md\+\_\+kt\+\_\+size (
+\begin{DoxyParamCaption}
+\item[{const {\bf md\+\_\+kt\+\_\+t} $\ast$}]{kt}
+\end{DoxyParamCaption}
+)}\label{crypto__backend_8h_a002732eb1e19865cdb8f49a46af2cf69}
+Returns the size of the message digest, in bytes.
+
+
+\begin{DoxyParams}{Parameters}
+{\em kt} & Static message digest parameters\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Message digest size, in bytes, or 0 if ctx was N\+U\+L\+L. 
+\end{DoxyReturn}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{crypto__backend_8h_a002732eb1e19865cdb8f49a46af2cf69_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{crypto__backend_8h_a8a19f717f5824ff4455b6925af81299c}{}\index{crypto\+\_\+backend.\+h@{crypto\+\_\+backend.\+h}!rand\+\_\+bytes@{rand\+\_\+bytes}}
+\index{rand\+\_\+bytes@{rand\+\_\+bytes}!crypto\+\_\+backend.\+h@{crypto\+\_\+backend.\+h}}
+\subsubsection[{rand\+\_\+bytes(uint8\+\_\+t $\ast$output, int len)}]{\setlength{\rightskip}{0pt plus 5cm}int rand\+\_\+bytes (
+\begin{DoxyParamCaption}
+\item[{uint8\+\_\+t $\ast$}]{output, }
+\item[{int}]{len}
+\end{DoxyParamCaption}
+)}\label{crypto__backend_8h_a8a19f717f5824ff4455b6925af81299c}
+Wrapper for secure random number generator. Retrieves len bytes of random data, and places it in output.
+
+
+\begin{DoxyParams}{Parameters}
+{\em output} & Output buffer \\
+\hline
+{\em len} & Length of the output buffer, in bytes\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\ttfamily 1} on success, {\ttfamily 0} on failure 
+\end{DoxyReturn}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{crypto__backend_8h_a8a19f717f5824ff4455b6925af81299c_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{crypto__backend_8h_a3ec944116f6654d1ca69afb933f4418b}{}\index{crypto\+\_\+backend.\+h@{crypto\+\_\+backend.\+h}!show\+\_\+available\+\_\+ciphers@{show\+\_\+available\+\_\+ciphers}}
+\index{show\+\_\+available\+\_\+ciphers@{show\+\_\+available\+\_\+ciphers}!crypto\+\_\+backend.\+h@{crypto\+\_\+backend.\+h}}
+\subsubsection[{show\+\_\+available\+\_\+ciphers(void)}]{\setlength{\rightskip}{0pt plus 5cm}void show\+\_\+available\+\_\+ciphers (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{crypto__backend_8h_a3ec944116f6654d1ca69afb933f4418b}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=329pt]{crypto__backend_8h_a3ec944116f6654d1ca69afb933f4418b_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{crypto__backend_8h_af252e66e3834a956ab00264d7aa3e282}{}\index{crypto\+\_\+backend.\+h@{crypto\+\_\+backend.\+h}!show\+\_\+available\+\_\+digests@{show\+\_\+available\+\_\+digests}}
+\index{show\+\_\+available\+\_\+digests@{show\+\_\+available\+\_\+digests}!crypto\+\_\+backend.\+h@{crypto\+\_\+backend.\+h}}
+\subsubsection[{show\+\_\+available\+\_\+digests(void)}]{\setlength{\rightskip}{0pt plus 5cm}void show\+\_\+available\+\_\+digests (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{crypto__backend_8h_af252e66e3834a956ab00264d7aa3e282}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=329pt]{crypto__backend_8h_af252e66e3834a956ab00264d7aa3e282_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{crypto__backend_8h_a194e1ecb3b8a6267eaedd2d885114b39}{}\index{crypto\+\_\+backend.\+h@{crypto\+\_\+backend.\+h}!show\+\_\+available\+\_\+engines@{show\+\_\+available\+\_\+engines}}
+\index{show\+\_\+available\+\_\+engines@{show\+\_\+available\+\_\+engines}!crypto\+\_\+backend.\+h@{crypto\+\_\+backend.\+h}}
+\subsubsection[{show\+\_\+available\+\_\+engines(void)}]{\setlength{\rightskip}{0pt plus 5cm}void show\+\_\+available\+\_\+engines (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{crypto__backend_8h_a194e1ecb3b8a6267eaedd2d885114b39}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=331pt]{crypto__backend_8h_a194e1ecb3b8a6267eaedd2d885114b39_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{crypto__backend_8h_a73d91277ab321cb423df41ac95215eba}{}\index{crypto\+\_\+backend.\+h@{crypto\+\_\+backend.\+h}!translate\+\_\+cipher\+\_\+name\+\_\+from\+\_\+openvpn@{translate\+\_\+cipher\+\_\+name\+\_\+from\+\_\+openvpn}}
+\index{translate\+\_\+cipher\+\_\+name\+\_\+from\+\_\+openvpn@{translate\+\_\+cipher\+\_\+name\+\_\+from\+\_\+openvpn}!crypto\+\_\+backend.\+h@{crypto\+\_\+backend.\+h}}
+\subsubsection[{translate\+\_\+cipher\+\_\+name\+\_\+from\+\_\+openvpn(const char $\ast$cipher\+\_\+name)}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ translate\+\_\+cipher\+\_\+name\+\_\+from\+\_\+openvpn (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{cipher\+\_\+name}
+\end{DoxyParamCaption}
+)}\label{crypto__backend_8h_a73d91277ab321cb423df41ac95215eba}
+Translate a data channel cipher name from the Open\+V\+P\+N config file \textquotesingle{}language\textquotesingle{} to the crypto library specific name.
+
+Translate a data channel cipher name from the crypto library specific name to the Open\+V\+P\+N config file \textquotesingle{}language\textquotesingle{}.
+
+Translate an Open\+V\+P\+N cipher name to a crypto library cipher name.
+
+
+\begin{DoxyParams}{Parameters}
+{\em cipher\+\_\+name} & An Open\+V\+P\+N cipher name\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The corresponding crypto library cipher name, or N\+U\+L\+L if no matching cipher name was found.
+\end{DoxyReturn}
+Translate a data channel cipher name from the crypto library specific name to the Open\+V\+P\+N config file \textquotesingle{}language\textquotesingle{}.
+
+Translate an Open\+V\+P\+N cipher name to a crypto library cipher name.
+
+
+\begin{DoxyParams}{Parameters}
+{\em cipher\+\_\+name} & An Open\+V\+P\+N cipher name\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The corresponding crypto library cipher name, or N\+U\+L\+L if no matching cipher name was found. 
+\end{DoxyReturn}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{crypto__backend_8h_a73d91277ab321cb423df41ac95215eba_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{crypto__backend_8h_a4f2e28840274a7b1799adb09377326df}{}\index{crypto\+\_\+backend.\+h@{crypto\+\_\+backend.\+h}!translate\+\_\+cipher\+\_\+name\+\_\+to\+\_\+openvpn@{translate\+\_\+cipher\+\_\+name\+\_\+to\+\_\+openvpn}}
+\index{translate\+\_\+cipher\+\_\+name\+\_\+to\+\_\+openvpn@{translate\+\_\+cipher\+\_\+name\+\_\+to\+\_\+openvpn}!crypto\+\_\+backend.\+h@{crypto\+\_\+backend.\+h}}
+\subsubsection[{translate\+\_\+cipher\+\_\+name\+\_\+to\+\_\+openvpn(const char $\ast$cipher\+\_\+name)}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ translate\+\_\+cipher\+\_\+name\+\_\+to\+\_\+openvpn (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{cipher\+\_\+name}
+\end{DoxyParamCaption}
+)}\label{crypto__backend_8h_a4f2e28840274a7b1799adb09377326df}
+Translate a crypto library cipher name to an Open\+V\+P\+N cipher name.
+
+
+\begin{DoxyParams}{Parameters}
+{\em cipher\+\_\+name} & A crypto library cipher name\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The corresponding Open\+V\+P\+N cipher name, or N\+U\+L\+L if no matching cipher name was found. 
+\end{DoxyReturn}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{crypto__backend_8h_a4f2e28840274a7b1799adb09377326df_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Variable Documentation}
+\hypertarget{crypto__backend_8h_ad5777851697132f37392345c09aae27a}{}\index{crypto\+\_\+backend.\+h@{crypto\+\_\+backend.\+h}!cipher\+\_\+name\+\_\+translation\+\_\+table@{cipher\+\_\+name\+\_\+translation\+\_\+table}}
+\index{cipher\+\_\+name\+\_\+translation\+\_\+table@{cipher\+\_\+name\+\_\+translation\+\_\+table}!crypto\+\_\+backend.\+h@{crypto\+\_\+backend.\+h}}
+\subsubsection[{cipher\+\_\+name\+\_\+translation\+\_\+table}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf cipher\+\_\+name\+\_\+pair} cipher\+\_\+name\+\_\+translation\+\_\+table\mbox{[}$\,$\mbox{]}}\label{crypto__backend_8h_ad5777851697132f37392345c09aae27a}
+Cipher name translation table \hypertarget{crypto__backend_8h_a9822f21f79f10abd0f3d1e90c7185959}{}\index{crypto\+\_\+backend.\+h@{crypto\+\_\+backend.\+h}!cipher\+\_\+name\+\_\+translation\+\_\+table\+\_\+count@{cipher\+\_\+name\+\_\+translation\+\_\+table\+\_\+count}}
+\index{cipher\+\_\+name\+\_\+translation\+\_\+table\+\_\+count@{cipher\+\_\+name\+\_\+translation\+\_\+table\+\_\+count}!crypto\+\_\+backend.\+h@{crypto\+\_\+backend.\+h}}
+\subsubsection[{cipher\+\_\+name\+\_\+translation\+\_\+table\+\_\+count}]{\setlength{\rightskip}{0pt plus 5cm}const size\+\_\+t cipher\+\_\+name\+\_\+translation\+\_\+table\+\_\+count}\label{crypto__backend_8h_a9822f21f79f10abd0f3d1e90c7185959}

@@ -1,0 +1,8 @@
+<map id="openvpn_getaddrinfo" name="openvpn_getaddrinfo">
+<area shape="rect" id="node2" href="$socket_8h.html#aed74c8b5931192c1ad5829bd90e01603" title="getaddr" alt="" coords="192,56,257,83"/>
+<area shape="rect" id="node3" href="$clinat_8h.html#ada00a4a102df5526cc8d0c261f82f607" title="add_client_nat_to_option_list" alt="" coords="305,5,496,32"/>
+<area shape="rect" id="node4" href="$route_8h.html#a3f534585396ea6d2712366fe917f34e3" title="init_route_list" alt="" coords="351,56,450,83"/>
+<area shape="rect" id="node5" href="$tun_8h.html#afee8026032ec0cf9c118465a970d4ac0" title="init_tun" alt="" coords="369,107,433,133"/>
+<area shape="rect" id="node6" href="$options_8c.html#a9038bb54aa94c5b93b2b28dee9bdb0bc" title="options_string" alt="" coords="544,107,647,133"/>
+<area shape="rect" id="node7" href="$options_8h.html#a5c19843f7bda8a3cadf41ecbabb6cd6a" title="options_string_extract\l_option" alt="" coords="695,99,845,141"/>
+</map>

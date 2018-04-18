@@ -1,0 +1,12 @@
+<map id="send_control_channel_string" name="send_control_channel_string">
+<area shape="rect" id="node2" href="$ssl_8c.html#af2bd825809313e721a9f2d219ad59ecd" title="tls_send_payload" alt="" coords="227,123,349,149"/>
+<area shape="rect" id="node9" href="$ssl__verify_8c.html#af3b8a3f413dbfc086e05cc5b09efb998" title="tls_common_name" alt="" coords="222,173,354,200"/>
+<area shape="rect" id="node10" href="$misc_8c.html#ad9f9ea2091b3303cef77c02575fdf91d" title="sanitize_control_message" alt="" coords="201,224,375,251"/>
+<area shape="rect" id="node3" href="$ssl__backend_8h.html#a163fa38939865554f4d7160a0e426b17" title="tls_clear_error" alt="" coords="455,5,559,32"/>
+<area shape="rect" id="node4" href="$group__control__tls.html#ga67dac3b75328d8b92d3f1a69e86dacdc" title="key_state_write_plaintext\l_const" alt="" coords="423,57,592,98"/>
+<area shape="rect" id="node5" href="$buffer_8c.html#a802172b567a3ac89a544452fe02a45bf" title="buffer_list_new" alt="" coords="454,123,561,149"/>
+<area shape="rect" id="node6" href="$buffer_8c.html#a21d180a3513a60a724ec43cbf30cb759" title="buffer_list_push_data" alt="" coords="435,173,579,200"/>
+<area shape="rect" id="node7" href="$buffer_8c.html#aa6bae12914d41c7aecaa7b64fea1bc51" title="alloc_buf" alt="" coords="640,173,713,200"/>
+<area shape="rect" id="node8" href="$buffer_8c.html#acc1a4ee83a591116d331e52baacf253d" title="buf_size_error" alt="" coords="761,173,864,200"/>
+<area shape="rect" id="node11" href="$buffer_8c.html#a67f7dec7f86e113dc0744584fd80b621" title="gc_malloc" alt="" coords="467,224,548,251"/>
+</map>

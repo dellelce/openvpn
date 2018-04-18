@@ -1,0 +1,37 @@
+<map id="src/openvpn/proxy.h" name="src/openvpn/proxy.h">
+<area shape="rect" id="node2" href="$socket_8h.html" title="src/openvpn/socket.h" alt="" coords="1033,80,1179,107"/>
+<area shape="rect" id="node3" href="$options_8h.html" title="src/openvpn/options.h" alt="" coords="497,155,645,181"/>
+<area shape="rect" id="node5" href="$openvpn_8h.html" title="src/openvpn/openvpn.h" alt="" coords="423,379,576,405"/>
+<area shape="rect" id="node17" href="$proxy_8c.html" title="src/openvpn/proxy.c" alt="" coords="5,528,143,555"/>
+<area shape="rect" id="node33" href="$ntlm_8c.html" title="src/openvpn/ntlm.c" alt="" coords="1702,155,1833,181"/>
+<area shape="rect" id="node35" href="$socks_8c.html" title="src/openvpn/socks.c" alt="" coords="1857,155,1998,181"/>
+<area shape="rect" id="node16" href="$options_8c.html" title="src/openvpn/options.c" alt="" coords="1309,528,1457,555"/>
+<area shape="rect" id="node18" href="$socket_8c.html" title="src/openvpn/socket.c" alt="" coords="219,528,364,555"/>
+<area shape="rect" id="node20" href="$ssl_8h.html" title="src/openvpn/ssl.h" alt="" coords="989,304,1111,331"/>
+<area shape="rect" id="node22" href="$ssl_8c.html" title="src/openvpn/ssl.c" alt="" coords="1146,379,1269,405"/>
+<area shape="rect" id="node23" href="$ssl__common_8h.html" title="src/openvpn/ssl_common.h" alt="" coords="1088,229,1268,256"/>
+<area shape="rect" id="node29" href="$route_8c.html" title="src/openvpn/route.c" alt="" coords="1292,229,1427,256"/>
+<area shape="rect" id="node30" href="$clinat_8c.html" title="src/openvpn/clinat.c" alt="" coords="669,155,807,181"/>
+<area shape="rect" id="node31" href="$dhcp_8c.html" title="src/openvpn/dhcp.c" alt="" coords="831,155,965,181"/>
+<area shape="rect" id="node32" href="$error_8c.html" title="src/openvpn/error.c" alt="" coords="1041,155,1171,181"/>
+<area shape="rect" id="node34" href="$pool_8c.html" title="src/openvpn/pool.c" alt="" coords="1195,155,1326,181"/>
+<area shape="rect" id="node36" href="$tun_8c.html" title="src/openvpn/tun.c" alt="" coords="1503,155,1627,181"/>
+<area shape="rect" id="node4" href="$argv_8c.html" title="src/openvpn/argv.c" alt="" coords="631,229,759,256"/>
+<area shape="rect" id="node21" href="$push_8c.html" title="src/openvpn/push.c" alt="" coords="936,379,1071,405"/>
+<area shape="rect" id="node26" href="$helper_8h.html" title="src/openvpn/helper.h" alt="" coords="944,453,1084,480"/>
+<area shape="rect" id="node27" href="$misc_8c.html" title="src/openvpn/misc.c" alt="" coords="320,229,455,256"/>
+<area shape="rect" id="node28" href="$mtu_8c.html" title="src/openvpn/mtu.c" alt="" coords="479,229,607,256"/>
+<area shape="rect" id="node6" href="$forward_8h.html" title="src/openvpn/forward.h" alt="" coords="531,453,678,480"/>
+<area shape="rect" id="node11" href="$sig_8c.html" title="src/openvpn/sig.c" alt="" coords="241,603,363,629"/>
+<area shape="rect" id="node19" href="$init_8h.html" title="src/openvpn/init.h" alt="" coords="738,453,861,480"/>
+<area shape="rect" id="node7" href="$forward_8c.html" title="src/openvpn/forward.c" alt="" coords="1138,528,1285,555"/>
+<area shape="rect" id="node8" href="$occ_8h.html" title="src/openvpn/occ.h" alt="" coords="388,528,515,555"/>
+<area shape="rect" id="node12" href="$ping_8h.html" title="src/openvpn/ping.h" alt="" coords="539,528,670,555"/>
+<area shape="rect" id="node14" href="$helper_8c.html" title="src/openvpn/helper.c" alt="" coords="973,528,1113,555"/>
+<area shape="rect" id="node15" href="$openvpn_8c.html" title="src/openvpn/openvpn.c" alt="" coords="693,528,847,555"/>
+<area shape="rect" id="node9" href="$init_8c.html" title="src/openvpn/init.c" alt="" coords="783,603,906,629"/>
+<area shape="rect" id="node10" href="$occ_8c.html" title="src/openvpn/occ.c" alt="" coords="388,603,515,629"/>
+<area shape="rect" id="node13" href="$ping_8c.html" title="src/openvpn/ping.c" alt="" coords="539,603,670,629"/>
+<area shape="rect" id="node24" href="$ssl__verify_8h.html" title="src/openvpn/ssl_verify.h" alt="" coords="1403,304,1561,331"/>
+<area shape="rect" id="node25" href="$ssl__verify_8c.html" title="src/openvpn/ssl_verify.c" alt="" coords="1344,379,1503,405"/>
+</map>

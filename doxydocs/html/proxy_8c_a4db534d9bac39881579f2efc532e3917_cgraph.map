@@ -1,0 +1,5 @@
+<map id="make_base64_string2" name="make_base64_string2">
+<area shape="rect" id="node2" href="$base64_8c.html#aa4ba2746be38180fa210944b20a1a6e4" title="openvpn_base64_encode" alt="" coords="203,5,369,32"/>
+<area shape="rect" id="node3" href="$buffer_8c.html#a06e0220403278399596a7a1b6b601fca" title="string_alloc" alt="" coords="242,56,330,83"/>
+<area shape="rect" id="node4" href="$buffer_8c.html#a67f7dec7f86e113dc0744584fd80b621" title="gc_malloc" alt="" coords="417,56,499,83"/>
+</map>

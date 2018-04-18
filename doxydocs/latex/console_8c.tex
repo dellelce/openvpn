@@ -1,0 +1,94 @@
+\hypertarget{console_8c}{}\section{src/openvpn/console.c File Reference}
+\label{console_8c}\index{src/openvpn/console.\+c@{src/openvpn/console.\+c}}
+{\ttfamily \#include \char`\"{}syshead.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}console.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}error.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}buffer.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}misc.\+h\char`\"{}}\\*
+Include dependency graph for console.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{console_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{console_8c_a1723be7ca1a9e0c4992cb7e9c6d5c6d8}{query\+\_\+user\+\_\+clear} (void)
+\item 
+void \hyperlink{console_8c_af9287e418f46b3bce4d65ebbd17d401a}{query\+\_\+user\+\_\+add} (char $\ast$prompt, size\+\_\+t prompt\+\_\+len, char $\ast$resp, size\+\_\+t resp\+\_\+len, \hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} echo)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{struct__query__user}{\+\_\+query\+\_\+user} \hyperlink{console_8c_a65afd35ef3f4cc0af0b4422cb90814ec}{query\+\_\+user} \mbox{[}\hyperlink{console_8h_a3e221d1b0bf482402e3e0dcae5148f60}{Q\+U\+E\+R\+Y\+\_\+\+U\+S\+E\+R\+\_\+\+N\+U\+M\+S\+L\+O\+T\+S}\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{console_8c_af9287e418f46b3bce4d65ebbd17d401a}{}\index{console.\+c@{console.\+c}!query\+\_\+user\+\_\+add@{query\+\_\+user\+\_\+add}}
+\index{query\+\_\+user\+\_\+add@{query\+\_\+user\+\_\+add}!console.\+c@{console.\+c}}
+\subsubsection[{query\+\_\+user\+\_\+add(char $\ast$prompt, size\+\_\+t prompt\+\_\+len, char $\ast$resp, size\+\_\+t resp\+\_\+len, bool echo)}]{\setlength{\rightskip}{0pt plus 5cm}void query\+\_\+user\+\_\+add (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{prompt, }
+\item[{size\+\_\+t}]{prompt\+\_\+len, }
+\item[{char $\ast$}]{resp, }
+\item[{size\+\_\+t}]{resp\+\_\+len, }
+\item[{{\bf bool}}]{echo}
+\end{DoxyParamCaption}
+)}\label{console_8c_af9287e418f46b3bce4d65ebbd17d401a}
+Adds an item to ask the user for
+
+
+\begin{DoxyParams}{Parameters}
+{\em prompt} & Prompt to display to the user \\
+\hline
+{\em prompt\+\_\+len} & Length of the prompt string \\
+\hline
+{\em resp} & String containing the user response \\
+\hline
+{\em resp\+\_\+len} & Lenght of the response string \\
+\hline
+{\em echo} & Should the user input be echoed to the user? If False, input will be masked \\
+\hline
+\end{DoxyParams}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{console_8c_af9287e418f46b3bce4d65ebbd17d401a_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{console_8c_a1723be7ca1a9e0c4992cb7e9c6d5c6d8}{}\index{console.\+c@{console.\+c}!query\+\_\+user\+\_\+clear@{query\+\_\+user\+\_\+clear}}
+\index{query\+\_\+user\+\_\+clear@{query\+\_\+user\+\_\+clear}!console.\+c@{console.\+c}}
+\subsubsection[{query\+\_\+user\+\_\+clear(void)}]{\setlength{\rightskip}{0pt plus 5cm}void query\+\_\+user\+\_\+clear (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{console_8c_a1723be7ca1a9e0c4992cb7e9c6d5c6d8}
+Wipes all data put into all of the query\+\_\+user structs 
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{console_8c_a1723be7ca1a9e0c4992cb7e9c6d5c6d8_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Variable Documentation}
+\hypertarget{console_8c_a65afd35ef3f4cc0af0b4422cb90814ec}{}\index{console.\+c@{console.\+c}!query\+\_\+user@{query\+\_\+user}}
+\index{query\+\_\+user@{query\+\_\+user}!console.\+c@{console.\+c}}
+\subsubsection[{query\+\_\+user}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf \+\_\+query\+\_\+user} query\+\_\+user\mbox{[}{\bf Q\+U\+E\+R\+Y\+\_\+\+U\+S\+E\+R\+\_\+\+N\+U\+M\+S\+L\+O\+T\+S}\mbox{]}}\label{console_8c_a65afd35ef3f4cc0af0b4422cb90814ec}
+Global variable, declared in \hyperlink{console_8c}{console.\+c} 

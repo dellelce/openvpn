@@ -1,0 +1,6 @@
+<map id="IsAuthorizedUser" name="IsAuthorizedUser">
+<area shape="rect" id="node2" href="$common_8c.html#a8d96b9d66b4a1f920afe99d73686d8e5" title="MsgToEventLog" alt="" coords="175,56,288,83"/>
+<area shape="rect" id="node3" href="$common_8c.html#a2610102e271fc65ae8908d593cab8afd" title="GetLastErrorText" alt="" coords="336,5,456,32"/>
+<area shape="rect" id="node4" href="$common_8c.html#ae697dac0c0dd8b6b2eeef1283595efe4" title="openvpn_sntprintf" alt="" coords="504,56,627,83"/>
+<area shape="rect" id="node5" href="$common_8c.html#a443b5988f6015454008fdab390a50edb" title="openvpn_vsntprintf" alt="" coords="675,81,801,108"/>
+</map>

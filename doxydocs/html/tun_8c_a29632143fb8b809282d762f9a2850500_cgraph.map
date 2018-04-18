@@ -1,0 +1,31 @@
+<map id="do_ifconfig" name="do_ifconfig">
+<area shape="rect" id="node2" href="$argv_8c.html#ae03da330eccab6d3239253b774a92d4d" title="argv_new" alt="" coords="342,121,417,148"/>
+<area shape="rect" id="node3" href="$tun_8c.html#add5885eccc02f0f7e9d7edb7e781fa02" title="is_tun_p2p" alt="" coords="151,628,237,654"/>
+<area shape="rect" id="node4" href="$socket_8c.html#a2741d6007f1e5a670409883f4304da61" title="print_in_addr_t" alt="" coords="523,70,629,97"/>
+<area shape="rect" id="node9" href="$socket_8c.html#a9a911c5dde4c809f7cb3eef8e5918a8e" title="print_in6_addr" alt="" coords="725,20,828,46"/>
+<area shape="rect" id="node11" href="$argv_8c.html#a393473b7a2c72dcd2dba4f2bcb859078" title="argv_printf" alt="" coords="339,425,419,452"/>
+<area shape="rect" id="node12" href="$argv_8c.html#a4b4a9a7a9aa1ccf301fa2e4522d75f1e" title="argv_reset" alt="" coords="535,400,617,426"/>
+<area shape="rect" id="node14" href="$argv_8c.html#a4d63823a8aeddf605a2e4a4a420e1dd4" title="argv_msg" alt="" coords="341,273,418,300"/>
+<area shape="rect" id="node17" href="$misc_8c.html#a12c490307c9e4966e41f32d08f5f3cae" title="openvpn_execve_check" alt="" coords="300,222,459,249"/>
+<area shape="rect" id="node24" href="$route_8c.html#a2aee01d5c10bd617615f031180ee7062" title="netmask_to_netbits2" alt="" coords="308,476,451,502"/>
+<area shape="rect" id="node25" href="$buffer_8c.html#afd2a93a0940b1ea7e093d293a05e2927" title="openvpn_snprintf" alt="" coords="320,526,439,553"/>
+<area shape="rect" id="node26" href="$route_8c.html#ae11dbad77ecc3178ae8834c55f0f063c" title="add_route" alt="" coords="155,349,233,376"/>
+<area shape="rect" id="node28" href="$env__set_8c.html#a589b54db89bdd1a4683d80b8132ce577" title="env_set_create" alt="" coords="139,678,249,705"/>
+<area shape="rect" id="node29" href="$env__set_8c.html#a8f95bd5663cdc04bc9764b429538f536" title="env_set_add" alt="" coords="147,729,241,756"/>
+<area shape="rect" id="node30" href="$env__set_8c.html#a2d1a7f0ea69776000aa9df3eca186f97" title="env_set_destroy" alt="" coords="136,780,252,806"/>
+<area shape="rect" id="node5" href="$buffer_8c.html#aa35bf7feb6a99bf5d364b2d4eba1195c" title="alloc_buf_gc" alt="" coords="908,146,1003,173"/>
+<area shape="rect" id="node8" href="$buffer_8c.html#a3307f08331b1ce42168bafd2ecf7874a" title="buf_printf" alt="" coords="918,82,993,109"/>
+<area shape="rect" id="node6" href="$buffer_8c.html#acc1a4ee83a591116d331e52baacf253d" title="buf_size_error" alt="" coords="1051,121,1153,148"/>
+<area shape="rect" id="node7" href="$buffer_8c.html#a67f7dec7f86e113dc0744584fd80b621" title="gc_malloc" alt="" coords="1061,172,1143,198"/>
+<area shape="rect" id="node10" href="$compat_8h.html#a102fcb53ee2ffdbeceeec5b5ffa0cb1c" title="inet_ntop" alt="" coords="918,20,993,46"/>
+<area shape="rect" id="node13" href="$structargv.html#a3fa35902580e368d0b0c875af2a8e696" title="argv::argv" alt="" coords="739,374,815,401"/>
+<area shape="rect" id="node15" href="$argv_8c.html#a969eb3c616318512e53d20ec4990dcc2" title="argv_str" alt="" coords="543,298,609,325"/>
+<area shape="rect" id="node16" href="$buffer_8c.html#a9fa59da93f5503603025786ec8f33726" title="print_argv" alt="" coords="738,273,815,300"/>
+<area shape="rect" id="node18" href="$misc_8c.html#a8596ddf7653af77837d24c74e6a59b69" title="openvpn_execve" alt="" coords="518,248,634,274"/>
+<area shape="rect" id="node22" href="$platform_8c.html#af39d8df6f7d3f4bbcfcb505c2c58c136" title="platform_system_ok" alt="" coords="507,197,645,224"/>
+<area shape="rect" id="node23" href="$misc_8c.html#ae833868983cc7cc952461d72dab62bbd" title="system_error_message" alt="" coords="697,121,856,148"/>
+<area shape="rect" id="node19" href="$misc_8c.html#a1ea73c309e8dfb9c1fc00b2977d72a75" title="openvpn_execve_allowed" alt="" coords="693,222,860,249"/>
+<area shape="rect" id="node20" href="$env__set_8c.html#ac6b46e6a683798fd9d3071c909fb8c9f" title="make_env_array" alt="" coords="719,324,835,350"/>
+<area shape="rect" id="node21" href="$env__set_8c.html#ac0c2b4236916bd53b9358b7a261cb088" title="env_allowed" alt="" coords="910,324,1001,350"/>
+<area shape="rect" id="node27" href="$argv_8c.html#a6b3f08ce3c4de77604f68c4699d1bdff" title="argv_printf_cat" alt="" coords="327,324,432,350"/>
+</map>

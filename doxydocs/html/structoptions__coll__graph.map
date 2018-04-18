@@ -1,0 +1,22 @@
+<map id="options" name="options">
+<area shape="rect" id="node2" href="$structx509__track.html" title="x509_track" alt="" coords="859,44,946,71"/>
+<area shape="rect" id="node3" href="$structtuntap__options.html" title="tuntap_options" alt="" coords="849,95,956,121"/>
+<area shape="rect" id="node4" href="$structroute__option__list.html" title="route_option_list" alt="" coords="844,145,961,172"/>
+<area shape="rect" id="node5" href="$structroute__option.html" title="route_option" alt="" coords="604,104,697,131"/>
+<area shape="rect" id="node6" href="$structgc__arena.html" title="gc_arena" alt="" coords="613,179,688,205"/>
+<area shape="rect" id="node15" href="$structroute__ipv6__option__list.html" title="route_ipv6_option_list" alt="" coords="829,265,976,292"/>
+<area shape="rect" id="node7" href="$structgc__entry__special.html" title="gc_entry_special" alt="" coords="301,219,421,245"/>
+<area shape="rect" id="node8" href="$structgc__entry.html" title="gc_entry" alt="" coords="325,129,397,156"/>
+<area shape="rect" id="node9" href="$structclient__nat__option__list.html" title="client_nat_option_list" alt="" coords="831,316,975,343"/>
+<area shape="rect" id="node10" href="$structclient__nat__entry.html" title="client_nat_entry" alt="" coords="593,319,708,345"/>
+<area shape="rect" id="node11" href="$structremote__list.html" title="remote_list" alt="" coords="859,367,946,393"/>
+<area shape="rect" id="node12" href="$structremote__entry.html" title="remote_entry" alt="" coords="601,369,700,396"/>
+<area shape="rect" id="node13" href="$structpull__filter__list.html" title="pull_filter_list" alt="" coords="854,417,951,444"/>
+<area shape="rect" id="node14" href="$structpull__filter.html" title="pull_filter" alt="" coords="614,459,687,485"/>
+<area shape="rect" id="node16" href="$structroute__ipv6__option.html" title="route_ipv6_option" alt="" coords="589,268,712,295"/>
+<area shape="rect" id="node17" href="$structconnection__list.html" title="connection_list" alt="" coords="848,531,957,557"/>
+<area shape="rect" id="node18" href="$structconnection__entry.html" title="connection_entry" alt="" coords="590,515,711,541"/>
+<area shape="rect" id="node19" href="$structhttp__proxy__options.html" title="http_proxy_options" alt="" coords="295,515,427,541"/>
+<area shape="rect" id="node20" href="$structhttp__custom__header.html" title="http_custom_header" alt="" coords="5,515,145,541"/>
+<area shape="rect" id="node21" href="$structremote__host__store.html" title="remote_host_store" alt="" coords="837,581,968,608"/>
+</map>

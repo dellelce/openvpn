@@ -1,0 +1,158 @@
+\hypertarget{dhcp_8h}{}\section{src/openvpn/dhcp.h File Reference}
+\label{dhcp_8h}\index{src/openvpn/dhcp.\+h@{src/openvpn/dhcp.\+h}}
+{\ttfamily \#include \char`\"{}common.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}buffer.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}proto.\+h\char`\"{}}\\*
+Include dependency graph for dhcp.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dhcp_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=309pt]{dhcp_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structdhcp}{dhcp}
+\item 
+struct \hyperlink{structdhcp__full}{dhcp\+\_\+full}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{dhcp_8h_a1e5a1ea0c0c28266bb78cca40629b313}{D\+H\+C\+P\+\_\+\+P\+A\+D}~0
+\item 
+\#define \hyperlink{dhcp_8h_a200da153fae009dbdbc48b810a97b63a}{D\+H\+C\+P\+\_\+\+R\+O\+U\+T\+E\+R}~3
+\item 
+\#define \hyperlink{dhcp_8h_a3a3a3becf5bf88af652a8982779a70bf}{D\+H\+C\+P\+\_\+\+M\+S\+G\+\_\+\+T\+Y\+P\+E}~53  /$\ast$ message type (u8) $\ast$/
+\item 
+\#define \hyperlink{dhcp_8h_ac20c0b26865da04ebb5adc3975a22bae}{D\+H\+C\+P\+\_\+\+E\+N\+D}~255
+\item 
+\#define \hyperlink{dhcp_8h_aa490e80da21dfc13b91c034095efdcd4}{D\+H\+C\+P\+D\+I\+S\+C\+O\+V\+E\+R}~1
+\item 
+\#define \hyperlink{dhcp_8h_ab82126d739f61a60d84116e1e0d3ad2e}{D\+H\+C\+P\+O\+F\+F\+E\+R}~2
+\item 
+\#define \hyperlink{dhcp_8h_a0cd47b14d8040e76932488eadbc0091e}{D\+H\+C\+P\+R\+E\+Q\+U\+E\+S\+T}~3
+\item 
+\#define \hyperlink{dhcp_8h_af03ae973e2eb857947af829f3611eed3}{D\+H\+C\+P\+D\+E\+C\+L\+I\+N\+E}~4
+\item 
+\#define \hyperlink{dhcp_8h_a4f4105ef611737b700a6da965306dcfe}{D\+H\+C\+P\+A\+C\+K}~5
+\item 
+\#define \hyperlink{dhcp_8h_a4162aa47e0c49f981f31b4bd0363476b}{D\+H\+C\+P\+N\+A\+K}~6
+\item 
+\#define \hyperlink{dhcp_8h_a28d24149d2c3838966cc9f5cf2fdf2cb}{D\+H\+C\+P\+R\+E\+L\+E\+A\+S\+E}~7
+\item 
+\#define \hyperlink{dhcp_8h_abb01731f0711308ff1e3f394da00d7c9}{D\+H\+C\+P\+I\+N\+F\+O\+R\+M}~8
+\item 
+\#define \hyperlink{dhcp_8h_a4f48003a22238363d418308f099aa88f}{B\+O\+O\+T\+P\+S\+\_\+\+P\+O\+R\+T}~67
+\item 
+\#define \hyperlink{dhcp_8h_a52c9b393200632c9f14690958f2ca005}{B\+O\+O\+T\+P\+C\+\_\+\+P\+O\+R\+T}~68
+\item 
+\#define \hyperlink{dhcp_8h_aa43f2f422c8548259b3940122561c603}{B\+O\+O\+T\+R\+E\+Q\+U\+E\+S\+T}~1
+\item 
+\#define \hyperlink{dhcp_8h_a5f62105e3377914bcecf431b331cf285}{B\+O\+O\+T\+R\+E\+P\+L\+Y}~2
+\item 
+\#define \hyperlink{dhcp_8h_a6ec8dd2b7188de82eaf3602fbab9bbeb}{D\+H\+C\+P\+\_\+\+O\+P\+T\+I\+O\+N\+S\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+S\+I\+Z\+E}~256
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+in\+\_\+addr\+\_\+t \hyperlink{dhcp_8h_a0e845631a332310acc8cd259eaf6d0f6}{dhcp\+\_\+extract\+\_\+router\+\_\+msg} (struct \hyperlink{structbuffer}{buffer} $\ast$ipbuf)
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{dhcp_8h_a52c9b393200632c9f14690958f2ca005}{}\index{dhcp.\+h@{dhcp.\+h}!B\+O\+O\+T\+P\+C\+\_\+\+P\+O\+R\+T@{B\+O\+O\+T\+P\+C\+\_\+\+P\+O\+R\+T}}
+\index{B\+O\+O\+T\+P\+C\+\_\+\+P\+O\+R\+T@{B\+O\+O\+T\+P\+C\+\_\+\+P\+O\+R\+T}!dhcp.\+h@{dhcp.\+h}}
+\subsubsection[{B\+O\+O\+T\+P\+C\+\_\+\+P\+O\+R\+T}]{\setlength{\rightskip}{0pt plus 5cm}\#define B\+O\+O\+T\+P\+C\+\_\+\+P\+O\+R\+T~68}\label{dhcp_8h_a52c9b393200632c9f14690958f2ca005}
+\hypertarget{dhcp_8h_a4f48003a22238363d418308f099aa88f}{}\index{dhcp.\+h@{dhcp.\+h}!B\+O\+O\+T\+P\+S\+\_\+\+P\+O\+R\+T@{B\+O\+O\+T\+P\+S\+\_\+\+P\+O\+R\+T}}
+\index{B\+O\+O\+T\+P\+S\+\_\+\+P\+O\+R\+T@{B\+O\+O\+T\+P\+S\+\_\+\+P\+O\+R\+T}!dhcp.\+h@{dhcp.\+h}}
+\subsubsection[{B\+O\+O\+T\+P\+S\+\_\+\+P\+O\+R\+T}]{\setlength{\rightskip}{0pt plus 5cm}\#define B\+O\+O\+T\+P\+S\+\_\+\+P\+O\+R\+T~67}\label{dhcp_8h_a4f48003a22238363d418308f099aa88f}
+\hypertarget{dhcp_8h_a5f62105e3377914bcecf431b331cf285}{}\index{dhcp.\+h@{dhcp.\+h}!B\+O\+O\+T\+R\+E\+P\+L\+Y@{B\+O\+O\+T\+R\+E\+P\+L\+Y}}
+\index{B\+O\+O\+T\+R\+E\+P\+L\+Y@{B\+O\+O\+T\+R\+E\+P\+L\+Y}!dhcp.\+h@{dhcp.\+h}}
+\subsubsection[{B\+O\+O\+T\+R\+E\+P\+L\+Y}]{\setlength{\rightskip}{0pt plus 5cm}\#define B\+O\+O\+T\+R\+E\+P\+L\+Y~2}\label{dhcp_8h_a5f62105e3377914bcecf431b331cf285}
+\hypertarget{dhcp_8h_aa43f2f422c8548259b3940122561c603}{}\index{dhcp.\+h@{dhcp.\+h}!B\+O\+O\+T\+R\+E\+Q\+U\+E\+S\+T@{B\+O\+O\+T\+R\+E\+Q\+U\+E\+S\+T}}
+\index{B\+O\+O\+T\+R\+E\+Q\+U\+E\+S\+T@{B\+O\+O\+T\+R\+E\+Q\+U\+E\+S\+T}!dhcp.\+h@{dhcp.\+h}}
+\subsubsection[{B\+O\+O\+T\+R\+E\+Q\+U\+E\+S\+T}]{\setlength{\rightskip}{0pt plus 5cm}\#define B\+O\+O\+T\+R\+E\+Q\+U\+E\+S\+T~1}\label{dhcp_8h_aa43f2f422c8548259b3940122561c603}
+\hypertarget{dhcp_8h_ac20c0b26865da04ebb5adc3975a22bae}{}\index{dhcp.\+h@{dhcp.\+h}!D\+H\+C\+P\+\_\+\+E\+N\+D@{D\+H\+C\+P\+\_\+\+E\+N\+D}}
+\index{D\+H\+C\+P\+\_\+\+E\+N\+D@{D\+H\+C\+P\+\_\+\+E\+N\+D}!dhcp.\+h@{dhcp.\+h}}
+\subsubsection[{D\+H\+C\+P\+\_\+\+E\+N\+D}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+H\+C\+P\+\_\+\+E\+N\+D~255}\label{dhcp_8h_ac20c0b26865da04ebb5adc3975a22bae}
+\hypertarget{dhcp_8h_a3a3a3becf5bf88af652a8982779a70bf}{}\index{dhcp.\+h@{dhcp.\+h}!D\+H\+C\+P\+\_\+\+M\+S\+G\+\_\+\+T\+Y\+P\+E@{D\+H\+C\+P\+\_\+\+M\+S\+G\+\_\+\+T\+Y\+P\+E}}
+\index{D\+H\+C\+P\+\_\+\+M\+S\+G\+\_\+\+T\+Y\+P\+E@{D\+H\+C\+P\+\_\+\+M\+S\+G\+\_\+\+T\+Y\+P\+E}!dhcp.\+h@{dhcp.\+h}}
+\subsubsection[{D\+H\+C\+P\+\_\+\+M\+S\+G\+\_\+\+T\+Y\+P\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+H\+C\+P\+\_\+\+M\+S\+G\+\_\+\+T\+Y\+P\+E~53  /$\ast$ message type (u8) $\ast$/}\label{dhcp_8h_a3a3a3becf5bf88af652a8982779a70bf}
+\hypertarget{dhcp_8h_a6ec8dd2b7188de82eaf3602fbab9bbeb}{}\index{dhcp.\+h@{dhcp.\+h}!D\+H\+C\+P\+\_\+\+O\+P\+T\+I\+O\+N\+S\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+S\+I\+Z\+E@{D\+H\+C\+P\+\_\+\+O\+P\+T\+I\+O\+N\+S\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+S\+I\+Z\+E}}
+\index{D\+H\+C\+P\+\_\+\+O\+P\+T\+I\+O\+N\+S\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+S\+I\+Z\+E@{D\+H\+C\+P\+\_\+\+O\+P\+T\+I\+O\+N\+S\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+S\+I\+Z\+E}!dhcp.\+h@{dhcp.\+h}}
+\subsubsection[{D\+H\+C\+P\+\_\+\+O\+P\+T\+I\+O\+N\+S\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+S\+I\+Z\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+H\+C\+P\+\_\+\+O\+P\+T\+I\+O\+N\+S\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+S\+I\+Z\+E~256}\label{dhcp_8h_a6ec8dd2b7188de82eaf3602fbab9bbeb}
+\hypertarget{dhcp_8h_a1e5a1ea0c0c28266bb78cca40629b313}{}\index{dhcp.\+h@{dhcp.\+h}!D\+H\+C\+P\+\_\+\+P\+A\+D@{D\+H\+C\+P\+\_\+\+P\+A\+D}}
+\index{D\+H\+C\+P\+\_\+\+P\+A\+D@{D\+H\+C\+P\+\_\+\+P\+A\+D}!dhcp.\+h@{dhcp.\+h}}
+\subsubsection[{D\+H\+C\+P\+\_\+\+P\+A\+D}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+H\+C\+P\+\_\+\+P\+A\+D~0}\label{dhcp_8h_a1e5a1ea0c0c28266bb78cca40629b313}
+\hypertarget{dhcp_8h_a200da153fae009dbdbc48b810a97b63a}{}\index{dhcp.\+h@{dhcp.\+h}!D\+H\+C\+P\+\_\+\+R\+O\+U\+T\+E\+R@{D\+H\+C\+P\+\_\+\+R\+O\+U\+T\+E\+R}}
+\index{D\+H\+C\+P\+\_\+\+R\+O\+U\+T\+E\+R@{D\+H\+C\+P\+\_\+\+R\+O\+U\+T\+E\+R}!dhcp.\+h@{dhcp.\+h}}
+\subsubsection[{D\+H\+C\+P\+\_\+\+R\+O\+U\+T\+E\+R}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+H\+C\+P\+\_\+\+R\+O\+U\+T\+E\+R~3}\label{dhcp_8h_a200da153fae009dbdbc48b810a97b63a}
+\hypertarget{dhcp_8h_a4f4105ef611737b700a6da965306dcfe}{}\index{dhcp.\+h@{dhcp.\+h}!D\+H\+C\+P\+A\+C\+K@{D\+H\+C\+P\+A\+C\+K}}
+\index{D\+H\+C\+P\+A\+C\+K@{D\+H\+C\+P\+A\+C\+K}!dhcp.\+h@{dhcp.\+h}}
+\subsubsection[{D\+H\+C\+P\+A\+C\+K}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+H\+C\+P\+A\+C\+K~5}\label{dhcp_8h_a4f4105ef611737b700a6da965306dcfe}
+\hypertarget{dhcp_8h_af03ae973e2eb857947af829f3611eed3}{}\index{dhcp.\+h@{dhcp.\+h}!D\+H\+C\+P\+D\+E\+C\+L\+I\+N\+E@{D\+H\+C\+P\+D\+E\+C\+L\+I\+N\+E}}
+\index{D\+H\+C\+P\+D\+E\+C\+L\+I\+N\+E@{D\+H\+C\+P\+D\+E\+C\+L\+I\+N\+E}!dhcp.\+h@{dhcp.\+h}}
+\subsubsection[{D\+H\+C\+P\+D\+E\+C\+L\+I\+N\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+H\+C\+P\+D\+E\+C\+L\+I\+N\+E~4}\label{dhcp_8h_af03ae973e2eb857947af829f3611eed3}
+\hypertarget{dhcp_8h_aa490e80da21dfc13b91c034095efdcd4}{}\index{dhcp.\+h@{dhcp.\+h}!D\+H\+C\+P\+D\+I\+S\+C\+O\+V\+E\+R@{D\+H\+C\+P\+D\+I\+S\+C\+O\+V\+E\+R}}
+\index{D\+H\+C\+P\+D\+I\+S\+C\+O\+V\+E\+R@{D\+H\+C\+P\+D\+I\+S\+C\+O\+V\+E\+R}!dhcp.\+h@{dhcp.\+h}}
+\subsubsection[{D\+H\+C\+P\+D\+I\+S\+C\+O\+V\+E\+R}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+H\+C\+P\+D\+I\+S\+C\+O\+V\+E\+R~1}\label{dhcp_8h_aa490e80da21dfc13b91c034095efdcd4}
+\hypertarget{dhcp_8h_abb01731f0711308ff1e3f394da00d7c9}{}\index{dhcp.\+h@{dhcp.\+h}!D\+H\+C\+P\+I\+N\+F\+O\+R\+M@{D\+H\+C\+P\+I\+N\+F\+O\+R\+M}}
+\index{D\+H\+C\+P\+I\+N\+F\+O\+R\+M@{D\+H\+C\+P\+I\+N\+F\+O\+R\+M}!dhcp.\+h@{dhcp.\+h}}
+\subsubsection[{D\+H\+C\+P\+I\+N\+F\+O\+R\+M}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+H\+C\+P\+I\+N\+F\+O\+R\+M~8}\label{dhcp_8h_abb01731f0711308ff1e3f394da00d7c9}
+\hypertarget{dhcp_8h_a4162aa47e0c49f981f31b4bd0363476b}{}\index{dhcp.\+h@{dhcp.\+h}!D\+H\+C\+P\+N\+A\+K@{D\+H\+C\+P\+N\+A\+K}}
+\index{D\+H\+C\+P\+N\+A\+K@{D\+H\+C\+P\+N\+A\+K}!dhcp.\+h@{dhcp.\+h}}
+\subsubsection[{D\+H\+C\+P\+N\+A\+K}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+H\+C\+P\+N\+A\+K~6}\label{dhcp_8h_a4162aa47e0c49f981f31b4bd0363476b}
+\hypertarget{dhcp_8h_ab82126d739f61a60d84116e1e0d3ad2e}{}\index{dhcp.\+h@{dhcp.\+h}!D\+H\+C\+P\+O\+F\+F\+E\+R@{D\+H\+C\+P\+O\+F\+F\+E\+R}}
+\index{D\+H\+C\+P\+O\+F\+F\+E\+R@{D\+H\+C\+P\+O\+F\+F\+E\+R}!dhcp.\+h@{dhcp.\+h}}
+\subsubsection[{D\+H\+C\+P\+O\+F\+F\+E\+R}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+H\+C\+P\+O\+F\+F\+E\+R~2}\label{dhcp_8h_ab82126d739f61a60d84116e1e0d3ad2e}
+\hypertarget{dhcp_8h_a28d24149d2c3838966cc9f5cf2fdf2cb}{}\index{dhcp.\+h@{dhcp.\+h}!D\+H\+C\+P\+R\+E\+L\+E\+A\+S\+E@{D\+H\+C\+P\+R\+E\+L\+E\+A\+S\+E}}
+\index{D\+H\+C\+P\+R\+E\+L\+E\+A\+S\+E@{D\+H\+C\+P\+R\+E\+L\+E\+A\+S\+E}!dhcp.\+h@{dhcp.\+h}}
+\subsubsection[{D\+H\+C\+P\+R\+E\+L\+E\+A\+S\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+H\+C\+P\+R\+E\+L\+E\+A\+S\+E~7}\label{dhcp_8h_a28d24149d2c3838966cc9f5cf2fdf2cb}
+\hypertarget{dhcp_8h_a0cd47b14d8040e76932488eadbc0091e}{}\index{dhcp.\+h@{dhcp.\+h}!D\+H\+C\+P\+R\+E\+Q\+U\+E\+S\+T@{D\+H\+C\+P\+R\+E\+Q\+U\+E\+S\+T}}
+\index{D\+H\+C\+P\+R\+E\+Q\+U\+E\+S\+T@{D\+H\+C\+P\+R\+E\+Q\+U\+E\+S\+T}!dhcp.\+h@{dhcp.\+h}}
+\subsubsection[{D\+H\+C\+P\+R\+E\+Q\+U\+E\+S\+T}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+H\+C\+P\+R\+E\+Q\+U\+E\+S\+T~3}\label{dhcp_8h_a0cd47b14d8040e76932488eadbc0091e}
+
+
+\subsection{Function Documentation}
+\hypertarget{dhcp_8h_a0e845631a332310acc8cd259eaf6d0f6}{}\index{dhcp.\+h@{dhcp.\+h}!dhcp\+\_\+extract\+\_\+router\+\_\+msg@{dhcp\+\_\+extract\+\_\+router\+\_\+msg}}
+\index{dhcp\+\_\+extract\+\_\+router\+\_\+msg@{dhcp\+\_\+extract\+\_\+router\+\_\+msg}!dhcp.\+h@{dhcp.\+h}}
+\subsubsection[{dhcp\+\_\+extract\+\_\+router\+\_\+msg(struct buffer $\ast$ipbuf)}]{\setlength{\rightskip}{0pt plus 5cm}in\+\_\+addr\+\_\+t dhcp\+\_\+extract\+\_\+router\+\_\+msg (
+\begin{DoxyParamCaption}
+\item[{struct {\bf buffer} $\ast$}]{ipbuf}
+\end{DoxyParamCaption}
+)}\label{dhcp_8h_a0e845631a332310acc8cd259eaf6d0f6}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dhcp_8h_a0e845631a332310acc8cd259eaf6d0f6_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dhcp_8h_a0e845631a332310acc8cd259eaf6d0f6_icgraph}
+\end{center}
+\end{figure}
+
+

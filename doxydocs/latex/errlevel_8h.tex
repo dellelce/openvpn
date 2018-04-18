@@ -1,0 +1,590 @@
+\hypertarget{errlevel_8h}{}\section{src/openvpn/errlevel.h File Reference}
+\label{errlevel_8h}\index{src/openvpn/errlevel.\+h@{src/openvpn/errlevel.\+h}}
+{\ttfamily \#include \char`\"{}error.\+h\char`\"{}}\\*
+Include dependency graph for errlevel.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=338pt]{errlevel_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{errlevel_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{errlevel_8h_a99a63e0bd0b5c0a1a7377182f2f0d6e7}{D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+U\+S\+E\+C\+\_\+\+T\+I\+M\+E}~4
+\item 
+\#define \hyperlink{errlevel_8h_a398b8eecec50c6ca4ad75b9d5a46f17a}{P2\+P\+\_\+\+E\+R\+R\+O\+R\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+M\+S}~0
+\item 
+\#define \hyperlink{errlevel_8h_a6f0acfbd73600c63b0e08ce1f46057c8}{L\+O\+G\+\_\+\+R\+W}
+\item 
+\#define \hyperlink{errlevel_8h_a2c9a69063637763ee444c8f4a25188ba}{M\+\_\+\+V\+E\+R\+B0}~\hyperlink{error_8h_a5c765719cc34afe773b52ffbd096a863}{L\+O\+G\+L\+E\+V}(0, 0, 0)         /$\ast$ Messages displayed even at -\/-\/verb 0 (fatal errors only) $\ast$/
+\item 
+\#define \hyperlink{errlevel_8h_ade61794318f1bbcac19df28e2fe83260}{M\+\_\+\+I\+N\+F\+O}~\hyperlink{error_8h_a5c765719cc34afe773b52ffbd096a863}{L\+O\+G\+L\+E\+V}(1, 0, 0)         /$\ast$ default informational messages $\ast$/
+\item 
+\#define \hyperlink{errlevel_8h_afb139197853f179439ffc6d0ccaf0fdd}{D\+\_\+\+L\+I\+N\+K\+\_\+\+E\+R\+R\+O\+R\+S}~\hyperlink{error_8h_a5c765719cc34afe773b52ffbd096a863}{L\+O\+G\+L\+E\+V}(1, 1, \hyperlink{error_8h_a9e1c690bc419010e6e8346d28a237941}{M\+\_\+\+N\+O\+N\+F\+A\+T\+A\+L})   /$\ast$ show link errors from \hyperlink{openvpn_8c_a0ddf1224851353fc92bfbff6f499fa97}{main} event loop $\ast$/
+\item 
+\#define \hyperlink{errlevel_8h_a82c6e0357ff0b26eaa2ad2fb17cc1268}{D\+\_\+\+C\+R\+Y\+P\+T\+\_\+\+E\+R\+R\+O\+R\+S}~\hyperlink{error_8h_a5c765719cc34afe773b52ffbd096a863}{L\+O\+G\+L\+E\+V}(1, 2, \hyperlink{error_8h_a9e1c690bc419010e6e8346d28a237941}{M\+\_\+\+N\+O\+N\+F\+A\+T\+A\+L})   /$\ast$ show errors from encrypt/decrypt $\ast$/
+\item 
+\#define \hyperlink{errlevel_8h_abb7d158b96cc50c8f88581e7c1d13cdd}{D\+\_\+\+T\+L\+S\+\_\+\+E\+R\+R\+O\+R\+S}~\hyperlink{error_8h_a5c765719cc34afe773b52ffbd096a863}{L\+O\+G\+L\+E\+V}(1, 3, \hyperlink{error_8h_a9e1c690bc419010e6e8346d28a237941}{M\+\_\+\+N\+O\+N\+F\+A\+T\+A\+L})   /$\ast$ show T\+L\+S control channel errors $\ast$/
+\item 
+\#define \hyperlink{errlevel_8h_ac326acef7cb67caef2f5702d738b0ac4}{D\+\_\+\+R\+E\+S\+O\+L\+V\+E\+\_\+\+E\+R\+R\+O\+R\+S}~\hyperlink{error_8h_a5c765719cc34afe773b52ffbd096a863}{L\+O\+G\+L\+E\+V}(1, 4, \hyperlink{error_8h_a9e1c690bc419010e6e8346d28a237941}{M\+\_\+\+N\+O\+N\+F\+A\+T\+A\+L})   /$\ast$ show hostname resolve errors $\ast$/
+\item 
+\#define \hyperlink{errlevel_8h_a1707a2d796189c7ede888b0a6b5b6016}{D\+\_\+\+C\+O\+M\+P\+\_\+\+E\+R\+R\+O\+R\+S}~\hyperlink{error_8h_a5c765719cc34afe773b52ffbd096a863}{L\+O\+G\+L\+E\+V}(1, 5, \hyperlink{error_8h_a9e1c690bc419010e6e8346d28a237941}{M\+\_\+\+N\+O\+N\+F\+A\+T\+A\+L})   /$\ast$ show compression errors $\ast$/
+\item 
+\#define \hyperlink{errlevel_8h_af7fd626a7f5d380913c53876d2d35dc9}{D\+\_\+\+R\+E\+P\+L\+A\+Y\+\_\+\+E\+R\+R\+O\+R\+S}~\hyperlink{error_8h_a5c765719cc34afe773b52ffbd096a863}{L\+O\+G\+L\+E\+V}(1, 6, \hyperlink{error_8h_a9e1c690bc419010e6e8346d28a237941}{M\+\_\+\+N\+O\+N\+F\+A\+T\+A\+L})   /$\ast$ show packet replay errors $\ast$/
+\item 
+\#define \hyperlink{errlevel_8h_a8449a1755d1636b2ed9925c109353f46}{D\+\_\+\+S\+T\+R\+E\+A\+M\+\_\+\+E\+R\+R\+O\+R\+S}~\hyperlink{error_8h_a5c765719cc34afe773b52ffbd096a863}{L\+O\+G\+L\+E\+V}(1, 7, \hyperlink{error_8h_a9e1c690bc419010e6e8346d28a237941}{M\+\_\+\+N\+O\+N\+F\+A\+T\+A\+L})    /$\ast$ T\+C\+P stream error requiring restart $\ast$/
+\item 
+\#define \hyperlink{errlevel_8h_a4371249a963e1bdbd3154b399964146f}{D\+\_\+\+I\+M\+P\+O\+R\+T\+\_\+\+E\+R\+R\+O\+R\+S}~\hyperlink{error_8h_a5c765719cc34afe773b52ffbd096a863}{L\+O\+G\+L\+E\+V}(1, 8, \hyperlink{error_8h_a9e1c690bc419010e6e8346d28a237941}{M\+\_\+\+N\+O\+N\+F\+A\+T\+A\+L})    /$\ast$ show server import option errors $\ast$/
+\item 
+\#define \hyperlink{errlevel_8h_a2a852e32d449af267d3fce5d16348d9d}{D\+\_\+\+M\+U\+L\+T\+I\+\_\+\+E\+R\+R\+O\+R\+S}~\hyperlink{error_8h_a5c765719cc34afe773b52ffbd096a863}{L\+O\+G\+L\+E\+V}(1, 9, \hyperlink{error_8h_a9e1c690bc419010e6e8346d28a237941}{M\+\_\+\+N\+O\+N\+F\+A\+T\+A\+L})    /$\ast$ show multi-\/client server errors $\ast$/
+\item 
+\#define \hyperlink{errlevel_8h_a09523f04ebd4b24257a0f4db8951ac1a}{D\+\_\+\+E\+V\+E\+N\+T\+\_\+\+E\+R\+R\+O\+R\+S}~\hyperlink{error_8h_a5c765719cc34afe773b52ffbd096a863}{L\+O\+G\+L\+E\+V}(1, 10, \hyperlink{error_8h_a9e1c690bc419010e6e8346d28a237941}{M\+\_\+\+N\+O\+N\+F\+A\+T\+A\+L})   /$\ast$ show event.\mbox{[}ch\mbox{]} errors $\ast$/
+\item 
+\#define \hyperlink{errlevel_8h_ab1f5456810dd6e5c6ab78c1b3d35f1c0}{D\+\_\+\+P\+U\+S\+H\+\_\+\+E\+R\+R\+O\+R\+S}~\hyperlink{error_8h_a5c765719cc34afe773b52ffbd096a863}{L\+O\+G\+L\+E\+V}(1, 11, \hyperlink{error_8h_a9e1c690bc419010e6e8346d28a237941}{M\+\_\+\+N\+O\+N\+F\+A\+T\+A\+L})   /$\ast$ show push/pull errors $\ast$/
+\item 
+\#define \hyperlink{errlevel_8h_adef1badf9a3d38beffda2b93297bb368}{D\+\_\+\+P\+I\+D\+\_\+\+P\+E\+R\+S\+I\+S\+T}~\hyperlink{error_8h_a5c765719cc34afe773b52ffbd096a863}{L\+O\+G\+L\+E\+V}(1, 12, \hyperlink{error_8h_a9e1c690bc419010e6e8346d28a237941}{M\+\_\+\+N\+O\+N\+F\+A\+T\+A\+L})   /$\ast$ show \hyperlink{structpacket__id}{packet\+\_\+id} persist errors $\ast$/
+\item 
+\#define \hyperlink{errlevel_8h_a67d3c519393c574a4148be2c65f8e494}{D\+\_\+\+F\+R\+A\+G\+\_\+\+E\+R\+R\+O\+R\+S}~\hyperlink{error_8h_a5c765719cc34afe773b52ffbd096a863}{L\+O\+G\+L\+E\+V}(1, 13, \hyperlink{error_8h_a9e1c690bc419010e6e8346d28a237941}{M\+\_\+\+N\+O\+N\+F\+A\+T\+A\+L})   /$\ast$ show fragmentation errors $\ast$/
+\item 
+\#define \hyperlink{errlevel_8h_a9f5502a386d2325fb5f0b0f71689ce8d}{D\+\_\+\+A\+L\+I\+G\+N\+\_\+\+E\+R\+R\+O\+R\+S}~\hyperlink{error_8h_a5c765719cc34afe773b52ffbd096a863}{L\+O\+G\+L\+E\+V}(1, 14, \hyperlink{error_8h_a9e1c690bc419010e6e8346d28a237941}{M\+\_\+\+N\+O\+N\+F\+A\+T\+A\+L})   /$\ast$ show bad struct alignments $\ast$/
+\item 
+\#define \hyperlink{errlevel_8h_aa27eb181eb1b5d04593b67cba43801ad}{D\+\_\+\+H\+A\+N\+D\+S\+H\+A\+K\+E}~\hyperlink{error_8h_a5c765719cc34afe773b52ffbd096a863}{L\+O\+G\+L\+E\+V}(2, 20, 0)        /$\ast$ show data \& control channel handshakes $\ast$/
+\item 
+\#define \hyperlink{errlevel_8h_a4d297c382e0a2017ad37b4f961bec11c}{D\+\_\+\+C\+L\+O\+S\+E}~\hyperlink{error_8h_a5c765719cc34afe773b52ffbd096a863}{L\+O\+G\+L\+E\+V}(2, 22, 0)        /$\ast$ show socket and T\+U\+N/T\+A\+P close $\ast$/
+\item 
+\#define \hyperlink{errlevel_8h_a02b5bce971294fdb7f830c692bd8d947}{D\+\_\+\+P\+R\+O\+X\+Y}~\hyperlink{error_8h_a5c765719cc34afe773b52ffbd096a863}{L\+O\+G\+L\+E\+V}(2, 24, 0)        /$\ast$ show http proxy control packets $\ast$/
+\item 
+\#define \hyperlink{errlevel_8h_ae84f9779161bce38d0fdb2a8138cbfdb}{D\+\_\+\+A\+R\+G\+V}~\hyperlink{error_8h_a5c765719cc34afe773b52ffbd096a863}{L\+O\+G\+L\+E\+V}(2, 25, 0)        /$\ast$ show struct \hyperlink{structargv}{argv} errors $\ast$/
+\item 
+\#define \hyperlink{errlevel_8h_a18325da3f3318ec2d2880e5ea2471a27}{D\+\_\+\+T\+L\+S\+\_\+\+D\+E\+B\+U\+G\+\_\+\+L\+O\+W}~\hyperlink{error_8h_a5c765719cc34afe773b52ffbd096a863}{L\+O\+G\+L\+E\+V}(3, 20, 0)        /$\ast$ low frequency info from \hyperlink{structtls__session}{tls\+\_\+session} routines $\ast$/
+\item 
+\#define \hyperlink{errlevel_8h_ae122e72500331bc2fd754b9f8672800c}{D\+\_\+\+G\+R\+E\+M\+L\+I\+N}~\hyperlink{error_8h_a5c765719cc34afe773b52ffbd096a863}{L\+O\+G\+L\+E\+V}(3, 30, 0)        /$\ast$ show simulated outage info from gremlin module $\ast$/
+\item 
+\#define \hyperlink{errlevel_8h_aab8b5b527fa4e3cdc68897cc57e01dac}{D\+\_\+\+G\+E\+N\+K\+E\+Y}~\hyperlink{error_8h_a5c765719cc34afe773b52ffbd096a863}{L\+O\+G\+L\+E\+V}(3, 31, 0)        /$\ast$ print message after \hyperlink{structkey}{key} generation $\ast$/
+\item 
+\#define \hyperlink{errlevel_8h_ae77ba6635ecf104df3b8afdcb1cae284}{D\+\_\+\+R\+O\+U\+T\+E}~\hyperlink{error_8h_a5c765719cc34afe773b52ffbd096a863}{L\+O\+G\+L\+E\+V}(3, 0,  0)        /$\ast$ show routes added and deleted (don\textquotesingle{}t mute) $\ast$/
+\item 
+\#define \hyperlink{errlevel_8h_a80d57c8e34010c9b942bbb9f3171050b}{D\+\_\+\+T\+U\+N\+T\+A\+P\+\_\+\+I\+N\+F\+O}~\hyperlink{error_8h_a5c765719cc34afe773b52ffbd096a863}{L\+O\+G\+L\+E\+V}(3, 32, 0)        /$\ast$ show debugging info from T\+U\+N/T\+A\+P driver $\ast$/
+\item 
+\#define \hyperlink{errlevel_8h_a3f8b5429f1fb9bbefad3bef0be32ab80}{D\+\_\+\+R\+E\+S\+T\+A\+R\+T}~\hyperlink{error_8h_a5c765719cc34afe773b52ffbd096a863}{L\+O\+G\+L\+E\+V}(3, 33, 0)        /$\ast$ show certain restart messages $\ast$/
+\item 
+\#define \hyperlink{errlevel_8h_a18d60aad51f694ab7a74361c1e20de63}{D\+\_\+\+P\+U\+S\+H}~\hyperlink{error_8h_a5c765719cc34afe773b52ffbd096a863}{L\+O\+G\+L\+E\+V}(3, 34, 0)        /$\ast$ show push/pull info $\ast$/
+\item 
+\#define \hyperlink{errlevel_8h_a09ffed03a8566cadee580095339c0425}{D\+\_\+\+I\+F\+C\+O\+N\+F\+I\+G\+\_\+\+P\+O\+O\+L}~\hyperlink{error_8h_a5c765719cc34afe773b52ffbd096a863}{L\+O\+G\+L\+E\+V}(3, 35, 0)        /$\ast$ show ifconfig pool info $\ast$/
+\item 
+\#define \hyperlink{errlevel_8h_a9f3a7dbe4b61aa0f398275d3e94972ed}{D\+\_\+\+A\+U\+T\+H}~\hyperlink{error_8h_a5c765719cc34afe773b52ffbd096a863}{L\+O\+G\+L\+E\+V}(3, 37, 0)        /$\ast$ show user/pass auth info $\ast$/
+\item 
+\#define \hyperlink{errlevel_8h_aa80e9eb7bfb07090a934bdfd7bfd3bea}{D\+\_\+\+M\+U\+L\+T\+I\+\_\+\+L\+O\+W}~\hyperlink{error_8h_a5c765719cc34afe773b52ffbd096a863}{L\+O\+G\+L\+E\+V}(3, 38, 0)        /$\ast$ show point-\/to-\/multipoint low-\/freq debug info $\ast$/
+\item 
+\#define \hyperlink{errlevel_8h_a41138b93335e39976e88100fc03613ac}{D\+\_\+\+P\+L\+U\+G\+I\+N}~\hyperlink{error_8h_a5c765719cc34afe773b52ffbd096a863}{L\+O\+G\+L\+E\+V}(3, 39, 0)        /$\ast$ show plugin calls $\ast$/
+\item 
+\#define \hyperlink{errlevel_8h_af7b4de7cf9d159f03b15af6c17859f4b}{D\+\_\+\+M\+A\+N\+A\+G\+E\+M\+E\+N\+T}~\hyperlink{error_8h_a5c765719cc34afe773b52ffbd096a863}{L\+O\+G\+L\+E\+V}(3, 40, 0)        /$\ast$ show -\/-\/management info $\ast$/
+\item 
+\#define \hyperlink{errlevel_8h_ae15fc74973b3f0e54b293fd57cbf8f63}{D\+\_\+\+S\+C\+H\+E\+D\+\_\+\+E\+X\+I\+T}~\hyperlink{error_8h_a5c765719cc34afe773b52ffbd096a863}{L\+O\+G\+L\+E\+V}(3, 41, 0)        /$\ast$ show arming of scheduled exit $\ast$/
+\item 
+\#define \hyperlink{errlevel_8h_a4cd4d1b7242cc195b5997a00342a359b}{D\+\_\+\+R\+O\+U\+T\+E\+\_\+\+Q\+U\+O\+T\+A}~\hyperlink{error_8h_a5c765719cc34afe773b52ffbd096a863}{L\+O\+G\+L\+E\+V}(3, 42, 0)        /$\ast$ show \hyperlink{interactive_8c_a767357491f19fc428e12e95225ac6127ac8ce842bafa47f7340ea0edbe49989f9}{route} quota exceeded messages $\ast$/
+\item 
+\#define \hyperlink{errlevel_8h_ac0efab1649521180bddeb20e44419a06}{D\+\_\+\+O\+S\+B\+U\+F}~\hyperlink{error_8h_a5c765719cc34afe773b52ffbd096a863}{L\+O\+G\+L\+E\+V}(3, 43, 0)        /$\ast$ show socket/tun/tap \hyperlink{structbuffer}{buffer} sizes $\ast$/
+\item 
+\#define \hyperlink{errlevel_8h_a15dfb7036d909dad9884eb8505369614}{D\+\_\+\+P\+S\+\_\+\+P\+R\+O\+X\+Y}~\hyperlink{error_8h_a5c765719cc34afe773b52ffbd096a863}{L\+O\+G\+L\+E\+V}(3, 44, 0)        /$\ast$ messages related to -\/-\/port-\/share option $\ast$/
+\item 
+\#define \hyperlink{errlevel_8h_adeaa738039a034ab76261706ec341b1e}{D\+\_\+\+P\+F\+\_\+\+I\+N\+F\+O}~\hyperlink{error_8h_a5c765719cc34afe773b52ffbd096a863}{L\+O\+G\+L\+E\+V}(3, 45, 0)        /$\ast$ packet filter informational messages $\ast$/
+\item 
+\#define \hyperlink{errlevel_8h_a9ca26e87b98a27b4e2782b9d95903910}{D\+\_\+\+S\+H\+O\+W\+\_\+\+P\+A\+R\+M\+S}~\hyperlink{error_8h_a5c765719cc34afe773b52ffbd096a863}{L\+O\+G\+L\+E\+V}(4, 50, 0)        /$\ast$ show all parameters on program initiation $\ast$/
+\item 
+\#define \hyperlink{errlevel_8h_a09c9625c03392860c87ed0460cd475cd}{D\+\_\+\+S\+H\+O\+W\+\_\+\+O\+C\+C}~\hyperlink{error_8h_a5c765719cc34afe773b52ffbd096a863}{L\+O\+G\+L\+E\+V}(4, 51, 0)        /$\ast$ show \hyperlink{structoptions}{options} compatibility string $\ast$/
+\item 
+\#define \hyperlink{errlevel_8h_ad7eba86279cb00fc16742e45bfcf3187}{D\+\_\+\+L\+O\+W}~\hyperlink{error_8h_a5c765719cc34afe773b52ffbd096a863}{L\+O\+G\+L\+E\+V}(4, 52, 0)        /$\ast$ miscellaneous low-\/frequency debug info $\ast$/
+\item 
+\#define \hyperlink{errlevel_8h_afdfcf7505fc3f7c1ea04ebdfe02fd483}{D\+\_\+\+D\+H\+C\+P\+\_\+\+O\+P\+T}~\hyperlink{error_8h_a5c765719cc34afe773b52ffbd096a863}{L\+O\+G\+L\+E\+V}(4, 53, 0)        /$\ast$ show D\+H\+C\+P \hyperlink{structoptions}{options} binary string $\ast$/
+\item 
+\#define \hyperlink{errlevel_8h_a92ddc6c5a6a592ba2e95fb30d7a28a26}{D\+\_\+\+M\+B\+U\+F}~\hyperlink{error_8h_a5c765719cc34afe773b52ffbd096a863}{L\+O\+G\+L\+E\+V}(4, 54, 0)        /$\ast$ mbuf.\mbox{[}ch\mbox{]} routines $\ast$/
+\item 
+\#define \hyperlink{errlevel_8h_a1f881062219c526acb9794aa1c41f78f}{D\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+T\+R\+U\+N\+C\+\_\+\+E\+R\+R}~\hyperlink{error_8h_a5c765719cc34afe773b52ffbd096a863}{L\+O\+G\+L\+E\+V}(4, 55, 0)        /$\ast$ P\+A\+C\+K\+E\+T\+\_\+\+T\+R\+U\+N\+C\+A\+T\+I\+O\+N\+\_\+\+C\+H\+E\+C\+K $\ast$/
+\item 
+\#define \hyperlink{errlevel_8h_ae778574b4e302c0d14042e1086a309d4}{D\+\_\+\+P\+F\+\_\+\+D\+R\+O\+P\+P\+E\+D}~\hyperlink{error_8h_a5c765719cc34afe773b52ffbd096a863}{L\+O\+G\+L\+E\+V}(4, 56, 0)        /$\ast$ packet filter dropped a packet $\ast$/
+\item 
+\#define \hyperlink{errlevel_8h_a9ec5c021a5f7e06ab3e0d19e0e6b787b}{D\+\_\+\+M\+U\+L\+T\+I\+\_\+\+D\+R\+O\+P\+P\+E\+D}~\hyperlink{error_8h_a5c765719cc34afe773b52ffbd096a863}{L\+O\+G\+L\+E\+V}(4, 57, 0)        /$\ast$ show point-\/to-\/multipoint packet drops $\ast$/
+\item 
+\#define \hyperlink{errlevel_8h_a57383b2d937647e5dc673c5b50666c29}{D\+\_\+\+M\+U\+L\+T\+I\+\_\+\+M\+E\+D\+I\+U\+M}~\hyperlink{error_8h_a5c765719cc34afe773b52ffbd096a863}{L\+O\+G\+L\+E\+V}(4, 58, 0)        /$\ast$ show medium frequency multi messages $\ast$/
+\item 
+\#define \hyperlink{errlevel_8h_a463fec7faecb18e24fd308807229f1e1}{D\+\_\+\+X509\+\_\+\+A\+T\+T\+R}~\hyperlink{error_8h_a5c765719cc34afe773b52ffbd096a863}{L\+O\+G\+L\+E\+V}(4, 59, 0)        /$\ast$ show x509-\/track attributes on connection $\ast$/
+\item 
+\#define \hyperlink{errlevel_8h_aba55050bac6c04df168bb49da677f651}{D\+\_\+\+I\+N\+I\+T\+\_\+\+M\+E\+D\+I\+U\+M}~\hyperlink{error_8h_a5c765719cc34afe773b52ffbd096a863}{L\+O\+G\+L\+E\+V}(4, 60, 0)        /$\ast$ show medium frequency init messages $\ast$/
+\item 
+\#define \hyperlink{errlevel_8h_aab9d07562cfecbd96b4c9e1d242d7d15}{D\+\_\+\+M\+T\+U\+\_\+\+I\+N\+F\+O}~\hyperlink{error_8h_a5c765719cc34afe773b52ffbd096a863}{L\+O\+G\+L\+E\+V}(4, 61, 0)        /$\ast$ show terse M\+T\+U info $\ast$/
+\item 
+\#define \hyperlink{errlevel_8h_a601910858391bb4cd97c958e8e7ab25d}{D\+\_\+\+P\+I\+D\+\_\+\+D\+E\+B\+U\+G\+\_\+\+L\+O\+W}~\hyperlink{error_8h_a5c765719cc34afe773b52ffbd096a863}{L\+O\+G\+L\+E\+V}(4, 63, 0)        /$\ast$ show low-\/freq packet-\/id debugging info $\ast$/
+\item 
+\#define \hyperlink{errlevel_8h_a7889345d802b582f72a590f4913c8482}{D\+\_\+\+P\+I\+D\+\_\+\+D\+E\+B\+U\+G\+\_\+\+M\+E\+D\+I\+U\+M}~\hyperlink{error_8h_a5c765719cc34afe773b52ffbd096a863}{L\+O\+G\+L\+E\+V}(4, 64, 0)        /$\ast$ show medium-\/freq packet-\/id debugging info $\ast$/
+\item 
+\#define \hyperlink{errlevel_8h_ae4c9a74306b42f3348401bf4ede9e9c0}{D\+\_\+\+L\+O\+G\+\_\+\+R\+W}~\hyperlink{error_8h_a5c765719cc34afe773b52ffbd096a863}{L\+O\+G\+L\+E\+V}(5, 0,  0)        /$\ast$ Print \textquotesingle{}R\textquotesingle{} or \textquotesingle{}W\textquotesingle{} to stdout for \hyperlink{interactive_8c_af26225c1e5936add32354d6633b47567aea7c12cb3031ad9e88104ce9859ce1c5}{read}/\hyperlink{interactive_8c_af26225c1e5936add32354d6633b47567aae835b662be01cdc3752f7db84529cca}{write} $\ast$/
+\item 
+\#define \hyperlink{errlevel_8h_afcac3e0bee8ded290cb5225fda3a9a2e}{D\+\_\+\+L\+I\+N\+K\+\_\+\+R\+W}~\hyperlink{error_8h_a5c765719cc34afe773b52ffbd096a863}{L\+O\+G\+L\+E\+V}(6, 69, \hyperlink{error_8h_acccd12226173a70815de18bc19ad5c29}{M\+\_\+\+D\+E\+B\+U\+G})  /$\ast$ show T\+C\+P/U\+D\+P reads/writes (terse) $\ast$/
+\item 
+\#define \hyperlink{errlevel_8h_a10d8276c079adbe9e8f03ffec1f7d00b}{D\+\_\+\+T\+U\+N\+\_\+\+R\+W}~\hyperlink{error_8h_a5c765719cc34afe773b52ffbd096a863}{L\+O\+G\+L\+E\+V}(6, 69, \hyperlink{error_8h_acccd12226173a70815de18bc19ad5c29}{M\+\_\+\+D\+E\+B\+U\+G})  /$\ast$ show T\+U\+N/T\+A\+P reads/writes $\ast$/
+\item 
+\#define \hyperlink{errlevel_8h_a12fd3192e01eb423295217076c872a3f}{D\+\_\+\+T\+A\+P\+\_\+\+W\+I\+N\+\_\+\+D\+E\+B\+U\+G}~\hyperlink{error_8h_a5c765719cc34afe773b52ffbd096a863}{L\+O\+G\+L\+E\+V}(6, 69, \hyperlink{error_8h_acccd12226173a70815de18bc19ad5c29}{M\+\_\+\+D\+E\+B\+U\+G})  /$\ast$ show T\+A\+P-\/Windows driver debug info $\ast$/
+\item 
+\#define \hyperlink{errlevel_8h_aed401eb39fdaa86f8b02477b6a32bf8f}{D\+\_\+\+C\+L\+I\+E\+N\+T\+\_\+\+N\+A\+T}~\hyperlink{error_8h_a5c765719cc34afe773b52ffbd096a863}{L\+O\+G\+L\+E\+V}(6, 69, \hyperlink{error_8h_acccd12226173a70815de18bc19ad5c29}{M\+\_\+\+D\+E\+B\+U\+G})  /$\ast$ show client N\+A\+T debug info $\ast$/
+\item 
+\#define \hyperlink{errlevel_8h_a8b1d4555930a814eef16ed00ce37724e}{D\+\_\+\+S\+H\+O\+W\+\_\+\+K\+E\+Y\+S}~\hyperlink{error_8h_a5c765719cc34afe773b52ffbd096a863}{L\+O\+G\+L\+E\+V}(7, 70, \hyperlink{error_8h_acccd12226173a70815de18bc19ad5c29}{M\+\_\+\+D\+E\+B\+U\+G})  /$\ast$ show data channel encryption keys $\ast$/
+\item 
+\#define \hyperlink{errlevel_8h_aaa998da0628e49f567e391600a880b43}{D\+\_\+\+S\+H\+O\+W\+\_\+\+K\+E\+Y\+\_\+\+S\+O\+U\+R\+C\+E}~\hyperlink{error_8h_a5c765719cc34afe773b52ffbd096a863}{L\+O\+G\+L\+E\+V}(7, 70, \hyperlink{error_8h_acccd12226173a70815de18bc19ad5c29}{M\+\_\+\+D\+E\+B\+U\+G})  /$\ast$ show data channel \hyperlink{structkey}{key} \hyperlink{compat-lz4_8h_a0211201f992ec3f0b641c9ceff5f837a}{source} entropy $\ast$/
+\item 
+\#define \hyperlink{errlevel_8h_abb1c9820dc00ca2fc161bad04f84a477}{D\+\_\+\+R\+E\+L\+\_\+\+L\+O\+W}~\hyperlink{error_8h_a5c765719cc34afe773b52ffbd096a863}{L\+O\+G\+L\+E\+V}(7, 70, \hyperlink{error_8h_acccd12226173a70815de18bc19ad5c29}{M\+\_\+\+D\+E\+B\+U\+G})  /$\ast$ show low frequency info from \hyperlink{structreliable}{reliable} layer $\ast$/
+\item 
+\#define \hyperlink{errlevel_8h_a68e6d4c46a416bb0cc0c406be09800a9}{D\+\_\+\+F\+R\+A\+G\+\_\+\+D\+E\+B\+U\+G}~\hyperlink{error_8h_a5c765719cc34afe773b52ffbd096a863}{L\+O\+G\+L\+E\+V}(7, 70, \hyperlink{error_8h_acccd12226173a70815de18bc19ad5c29}{M\+\_\+\+D\+E\+B\+U\+G})  /$\ast$ show fragment debugging info $\ast$/
+\item 
+\#define \hyperlink{errlevel_8h_a64d3ef312f3eba119b6bf938e0a33f60}{D\+\_\+\+W\+I\+N32\+\_\+\+I\+O\+\_\+\+L\+O\+W}~\hyperlink{error_8h_a5c765719cc34afe773b52ffbd096a863}{L\+O\+G\+L\+E\+V}(7, 70, \hyperlink{error_8h_acccd12226173a70815de18bc19ad5c29}{M\+\_\+\+D\+E\+B\+U\+G})  /$\ast$ low freq win32 I/O debugging info $\ast$/
+\item 
+\#define \hyperlink{errlevel_8h_a0925e44f9eb71983a02a8dee10d06849}{D\+\_\+\+M\+T\+U\+\_\+\+D\+E\+B\+U\+G}~\hyperlink{error_8h_a5c765719cc34afe773b52ffbd096a863}{L\+O\+G\+L\+E\+V}(7, 70, \hyperlink{error_8h_acccd12226173a70815de18bc19ad5c29}{M\+\_\+\+D\+E\+B\+U\+G})  /$\ast$ show M\+T\+U debugging info $\ast$/
+\item 
+\#define \hyperlink{errlevel_8h_a88bc68448fb72975a23012c8bef085d9}{D\+\_\+\+M\+U\+L\+T\+I\+\_\+\+D\+E\+B\+U\+G}~\hyperlink{error_8h_a5c765719cc34afe773b52ffbd096a863}{L\+O\+G\+L\+E\+V}(7, 70, \hyperlink{error_8h_acccd12226173a70815de18bc19ad5c29}{M\+\_\+\+D\+E\+B\+U\+G})  /$\ast$ show medium-\/freq multi debugging info $\ast$/
+\item 
+\#define \hyperlink{errlevel_8h_a70da1b6093184c6006aae422b46898b9}{D\+\_\+\+M\+S\+S}~\hyperlink{error_8h_a5c765719cc34afe773b52ffbd096a863}{L\+O\+G\+L\+E\+V}(7, 70, \hyperlink{error_8h_acccd12226173a70815de18bc19ad5c29}{M\+\_\+\+D\+E\+B\+U\+G})  /$\ast$ show M\+S\+S adjustments $\ast$/
+\item 
+\#define \hyperlink{errlevel_8h_a29399a7b45dec0f156d31eee908b3e34}{D\+\_\+\+C\+O\+M\+P\+\_\+\+L\+O\+W}~\hyperlink{error_8h_a5c765719cc34afe773b52ffbd096a863}{L\+O\+G\+L\+E\+V}(7, 70, \hyperlink{error_8h_acccd12226173a70815de18bc19ad5c29}{M\+\_\+\+D\+E\+B\+U\+G})  /$\ast$ show adaptive compression state changes $\ast$/
+\item 
+\#define \hyperlink{errlevel_8h_a423383b231ea24e2f0289111509b5ce1}{D\+\_\+\+C\+O\+N\+N\+E\+C\+T\+I\+O\+N\+\_\+\+L\+I\+S\+T}~\hyperlink{error_8h_a5c765719cc34afe773b52ffbd096a863}{L\+O\+G\+L\+E\+V}(7, 70, \hyperlink{error_8h_acccd12226173a70815de18bc19ad5c29}{M\+\_\+\+D\+E\+B\+U\+G})  /$\ast$ show $<$connection$>$ list info $\ast$/
+\item 
+\#define \hyperlink{errlevel_8h_aee3b59c21c2c72ee00386d5a77c101da}{D\+\_\+\+S\+C\+R\+I\+P\+T}~\hyperlink{error_8h_a5c765719cc34afe773b52ffbd096a863}{L\+O\+G\+L\+E\+V}(7, 70, \hyperlink{error_8h_acccd12226173a70815de18bc19ad5c29}{M\+\_\+\+D\+E\+B\+U\+G})  /$\ast$ show parms \& env vars passed to scripts $\ast$/
+\item 
+\#define \hyperlink{errlevel_8h_a220891aee7b9d5495c307445dac672f6}{D\+\_\+\+S\+H\+O\+W\+\_\+\+N\+E\+T}~\hyperlink{error_8h_a5c765719cc34afe773b52ffbd096a863}{L\+O\+G\+L\+E\+V}(7, 70, \hyperlink{error_8h_acccd12226173a70815de18bc19ad5c29}{M\+\_\+\+D\+E\+B\+U\+G})  /$\ast$ show routing table and adapter list $\ast$/
+\item 
+\#define \hyperlink{errlevel_8h_a4b1b340ab75c81b27e427d091d6f2e50}{D\+\_\+\+R\+O\+U\+T\+E\+\_\+\+D\+E\+B\+U\+G}~\hyperlink{error_8h_a5c765719cc34afe773b52ffbd096a863}{L\+O\+G\+L\+E\+V}(7, 70, \hyperlink{error_8h_acccd12226173a70815de18bc19ad5c29}{M\+\_\+\+D\+E\+B\+U\+G})  /$\ast$ show verbose route.\mbox{[}ch\mbox{]} output $\ast$/
+\item 
+\#define \hyperlink{errlevel_8h_a6957cd0f4474f234bb1be90f587bc1eb}{D\+\_\+\+T\+L\+S\+\_\+\+S\+T\+A\+T\+E\+\_\+\+E\+R\+R\+O\+R\+S}~\hyperlink{error_8h_a5c765719cc34afe773b52ffbd096a863}{L\+O\+G\+L\+E\+V}(7, 70, \hyperlink{error_8h_acccd12226173a70815de18bc19ad5c29}{M\+\_\+\+D\+E\+B\+U\+G})  /$\ast$ no T\+L\+S state for client $\ast$/
+\item 
+\#define \hyperlink{errlevel_8h_a1807701ef1d4a095063264d69bd22180}{D\+\_\+\+S\+E\+M\+A\+P\+H\+O\+R\+E\+\_\+\+L\+O\+W}~\hyperlink{error_8h_a5c765719cc34afe773b52ffbd096a863}{L\+O\+G\+L\+E\+V}(7, 70, \hyperlink{error_8h_acccd12226173a70815de18bc19ad5c29}{M\+\_\+\+D\+E\+B\+U\+G})  /$\ast$ show Win32 semaphore waits (low freq) $\ast$/
+\item 
+\#define \hyperlink{errlevel_8h_a647d8b85309a0e89c85cab24a6415bf9}{D\+\_\+\+S\+E\+M\+A\+P\+H\+O\+R\+E}~\hyperlink{error_8h_a5c765719cc34afe773b52ffbd096a863}{L\+O\+G\+L\+E\+V}(7, 70, \hyperlink{error_8h_acccd12226173a70815de18bc19ad5c29}{M\+\_\+\+D\+E\+B\+U\+G})  /$\ast$ show Win32 semaphore waits $\ast$/
+\item 
+\#define \hyperlink{errlevel_8h_a6b3a5938c2561db2f1c224ccdf40a06c}{D\+\_\+\+T\+E\+S\+T\+\_\+\+F\+I\+L\+E}~\hyperlink{error_8h_a5c765719cc34afe773b52ffbd096a863}{L\+O\+G\+L\+E\+V}(7, 70, \hyperlink{error_8h_acccd12226173a70815de18bc19ad5c29}{M\+\_\+\+D\+E\+B\+U\+G})  /$\ast$ show \hyperlink{misc_8h_aa26af8ee2558835f5c8c920fb12a1db6}{test\+\_\+file}() calls $\ast$/
+\item 
+\#define \hyperlink{errlevel_8h_a8e17cf3a8f0b18d37a81966de2e6660c}{D\+\_\+\+M\+A\+N\+A\+G\+E\+M\+E\+N\+T\+\_\+\+D\+E\+B\+U\+G}~\hyperlink{error_8h_a5c765719cc34afe773b52ffbd096a863}{L\+O\+G\+L\+E\+V}(3, 70, \hyperlink{error_8h_acccd12226173a70815de18bc19ad5c29}{M\+\_\+\+D\+E\+B\+U\+G})  /$\ast$ show -\/-\/management debug info $\ast$/
+\item 
+\#define \hyperlink{errlevel_8h_ae8554a63f4fc686f5b1beb4571044ece}{D\+\_\+\+P\+L\+U\+G\+I\+N\+\_\+\+D\+E\+B\+U\+G}~\hyperlink{error_8h_a5c765719cc34afe773b52ffbd096a863}{L\+O\+G\+L\+E\+V}(7, 70, \hyperlink{error_8h_acccd12226173a70815de18bc19ad5c29}{M\+\_\+\+D\+E\+B\+U\+G})  /$\ast$ show verbose plugin calls $\ast$/
+\item 
+\#define \hyperlink{errlevel_8h_a89fc2cbea574cff2c5b333dc4907bd26}{D\+\_\+\+S\+O\+C\+K\+E\+T\+\_\+\+D\+E\+B\+U\+G}~\hyperlink{error_8h_a5c765719cc34afe773b52ffbd096a863}{L\+O\+G\+L\+E\+V}(7, 70, \hyperlink{error_8h_acccd12226173a70815de18bc19ad5c29}{M\+\_\+\+D\+E\+B\+U\+G})  /$\ast$ show socket.\mbox{[}ch\mbox{]} debugging info $\ast$/
+\item 
+\#define \hyperlink{errlevel_8h_a4a295c95290d4853443b72967c1b8795}{D\+\_\+\+S\+H\+O\+W\+\_\+\+P\+K\+C\+S11}~\hyperlink{error_8h_a5c765719cc34afe773b52ffbd096a863}{L\+O\+G\+L\+E\+V}(7, 70, \hyperlink{error_8h_acccd12226173a70815de18bc19ad5c29}{M\+\_\+\+D\+E\+B\+U\+G})  /$\ast$ show P\+K\+C\+S\#11 actions $\ast$/
+\item 
+\#define \hyperlink{errlevel_8h_ab64023362b4f2584d6c16a5f2beceb92}{D\+\_\+\+A\+L\+I\+G\+N\+\_\+\+D\+E\+B\+U\+G}~\hyperlink{error_8h_a5c765719cc34afe773b52ffbd096a863}{L\+O\+G\+L\+E\+V}(7, 70, \hyperlink{error_8h_acccd12226173a70815de18bc19ad5c29}{M\+\_\+\+D\+E\+B\+U\+G})  /$\ast$ show verbose struct alignment info $\ast$/
+\item 
+\#define \hyperlink{errlevel_8h_aca7fac90cdfb4703702cf970625ebe9c}{D\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+T\+R\+U\+N\+C\+\_\+\+D\+E\+B\+U\+G}~\hyperlink{error_8h_a5c765719cc34afe773b52ffbd096a863}{L\+O\+G\+L\+E\+V}(7, 70, \hyperlink{error_8h_acccd12226173a70815de18bc19ad5c29}{M\+\_\+\+D\+E\+B\+U\+G})  /$\ast$ P\+A\+C\+K\+E\+T\+\_\+\+T\+R\+U\+N\+C\+A\+T\+I\+O\+N\+\_\+\+C\+H\+E\+C\+K verbose $\ast$/
+\item 
+\#define \hyperlink{errlevel_8h_a18a11db39c268cbd4e6922f91ae640a8}{D\+\_\+\+P\+I\+N\+G}~\hyperlink{error_8h_a5c765719cc34afe773b52ffbd096a863}{L\+O\+G\+L\+E\+V}(7, 70, \hyperlink{error_8h_acccd12226173a70815de18bc19ad5c29}{M\+\_\+\+D\+E\+B\+U\+G})  /$\ast$ P\+I\+N\+G send/receive messages $\ast$/
+\item 
+\#define \hyperlink{errlevel_8h_adf1c51e287012217c50d97026e8f300a}{D\+\_\+\+P\+S\+\_\+\+P\+R\+O\+X\+Y\+\_\+\+D\+E\+B\+U\+G}~\hyperlink{error_8h_a5c765719cc34afe773b52ffbd096a863}{L\+O\+G\+L\+E\+V}(7, 70, \hyperlink{error_8h_acccd12226173a70815de18bc19ad5c29}{M\+\_\+\+D\+E\+B\+U\+G})  /$\ast$ port share proxy debug $\ast$/
+\item 
+\#define \hyperlink{errlevel_8h_ae746b792cc1592231b15a133706fdbd0}{D\+\_\+\+A\+U\+T\+O\+\_\+\+U\+S\+E\+R\+I\+D}~\hyperlink{error_8h_a5c765719cc34afe773b52ffbd096a863}{L\+O\+G\+L\+E\+V}(7, 70, \hyperlink{error_8h_acccd12226173a70815de18bc19ad5c29}{M\+\_\+\+D\+E\+B\+U\+G})  /$\ast$ \hyperlink{syshead_8h_a8ce7701161d980421ef343c23b87c574}{A\+U\+T\+O\+\_\+\+U\+S\+E\+R\+I\+D} debugging $\ast$/
+\item 
+\#define \hyperlink{errlevel_8h_aaad4edce1a24494f3053fa3448e6d827}{D\+\_\+\+T\+L\+S\+\_\+\+K\+E\+Y\+S\+E\+L\+E\+C\+T}~\hyperlink{error_8h_a5c765719cc34afe773b52ffbd096a863}{L\+O\+G\+L\+E\+V}(7, 70, \hyperlink{error_8h_acccd12226173a70815de18bc19ad5c29}{M\+\_\+\+D\+E\+B\+U\+G})  /$\ast$ show information on \hyperlink{structkey}{key} selection for data channel $\ast$/
+\item 
+\#define \hyperlink{errlevel_8h_aea827e54fba86521f8b39e27904bb16d}{D\+\_\+\+A\+R\+G\+V\+\_\+\+P\+A\+R\+S\+E\+\_\+\+C\+M\+D}~\hyperlink{error_8h_a5c765719cc34afe773b52ffbd096a863}{L\+O\+G\+L\+E\+V}(7, 70, \hyperlink{error_8h_acccd12226173a70815de18bc19ad5c29}{M\+\_\+\+D\+E\+B\+U\+G})  /$\ast$ show \hyperlink{options_8h_aa702a60af6acc222f99aa441e0b1c3c1}{parse\+\_\+line}() errors in \hyperlink{argv_8h_a97e4b007c0ebc2cbcdc3ae1b88e3e764}{argv\+\_\+parse\+\_\+cmd} $\ast$/
+\item 
+\#define \hyperlink{errlevel_8h_a3088272226aa7a3642fa9efbb91a81fd}{D\+\_\+\+C\+R\+Y\+P\+T\+O\+\_\+\+D\+E\+B\+U\+G}~\hyperlink{error_8h_a5c765719cc34afe773b52ffbd096a863}{L\+O\+G\+L\+E\+V}(7, 70, \hyperlink{error_8h_acccd12226173a70815de18bc19ad5c29}{M\+\_\+\+D\+E\+B\+U\+G})  /$\ast$ show detailed info from crypto.\+c routines $\ast$/
+\item 
+\#define \hyperlink{errlevel_8h_a9ae3a395955ff7442aefb59b4aaa5e02}{D\+\_\+\+P\+I\+D\+\_\+\+D\+E\+B\+U\+G}~\hyperlink{error_8h_a5c765719cc34afe773b52ffbd096a863}{L\+O\+G\+L\+E\+V}(7, 70, \hyperlink{error_8h_acccd12226173a70815de18bc19ad5c29}{M\+\_\+\+D\+E\+B\+U\+G})  /$\ast$ show packet-\/id debugging info $\ast$/
+\item 
+\#define \hyperlink{errlevel_8h_a6fe1f2328d0a3a9f70abf077b467d7f1}{D\+\_\+\+P\+F\+\_\+\+D\+R\+O\+P\+P\+E\+D\+\_\+\+B\+C\+A\+S\+T}~\hyperlink{error_8h_a5c765719cc34afe773b52ffbd096a863}{L\+O\+G\+L\+E\+V}(7, 71, \hyperlink{error_8h_acccd12226173a70815de18bc19ad5c29}{M\+\_\+\+D\+E\+B\+U\+G})  /$\ast$ packet filter dropped a broadcast packet $\ast$/
+\item 
+\#define \hyperlink{errlevel_8h_a17a25878c1c5fafcd9021c2bb1f89f87}{D\+\_\+\+P\+F\+\_\+\+D\+E\+B\+U\+G}~\hyperlink{error_8h_a5c765719cc34afe773b52ffbd096a863}{L\+O\+G\+L\+E\+V}(7, 72, \hyperlink{error_8h_acccd12226173a70815de18bc19ad5c29}{M\+\_\+\+D\+E\+B\+U\+G})  /$\ast$ packet filter debugging, must also define P\+F\+\_\+\+D\+E\+B\+U\+G in pf.\+h $\ast$/
+\item 
+\#define \hyperlink{errlevel_8h_a5e25095305ce2ad10907ed529d71e780}{D\+\_\+\+P\+U\+S\+H\+\_\+\+D\+E\+B\+U\+G}~\hyperlink{error_8h_a5c765719cc34afe773b52ffbd096a863}{L\+O\+G\+L\+E\+V}(7, 73, \hyperlink{error_8h_acccd12226173a70815de18bc19ad5c29}{M\+\_\+\+D\+E\+B\+U\+G})  /$\ast$ show push/pull debugging info $\ast$/
+\item 
+\#define \hyperlink{errlevel_8h_a844c9bcaeb1dd70513a85677565fe68e}{D\+\_\+\+H\+A\+N\+D\+S\+H\+A\+K\+E\+\_\+\+V\+E\+R\+B\+O\+S\+E}~\hyperlink{error_8h_a5c765719cc34afe773b52ffbd096a863}{L\+O\+G\+L\+E\+V}(8, 70, \hyperlink{error_8h_acccd12226173a70815de18bc19ad5c29}{M\+\_\+\+D\+E\+B\+U\+G})  /$\ast$ show detailed description of each handshake $\ast$/
+\item 
+\#define \hyperlink{errlevel_8h_a6cb7f613d11d64ff4130bbf2e512fcf5}{D\+\_\+\+T\+L\+S\+\_\+\+D\+E\+B\+U\+G\+\_\+\+M\+E\+D}~\hyperlink{error_8h_a5c765719cc34afe773b52ffbd096a863}{L\+O\+G\+L\+E\+V}(8, 70, \hyperlink{error_8h_acccd12226173a70815de18bc19ad5c29}{M\+\_\+\+D\+E\+B\+U\+G})  /$\ast$ limited info from \hyperlink{structtls__session}{tls\+\_\+session} routines $\ast$/
+\item 
+\#define \hyperlink{errlevel_8h_a739a077adadc334e59c5e7e3295d6c46}{D\+\_\+\+I\+N\+T\+E\+R\+V\+A\+L}~\hyperlink{error_8h_a5c765719cc34afe773b52ffbd096a863}{L\+O\+G\+L\+E\+V}(8, 70, \hyperlink{error_8h_acccd12226173a70815de18bc19ad5c29}{M\+\_\+\+D\+E\+B\+U\+G})  /$\ast$ show interval.\+h debugging info $\ast$/
+\item 
+\#define \hyperlink{errlevel_8h_a944ea84a65afc423138bfba4167a3050}{D\+\_\+\+S\+C\+H\+E\+D\+U\+L\+E\+R}~\hyperlink{error_8h_a5c765719cc34afe773b52ffbd096a863}{L\+O\+G\+L\+E\+V}(8, 70, \hyperlink{error_8h_acccd12226173a70815de18bc19ad5c29}{M\+\_\+\+D\+E\+B\+U\+G})  /$\ast$ show scheduler debugging info $\ast$/
+\item 
+\#define \hyperlink{errlevel_8h_a75944b2df077967c7cfbeb3dd7d2a5d7}{D\+\_\+\+G\+R\+E\+M\+L\+I\+N\+\_\+\+V\+E\+R\+B\+O\+S\+E}~\hyperlink{error_8h_a5c765719cc34afe773b52ffbd096a863}{L\+O\+G\+L\+E\+V}(8, 70, \hyperlink{error_8h_acccd12226173a70815de18bc19ad5c29}{M\+\_\+\+D\+E\+B\+U\+G})  /$\ast$ show verbose info from gremlin module $\ast$/
+\item 
+\#define \hyperlink{errlevel_8h_a7653617d1d0e0b16c5ede98e5f66a2d4}{D\+\_\+\+R\+E\+L\+\_\+\+D\+E\+B\+U\+G}~\hyperlink{error_8h_a5c765719cc34afe773b52ffbd096a863}{L\+O\+G\+L\+E\+V}(8, 70, \hyperlink{error_8h_acccd12226173a70815de18bc19ad5c29}{M\+\_\+\+D\+E\+B\+U\+G})  /$\ast$ show detailed info from \hyperlink{structreliable}{reliable} routines $\ast$/
+\item 
+\#define \hyperlink{errlevel_8h_a24cb0f1ddbbca53c4203f88756b03459}{D\+\_\+\+E\+V\+E\+N\+T\+\_\+\+W\+A\+I\+T}~\hyperlink{error_8h_a5c765719cc34afe773b52ffbd096a863}{L\+O\+G\+L\+E\+V}(8, 70, \hyperlink{error_8h_acccd12226173a70815de18bc19ad5c29}{M\+\_\+\+D\+E\+B\+U\+G})  /$\ast$ show detailed info from event waits $\ast$/
+\item 
+\#define \hyperlink{errlevel_8h_aa76c91652816809d466a14941f356e1c}{D\+\_\+\+M\+U\+L\+T\+I\+\_\+\+T\+C\+P}~\hyperlink{error_8h_a5c765719cc34afe773b52ffbd096a863}{L\+O\+G\+L\+E\+V}(8, 70, \hyperlink{error_8h_acccd12226173a70815de18bc19ad5c29}{M\+\_\+\+D\+E\+B\+U\+G})  /$\ast$ show debug info from mtcp.\+c $\ast$/
+\item 
+\#define \hyperlink{errlevel_8h_ae7eb5f756fbc70945c5e88ea7c487463}{D\+\_\+\+T\+L\+S\+\_\+\+D\+E\+B\+U\+G}~\hyperlink{error_8h_a5c765719cc34afe773b52ffbd096a863}{L\+O\+G\+L\+E\+V}(9, 70, \hyperlink{error_8h_acccd12226173a70815de18bc19ad5c29}{M\+\_\+\+D\+E\+B\+U\+G})  /$\ast$ show detailed info from T\+L\+S routines $\ast$/
+\item 
+\#define \hyperlink{errlevel_8h_a379c7c27ecc1ddd4dbfceb923d95651f}{D\+\_\+\+C\+O\+M\+P}~\hyperlink{error_8h_a5c765719cc34afe773b52ffbd096a863}{L\+O\+G\+L\+E\+V}(9, 70, \hyperlink{error_8h_acccd12226173a70815de18bc19ad5c29}{M\+\_\+\+D\+E\+B\+U\+G})  /$\ast$ show compression info $\ast$/
+\item 
+\#define \hyperlink{errlevel_8h_abe74dee3b7a9490bbbf2e9ce72f3718a}{D\+\_\+\+R\+E\+A\+D\+\_\+\+W\+R\+I\+T\+E}~\hyperlink{error_8h_a5c765719cc34afe773b52ffbd096a863}{L\+O\+G\+L\+E\+V}(9, 70, \hyperlink{error_8h_acccd12226173a70815de18bc19ad5c29}{M\+\_\+\+D\+E\+B\+U\+G})  /$\ast$ show all tun/tcp/udp reads/writes/opens $\ast$/
+\item 
+\#define \hyperlink{errlevel_8h_a51705a69a343a97ea8b943bdb92e05b6}{D\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+C\+O\+N\+T\+E\+N\+T}~\hyperlink{error_8h_a5c765719cc34afe773b52ffbd096a863}{L\+O\+G\+L\+E\+V}(9, 70, \hyperlink{error_8h_acccd12226173a70815de18bc19ad5c29}{M\+\_\+\+D\+E\+B\+U\+G})  /$\ast$ show before/after encryption packet content $\ast$/
+\item 
+\#define \hyperlink{errlevel_8h_a3472e673f5e7d7d8a19cef014dc998a1}{D\+\_\+\+T\+L\+S\+\_\+\+N\+O\+\_\+\+S\+E\+N\+D\+\_\+\+K\+E\+Y}~\hyperlink{error_8h_a5c765719cc34afe773b52ffbd096a863}{L\+O\+G\+L\+E\+V}(9, 70, \hyperlink{error_8h_acccd12226173a70815de18bc19ad5c29}{M\+\_\+\+D\+E\+B\+U\+G})  /$\ast$ show when no data channel send-\/\hyperlink{structkey}{key} exists $\ast$/
+\item 
+\#define \hyperlink{errlevel_8h_ac0eb6d536d9ddf6a28301012a588c113}{D\+\_\+\+P\+I\+D\+\_\+\+P\+E\+R\+S\+I\+S\+T\+\_\+\+D\+E\+B\+U\+G}~\hyperlink{error_8h_a5c765719cc34afe773b52ffbd096a863}{L\+O\+G\+L\+E\+V}(9, 70, \hyperlink{error_8h_acccd12226173a70815de18bc19ad5c29}{M\+\_\+\+D\+E\+B\+U\+G})  /$\ast$ show packet-\/id persist debugging info $\ast$/
+\item 
+\#define \hyperlink{errlevel_8h_ab6859adfd85598229ba6589dd0511e62}{D\+\_\+\+L\+I\+N\+K\+\_\+\+R\+W\+\_\+\+V\+E\+R\+B\+O\+S\+E}~\hyperlink{error_8h_a5c765719cc34afe773b52ffbd096a863}{L\+O\+G\+L\+E\+V}(9, 70, \hyperlink{error_8h_acccd12226173a70815de18bc19ad5c29}{M\+\_\+\+D\+E\+B\+U\+G})  /$\ast$ show link reads/writes with greater verbosity $\ast$/
+\item 
+\#define \hyperlink{errlevel_8h_ab747b0b37ae829ef18616afa2039e1e6}{D\+\_\+\+S\+T\+R\+E\+A\+M\+\_\+\+D\+E\+B\+U\+G}~\hyperlink{error_8h_a5c765719cc34afe773b52ffbd096a863}{L\+O\+G\+L\+E\+V}(9, 70, \hyperlink{error_8h_acccd12226173a70815de18bc19ad5c29}{M\+\_\+\+D\+E\+B\+U\+G})  /$\ast$ show T\+C\+P stream debug info $\ast$/
+\item 
+\#define \hyperlink{errlevel_8h_a7b242eaaa97c7e6473a58b26e83fe06d}{D\+\_\+\+W\+I\+N32\+\_\+\+I\+O}~\hyperlink{error_8h_a5c765719cc34afe773b52ffbd096a863}{L\+O\+G\+L\+E\+V}(9, 70, \hyperlink{error_8h_acccd12226173a70815de18bc19ad5c29}{M\+\_\+\+D\+E\+B\+U\+G})  /$\ast$ win32 I/O debugging info $\ast$/
+\item 
+\#define \hyperlink{errlevel_8h_a223c820719c2297da12280e8c98de761}{D\+\_\+\+P\+K\+C\+S11\+\_\+\+D\+E\+B\+U\+G}~\hyperlink{error_8h_a5c765719cc34afe773b52ffbd096a863}{L\+O\+G\+L\+E\+V}(9, 70, \hyperlink{error_8h_acccd12226173a70815de18bc19ad5c29}{M\+\_\+\+D\+E\+B\+U\+G})  /$\ast$ show P\+K\+C\+S\#11 debugging $\ast$/
+\item 
+\#define \hyperlink{errlevel_8h_ac5394ef8b92888ac75c1fb790ec45039}{D\+\_\+\+S\+H\+A\+P\+E\+R\+\_\+\+D\+E\+B\+U\+G}~\hyperlink{error_8h_a5c765719cc34afe773b52ffbd096a863}{L\+O\+G\+L\+E\+V}(10, 70, \hyperlink{error_8h_acccd12226173a70815de18bc19ad5c29}{M\+\_\+\+D\+E\+B\+U\+G}) /$\ast$ show traffic shaper info $\ast$/
+\item 
+\#define \hyperlink{errlevel_8h_a162e523d0aa5dd0877a1b019364c35ce}{D\+\_\+\+R\+E\+G\+I\+S\+T\+R\+Y}~\hyperlink{error_8h_a5c765719cc34afe773b52ffbd096a863}{L\+O\+G\+L\+E\+V}(11, 70, \hyperlink{error_8h_acccd12226173a70815de18bc19ad5c29}{M\+\_\+\+D\+E\+B\+U\+G}) /$\ast$ win32 registry debugging info $\ast$/
+\item 
+\#define \hyperlink{errlevel_8h_a24ab6ec1313159d55f226b8ec8f2e9a7}{D\+\_\+\+O\+P\+E\+N\+S\+S\+L\+\_\+\+L\+O\+C\+K}~\hyperlink{error_8h_a5c765719cc34afe773b52ffbd096a863}{L\+O\+G\+L\+E\+V}(11, 70, \hyperlink{error_8h_acccd12226173a70815de18bc19ad5c29}{M\+\_\+\+D\+E\+B\+U\+G}) /$\ast$ show Open\+S\+S\+L locks $\ast$/
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{errlevel_8h_ab64023362b4f2584d6c16a5f2beceb92}{}\index{errlevel.\+h@{errlevel.\+h}!D\+\_\+\+A\+L\+I\+G\+N\+\_\+\+D\+E\+B\+U\+G@{D\+\_\+\+A\+L\+I\+G\+N\+\_\+\+D\+E\+B\+U\+G}}
+\index{D\+\_\+\+A\+L\+I\+G\+N\+\_\+\+D\+E\+B\+U\+G@{D\+\_\+\+A\+L\+I\+G\+N\+\_\+\+D\+E\+B\+U\+G}!errlevel.\+h@{errlevel.\+h}}
+\subsubsection[{D\+\_\+\+A\+L\+I\+G\+N\+\_\+\+D\+E\+B\+U\+G}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+\_\+\+A\+L\+I\+G\+N\+\_\+\+D\+E\+B\+U\+G~{\bf L\+O\+G\+L\+E\+V}(7, 70, {\bf M\+\_\+\+D\+E\+B\+U\+G})  /$\ast$ show verbose struct alignment info $\ast$/}\label{errlevel_8h_ab64023362b4f2584d6c16a5f2beceb92}
+\hypertarget{errlevel_8h_a9f5502a386d2325fb5f0b0f71689ce8d}{}\index{errlevel.\+h@{errlevel.\+h}!D\+\_\+\+A\+L\+I\+G\+N\+\_\+\+E\+R\+R\+O\+R\+S@{D\+\_\+\+A\+L\+I\+G\+N\+\_\+\+E\+R\+R\+O\+R\+S}}
+\index{D\+\_\+\+A\+L\+I\+G\+N\+\_\+\+E\+R\+R\+O\+R\+S@{D\+\_\+\+A\+L\+I\+G\+N\+\_\+\+E\+R\+R\+O\+R\+S}!errlevel.\+h@{errlevel.\+h}}
+\subsubsection[{D\+\_\+\+A\+L\+I\+G\+N\+\_\+\+E\+R\+R\+O\+R\+S}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+\_\+\+A\+L\+I\+G\+N\+\_\+\+E\+R\+R\+O\+R\+S~{\bf L\+O\+G\+L\+E\+V}(1, 14, {\bf M\+\_\+\+N\+O\+N\+F\+A\+T\+A\+L})   /$\ast$ show bad struct alignments $\ast$/}\label{errlevel_8h_a9f5502a386d2325fb5f0b0f71689ce8d}
+\hypertarget{errlevel_8h_ae84f9779161bce38d0fdb2a8138cbfdb}{}\index{errlevel.\+h@{errlevel.\+h}!D\+\_\+\+A\+R\+G\+V@{D\+\_\+\+A\+R\+G\+V}}
+\index{D\+\_\+\+A\+R\+G\+V@{D\+\_\+\+A\+R\+G\+V}!errlevel.\+h@{errlevel.\+h}}
+\subsubsection[{D\+\_\+\+A\+R\+G\+V}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+\_\+\+A\+R\+G\+V~{\bf L\+O\+G\+L\+E\+V}(2, 25, 0)        /$\ast$ show struct {\bf argv} errors $\ast$/}\label{errlevel_8h_ae84f9779161bce38d0fdb2a8138cbfdb}
+\hypertarget{errlevel_8h_aea827e54fba86521f8b39e27904bb16d}{}\index{errlevel.\+h@{errlevel.\+h}!D\+\_\+\+A\+R\+G\+V\+\_\+\+P\+A\+R\+S\+E\+\_\+\+C\+M\+D@{D\+\_\+\+A\+R\+G\+V\+\_\+\+P\+A\+R\+S\+E\+\_\+\+C\+M\+D}}
+\index{D\+\_\+\+A\+R\+G\+V\+\_\+\+P\+A\+R\+S\+E\+\_\+\+C\+M\+D@{D\+\_\+\+A\+R\+G\+V\+\_\+\+P\+A\+R\+S\+E\+\_\+\+C\+M\+D}!errlevel.\+h@{errlevel.\+h}}
+\subsubsection[{D\+\_\+\+A\+R\+G\+V\+\_\+\+P\+A\+R\+S\+E\+\_\+\+C\+M\+D}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+\_\+\+A\+R\+G\+V\+\_\+\+P\+A\+R\+S\+E\+\_\+\+C\+M\+D~{\bf L\+O\+G\+L\+E\+V}(7, 70, {\bf M\+\_\+\+D\+E\+B\+U\+G})  /$\ast$ show {\bf parse\+\_\+line}() errors in {\bf argv\+\_\+parse\+\_\+cmd} $\ast$/}\label{errlevel_8h_aea827e54fba86521f8b39e27904bb16d}
+\hypertarget{errlevel_8h_a9f3a7dbe4b61aa0f398275d3e94972ed}{}\index{errlevel.\+h@{errlevel.\+h}!D\+\_\+\+A\+U\+T\+H@{D\+\_\+\+A\+U\+T\+H}}
+\index{D\+\_\+\+A\+U\+T\+H@{D\+\_\+\+A\+U\+T\+H}!errlevel.\+h@{errlevel.\+h}}
+\subsubsection[{D\+\_\+\+A\+U\+T\+H}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+\_\+\+A\+U\+T\+H~{\bf L\+O\+G\+L\+E\+V}(3, 37, 0)        /$\ast$ show user/pass auth info $\ast$/}\label{errlevel_8h_a9f3a7dbe4b61aa0f398275d3e94972ed}
+\hypertarget{errlevel_8h_ae746b792cc1592231b15a133706fdbd0}{}\index{errlevel.\+h@{errlevel.\+h}!D\+\_\+\+A\+U\+T\+O\+\_\+\+U\+S\+E\+R\+I\+D@{D\+\_\+\+A\+U\+T\+O\+\_\+\+U\+S\+E\+R\+I\+D}}
+\index{D\+\_\+\+A\+U\+T\+O\+\_\+\+U\+S\+E\+R\+I\+D@{D\+\_\+\+A\+U\+T\+O\+\_\+\+U\+S\+E\+R\+I\+D}!errlevel.\+h@{errlevel.\+h}}
+\subsubsection[{D\+\_\+\+A\+U\+T\+O\+\_\+\+U\+S\+E\+R\+I\+D}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+\_\+\+A\+U\+T\+O\+\_\+\+U\+S\+E\+R\+I\+D~{\bf L\+O\+G\+L\+E\+V}(7, 70, {\bf M\+\_\+\+D\+E\+B\+U\+G})  /$\ast$ {\bf A\+U\+T\+O\+\_\+\+U\+S\+E\+R\+I\+D} debugging $\ast$/}\label{errlevel_8h_ae746b792cc1592231b15a133706fdbd0}
+\hypertarget{errlevel_8h_aed401eb39fdaa86f8b02477b6a32bf8f}{}\index{errlevel.\+h@{errlevel.\+h}!D\+\_\+\+C\+L\+I\+E\+N\+T\+\_\+\+N\+A\+T@{D\+\_\+\+C\+L\+I\+E\+N\+T\+\_\+\+N\+A\+T}}
+\index{D\+\_\+\+C\+L\+I\+E\+N\+T\+\_\+\+N\+A\+T@{D\+\_\+\+C\+L\+I\+E\+N\+T\+\_\+\+N\+A\+T}!errlevel.\+h@{errlevel.\+h}}
+\subsubsection[{D\+\_\+\+C\+L\+I\+E\+N\+T\+\_\+\+N\+A\+T}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+\_\+\+C\+L\+I\+E\+N\+T\+\_\+\+N\+A\+T~{\bf L\+O\+G\+L\+E\+V}(6, 69, {\bf M\+\_\+\+D\+E\+B\+U\+G})  /$\ast$ show client N\+A\+T debug info $\ast$/}\label{errlevel_8h_aed401eb39fdaa86f8b02477b6a32bf8f}
+\hypertarget{errlevel_8h_a4d297c382e0a2017ad37b4f961bec11c}{}\index{errlevel.\+h@{errlevel.\+h}!D\+\_\+\+C\+L\+O\+S\+E@{D\+\_\+\+C\+L\+O\+S\+E}}
+\index{D\+\_\+\+C\+L\+O\+S\+E@{D\+\_\+\+C\+L\+O\+S\+E}!errlevel.\+h@{errlevel.\+h}}
+\subsubsection[{D\+\_\+\+C\+L\+O\+S\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+\_\+\+C\+L\+O\+S\+E~{\bf L\+O\+G\+L\+E\+V}(2, 22, 0)        /$\ast$ show socket and T\+U\+N/T\+A\+P close $\ast$/}\label{errlevel_8h_a4d297c382e0a2017ad37b4f961bec11c}
+\hypertarget{errlevel_8h_a379c7c27ecc1ddd4dbfceb923d95651f}{}\index{errlevel.\+h@{errlevel.\+h}!D\+\_\+\+C\+O\+M\+P@{D\+\_\+\+C\+O\+M\+P}}
+\index{D\+\_\+\+C\+O\+M\+P@{D\+\_\+\+C\+O\+M\+P}!errlevel.\+h@{errlevel.\+h}}
+\subsubsection[{D\+\_\+\+C\+O\+M\+P}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+\_\+\+C\+O\+M\+P~{\bf L\+O\+G\+L\+E\+V}(9, 70, {\bf M\+\_\+\+D\+E\+B\+U\+G})  /$\ast$ show compression info $\ast$/}\label{errlevel_8h_a379c7c27ecc1ddd4dbfceb923d95651f}
+\hypertarget{errlevel_8h_a1707a2d796189c7ede888b0a6b5b6016}{}\index{errlevel.\+h@{errlevel.\+h}!D\+\_\+\+C\+O\+M\+P\+\_\+\+E\+R\+R\+O\+R\+S@{D\+\_\+\+C\+O\+M\+P\+\_\+\+E\+R\+R\+O\+R\+S}}
+\index{D\+\_\+\+C\+O\+M\+P\+\_\+\+E\+R\+R\+O\+R\+S@{D\+\_\+\+C\+O\+M\+P\+\_\+\+E\+R\+R\+O\+R\+S}!errlevel.\+h@{errlevel.\+h}}
+\subsubsection[{D\+\_\+\+C\+O\+M\+P\+\_\+\+E\+R\+R\+O\+R\+S}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+\_\+\+C\+O\+M\+P\+\_\+\+E\+R\+R\+O\+R\+S~{\bf L\+O\+G\+L\+E\+V}(1, 5, {\bf M\+\_\+\+N\+O\+N\+F\+A\+T\+A\+L})   /$\ast$ show compression errors $\ast$/}\label{errlevel_8h_a1707a2d796189c7ede888b0a6b5b6016}
+\hypertarget{errlevel_8h_a29399a7b45dec0f156d31eee908b3e34}{}\index{errlevel.\+h@{errlevel.\+h}!D\+\_\+\+C\+O\+M\+P\+\_\+\+L\+O\+W@{D\+\_\+\+C\+O\+M\+P\+\_\+\+L\+O\+W}}
+\index{D\+\_\+\+C\+O\+M\+P\+\_\+\+L\+O\+W@{D\+\_\+\+C\+O\+M\+P\+\_\+\+L\+O\+W}!errlevel.\+h@{errlevel.\+h}}
+\subsubsection[{D\+\_\+\+C\+O\+M\+P\+\_\+\+L\+O\+W}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+\_\+\+C\+O\+M\+P\+\_\+\+L\+O\+W~{\bf L\+O\+G\+L\+E\+V}(7, 70, {\bf M\+\_\+\+D\+E\+B\+U\+G})  /$\ast$ show adaptive compression state changes $\ast$/}\label{errlevel_8h_a29399a7b45dec0f156d31eee908b3e34}
+\hypertarget{errlevel_8h_a423383b231ea24e2f0289111509b5ce1}{}\index{errlevel.\+h@{errlevel.\+h}!D\+\_\+\+C\+O\+N\+N\+E\+C\+T\+I\+O\+N\+\_\+\+L\+I\+S\+T@{D\+\_\+\+C\+O\+N\+N\+E\+C\+T\+I\+O\+N\+\_\+\+L\+I\+S\+T}}
+\index{D\+\_\+\+C\+O\+N\+N\+E\+C\+T\+I\+O\+N\+\_\+\+L\+I\+S\+T@{D\+\_\+\+C\+O\+N\+N\+E\+C\+T\+I\+O\+N\+\_\+\+L\+I\+S\+T}!errlevel.\+h@{errlevel.\+h}}
+\subsubsection[{D\+\_\+\+C\+O\+N\+N\+E\+C\+T\+I\+O\+N\+\_\+\+L\+I\+S\+T}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+\_\+\+C\+O\+N\+N\+E\+C\+T\+I\+O\+N\+\_\+\+L\+I\+S\+T~{\bf L\+O\+G\+L\+E\+V}(7, 70, {\bf M\+\_\+\+D\+E\+B\+U\+G})  /$\ast$ show $<$connection$>$ list info $\ast$/}\label{errlevel_8h_a423383b231ea24e2f0289111509b5ce1}
+\hypertarget{errlevel_8h_a82c6e0357ff0b26eaa2ad2fb17cc1268}{}\index{errlevel.\+h@{errlevel.\+h}!D\+\_\+\+C\+R\+Y\+P\+T\+\_\+\+E\+R\+R\+O\+R\+S@{D\+\_\+\+C\+R\+Y\+P\+T\+\_\+\+E\+R\+R\+O\+R\+S}}
+\index{D\+\_\+\+C\+R\+Y\+P\+T\+\_\+\+E\+R\+R\+O\+R\+S@{D\+\_\+\+C\+R\+Y\+P\+T\+\_\+\+E\+R\+R\+O\+R\+S}!errlevel.\+h@{errlevel.\+h}}
+\subsubsection[{D\+\_\+\+C\+R\+Y\+P\+T\+\_\+\+E\+R\+R\+O\+R\+S}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+\_\+\+C\+R\+Y\+P\+T\+\_\+\+E\+R\+R\+O\+R\+S~{\bf L\+O\+G\+L\+E\+V}(1, 2, {\bf M\+\_\+\+N\+O\+N\+F\+A\+T\+A\+L})   /$\ast$ show errors from encrypt/decrypt $\ast$/}\label{errlevel_8h_a82c6e0357ff0b26eaa2ad2fb17cc1268}
+\hypertarget{errlevel_8h_a3088272226aa7a3642fa9efbb91a81fd}{}\index{errlevel.\+h@{errlevel.\+h}!D\+\_\+\+C\+R\+Y\+P\+T\+O\+\_\+\+D\+E\+B\+U\+G@{D\+\_\+\+C\+R\+Y\+P\+T\+O\+\_\+\+D\+E\+B\+U\+G}}
+\index{D\+\_\+\+C\+R\+Y\+P\+T\+O\+\_\+\+D\+E\+B\+U\+G@{D\+\_\+\+C\+R\+Y\+P\+T\+O\+\_\+\+D\+E\+B\+U\+G}!errlevel.\+h@{errlevel.\+h}}
+\subsubsection[{D\+\_\+\+C\+R\+Y\+P\+T\+O\+\_\+\+D\+E\+B\+U\+G}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+\_\+\+C\+R\+Y\+P\+T\+O\+\_\+\+D\+E\+B\+U\+G~{\bf L\+O\+G\+L\+E\+V}(7, 70, {\bf M\+\_\+\+D\+E\+B\+U\+G})  /$\ast$ show detailed info from crypto.\+c routines $\ast$/}\label{errlevel_8h_a3088272226aa7a3642fa9efbb91a81fd}
+\hypertarget{errlevel_8h_afdfcf7505fc3f7c1ea04ebdfe02fd483}{}\index{errlevel.\+h@{errlevel.\+h}!D\+\_\+\+D\+H\+C\+P\+\_\+\+O\+P\+T@{D\+\_\+\+D\+H\+C\+P\+\_\+\+O\+P\+T}}
+\index{D\+\_\+\+D\+H\+C\+P\+\_\+\+O\+P\+T@{D\+\_\+\+D\+H\+C\+P\+\_\+\+O\+P\+T}!errlevel.\+h@{errlevel.\+h}}
+\subsubsection[{D\+\_\+\+D\+H\+C\+P\+\_\+\+O\+P\+T}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+\_\+\+D\+H\+C\+P\+\_\+\+O\+P\+T~{\bf L\+O\+G\+L\+E\+V}(4, 53, 0)        /$\ast$ show D\+H\+C\+P {\bf options} binary string $\ast$/}\label{errlevel_8h_afdfcf7505fc3f7c1ea04ebdfe02fd483}
+\hypertarget{errlevel_8h_a09523f04ebd4b24257a0f4db8951ac1a}{}\index{errlevel.\+h@{errlevel.\+h}!D\+\_\+\+E\+V\+E\+N\+T\+\_\+\+E\+R\+R\+O\+R\+S@{D\+\_\+\+E\+V\+E\+N\+T\+\_\+\+E\+R\+R\+O\+R\+S}}
+\index{D\+\_\+\+E\+V\+E\+N\+T\+\_\+\+E\+R\+R\+O\+R\+S@{D\+\_\+\+E\+V\+E\+N\+T\+\_\+\+E\+R\+R\+O\+R\+S}!errlevel.\+h@{errlevel.\+h}}
+\subsubsection[{D\+\_\+\+E\+V\+E\+N\+T\+\_\+\+E\+R\+R\+O\+R\+S}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+\_\+\+E\+V\+E\+N\+T\+\_\+\+E\+R\+R\+O\+R\+S~{\bf L\+O\+G\+L\+E\+V}(1, 10, {\bf M\+\_\+\+N\+O\+N\+F\+A\+T\+A\+L})   /$\ast$ show event.\mbox{[}ch\mbox{]} errors $\ast$/}\label{errlevel_8h_a09523f04ebd4b24257a0f4db8951ac1a}
+\hypertarget{errlevel_8h_a24cb0f1ddbbca53c4203f88756b03459}{}\index{errlevel.\+h@{errlevel.\+h}!D\+\_\+\+E\+V\+E\+N\+T\+\_\+\+W\+A\+I\+T@{D\+\_\+\+E\+V\+E\+N\+T\+\_\+\+W\+A\+I\+T}}
+\index{D\+\_\+\+E\+V\+E\+N\+T\+\_\+\+W\+A\+I\+T@{D\+\_\+\+E\+V\+E\+N\+T\+\_\+\+W\+A\+I\+T}!errlevel.\+h@{errlevel.\+h}}
+\subsubsection[{D\+\_\+\+E\+V\+E\+N\+T\+\_\+\+W\+A\+I\+T}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+\_\+\+E\+V\+E\+N\+T\+\_\+\+W\+A\+I\+T~{\bf L\+O\+G\+L\+E\+V}(8, 70, {\bf M\+\_\+\+D\+E\+B\+U\+G})  /$\ast$ show detailed info from event waits $\ast$/}\label{errlevel_8h_a24cb0f1ddbbca53c4203f88756b03459}
+\hypertarget{errlevel_8h_a68e6d4c46a416bb0cc0c406be09800a9}{}\index{errlevel.\+h@{errlevel.\+h}!D\+\_\+\+F\+R\+A\+G\+\_\+\+D\+E\+B\+U\+G@{D\+\_\+\+F\+R\+A\+G\+\_\+\+D\+E\+B\+U\+G}}
+\index{D\+\_\+\+F\+R\+A\+G\+\_\+\+D\+E\+B\+U\+G@{D\+\_\+\+F\+R\+A\+G\+\_\+\+D\+E\+B\+U\+G}!errlevel.\+h@{errlevel.\+h}}
+\subsubsection[{D\+\_\+\+F\+R\+A\+G\+\_\+\+D\+E\+B\+U\+G}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+\_\+\+F\+R\+A\+G\+\_\+\+D\+E\+B\+U\+G~{\bf L\+O\+G\+L\+E\+V}(7, 70, {\bf M\+\_\+\+D\+E\+B\+U\+G})  /$\ast$ show fragment debugging info $\ast$/}\label{errlevel_8h_a68e6d4c46a416bb0cc0c406be09800a9}
+\hypertarget{errlevel_8h_a67d3c519393c574a4148be2c65f8e494}{}\index{errlevel.\+h@{errlevel.\+h}!D\+\_\+\+F\+R\+A\+G\+\_\+\+E\+R\+R\+O\+R\+S@{D\+\_\+\+F\+R\+A\+G\+\_\+\+E\+R\+R\+O\+R\+S}}
+\index{D\+\_\+\+F\+R\+A\+G\+\_\+\+E\+R\+R\+O\+R\+S@{D\+\_\+\+F\+R\+A\+G\+\_\+\+E\+R\+R\+O\+R\+S}!errlevel.\+h@{errlevel.\+h}}
+\subsubsection[{D\+\_\+\+F\+R\+A\+G\+\_\+\+E\+R\+R\+O\+R\+S}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+\_\+\+F\+R\+A\+G\+\_\+\+E\+R\+R\+O\+R\+S~{\bf L\+O\+G\+L\+E\+V}(1, 13, {\bf M\+\_\+\+N\+O\+N\+F\+A\+T\+A\+L})   /$\ast$ show fragmentation errors $\ast$/}\label{errlevel_8h_a67d3c519393c574a4148be2c65f8e494}
+\hypertarget{errlevel_8h_aab8b5b527fa4e3cdc68897cc57e01dac}{}\index{errlevel.\+h@{errlevel.\+h}!D\+\_\+\+G\+E\+N\+K\+E\+Y@{D\+\_\+\+G\+E\+N\+K\+E\+Y}}
+\index{D\+\_\+\+G\+E\+N\+K\+E\+Y@{D\+\_\+\+G\+E\+N\+K\+E\+Y}!errlevel.\+h@{errlevel.\+h}}
+\subsubsection[{D\+\_\+\+G\+E\+N\+K\+E\+Y}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+\_\+\+G\+E\+N\+K\+E\+Y~{\bf L\+O\+G\+L\+E\+V}(3, 31, 0)        /$\ast$ print message after {\bf key} generation $\ast$/}\label{errlevel_8h_aab8b5b527fa4e3cdc68897cc57e01dac}
+\hypertarget{errlevel_8h_ae122e72500331bc2fd754b9f8672800c}{}\index{errlevel.\+h@{errlevel.\+h}!D\+\_\+\+G\+R\+E\+M\+L\+I\+N@{D\+\_\+\+G\+R\+E\+M\+L\+I\+N}}
+\index{D\+\_\+\+G\+R\+E\+M\+L\+I\+N@{D\+\_\+\+G\+R\+E\+M\+L\+I\+N}!errlevel.\+h@{errlevel.\+h}}
+\subsubsection[{D\+\_\+\+G\+R\+E\+M\+L\+I\+N}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+\_\+\+G\+R\+E\+M\+L\+I\+N~{\bf L\+O\+G\+L\+E\+V}(3, 30, 0)        /$\ast$ show simulated outage info from gremlin module $\ast$/}\label{errlevel_8h_ae122e72500331bc2fd754b9f8672800c}
+\hypertarget{errlevel_8h_a75944b2df077967c7cfbeb3dd7d2a5d7}{}\index{errlevel.\+h@{errlevel.\+h}!D\+\_\+\+G\+R\+E\+M\+L\+I\+N\+\_\+\+V\+E\+R\+B\+O\+S\+E@{D\+\_\+\+G\+R\+E\+M\+L\+I\+N\+\_\+\+V\+E\+R\+B\+O\+S\+E}}
+\index{D\+\_\+\+G\+R\+E\+M\+L\+I\+N\+\_\+\+V\+E\+R\+B\+O\+S\+E@{D\+\_\+\+G\+R\+E\+M\+L\+I\+N\+\_\+\+V\+E\+R\+B\+O\+S\+E}!errlevel.\+h@{errlevel.\+h}}
+\subsubsection[{D\+\_\+\+G\+R\+E\+M\+L\+I\+N\+\_\+\+V\+E\+R\+B\+O\+S\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+\_\+\+G\+R\+E\+M\+L\+I\+N\+\_\+\+V\+E\+R\+B\+O\+S\+E~{\bf L\+O\+G\+L\+E\+V}(8, 70, {\bf M\+\_\+\+D\+E\+B\+U\+G})  /$\ast$ show verbose info from gremlin module $\ast$/}\label{errlevel_8h_a75944b2df077967c7cfbeb3dd7d2a5d7}
+\hypertarget{errlevel_8h_aa27eb181eb1b5d04593b67cba43801ad}{}\index{errlevel.\+h@{errlevel.\+h}!D\+\_\+\+H\+A\+N\+D\+S\+H\+A\+K\+E@{D\+\_\+\+H\+A\+N\+D\+S\+H\+A\+K\+E}}
+\index{D\+\_\+\+H\+A\+N\+D\+S\+H\+A\+K\+E@{D\+\_\+\+H\+A\+N\+D\+S\+H\+A\+K\+E}!errlevel.\+h@{errlevel.\+h}}
+\subsubsection[{D\+\_\+\+H\+A\+N\+D\+S\+H\+A\+K\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+\_\+\+H\+A\+N\+D\+S\+H\+A\+K\+E~{\bf L\+O\+G\+L\+E\+V}(2, 20, 0)        /$\ast$ show data \& control channel handshakes $\ast$/}\label{errlevel_8h_aa27eb181eb1b5d04593b67cba43801ad}
+\hypertarget{errlevel_8h_a844c9bcaeb1dd70513a85677565fe68e}{}\index{errlevel.\+h@{errlevel.\+h}!D\+\_\+\+H\+A\+N\+D\+S\+H\+A\+K\+E\+\_\+\+V\+E\+R\+B\+O\+S\+E@{D\+\_\+\+H\+A\+N\+D\+S\+H\+A\+K\+E\+\_\+\+V\+E\+R\+B\+O\+S\+E}}
+\index{D\+\_\+\+H\+A\+N\+D\+S\+H\+A\+K\+E\+\_\+\+V\+E\+R\+B\+O\+S\+E@{D\+\_\+\+H\+A\+N\+D\+S\+H\+A\+K\+E\+\_\+\+V\+E\+R\+B\+O\+S\+E}!errlevel.\+h@{errlevel.\+h}}
+\subsubsection[{D\+\_\+\+H\+A\+N\+D\+S\+H\+A\+K\+E\+\_\+\+V\+E\+R\+B\+O\+S\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+\_\+\+H\+A\+N\+D\+S\+H\+A\+K\+E\+\_\+\+V\+E\+R\+B\+O\+S\+E~{\bf L\+O\+G\+L\+E\+V}(8, 70, {\bf M\+\_\+\+D\+E\+B\+U\+G})  /$\ast$ show detailed description of each handshake $\ast$/}\label{errlevel_8h_a844c9bcaeb1dd70513a85677565fe68e}
+\hypertarget{errlevel_8h_a09ffed03a8566cadee580095339c0425}{}\index{errlevel.\+h@{errlevel.\+h}!D\+\_\+\+I\+F\+C\+O\+N\+F\+I\+G\+\_\+\+P\+O\+O\+L@{D\+\_\+\+I\+F\+C\+O\+N\+F\+I\+G\+\_\+\+P\+O\+O\+L}}
+\index{D\+\_\+\+I\+F\+C\+O\+N\+F\+I\+G\+\_\+\+P\+O\+O\+L@{D\+\_\+\+I\+F\+C\+O\+N\+F\+I\+G\+\_\+\+P\+O\+O\+L}!errlevel.\+h@{errlevel.\+h}}
+\subsubsection[{D\+\_\+\+I\+F\+C\+O\+N\+F\+I\+G\+\_\+\+P\+O\+O\+L}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+\_\+\+I\+F\+C\+O\+N\+F\+I\+G\+\_\+\+P\+O\+O\+L~{\bf L\+O\+G\+L\+E\+V}(3, 35, 0)        /$\ast$ show ifconfig pool info $\ast$/}\label{errlevel_8h_a09ffed03a8566cadee580095339c0425}
+\hypertarget{errlevel_8h_a4371249a963e1bdbd3154b399964146f}{}\index{errlevel.\+h@{errlevel.\+h}!D\+\_\+\+I\+M\+P\+O\+R\+T\+\_\+\+E\+R\+R\+O\+R\+S@{D\+\_\+\+I\+M\+P\+O\+R\+T\+\_\+\+E\+R\+R\+O\+R\+S}}
+\index{D\+\_\+\+I\+M\+P\+O\+R\+T\+\_\+\+E\+R\+R\+O\+R\+S@{D\+\_\+\+I\+M\+P\+O\+R\+T\+\_\+\+E\+R\+R\+O\+R\+S}!errlevel.\+h@{errlevel.\+h}}
+\subsubsection[{D\+\_\+\+I\+M\+P\+O\+R\+T\+\_\+\+E\+R\+R\+O\+R\+S}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+\_\+\+I\+M\+P\+O\+R\+T\+\_\+\+E\+R\+R\+O\+R\+S~{\bf L\+O\+G\+L\+E\+V}(1, 8, {\bf M\+\_\+\+N\+O\+N\+F\+A\+T\+A\+L})    /$\ast$ show server import option errors $\ast$/}\label{errlevel_8h_a4371249a963e1bdbd3154b399964146f}
+\hypertarget{errlevel_8h_aba55050bac6c04df168bb49da677f651}{}\index{errlevel.\+h@{errlevel.\+h}!D\+\_\+\+I\+N\+I\+T\+\_\+\+M\+E\+D\+I\+U\+M@{D\+\_\+\+I\+N\+I\+T\+\_\+\+M\+E\+D\+I\+U\+M}}
+\index{D\+\_\+\+I\+N\+I\+T\+\_\+\+M\+E\+D\+I\+U\+M@{D\+\_\+\+I\+N\+I\+T\+\_\+\+M\+E\+D\+I\+U\+M}!errlevel.\+h@{errlevel.\+h}}
+\subsubsection[{D\+\_\+\+I\+N\+I\+T\+\_\+\+M\+E\+D\+I\+U\+M}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+\_\+\+I\+N\+I\+T\+\_\+\+M\+E\+D\+I\+U\+M~{\bf L\+O\+G\+L\+E\+V}(4, 60, 0)        /$\ast$ show medium frequency init messages $\ast$/}\label{errlevel_8h_aba55050bac6c04df168bb49da677f651}
+\hypertarget{errlevel_8h_a739a077adadc334e59c5e7e3295d6c46}{}\index{errlevel.\+h@{errlevel.\+h}!D\+\_\+\+I\+N\+T\+E\+R\+V\+A\+L@{D\+\_\+\+I\+N\+T\+E\+R\+V\+A\+L}}
+\index{D\+\_\+\+I\+N\+T\+E\+R\+V\+A\+L@{D\+\_\+\+I\+N\+T\+E\+R\+V\+A\+L}!errlevel.\+h@{errlevel.\+h}}
+\subsubsection[{D\+\_\+\+I\+N\+T\+E\+R\+V\+A\+L}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+\_\+\+I\+N\+T\+E\+R\+V\+A\+L~{\bf L\+O\+G\+L\+E\+V}(8, 70, {\bf M\+\_\+\+D\+E\+B\+U\+G})  /$\ast$ show interval.\+h debugging info $\ast$/}\label{errlevel_8h_a739a077adadc334e59c5e7e3295d6c46}
+\hypertarget{errlevel_8h_afb139197853f179439ffc6d0ccaf0fdd}{}\index{errlevel.\+h@{errlevel.\+h}!D\+\_\+\+L\+I\+N\+K\+\_\+\+E\+R\+R\+O\+R\+S@{D\+\_\+\+L\+I\+N\+K\+\_\+\+E\+R\+R\+O\+R\+S}}
+\index{D\+\_\+\+L\+I\+N\+K\+\_\+\+E\+R\+R\+O\+R\+S@{D\+\_\+\+L\+I\+N\+K\+\_\+\+E\+R\+R\+O\+R\+S}!errlevel.\+h@{errlevel.\+h}}
+\subsubsection[{D\+\_\+\+L\+I\+N\+K\+\_\+\+E\+R\+R\+O\+R\+S}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+\_\+\+L\+I\+N\+K\+\_\+\+E\+R\+R\+O\+R\+S~{\bf L\+O\+G\+L\+E\+V}(1, 1, {\bf M\+\_\+\+N\+O\+N\+F\+A\+T\+A\+L})   /$\ast$ show link errors from {\bf main} event loop $\ast$/}\label{errlevel_8h_afb139197853f179439ffc6d0ccaf0fdd}
+\hypertarget{errlevel_8h_afcac3e0bee8ded290cb5225fda3a9a2e}{}\index{errlevel.\+h@{errlevel.\+h}!D\+\_\+\+L\+I\+N\+K\+\_\+\+R\+W@{D\+\_\+\+L\+I\+N\+K\+\_\+\+R\+W}}
+\index{D\+\_\+\+L\+I\+N\+K\+\_\+\+R\+W@{D\+\_\+\+L\+I\+N\+K\+\_\+\+R\+W}!errlevel.\+h@{errlevel.\+h}}
+\subsubsection[{D\+\_\+\+L\+I\+N\+K\+\_\+\+R\+W}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+\_\+\+L\+I\+N\+K\+\_\+\+R\+W~{\bf L\+O\+G\+L\+E\+V}(6, 69, {\bf M\+\_\+\+D\+E\+B\+U\+G})  /$\ast$ show T\+C\+P/U\+D\+P reads/writes (terse) $\ast$/}\label{errlevel_8h_afcac3e0bee8ded290cb5225fda3a9a2e}
+\hypertarget{errlevel_8h_ab6859adfd85598229ba6589dd0511e62}{}\index{errlevel.\+h@{errlevel.\+h}!D\+\_\+\+L\+I\+N\+K\+\_\+\+R\+W\+\_\+\+V\+E\+R\+B\+O\+S\+E@{D\+\_\+\+L\+I\+N\+K\+\_\+\+R\+W\+\_\+\+V\+E\+R\+B\+O\+S\+E}}
+\index{D\+\_\+\+L\+I\+N\+K\+\_\+\+R\+W\+\_\+\+V\+E\+R\+B\+O\+S\+E@{D\+\_\+\+L\+I\+N\+K\+\_\+\+R\+W\+\_\+\+V\+E\+R\+B\+O\+S\+E}!errlevel.\+h@{errlevel.\+h}}
+\subsubsection[{D\+\_\+\+L\+I\+N\+K\+\_\+\+R\+W\+\_\+\+V\+E\+R\+B\+O\+S\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+\_\+\+L\+I\+N\+K\+\_\+\+R\+W\+\_\+\+V\+E\+R\+B\+O\+S\+E~{\bf L\+O\+G\+L\+E\+V}(9, 70, {\bf M\+\_\+\+D\+E\+B\+U\+G})  /$\ast$ show link reads/writes with greater verbosity $\ast$/}\label{errlevel_8h_ab6859adfd85598229ba6589dd0511e62}
+\hypertarget{errlevel_8h_ae4c9a74306b42f3348401bf4ede9e9c0}{}\index{errlevel.\+h@{errlevel.\+h}!D\+\_\+\+L\+O\+G\+\_\+\+R\+W@{D\+\_\+\+L\+O\+G\+\_\+\+R\+W}}
+\index{D\+\_\+\+L\+O\+G\+\_\+\+R\+W@{D\+\_\+\+L\+O\+G\+\_\+\+R\+W}!errlevel.\+h@{errlevel.\+h}}
+\subsubsection[{D\+\_\+\+L\+O\+G\+\_\+\+R\+W}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+\_\+\+L\+O\+G\+\_\+\+R\+W~{\bf L\+O\+G\+L\+E\+V}(5, 0,  0)        /$\ast$ Print \textquotesingle{}R\textquotesingle{} or \textquotesingle{}W\textquotesingle{} to stdout for {\bf read}/{\bf write} $\ast$/}\label{errlevel_8h_ae4c9a74306b42f3348401bf4ede9e9c0}
+\hypertarget{errlevel_8h_ad7eba86279cb00fc16742e45bfcf3187}{}\index{errlevel.\+h@{errlevel.\+h}!D\+\_\+\+L\+O\+W@{D\+\_\+\+L\+O\+W}}
+\index{D\+\_\+\+L\+O\+W@{D\+\_\+\+L\+O\+W}!errlevel.\+h@{errlevel.\+h}}
+\subsubsection[{D\+\_\+\+L\+O\+W}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+\_\+\+L\+O\+W~{\bf L\+O\+G\+L\+E\+V}(4, 52, 0)        /$\ast$ miscellaneous low-\/frequency debug info $\ast$/}\label{errlevel_8h_ad7eba86279cb00fc16742e45bfcf3187}
+\hypertarget{errlevel_8h_af7b4de7cf9d159f03b15af6c17859f4b}{}\index{errlevel.\+h@{errlevel.\+h}!D\+\_\+\+M\+A\+N\+A\+G\+E\+M\+E\+N\+T@{D\+\_\+\+M\+A\+N\+A\+G\+E\+M\+E\+N\+T}}
+\index{D\+\_\+\+M\+A\+N\+A\+G\+E\+M\+E\+N\+T@{D\+\_\+\+M\+A\+N\+A\+G\+E\+M\+E\+N\+T}!errlevel.\+h@{errlevel.\+h}}
+\subsubsection[{D\+\_\+\+M\+A\+N\+A\+G\+E\+M\+E\+N\+T}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+\_\+\+M\+A\+N\+A\+G\+E\+M\+E\+N\+T~{\bf L\+O\+G\+L\+E\+V}(3, 40, 0)        /$\ast$ show -\/-\/management info $\ast$/}\label{errlevel_8h_af7b4de7cf9d159f03b15af6c17859f4b}
+\hypertarget{errlevel_8h_a8e17cf3a8f0b18d37a81966de2e6660c}{}\index{errlevel.\+h@{errlevel.\+h}!D\+\_\+\+M\+A\+N\+A\+G\+E\+M\+E\+N\+T\+\_\+\+D\+E\+B\+U\+G@{D\+\_\+\+M\+A\+N\+A\+G\+E\+M\+E\+N\+T\+\_\+\+D\+E\+B\+U\+G}}
+\index{D\+\_\+\+M\+A\+N\+A\+G\+E\+M\+E\+N\+T\+\_\+\+D\+E\+B\+U\+G@{D\+\_\+\+M\+A\+N\+A\+G\+E\+M\+E\+N\+T\+\_\+\+D\+E\+B\+U\+G}!errlevel.\+h@{errlevel.\+h}}
+\subsubsection[{D\+\_\+\+M\+A\+N\+A\+G\+E\+M\+E\+N\+T\+\_\+\+D\+E\+B\+U\+G}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+\_\+\+M\+A\+N\+A\+G\+E\+M\+E\+N\+T\+\_\+\+D\+E\+B\+U\+G~{\bf L\+O\+G\+L\+E\+V}(3, 70, {\bf M\+\_\+\+D\+E\+B\+U\+G})  /$\ast$ show -\/-\/management debug info $\ast$/}\label{errlevel_8h_a8e17cf3a8f0b18d37a81966de2e6660c}
+\hypertarget{errlevel_8h_a92ddc6c5a6a592ba2e95fb30d7a28a26}{}\index{errlevel.\+h@{errlevel.\+h}!D\+\_\+\+M\+B\+U\+F@{D\+\_\+\+M\+B\+U\+F}}
+\index{D\+\_\+\+M\+B\+U\+F@{D\+\_\+\+M\+B\+U\+F}!errlevel.\+h@{errlevel.\+h}}
+\subsubsection[{D\+\_\+\+M\+B\+U\+F}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+\_\+\+M\+B\+U\+F~{\bf L\+O\+G\+L\+E\+V}(4, 54, 0)        /$\ast$ mbuf.\mbox{[}ch\mbox{]} routines $\ast$/}\label{errlevel_8h_a92ddc6c5a6a592ba2e95fb30d7a28a26}
+\hypertarget{errlevel_8h_a70da1b6093184c6006aae422b46898b9}{}\index{errlevel.\+h@{errlevel.\+h}!D\+\_\+\+M\+S\+S@{D\+\_\+\+M\+S\+S}}
+\index{D\+\_\+\+M\+S\+S@{D\+\_\+\+M\+S\+S}!errlevel.\+h@{errlevel.\+h}}
+\subsubsection[{D\+\_\+\+M\+S\+S}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+\_\+\+M\+S\+S~{\bf L\+O\+G\+L\+E\+V}(7, 70, {\bf M\+\_\+\+D\+E\+B\+U\+G})  /$\ast$ show M\+S\+S adjustments $\ast$/}\label{errlevel_8h_a70da1b6093184c6006aae422b46898b9}
+\hypertarget{errlevel_8h_a0925e44f9eb71983a02a8dee10d06849}{}\index{errlevel.\+h@{errlevel.\+h}!D\+\_\+\+M\+T\+U\+\_\+\+D\+E\+B\+U\+G@{D\+\_\+\+M\+T\+U\+\_\+\+D\+E\+B\+U\+G}}
+\index{D\+\_\+\+M\+T\+U\+\_\+\+D\+E\+B\+U\+G@{D\+\_\+\+M\+T\+U\+\_\+\+D\+E\+B\+U\+G}!errlevel.\+h@{errlevel.\+h}}
+\subsubsection[{D\+\_\+\+M\+T\+U\+\_\+\+D\+E\+B\+U\+G}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+\_\+\+M\+T\+U\+\_\+\+D\+E\+B\+U\+G~{\bf L\+O\+G\+L\+E\+V}(7, 70, {\bf M\+\_\+\+D\+E\+B\+U\+G})  /$\ast$ show M\+T\+U debugging info $\ast$/}\label{errlevel_8h_a0925e44f9eb71983a02a8dee10d06849}
+\hypertarget{errlevel_8h_aab9d07562cfecbd96b4c9e1d242d7d15}{}\index{errlevel.\+h@{errlevel.\+h}!D\+\_\+\+M\+T\+U\+\_\+\+I\+N\+F\+O@{D\+\_\+\+M\+T\+U\+\_\+\+I\+N\+F\+O}}
+\index{D\+\_\+\+M\+T\+U\+\_\+\+I\+N\+F\+O@{D\+\_\+\+M\+T\+U\+\_\+\+I\+N\+F\+O}!errlevel.\+h@{errlevel.\+h}}
+\subsubsection[{D\+\_\+\+M\+T\+U\+\_\+\+I\+N\+F\+O}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+\_\+\+M\+T\+U\+\_\+\+I\+N\+F\+O~{\bf L\+O\+G\+L\+E\+V}(4, 61, 0)        /$\ast$ show terse M\+T\+U info $\ast$/}\label{errlevel_8h_aab9d07562cfecbd96b4c9e1d242d7d15}
+\hypertarget{errlevel_8h_a88bc68448fb72975a23012c8bef085d9}{}\index{errlevel.\+h@{errlevel.\+h}!D\+\_\+\+M\+U\+L\+T\+I\+\_\+\+D\+E\+B\+U\+G@{D\+\_\+\+M\+U\+L\+T\+I\+\_\+\+D\+E\+B\+U\+G}}
+\index{D\+\_\+\+M\+U\+L\+T\+I\+\_\+\+D\+E\+B\+U\+G@{D\+\_\+\+M\+U\+L\+T\+I\+\_\+\+D\+E\+B\+U\+G}!errlevel.\+h@{errlevel.\+h}}
+\subsubsection[{D\+\_\+\+M\+U\+L\+T\+I\+\_\+\+D\+E\+B\+U\+G}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+\_\+\+M\+U\+L\+T\+I\+\_\+\+D\+E\+B\+U\+G~{\bf L\+O\+G\+L\+E\+V}(7, 70, {\bf M\+\_\+\+D\+E\+B\+U\+G})  /$\ast$ show medium-\/freq multi debugging info $\ast$/}\label{errlevel_8h_a88bc68448fb72975a23012c8bef085d9}
+\hypertarget{errlevel_8h_a9ec5c021a5f7e06ab3e0d19e0e6b787b}{}\index{errlevel.\+h@{errlevel.\+h}!D\+\_\+\+M\+U\+L\+T\+I\+\_\+\+D\+R\+O\+P\+P\+E\+D@{D\+\_\+\+M\+U\+L\+T\+I\+\_\+\+D\+R\+O\+P\+P\+E\+D}}
+\index{D\+\_\+\+M\+U\+L\+T\+I\+\_\+\+D\+R\+O\+P\+P\+E\+D@{D\+\_\+\+M\+U\+L\+T\+I\+\_\+\+D\+R\+O\+P\+P\+E\+D}!errlevel.\+h@{errlevel.\+h}}
+\subsubsection[{D\+\_\+\+M\+U\+L\+T\+I\+\_\+\+D\+R\+O\+P\+P\+E\+D}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+\_\+\+M\+U\+L\+T\+I\+\_\+\+D\+R\+O\+P\+P\+E\+D~{\bf L\+O\+G\+L\+E\+V}(4, 57, 0)        /$\ast$ show point-\/to-\/multipoint packet drops $\ast$/}\label{errlevel_8h_a9ec5c021a5f7e06ab3e0d19e0e6b787b}
+\hypertarget{errlevel_8h_a2a852e32d449af267d3fce5d16348d9d}{}\index{errlevel.\+h@{errlevel.\+h}!D\+\_\+\+M\+U\+L\+T\+I\+\_\+\+E\+R\+R\+O\+R\+S@{D\+\_\+\+M\+U\+L\+T\+I\+\_\+\+E\+R\+R\+O\+R\+S}}
+\index{D\+\_\+\+M\+U\+L\+T\+I\+\_\+\+E\+R\+R\+O\+R\+S@{D\+\_\+\+M\+U\+L\+T\+I\+\_\+\+E\+R\+R\+O\+R\+S}!errlevel.\+h@{errlevel.\+h}}
+\subsubsection[{D\+\_\+\+M\+U\+L\+T\+I\+\_\+\+E\+R\+R\+O\+R\+S}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+\_\+\+M\+U\+L\+T\+I\+\_\+\+E\+R\+R\+O\+R\+S~{\bf L\+O\+G\+L\+E\+V}(1, 9, {\bf M\+\_\+\+N\+O\+N\+F\+A\+T\+A\+L})    /$\ast$ show multi-\/client server errors $\ast$/}\label{errlevel_8h_a2a852e32d449af267d3fce5d16348d9d}
+\hypertarget{errlevel_8h_aa80e9eb7bfb07090a934bdfd7bfd3bea}{}\index{errlevel.\+h@{errlevel.\+h}!D\+\_\+\+M\+U\+L\+T\+I\+\_\+\+L\+O\+W@{D\+\_\+\+M\+U\+L\+T\+I\+\_\+\+L\+O\+W}}
+\index{D\+\_\+\+M\+U\+L\+T\+I\+\_\+\+L\+O\+W@{D\+\_\+\+M\+U\+L\+T\+I\+\_\+\+L\+O\+W}!errlevel.\+h@{errlevel.\+h}}
+\subsubsection[{D\+\_\+\+M\+U\+L\+T\+I\+\_\+\+L\+O\+W}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+\_\+\+M\+U\+L\+T\+I\+\_\+\+L\+O\+W~{\bf L\+O\+G\+L\+E\+V}(3, 38, 0)        /$\ast$ show point-\/to-\/multipoint low-\/freq debug info $\ast$/}\label{errlevel_8h_aa80e9eb7bfb07090a934bdfd7bfd3bea}
+\hypertarget{errlevel_8h_a57383b2d937647e5dc673c5b50666c29}{}\index{errlevel.\+h@{errlevel.\+h}!D\+\_\+\+M\+U\+L\+T\+I\+\_\+\+M\+E\+D\+I\+U\+M@{D\+\_\+\+M\+U\+L\+T\+I\+\_\+\+M\+E\+D\+I\+U\+M}}
+\index{D\+\_\+\+M\+U\+L\+T\+I\+\_\+\+M\+E\+D\+I\+U\+M@{D\+\_\+\+M\+U\+L\+T\+I\+\_\+\+M\+E\+D\+I\+U\+M}!errlevel.\+h@{errlevel.\+h}}
+\subsubsection[{D\+\_\+\+M\+U\+L\+T\+I\+\_\+\+M\+E\+D\+I\+U\+M}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+\_\+\+M\+U\+L\+T\+I\+\_\+\+M\+E\+D\+I\+U\+M~{\bf L\+O\+G\+L\+E\+V}(4, 58, 0)        /$\ast$ show medium frequency multi messages $\ast$/}\label{errlevel_8h_a57383b2d937647e5dc673c5b50666c29}
+\hypertarget{errlevel_8h_aa76c91652816809d466a14941f356e1c}{}\index{errlevel.\+h@{errlevel.\+h}!D\+\_\+\+M\+U\+L\+T\+I\+\_\+\+T\+C\+P@{D\+\_\+\+M\+U\+L\+T\+I\+\_\+\+T\+C\+P}}
+\index{D\+\_\+\+M\+U\+L\+T\+I\+\_\+\+T\+C\+P@{D\+\_\+\+M\+U\+L\+T\+I\+\_\+\+T\+C\+P}!errlevel.\+h@{errlevel.\+h}}
+\subsubsection[{D\+\_\+\+M\+U\+L\+T\+I\+\_\+\+T\+C\+P}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+\_\+\+M\+U\+L\+T\+I\+\_\+\+T\+C\+P~{\bf L\+O\+G\+L\+E\+V}(8, 70, {\bf M\+\_\+\+D\+E\+B\+U\+G})  /$\ast$ show debug info from mtcp.\+c $\ast$/}\label{errlevel_8h_aa76c91652816809d466a14941f356e1c}
+\hypertarget{errlevel_8h_a24ab6ec1313159d55f226b8ec8f2e9a7}{}\index{errlevel.\+h@{errlevel.\+h}!D\+\_\+\+O\+P\+E\+N\+S\+S\+L\+\_\+\+L\+O\+C\+K@{D\+\_\+\+O\+P\+E\+N\+S\+S\+L\+\_\+\+L\+O\+C\+K}}
+\index{D\+\_\+\+O\+P\+E\+N\+S\+S\+L\+\_\+\+L\+O\+C\+K@{D\+\_\+\+O\+P\+E\+N\+S\+S\+L\+\_\+\+L\+O\+C\+K}!errlevel.\+h@{errlevel.\+h}}
+\subsubsection[{D\+\_\+\+O\+P\+E\+N\+S\+S\+L\+\_\+\+L\+O\+C\+K}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+\_\+\+O\+P\+E\+N\+S\+S\+L\+\_\+\+L\+O\+C\+K~{\bf L\+O\+G\+L\+E\+V}(11, 70, {\bf M\+\_\+\+D\+E\+B\+U\+G}) /$\ast$ show Open\+S\+S\+L locks $\ast$/}\label{errlevel_8h_a24ab6ec1313159d55f226b8ec8f2e9a7}
+\hypertarget{errlevel_8h_ac0efab1649521180bddeb20e44419a06}{}\index{errlevel.\+h@{errlevel.\+h}!D\+\_\+\+O\+S\+B\+U\+F@{D\+\_\+\+O\+S\+B\+U\+F}}
+\index{D\+\_\+\+O\+S\+B\+U\+F@{D\+\_\+\+O\+S\+B\+U\+F}!errlevel.\+h@{errlevel.\+h}}
+\subsubsection[{D\+\_\+\+O\+S\+B\+U\+F}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+\_\+\+O\+S\+B\+U\+F~{\bf L\+O\+G\+L\+E\+V}(3, 43, 0)        /$\ast$ show socket/tun/tap {\bf buffer} sizes $\ast$/}\label{errlevel_8h_ac0efab1649521180bddeb20e44419a06}
+\hypertarget{errlevel_8h_a51705a69a343a97ea8b943bdb92e05b6}{}\index{errlevel.\+h@{errlevel.\+h}!D\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+C\+O\+N\+T\+E\+N\+T@{D\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+C\+O\+N\+T\+E\+N\+T}}
+\index{D\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+C\+O\+N\+T\+E\+N\+T@{D\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+C\+O\+N\+T\+E\+N\+T}!errlevel.\+h@{errlevel.\+h}}
+\subsubsection[{D\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+C\+O\+N\+T\+E\+N\+T}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+C\+O\+N\+T\+E\+N\+T~{\bf L\+O\+G\+L\+E\+V}(9, 70, {\bf M\+\_\+\+D\+E\+B\+U\+G})  /$\ast$ show before/after encryption packet content $\ast$/}\label{errlevel_8h_a51705a69a343a97ea8b943bdb92e05b6}
+\hypertarget{errlevel_8h_aca7fac90cdfb4703702cf970625ebe9c}{}\index{errlevel.\+h@{errlevel.\+h}!D\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+T\+R\+U\+N\+C\+\_\+\+D\+E\+B\+U\+G@{D\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+T\+R\+U\+N\+C\+\_\+\+D\+E\+B\+U\+G}}
+\index{D\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+T\+R\+U\+N\+C\+\_\+\+D\+E\+B\+U\+G@{D\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+T\+R\+U\+N\+C\+\_\+\+D\+E\+B\+U\+G}!errlevel.\+h@{errlevel.\+h}}
+\subsubsection[{D\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+T\+R\+U\+N\+C\+\_\+\+D\+E\+B\+U\+G}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+T\+R\+U\+N\+C\+\_\+\+D\+E\+B\+U\+G~{\bf L\+O\+G\+L\+E\+V}(7, 70, {\bf M\+\_\+\+D\+E\+B\+U\+G})  /$\ast$ P\+A\+C\+K\+E\+T\+\_\+\+T\+R\+U\+N\+C\+A\+T\+I\+O\+N\+\_\+\+C\+H\+E\+C\+K verbose $\ast$/}\label{errlevel_8h_aca7fac90cdfb4703702cf970625ebe9c}
+\hypertarget{errlevel_8h_a1f881062219c526acb9794aa1c41f78f}{}\index{errlevel.\+h@{errlevel.\+h}!D\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+T\+R\+U\+N\+C\+\_\+\+E\+R\+R@{D\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+T\+R\+U\+N\+C\+\_\+\+E\+R\+R}}
+\index{D\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+T\+R\+U\+N\+C\+\_\+\+E\+R\+R@{D\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+T\+R\+U\+N\+C\+\_\+\+E\+R\+R}!errlevel.\+h@{errlevel.\+h}}
+\subsubsection[{D\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+T\+R\+U\+N\+C\+\_\+\+E\+R\+R}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+T\+R\+U\+N\+C\+\_\+\+E\+R\+R~{\bf L\+O\+G\+L\+E\+V}(4, 55, 0)        /$\ast$ P\+A\+C\+K\+E\+T\+\_\+\+T\+R\+U\+N\+C\+A\+T\+I\+O\+N\+\_\+\+C\+H\+E\+C\+K $\ast$/}\label{errlevel_8h_a1f881062219c526acb9794aa1c41f78f}
+\hypertarget{errlevel_8h_a17a25878c1c5fafcd9021c2bb1f89f87}{}\index{errlevel.\+h@{errlevel.\+h}!D\+\_\+\+P\+F\+\_\+\+D\+E\+B\+U\+G@{D\+\_\+\+P\+F\+\_\+\+D\+E\+B\+U\+G}}
+\index{D\+\_\+\+P\+F\+\_\+\+D\+E\+B\+U\+G@{D\+\_\+\+P\+F\+\_\+\+D\+E\+B\+U\+G}!errlevel.\+h@{errlevel.\+h}}
+\subsubsection[{D\+\_\+\+P\+F\+\_\+\+D\+E\+B\+U\+G}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+\_\+\+P\+F\+\_\+\+D\+E\+B\+U\+G~{\bf L\+O\+G\+L\+E\+V}(7, 72, {\bf M\+\_\+\+D\+E\+B\+U\+G})  /$\ast$ packet filter debugging, must also define P\+F\+\_\+\+D\+E\+B\+U\+G in pf.\+h $\ast$/}\label{errlevel_8h_a17a25878c1c5fafcd9021c2bb1f89f87}
+\hypertarget{errlevel_8h_ae778574b4e302c0d14042e1086a309d4}{}\index{errlevel.\+h@{errlevel.\+h}!D\+\_\+\+P\+F\+\_\+\+D\+R\+O\+P\+P\+E\+D@{D\+\_\+\+P\+F\+\_\+\+D\+R\+O\+P\+P\+E\+D}}
+\index{D\+\_\+\+P\+F\+\_\+\+D\+R\+O\+P\+P\+E\+D@{D\+\_\+\+P\+F\+\_\+\+D\+R\+O\+P\+P\+E\+D}!errlevel.\+h@{errlevel.\+h}}
+\subsubsection[{D\+\_\+\+P\+F\+\_\+\+D\+R\+O\+P\+P\+E\+D}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+\_\+\+P\+F\+\_\+\+D\+R\+O\+P\+P\+E\+D~{\bf L\+O\+G\+L\+E\+V}(4, 56, 0)        /$\ast$ packet filter dropped a packet $\ast$/}\label{errlevel_8h_ae778574b4e302c0d14042e1086a309d4}
+\hypertarget{errlevel_8h_a6fe1f2328d0a3a9f70abf077b467d7f1}{}\index{errlevel.\+h@{errlevel.\+h}!D\+\_\+\+P\+F\+\_\+\+D\+R\+O\+P\+P\+E\+D\+\_\+\+B\+C\+A\+S\+T@{D\+\_\+\+P\+F\+\_\+\+D\+R\+O\+P\+P\+E\+D\+\_\+\+B\+C\+A\+S\+T}}
+\index{D\+\_\+\+P\+F\+\_\+\+D\+R\+O\+P\+P\+E\+D\+\_\+\+B\+C\+A\+S\+T@{D\+\_\+\+P\+F\+\_\+\+D\+R\+O\+P\+P\+E\+D\+\_\+\+B\+C\+A\+S\+T}!errlevel.\+h@{errlevel.\+h}}
+\subsubsection[{D\+\_\+\+P\+F\+\_\+\+D\+R\+O\+P\+P\+E\+D\+\_\+\+B\+C\+A\+S\+T}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+\_\+\+P\+F\+\_\+\+D\+R\+O\+P\+P\+E\+D\+\_\+\+B\+C\+A\+S\+T~{\bf L\+O\+G\+L\+E\+V}(7, 71, {\bf M\+\_\+\+D\+E\+B\+U\+G})  /$\ast$ packet filter dropped a broadcast packet $\ast$/}\label{errlevel_8h_a6fe1f2328d0a3a9f70abf077b467d7f1}
+\hypertarget{errlevel_8h_adeaa738039a034ab76261706ec341b1e}{}\index{errlevel.\+h@{errlevel.\+h}!D\+\_\+\+P\+F\+\_\+\+I\+N\+F\+O@{D\+\_\+\+P\+F\+\_\+\+I\+N\+F\+O}}
+\index{D\+\_\+\+P\+F\+\_\+\+I\+N\+F\+O@{D\+\_\+\+P\+F\+\_\+\+I\+N\+F\+O}!errlevel.\+h@{errlevel.\+h}}
+\subsubsection[{D\+\_\+\+P\+F\+\_\+\+I\+N\+F\+O}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+\_\+\+P\+F\+\_\+\+I\+N\+F\+O~{\bf L\+O\+G\+L\+E\+V}(3, 45, 0)        /$\ast$ packet filter informational messages $\ast$/}\label{errlevel_8h_adeaa738039a034ab76261706ec341b1e}
+\hypertarget{errlevel_8h_a9ae3a395955ff7442aefb59b4aaa5e02}{}\index{errlevel.\+h@{errlevel.\+h}!D\+\_\+\+P\+I\+D\+\_\+\+D\+E\+B\+U\+G@{D\+\_\+\+P\+I\+D\+\_\+\+D\+E\+B\+U\+G}}
+\index{D\+\_\+\+P\+I\+D\+\_\+\+D\+E\+B\+U\+G@{D\+\_\+\+P\+I\+D\+\_\+\+D\+E\+B\+U\+G}!errlevel.\+h@{errlevel.\+h}}
+\subsubsection[{D\+\_\+\+P\+I\+D\+\_\+\+D\+E\+B\+U\+G}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+\_\+\+P\+I\+D\+\_\+\+D\+E\+B\+U\+G~{\bf L\+O\+G\+L\+E\+V}(7, 70, {\bf M\+\_\+\+D\+E\+B\+U\+G})  /$\ast$ show packet-\/id debugging info $\ast$/}\label{errlevel_8h_a9ae3a395955ff7442aefb59b4aaa5e02}
+\hypertarget{errlevel_8h_a601910858391bb4cd97c958e8e7ab25d}{}\index{errlevel.\+h@{errlevel.\+h}!D\+\_\+\+P\+I\+D\+\_\+\+D\+E\+B\+U\+G\+\_\+\+L\+O\+W@{D\+\_\+\+P\+I\+D\+\_\+\+D\+E\+B\+U\+G\+\_\+\+L\+O\+W}}
+\index{D\+\_\+\+P\+I\+D\+\_\+\+D\+E\+B\+U\+G\+\_\+\+L\+O\+W@{D\+\_\+\+P\+I\+D\+\_\+\+D\+E\+B\+U\+G\+\_\+\+L\+O\+W}!errlevel.\+h@{errlevel.\+h}}
+\subsubsection[{D\+\_\+\+P\+I\+D\+\_\+\+D\+E\+B\+U\+G\+\_\+\+L\+O\+W}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+\_\+\+P\+I\+D\+\_\+\+D\+E\+B\+U\+G\+\_\+\+L\+O\+W~{\bf L\+O\+G\+L\+E\+V}(4, 63, 0)        /$\ast$ show low-\/freq packet-\/id debugging info $\ast$/}\label{errlevel_8h_a601910858391bb4cd97c958e8e7ab25d}
+\hypertarget{errlevel_8h_a7889345d802b582f72a590f4913c8482}{}\index{errlevel.\+h@{errlevel.\+h}!D\+\_\+\+P\+I\+D\+\_\+\+D\+E\+B\+U\+G\+\_\+\+M\+E\+D\+I\+U\+M@{D\+\_\+\+P\+I\+D\+\_\+\+D\+E\+B\+U\+G\+\_\+\+M\+E\+D\+I\+U\+M}}
+\index{D\+\_\+\+P\+I\+D\+\_\+\+D\+E\+B\+U\+G\+\_\+\+M\+E\+D\+I\+U\+M@{D\+\_\+\+P\+I\+D\+\_\+\+D\+E\+B\+U\+G\+\_\+\+M\+E\+D\+I\+U\+M}!errlevel.\+h@{errlevel.\+h}}
+\subsubsection[{D\+\_\+\+P\+I\+D\+\_\+\+D\+E\+B\+U\+G\+\_\+\+M\+E\+D\+I\+U\+M}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+\_\+\+P\+I\+D\+\_\+\+D\+E\+B\+U\+G\+\_\+\+M\+E\+D\+I\+U\+M~{\bf L\+O\+G\+L\+E\+V}(4, 64, 0)        /$\ast$ show medium-\/freq packet-\/id debugging info $\ast$/}\label{errlevel_8h_a7889345d802b582f72a590f4913c8482}
+\hypertarget{errlevel_8h_adef1badf9a3d38beffda2b93297bb368}{}\index{errlevel.\+h@{errlevel.\+h}!D\+\_\+\+P\+I\+D\+\_\+\+P\+E\+R\+S\+I\+S\+T@{D\+\_\+\+P\+I\+D\+\_\+\+P\+E\+R\+S\+I\+S\+T}}
+\index{D\+\_\+\+P\+I\+D\+\_\+\+P\+E\+R\+S\+I\+S\+T@{D\+\_\+\+P\+I\+D\+\_\+\+P\+E\+R\+S\+I\+S\+T}!errlevel.\+h@{errlevel.\+h}}
+\subsubsection[{D\+\_\+\+P\+I\+D\+\_\+\+P\+E\+R\+S\+I\+S\+T}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+\_\+\+P\+I\+D\+\_\+\+P\+E\+R\+S\+I\+S\+T~{\bf L\+O\+G\+L\+E\+V}(1, 12, {\bf M\+\_\+\+N\+O\+N\+F\+A\+T\+A\+L})   /$\ast$ show {\bf packet\+\_\+id} persist errors $\ast$/}\label{errlevel_8h_adef1badf9a3d38beffda2b93297bb368}
+\hypertarget{errlevel_8h_ac0eb6d536d9ddf6a28301012a588c113}{}\index{errlevel.\+h@{errlevel.\+h}!D\+\_\+\+P\+I\+D\+\_\+\+P\+E\+R\+S\+I\+S\+T\+\_\+\+D\+E\+B\+U\+G@{D\+\_\+\+P\+I\+D\+\_\+\+P\+E\+R\+S\+I\+S\+T\+\_\+\+D\+E\+B\+U\+G}}
+\index{D\+\_\+\+P\+I\+D\+\_\+\+P\+E\+R\+S\+I\+S\+T\+\_\+\+D\+E\+B\+U\+G@{D\+\_\+\+P\+I\+D\+\_\+\+P\+E\+R\+S\+I\+S\+T\+\_\+\+D\+E\+B\+U\+G}!errlevel.\+h@{errlevel.\+h}}
+\subsubsection[{D\+\_\+\+P\+I\+D\+\_\+\+P\+E\+R\+S\+I\+S\+T\+\_\+\+D\+E\+B\+U\+G}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+\_\+\+P\+I\+D\+\_\+\+P\+E\+R\+S\+I\+S\+T\+\_\+\+D\+E\+B\+U\+G~{\bf L\+O\+G\+L\+E\+V}(9, 70, {\bf M\+\_\+\+D\+E\+B\+U\+G})  /$\ast$ show packet-\/id persist debugging info $\ast$/}\label{errlevel_8h_ac0eb6d536d9ddf6a28301012a588c113}
+\hypertarget{errlevel_8h_a18a11db39c268cbd4e6922f91ae640a8}{}\index{errlevel.\+h@{errlevel.\+h}!D\+\_\+\+P\+I\+N\+G@{D\+\_\+\+P\+I\+N\+G}}
+\index{D\+\_\+\+P\+I\+N\+G@{D\+\_\+\+P\+I\+N\+G}!errlevel.\+h@{errlevel.\+h}}
+\subsubsection[{D\+\_\+\+P\+I\+N\+G}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+\_\+\+P\+I\+N\+G~{\bf L\+O\+G\+L\+E\+V}(7, 70, {\bf M\+\_\+\+D\+E\+B\+U\+G})  /$\ast$ P\+I\+N\+G send/receive messages $\ast$/}\label{errlevel_8h_a18a11db39c268cbd4e6922f91ae640a8}
+\hypertarget{errlevel_8h_a223c820719c2297da12280e8c98de761}{}\index{errlevel.\+h@{errlevel.\+h}!D\+\_\+\+P\+K\+C\+S11\+\_\+\+D\+E\+B\+U\+G@{D\+\_\+\+P\+K\+C\+S11\+\_\+\+D\+E\+B\+U\+G}}
+\index{D\+\_\+\+P\+K\+C\+S11\+\_\+\+D\+E\+B\+U\+G@{D\+\_\+\+P\+K\+C\+S11\+\_\+\+D\+E\+B\+U\+G}!errlevel.\+h@{errlevel.\+h}}
+\subsubsection[{D\+\_\+\+P\+K\+C\+S11\+\_\+\+D\+E\+B\+U\+G}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+\_\+\+P\+K\+C\+S11\+\_\+\+D\+E\+B\+U\+G~{\bf L\+O\+G\+L\+E\+V}(9, 70, {\bf M\+\_\+\+D\+E\+B\+U\+G})  /$\ast$ show P\+K\+C\+S\#11 debugging $\ast$/}\label{errlevel_8h_a223c820719c2297da12280e8c98de761}
+\hypertarget{errlevel_8h_a41138b93335e39976e88100fc03613ac}{}\index{errlevel.\+h@{errlevel.\+h}!D\+\_\+\+P\+L\+U\+G\+I\+N@{D\+\_\+\+P\+L\+U\+G\+I\+N}}
+\index{D\+\_\+\+P\+L\+U\+G\+I\+N@{D\+\_\+\+P\+L\+U\+G\+I\+N}!errlevel.\+h@{errlevel.\+h}}
+\subsubsection[{D\+\_\+\+P\+L\+U\+G\+I\+N}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+\_\+\+P\+L\+U\+G\+I\+N~{\bf L\+O\+G\+L\+E\+V}(3, 39, 0)        /$\ast$ show plugin calls $\ast$/}\label{errlevel_8h_a41138b93335e39976e88100fc03613ac}
+\hypertarget{errlevel_8h_ae8554a63f4fc686f5b1beb4571044ece}{}\index{errlevel.\+h@{errlevel.\+h}!D\+\_\+\+P\+L\+U\+G\+I\+N\+\_\+\+D\+E\+B\+U\+G@{D\+\_\+\+P\+L\+U\+G\+I\+N\+\_\+\+D\+E\+B\+U\+G}}
+\index{D\+\_\+\+P\+L\+U\+G\+I\+N\+\_\+\+D\+E\+B\+U\+G@{D\+\_\+\+P\+L\+U\+G\+I\+N\+\_\+\+D\+E\+B\+U\+G}!errlevel.\+h@{errlevel.\+h}}
+\subsubsection[{D\+\_\+\+P\+L\+U\+G\+I\+N\+\_\+\+D\+E\+B\+U\+G}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+\_\+\+P\+L\+U\+G\+I\+N\+\_\+\+D\+E\+B\+U\+G~{\bf L\+O\+G\+L\+E\+V}(7, 70, {\bf M\+\_\+\+D\+E\+B\+U\+G})  /$\ast$ show verbose plugin calls $\ast$/}\label{errlevel_8h_ae8554a63f4fc686f5b1beb4571044ece}
+\hypertarget{errlevel_8h_a02b5bce971294fdb7f830c692bd8d947}{}\index{errlevel.\+h@{errlevel.\+h}!D\+\_\+\+P\+R\+O\+X\+Y@{D\+\_\+\+P\+R\+O\+X\+Y}}
+\index{D\+\_\+\+P\+R\+O\+X\+Y@{D\+\_\+\+P\+R\+O\+X\+Y}!errlevel.\+h@{errlevel.\+h}}
+\subsubsection[{D\+\_\+\+P\+R\+O\+X\+Y}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+\_\+\+P\+R\+O\+X\+Y~{\bf L\+O\+G\+L\+E\+V}(2, 24, 0)        /$\ast$ show http proxy control packets $\ast$/}\label{errlevel_8h_a02b5bce971294fdb7f830c692bd8d947}
+\hypertarget{errlevel_8h_a15dfb7036d909dad9884eb8505369614}{}\index{errlevel.\+h@{errlevel.\+h}!D\+\_\+\+P\+S\+\_\+\+P\+R\+O\+X\+Y@{D\+\_\+\+P\+S\+\_\+\+P\+R\+O\+X\+Y}}
+\index{D\+\_\+\+P\+S\+\_\+\+P\+R\+O\+X\+Y@{D\+\_\+\+P\+S\+\_\+\+P\+R\+O\+X\+Y}!errlevel.\+h@{errlevel.\+h}}
+\subsubsection[{D\+\_\+\+P\+S\+\_\+\+P\+R\+O\+X\+Y}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+\_\+\+P\+S\+\_\+\+P\+R\+O\+X\+Y~{\bf L\+O\+G\+L\+E\+V}(3, 44, 0)        /$\ast$ messages related to -\/-\/port-\/share option $\ast$/}\label{errlevel_8h_a15dfb7036d909dad9884eb8505369614}
+\hypertarget{errlevel_8h_adf1c51e287012217c50d97026e8f300a}{}\index{errlevel.\+h@{errlevel.\+h}!D\+\_\+\+P\+S\+\_\+\+P\+R\+O\+X\+Y\+\_\+\+D\+E\+B\+U\+G@{D\+\_\+\+P\+S\+\_\+\+P\+R\+O\+X\+Y\+\_\+\+D\+E\+B\+U\+G}}
+\index{D\+\_\+\+P\+S\+\_\+\+P\+R\+O\+X\+Y\+\_\+\+D\+E\+B\+U\+G@{D\+\_\+\+P\+S\+\_\+\+P\+R\+O\+X\+Y\+\_\+\+D\+E\+B\+U\+G}!errlevel.\+h@{errlevel.\+h}}
+\subsubsection[{D\+\_\+\+P\+S\+\_\+\+P\+R\+O\+X\+Y\+\_\+\+D\+E\+B\+U\+G}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+\_\+\+P\+S\+\_\+\+P\+R\+O\+X\+Y\+\_\+\+D\+E\+B\+U\+G~{\bf L\+O\+G\+L\+E\+V}(7, 70, {\bf M\+\_\+\+D\+E\+B\+U\+G})  /$\ast$ port share proxy debug $\ast$/}\label{errlevel_8h_adf1c51e287012217c50d97026e8f300a}
+\hypertarget{errlevel_8h_a18d60aad51f694ab7a74361c1e20de63}{}\index{errlevel.\+h@{errlevel.\+h}!D\+\_\+\+P\+U\+S\+H@{D\+\_\+\+P\+U\+S\+H}}
+\index{D\+\_\+\+P\+U\+S\+H@{D\+\_\+\+P\+U\+S\+H}!errlevel.\+h@{errlevel.\+h}}
+\subsubsection[{D\+\_\+\+P\+U\+S\+H}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+\_\+\+P\+U\+S\+H~{\bf L\+O\+G\+L\+E\+V}(3, 34, 0)        /$\ast$ show push/pull info $\ast$/}\label{errlevel_8h_a18d60aad51f694ab7a74361c1e20de63}
+\hypertarget{errlevel_8h_a5e25095305ce2ad10907ed529d71e780}{}\index{errlevel.\+h@{errlevel.\+h}!D\+\_\+\+P\+U\+S\+H\+\_\+\+D\+E\+B\+U\+G@{D\+\_\+\+P\+U\+S\+H\+\_\+\+D\+E\+B\+U\+G}}
+\index{D\+\_\+\+P\+U\+S\+H\+\_\+\+D\+E\+B\+U\+G@{D\+\_\+\+P\+U\+S\+H\+\_\+\+D\+E\+B\+U\+G}!errlevel.\+h@{errlevel.\+h}}
+\subsubsection[{D\+\_\+\+P\+U\+S\+H\+\_\+\+D\+E\+B\+U\+G}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+\_\+\+P\+U\+S\+H\+\_\+\+D\+E\+B\+U\+G~{\bf L\+O\+G\+L\+E\+V}(7, 73, {\bf M\+\_\+\+D\+E\+B\+U\+G})  /$\ast$ show push/pull debugging info $\ast$/}\label{errlevel_8h_a5e25095305ce2ad10907ed529d71e780}
+\hypertarget{errlevel_8h_ab1f5456810dd6e5c6ab78c1b3d35f1c0}{}\index{errlevel.\+h@{errlevel.\+h}!D\+\_\+\+P\+U\+S\+H\+\_\+\+E\+R\+R\+O\+R\+S@{D\+\_\+\+P\+U\+S\+H\+\_\+\+E\+R\+R\+O\+R\+S}}
+\index{D\+\_\+\+P\+U\+S\+H\+\_\+\+E\+R\+R\+O\+R\+S@{D\+\_\+\+P\+U\+S\+H\+\_\+\+E\+R\+R\+O\+R\+S}!errlevel.\+h@{errlevel.\+h}}
+\subsubsection[{D\+\_\+\+P\+U\+S\+H\+\_\+\+E\+R\+R\+O\+R\+S}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+\_\+\+P\+U\+S\+H\+\_\+\+E\+R\+R\+O\+R\+S~{\bf L\+O\+G\+L\+E\+V}(1, 11, {\bf M\+\_\+\+N\+O\+N\+F\+A\+T\+A\+L})   /$\ast$ show push/pull errors $\ast$/}\label{errlevel_8h_ab1f5456810dd6e5c6ab78c1b3d35f1c0}
+\hypertarget{errlevel_8h_abe74dee3b7a9490bbbf2e9ce72f3718a}{}\index{errlevel.\+h@{errlevel.\+h}!D\+\_\+\+R\+E\+A\+D\+\_\+\+W\+R\+I\+T\+E@{D\+\_\+\+R\+E\+A\+D\+\_\+\+W\+R\+I\+T\+E}}
+\index{D\+\_\+\+R\+E\+A\+D\+\_\+\+W\+R\+I\+T\+E@{D\+\_\+\+R\+E\+A\+D\+\_\+\+W\+R\+I\+T\+E}!errlevel.\+h@{errlevel.\+h}}
+\subsubsection[{D\+\_\+\+R\+E\+A\+D\+\_\+\+W\+R\+I\+T\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+\_\+\+R\+E\+A\+D\+\_\+\+W\+R\+I\+T\+E~{\bf L\+O\+G\+L\+E\+V}(9, 70, {\bf M\+\_\+\+D\+E\+B\+U\+G})  /$\ast$ show all tun/tcp/udp reads/writes/opens $\ast$/}\label{errlevel_8h_abe74dee3b7a9490bbbf2e9ce72f3718a}
+\hypertarget{errlevel_8h_a162e523d0aa5dd0877a1b019364c35ce}{}\index{errlevel.\+h@{errlevel.\+h}!D\+\_\+\+R\+E\+G\+I\+S\+T\+R\+Y@{D\+\_\+\+R\+E\+G\+I\+S\+T\+R\+Y}}
+\index{D\+\_\+\+R\+E\+G\+I\+S\+T\+R\+Y@{D\+\_\+\+R\+E\+G\+I\+S\+T\+R\+Y}!errlevel.\+h@{errlevel.\+h}}
+\subsubsection[{D\+\_\+\+R\+E\+G\+I\+S\+T\+R\+Y}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+\_\+\+R\+E\+G\+I\+S\+T\+R\+Y~{\bf L\+O\+G\+L\+E\+V}(11, 70, {\bf M\+\_\+\+D\+E\+B\+U\+G}) /$\ast$ win32 registry debugging info $\ast$/}\label{errlevel_8h_a162e523d0aa5dd0877a1b019364c35ce}
+\hypertarget{errlevel_8h_a7653617d1d0e0b16c5ede98e5f66a2d4}{}\index{errlevel.\+h@{errlevel.\+h}!D\+\_\+\+R\+E\+L\+\_\+\+D\+E\+B\+U\+G@{D\+\_\+\+R\+E\+L\+\_\+\+D\+E\+B\+U\+G}}
+\index{D\+\_\+\+R\+E\+L\+\_\+\+D\+E\+B\+U\+G@{D\+\_\+\+R\+E\+L\+\_\+\+D\+E\+B\+U\+G}!errlevel.\+h@{errlevel.\+h}}
+\subsubsection[{D\+\_\+\+R\+E\+L\+\_\+\+D\+E\+B\+U\+G}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+\_\+\+R\+E\+L\+\_\+\+D\+E\+B\+U\+G~{\bf L\+O\+G\+L\+E\+V}(8, 70, {\bf M\+\_\+\+D\+E\+B\+U\+G})  /$\ast$ show detailed info from {\bf reliable} routines $\ast$/}\label{errlevel_8h_a7653617d1d0e0b16c5ede98e5f66a2d4}
+\hypertarget{errlevel_8h_abb1c9820dc00ca2fc161bad04f84a477}{}\index{errlevel.\+h@{errlevel.\+h}!D\+\_\+\+R\+E\+L\+\_\+\+L\+O\+W@{D\+\_\+\+R\+E\+L\+\_\+\+L\+O\+W}}
+\index{D\+\_\+\+R\+E\+L\+\_\+\+L\+O\+W@{D\+\_\+\+R\+E\+L\+\_\+\+L\+O\+W}!errlevel.\+h@{errlevel.\+h}}
+\subsubsection[{D\+\_\+\+R\+E\+L\+\_\+\+L\+O\+W}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+\_\+\+R\+E\+L\+\_\+\+L\+O\+W~{\bf L\+O\+G\+L\+E\+V}(7, 70, {\bf M\+\_\+\+D\+E\+B\+U\+G})  /$\ast$ show low frequency info from {\bf reliable} layer $\ast$/}\label{errlevel_8h_abb1c9820dc00ca2fc161bad04f84a477}
+\hypertarget{errlevel_8h_af7fd626a7f5d380913c53876d2d35dc9}{}\index{errlevel.\+h@{errlevel.\+h}!D\+\_\+\+R\+E\+P\+L\+A\+Y\+\_\+\+E\+R\+R\+O\+R\+S@{D\+\_\+\+R\+E\+P\+L\+A\+Y\+\_\+\+E\+R\+R\+O\+R\+S}}
+\index{D\+\_\+\+R\+E\+P\+L\+A\+Y\+\_\+\+E\+R\+R\+O\+R\+S@{D\+\_\+\+R\+E\+P\+L\+A\+Y\+\_\+\+E\+R\+R\+O\+R\+S}!errlevel.\+h@{errlevel.\+h}}
+\subsubsection[{D\+\_\+\+R\+E\+P\+L\+A\+Y\+\_\+\+E\+R\+R\+O\+R\+S}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+\_\+\+R\+E\+P\+L\+A\+Y\+\_\+\+E\+R\+R\+O\+R\+S~{\bf L\+O\+G\+L\+E\+V}(1, 6, {\bf M\+\_\+\+N\+O\+N\+F\+A\+T\+A\+L})   /$\ast$ show packet replay errors $\ast$/}\label{errlevel_8h_af7fd626a7f5d380913c53876d2d35dc9}
+\hypertarget{errlevel_8h_ac326acef7cb67caef2f5702d738b0ac4}{}\index{errlevel.\+h@{errlevel.\+h}!D\+\_\+\+R\+E\+S\+O\+L\+V\+E\+\_\+\+E\+R\+R\+O\+R\+S@{D\+\_\+\+R\+E\+S\+O\+L\+V\+E\+\_\+\+E\+R\+R\+O\+R\+S}}
+\index{D\+\_\+\+R\+E\+S\+O\+L\+V\+E\+\_\+\+E\+R\+R\+O\+R\+S@{D\+\_\+\+R\+E\+S\+O\+L\+V\+E\+\_\+\+E\+R\+R\+O\+R\+S}!errlevel.\+h@{errlevel.\+h}}
+\subsubsection[{D\+\_\+\+R\+E\+S\+O\+L\+V\+E\+\_\+\+E\+R\+R\+O\+R\+S}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+\_\+\+R\+E\+S\+O\+L\+V\+E\+\_\+\+E\+R\+R\+O\+R\+S~{\bf L\+O\+G\+L\+E\+V}(1, 4, {\bf M\+\_\+\+N\+O\+N\+F\+A\+T\+A\+L})   /$\ast$ show hostname resolve errors $\ast$/}\label{errlevel_8h_ac326acef7cb67caef2f5702d738b0ac4}
+\hypertarget{errlevel_8h_a3f8b5429f1fb9bbefad3bef0be32ab80}{}\index{errlevel.\+h@{errlevel.\+h}!D\+\_\+\+R\+E\+S\+T\+A\+R\+T@{D\+\_\+\+R\+E\+S\+T\+A\+R\+T}}
+\index{D\+\_\+\+R\+E\+S\+T\+A\+R\+T@{D\+\_\+\+R\+E\+S\+T\+A\+R\+T}!errlevel.\+h@{errlevel.\+h}}
+\subsubsection[{D\+\_\+\+R\+E\+S\+T\+A\+R\+T}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+\_\+\+R\+E\+S\+T\+A\+R\+T~{\bf L\+O\+G\+L\+E\+V}(3, 33, 0)        /$\ast$ show certain restart messages $\ast$/}\label{errlevel_8h_a3f8b5429f1fb9bbefad3bef0be32ab80}
+\hypertarget{errlevel_8h_ae77ba6635ecf104df3b8afdcb1cae284}{}\index{errlevel.\+h@{errlevel.\+h}!D\+\_\+\+R\+O\+U\+T\+E@{D\+\_\+\+R\+O\+U\+T\+E}}
+\index{D\+\_\+\+R\+O\+U\+T\+E@{D\+\_\+\+R\+O\+U\+T\+E}!errlevel.\+h@{errlevel.\+h}}
+\subsubsection[{D\+\_\+\+R\+O\+U\+T\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+\_\+\+R\+O\+U\+T\+E~{\bf L\+O\+G\+L\+E\+V}(3, 0,  0)        /$\ast$ show routes added and deleted (don\textquotesingle{}t mute) $\ast$/}\label{errlevel_8h_ae77ba6635ecf104df3b8afdcb1cae284}
+\hypertarget{errlevel_8h_a4b1b340ab75c81b27e427d091d6f2e50}{}\index{errlevel.\+h@{errlevel.\+h}!D\+\_\+\+R\+O\+U\+T\+E\+\_\+\+D\+E\+B\+U\+G@{D\+\_\+\+R\+O\+U\+T\+E\+\_\+\+D\+E\+B\+U\+G}}
+\index{D\+\_\+\+R\+O\+U\+T\+E\+\_\+\+D\+E\+B\+U\+G@{D\+\_\+\+R\+O\+U\+T\+E\+\_\+\+D\+E\+B\+U\+G}!errlevel.\+h@{errlevel.\+h}}
+\subsubsection[{D\+\_\+\+R\+O\+U\+T\+E\+\_\+\+D\+E\+B\+U\+G}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+\_\+\+R\+O\+U\+T\+E\+\_\+\+D\+E\+B\+U\+G~{\bf L\+O\+G\+L\+E\+V}(7, 70, {\bf M\+\_\+\+D\+E\+B\+U\+G})  /$\ast$ show verbose route.\mbox{[}ch\mbox{]} output $\ast$/}\label{errlevel_8h_a4b1b340ab75c81b27e427d091d6f2e50}
+\hypertarget{errlevel_8h_a4cd4d1b7242cc195b5997a00342a359b}{}\index{errlevel.\+h@{errlevel.\+h}!D\+\_\+\+R\+O\+U\+T\+E\+\_\+\+Q\+U\+O\+T\+A@{D\+\_\+\+R\+O\+U\+T\+E\+\_\+\+Q\+U\+O\+T\+A}}
+\index{D\+\_\+\+R\+O\+U\+T\+E\+\_\+\+Q\+U\+O\+T\+A@{D\+\_\+\+R\+O\+U\+T\+E\+\_\+\+Q\+U\+O\+T\+A}!errlevel.\+h@{errlevel.\+h}}
+\subsubsection[{D\+\_\+\+R\+O\+U\+T\+E\+\_\+\+Q\+U\+O\+T\+A}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+\_\+\+R\+O\+U\+T\+E\+\_\+\+Q\+U\+O\+T\+A~{\bf L\+O\+G\+L\+E\+V}(3, 42, 0)        /$\ast$ show {\bf route} quota exceeded messages $\ast$/}\label{errlevel_8h_a4cd4d1b7242cc195b5997a00342a359b}
+\hypertarget{errlevel_8h_ae15fc74973b3f0e54b293fd57cbf8f63}{}\index{errlevel.\+h@{errlevel.\+h}!D\+\_\+\+S\+C\+H\+E\+D\+\_\+\+E\+X\+I\+T@{D\+\_\+\+S\+C\+H\+E\+D\+\_\+\+E\+X\+I\+T}}
+\index{D\+\_\+\+S\+C\+H\+E\+D\+\_\+\+E\+X\+I\+T@{D\+\_\+\+S\+C\+H\+E\+D\+\_\+\+E\+X\+I\+T}!errlevel.\+h@{errlevel.\+h}}
+\subsubsection[{D\+\_\+\+S\+C\+H\+E\+D\+\_\+\+E\+X\+I\+T}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+\_\+\+S\+C\+H\+E\+D\+\_\+\+E\+X\+I\+T~{\bf L\+O\+G\+L\+E\+V}(3, 41, 0)        /$\ast$ show arming of scheduled exit $\ast$/}\label{errlevel_8h_ae15fc74973b3f0e54b293fd57cbf8f63}
+\hypertarget{errlevel_8h_a944ea84a65afc423138bfba4167a3050}{}\index{errlevel.\+h@{errlevel.\+h}!D\+\_\+\+S\+C\+H\+E\+D\+U\+L\+E\+R@{D\+\_\+\+S\+C\+H\+E\+D\+U\+L\+E\+R}}
+\index{D\+\_\+\+S\+C\+H\+E\+D\+U\+L\+E\+R@{D\+\_\+\+S\+C\+H\+E\+D\+U\+L\+E\+R}!errlevel.\+h@{errlevel.\+h}}
+\subsubsection[{D\+\_\+\+S\+C\+H\+E\+D\+U\+L\+E\+R}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+\_\+\+S\+C\+H\+E\+D\+U\+L\+E\+R~{\bf L\+O\+G\+L\+E\+V}(8, 70, {\bf M\+\_\+\+D\+E\+B\+U\+G})  /$\ast$ show scheduler debugging info $\ast$/}\label{errlevel_8h_a944ea84a65afc423138bfba4167a3050}
+\hypertarget{errlevel_8h_aee3b59c21c2c72ee00386d5a77c101da}{}\index{errlevel.\+h@{errlevel.\+h}!D\+\_\+\+S\+C\+R\+I\+P\+T@{D\+\_\+\+S\+C\+R\+I\+P\+T}}
+\index{D\+\_\+\+S\+C\+R\+I\+P\+T@{D\+\_\+\+S\+C\+R\+I\+P\+T}!errlevel.\+h@{errlevel.\+h}}
+\subsubsection[{D\+\_\+\+S\+C\+R\+I\+P\+T}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+\_\+\+S\+C\+R\+I\+P\+T~{\bf L\+O\+G\+L\+E\+V}(7, 70, {\bf M\+\_\+\+D\+E\+B\+U\+G})  /$\ast$ show parms \& env vars passed to scripts $\ast$/}\label{errlevel_8h_aee3b59c21c2c72ee00386d5a77c101da}
+\hypertarget{errlevel_8h_a647d8b85309a0e89c85cab24a6415bf9}{}\index{errlevel.\+h@{errlevel.\+h}!D\+\_\+\+S\+E\+M\+A\+P\+H\+O\+R\+E@{D\+\_\+\+S\+E\+M\+A\+P\+H\+O\+R\+E}}
+\index{D\+\_\+\+S\+E\+M\+A\+P\+H\+O\+R\+E@{D\+\_\+\+S\+E\+M\+A\+P\+H\+O\+R\+E}!errlevel.\+h@{errlevel.\+h}}
+\subsubsection[{D\+\_\+\+S\+E\+M\+A\+P\+H\+O\+R\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+\_\+\+S\+E\+M\+A\+P\+H\+O\+R\+E~{\bf L\+O\+G\+L\+E\+V}(7, 70, {\bf M\+\_\+\+D\+E\+B\+U\+G})  /$\ast$ show Win32 semaphore waits $\ast$/}\label{errlevel_8h_a647d8b85309a0e89c85cab24a6415bf9}
+\hypertarget{errlevel_8h_a1807701ef1d4a095063264d69bd22180}{}\index{errlevel.\+h@{errlevel.\+h}!D\+\_\+\+S\+E\+M\+A\+P\+H\+O\+R\+E\+\_\+\+L\+O\+W@{D\+\_\+\+S\+E\+M\+A\+P\+H\+O\+R\+E\+\_\+\+L\+O\+W}}
+\index{D\+\_\+\+S\+E\+M\+A\+P\+H\+O\+R\+E\+\_\+\+L\+O\+W@{D\+\_\+\+S\+E\+M\+A\+P\+H\+O\+R\+E\+\_\+\+L\+O\+W}!errlevel.\+h@{errlevel.\+h}}
+\subsubsection[{D\+\_\+\+S\+E\+M\+A\+P\+H\+O\+R\+E\+\_\+\+L\+O\+W}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+\_\+\+S\+E\+M\+A\+P\+H\+O\+R\+E\+\_\+\+L\+O\+W~{\bf L\+O\+G\+L\+E\+V}(7, 70, {\bf M\+\_\+\+D\+E\+B\+U\+G})  /$\ast$ show Win32 semaphore waits (low freq) $\ast$/}\label{errlevel_8h_a1807701ef1d4a095063264d69bd22180}
+\hypertarget{errlevel_8h_ac5394ef8b92888ac75c1fb790ec45039}{}\index{errlevel.\+h@{errlevel.\+h}!D\+\_\+\+S\+H\+A\+P\+E\+R\+\_\+\+D\+E\+B\+U\+G@{D\+\_\+\+S\+H\+A\+P\+E\+R\+\_\+\+D\+E\+B\+U\+G}}
+\index{D\+\_\+\+S\+H\+A\+P\+E\+R\+\_\+\+D\+E\+B\+U\+G@{D\+\_\+\+S\+H\+A\+P\+E\+R\+\_\+\+D\+E\+B\+U\+G}!errlevel.\+h@{errlevel.\+h}}
+\subsubsection[{D\+\_\+\+S\+H\+A\+P\+E\+R\+\_\+\+D\+E\+B\+U\+G}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+\_\+\+S\+H\+A\+P\+E\+R\+\_\+\+D\+E\+B\+U\+G~{\bf L\+O\+G\+L\+E\+V}(10, 70, {\bf M\+\_\+\+D\+E\+B\+U\+G}) /$\ast$ show traffic shaper info $\ast$/}\label{errlevel_8h_ac5394ef8b92888ac75c1fb790ec45039}
+\hypertarget{errlevel_8h_aaa998da0628e49f567e391600a880b43}{}\index{errlevel.\+h@{errlevel.\+h}!D\+\_\+\+S\+H\+O\+W\+\_\+\+K\+E\+Y\+\_\+\+S\+O\+U\+R\+C\+E@{D\+\_\+\+S\+H\+O\+W\+\_\+\+K\+E\+Y\+\_\+\+S\+O\+U\+R\+C\+E}}
+\index{D\+\_\+\+S\+H\+O\+W\+\_\+\+K\+E\+Y\+\_\+\+S\+O\+U\+R\+C\+E@{D\+\_\+\+S\+H\+O\+W\+\_\+\+K\+E\+Y\+\_\+\+S\+O\+U\+R\+C\+E}!errlevel.\+h@{errlevel.\+h}}
+\subsubsection[{D\+\_\+\+S\+H\+O\+W\+\_\+\+K\+E\+Y\+\_\+\+S\+O\+U\+R\+C\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+\_\+\+S\+H\+O\+W\+\_\+\+K\+E\+Y\+\_\+\+S\+O\+U\+R\+C\+E~{\bf L\+O\+G\+L\+E\+V}(7, 70, {\bf M\+\_\+\+D\+E\+B\+U\+G})  /$\ast$ show data channel {\bf key} {\bf source} entropy $\ast$/}\label{errlevel_8h_aaa998da0628e49f567e391600a880b43}
+\hypertarget{errlevel_8h_a8b1d4555930a814eef16ed00ce37724e}{}\index{errlevel.\+h@{errlevel.\+h}!D\+\_\+\+S\+H\+O\+W\+\_\+\+K\+E\+Y\+S@{D\+\_\+\+S\+H\+O\+W\+\_\+\+K\+E\+Y\+S}}
+\index{D\+\_\+\+S\+H\+O\+W\+\_\+\+K\+E\+Y\+S@{D\+\_\+\+S\+H\+O\+W\+\_\+\+K\+E\+Y\+S}!errlevel.\+h@{errlevel.\+h}}
+\subsubsection[{D\+\_\+\+S\+H\+O\+W\+\_\+\+K\+E\+Y\+S}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+\_\+\+S\+H\+O\+W\+\_\+\+K\+E\+Y\+S~{\bf L\+O\+G\+L\+E\+V}(7, 70, {\bf M\+\_\+\+D\+E\+B\+U\+G})  /$\ast$ show data channel encryption keys $\ast$/}\label{errlevel_8h_a8b1d4555930a814eef16ed00ce37724e}
+\hypertarget{errlevel_8h_a220891aee7b9d5495c307445dac672f6}{}\index{errlevel.\+h@{errlevel.\+h}!D\+\_\+\+S\+H\+O\+W\+\_\+\+N\+E\+T@{D\+\_\+\+S\+H\+O\+W\+\_\+\+N\+E\+T}}
+\index{D\+\_\+\+S\+H\+O\+W\+\_\+\+N\+E\+T@{D\+\_\+\+S\+H\+O\+W\+\_\+\+N\+E\+T}!errlevel.\+h@{errlevel.\+h}}
+\subsubsection[{D\+\_\+\+S\+H\+O\+W\+\_\+\+N\+E\+T}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+\_\+\+S\+H\+O\+W\+\_\+\+N\+E\+T~{\bf L\+O\+G\+L\+E\+V}(7, 70, {\bf M\+\_\+\+D\+E\+B\+U\+G})  /$\ast$ show routing table and adapter list $\ast$/}\label{errlevel_8h_a220891aee7b9d5495c307445dac672f6}
+\hypertarget{errlevel_8h_a09c9625c03392860c87ed0460cd475cd}{}\index{errlevel.\+h@{errlevel.\+h}!D\+\_\+\+S\+H\+O\+W\+\_\+\+O\+C\+C@{D\+\_\+\+S\+H\+O\+W\+\_\+\+O\+C\+C}}
+\index{D\+\_\+\+S\+H\+O\+W\+\_\+\+O\+C\+C@{D\+\_\+\+S\+H\+O\+W\+\_\+\+O\+C\+C}!errlevel.\+h@{errlevel.\+h}}
+\subsubsection[{D\+\_\+\+S\+H\+O\+W\+\_\+\+O\+C\+C}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+\_\+\+S\+H\+O\+W\+\_\+\+O\+C\+C~{\bf L\+O\+G\+L\+E\+V}(4, 51, 0)        /$\ast$ show {\bf options} compatibility string $\ast$/}\label{errlevel_8h_a09c9625c03392860c87ed0460cd475cd}
+\hypertarget{errlevel_8h_a9ca26e87b98a27b4e2782b9d95903910}{}\index{errlevel.\+h@{errlevel.\+h}!D\+\_\+\+S\+H\+O\+W\+\_\+\+P\+A\+R\+M\+S@{D\+\_\+\+S\+H\+O\+W\+\_\+\+P\+A\+R\+M\+S}}
+\index{D\+\_\+\+S\+H\+O\+W\+\_\+\+P\+A\+R\+M\+S@{D\+\_\+\+S\+H\+O\+W\+\_\+\+P\+A\+R\+M\+S}!errlevel.\+h@{errlevel.\+h}}
+\subsubsection[{D\+\_\+\+S\+H\+O\+W\+\_\+\+P\+A\+R\+M\+S}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+\_\+\+S\+H\+O\+W\+\_\+\+P\+A\+R\+M\+S~{\bf L\+O\+G\+L\+E\+V}(4, 50, 0)        /$\ast$ show all parameters on program initiation $\ast$/}\label{errlevel_8h_a9ca26e87b98a27b4e2782b9d95903910}
+\hypertarget{errlevel_8h_a4a295c95290d4853443b72967c1b8795}{}\index{errlevel.\+h@{errlevel.\+h}!D\+\_\+\+S\+H\+O\+W\+\_\+\+P\+K\+C\+S11@{D\+\_\+\+S\+H\+O\+W\+\_\+\+P\+K\+C\+S11}}
+\index{D\+\_\+\+S\+H\+O\+W\+\_\+\+P\+K\+C\+S11@{D\+\_\+\+S\+H\+O\+W\+\_\+\+P\+K\+C\+S11}!errlevel.\+h@{errlevel.\+h}}
+\subsubsection[{D\+\_\+\+S\+H\+O\+W\+\_\+\+P\+K\+C\+S11}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+\_\+\+S\+H\+O\+W\+\_\+\+P\+K\+C\+S11~{\bf L\+O\+G\+L\+E\+V}(7, 70, {\bf M\+\_\+\+D\+E\+B\+U\+G})  /$\ast$ show P\+K\+C\+S\#11 actions $\ast$/}\label{errlevel_8h_a4a295c95290d4853443b72967c1b8795}
+\hypertarget{errlevel_8h_a89fc2cbea574cff2c5b333dc4907bd26}{}\index{errlevel.\+h@{errlevel.\+h}!D\+\_\+\+S\+O\+C\+K\+E\+T\+\_\+\+D\+E\+B\+U\+G@{D\+\_\+\+S\+O\+C\+K\+E\+T\+\_\+\+D\+E\+B\+U\+G}}
+\index{D\+\_\+\+S\+O\+C\+K\+E\+T\+\_\+\+D\+E\+B\+U\+G@{D\+\_\+\+S\+O\+C\+K\+E\+T\+\_\+\+D\+E\+B\+U\+G}!errlevel.\+h@{errlevel.\+h}}
+\subsubsection[{D\+\_\+\+S\+O\+C\+K\+E\+T\+\_\+\+D\+E\+B\+U\+G}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+\_\+\+S\+O\+C\+K\+E\+T\+\_\+\+D\+E\+B\+U\+G~{\bf L\+O\+G\+L\+E\+V}(7, 70, {\bf M\+\_\+\+D\+E\+B\+U\+G})  /$\ast$ show socket.\mbox{[}ch\mbox{]} debugging info $\ast$/}\label{errlevel_8h_a89fc2cbea574cff2c5b333dc4907bd26}
+\hypertarget{errlevel_8h_ab747b0b37ae829ef18616afa2039e1e6}{}\index{errlevel.\+h@{errlevel.\+h}!D\+\_\+\+S\+T\+R\+E\+A\+M\+\_\+\+D\+E\+B\+U\+G@{D\+\_\+\+S\+T\+R\+E\+A\+M\+\_\+\+D\+E\+B\+U\+G}}
+\index{D\+\_\+\+S\+T\+R\+E\+A\+M\+\_\+\+D\+E\+B\+U\+G@{D\+\_\+\+S\+T\+R\+E\+A\+M\+\_\+\+D\+E\+B\+U\+G}!errlevel.\+h@{errlevel.\+h}}
+\subsubsection[{D\+\_\+\+S\+T\+R\+E\+A\+M\+\_\+\+D\+E\+B\+U\+G}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+\_\+\+S\+T\+R\+E\+A\+M\+\_\+\+D\+E\+B\+U\+G~{\bf L\+O\+G\+L\+E\+V}(9, 70, {\bf M\+\_\+\+D\+E\+B\+U\+G})  /$\ast$ show T\+C\+P stream debug info $\ast$/}\label{errlevel_8h_ab747b0b37ae829ef18616afa2039e1e6}
+\hypertarget{errlevel_8h_a8449a1755d1636b2ed9925c109353f46}{}\index{errlevel.\+h@{errlevel.\+h}!D\+\_\+\+S\+T\+R\+E\+A\+M\+\_\+\+E\+R\+R\+O\+R\+S@{D\+\_\+\+S\+T\+R\+E\+A\+M\+\_\+\+E\+R\+R\+O\+R\+S}}
+\index{D\+\_\+\+S\+T\+R\+E\+A\+M\+\_\+\+E\+R\+R\+O\+R\+S@{D\+\_\+\+S\+T\+R\+E\+A\+M\+\_\+\+E\+R\+R\+O\+R\+S}!errlevel.\+h@{errlevel.\+h}}
+\subsubsection[{D\+\_\+\+S\+T\+R\+E\+A\+M\+\_\+\+E\+R\+R\+O\+R\+S}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+\_\+\+S\+T\+R\+E\+A\+M\+\_\+\+E\+R\+R\+O\+R\+S~{\bf L\+O\+G\+L\+E\+V}(1, 7, {\bf M\+\_\+\+N\+O\+N\+F\+A\+T\+A\+L})    /$\ast$ T\+C\+P stream error requiring restart $\ast$/}\label{errlevel_8h_a8449a1755d1636b2ed9925c109353f46}
+\hypertarget{errlevel_8h_a12fd3192e01eb423295217076c872a3f}{}\index{errlevel.\+h@{errlevel.\+h}!D\+\_\+\+T\+A\+P\+\_\+\+W\+I\+N\+\_\+\+D\+E\+B\+U\+G@{D\+\_\+\+T\+A\+P\+\_\+\+W\+I\+N\+\_\+\+D\+E\+B\+U\+G}}
+\index{D\+\_\+\+T\+A\+P\+\_\+\+W\+I\+N\+\_\+\+D\+E\+B\+U\+G@{D\+\_\+\+T\+A\+P\+\_\+\+W\+I\+N\+\_\+\+D\+E\+B\+U\+G}!errlevel.\+h@{errlevel.\+h}}
+\subsubsection[{D\+\_\+\+T\+A\+P\+\_\+\+W\+I\+N\+\_\+\+D\+E\+B\+U\+G}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+\_\+\+T\+A\+P\+\_\+\+W\+I\+N\+\_\+\+D\+E\+B\+U\+G~{\bf L\+O\+G\+L\+E\+V}(6, 69, {\bf M\+\_\+\+D\+E\+B\+U\+G})  /$\ast$ show T\+A\+P-\/Windows driver debug info $\ast$/}\label{errlevel_8h_a12fd3192e01eb423295217076c872a3f}
+\hypertarget{errlevel_8h_a6b3a5938c2561db2f1c224ccdf40a06c}{}\index{errlevel.\+h@{errlevel.\+h}!D\+\_\+\+T\+E\+S\+T\+\_\+\+F\+I\+L\+E@{D\+\_\+\+T\+E\+S\+T\+\_\+\+F\+I\+L\+E}}
+\index{D\+\_\+\+T\+E\+S\+T\+\_\+\+F\+I\+L\+E@{D\+\_\+\+T\+E\+S\+T\+\_\+\+F\+I\+L\+E}!errlevel.\+h@{errlevel.\+h}}
+\subsubsection[{D\+\_\+\+T\+E\+S\+T\+\_\+\+F\+I\+L\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+\_\+\+T\+E\+S\+T\+\_\+\+F\+I\+L\+E~{\bf L\+O\+G\+L\+E\+V}(7, 70, {\bf M\+\_\+\+D\+E\+B\+U\+G})  /$\ast$ show {\bf test\+\_\+file}() calls $\ast$/}\label{errlevel_8h_a6b3a5938c2561db2f1c224ccdf40a06c}
+\hypertarget{errlevel_8h_ae7eb5f756fbc70945c5e88ea7c487463}{}\index{errlevel.\+h@{errlevel.\+h}!D\+\_\+\+T\+L\+S\+\_\+\+D\+E\+B\+U\+G@{D\+\_\+\+T\+L\+S\+\_\+\+D\+E\+B\+U\+G}}
+\index{D\+\_\+\+T\+L\+S\+\_\+\+D\+E\+B\+U\+G@{D\+\_\+\+T\+L\+S\+\_\+\+D\+E\+B\+U\+G}!errlevel.\+h@{errlevel.\+h}}
+\subsubsection[{D\+\_\+\+T\+L\+S\+\_\+\+D\+E\+B\+U\+G}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+\_\+\+T\+L\+S\+\_\+\+D\+E\+B\+U\+G~{\bf L\+O\+G\+L\+E\+V}(9, 70, {\bf M\+\_\+\+D\+E\+B\+U\+G})  /$\ast$ show detailed info from T\+L\+S routines $\ast$/}\label{errlevel_8h_ae7eb5f756fbc70945c5e88ea7c487463}
+\hypertarget{errlevel_8h_a18325da3f3318ec2d2880e5ea2471a27}{}\index{errlevel.\+h@{errlevel.\+h}!D\+\_\+\+T\+L\+S\+\_\+\+D\+E\+B\+U\+G\+\_\+\+L\+O\+W@{D\+\_\+\+T\+L\+S\+\_\+\+D\+E\+B\+U\+G\+\_\+\+L\+O\+W}}
+\index{D\+\_\+\+T\+L\+S\+\_\+\+D\+E\+B\+U\+G\+\_\+\+L\+O\+W@{D\+\_\+\+T\+L\+S\+\_\+\+D\+E\+B\+U\+G\+\_\+\+L\+O\+W}!errlevel.\+h@{errlevel.\+h}}
+\subsubsection[{D\+\_\+\+T\+L\+S\+\_\+\+D\+E\+B\+U\+G\+\_\+\+L\+O\+W}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+\_\+\+T\+L\+S\+\_\+\+D\+E\+B\+U\+G\+\_\+\+L\+O\+W~{\bf L\+O\+G\+L\+E\+V}(3, 20, 0)        /$\ast$ low frequency info from {\bf tls\+\_\+session} routines $\ast$/}\label{errlevel_8h_a18325da3f3318ec2d2880e5ea2471a27}
+\hypertarget{errlevel_8h_a6cb7f613d11d64ff4130bbf2e512fcf5}{}\index{errlevel.\+h@{errlevel.\+h}!D\+\_\+\+T\+L\+S\+\_\+\+D\+E\+B\+U\+G\+\_\+\+M\+E\+D@{D\+\_\+\+T\+L\+S\+\_\+\+D\+E\+B\+U\+G\+\_\+\+M\+E\+D}}
+\index{D\+\_\+\+T\+L\+S\+\_\+\+D\+E\+B\+U\+G\+\_\+\+M\+E\+D@{D\+\_\+\+T\+L\+S\+\_\+\+D\+E\+B\+U\+G\+\_\+\+M\+E\+D}!errlevel.\+h@{errlevel.\+h}}
+\subsubsection[{D\+\_\+\+T\+L\+S\+\_\+\+D\+E\+B\+U\+G\+\_\+\+M\+E\+D}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+\_\+\+T\+L\+S\+\_\+\+D\+E\+B\+U\+G\+\_\+\+M\+E\+D~{\bf L\+O\+G\+L\+E\+V}(8, 70, {\bf M\+\_\+\+D\+E\+B\+U\+G})  /$\ast$ limited info from {\bf tls\+\_\+session} routines $\ast$/}\label{errlevel_8h_a6cb7f613d11d64ff4130bbf2e512fcf5}
+\hypertarget{errlevel_8h_abb7d158b96cc50c8f88581e7c1d13cdd}{}\index{errlevel.\+h@{errlevel.\+h}!D\+\_\+\+T\+L\+S\+\_\+\+E\+R\+R\+O\+R\+S@{D\+\_\+\+T\+L\+S\+\_\+\+E\+R\+R\+O\+R\+S}}
+\index{D\+\_\+\+T\+L\+S\+\_\+\+E\+R\+R\+O\+R\+S@{D\+\_\+\+T\+L\+S\+\_\+\+E\+R\+R\+O\+R\+S}!errlevel.\+h@{errlevel.\+h}}
+\subsubsection[{D\+\_\+\+T\+L\+S\+\_\+\+E\+R\+R\+O\+R\+S}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+\_\+\+T\+L\+S\+\_\+\+E\+R\+R\+O\+R\+S~{\bf L\+O\+G\+L\+E\+V}(1, 3, {\bf M\+\_\+\+N\+O\+N\+F\+A\+T\+A\+L})   /$\ast$ show T\+L\+S control channel errors $\ast$/}\label{errlevel_8h_abb7d158b96cc50c8f88581e7c1d13cdd}
+\hypertarget{errlevel_8h_aaad4edce1a24494f3053fa3448e6d827}{}\index{errlevel.\+h@{errlevel.\+h}!D\+\_\+\+T\+L\+S\+\_\+\+K\+E\+Y\+S\+E\+L\+E\+C\+T@{D\+\_\+\+T\+L\+S\+\_\+\+K\+E\+Y\+S\+E\+L\+E\+C\+T}}
+\index{D\+\_\+\+T\+L\+S\+\_\+\+K\+E\+Y\+S\+E\+L\+E\+C\+T@{D\+\_\+\+T\+L\+S\+\_\+\+K\+E\+Y\+S\+E\+L\+E\+C\+T}!errlevel.\+h@{errlevel.\+h}}
+\subsubsection[{D\+\_\+\+T\+L\+S\+\_\+\+K\+E\+Y\+S\+E\+L\+E\+C\+T}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+\_\+\+T\+L\+S\+\_\+\+K\+E\+Y\+S\+E\+L\+E\+C\+T~{\bf L\+O\+G\+L\+E\+V}(7, 70, {\bf M\+\_\+\+D\+E\+B\+U\+G})  /$\ast$ show information on {\bf key} selection for data channel $\ast$/}\label{errlevel_8h_aaad4edce1a24494f3053fa3448e6d827}
+\hypertarget{errlevel_8h_a3472e673f5e7d7d8a19cef014dc998a1}{}\index{errlevel.\+h@{errlevel.\+h}!D\+\_\+\+T\+L\+S\+\_\+\+N\+O\+\_\+\+S\+E\+N\+D\+\_\+\+K\+E\+Y@{D\+\_\+\+T\+L\+S\+\_\+\+N\+O\+\_\+\+S\+E\+N\+D\+\_\+\+K\+E\+Y}}
+\index{D\+\_\+\+T\+L\+S\+\_\+\+N\+O\+\_\+\+S\+E\+N\+D\+\_\+\+K\+E\+Y@{D\+\_\+\+T\+L\+S\+\_\+\+N\+O\+\_\+\+S\+E\+N\+D\+\_\+\+K\+E\+Y}!errlevel.\+h@{errlevel.\+h}}
+\subsubsection[{D\+\_\+\+T\+L\+S\+\_\+\+N\+O\+\_\+\+S\+E\+N\+D\+\_\+\+K\+E\+Y}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+\_\+\+T\+L\+S\+\_\+\+N\+O\+\_\+\+S\+E\+N\+D\+\_\+\+K\+E\+Y~{\bf L\+O\+G\+L\+E\+V}(9, 70, {\bf M\+\_\+\+D\+E\+B\+U\+G})  /$\ast$ show when no data channel send-\/{\bf key} exists $\ast$/}\label{errlevel_8h_a3472e673f5e7d7d8a19cef014dc998a1}
+\hypertarget{errlevel_8h_a6957cd0f4474f234bb1be90f587bc1eb}{}\index{errlevel.\+h@{errlevel.\+h}!D\+\_\+\+T\+L\+S\+\_\+\+S\+T\+A\+T\+E\+\_\+\+E\+R\+R\+O\+R\+S@{D\+\_\+\+T\+L\+S\+\_\+\+S\+T\+A\+T\+E\+\_\+\+E\+R\+R\+O\+R\+S}}
+\index{D\+\_\+\+T\+L\+S\+\_\+\+S\+T\+A\+T\+E\+\_\+\+E\+R\+R\+O\+R\+S@{D\+\_\+\+T\+L\+S\+\_\+\+S\+T\+A\+T\+E\+\_\+\+E\+R\+R\+O\+R\+S}!errlevel.\+h@{errlevel.\+h}}
+\subsubsection[{D\+\_\+\+T\+L\+S\+\_\+\+S\+T\+A\+T\+E\+\_\+\+E\+R\+R\+O\+R\+S}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+\_\+\+T\+L\+S\+\_\+\+S\+T\+A\+T\+E\+\_\+\+E\+R\+R\+O\+R\+S~{\bf L\+O\+G\+L\+E\+V}(7, 70, {\bf M\+\_\+\+D\+E\+B\+U\+G})  /$\ast$ no T\+L\+S state for client $\ast$/}\label{errlevel_8h_a6957cd0f4474f234bb1be90f587bc1eb}
+\hypertarget{errlevel_8h_a10d8276c079adbe9e8f03ffec1f7d00b}{}\index{errlevel.\+h@{errlevel.\+h}!D\+\_\+\+T\+U\+N\+\_\+\+R\+W@{D\+\_\+\+T\+U\+N\+\_\+\+R\+W}}
+\index{D\+\_\+\+T\+U\+N\+\_\+\+R\+W@{D\+\_\+\+T\+U\+N\+\_\+\+R\+W}!errlevel.\+h@{errlevel.\+h}}
+\subsubsection[{D\+\_\+\+T\+U\+N\+\_\+\+R\+W}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+\_\+\+T\+U\+N\+\_\+\+R\+W~{\bf L\+O\+G\+L\+E\+V}(6, 69, {\bf M\+\_\+\+D\+E\+B\+U\+G})  /$\ast$ show T\+U\+N/T\+A\+P reads/writes $\ast$/}\label{errlevel_8h_a10d8276c079adbe9e8f03ffec1f7d00b}
+\hypertarget{errlevel_8h_a80d57c8e34010c9b942bbb9f3171050b}{}\index{errlevel.\+h@{errlevel.\+h}!D\+\_\+\+T\+U\+N\+T\+A\+P\+\_\+\+I\+N\+F\+O@{D\+\_\+\+T\+U\+N\+T\+A\+P\+\_\+\+I\+N\+F\+O}}
+\index{D\+\_\+\+T\+U\+N\+T\+A\+P\+\_\+\+I\+N\+F\+O@{D\+\_\+\+T\+U\+N\+T\+A\+P\+\_\+\+I\+N\+F\+O}!errlevel.\+h@{errlevel.\+h}}
+\subsubsection[{D\+\_\+\+T\+U\+N\+T\+A\+P\+\_\+\+I\+N\+F\+O}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+\_\+\+T\+U\+N\+T\+A\+P\+\_\+\+I\+N\+F\+O~{\bf L\+O\+G\+L\+E\+V}(3, 32, 0)        /$\ast$ show debugging info from T\+U\+N/T\+A\+P driver $\ast$/}\label{errlevel_8h_a80d57c8e34010c9b942bbb9f3171050b}
+\hypertarget{errlevel_8h_a7b242eaaa97c7e6473a58b26e83fe06d}{}\index{errlevel.\+h@{errlevel.\+h}!D\+\_\+\+W\+I\+N32\+\_\+\+I\+O@{D\+\_\+\+W\+I\+N32\+\_\+\+I\+O}}
+\index{D\+\_\+\+W\+I\+N32\+\_\+\+I\+O@{D\+\_\+\+W\+I\+N32\+\_\+\+I\+O}!errlevel.\+h@{errlevel.\+h}}
+\subsubsection[{D\+\_\+\+W\+I\+N32\+\_\+\+I\+O}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+\_\+\+W\+I\+N32\+\_\+\+I\+O~{\bf L\+O\+G\+L\+E\+V}(9, 70, {\bf M\+\_\+\+D\+E\+B\+U\+G})  /$\ast$ win32 I/O debugging info $\ast$/}\label{errlevel_8h_a7b242eaaa97c7e6473a58b26e83fe06d}
+\hypertarget{errlevel_8h_a64d3ef312f3eba119b6bf938e0a33f60}{}\index{errlevel.\+h@{errlevel.\+h}!D\+\_\+\+W\+I\+N32\+\_\+\+I\+O\+\_\+\+L\+O\+W@{D\+\_\+\+W\+I\+N32\+\_\+\+I\+O\+\_\+\+L\+O\+W}}
+\index{D\+\_\+\+W\+I\+N32\+\_\+\+I\+O\+\_\+\+L\+O\+W@{D\+\_\+\+W\+I\+N32\+\_\+\+I\+O\+\_\+\+L\+O\+W}!errlevel.\+h@{errlevel.\+h}}
+\subsubsection[{D\+\_\+\+W\+I\+N32\+\_\+\+I\+O\+\_\+\+L\+O\+W}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+\_\+\+W\+I\+N32\+\_\+\+I\+O\+\_\+\+L\+O\+W~{\bf L\+O\+G\+L\+E\+V}(7, 70, {\bf M\+\_\+\+D\+E\+B\+U\+G})  /$\ast$ low freq win32 I/O debugging info $\ast$/}\label{errlevel_8h_a64d3ef312f3eba119b6bf938e0a33f60}
+\hypertarget{errlevel_8h_a463fec7faecb18e24fd308807229f1e1}{}\index{errlevel.\+h@{errlevel.\+h}!D\+\_\+\+X509\+\_\+\+A\+T\+T\+R@{D\+\_\+\+X509\+\_\+\+A\+T\+T\+R}}
+\index{D\+\_\+\+X509\+\_\+\+A\+T\+T\+R@{D\+\_\+\+X509\+\_\+\+A\+T\+T\+R}!errlevel.\+h@{errlevel.\+h}}
+\subsubsection[{D\+\_\+\+X509\+\_\+\+A\+T\+T\+R}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+\_\+\+X509\+\_\+\+A\+T\+T\+R~{\bf L\+O\+G\+L\+E\+V}(4, 59, 0)        /$\ast$ show x509-\/track attributes on connection $\ast$/}\label{errlevel_8h_a463fec7faecb18e24fd308807229f1e1}
+\hypertarget{errlevel_8h_a99a63e0bd0b5c0a1a7377182f2f0d6e7}{}\index{errlevel.\+h@{errlevel.\+h}!D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+U\+S\+E\+C\+\_\+\+T\+I\+M\+E@{D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+U\+S\+E\+C\+\_\+\+T\+I\+M\+E}}
+\index{D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+U\+S\+E\+C\+\_\+\+T\+I\+M\+E@{D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+U\+S\+E\+C\+\_\+\+T\+I\+M\+E}!errlevel.\+h@{errlevel.\+h}}
+\subsubsection[{D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+U\+S\+E\+C\+\_\+\+T\+I\+M\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+U\+S\+E\+C\+\_\+\+T\+I\+M\+E~4}\label{errlevel_8h_a99a63e0bd0b5c0a1a7377182f2f0d6e7}
+\hypertarget{errlevel_8h_a6f0acfbd73600c63b0e08ce1f46057c8}{}\index{errlevel.\+h@{errlevel.\+h}!L\+O\+G\+\_\+\+R\+W@{L\+O\+G\+\_\+\+R\+W}}
+\index{L\+O\+G\+\_\+\+R\+W@{L\+O\+G\+\_\+\+R\+W}!errlevel.\+h@{errlevel.\+h}}
+\subsubsection[{L\+O\+G\+\_\+\+R\+W}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\+O\+G\+\_\+\+R\+W}\label{errlevel_8h_a6f0acfbd73600c63b0e08ce1f46057c8}
+\hypertarget{errlevel_8h_ade61794318f1bbcac19df28e2fe83260}{}\index{errlevel.\+h@{errlevel.\+h}!M\+\_\+\+I\+N\+F\+O@{M\+\_\+\+I\+N\+F\+O}}
+\index{M\+\_\+\+I\+N\+F\+O@{M\+\_\+\+I\+N\+F\+O}!errlevel.\+h@{errlevel.\+h}}
+\subsubsection[{M\+\_\+\+I\+N\+F\+O}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\+\_\+\+I\+N\+F\+O~{\bf L\+O\+G\+L\+E\+V}(1, 0, 0)         /$\ast$ default informational messages $\ast$/}\label{errlevel_8h_ade61794318f1bbcac19df28e2fe83260}
+\hypertarget{errlevel_8h_a2c9a69063637763ee444c8f4a25188ba}{}\index{errlevel.\+h@{errlevel.\+h}!M\+\_\+\+V\+E\+R\+B0@{M\+\_\+\+V\+E\+R\+B0}}
+\index{M\+\_\+\+V\+E\+R\+B0@{M\+\_\+\+V\+E\+R\+B0}!errlevel.\+h@{errlevel.\+h}}
+\subsubsection[{M\+\_\+\+V\+E\+R\+B0}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\+\_\+\+V\+E\+R\+B0~{\bf L\+O\+G\+L\+E\+V}(0, 0, 0)         /$\ast$ Messages displayed even at -\/-\/verb 0 (fatal errors only) $\ast$/}\label{errlevel_8h_a2c9a69063637763ee444c8f4a25188ba}
+\hypertarget{errlevel_8h_a398b8eecec50c6ca4ad75b9d5a46f17a}{}\index{errlevel.\+h@{errlevel.\+h}!P2\+P\+\_\+\+E\+R\+R\+O\+R\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+M\+S@{P2\+P\+\_\+\+E\+R\+R\+O\+R\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+M\+S}}
+\index{P2\+P\+\_\+\+E\+R\+R\+O\+R\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+M\+S@{P2\+P\+\_\+\+E\+R\+R\+O\+R\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+M\+S}!errlevel.\+h@{errlevel.\+h}}
+\subsubsection[{P2\+P\+\_\+\+E\+R\+R\+O\+R\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+M\+S}]{\setlength{\rightskip}{0pt plus 5cm}\#define P2\+P\+\_\+\+E\+R\+R\+O\+R\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+M\+S~0}\label{errlevel_8h_a398b8eecec50c6ca4ad75b9d5a46f17a}

@@ -1,0 +1,7 @@
+<map id="print_sockaddr_ex" name="print_sockaddr_ex">
+<area shape="rect" id="node2" href="$buffer_8c.html#aa35bf7feb6a99bf5d364b2d4eba1195c" title="alloc_buf_gc" alt="" coords="181,31,276,57"/>
+<area shape="rect" id="node5" href="$buffer_8c.html#a3856237f6bda0d132ed555c23f3b8968" title="buf_puts" alt="" coords="193,81,264,108"/>
+<area shape="rect" id="node6" href="$buffer_8c.html#a3307f08331b1ce42168bafd2ecf7874a" title="buf_printf" alt="" coords="191,132,266,159"/>
+<area shape="rect" id="node3" href="$buffer_8c.html#acc1a4ee83a591116d331e52baacf253d" title="buf_size_error" alt="" coords="324,5,427,32"/>
+<area shape="rect" id="node4" href="$buffer_8c.html#a67f7dec7f86e113dc0744584fd80b621" title="gc_malloc" alt="" coords="335,56,416,83"/>
+</map>

@@ -1,0 +1,6 @@
+<map id="auth_user_pass_setup" name="auth_user_pass_setup">
+<area shape="rect" id="node2" href="$init_8h.html#a7876e414d4cb824cab1e8ad6b2c7c35c" title="init_query_passwords" alt="" coords="207,42,353,69"/>
+<area shape="rect" id="node3" href="$init_8h.html#a2986d81718c6cb5cd19bad612998d56f" title="init_instance" alt="" coords="401,42,496,69"/>
+<area shape="rect" id="node4" href="$init_8h.html#a6a1f31e3d9a1f00ef308cd117c540ed4" title="init_instance_handle\l_signals" alt="" coords="545,5,685,47"/>
+<area shape="rect" id="node5" href="$init_8h.html#a2e3da881a15567d205101e6b0853987a" title="inherit_context_child" alt="" coords="544,71,685,98"/>
+</map>

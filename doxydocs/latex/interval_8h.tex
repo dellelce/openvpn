@@ -1,0 +1,94 @@
+\hypertarget{interval_8h}{}\section{src/openvpn/interval.h File Reference}
+\label{interval_8h}\index{src/openvpn/interval.\+h@{src/openvpn/interval.\+h}}
+{\ttfamily \#include \char`\"{}otime.\+h\char`\"{}}\\*
+Include dependency graph for interval.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{interval_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{interval_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structinterval}{interval}
+\item 
+struct \hyperlink{structevent__timeout}{event\+\_\+timeout}
+\item 
+struct \hyperlink{structusec__timer}{usec\+\_\+timer}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{interval_8h_a4626a5f2f2274fef426974c8a8b94406}{I\+N\+T\+E\+R\+V\+A\+L\+\_\+\+D\+E\+B\+U\+G}~0
+\item 
+\#define \hyperlink{interval_8h_a02d2a92e75a2e8d76f58dc4274b5be80}{E\+T\+T\+\_\+\+D\+E\+F\+A\+U\+L\+T}~(-\/1)
+\item 
+\#define \hyperlink{interval_8h_a344e805cc7cf37fc6b781860798beb4e}{U\+S\+E\+C\+\_\+\+T\+I\+M\+E\+R\+\_\+\+M\+A\+X}~60 /$\ast$ maximum \hyperlink{structinterval}{interval} size in seconds $\ast$/
+\item 
+\#define \hyperlink{interval_8h_a5a33304cec4198a97bd631a5485269b7}{U\+S\+E\+C\+\_\+\+T\+I\+M\+E\+R\+\_\+\+M\+A\+X\+\_\+\+U\+S\+E\+C}~(\hyperlink{interval_8h_a344e805cc7cf37fc6b781860798beb4e}{U\+S\+E\+C\+\_\+\+T\+I\+M\+E\+R\+\_\+\+M\+A\+X} $\ast$ 1000000)
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{interval_8h_aabf9bc926cf4d0888ea85e6224103c3a}{interval\+\_\+init} (struct \hyperlink{structinterval}{interval} $\ast$top, int horizon, int refresh)
+\item 
+\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} \hyperlink{interval_8h_a97d818630ab2bcfe0d44165164cd53c4}{event\+\_\+timeout\+\_\+trigger} (struct \hyperlink{structevent__timeout}{event\+\_\+timeout} $\ast$et, struct timeval $\ast$tv, const int et\+\_\+const\+\_\+retry)
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{interval_8h_a02d2a92e75a2e8d76f58dc4274b5be80}{}\index{interval.\+h@{interval.\+h}!E\+T\+T\+\_\+\+D\+E\+F\+A\+U\+L\+T@{E\+T\+T\+\_\+\+D\+E\+F\+A\+U\+L\+T}}
+\index{E\+T\+T\+\_\+\+D\+E\+F\+A\+U\+L\+T@{E\+T\+T\+\_\+\+D\+E\+F\+A\+U\+L\+T}!interval.\+h@{interval.\+h}}
+\subsubsection[{E\+T\+T\+\_\+\+D\+E\+F\+A\+U\+L\+T}]{\setlength{\rightskip}{0pt plus 5cm}\#define E\+T\+T\+\_\+\+D\+E\+F\+A\+U\+L\+T~(-\/1)}\label{interval_8h_a02d2a92e75a2e8d76f58dc4274b5be80}
+\hypertarget{interval_8h_a4626a5f2f2274fef426974c8a8b94406}{}\index{interval.\+h@{interval.\+h}!I\+N\+T\+E\+R\+V\+A\+L\+\_\+\+D\+E\+B\+U\+G@{I\+N\+T\+E\+R\+V\+A\+L\+\_\+\+D\+E\+B\+U\+G}}
+\index{I\+N\+T\+E\+R\+V\+A\+L\+\_\+\+D\+E\+B\+U\+G@{I\+N\+T\+E\+R\+V\+A\+L\+\_\+\+D\+E\+B\+U\+G}!interval.\+h@{interval.\+h}}
+\subsubsection[{I\+N\+T\+E\+R\+V\+A\+L\+\_\+\+D\+E\+B\+U\+G}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\+N\+T\+E\+R\+V\+A\+L\+\_\+\+D\+E\+B\+U\+G~0}\label{interval_8h_a4626a5f2f2274fef426974c8a8b94406}
+\hypertarget{interval_8h_a344e805cc7cf37fc6b781860798beb4e}{}\index{interval.\+h@{interval.\+h}!U\+S\+E\+C\+\_\+\+T\+I\+M\+E\+R\+\_\+\+M\+A\+X@{U\+S\+E\+C\+\_\+\+T\+I\+M\+E\+R\+\_\+\+M\+A\+X}}
+\index{U\+S\+E\+C\+\_\+\+T\+I\+M\+E\+R\+\_\+\+M\+A\+X@{U\+S\+E\+C\+\_\+\+T\+I\+M\+E\+R\+\_\+\+M\+A\+X}!interval.\+h@{interval.\+h}}
+\subsubsection[{U\+S\+E\+C\+\_\+\+T\+I\+M\+E\+R\+\_\+\+M\+A\+X}]{\setlength{\rightskip}{0pt plus 5cm}\#define U\+S\+E\+C\+\_\+\+T\+I\+M\+E\+R\+\_\+\+M\+A\+X~60 /$\ast$ maximum {\bf interval} size in seconds $\ast$/}\label{interval_8h_a344e805cc7cf37fc6b781860798beb4e}
+\hypertarget{interval_8h_a5a33304cec4198a97bd631a5485269b7}{}\index{interval.\+h@{interval.\+h}!U\+S\+E\+C\+\_\+\+T\+I\+M\+E\+R\+\_\+\+M\+A\+X\+\_\+\+U\+S\+E\+C@{U\+S\+E\+C\+\_\+\+T\+I\+M\+E\+R\+\_\+\+M\+A\+X\+\_\+\+U\+S\+E\+C}}
+\index{U\+S\+E\+C\+\_\+\+T\+I\+M\+E\+R\+\_\+\+M\+A\+X\+\_\+\+U\+S\+E\+C@{U\+S\+E\+C\+\_\+\+T\+I\+M\+E\+R\+\_\+\+M\+A\+X\+\_\+\+U\+S\+E\+C}!interval.\+h@{interval.\+h}}
+\subsubsection[{U\+S\+E\+C\+\_\+\+T\+I\+M\+E\+R\+\_\+\+M\+A\+X\+\_\+\+U\+S\+E\+C}]{\setlength{\rightskip}{0pt plus 5cm}\#define U\+S\+E\+C\+\_\+\+T\+I\+M\+E\+R\+\_\+\+M\+A\+X\+\_\+\+U\+S\+E\+C~({\bf U\+S\+E\+C\+\_\+\+T\+I\+M\+E\+R\+\_\+\+M\+A\+X} $\ast$ 1000000)}\label{interval_8h_a5a33304cec4198a97bd631a5485269b7}
+
+
+\subsection{Function Documentation}
+\hypertarget{interval_8h_a97d818630ab2bcfe0d44165164cd53c4}{}\index{interval.\+h@{interval.\+h}!event\+\_\+timeout\+\_\+trigger@{event\+\_\+timeout\+\_\+trigger}}
+\index{event\+\_\+timeout\+\_\+trigger@{event\+\_\+timeout\+\_\+trigger}!interval.\+h@{interval.\+h}}
+\subsubsection[{event\+\_\+timeout\+\_\+trigger(struct event\+\_\+timeout $\ast$et, struct timeval $\ast$tv, const int et\+\_\+const\+\_\+retry)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} event\+\_\+timeout\+\_\+trigger (
+\begin{DoxyParamCaption}
+\item[{struct {\bf event\+\_\+timeout} $\ast$}]{et, }
+\item[{struct timeval $\ast$}]{tv, }
+\item[{const int}]{et\+\_\+const\+\_\+retry}
+\end{DoxyParamCaption}
+)}\label{interval_8h_a97d818630ab2bcfe0d44165164cd53c4}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{interval_8h_a97d818630ab2bcfe0d44165164cd53c4_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{interval_8h_aabf9bc926cf4d0888ea85e6224103c3a}{}\index{interval.\+h@{interval.\+h}!interval\+\_\+init@{interval\+\_\+init}}
+\index{interval\+\_\+init@{interval\+\_\+init}!interval.\+h@{interval.\+h}}
+\subsubsection[{interval\+\_\+init(struct interval $\ast$top, int horizon, int refresh)}]{\setlength{\rightskip}{0pt plus 5cm}void interval\+\_\+init (
+\begin{DoxyParamCaption}
+\item[{struct {\bf interval} $\ast$}]{top, }
+\item[{int}]{horizon, }
+\item[{int}]{refresh}
+\end{DoxyParamCaption}
+)}\label{interval_8h_aabf9bc926cf4d0888ea85e6224103c3a}

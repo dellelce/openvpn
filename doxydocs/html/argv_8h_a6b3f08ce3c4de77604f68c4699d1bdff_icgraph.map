@@ -1,0 +1,9 @@
+<map id="argv_printf_cat" name="argv_printf_cat">
+<area shape="rect" id="node2" href="$route_8h.html#ae11dbad77ecc3178ae8834c55f0f063c" title="add_route" alt="" coords="181,5,259,32"/>
+<area shape="rect" id="node6" href="$route_8h.html#a788bc024ca7fd587866a9928e235b572" title="add_route_ipv6" alt="" coords="166,56,274,83"/>
+<area shape="rect" id="node7" href="$route_8h.html#ae2a7a92e855bc9fe76625e41a5bfaa4c" title="delete_route_ipv6" alt="" coords="159,107,281,133"/>
+<area shape="rect" id="node3" href="$route_8h.html#a71b6566b675a91729b168da08d71d052" title="add_routes" alt="" coords="336,56,423,83"/>
+<area shape="rect" id="node5" href="$tun_8h.html#a29632143fb8b809282d762f9a2850500" title="do_ifconfig" alt="" coords="338,5,421,32"/>
+<area shape="rect" id="node4" href="$init_8h.html#a6445a4c044e64ef173fd00db00a860bf" title="do_route" alt="" coords="477,56,549,83"/>
+<area shape="rect" id="node8" href="$route_8h.html#ac4f4559cc8535a9f4b2209feabb021ac" title="delete_routes" alt="" coords="329,107,429,133"/>
+</map>

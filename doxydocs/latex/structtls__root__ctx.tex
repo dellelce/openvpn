@@ -1,0 +1,85 @@
+\hypertarget{structtls__root__ctx}{}\section{tls\+\_\+root\+\_\+ctx Struct Reference}
+\label{structtls__root__ctx}\index{tls\+\_\+root\+\_\+ctx@{tls\+\_\+root\+\_\+ctx}}
+
+
+{\ttfamily \#include $<$ssl\+\_\+mbedtls.\+h$>$}
+
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} \hyperlink{structtls__root__ctx_ab71180f4ac83a6a4d5200d193897a0d7}{initialised}
+\item 
+int \hyperlink{structtls__root__ctx_ac8ae8de8fc8e6b1aa1d2791480d8da12}{endpoint}
+\item 
+mbedtls\+\_\+dhm\+\_\+context $\ast$ \hyperlink{structtls__root__ctx_a9aaf4284e2fa54b38e57070057a28a2e}{dhm\+\_\+ctx}
+\item 
+mbedtls\+\_\+x509\+\_\+crt $\ast$ \hyperlink{structtls__root__ctx_a272ecb7b6152dea69b53317f491fe81d}{crt\+\_\+chain}
+\item 
+mbedtls\+\_\+x509\+\_\+crt $\ast$ \hyperlink{structtls__root__ctx_a647982cddec0274b16b0376140cff607}{ca\+\_\+chain}
+\item 
+mbedtls\+\_\+pk\+\_\+context $\ast$ \hyperlink{structtls__root__ctx_af1c33dcb72f792e9aace760b9d10879b}{priv\+\_\+key}
+\item 
+mbedtls\+\_\+x509\+\_\+crl $\ast$ \hyperlink{structtls__root__ctx_a03ca403f806d7d60d1b8f2d0d56d0e0d}{crl}
+\item 
+time\+\_\+t \hyperlink{structtls__root__ctx_a9cde6d158aa07a2aee5133676669b725}{crl\+\_\+last\+\_\+mtime}
+\item 
+off\+\_\+t \hyperlink{structtls__root__ctx_a1df9958887a4449153c563a7e318077d}{crl\+\_\+last\+\_\+size}
+\item 
+int $\ast$ \hyperlink{structtls__root__ctx_a8561171233831df2b135c5038660284a}{allowed\+\_\+ciphers}
+\item 
+mbedtls\+\_\+x509\+\_\+crt\+\_\+profile \hyperlink{structtls__root__ctx_ab5662f92486fc6033d30b680f013a42e}{cert\+\_\+profile}
+\item 
+S\+S\+L\+\_\+\+C\+T\+X $\ast$ \hyperlink{structtls__root__ctx_a800d3fe22d25ed24ae39e51b55cb785d}{ctx}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Structure that wraps the T\+L\+S context. Contents differ depending on the S\+S\+L library used.
+
+Either {\ttfamily priv\+\_\+key\+\_\+pkcs11} or {\ttfamily priv\+\_\+key} must be filled in.
+
+Structure that wraps the T\+L\+S context. Contents differ depending on the S\+S\+L library used. 
+
+\subsection{Member Data Documentation}
+\hypertarget{structtls__root__ctx_a8561171233831df2b135c5038660284a}{}\index{tls\+\_\+root\+\_\+ctx@{tls\+\_\+root\+\_\+ctx}!allowed\+\_\+ciphers@{allowed\+\_\+ciphers}}
+\index{allowed\+\_\+ciphers@{allowed\+\_\+ciphers}!tls\+\_\+root\+\_\+ctx@{tls\+\_\+root\+\_\+ctx}}
+\subsubsection[{allowed\+\_\+ciphers}]{\setlength{\rightskip}{0pt plus 5cm}int$\ast$ tls\+\_\+root\+\_\+ctx\+::allowed\+\_\+ciphers}\label{structtls__root__ctx_a8561171233831df2b135c5038660284a}
+List of allowed ciphers for this connection \hypertarget{structtls__root__ctx_a647982cddec0274b16b0376140cff607}{}\index{tls\+\_\+root\+\_\+ctx@{tls\+\_\+root\+\_\+ctx}!ca\+\_\+chain@{ca\+\_\+chain}}
+\index{ca\+\_\+chain@{ca\+\_\+chain}!tls\+\_\+root\+\_\+ctx@{tls\+\_\+root\+\_\+ctx}}
+\subsubsection[{ca\+\_\+chain}]{\setlength{\rightskip}{0pt plus 5cm}mbedtls\+\_\+x509\+\_\+crt$\ast$ tls\+\_\+root\+\_\+ctx\+::ca\+\_\+chain}\label{structtls__root__ctx_a647982cddec0274b16b0376140cff607}
+C\+A chain for remote verification \hypertarget{structtls__root__ctx_ab5662f92486fc6033d30b680f013a42e}{}\index{tls\+\_\+root\+\_\+ctx@{tls\+\_\+root\+\_\+ctx}!cert\+\_\+profile@{cert\+\_\+profile}}
+\index{cert\+\_\+profile@{cert\+\_\+profile}!tls\+\_\+root\+\_\+ctx@{tls\+\_\+root\+\_\+ctx}}
+\subsubsection[{cert\+\_\+profile}]{\setlength{\rightskip}{0pt plus 5cm}mbedtls\+\_\+x509\+\_\+crt\+\_\+profile tls\+\_\+root\+\_\+ctx\+::cert\+\_\+profile}\label{structtls__root__ctx_ab5662f92486fc6033d30b680f013a42e}
+Allowed certificate types \hypertarget{structtls__root__ctx_a03ca403f806d7d60d1b8f2d0d56d0e0d}{}\index{tls\+\_\+root\+\_\+ctx@{tls\+\_\+root\+\_\+ctx}!crl@{crl}}
+\index{crl@{crl}!tls\+\_\+root\+\_\+ctx@{tls\+\_\+root\+\_\+ctx}}
+\subsubsection[{crl}]{\setlength{\rightskip}{0pt plus 5cm}mbedtls\+\_\+x509\+\_\+crl$\ast$ tls\+\_\+root\+\_\+ctx\+::crl}\label{structtls__root__ctx_a03ca403f806d7d60d1b8f2d0d56d0e0d}
+Certificate Revocation List \hypertarget{structtls__root__ctx_a9cde6d158aa07a2aee5133676669b725}{}\index{tls\+\_\+root\+\_\+ctx@{tls\+\_\+root\+\_\+ctx}!crl\+\_\+last\+\_\+mtime@{crl\+\_\+last\+\_\+mtime}}
+\index{crl\+\_\+last\+\_\+mtime@{crl\+\_\+last\+\_\+mtime}!tls\+\_\+root\+\_\+ctx@{tls\+\_\+root\+\_\+ctx}}
+\subsubsection[{crl\+\_\+last\+\_\+mtime}]{\setlength{\rightskip}{0pt plus 5cm}time\+\_\+t tls\+\_\+root\+\_\+ctx\+::crl\+\_\+last\+\_\+mtime}\label{structtls__root__ctx_a9cde6d158aa07a2aee5133676669b725}
+C\+R\+L last modification time \hypertarget{structtls__root__ctx_a1df9958887a4449153c563a7e318077d}{}\index{tls\+\_\+root\+\_\+ctx@{tls\+\_\+root\+\_\+ctx}!crl\+\_\+last\+\_\+size@{crl\+\_\+last\+\_\+size}}
+\index{crl\+\_\+last\+\_\+size@{crl\+\_\+last\+\_\+size}!tls\+\_\+root\+\_\+ctx@{tls\+\_\+root\+\_\+ctx}}
+\subsubsection[{crl\+\_\+last\+\_\+size}]{\setlength{\rightskip}{0pt plus 5cm}off\+\_\+t tls\+\_\+root\+\_\+ctx\+::crl\+\_\+last\+\_\+size}\label{structtls__root__ctx_a1df9958887a4449153c563a7e318077d}
+size of last loaded C\+R\+L \hypertarget{structtls__root__ctx_a272ecb7b6152dea69b53317f491fe81d}{}\index{tls\+\_\+root\+\_\+ctx@{tls\+\_\+root\+\_\+ctx}!crt\+\_\+chain@{crt\+\_\+chain}}
+\index{crt\+\_\+chain@{crt\+\_\+chain}!tls\+\_\+root\+\_\+ctx@{tls\+\_\+root\+\_\+ctx}}
+\subsubsection[{crt\+\_\+chain}]{\setlength{\rightskip}{0pt plus 5cm}mbedtls\+\_\+x509\+\_\+crt$\ast$ tls\+\_\+root\+\_\+ctx\+::crt\+\_\+chain}\label{structtls__root__ctx_a272ecb7b6152dea69b53317f491fe81d}
+Local Certificate chain \hypertarget{structtls__root__ctx_a800d3fe22d25ed24ae39e51b55cb785d}{}\index{tls\+\_\+root\+\_\+ctx@{tls\+\_\+root\+\_\+ctx}!ctx@{ctx}}
+\index{ctx@{ctx}!tls\+\_\+root\+\_\+ctx@{tls\+\_\+root\+\_\+ctx}}
+\subsubsection[{ctx}]{\setlength{\rightskip}{0pt plus 5cm}S\+S\+L\+\_\+\+C\+T\+X$\ast$ tls\+\_\+root\+\_\+ctx\+::ctx}\label{structtls__root__ctx_a800d3fe22d25ed24ae39e51b55cb785d}
+\hypertarget{structtls__root__ctx_a9aaf4284e2fa54b38e57070057a28a2e}{}\index{tls\+\_\+root\+\_\+ctx@{tls\+\_\+root\+\_\+ctx}!dhm\+\_\+ctx@{dhm\+\_\+ctx}}
+\index{dhm\+\_\+ctx@{dhm\+\_\+ctx}!tls\+\_\+root\+\_\+ctx@{tls\+\_\+root\+\_\+ctx}}
+\subsubsection[{dhm\+\_\+ctx}]{\setlength{\rightskip}{0pt plus 5cm}mbedtls\+\_\+dhm\+\_\+context$\ast$ tls\+\_\+root\+\_\+ctx\+::dhm\+\_\+ctx}\label{structtls__root__ctx_a9aaf4284e2fa54b38e57070057a28a2e}
+Diffie-\/\+Helmann-\/\+Merkle context \hypertarget{structtls__root__ctx_ac8ae8de8fc8e6b1aa1d2791480d8da12}{}\index{tls\+\_\+root\+\_\+ctx@{tls\+\_\+root\+\_\+ctx}!endpoint@{endpoint}}
+\index{endpoint@{endpoint}!tls\+\_\+root\+\_\+ctx@{tls\+\_\+root\+\_\+ctx}}
+\subsubsection[{endpoint}]{\setlength{\rightskip}{0pt plus 5cm}int tls\+\_\+root\+\_\+ctx\+::endpoint}\label{structtls__root__ctx_ac8ae8de8fc8e6b1aa1d2791480d8da12}
+Whether or not this is a server or a client \hypertarget{structtls__root__ctx_ab71180f4ac83a6a4d5200d193897a0d7}{}\index{tls\+\_\+root\+\_\+ctx@{tls\+\_\+root\+\_\+ctx}!initialised@{initialised}}
+\index{initialised@{initialised}!tls\+\_\+root\+\_\+ctx@{tls\+\_\+root\+\_\+ctx}}
+\subsubsection[{initialised}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} tls\+\_\+root\+\_\+ctx\+::initialised}\label{structtls__root__ctx_ab71180f4ac83a6a4d5200d193897a0d7}
+True if the context has been initialised \hypertarget{structtls__root__ctx_af1c33dcb72f792e9aace760b9d10879b}{}\index{tls\+\_\+root\+\_\+ctx@{tls\+\_\+root\+\_\+ctx}!priv\+\_\+key@{priv\+\_\+key}}
+\index{priv\+\_\+key@{priv\+\_\+key}!tls\+\_\+root\+\_\+ctx@{tls\+\_\+root\+\_\+ctx}}
+\subsubsection[{priv\+\_\+key}]{\setlength{\rightskip}{0pt plus 5cm}mbedtls\+\_\+pk\+\_\+context$\ast$ tls\+\_\+root\+\_\+ctx\+::priv\+\_\+key}\label{structtls__root__ctx_af1c33dcb72f792e9aace760b9d10879b}
+Local private key 
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/openvpn/\hyperlink{ssl__mbedtls_8h}{ssl\+\_\+mbedtls.\+h}\item 
+src/openvpn/\hyperlink{ssl__openssl_8h}{ssl\+\_\+openssl.\+h}\end{DoxyCompactItemize}

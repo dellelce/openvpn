@@ -1,0 +1,5 @@
+<map id="string_mod_const" name="string_mod_const">
+<area shape="rect" id="node2" href="$buffer_8c.html#a06e0220403278399596a7a1b6b601fca" title="string_alloc" alt="" coords="179,5,267,32"/>
+<area shape="rect" id="node4" href="$buffer_8c.html#aa68699d49774055c860c609ec5d84bd5" title="string_mod" alt="" coords="179,56,266,83"/>
+<area shape="rect" id="node3" href="$buffer_8c.html#a67f7dec7f86e113dc0744584fd80b621" title="gc_malloc" alt="" coords="315,5,396,32"/>
+</map>

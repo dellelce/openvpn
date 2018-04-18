@@ -1,0 +1,76 @@
+\hypertarget{session__id_8c}{}\section{src/openvpn/session\+\_\+id.c File Reference}
+\label{session__id_8c}\index{src/openvpn/session\+\_\+id.\+c@{src/openvpn/session\+\_\+id.\+c}}
+{\ttfamily \#include \char`\"{}syshead.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}error.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}common.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}crypto.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}session\+\_\+id.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}memdbg.\+h\char`\"{}}\\*
+Include dependency graph for session\+\_\+id.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{session__id_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{session__id_8c_a10adac4822b0a667af4bd26cfc286a07}{session\+\_\+id\+\_\+random} (struct \hyperlink{structsession__id}{session\+\_\+id} $\ast$sid)
+\item 
+const char $\ast$ \hyperlink{session__id_8c_aa7884bbdd976e0582af7ce08249a5688}{session\+\_\+id\+\_\+print} (const struct \hyperlink{structsession__id}{session\+\_\+id} $\ast$sid, struct \hyperlink{structgc__arena}{gc\+\_\+arena} $\ast$gc)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const struct \hyperlink{structsession__id}{session\+\_\+id} \hyperlink{session__id_8c_a13ace4e2d8c26411719eee5e02283171}{x\+\_\+session\+\_\+id\+\_\+zero}
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{session__id_8c_aa7884bbdd976e0582af7ce08249a5688}{}\index{session\+\_\+id.\+c@{session\+\_\+id.\+c}!session\+\_\+id\+\_\+print@{session\+\_\+id\+\_\+print}}
+\index{session\+\_\+id\+\_\+print@{session\+\_\+id\+\_\+print}!session\+\_\+id.\+c@{session\+\_\+id.\+c}}
+\subsubsection[{session\+\_\+id\+\_\+print(const struct session\+\_\+id $\ast$sid, struct gc\+\_\+arena $\ast$gc)}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ session\+\_\+id\+\_\+print (
+\begin{DoxyParamCaption}
+\item[{const struct {\bf session\+\_\+id} $\ast$}]{sid, }
+\item[{struct {\bf gc\+\_\+arena} $\ast$}]{gc}
+\end{DoxyParamCaption}
+)}\label{session__id_8c_aa7884bbdd976e0582af7ce08249a5688}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{session__id_8c_aa7884bbdd976e0582af7ce08249a5688_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{session__id_8c_a10adac4822b0a667af4bd26cfc286a07}{}\index{session\+\_\+id.\+c@{session\+\_\+id.\+c}!session\+\_\+id\+\_\+random@{session\+\_\+id\+\_\+random}}
+\index{session\+\_\+id\+\_\+random@{session\+\_\+id\+\_\+random}!session\+\_\+id.\+c@{session\+\_\+id.\+c}}
+\subsubsection[{session\+\_\+id\+\_\+random(struct session\+\_\+id $\ast$sid)}]{\setlength{\rightskip}{0pt plus 5cm}void session\+\_\+id\+\_\+random (
+\begin{DoxyParamCaption}
+\item[{struct {\bf session\+\_\+id} $\ast$}]{sid}
+\end{DoxyParamCaption}
+)}\label{session__id_8c_a10adac4822b0a667af4bd26cfc286a07}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{session__id_8c_a10adac4822b0a667af4bd26cfc286a07_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Variable Documentation}
+\hypertarget{session__id_8c_a13ace4e2d8c26411719eee5e02283171}{}\index{session\+\_\+id.\+c@{session\+\_\+id.\+c}!x\+\_\+session\+\_\+id\+\_\+zero@{x\+\_\+session\+\_\+id\+\_\+zero}}
+\index{x\+\_\+session\+\_\+id\+\_\+zero@{x\+\_\+session\+\_\+id\+\_\+zero}!session\+\_\+id.\+c@{session\+\_\+id.\+c}}
+\subsubsection[{x\+\_\+session\+\_\+id\+\_\+zero}]{\setlength{\rightskip}{0pt plus 5cm}const struct {\bf session\+\_\+id} x\+\_\+session\+\_\+id\+\_\+zero}\label{session__id_8c_a13ace4e2d8c26411719eee5e02283171}

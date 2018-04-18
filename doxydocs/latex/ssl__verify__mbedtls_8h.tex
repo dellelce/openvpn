@@ -1,0 +1,41 @@
+\hypertarget{ssl__verify__mbedtls_8h}{}\section{src/openvpn/ssl\+\_\+verify\+\_\+mbedtls.h File Reference}
+\label{ssl__verify__mbedtls_8h}\index{src/openvpn/ssl\+\_\+verify\+\_\+mbedtls.\+h@{src/openvpn/ssl\+\_\+verify\+\_\+mbedtls.\+h}}
+{\ttfamily \#include \char`\"{}syshead.\+h\char`\"{}}\\*
+{\ttfamily \#include $<$mbedtls/x509\+\_\+crt.\+h$>$}\\*
+Include dependency graph for ssl\+\_\+verify\+\_\+mbedtls.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=294pt]{ssl__verify__mbedtls_8h__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{ssl__verify__mbedtls_8h_af06584a815f6e7395bda70d511020a7b}{\+\_\+\+\_\+\+O\+P\+E\+N\+V\+P\+N\+\_\+\+X509\+\_\+\+C\+E\+R\+T\+\_\+\+T\+\_\+\+D\+E\+C\+L\+A\+R\+E\+D}
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef mbedtls\+\_\+x509\+\_\+crt \hyperlink{ssl__verify__mbedtls_8h_ad391202ae7645e5ee5bb5f1e6f24bb31}{openvpn\+\_\+x509\+\_\+cert\+\_\+t}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{Indent}{\bf Function for authenticating a new connection from a remote Open\+V\+P\+N peer}\par
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{group__control__tls_gadeac70d67a80b44a96cbde2368dd5f3c}{verify\+\_\+callback} (void $\ast$session\+\_\+obj, mbedtls\+\_\+x509\+\_\+crt $\ast$cert, int cert\+\_\+depth, uint32\+\_\+t $\ast$flags)
+\end{DoxyCompactItemize}
+\end{Indent}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{ssl__verify__mbedtls_8h_af06584a815f6e7395bda70d511020a7b}{}\index{ssl\+\_\+verify\+\_\+mbedtls.\+h@{ssl\+\_\+verify\+\_\+mbedtls.\+h}!\+\_\+\+\_\+\+O\+P\+E\+N\+V\+P\+N\+\_\+\+X509\+\_\+\+C\+E\+R\+T\+\_\+\+T\+\_\+\+D\+E\+C\+L\+A\+R\+E\+D@{\+\_\+\+\_\+\+O\+P\+E\+N\+V\+P\+N\+\_\+\+X509\+\_\+\+C\+E\+R\+T\+\_\+\+T\+\_\+\+D\+E\+C\+L\+A\+R\+E\+D}}
+\index{\+\_\+\+\_\+\+O\+P\+E\+N\+V\+P\+N\+\_\+\+X509\+\_\+\+C\+E\+R\+T\+\_\+\+T\+\_\+\+D\+E\+C\+L\+A\+R\+E\+D@{\+\_\+\+\_\+\+O\+P\+E\+N\+V\+P\+N\+\_\+\+X509\+\_\+\+C\+E\+R\+T\+\_\+\+T\+\_\+\+D\+E\+C\+L\+A\+R\+E\+D}!ssl\+\_\+verify\+\_\+mbedtls.\+h@{ssl\+\_\+verify\+\_\+mbedtls.\+h}}
+\subsubsection[{\+\_\+\+\_\+\+O\+P\+E\+N\+V\+P\+N\+\_\+\+X509\+\_\+\+C\+E\+R\+T\+\_\+\+T\+\_\+\+D\+E\+C\+L\+A\+R\+E\+D}]{\setlength{\rightskip}{0pt plus 5cm}\#define \+\_\+\+\_\+\+O\+P\+E\+N\+V\+P\+N\+\_\+\+X509\+\_\+\+C\+E\+R\+T\+\_\+\+T\+\_\+\+D\+E\+C\+L\+A\+R\+E\+D}\label{ssl__verify__mbedtls_8h_af06584a815f6e7395bda70d511020a7b}
+
+
+\subsection{Typedef Documentation}
+\hypertarget{ssl__verify__mbedtls_8h_ad391202ae7645e5ee5bb5f1e6f24bb31}{}\index{ssl\+\_\+verify\+\_\+mbedtls.\+h@{ssl\+\_\+verify\+\_\+mbedtls.\+h}!openvpn\+\_\+x509\+\_\+cert\+\_\+t@{openvpn\+\_\+x509\+\_\+cert\+\_\+t}}
+\index{openvpn\+\_\+x509\+\_\+cert\+\_\+t@{openvpn\+\_\+x509\+\_\+cert\+\_\+t}!ssl\+\_\+verify\+\_\+mbedtls.\+h@{ssl\+\_\+verify\+\_\+mbedtls.\+h}}
+\subsubsection[{openvpn\+\_\+x509\+\_\+cert\+\_\+t}]{\setlength{\rightskip}{0pt plus 5cm}typedef mbedtls\+\_\+x509\+\_\+crt {\bf openvpn\+\_\+x509\+\_\+cert\+\_\+t}}\label{ssl__verify__mbedtls_8h_ad391202ae7645e5ee5bb5f1e6f24bb31}

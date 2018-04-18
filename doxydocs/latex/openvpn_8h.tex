@@ -1,0 +1,190 @@
+\hypertarget{openvpn_8h}{}\section{src/openvpn/openvpn.h File Reference}
+\label{openvpn_8h}\index{src/openvpn/openvpn.\+h@{src/openvpn/openvpn.\+h}}
+{\ttfamily \#include \char`\"{}buffer.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}options.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}socket.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}crypto.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}ssl.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}packet\+\_\+id.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}comp.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}tun.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}interval.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}status.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}fragment.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}shaper.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}route.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}proxy.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}socks.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}sig.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}misc.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}mbuf.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}pool.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}plugin.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}manage.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}pf.\+h\char`\"{}}\\*
+Include dependency graph for openvpn.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{openvpn_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{openvpn_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structkey__schedule}{key\+\_\+schedule}
+\item 
+struct \hyperlink{structpacket__id__persist}{packet\+\_\+id\+\_\+persist}
+\item 
+struct \hyperlink{structcontext__buffers}{context\+\_\+buffers}
+\item 
+struct \hyperlink{structcontext__persist}{context\+\_\+persist}
+\item 
+struct \hyperlink{structcontext__0}{context\+\_\+0}
+\item 
+struct \hyperlink{structcontext__1}{context\+\_\+1}
+\item 
+struct \hyperlink{structcontext__2}{context\+\_\+2}
+\item 
+struct \hyperlink{structcontext}{context}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{openvpn_8h_a5e557270f597bc47812f80a64b56315a}{S\+O\+C\+K\+E\+T\+\_\+\+R\+E\+A\+D}~(1$<$$<$0)
+\item 
+\#define \hyperlink{openvpn_8h_a6dadd6485486fa1c14e459efe468c02b}{S\+O\+C\+K\+E\+T\+\_\+\+W\+R\+I\+T\+E}~(1$<$$<$1)
+\item 
+\#define \hyperlink{openvpn_8h_ac83afe536cc119dd1f366b0d483c3e1f}{T\+U\+N\+\_\+\+R\+E\+A\+D}~(1$<$$<$2)
+\item 
+\#define \hyperlink{openvpn_8h_a51efe4eefe471689b285b6cf70af863a}{T\+U\+N\+\_\+\+W\+R\+I\+T\+E}~(1$<$$<$3)
+\item 
+\#define \hyperlink{openvpn_8h_a6d4566915e747bc257792d3b3967a181}{E\+S\+\_\+\+E\+R\+R\+O\+R}~(1$<$$<$4)
+\item 
+\#define \hyperlink{openvpn_8h_a79cfac16165fcf687871b0a4b72b8f17}{E\+S\+\_\+\+T\+I\+M\+E\+O\+U\+T}~(1$<$$<$5)
+\item 
+\#define \hyperlink{openvpn_8h_a690eebaffbe5bdfd2cb1c324bb89538a}{C\+M\+\_\+\+P2\+P}~0  /$\ast$ standalone point-\/to-\/point session or client $\ast$/
+\item 
+\#define \hyperlink{openvpn_8h_afb4e2528db3a885cdebc615977a34c71}{C\+M\+\_\+\+T\+O\+P}~1  /$\ast$ top level of a multi-\/client or point-\/to-\/multipoint server $\ast$/
+\item 
+\#define \hyperlink{openvpn_8h_ab165034158b5eca5e815b14a5d091bbc}{C\+M\+\_\+\+T\+O\+P\+\_\+\+C\+L\+O\+N\+E}~2  /$\ast$ clone of a \hyperlink{openvpn_8h_afb4e2528db3a885cdebc615977a34c71}{C\+M\+\_\+\+T\+O\+P} \hyperlink{structcontext}{context} for one thread $\ast$/
+\item 
+\#define \hyperlink{openvpn_8h_ae1e939740ff946b87d7d65c3f533c9b5}{C\+M\+\_\+\+C\+H\+I\+L\+D\+\_\+\+U\+D\+P}~3  /$\ast$ child \hyperlink{structcontext}{context} of a \hyperlink{openvpn_8h_afb4e2528db3a885cdebc615977a34c71}{C\+M\+\_\+\+T\+O\+P} or C\+M\+\_\+\+T\+H\+R\+E\+A\+D $\ast$/
+\item 
+\#define \hyperlink{openvpn_8h_ab31447bc2ad9819e323c5795af28e93e}{C\+M\+\_\+\+C\+H\+I\+L\+D\+\_\+\+T\+C\+P}~4  /$\ast$ child \hyperlink{structcontext}{context} of a \hyperlink{openvpn_8h_afb4e2528db3a885cdebc615977a34c71}{C\+M\+\_\+\+T\+O\+P} or C\+M\+\_\+\+T\+H\+R\+E\+A\+D $\ast$/
+\item 
+\#define \hyperlink{openvpn_8h_a477a846caa6d23474ba80437a1b24cf9}{E\+V\+E\+N\+T\+\_\+\+L\+O\+O\+P\+\_\+\+C\+H\+E\+C\+K\+\_\+\+S\+I\+G\+N\+A\+L}(c,  func,  arg)  
+\item 
+\#define \hyperlink{openvpn_8h_a21ce4ae478838de79c2470ff07c22288}{T\+L\+S\+\_\+\+M\+O\+D\+E}(c)~((c)-\/$>$c2.\+tls\+\_\+multi != N\+U\+L\+L)
+\item 
+\#define \hyperlink{openvpn_8h_ae49a15fe2edd963e7fca16a4ece443d4}{P\+R\+O\+T\+O\+\_\+\+D\+U\+M\+P\+\_\+\+F\+L\+A\+G\+S}~(check\+\_\+debug\+\_\+level(\hyperlink{errlevel_8h_ab6859adfd85598229ba6589dd0511e62}{D\+\_\+\+L\+I\+N\+K\+\_\+\+R\+W\+\_\+\+V\+E\+R\+B\+O\+S\+E}) ? (\hyperlink{ssl_8h_ac649082cdb213e848720db8c218d6441}{P\+D\+\_\+\+S\+H\+O\+W\+\_\+\+D\+A\+T\+A}$\vert$\hyperlink{ssl_8h_aa39f766377905223eb0661cb4ea54381}{P\+D\+\_\+\+V\+E\+R\+B\+O\+S\+E}) \+: 0)
+\item 
+\#define \hyperlink{openvpn_8h_add63e2a6d31803b005dbe6f3c01321f3}{P\+R\+O\+T\+O\+\_\+\+D\+U\+M\+P}(buf,  gc)
+\item 
+\#define \hyperlink{openvpn_8h_a52609d7e7380af270a8921703521fd41}{C\+I\+P\+H\+E\+R\+\_\+\+E\+N\+A\+B\+L\+E\+D}(c)~(c-\/$>$c1.\+ks.\+key\+\_\+type.\+cipher != N\+U\+L\+L)
+\item 
+\#define \hyperlink{openvpn_8h_aeac92421f95286e28c85bcf320116d80}{M\+A\+X\+\_\+\+P\+E\+E\+R\+\_\+\+I\+D}~0x\+F\+F\+F\+F\+F\+F
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{openvpn_8h_a52609d7e7380af270a8921703521fd41}{}\index{openvpn.\+h@{openvpn.\+h}!C\+I\+P\+H\+E\+R\+\_\+\+E\+N\+A\+B\+L\+E\+D@{C\+I\+P\+H\+E\+R\+\_\+\+E\+N\+A\+B\+L\+E\+D}}
+\index{C\+I\+P\+H\+E\+R\+\_\+\+E\+N\+A\+B\+L\+E\+D@{C\+I\+P\+H\+E\+R\+\_\+\+E\+N\+A\+B\+L\+E\+D}!openvpn.\+h@{openvpn.\+h}}
+\subsubsection[{C\+I\+P\+H\+E\+R\+\_\+\+E\+N\+A\+B\+L\+E\+D}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+I\+P\+H\+E\+R\+\_\+\+E\+N\+A\+B\+L\+E\+D(
+\begin{DoxyParamCaption}
+\item[{}]{c}
+\end{DoxyParamCaption}
+)~(c-\/$>$c1.\+ks.\+key\+\_\+type.\+cipher != N\+U\+L\+L)}\label{openvpn_8h_a52609d7e7380af270a8921703521fd41}
+\hypertarget{openvpn_8h_ab31447bc2ad9819e323c5795af28e93e}{}\index{openvpn.\+h@{openvpn.\+h}!C\+M\+\_\+\+C\+H\+I\+L\+D\+\_\+\+T\+C\+P@{C\+M\+\_\+\+C\+H\+I\+L\+D\+\_\+\+T\+C\+P}}
+\index{C\+M\+\_\+\+C\+H\+I\+L\+D\+\_\+\+T\+C\+P@{C\+M\+\_\+\+C\+H\+I\+L\+D\+\_\+\+T\+C\+P}!openvpn.\+h@{openvpn.\+h}}
+\subsubsection[{C\+M\+\_\+\+C\+H\+I\+L\+D\+\_\+\+T\+C\+P}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+M\+\_\+\+C\+H\+I\+L\+D\+\_\+\+T\+C\+P~4  /$\ast$ child {\bf context} of a {\bf C\+M\+\_\+\+T\+O\+P} or C\+M\+\_\+\+T\+H\+R\+E\+A\+D $\ast$/}\label{openvpn_8h_ab31447bc2ad9819e323c5795af28e93e}
+\hypertarget{openvpn_8h_ae1e939740ff946b87d7d65c3f533c9b5}{}\index{openvpn.\+h@{openvpn.\+h}!C\+M\+\_\+\+C\+H\+I\+L\+D\+\_\+\+U\+D\+P@{C\+M\+\_\+\+C\+H\+I\+L\+D\+\_\+\+U\+D\+P}}
+\index{C\+M\+\_\+\+C\+H\+I\+L\+D\+\_\+\+U\+D\+P@{C\+M\+\_\+\+C\+H\+I\+L\+D\+\_\+\+U\+D\+P}!openvpn.\+h@{openvpn.\+h}}
+\subsubsection[{C\+M\+\_\+\+C\+H\+I\+L\+D\+\_\+\+U\+D\+P}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+M\+\_\+\+C\+H\+I\+L\+D\+\_\+\+U\+D\+P~3  /$\ast$ child {\bf context} of a {\bf C\+M\+\_\+\+T\+O\+P} or C\+M\+\_\+\+T\+H\+R\+E\+A\+D $\ast$/}\label{openvpn_8h_ae1e939740ff946b87d7d65c3f533c9b5}
+\hypertarget{openvpn_8h_a690eebaffbe5bdfd2cb1c324bb89538a}{}\index{openvpn.\+h@{openvpn.\+h}!C\+M\+\_\+\+P2\+P@{C\+M\+\_\+\+P2\+P}}
+\index{C\+M\+\_\+\+P2\+P@{C\+M\+\_\+\+P2\+P}!openvpn.\+h@{openvpn.\+h}}
+\subsubsection[{C\+M\+\_\+\+P2\+P}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+M\+\_\+\+P2\+P~0  /$\ast$ standalone point-\/to-\/point session or client $\ast$/}\label{openvpn_8h_a690eebaffbe5bdfd2cb1c324bb89538a}
+\hypertarget{openvpn_8h_afb4e2528db3a885cdebc615977a34c71}{}\index{openvpn.\+h@{openvpn.\+h}!C\+M\+\_\+\+T\+O\+P@{C\+M\+\_\+\+T\+O\+P}}
+\index{C\+M\+\_\+\+T\+O\+P@{C\+M\+\_\+\+T\+O\+P}!openvpn.\+h@{openvpn.\+h}}
+\subsubsection[{C\+M\+\_\+\+T\+O\+P}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+M\+\_\+\+T\+O\+P~1  /$\ast$ top level of a multi-\/client or point-\/to-\/multipoint server $\ast$/}\label{openvpn_8h_afb4e2528db3a885cdebc615977a34c71}
+\hypertarget{openvpn_8h_ab165034158b5eca5e815b14a5d091bbc}{}\index{openvpn.\+h@{openvpn.\+h}!C\+M\+\_\+\+T\+O\+P\+\_\+\+C\+L\+O\+N\+E@{C\+M\+\_\+\+T\+O\+P\+\_\+\+C\+L\+O\+N\+E}}
+\index{C\+M\+\_\+\+T\+O\+P\+\_\+\+C\+L\+O\+N\+E@{C\+M\+\_\+\+T\+O\+P\+\_\+\+C\+L\+O\+N\+E}!openvpn.\+h@{openvpn.\+h}}
+\subsubsection[{C\+M\+\_\+\+T\+O\+P\+\_\+\+C\+L\+O\+N\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+M\+\_\+\+T\+O\+P\+\_\+\+C\+L\+O\+N\+E~2  /$\ast$ clone of a {\bf C\+M\+\_\+\+T\+O\+P} {\bf context} for one thread $\ast$/}\label{openvpn_8h_ab165034158b5eca5e815b14a5d091bbc}
+\hypertarget{openvpn_8h_a6d4566915e747bc257792d3b3967a181}{}\index{openvpn.\+h@{openvpn.\+h}!E\+S\+\_\+\+E\+R\+R\+O\+R@{E\+S\+\_\+\+E\+R\+R\+O\+R}}
+\index{E\+S\+\_\+\+E\+R\+R\+O\+R@{E\+S\+\_\+\+E\+R\+R\+O\+R}!openvpn.\+h@{openvpn.\+h}}
+\subsubsection[{E\+S\+\_\+\+E\+R\+R\+O\+R}]{\setlength{\rightskip}{0pt plus 5cm}\#define E\+S\+\_\+\+E\+R\+R\+O\+R~(1$<$$<$4)}\label{openvpn_8h_a6d4566915e747bc257792d3b3967a181}
+\hypertarget{openvpn_8h_a79cfac16165fcf687871b0a4b72b8f17}{}\index{openvpn.\+h@{openvpn.\+h}!E\+S\+\_\+\+T\+I\+M\+E\+O\+U\+T@{E\+S\+\_\+\+T\+I\+M\+E\+O\+U\+T}}
+\index{E\+S\+\_\+\+T\+I\+M\+E\+O\+U\+T@{E\+S\+\_\+\+T\+I\+M\+E\+O\+U\+T}!openvpn.\+h@{openvpn.\+h}}
+\subsubsection[{E\+S\+\_\+\+T\+I\+M\+E\+O\+U\+T}]{\setlength{\rightskip}{0pt plus 5cm}\#define E\+S\+\_\+\+T\+I\+M\+E\+O\+U\+T~(1$<$$<$5)}\label{openvpn_8h_a79cfac16165fcf687871b0a4b72b8f17}
+\hypertarget{openvpn_8h_a477a846caa6d23474ba80437a1b24cf9}{}\index{openvpn.\+h@{openvpn.\+h}!E\+V\+E\+N\+T\+\_\+\+L\+O\+O\+P\+\_\+\+C\+H\+E\+C\+K\+\_\+\+S\+I\+G\+N\+A\+L@{E\+V\+E\+N\+T\+\_\+\+L\+O\+O\+P\+\_\+\+C\+H\+E\+C\+K\+\_\+\+S\+I\+G\+N\+A\+L}}
+\index{E\+V\+E\+N\+T\+\_\+\+L\+O\+O\+P\+\_\+\+C\+H\+E\+C\+K\+\_\+\+S\+I\+G\+N\+A\+L@{E\+V\+E\+N\+T\+\_\+\+L\+O\+O\+P\+\_\+\+C\+H\+E\+C\+K\+\_\+\+S\+I\+G\+N\+A\+L}!openvpn.\+h@{openvpn.\+h}}
+\subsubsection[{E\+V\+E\+N\+T\+\_\+\+L\+O\+O\+P\+\_\+\+C\+H\+E\+C\+K\+\_\+\+S\+I\+G\+N\+A\+L}]{\setlength{\rightskip}{0pt plus 5cm}\#define E\+V\+E\+N\+T\+\_\+\+L\+O\+O\+P\+\_\+\+C\+H\+E\+C\+K\+\_\+\+S\+I\+G\+N\+A\+L(
+\begin{DoxyParamCaption}
+\item[{}]{c, }
+\item[{}]{func, }
+\item[{}]{arg}
+\end{DoxyParamCaption}
+)}\label{openvpn_8h_a477a846caa6d23474ba80437a1b24cf9}
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\textcolor{keywordflow}{if} (\hyperlink{sig_8h_a7ddcf3d19f5ec5d3e50cead33281c8b2}{IS\_SIG}(c))                           \(\backslash\)
+    \{                                       \(\backslash\)
+        const \textcolor{keywordtype}{int} brk = func(arg);           \(\backslash\)
+        perf\_pop();                          \(\backslash\)
+        if (brk) \{                              \(\backslash\)
+            break;\}                              \(\backslash\)
+        else \{                                  \(\backslash\)
+            continue;\}                           \(\backslash\)
+    \}
+\end{DoxyCode}
+\hypertarget{openvpn_8h_aeac92421f95286e28c85bcf320116d80}{}\index{openvpn.\+h@{openvpn.\+h}!M\+A\+X\+\_\+\+P\+E\+E\+R\+\_\+\+I\+D@{M\+A\+X\+\_\+\+P\+E\+E\+R\+\_\+\+I\+D}}
+\index{M\+A\+X\+\_\+\+P\+E\+E\+R\+\_\+\+I\+D@{M\+A\+X\+\_\+\+P\+E\+E\+R\+\_\+\+I\+D}!openvpn.\+h@{openvpn.\+h}}
+\subsubsection[{M\+A\+X\+\_\+\+P\+E\+E\+R\+\_\+\+I\+D}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\+A\+X\+\_\+\+P\+E\+E\+R\+\_\+\+I\+D~0x\+F\+F\+F\+F\+F\+F}\label{openvpn_8h_aeac92421f95286e28c85bcf320116d80}
+\hypertarget{openvpn_8h_add63e2a6d31803b005dbe6f3c01321f3}{}\index{openvpn.\+h@{openvpn.\+h}!P\+R\+O\+T\+O\+\_\+\+D\+U\+M\+P@{P\+R\+O\+T\+O\+\_\+\+D\+U\+M\+P}}
+\index{P\+R\+O\+T\+O\+\_\+\+D\+U\+M\+P@{P\+R\+O\+T\+O\+\_\+\+D\+U\+M\+P}!openvpn.\+h@{openvpn.\+h}}
+\subsubsection[{P\+R\+O\+T\+O\+\_\+\+D\+U\+M\+P}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\+R\+O\+T\+O\+\_\+\+D\+U\+M\+P(
+\begin{DoxyParamCaption}
+\item[{}]{buf, }
+\item[{}]{gc}
+\end{DoxyParamCaption}
+)}\label{openvpn_8h_add63e2a6d31803b005dbe6f3c01321f3}
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\hyperlink{ssl_8c_a942946896996b3be347482cfea59c478}{protocol\_dump}((buf), \(\backslash\)
+                                          \hyperlink{openvpn_8h_ae49a15fe2edd963e7fca16a4ece443d4}{PROTO\_DUMP\_FLAGS}   \(\backslash\)
+                                          |(c->c2.tls\_multi ? \hyperlink{ssl_8h_a8656b6c65641570b490b58e11a11d9d1}{PD\_TLS} : 0)   \(\backslash\)
+                                          |(c->options.tls\_auth\_file ? c->c1.ks.key\_type.hmac\_length : 0), 
+      \(\backslash\)
+                                          gc)
+\end{DoxyCode}
+\hypertarget{openvpn_8h_ae49a15fe2edd963e7fca16a4ece443d4}{}\index{openvpn.\+h@{openvpn.\+h}!P\+R\+O\+T\+O\+\_\+\+D\+U\+M\+P\+\_\+\+F\+L\+A\+G\+S@{P\+R\+O\+T\+O\+\_\+\+D\+U\+M\+P\+\_\+\+F\+L\+A\+G\+S}}
+\index{P\+R\+O\+T\+O\+\_\+\+D\+U\+M\+P\+\_\+\+F\+L\+A\+G\+S@{P\+R\+O\+T\+O\+\_\+\+D\+U\+M\+P\+\_\+\+F\+L\+A\+G\+S}!openvpn.\+h@{openvpn.\+h}}
+\subsubsection[{P\+R\+O\+T\+O\+\_\+\+D\+U\+M\+P\+\_\+\+F\+L\+A\+G\+S}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\+R\+O\+T\+O\+\_\+\+D\+U\+M\+P\+\_\+\+F\+L\+A\+G\+S~(check\+\_\+debug\+\_\+level({\bf D\+\_\+\+L\+I\+N\+K\+\_\+\+R\+W\+\_\+\+V\+E\+R\+B\+O\+S\+E}) ? ({\bf P\+D\+\_\+\+S\+H\+O\+W\+\_\+\+D\+A\+T\+A}$\vert${\bf P\+D\+\_\+\+V\+E\+R\+B\+O\+S\+E}) \+: 0)}\label{openvpn_8h_ae49a15fe2edd963e7fca16a4ece443d4}
+\hypertarget{openvpn_8h_a5e557270f597bc47812f80a64b56315a}{}\index{openvpn.\+h@{openvpn.\+h}!S\+O\+C\+K\+E\+T\+\_\+\+R\+E\+A\+D@{S\+O\+C\+K\+E\+T\+\_\+\+R\+E\+A\+D}}
+\index{S\+O\+C\+K\+E\+T\+\_\+\+R\+E\+A\+D@{S\+O\+C\+K\+E\+T\+\_\+\+R\+E\+A\+D}!openvpn.\+h@{openvpn.\+h}}
+\subsubsection[{S\+O\+C\+K\+E\+T\+\_\+\+R\+E\+A\+D}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\+O\+C\+K\+E\+T\+\_\+\+R\+E\+A\+D~(1$<$$<$0)}\label{openvpn_8h_a5e557270f597bc47812f80a64b56315a}
+\hypertarget{openvpn_8h_a6dadd6485486fa1c14e459efe468c02b}{}\index{openvpn.\+h@{openvpn.\+h}!S\+O\+C\+K\+E\+T\+\_\+\+W\+R\+I\+T\+E@{S\+O\+C\+K\+E\+T\+\_\+\+W\+R\+I\+T\+E}}
+\index{S\+O\+C\+K\+E\+T\+\_\+\+W\+R\+I\+T\+E@{S\+O\+C\+K\+E\+T\+\_\+\+W\+R\+I\+T\+E}!openvpn.\+h@{openvpn.\+h}}
+\subsubsection[{S\+O\+C\+K\+E\+T\+\_\+\+W\+R\+I\+T\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\+O\+C\+K\+E\+T\+\_\+\+W\+R\+I\+T\+E~(1$<$$<$1)}\label{openvpn_8h_a6dadd6485486fa1c14e459efe468c02b}
+\hypertarget{openvpn_8h_a21ce4ae478838de79c2470ff07c22288}{}\index{openvpn.\+h@{openvpn.\+h}!T\+L\+S\+\_\+\+M\+O\+D\+E@{T\+L\+S\+\_\+\+M\+O\+D\+E}}
+\index{T\+L\+S\+\_\+\+M\+O\+D\+E@{T\+L\+S\+\_\+\+M\+O\+D\+E}!openvpn.\+h@{openvpn.\+h}}
+\subsubsection[{T\+L\+S\+\_\+\+M\+O\+D\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\+L\+S\+\_\+\+M\+O\+D\+E(
+\begin{DoxyParamCaption}
+\item[{}]{c}
+\end{DoxyParamCaption}
+)~((c)-\/$>$c2.\+tls\+\_\+multi != N\+U\+L\+L)}\label{openvpn_8h_a21ce4ae478838de79c2470ff07c22288}
+\hypertarget{openvpn_8h_ac83afe536cc119dd1f366b0d483c3e1f}{}\index{openvpn.\+h@{openvpn.\+h}!T\+U\+N\+\_\+\+R\+E\+A\+D@{T\+U\+N\+\_\+\+R\+E\+A\+D}}
+\index{T\+U\+N\+\_\+\+R\+E\+A\+D@{T\+U\+N\+\_\+\+R\+E\+A\+D}!openvpn.\+h@{openvpn.\+h}}
+\subsubsection[{T\+U\+N\+\_\+\+R\+E\+A\+D}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\+U\+N\+\_\+\+R\+E\+A\+D~(1$<$$<$2)}\label{openvpn_8h_ac83afe536cc119dd1f366b0d483c3e1f}
+\hypertarget{openvpn_8h_a51efe4eefe471689b285b6cf70af863a}{}\index{openvpn.\+h@{openvpn.\+h}!T\+U\+N\+\_\+\+W\+R\+I\+T\+E@{T\+U\+N\+\_\+\+W\+R\+I\+T\+E}}
+\index{T\+U\+N\+\_\+\+W\+R\+I\+T\+E@{T\+U\+N\+\_\+\+W\+R\+I\+T\+E}!openvpn.\+h@{openvpn.\+h}}
+\subsubsection[{T\+U\+N\+\_\+\+W\+R\+I\+T\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\+U\+N\+\_\+\+W\+R\+I\+T\+E~(1$<$$<$3)}\label{openvpn_8h_a51efe4eefe471689b285b6cf70af863a}

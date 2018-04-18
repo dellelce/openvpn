@@ -1,0 +1,8 @@
+<map id="set_cloexec_action" name="set_cloexec_action">
+<area shape="rect" id="node2" href="$fdmisc_8h.html#a09193ec56615d682308eff8c491fc791" title="set_cloexec" alt="" coords="188,81,280,108"/>
+<area shape="rect" id="node3" href="$socket_8h.html#a69b6126858e443094c6e451e13c4faea" title="create_socket_tcp" alt="" coords="344,5,473,32"/>
+<area shape="rect" id="node4" href="$socket_8h.html#a7bd3fb1c5f91bcd4d18174168e226eb0" title="socket_do_accept" alt="" coords="345,56,473,83"/>
+<area shape="rect" id="node5" href="$socket_8h.html#af7a1098694842ca0c089e4ef673fc5fd" title="link_socket_init_phase1" alt="" coords="328,107,489,133"/>
+<area shape="rect" id="node6" href="$status_8h.html#ab196e92cac48e356eab474978232e453" title="status_open" alt="" coords="362,157,455,184"/>
+<area shape="rect" id="node7" href="$init_8h.html#aaf57aca5b6d652ab6f00af4b9a746c38" title="init_static" alt="" coords="537,157,616,184"/>
+</map>

@@ -1,0 +1,6 @@
+<map id="platform_mlockall" name="platform_mlockall">
+<area shape="rect" id="node2" href="$init_8h.html#a095a721e463c315c4dbdebd50358abd0" title="do_genkey" alt="" coords="181,5,266,32"/>
+<area shape="rect" id="node3" href="$init_8h.html#a2986d81718c6cb5cd19bad612998d56f" title="init_instance" alt="" coords="176,56,271,83"/>
+<area shape="rect" id="node4" href="$init_8h.html#a6a1f31e3d9a1f00ef308cd117c540ed4" title="init_instance_handle\l_signals" alt="" coords="319,19,459,61"/>
+<area shape="rect" id="node5" href="$init_8h.html#a2e3da881a15567d205101e6b0853987a" title="inherit_context_child" alt="" coords="319,85,460,112"/>
+</map>

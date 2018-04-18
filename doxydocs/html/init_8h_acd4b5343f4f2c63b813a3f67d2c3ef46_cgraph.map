@@ -1,0 +1,7 @@
+<map id="possibly_become_daemon" name="possibly_become_daemon">
+<area shape="rect" id="node2" href="$compat-daemon_8c.html#af298996def620cbda4cd529988218cb0" title="daemon" alt="" coords="265,5,333,32"/>
+<area shape="rect" id="node3" href="$sig_8c.html#a90955f1d36eb2dbcc7aacb204d5ea523" title="restore_signal_state" alt="" coords="230,56,369,83"/>
+<area shape="rect" id="node6" href="$misc_8c.html#a6e7deed7d2affb7c6a734ec2aea7951d" title="set_std_files_to_null" alt="" coords="229,107,369,133"/>
+<area shape="rect" id="node4" href="$sig_8c.html#a705ac4a2e18cd9194106e0bed544247f" title="pre_init_signal_catch" alt="" coords="421,31,565,57"/>
+<area shape="rect" id="node5" href="$sig_8c.html#a26c2d844baaa9c3c3457b1b8081c7458" title="post_init_signal_catch" alt="" coords="417,81,568,108"/>
+</map>

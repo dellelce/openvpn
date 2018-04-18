@@ -1,0 +1,16 @@
+<map id="add_client_nat_to_option_list" name="add_client_nat_to_option_list">
+<area shape="rect" id="node2" href="$socket_8c.html#aed74c8b5931192c1ad5829bd90e01603" title="getaddr" alt="" coords="244,208,309,235"/>
+<area shape="rect" id="node3" href="$socket_8c.html#a02e4efd449ac0356c68ec0a4477e3342" title="openvpn_getaddrinfo" alt="" coords="357,208,496,235"/>
+<area shape="rect" id="node4" href="$misc_8c.html#ac6174edbe71fde417d167f81417ae36b" title="hostname_randomize" alt="" coords="544,183,691,209"/>
+<area shape="rect" id="node15" href="$manage_8c.html#af07a56f96cec84856d0bf97899a4d460" title="management_sleep" alt="" coords="550,233,685,260"/>
+<area shape="rect" id="node5" href="$buffer_8c.html#aa35bf7feb6a99bf5d364b2d4eba1195c" title="alloc_buf_gc" alt="" coords="893,157,988,184"/>
+<area shape="rect" id="node8" href="$crypto_8c.html#a1d7c04eddcc6269ed0f1e76fe3f9ce0f" title="prng_bytes" alt="" coords="749,81,835,108"/>
+<area shape="rect" id="node12" href="$buffer_8c.html#a765c29b346cf601c5e0be2fd2c935a8d" title="format_hex_ex" alt="" coords="739,208,845,235"/>
+<area shape="rect" id="node13" href="$buffer_8c.html#a3307f08331b1ce42168bafd2ecf7874a" title="buf_printf" alt="" coords="903,259,978,285"/>
+<area shape="rect" id="node6" href="$buffer_8c.html#acc1a4ee83a591116d331e52baacf253d" title="buf_size_error" alt="" coords="1036,132,1139,159"/>
+<area shape="rect" id="node7" href="$buffer_8c.html#a67f7dec7f86e113dc0744584fd80b621" title="gc_malloc" alt="" coords="1047,183,1128,209"/>
+<area shape="rect" id="node9" href="$crypto__backend_8h.html#a002732eb1e19865cdb8f49a46af2cf69" title="md_kt_size" alt="" coords="896,107,985,133"/>
+<area shape="rect" id="node10" href="$crypto__backend_8h.html#a70d35559ec46dbb97b8b8a83a1e4ecbf" title="md_full" alt="" coords="909,5,972,32"/>
+<area shape="rect" id="node11" href="$crypto__backend_8h.html#a8a19f717f5824ff4455b6925af81299c" title="rand_bytes" alt="" coords="897,56,984,83"/>
+<area shape="rect" id="node14" href="$buffer_8c.html#a276febeb3ac5da2600b722b8dfb7ba0f" title="buf_catrunc" alt="" coords="896,208,985,235"/>
+</map>

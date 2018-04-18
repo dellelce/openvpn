@@ -1,0 +1,11 @@
+<map id="get_default_gateway" name="get_default_gateway">
+<area shape="rect" id="node2" href="$init_8h.html#aaf57aca5b6d652ab6f00af4b9a746c38" title="init_static" alt="" coords="240,5,319,32"/>
+<area shape="rect" id="node3" href="$route_8h.html#a3f534585396ea6d2712366fe917f34e3" title="init_route_list" alt="" coords="230,56,329,83"/>
+<area shape="rect" id="node4" href="$tun_8h.html#a924d8c9818ca3d219b0fd0f1d49a5f1a" title="check_subnet_conflict" alt="" coords="204,107,355,133"/>
+<area shape="rect" id="node10" href="$tun_8h.html#ae0893ee82c077b01d1e34e32ac5a5698" title="warn_on_use_of_common\l_subnets" alt="" coords="193,158,365,199"/>
+<area shape="rect" id="node5" href="$route_8h.html#a71b6566b675a91729b168da08d71d052" title="add_routes" alt="" coords="413,81,500,108"/>
+<area shape="rect" id="node7" href="$tun_8h.html#afee8026032ec0cf9c118465a970d4ac0" title="init_tun" alt="" coords="425,132,489,159"/>
+<area shape="rect" id="node6" href="$init_8h.html#a6445a4c044e64ef173fd00db00a860bf" title="do_route" alt="" coords="563,81,635,108"/>
+<area shape="rect" id="node8" href="$options_8c.html#a9038bb54aa94c5b93b2b28dee9bdb0bc" title="options_string" alt="" coords="548,132,651,159"/>
+<area shape="rect" id="node9" href="$options_8h.html#a5c19843f7bda8a3cadf41ecbabb6cd6a" title="options_string_extract\l_option" alt="" coords="699,125,849,166"/>
+</map>

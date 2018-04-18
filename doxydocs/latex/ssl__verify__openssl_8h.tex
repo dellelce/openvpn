@@ -1,0 +1,40 @@
+\hypertarget{ssl__verify__openssl_8h}{}\section{src/openvpn/ssl\+\_\+verify\+\_\+openssl.h File Reference}
+\label{ssl__verify__openssl_8h}\index{src/openvpn/ssl\+\_\+verify\+\_\+openssl.\+h@{src/openvpn/ssl\+\_\+verify\+\_\+openssl.\+h}}
+{\ttfamily \#include $<$openssl/x509.\+h$>$}\\*
+Include dependency graph for ssl\+\_\+verify\+\_\+openssl.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=191pt]{ssl__verify__openssl_8h__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{ssl__verify__openssl_8h_af06584a815f6e7395bda70d511020a7b}{\+\_\+\+\_\+\+O\+P\+E\+N\+V\+P\+N\+\_\+\+X509\+\_\+\+C\+E\+R\+T\+\_\+\+T\+\_\+\+D\+E\+C\+L\+A\+R\+E\+D}
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef X509 \hyperlink{ssl__verify__openssl_8h_a8e555d49f1b97eabd68c37f22ba78896}{openvpn\+\_\+x509\+\_\+cert\+\_\+t}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{Indent}{\bf Function for authenticating a new connection from a remote Open\+V\+P\+N peer}\par
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{group__control__tls_gaf045c97f727aebae9e8fc9852421c4f3}{verify\+\_\+callback} (int preverify\+\_\+ok, X509\+\_\+\+S\+T\+O\+R\+E\+\_\+\+C\+T\+X $\ast$ctx)
+\end{DoxyCompactItemize}
+\end{Indent}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{ssl__verify__openssl_8h_af06584a815f6e7395bda70d511020a7b}{}\index{ssl\+\_\+verify\+\_\+openssl.\+h@{ssl\+\_\+verify\+\_\+openssl.\+h}!\+\_\+\+\_\+\+O\+P\+E\+N\+V\+P\+N\+\_\+\+X509\+\_\+\+C\+E\+R\+T\+\_\+\+T\+\_\+\+D\+E\+C\+L\+A\+R\+E\+D@{\+\_\+\+\_\+\+O\+P\+E\+N\+V\+P\+N\+\_\+\+X509\+\_\+\+C\+E\+R\+T\+\_\+\+T\+\_\+\+D\+E\+C\+L\+A\+R\+E\+D}}
+\index{\+\_\+\+\_\+\+O\+P\+E\+N\+V\+P\+N\+\_\+\+X509\+\_\+\+C\+E\+R\+T\+\_\+\+T\+\_\+\+D\+E\+C\+L\+A\+R\+E\+D@{\+\_\+\+\_\+\+O\+P\+E\+N\+V\+P\+N\+\_\+\+X509\+\_\+\+C\+E\+R\+T\+\_\+\+T\+\_\+\+D\+E\+C\+L\+A\+R\+E\+D}!ssl\+\_\+verify\+\_\+openssl.\+h@{ssl\+\_\+verify\+\_\+openssl.\+h}}
+\subsubsection[{\+\_\+\+\_\+\+O\+P\+E\+N\+V\+P\+N\+\_\+\+X509\+\_\+\+C\+E\+R\+T\+\_\+\+T\+\_\+\+D\+E\+C\+L\+A\+R\+E\+D}]{\setlength{\rightskip}{0pt plus 5cm}\#define \+\_\+\+\_\+\+O\+P\+E\+N\+V\+P\+N\+\_\+\+X509\+\_\+\+C\+E\+R\+T\+\_\+\+T\+\_\+\+D\+E\+C\+L\+A\+R\+E\+D}\label{ssl__verify__openssl_8h_af06584a815f6e7395bda70d511020a7b}
+
+
+\subsection{Typedef Documentation}
+\hypertarget{ssl__verify__openssl_8h_a8e555d49f1b97eabd68c37f22ba78896}{}\index{ssl\+\_\+verify\+\_\+openssl.\+h@{ssl\+\_\+verify\+\_\+openssl.\+h}!openvpn\+\_\+x509\+\_\+cert\+\_\+t@{openvpn\+\_\+x509\+\_\+cert\+\_\+t}}
+\index{openvpn\+\_\+x509\+\_\+cert\+\_\+t@{openvpn\+\_\+x509\+\_\+cert\+\_\+t}!ssl\+\_\+verify\+\_\+openssl.\+h@{ssl\+\_\+verify\+\_\+openssl.\+h}}
+\subsubsection[{openvpn\+\_\+x509\+\_\+cert\+\_\+t}]{\setlength{\rightskip}{0pt plus 5cm}typedef X509 {\bf openvpn\+\_\+x509\+\_\+cert\+\_\+t}}\label{ssl__verify__openssl_8h_a8e555d49f1b97eabd68c37f22ba78896}

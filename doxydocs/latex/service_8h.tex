@@ -1,0 +1,466 @@
+\hypertarget{service_8h}{}\section{src/openvpnserv/service.h File Reference}
+\label{service_8h}\index{src/openvpnserv/service.\+h@{src/openvpnserv/service.\+h}}
+{\ttfamily \#include $<$windows.\+h$>$}\\*
+{\ttfamily \#include $<$stdlib.\+h$>$}\\*
+{\ttfamily \#include $<$tchar.\+h$>$}\\*
+Include dependency graph for service.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=272pt]{service_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{service_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structopenvpn__service__t}{openvpn\+\_\+service\+\_\+t}
+\item 
+struct \hyperlink{structsettings__t}{settings\+\_\+t}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{service_8h_a237e4d19d7046d08c4cc00a45808feaf}{A\+P\+P\+N\+A\+M\+E}~T\+E\+X\+T(P\+A\+C\+K\+A\+G\+E \char`\"{}serv\char`\"{})
+\item 
+\#define \hyperlink{service_8h_a0c406ce56eab18fb4411f5487583005e}{S\+E\+R\+V\+I\+C\+E\+\_\+\+D\+E\+P\+E\+N\+D\+E\+N\+C\+I\+E\+S}~T\+A\+P\+\_\+\+W\+I\+N\+\_\+\+C\+O\+M\+P\+O\+N\+E\+N\+T\+\_\+\+I\+D \char`\"{}\textbackslash{}0\+Dhcp\textbackslash{}0\textbackslash{}0\char`\"{}
+\item 
+\#define \hyperlink{service_8h_ad97c368f20f90a43a45ee4bbeb6d68d4}{M\+S\+G\+\_\+\+F\+L\+A\+G\+S\+\_\+\+E\+R\+R\+O\+R}~(1$<$$<$0)
+\item 
+\#define \hyperlink{service_8h_aa894872c2199b6bad04de2b1a0f10846}{M\+S\+G\+\_\+\+F\+L\+A\+G\+S\+\_\+\+S\+Y\+S\+\_\+\+C\+O\+D\+E}~(1$<$$<$1)
+\item 
+\#define \hyperlink{service_8h_ade61794318f1bbcac19df28e2fe83260}{M\+\_\+\+I\+N\+F\+O}~(0)                                  /$\ast$ informational $\ast$/
+\item 
+\#define \hyperlink{service_8h_a47ae431ac9a85de6412569bb65a63fa9}{M\+\_\+\+S\+Y\+S\+E\+R\+R}~(\hyperlink{service_8h_ad97c368f20f90a43a45ee4bbeb6d68d4}{M\+S\+G\+\_\+\+F\+L\+A\+G\+S\+\_\+\+E\+R\+R\+O\+R}$\vert$\hyperlink{service_8h_aa894872c2199b6bad04de2b1a0f10846}{M\+S\+G\+\_\+\+F\+L\+A\+G\+S\+\_\+\+S\+Y\+S\+\_\+\+C\+O\+D\+E}) /$\ast$ error + system code $\ast$/
+\item 
+\#define \hyperlink{service_8h_ab5286dbd1378331f3d1c3a0522b6a43f}{M\+\_\+\+E\+R\+R}~(\hyperlink{service_8h_ad97c368f20f90a43a45ee4bbeb6d68d4}{M\+S\+G\+\_\+\+F\+L\+A\+G\+S\+\_\+\+E\+R\+R\+O\+R})                    /$\ast$ error $\ast$/
+\item 
+\#define \hyperlink{service_8h_ac7c0207aa5a0e10d378be03b68041350}{M\+A\+X\+\_\+\+N\+A\+M\+E}~256
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{service_8h_aef1837f9e79431d8295c9ef230dfcb71}{openvpn\+\_\+service\+\_\+type} \{ \hyperlink{service_8h_aef1837f9e79431d8295c9ef230dfcb71a9761086e420b925e438327ad385b304d}{automatic}, 
+\hyperlink{service_8h_aef1837f9e79431d8295c9ef230dfcb71aa4f69043da5496da4702a05b6cdaab33}{interactive}, 
+\hyperlink{service_8h_aef1837f9e79431d8295c9ef230dfcb71a0e87429d0138dd677eb7286726d34e1c}{\+\_\+service\+\_\+max}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+V\+O\+I\+D W\+I\+N\+A\+P\+I \hyperlink{service_8h_a9b9e568c54b3fb102d55439192eb347a}{Service\+Start\+Automatic\+Own} (D\+W\+O\+R\+D argc, L\+P\+T\+S\+T\+R $\ast$\hyperlink{structargv}{argv})
+\item 
+V\+O\+I\+D W\+I\+N\+A\+P\+I \hyperlink{service_8h_a8c96f73e14db21ad6b4c55b30048f423}{Service\+Start\+Automatic} (D\+W\+O\+R\+D argc, L\+P\+T\+S\+T\+R $\ast$\hyperlink{structargv}{argv})
+\item 
+V\+O\+I\+D W\+I\+N\+A\+P\+I \hyperlink{service_8h_afbdec4b55ab5c74bcadcae0cecc3900d}{Service\+Start\+Interactive\+Own} (D\+W\+O\+R\+D argc, L\+P\+T\+S\+T\+R $\ast$\hyperlink{structargv}{argv})
+\item 
+V\+O\+I\+D W\+I\+N\+A\+P\+I \hyperlink{service_8h_a95ed112a3321c4b0e5a2a78b4dbbb541}{Service\+Start\+Interactive} (D\+W\+O\+R\+D argc, L\+P\+T\+S\+T\+R $\ast$\hyperlink{structargv}{argv})
+\item 
+int \hyperlink{service_8h_a443b5988f6015454008fdab390a50edb}{openvpn\+\_\+vsntprintf} (L\+P\+T\+S\+T\+R str, size\+\_\+t size, L\+P\+C\+T\+S\+T\+R format, va\+\_\+list arglist)
+\item 
+int \hyperlink{service_8h_ae697dac0c0dd8b6b2eeef1283595efe4}{openvpn\+\_\+sntprintf} (L\+P\+T\+S\+T\+R str, size\+\_\+t size, L\+P\+C\+T\+S\+T\+R format,...)
+\item 
+D\+W\+O\+R\+D \hyperlink{service_8h_ab54be77a669fa1e3eb854462610e5521}{Get\+Openvpn\+Settings} (\hyperlink{structsettings__t}{settings\+\_\+t} $\ast$s)
+\item 
+B\+O\+O\+L \hyperlink{service_8h_a9f46bc08640b6816eab1e49e72a08145}{Report\+Status\+To\+S\+C\+Mgr} (S\+E\+R\+V\+I\+C\+E\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+H\+A\+N\+D\+L\+E service, S\+E\+R\+V\+I\+C\+E\+\_\+\+S\+T\+A\+T\+U\+S $\ast$status)
+\item 
+L\+P\+C\+T\+S\+T\+R \hyperlink{service_8h_a2610102e271fc65ae8908d593cab8afd}{Get\+Last\+Error\+Text} ()
+\item 
+D\+W\+O\+R\+D \hyperlink{service_8h_a289f05e3c67a00e2f13862925dbe3df0}{Msg\+To\+Event\+Log} (D\+W\+O\+R\+D flags, L\+P\+C\+T\+S\+T\+R lpsz\+Msg,...)
+\item 
+wchar\+\_\+t $\ast$ \hyperlink{service_8h_a1c5bccb0d09544d2beef61d38138c75e}{utf8to16} (const char $\ast$utf8)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structopenvpn__service__t}{openvpn\+\_\+service\+\_\+t} \hyperlink{service_8h_a4e79c0a9d002eefd90472b02f490445c}{automatic\+\_\+service}
+\item 
+\hyperlink{structopenvpn__service__t}{openvpn\+\_\+service\+\_\+t} \hyperlink{service_8h_aa85687c1a27dabde58bff951314eab93}{interactive\+\_\+service}
+\item 
+L\+P\+C\+T\+S\+T\+R \hyperlink{service_8h_abff7747247c9df481a34e9817af9e35a}{service\+\_\+instance}
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{service_8h_a237e4d19d7046d08c4cc00a45808feaf}{}\index{service.\+h@{service.\+h}!A\+P\+P\+N\+A\+M\+E@{A\+P\+P\+N\+A\+M\+E}}
+\index{A\+P\+P\+N\+A\+M\+E@{A\+P\+P\+N\+A\+M\+E}!service.\+h@{service.\+h}}
+\subsubsection[{A\+P\+P\+N\+A\+M\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\+P\+P\+N\+A\+M\+E~T\+E\+X\+T(P\+A\+C\+K\+A\+G\+E \char`\"{}serv\char`\"{})}\label{service_8h_a237e4d19d7046d08c4cc00a45808feaf}
+\hypertarget{service_8h_ab5286dbd1378331f3d1c3a0522b6a43f}{}\index{service.\+h@{service.\+h}!M\+\_\+\+E\+R\+R@{M\+\_\+\+E\+R\+R}}
+\index{M\+\_\+\+E\+R\+R@{M\+\_\+\+E\+R\+R}!service.\+h@{service.\+h}}
+\subsubsection[{M\+\_\+\+E\+R\+R}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\+\_\+\+E\+R\+R~({\bf M\+S\+G\+\_\+\+F\+L\+A\+G\+S\+\_\+\+E\+R\+R\+O\+R})                    /$\ast$ error $\ast$/}\label{service_8h_ab5286dbd1378331f3d1c3a0522b6a43f}
+\hypertarget{service_8h_ade61794318f1bbcac19df28e2fe83260}{}\index{service.\+h@{service.\+h}!M\+\_\+\+I\+N\+F\+O@{M\+\_\+\+I\+N\+F\+O}}
+\index{M\+\_\+\+I\+N\+F\+O@{M\+\_\+\+I\+N\+F\+O}!service.\+h@{service.\+h}}
+\subsubsection[{M\+\_\+\+I\+N\+F\+O}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\+\_\+\+I\+N\+F\+O~(0)                                  /$\ast$ informational $\ast$/}\label{service_8h_ade61794318f1bbcac19df28e2fe83260}
+\hypertarget{service_8h_a47ae431ac9a85de6412569bb65a63fa9}{}\index{service.\+h@{service.\+h}!M\+\_\+\+S\+Y\+S\+E\+R\+R@{M\+\_\+\+S\+Y\+S\+E\+R\+R}}
+\index{M\+\_\+\+S\+Y\+S\+E\+R\+R@{M\+\_\+\+S\+Y\+S\+E\+R\+R}!service.\+h@{service.\+h}}
+\subsubsection[{M\+\_\+\+S\+Y\+S\+E\+R\+R}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\+\_\+\+S\+Y\+S\+E\+R\+R~({\bf M\+S\+G\+\_\+\+F\+L\+A\+G\+S\+\_\+\+E\+R\+R\+O\+R}$\vert${\bf M\+S\+G\+\_\+\+F\+L\+A\+G\+S\+\_\+\+S\+Y\+S\+\_\+\+C\+O\+D\+E}) /$\ast$ error + system code $\ast$/}\label{service_8h_a47ae431ac9a85de6412569bb65a63fa9}
+\hypertarget{service_8h_ac7c0207aa5a0e10d378be03b68041350}{}\index{service.\+h@{service.\+h}!M\+A\+X\+\_\+\+N\+A\+M\+E@{M\+A\+X\+\_\+\+N\+A\+M\+E}}
+\index{M\+A\+X\+\_\+\+N\+A\+M\+E@{M\+A\+X\+\_\+\+N\+A\+M\+E}!service.\+h@{service.\+h}}
+\subsubsection[{M\+A\+X\+\_\+\+N\+A\+M\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\+A\+X\+\_\+\+N\+A\+M\+E~256}\label{service_8h_ac7c0207aa5a0e10d378be03b68041350}
+\hypertarget{service_8h_ad97c368f20f90a43a45ee4bbeb6d68d4}{}\index{service.\+h@{service.\+h}!M\+S\+G\+\_\+\+F\+L\+A\+G\+S\+\_\+\+E\+R\+R\+O\+R@{M\+S\+G\+\_\+\+F\+L\+A\+G\+S\+\_\+\+E\+R\+R\+O\+R}}
+\index{M\+S\+G\+\_\+\+F\+L\+A\+G\+S\+\_\+\+E\+R\+R\+O\+R@{M\+S\+G\+\_\+\+F\+L\+A\+G\+S\+\_\+\+E\+R\+R\+O\+R}!service.\+h@{service.\+h}}
+\subsubsection[{M\+S\+G\+\_\+\+F\+L\+A\+G\+S\+\_\+\+E\+R\+R\+O\+R}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\+S\+G\+\_\+\+F\+L\+A\+G\+S\+\_\+\+E\+R\+R\+O\+R~(1$<$$<$0)}\label{service_8h_ad97c368f20f90a43a45ee4bbeb6d68d4}
+\hypertarget{service_8h_aa894872c2199b6bad04de2b1a0f10846}{}\index{service.\+h@{service.\+h}!M\+S\+G\+\_\+\+F\+L\+A\+G\+S\+\_\+\+S\+Y\+S\+\_\+\+C\+O\+D\+E@{M\+S\+G\+\_\+\+F\+L\+A\+G\+S\+\_\+\+S\+Y\+S\+\_\+\+C\+O\+D\+E}}
+\index{M\+S\+G\+\_\+\+F\+L\+A\+G\+S\+\_\+\+S\+Y\+S\+\_\+\+C\+O\+D\+E@{M\+S\+G\+\_\+\+F\+L\+A\+G\+S\+\_\+\+S\+Y\+S\+\_\+\+C\+O\+D\+E}!service.\+h@{service.\+h}}
+\subsubsection[{M\+S\+G\+\_\+\+F\+L\+A\+G\+S\+\_\+\+S\+Y\+S\+\_\+\+C\+O\+D\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\+S\+G\+\_\+\+F\+L\+A\+G\+S\+\_\+\+S\+Y\+S\+\_\+\+C\+O\+D\+E~(1$<$$<$1)}\label{service_8h_aa894872c2199b6bad04de2b1a0f10846}
+\hypertarget{service_8h_a0c406ce56eab18fb4411f5487583005e}{}\index{service.\+h@{service.\+h}!S\+E\+R\+V\+I\+C\+E\+\_\+\+D\+E\+P\+E\+N\+D\+E\+N\+C\+I\+E\+S@{S\+E\+R\+V\+I\+C\+E\+\_\+\+D\+E\+P\+E\+N\+D\+E\+N\+C\+I\+E\+S}}
+\index{S\+E\+R\+V\+I\+C\+E\+\_\+\+D\+E\+P\+E\+N\+D\+E\+N\+C\+I\+E\+S@{S\+E\+R\+V\+I\+C\+E\+\_\+\+D\+E\+P\+E\+N\+D\+E\+N\+C\+I\+E\+S}!service.\+h@{service.\+h}}
+\subsubsection[{S\+E\+R\+V\+I\+C\+E\+\_\+\+D\+E\+P\+E\+N\+D\+E\+N\+C\+I\+E\+S}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\+E\+R\+V\+I\+C\+E\+\_\+\+D\+E\+P\+E\+N\+D\+E\+N\+C\+I\+E\+S~T\+A\+P\+\_\+\+W\+I\+N\+\_\+\+C\+O\+M\+P\+O\+N\+E\+N\+T\+\_\+\+I\+D \char`\"{}\textbackslash{}0\+Dhcp\textbackslash{}0\textbackslash{}0\char`\"{}}\label{service_8h_a0c406ce56eab18fb4411f5487583005e}
+
+
+\subsection{Enumeration Type Documentation}
+\hypertarget{service_8h_aef1837f9e79431d8295c9ef230dfcb71}{}\index{service.\+h@{service.\+h}!openvpn\+\_\+service\+\_\+type@{openvpn\+\_\+service\+\_\+type}}
+\index{openvpn\+\_\+service\+\_\+type@{openvpn\+\_\+service\+\_\+type}!service.\+h@{service.\+h}}
+\subsubsection[{openvpn\+\_\+service\+\_\+type}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf openvpn\+\_\+service\+\_\+type}}\label{service_8h_aef1837f9e79431d8295c9ef230dfcb71}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{automatic@{automatic}!service.\+h@{service.\+h}}\index{service.\+h@{service.\+h}!automatic@{automatic}}\item[{\em 
+\hypertarget{service_8h_aef1837f9e79431d8295c9ef230dfcb71a9761086e420b925e438327ad385b304d}{}automatic\label{service_8h_aef1837f9e79431d8295c9ef230dfcb71a9761086e420b925e438327ad385b304d}
+}]\index{interactive@{interactive}!service.\+h@{service.\+h}}\index{service.\+h@{service.\+h}!interactive@{interactive}}\item[{\em 
+\hypertarget{service_8h_aef1837f9e79431d8295c9ef230dfcb71aa4f69043da5496da4702a05b6cdaab33}{}interactive\label{service_8h_aef1837f9e79431d8295c9ef230dfcb71aa4f69043da5496da4702a05b6cdaab33}
+}]\index{\+\_\+service\+\_\+max@{\+\_\+service\+\_\+max}!service.\+h@{service.\+h}}\index{service.\+h@{service.\+h}!\+\_\+service\+\_\+max@{\+\_\+service\+\_\+max}}\item[{\em 
+\hypertarget{service_8h_aef1837f9e79431d8295c9ef230dfcb71a0e87429d0138dd677eb7286726d34e1c}{}\+\_\+service\+\_\+max\label{service_8h_aef1837f9e79431d8295c9ef230dfcb71a0e87429d0138dd677eb7286726d34e1c}
+}]\end{description}
+\end{Desc}
+
+
+\subsection{Function Documentation}
+\hypertarget{service_8h_a2610102e271fc65ae8908d593cab8afd}{}\index{service.\+h@{service.\+h}!Get\+Last\+Error\+Text@{Get\+Last\+Error\+Text}}
+\index{Get\+Last\+Error\+Text@{Get\+Last\+Error\+Text}!service.\+h@{service.\+h}}
+\subsubsection[{Get\+Last\+Error\+Text()}]{\setlength{\rightskip}{0pt plus 5cm}L\+P\+C\+T\+S\+T\+R Get\+Last\+Error\+Text (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{service_8h_a2610102e271fc65ae8908d593cab8afd}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{service_8h_a2610102e271fc65ae8908d593cab8afd_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{service_8h_a2610102e271fc65ae8908d593cab8afd_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{service_8h_ab54be77a669fa1e3eb854462610e5521}{}\index{service.\+h@{service.\+h}!Get\+Openvpn\+Settings@{Get\+Openvpn\+Settings}}
+\index{Get\+Openvpn\+Settings@{Get\+Openvpn\+Settings}!service.\+h@{service.\+h}}
+\subsubsection[{Get\+Openvpn\+Settings(settings\+\_\+t $\ast$s)}]{\setlength{\rightskip}{0pt plus 5cm}D\+W\+O\+R\+D Get\+Openvpn\+Settings (
+\begin{DoxyParamCaption}
+\item[{{\bf settings\+\_\+t} $\ast$}]{s}
+\end{DoxyParamCaption}
+)}\label{service_8h_ab54be77a669fa1e3eb854462610e5521}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{service_8h_ab54be77a669fa1e3eb854462610e5521_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{service_8h_ab54be77a669fa1e3eb854462610e5521_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{service_8h_a289f05e3c67a00e2f13862925dbe3df0}{}\index{service.\+h@{service.\+h}!Msg\+To\+Event\+Log@{Msg\+To\+Event\+Log}}
+\index{Msg\+To\+Event\+Log@{Msg\+To\+Event\+Log}!service.\+h@{service.\+h}}
+\subsubsection[{Msg\+To\+Event\+Log(\+D\+W\+O\+R\+D flags, L\+P\+C\+T\+S\+T\+R lpsz\+Msg,...)}]{\setlength{\rightskip}{0pt plus 5cm}D\+W\+O\+R\+D Msg\+To\+Event\+Log (
+\begin{DoxyParamCaption}
+\item[{D\+W\+O\+R\+D}]{flags, }
+\item[{L\+P\+C\+T\+S\+T\+R}]{lpsz\+Msg, }
+\item[{}]{...}
+\end{DoxyParamCaption}
+)}\label{service_8h_a289f05e3c67a00e2f13862925dbe3df0}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{service_8h_a289f05e3c67a00e2f13862925dbe3df0_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{service_8h_a289f05e3c67a00e2f13862925dbe3df0_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{service_8h_ae697dac0c0dd8b6b2eeef1283595efe4}{}\index{service.\+h@{service.\+h}!openvpn\+\_\+sntprintf@{openvpn\+\_\+sntprintf}}
+\index{openvpn\+\_\+sntprintf@{openvpn\+\_\+sntprintf}!service.\+h@{service.\+h}}
+\subsubsection[{openvpn\+\_\+sntprintf(\+L\+P\+T\+S\+T\+R str, size\+\_\+t size, L\+P\+C\+T\+S\+T\+R format,...)}]{\setlength{\rightskip}{0pt plus 5cm}int openvpn\+\_\+sntprintf (
+\begin{DoxyParamCaption}
+\item[{L\+P\+T\+S\+T\+R}]{str, }
+\item[{size\+\_\+t}]{size, }
+\item[{L\+P\+C\+T\+S\+T\+R}]{format, }
+\item[{}]{...}
+\end{DoxyParamCaption}
+)}\label{service_8h_ae697dac0c0dd8b6b2eeef1283595efe4}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=303pt]{service_8h_ae697dac0c0dd8b6b2eeef1283595efe4_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{service_8h_ae697dac0c0dd8b6b2eeef1283595efe4_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{service_8h_a443b5988f6015454008fdab390a50edb}{}\index{service.\+h@{service.\+h}!openvpn\+\_\+vsntprintf@{openvpn\+\_\+vsntprintf}}
+\index{openvpn\+\_\+vsntprintf@{openvpn\+\_\+vsntprintf}!service.\+h@{service.\+h}}
+\subsubsection[{openvpn\+\_\+vsntprintf(\+L\+P\+T\+S\+T\+R str, size\+\_\+t size, L\+P\+C\+T\+S\+T\+R format, va\+\_\+list arglist)}]{\setlength{\rightskip}{0pt plus 5cm}int openvpn\+\_\+vsntprintf (
+\begin{DoxyParamCaption}
+\item[{L\+P\+T\+S\+T\+R}]{str, }
+\item[{size\+\_\+t}]{size, }
+\item[{L\+P\+C\+T\+S\+T\+R}]{format, }
+\item[{va\+\_\+list}]{arglist}
+\end{DoxyParamCaption}
+)}\label{service_8h_a443b5988f6015454008fdab390a50edb}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{service_8h_a443b5988f6015454008fdab390a50edb_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{service_8h_a9f46bc08640b6816eab1e49e72a08145}{}\index{service.\+h@{service.\+h}!Report\+Status\+To\+S\+C\+Mgr@{Report\+Status\+To\+S\+C\+Mgr}}
+\index{Report\+Status\+To\+S\+C\+Mgr@{Report\+Status\+To\+S\+C\+Mgr}!service.\+h@{service.\+h}}
+\subsubsection[{Report\+Status\+To\+S\+C\+Mgr(\+S\+E\+R\+V\+I\+C\+E\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+H\+A\+N\+D\+L\+E service, S\+E\+R\+V\+I\+C\+E\+\_\+\+S\+T\+A\+T\+U\+S $\ast$status)}]{\setlength{\rightskip}{0pt plus 5cm}B\+O\+O\+L Report\+Status\+To\+S\+C\+Mgr (
+\begin{DoxyParamCaption}
+\item[{S\+E\+R\+V\+I\+C\+E\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+H\+A\+N\+D\+L\+E}]{service, }
+\item[{S\+E\+R\+V\+I\+C\+E\+\_\+\+S\+T\+A\+T\+U\+S $\ast$}]{status}
+\end{DoxyParamCaption}
+)}\label{service_8h_a9f46bc08640b6816eab1e49e72a08145}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{service_8h_a9f46bc08640b6816eab1e49e72a08145_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{service_8h_a9f46bc08640b6816eab1e49e72a08145_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{service_8h_a8c96f73e14db21ad6b4c55b30048f423}{}\index{service.\+h@{service.\+h}!Service\+Start\+Automatic@{Service\+Start\+Automatic}}
+\index{Service\+Start\+Automatic@{Service\+Start\+Automatic}!service.\+h@{service.\+h}}
+\subsubsection[{Service\+Start\+Automatic(\+D\+W\+O\+R\+D argc, L\+P\+T\+S\+T\+R $\ast$argv)}]{\setlength{\rightskip}{0pt plus 5cm}V\+O\+I\+D W\+I\+N\+A\+P\+I Service\+Start\+Automatic (
+\begin{DoxyParamCaption}
+\item[{D\+W\+O\+R\+D}]{argc, }
+\item[{L\+P\+T\+S\+T\+R $\ast$}]{argv}
+\end{DoxyParamCaption}
+)}\label{service_8h_a8c96f73e14db21ad6b4c55b30048f423}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{service_8h_a8c96f73e14db21ad6b4c55b30048f423_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{service_8h_a8c96f73e14db21ad6b4c55b30048f423_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{service_8h_a9b9e568c54b3fb102d55439192eb347a}{}\index{service.\+h@{service.\+h}!Service\+Start\+Automatic\+Own@{Service\+Start\+Automatic\+Own}}
+\index{Service\+Start\+Automatic\+Own@{Service\+Start\+Automatic\+Own}!service.\+h@{service.\+h}}
+\subsubsection[{Service\+Start\+Automatic\+Own(\+D\+W\+O\+R\+D argc, L\+P\+T\+S\+T\+R $\ast$argv)}]{\setlength{\rightskip}{0pt plus 5cm}V\+O\+I\+D W\+I\+N\+A\+P\+I Service\+Start\+Automatic\+Own (
+\begin{DoxyParamCaption}
+\item[{D\+W\+O\+R\+D}]{argc, }
+\item[{L\+P\+T\+S\+T\+R $\ast$}]{argv}
+\end{DoxyParamCaption}
+)}\label{service_8h_a9b9e568c54b3fb102d55439192eb347a}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{service_8h_a9b9e568c54b3fb102d55439192eb347a_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=295pt]{service_8h_a9b9e568c54b3fb102d55439192eb347a_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{service_8h_a95ed112a3321c4b0e5a2a78b4dbbb541}{}\index{service.\+h@{service.\+h}!Service\+Start\+Interactive@{Service\+Start\+Interactive}}
+\index{Service\+Start\+Interactive@{Service\+Start\+Interactive}!service.\+h@{service.\+h}}
+\subsubsection[{Service\+Start\+Interactive(\+D\+W\+O\+R\+D argc, L\+P\+T\+S\+T\+R $\ast$argv)}]{\setlength{\rightskip}{0pt plus 5cm}V\+O\+I\+D W\+I\+N\+A\+P\+I Service\+Start\+Interactive (
+\begin{DoxyParamCaption}
+\item[{D\+W\+O\+R\+D}]{argc, }
+\item[{L\+P\+T\+S\+T\+R $\ast$}]{argv}
+\end{DoxyParamCaption}
+)}\label{service_8h_a95ed112a3321c4b0e5a2a78b4dbbb541}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{service_8h_a95ed112a3321c4b0e5a2a78b4dbbb541_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{service_8h_a95ed112a3321c4b0e5a2a78b4dbbb541_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{service_8h_afbdec4b55ab5c74bcadcae0cecc3900d}{}\index{service.\+h@{service.\+h}!Service\+Start\+Interactive\+Own@{Service\+Start\+Interactive\+Own}}
+\index{Service\+Start\+Interactive\+Own@{Service\+Start\+Interactive\+Own}!service.\+h@{service.\+h}}
+\subsubsection[{Service\+Start\+Interactive\+Own(\+D\+W\+O\+R\+D argc, L\+P\+T\+S\+T\+R $\ast$argv)}]{\setlength{\rightskip}{0pt plus 5cm}V\+O\+I\+D W\+I\+N\+A\+P\+I Service\+Start\+Interactive\+Own (
+\begin{DoxyParamCaption}
+\item[{D\+W\+O\+R\+D}]{argc, }
+\item[{L\+P\+T\+S\+T\+R $\ast$}]{argv}
+\end{DoxyParamCaption}
+)}\label{service_8h_afbdec4b55ab5c74bcadcae0cecc3900d}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{service_8h_afbdec4b55ab5c74bcadcae0cecc3900d_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=294pt]{service_8h_afbdec4b55ab5c74bcadcae0cecc3900d_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{service_8h_a1c5bccb0d09544d2beef61d38138c75e}{}\index{service.\+h@{service.\+h}!utf8to16@{utf8to16}}
+\index{utf8to16@{utf8to16}!service.\+h@{service.\+h}}
+\subsubsection[{utf8to16(const char $\ast$utf8)}]{\setlength{\rightskip}{0pt plus 5cm}wchar\+\_\+t$\ast$ utf8to16 (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{utf8}
+\end{DoxyParamCaption}
+)}\label{service_8h_a1c5bccb0d09544d2beef61d38138c75e}
+
+
+\subsection{Variable Documentation}
+\hypertarget{service_8h_a4e79c0a9d002eefd90472b02f490445c}{}\index{service.\+h@{service.\+h}!automatic\+\_\+service@{automatic\+\_\+service}}
+\index{automatic\+\_\+service@{automatic\+\_\+service}!service.\+h@{service.\+h}}
+\subsubsection[{automatic\+\_\+service}]{\setlength{\rightskip}{0pt plus 5cm}{\bf openvpn\+\_\+service\+\_\+t} automatic\+\_\+service}\label{service_8h_a4e79c0a9d002eefd90472b02f490445c}
+\hypertarget{service_8h_aa85687c1a27dabde58bff951314eab93}{}\index{service.\+h@{service.\+h}!interactive\+\_\+service@{interactive\+\_\+service}}
+\index{interactive\+\_\+service@{interactive\+\_\+service}!service.\+h@{service.\+h}}
+\subsubsection[{interactive\+\_\+service}]{\setlength{\rightskip}{0pt plus 5cm}{\bf openvpn\+\_\+service\+\_\+t} interactive\+\_\+service}\label{service_8h_aa85687c1a27dabde58bff951314eab93}
+\hypertarget{service_8h_abff7747247c9df481a34e9817af9e35a}{}\index{service.\+h@{service.\+h}!service\+\_\+instance@{service\+\_\+instance}}
+\index{service\+\_\+instance@{service\+\_\+instance}!service.\+h@{service.\+h}}
+\subsubsection[{service\+\_\+instance}]{\setlength{\rightskip}{0pt plus 5cm}L\+P\+C\+T\+S\+T\+R service\+\_\+instance}\label{service_8h_abff7747247c9df481a34e9817af9e35a}

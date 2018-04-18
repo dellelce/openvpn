@@ -1,0 +1,156 @@
+\hypertarget{auth-pam_8c}{}\section{src/plugins/auth-\/pam/auth-\/pam.c File Reference}
+\label{auth-pam_8c}\index{src/plugins/auth-\/pam/auth-\/pam.\+c@{src/plugins/auth-\/pam/auth-\/pam.\+c}}
+{\ttfamily \#include $<$security/pam\+\_\+appl.\+h$>$}\\*
+{\ttfamily \#include $<$stdio.\+h$>$}\\*
+{\ttfamily \#include $<$string.\+h$>$}\\*
+{\ttfamily \#include $<$ctype.\+h$>$}\\*
+{\ttfamily \#include $<$unistd.\+h$>$}\\*
+{\ttfamily \#include $<$stdlib.\+h$>$}\\*
+{\ttfamily \#include $<$sys/types.\+h$>$}\\*
+{\ttfamily \#include $<$sys/socket.\+h$>$}\\*
+{\ttfamily \#include $<$sys/wait.\+h$>$}\\*
+{\ttfamily \#include $<$fcntl.\+h$>$}\\*
+{\ttfamily \#include $<$signal.\+h$>$}\\*
+{\ttfamily \#include $<$syslog.\+h$>$}\\*
+{\ttfamily \#include \char`\"{}utils.\+h\char`\"{}}\\*
+{\ttfamily \#include $<$openvpn-\/plugin.\+h$>$}\\*
+Include dependency graph for auth-\/pam.c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{auth-pam_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structauth__pam__context}{auth\+\_\+pam\+\_\+context}
+\item 
+struct \hyperlink{structname__value}{name\+\_\+value}
+\item 
+struct \hyperlink{structname__value__list}{name\+\_\+value\+\_\+list}
+\item 
+struct \hyperlink{structuser__pass}{user\+\_\+pass}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{auth-pam_8c_ae4f3a0b12dc80d88d6d981fcb3cd5979}{D\+E\+B\+U\+G}(verb)~((verb) $>$= 4)
+\item 
+\#define \hyperlink{auth-pam_8c_a68775fbe1de2459dae974af2dbc17560}{C\+O\+M\+M\+A\+N\+D\+\_\+\+V\+E\+R\+I\+F\+Y}~0
+\item 
+\#define \hyperlink{auth-pam_8c_abf1cea64e3b64a73512229f7e8d7ce76}{C\+O\+M\+M\+A\+N\+D\+\_\+\+E\+X\+I\+T}~1
+\item 
+\#define \hyperlink{auth-pam_8c_a6b557aae80cbe59c47433a0516b2cae5}{R\+E\+S\+P\+O\+N\+S\+E\+\_\+\+I\+N\+I\+T\+\_\+\+S\+U\+C\+C\+E\+E\+D\+E\+D}~10
+\item 
+\#define \hyperlink{auth-pam_8c_a9328d232099241e151d520f002d559de}{R\+E\+S\+P\+O\+N\+S\+E\+\_\+\+I\+N\+I\+T\+\_\+\+F\+A\+I\+L\+E\+D}~11
+\item 
+\#define \hyperlink{auth-pam_8c_adaa85f62f5bd8b22937b419e3dcf61ed}{R\+E\+S\+P\+O\+N\+S\+E\+\_\+\+V\+E\+R\+I\+F\+Y\+\_\+\+S\+U\+C\+C\+E\+E\+D\+E\+D}~12
+\item 
+\#define \hyperlink{auth-pam_8c_a9ec110c770ed93bb6932afa952c39f53}{R\+E\+S\+P\+O\+N\+S\+E\+\_\+\+V\+E\+R\+I\+F\+Y\+\_\+\+F\+A\+I\+L\+E\+D}~13
+\item 
+\#define \hyperlink{auth-pam_8c_a1c411657bfdbe01cd198f8b34eccb70c}{N\+\_\+\+N\+A\+M\+E\+\_\+\+V\+A\+L\+U\+E}~16
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+O\+P\+E\+N\+V\+P\+N\+\_\+\+E\+X\+P\+O\+R\+T int \hyperlink{auth-pam_8c_ac88c8a386b00fdf4f28f36048cbb8c5c}{openvpn\+\_\+plugin\+\_\+open\+\_\+v3} (const int v3structver, struct openvpn\+\_\+plugin\+\_\+args\+\_\+open\+\_\+in const $\ast$args, struct openvpn\+\_\+plugin\+\_\+args\+\_\+open\+\_\+return $\ast$ret)
+\item 
+O\+P\+E\+N\+V\+P\+N\+\_\+\+E\+X\+P\+O\+R\+T int \hyperlink{auth-pam_8c_a035baa3834038991bf6c493be0f1e774}{openvpn\+\_\+plugin\+\_\+func\+\_\+v1} (openvpn\+\_\+plugin\+\_\+handle\+\_\+t handle, const int type, const char $\ast$\hyperlink{structargv}{argv}\mbox{[}$\,$\mbox{]}, const char $\ast$envp\mbox{[}$\,$\mbox{]})
+\item 
+O\+P\+E\+N\+V\+P\+N\+\_\+\+E\+X\+P\+O\+R\+T void \hyperlink{auth-pam_8c_a09d524ab6e25324d37681b49d0b7abcc}{openvpn\+\_\+plugin\+\_\+close\+\_\+v1} (openvpn\+\_\+plugin\+\_\+handle\+\_\+t handle)
+\item 
+O\+P\+E\+N\+V\+P\+N\+\_\+\+E\+X\+P\+O\+R\+T void \hyperlink{auth-pam_8c_aa1dfa775aa39a416f5dd7e18205b7f6f}{openvpn\+\_\+plugin\+\_\+abort\+\_\+v1} (openvpn\+\_\+plugin\+\_\+handle\+\_\+t handle)
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{auth-pam_8c_abf1cea64e3b64a73512229f7e8d7ce76}{}\index{auth-\/pam.\+c@{auth-\/pam.\+c}!C\+O\+M\+M\+A\+N\+D\+\_\+\+E\+X\+I\+T@{C\+O\+M\+M\+A\+N\+D\+\_\+\+E\+X\+I\+T}}
+\index{C\+O\+M\+M\+A\+N\+D\+\_\+\+E\+X\+I\+T@{C\+O\+M\+M\+A\+N\+D\+\_\+\+E\+X\+I\+T}!auth-\/pam.\+c@{auth-\/pam.\+c}}
+\subsubsection[{C\+O\+M\+M\+A\+N\+D\+\_\+\+E\+X\+I\+T}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+O\+M\+M\+A\+N\+D\+\_\+\+E\+X\+I\+T~1}\label{auth-pam_8c_abf1cea64e3b64a73512229f7e8d7ce76}
+\hypertarget{auth-pam_8c_a68775fbe1de2459dae974af2dbc17560}{}\index{auth-\/pam.\+c@{auth-\/pam.\+c}!C\+O\+M\+M\+A\+N\+D\+\_\+\+V\+E\+R\+I\+F\+Y@{C\+O\+M\+M\+A\+N\+D\+\_\+\+V\+E\+R\+I\+F\+Y}}
+\index{C\+O\+M\+M\+A\+N\+D\+\_\+\+V\+E\+R\+I\+F\+Y@{C\+O\+M\+M\+A\+N\+D\+\_\+\+V\+E\+R\+I\+F\+Y}!auth-\/pam.\+c@{auth-\/pam.\+c}}
+\subsubsection[{C\+O\+M\+M\+A\+N\+D\+\_\+\+V\+E\+R\+I\+F\+Y}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+O\+M\+M\+A\+N\+D\+\_\+\+V\+E\+R\+I\+F\+Y~0}\label{auth-pam_8c_a68775fbe1de2459dae974af2dbc17560}
+\hypertarget{auth-pam_8c_ae4f3a0b12dc80d88d6d981fcb3cd5979}{}\index{auth-\/pam.\+c@{auth-\/pam.\+c}!D\+E\+B\+U\+G@{D\+E\+B\+U\+G}}
+\index{D\+E\+B\+U\+G@{D\+E\+B\+U\+G}!auth-\/pam.\+c@{auth-\/pam.\+c}}
+\subsubsection[{D\+E\+B\+U\+G}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+E\+B\+U\+G(
+\begin{DoxyParamCaption}
+\item[{}]{verb}
+\end{DoxyParamCaption}
+)~((verb) $>$= 4)}\label{auth-pam_8c_ae4f3a0b12dc80d88d6d981fcb3cd5979}
+\hypertarget{auth-pam_8c_a1c411657bfdbe01cd198f8b34eccb70c}{}\index{auth-\/pam.\+c@{auth-\/pam.\+c}!N\+\_\+\+N\+A\+M\+E\+\_\+\+V\+A\+L\+U\+E@{N\+\_\+\+N\+A\+M\+E\+\_\+\+V\+A\+L\+U\+E}}
+\index{N\+\_\+\+N\+A\+M\+E\+\_\+\+V\+A\+L\+U\+E@{N\+\_\+\+N\+A\+M\+E\+\_\+\+V\+A\+L\+U\+E}!auth-\/pam.\+c@{auth-\/pam.\+c}}
+\subsubsection[{N\+\_\+\+N\+A\+M\+E\+\_\+\+V\+A\+L\+U\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define N\+\_\+\+N\+A\+M\+E\+\_\+\+V\+A\+L\+U\+E~16}\label{auth-pam_8c_a1c411657bfdbe01cd198f8b34eccb70c}
+\hypertarget{auth-pam_8c_a9328d232099241e151d520f002d559de}{}\index{auth-\/pam.\+c@{auth-\/pam.\+c}!R\+E\+S\+P\+O\+N\+S\+E\+\_\+\+I\+N\+I\+T\+\_\+\+F\+A\+I\+L\+E\+D@{R\+E\+S\+P\+O\+N\+S\+E\+\_\+\+I\+N\+I\+T\+\_\+\+F\+A\+I\+L\+E\+D}}
+\index{R\+E\+S\+P\+O\+N\+S\+E\+\_\+\+I\+N\+I\+T\+\_\+\+F\+A\+I\+L\+E\+D@{R\+E\+S\+P\+O\+N\+S\+E\+\_\+\+I\+N\+I\+T\+\_\+\+F\+A\+I\+L\+E\+D}!auth-\/pam.\+c@{auth-\/pam.\+c}}
+\subsubsection[{R\+E\+S\+P\+O\+N\+S\+E\+\_\+\+I\+N\+I\+T\+\_\+\+F\+A\+I\+L\+E\+D}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+E\+S\+P\+O\+N\+S\+E\+\_\+\+I\+N\+I\+T\+\_\+\+F\+A\+I\+L\+E\+D~11}\label{auth-pam_8c_a9328d232099241e151d520f002d559de}
+\hypertarget{auth-pam_8c_a6b557aae80cbe59c47433a0516b2cae5}{}\index{auth-\/pam.\+c@{auth-\/pam.\+c}!R\+E\+S\+P\+O\+N\+S\+E\+\_\+\+I\+N\+I\+T\+\_\+\+S\+U\+C\+C\+E\+E\+D\+E\+D@{R\+E\+S\+P\+O\+N\+S\+E\+\_\+\+I\+N\+I\+T\+\_\+\+S\+U\+C\+C\+E\+E\+D\+E\+D}}
+\index{R\+E\+S\+P\+O\+N\+S\+E\+\_\+\+I\+N\+I\+T\+\_\+\+S\+U\+C\+C\+E\+E\+D\+E\+D@{R\+E\+S\+P\+O\+N\+S\+E\+\_\+\+I\+N\+I\+T\+\_\+\+S\+U\+C\+C\+E\+E\+D\+E\+D}!auth-\/pam.\+c@{auth-\/pam.\+c}}
+\subsubsection[{R\+E\+S\+P\+O\+N\+S\+E\+\_\+\+I\+N\+I\+T\+\_\+\+S\+U\+C\+C\+E\+E\+D\+E\+D}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+E\+S\+P\+O\+N\+S\+E\+\_\+\+I\+N\+I\+T\+\_\+\+S\+U\+C\+C\+E\+E\+D\+E\+D~10}\label{auth-pam_8c_a6b557aae80cbe59c47433a0516b2cae5}
+\hypertarget{auth-pam_8c_a9ec110c770ed93bb6932afa952c39f53}{}\index{auth-\/pam.\+c@{auth-\/pam.\+c}!R\+E\+S\+P\+O\+N\+S\+E\+\_\+\+V\+E\+R\+I\+F\+Y\+\_\+\+F\+A\+I\+L\+E\+D@{R\+E\+S\+P\+O\+N\+S\+E\+\_\+\+V\+E\+R\+I\+F\+Y\+\_\+\+F\+A\+I\+L\+E\+D}}
+\index{R\+E\+S\+P\+O\+N\+S\+E\+\_\+\+V\+E\+R\+I\+F\+Y\+\_\+\+F\+A\+I\+L\+E\+D@{R\+E\+S\+P\+O\+N\+S\+E\+\_\+\+V\+E\+R\+I\+F\+Y\+\_\+\+F\+A\+I\+L\+E\+D}!auth-\/pam.\+c@{auth-\/pam.\+c}}
+\subsubsection[{R\+E\+S\+P\+O\+N\+S\+E\+\_\+\+V\+E\+R\+I\+F\+Y\+\_\+\+F\+A\+I\+L\+E\+D}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+E\+S\+P\+O\+N\+S\+E\+\_\+\+V\+E\+R\+I\+F\+Y\+\_\+\+F\+A\+I\+L\+E\+D~13}\label{auth-pam_8c_a9ec110c770ed93bb6932afa952c39f53}
+\hypertarget{auth-pam_8c_adaa85f62f5bd8b22937b419e3dcf61ed}{}\index{auth-\/pam.\+c@{auth-\/pam.\+c}!R\+E\+S\+P\+O\+N\+S\+E\+\_\+\+V\+E\+R\+I\+F\+Y\+\_\+\+S\+U\+C\+C\+E\+E\+D\+E\+D@{R\+E\+S\+P\+O\+N\+S\+E\+\_\+\+V\+E\+R\+I\+F\+Y\+\_\+\+S\+U\+C\+C\+E\+E\+D\+E\+D}}
+\index{R\+E\+S\+P\+O\+N\+S\+E\+\_\+\+V\+E\+R\+I\+F\+Y\+\_\+\+S\+U\+C\+C\+E\+E\+D\+E\+D@{R\+E\+S\+P\+O\+N\+S\+E\+\_\+\+V\+E\+R\+I\+F\+Y\+\_\+\+S\+U\+C\+C\+E\+E\+D\+E\+D}!auth-\/pam.\+c@{auth-\/pam.\+c}}
+\subsubsection[{R\+E\+S\+P\+O\+N\+S\+E\+\_\+\+V\+E\+R\+I\+F\+Y\+\_\+\+S\+U\+C\+C\+E\+E\+D\+E\+D}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+E\+S\+P\+O\+N\+S\+E\+\_\+\+V\+E\+R\+I\+F\+Y\+\_\+\+S\+U\+C\+C\+E\+E\+D\+E\+D~12}\label{auth-pam_8c_adaa85f62f5bd8b22937b419e3dcf61ed}
+
+
+\subsection{Function Documentation}
+\hypertarget{auth-pam_8c_aa1dfa775aa39a416f5dd7e18205b7f6f}{}\index{auth-\/pam.\+c@{auth-\/pam.\+c}!openvpn\+\_\+plugin\+\_\+abort\+\_\+v1@{openvpn\+\_\+plugin\+\_\+abort\+\_\+v1}}
+\index{openvpn\+\_\+plugin\+\_\+abort\+\_\+v1@{openvpn\+\_\+plugin\+\_\+abort\+\_\+v1}!auth-\/pam.\+c@{auth-\/pam.\+c}}
+\subsubsection[{openvpn\+\_\+plugin\+\_\+abort\+\_\+v1(openvpn\+\_\+plugin\+\_\+handle\+\_\+t handle)}]{\setlength{\rightskip}{0pt plus 5cm}O\+P\+E\+N\+V\+P\+N\+\_\+\+E\+X\+P\+O\+R\+T void openvpn\+\_\+plugin\+\_\+abort\+\_\+v1 (
+\begin{DoxyParamCaption}
+\item[{openvpn\+\_\+plugin\+\_\+handle\+\_\+t}]{handle}
+\end{DoxyParamCaption}
+)}\label{auth-pam_8c_aa1dfa775aa39a416f5dd7e18205b7f6f}
+\hypertarget{auth-pam_8c_a09d524ab6e25324d37681b49d0b7abcc}{}\index{auth-\/pam.\+c@{auth-\/pam.\+c}!openvpn\+\_\+plugin\+\_\+close\+\_\+v1@{openvpn\+\_\+plugin\+\_\+close\+\_\+v1}}
+\index{openvpn\+\_\+plugin\+\_\+close\+\_\+v1@{openvpn\+\_\+plugin\+\_\+close\+\_\+v1}!auth-\/pam.\+c@{auth-\/pam.\+c}}
+\subsubsection[{openvpn\+\_\+plugin\+\_\+close\+\_\+v1(openvpn\+\_\+plugin\+\_\+handle\+\_\+t handle)}]{\setlength{\rightskip}{0pt plus 5cm}O\+P\+E\+N\+V\+P\+N\+\_\+\+E\+X\+P\+O\+R\+T void openvpn\+\_\+plugin\+\_\+close\+\_\+v1 (
+\begin{DoxyParamCaption}
+\item[{openvpn\+\_\+plugin\+\_\+handle\+\_\+t}]{handle}
+\end{DoxyParamCaption}
+)}\label{auth-pam_8c_a09d524ab6e25324d37681b49d0b7abcc}
+\hypertarget{auth-pam_8c_a035baa3834038991bf6c493be0f1e774}{}\index{auth-\/pam.\+c@{auth-\/pam.\+c}!openvpn\+\_\+plugin\+\_\+func\+\_\+v1@{openvpn\+\_\+plugin\+\_\+func\+\_\+v1}}
+\index{openvpn\+\_\+plugin\+\_\+func\+\_\+v1@{openvpn\+\_\+plugin\+\_\+func\+\_\+v1}!auth-\/pam.\+c@{auth-\/pam.\+c}}
+\subsubsection[{openvpn\+\_\+plugin\+\_\+func\+\_\+v1(openvpn\+\_\+plugin\+\_\+handle\+\_\+t handle, const int type, const char $\ast$argv[], const char $\ast$envp[])}]{\setlength{\rightskip}{0pt plus 5cm}O\+P\+E\+N\+V\+P\+N\+\_\+\+E\+X\+P\+O\+R\+T int openvpn\+\_\+plugin\+\_\+func\+\_\+v1 (
+\begin{DoxyParamCaption}
+\item[{openvpn\+\_\+plugin\+\_\+handle\+\_\+t}]{handle, }
+\item[{const int}]{type, }
+\item[{const char $\ast$}]{argv\mbox{[}$\,$\mbox{]}, }
+\item[{const char $\ast$}]{envp\mbox{[}$\,$\mbox{]}}
+\end{DoxyParamCaption}
+)}\label{auth-pam_8c_a035baa3834038991bf6c493be0f1e774}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=286pt]{auth-pam_8c_a035baa3834038991bf6c493be0f1e774_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{auth-pam_8c_ac88c8a386b00fdf4f28f36048cbb8c5c}{}\index{auth-\/pam.\+c@{auth-\/pam.\+c}!openvpn\+\_\+plugin\+\_\+open\+\_\+v3@{openvpn\+\_\+plugin\+\_\+open\+\_\+v3}}
+\index{openvpn\+\_\+plugin\+\_\+open\+\_\+v3@{openvpn\+\_\+plugin\+\_\+open\+\_\+v3}!auth-\/pam.\+c@{auth-\/pam.\+c}}
+\subsubsection[{openvpn\+\_\+plugin\+\_\+open\+\_\+v3(const int v3structver, struct openvpn\+\_\+plugin\+\_\+args\+\_\+open\+\_\+in const $\ast$args, struct openvpn\+\_\+plugin\+\_\+args\+\_\+open\+\_\+return $\ast$ret)}]{\setlength{\rightskip}{0pt plus 5cm}O\+P\+E\+N\+V\+P\+N\+\_\+\+E\+X\+P\+O\+R\+T int openvpn\+\_\+plugin\+\_\+open\+\_\+v3 (
+\begin{DoxyParamCaption}
+\item[{const int}]{v3structver, }
+\item[{struct openvpn\+\_\+plugin\+\_\+args\+\_\+open\+\_\+in const $\ast$}]{args, }
+\item[{struct openvpn\+\_\+plugin\+\_\+args\+\_\+open\+\_\+return $\ast$}]{ret}
+\end{DoxyParamCaption}
+)}\label{auth-pam_8c_ac88c8a386b00fdf4f28f36048cbb8c5c}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=325pt]{auth-pam_8c_ac88c8a386b00fdf4f28f36048cbb8c5c_cgraph}
+\end{center}
+\end{figure}
+
+

@@ -1,0 +1,50 @@
+\hypertarget{structcrypto__options}{}\section{crypto\+\_\+options Struct Reference}
+\label{structcrypto__options}\index{crypto\+\_\+options@{crypto\+\_\+options}}
+
+
+{\ttfamily \#include $<$crypto.\+h$>$}
+
+
+
+Collaboration diagram for crypto\+\_\+options\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{structcrypto__options__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structkey__ctx__bi}{key\+\_\+ctx\+\_\+bi} \hyperlink{structcrypto__options_a6f5aaea8aa6f397a0684d8b0a2879252}{key\+\_\+ctx\+\_\+bi}
+\item 
+struct \hyperlink{structpacket__id}{packet\+\_\+id} \hyperlink{structcrypto__options_ab4b7f20d49e1ac2efb9faf4a13d3701d}{packet\+\_\+id}
+\item 
+struct \hyperlink{structpacket__id__persist}{packet\+\_\+id\+\_\+persist} $\ast$ \hyperlink{structcrypto__options_a64268b2eac664d85f5e6133264f937ce}{pid\+\_\+persist}
+\item 
+unsigned int \hyperlink{structcrypto__options_a4f1cebf03b32cf2f3b44e90630079e88}{flags}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Security parameter state for processing data channel packets. 
+
+\subsection{Member Data Documentation}
+\hypertarget{structcrypto__options_a4f1cebf03b32cf2f3b44e90630079e88}{}\index{crypto\+\_\+options@{crypto\+\_\+options}!flags@{flags}}
+\index{flags@{flags}!crypto\+\_\+options@{crypto\+\_\+options}}
+\subsubsection[{flags}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int crypto\+\_\+options\+::flags}\label{structcrypto__options_a4f1cebf03b32cf2f3b44e90630079e88}
+Bit-\/flags determining behavior of security operation functions. \hypertarget{structcrypto__options_a6f5aaea8aa6f397a0684d8b0a2879252}{}\index{crypto\+\_\+options@{crypto\+\_\+options}!key\+\_\+ctx\+\_\+bi@{key\+\_\+ctx\+\_\+bi}}
+\index{key\+\_\+ctx\+\_\+bi@{key\+\_\+ctx\+\_\+bi}!crypto\+\_\+options@{crypto\+\_\+options}}
+\subsubsection[{key\+\_\+ctx\+\_\+bi}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf key\+\_\+ctx\+\_\+bi} crypto\+\_\+options\+::key\+\_\+ctx\+\_\+bi}\label{structcrypto__options_a6f5aaea8aa6f397a0684d8b0a2879252}
+Open\+S\+S\+L cipher and H\+M\+A\+C contexts for both sending and receiving directions. \hypertarget{structcrypto__options_ab4b7f20d49e1ac2efb9faf4a13d3701d}{}\index{crypto\+\_\+options@{crypto\+\_\+options}!packet\+\_\+id@{packet\+\_\+id}}
+\index{packet\+\_\+id@{packet\+\_\+id}!crypto\+\_\+options@{crypto\+\_\+options}}
+\subsubsection[{packet\+\_\+id}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf packet\+\_\+id} crypto\+\_\+options\+::packet\+\_\+id}\label{structcrypto__options_ab4b7f20d49e1ac2efb9faf4a13d3701d}
+Current packet I\+D state for both sending and receiving directions. \hypertarget{structcrypto__options_a64268b2eac664d85f5e6133264f937ce}{}\index{crypto\+\_\+options@{crypto\+\_\+options}!pid\+\_\+persist@{pid\+\_\+persist}}
+\index{pid\+\_\+persist@{pid\+\_\+persist}!crypto\+\_\+options@{crypto\+\_\+options}}
+\subsubsection[{pid\+\_\+persist}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf packet\+\_\+id\+\_\+persist}$\ast$ crypto\+\_\+options\+::pid\+\_\+persist}\label{structcrypto__options_a64268b2eac664d85f5e6133264f937ce}
+Persistent packet I\+D state for keeping state between successive Open\+V\+P\+N process startups. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/openvpn/\hyperlink{crypto_8h}{crypto.\+h}\end{DoxyCompactItemize}

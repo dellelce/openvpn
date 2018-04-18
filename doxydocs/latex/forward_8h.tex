@@ -1,0 +1,672 @@
+\hypertarget{forward_8h}{}\section{src/openvpn/forward.h File Reference}
+\label{forward_8h}\index{src/openvpn/forward.\+h@{src/openvpn/forward.\+h}}
+{\ttfamily \#include \char`\"{}openvpn.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}occ.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}ping.\+h\char`\"{}}\\*
+Include dependency graph for forward.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{forward_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{forward_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{forward_8h_a30b4a9da7fe4e62c299dbc3e772a0187}{T\+U\+N\+\_\+\+O\+U\+T}(c)        ~(\hyperlink{buffer_8h_ab7be565801383d9f7371ab9a6aa99077}{B\+L\+E\+N}(\&(c)-\/$>$c2.\+to\+\_\+tun) $>$ 0)
+\item 
+\#define \hyperlink{forward_8h_adc0ffa533dbcedb97a06690216dda8cd}{L\+I\+N\+K\+\_\+\+O\+U\+T}(c)      ~(\hyperlink{buffer_8h_ab7be565801383d9f7371ab9a6aa99077}{B\+L\+E\+N}(\&(c)-\/$>$c2.\+to\+\_\+link) $>$ 0)
+\item 
+\#define \hyperlink{forward_8h_a2ffa4fb5ed942d641aa13109aa99e9d5}{A\+N\+Y\+\_\+\+O\+U\+T}(c)        ~(\hyperlink{forward_8h_a30b4a9da7fe4e62c299dbc3e772a0187}{T\+U\+N\+\_\+\+O\+U\+T}(c) $\vert$$\vert$ \hyperlink{forward_8h_adc0ffa533dbcedb97a06690216dda8cd}{L\+I\+N\+K\+\_\+\+O\+U\+T}(c))
+\item 
+\#define \hyperlink{forward_8h_ab1438bb8ee77559c3cbe138d01a329f4}{T\+O\+\_\+\+L\+I\+N\+K\+\_\+\+F\+R\+A\+G}(c)~(\hyperlink{automatic_8c_a65e9886d74aaee76545e83dd09011727}{false})
+\item 
+\#define \hyperlink{forward_8h_aba5deebd79e4ca7a672b80a8ec940d73}{T\+O\+\_\+\+L\+I\+N\+K\+\_\+\+D\+E\+F}(c)~(\hyperlink{forward_8h_adc0ffa533dbcedb97a06690216dda8cd}{L\+I\+N\+K\+\_\+\+O\+U\+T}(c) $\vert$$\vert$ \hyperlink{forward_8h_ab1438bb8ee77559c3cbe138d01a329f4}{T\+O\+\_\+\+L\+I\+N\+K\+\_\+\+F\+R\+A\+G}(c))
+\item 
+\#define \hyperlink{forward_8h_ad02bfe995be98ae20f7d09e5d15b8320}{I\+O\+W\+\_\+\+T\+O\+\_\+\+T\+U\+N}~(1$<$$<$0)
+\item 
+\#define \hyperlink{forward_8h_af4b60c1cc9b40fce1758a13580254099}{I\+O\+W\+\_\+\+T\+O\+\_\+\+L\+I\+N\+K}~(1$<$$<$1)
+\item 
+\#define \hyperlink{forward_8h_a3be9ed245dc9194f033f09e9ba107318}{I\+O\+W\+\_\+\+R\+E\+A\+D\+\_\+\+T\+U\+N}~(1$<$$<$2)
+\item 
+\#define \hyperlink{forward_8h_a8df4fb32c3c42b2bd3e148e7e3277028}{I\+O\+W\+\_\+\+R\+E\+A\+D\+\_\+\+L\+I\+N\+K}~(1$<$$<$3)
+\item 
+\#define \hyperlink{forward_8h_a4a4f0ce40cf04a540f7d8ddbea590692}{I\+O\+W\+\_\+\+S\+H\+A\+P\+E\+R}~(1$<$$<$4)
+\item 
+\#define \hyperlink{forward_8h_aaa37066f07b2626d762d76b3ccc7a762}{I\+O\+W\+\_\+\+C\+H\+E\+C\+K\+\_\+\+R\+E\+S\+I\+D\+U\+A\+L}~(1$<$$<$5)
+\item 
+\#define \hyperlink{forward_8h_a567f3fc8ef2d3f120ff3f121aead6968}{I\+O\+W\+\_\+\+F\+R\+A\+G}~(1$<$$<$6)
+\item 
+\#define \hyperlink{forward_8h_a66e4b2c99afd479bac93e9a1ac00af48}{I\+O\+W\+\_\+\+M\+B\+U\+F}~(1$<$$<$7)
+\item 
+\#define \hyperlink{forward_8h_ad7de6cf332649e7a45222cd7ac9733fe}{I\+O\+W\+\_\+\+R\+E\+A\+D\+\_\+\+T\+U\+N\+\_\+\+F\+O\+R\+C\+E}~(1$<$$<$8)
+\item 
+\#define \hyperlink{forward_8h_a35a9f08a9e9bfd3fea2e26b8208bb2e4}{I\+O\+W\+\_\+\+W\+A\+I\+T\+\_\+\+S\+I\+G\+N\+A\+L}~(1$<$$<$9)
+\item 
+\#define \hyperlink{forward_8h_af4b525c8dd09d7113ce5787a441a9c23}{I\+O\+W\+\_\+\+R\+E\+A\+D}~(\hyperlink{forward_8h_a3be9ed245dc9194f033f09e9ba107318}{I\+O\+W\+\_\+\+R\+E\+A\+D\+\_\+\+T\+U\+N}$\vert$\hyperlink{forward_8h_a8df4fb32c3c42b2bd3e148e7e3277028}{I\+O\+W\+\_\+\+R\+E\+A\+D\+\_\+\+L\+I\+N\+K})
+\item 
+\#define \hyperlink{forward_8h_ad5064600bd6aa89622ec5063ba1c4c6c}{P\+I\+P\+V4\+\_\+\+P\+A\+S\+S\+T\+O\+S}~(1$<$$<$0)
+\item 
+\#define \hyperlink{forward_8h_a0ec66f41e5131803435b6dc2d5422239}{P\+I\+P\+\_\+\+M\+S\+S\+F\+I\+X}~(1$<$$<$1)         /$\ast$ v4 and v6 $\ast$/
+\item 
+\#define \hyperlink{forward_8h_a606a1b9a1ba5e682ada50a8c74a880a3}{P\+I\+P\+V4\+\_\+\+O\+U\+T\+G\+O\+I\+N\+G}~(1$<$$<$2)
+\item 
+\#define \hyperlink{forward_8h_a3dc73ac88ece0849eff40ed354f6a3e3}{P\+I\+P\+V4\+\_\+\+E\+X\+T\+R\+A\+C\+T\+\_\+\+D\+H\+C\+P\+\_\+\+R\+O\+U\+T\+E\+R}~(1$<$$<$3)
+\item 
+\#define \hyperlink{forward_8h_a1b9b04d196702c7813533380401880ad}{P\+I\+P\+V4\+\_\+\+C\+L\+I\+E\+N\+T\+\_\+\+N\+A\+T}~(1$<$$<$4)
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{forward_8h_a98c3703dd840bdc9affca78d893d5024}{pre\+\_\+select} (struct \hyperlink{structcontext}{context} $\ast$c)
+\item 
+void \hyperlink{forward_8h_a20db9c6797042b6584e95af8ea5bbc10}{process\+\_\+io} (struct \hyperlink{structcontext}{context} $\ast$c)
+\item 
+const char $\ast$ \hyperlink{forward_8h_a4e9d3dd04d69b38f6902dfc5ae12cc82}{wait\+\_\+status\+\_\+string} (struct \hyperlink{structcontext}{context} $\ast$c, struct \hyperlink{structgc__arena}{gc\+\_\+arena} $\ast$gc)
+\item 
+void \hyperlink{forward_8h_a61c81d8d4c12e17e674876dc802da5e2}{show\+\_\+wait\+\_\+status} (struct \hyperlink{structcontext}{context} $\ast$c)
+\item 
+void \hyperlink{forward_8h_a66abf1cd0cfe2af99b61d954cab37966}{encrypt\+\_\+sign} (struct \hyperlink{structcontext}{context} $\ast$c, \hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} comp\+\_\+frag)
+\item 
+int \hyperlink{forward_8h_a1445427854d7b321be538f18802b6b35}{get\+\_\+server\+\_\+poll\+\_\+remaining\+\_\+time} (struct \hyperlink{structevent__timeout}{event\+\_\+timeout} $\ast$server\+\_\+poll\+\_\+timeout)
+\item 
+void \hyperlink{forward_8h_ab240cf830443447e24d8554e7b290446}{read\+\_\+incoming\+\_\+link} (struct \hyperlink{structcontext}{context} $\ast$c)
+\item 
+\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} \hyperlink{forward_8h_a01bb4da24c0d75c32845ac87c5cad055}{process\+\_\+incoming\+\_\+link\+\_\+part1} (struct \hyperlink{structcontext}{context} $\ast$c, struct \hyperlink{structlink__socket__info}{link\+\_\+socket\+\_\+info} $\ast$lsi, \hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} floated)
+\item 
+void \hyperlink{forward_8h_a28085fcbafd6f128240d96026fd81414}{process\+\_\+incoming\+\_\+link\+\_\+part2} (struct \hyperlink{structcontext}{context} $\ast$c, struct \hyperlink{structlink__socket__info}{link\+\_\+socket\+\_\+info} $\ast$lsi, const uint8\+\_\+t $\ast$orig\+\_\+buf)
+\item 
+void \hyperlink{forward_8h_a1a506b271590be59a1b285c6cd4a5d85}{process\+\_\+outgoing\+\_\+link} (struct \hyperlink{structcontext}{context} $\ast$c)
+\item 
+void \hyperlink{forward_8h_a085f2884d6c0e63250ad17e489ab2a1e}{read\+\_\+incoming\+\_\+tun} (struct \hyperlink{structcontext}{context} $\ast$c)
+\item 
+void \hyperlink{forward_8h_a1ac8de3ee1c24f16d30a8773d7574bee}{process\+\_\+incoming\+\_\+tun} (struct \hyperlink{structcontext}{context} $\ast$c)
+\item 
+void \hyperlink{forward_8h_a2dd6f53fabe65e8e50eafc12030a8a6e}{process\+\_\+outgoing\+\_\+tun} (struct \hyperlink{structcontext}{context} $\ast$c)
+\item 
+\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} \hyperlink{forward_8h_a7a409db050be184362b60f3ce7b56b35}{send\+\_\+control\+\_\+channel\+\_\+string} (struct \hyperlink{structcontext}{context} $\ast$c, const char $\ast$str, int msglevel)
+\item 
+void \hyperlink{forward_8h_a9d9ddd3cb647f519e56209e58fb09610}{process\+\_\+ip\+\_\+header} (struct \hyperlink{structcontext}{context} $\ast$c, unsigned int flags, struct \hyperlink{structbuffer}{buffer} $\ast$buf)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Interface functions to the internal and external multiplexers. 
+
+\subsection{Macro Definition Documentation}
+\hypertarget{forward_8h_a2ffa4fb5ed942d641aa13109aa99e9d5}{}\index{forward.\+h@{forward.\+h}!A\+N\+Y\+\_\+\+O\+U\+T@{A\+N\+Y\+\_\+\+O\+U\+T}}
+\index{A\+N\+Y\+\_\+\+O\+U\+T@{A\+N\+Y\+\_\+\+O\+U\+T}!forward.\+h@{forward.\+h}}
+\subsubsection[{A\+N\+Y\+\_\+\+O\+U\+T}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\+N\+Y\+\_\+\+O\+U\+T(
+\begin{DoxyParamCaption}
+\item[{}]{c}
+\end{DoxyParamCaption}
+)~({\bf T\+U\+N\+\_\+\+O\+U\+T}(c) $\vert$$\vert$ {\bf L\+I\+N\+K\+\_\+\+O\+U\+T}(c))}\label{forward_8h_a2ffa4fb5ed942d641aa13109aa99e9d5}
+\hypertarget{forward_8h_aaa37066f07b2626d762d76b3ccc7a762}{}\index{forward.\+h@{forward.\+h}!I\+O\+W\+\_\+\+C\+H\+E\+C\+K\+\_\+\+R\+E\+S\+I\+D\+U\+A\+L@{I\+O\+W\+\_\+\+C\+H\+E\+C\+K\+\_\+\+R\+E\+S\+I\+D\+U\+A\+L}}
+\index{I\+O\+W\+\_\+\+C\+H\+E\+C\+K\+\_\+\+R\+E\+S\+I\+D\+U\+A\+L@{I\+O\+W\+\_\+\+C\+H\+E\+C\+K\+\_\+\+R\+E\+S\+I\+D\+U\+A\+L}!forward.\+h@{forward.\+h}}
+\subsubsection[{I\+O\+W\+\_\+\+C\+H\+E\+C\+K\+\_\+\+R\+E\+S\+I\+D\+U\+A\+L}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\+O\+W\+\_\+\+C\+H\+E\+C\+K\+\_\+\+R\+E\+S\+I\+D\+U\+A\+L~(1$<$$<$5)}\label{forward_8h_aaa37066f07b2626d762d76b3ccc7a762}
+\hypertarget{forward_8h_a567f3fc8ef2d3f120ff3f121aead6968}{}\index{forward.\+h@{forward.\+h}!I\+O\+W\+\_\+\+F\+R\+A\+G@{I\+O\+W\+\_\+\+F\+R\+A\+G}}
+\index{I\+O\+W\+\_\+\+F\+R\+A\+G@{I\+O\+W\+\_\+\+F\+R\+A\+G}!forward.\+h@{forward.\+h}}
+\subsubsection[{I\+O\+W\+\_\+\+F\+R\+A\+G}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\+O\+W\+\_\+\+F\+R\+A\+G~(1$<$$<$6)}\label{forward_8h_a567f3fc8ef2d3f120ff3f121aead6968}
+\hypertarget{forward_8h_a66e4b2c99afd479bac93e9a1ac00af48}{}\index{forward.\+h@{forward.\+h}!I\+O\+W\+\_\+\+M\+B\+U\+F@{I\+O\+W\+\_\+\+M\+B\+U\+F}}
+\index{I\+O\+W\+\_\+\+M\+B\+U\+F@{I\+O\+W\+\_\+\+M\+B\+U\+F}!forward.\+h@{forward.\+h}}
+\subsubsection[{I\+O\+W\+\_\+\+M\+B\+U\+F}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\+O\+W\+\_\+\+M\+B\+U\+F~(1$<$$<$7)}\label{forward_8h_a66e4b2c99afd479bac93e9a1ac00af48}
+\hypertarget{forward_8h_af4b525c8dd09d7113ce5787a441a9c23}{}\index{forward.\+h@{forward.\+h}!I\+O\+W\+\_\+\+R\+E\+A\+D@{I\+O\+W\+\_\+\+R\+E\+A\+D}}
+\index{I\+O\+W\+\_\+\+R\+E\+A\+D@{I\+O\+W\+\_\+\+R\+E\+A\+D}!forward.\+h@{forward.\+h}}
+\subsubsection[{I\+O\+W\+\_\+\+R\+E\+A\+D}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\+O\+W\+\_\+\+R\+E\+A\+D~({\bf I\+O\+W\+\_\+\+R\+E\+A\+D\+\_\+\+T\+U\+N}$\vert${\bf I\+O\+W\+\_\+\+R\+E\+A\+D\+\_\+\+L\+I\+N\+K})}\label{forward_8h_af4b525c8dd09d7113ce5787a441a9c23}
+\hypertarget{forward_8h_a8df4fb32c3c42b2bd3e148e7e3277028}{}\index{forward.\+h@{forward.\+h}!I\+O\+W\+\_\+\+R\+E\+A\+D\+\_\+\+L\+I\+N\+K@{I\+O\+W\+\_\+\+R\+E\+A\+D\+\_\+\+L\+I\+N\+K}}
+\index{I\+O\+W\+\_\+\+R\+E\+A\+D\+\_\+\+L\+I\+N\+K@{I\+O\+W\+\_\+\+R\+E\+A\+D\+\_\+\+L\+I\+N\+K}!forward.\+h@{forward.\+h}}
+\subsubsection[{I\+O\+W\+\_\+\+R\+E\+A\+D\+\_\+\+L\+I\+N\+K}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\+O\+W\+\_\+\+R\+E\+A\+D\+\_\+\+L\+I\+N\+K~(1$<$$<$3)}\label{forward_8h_a8df4fb32c3c42b2bd3e148e7e3277028}
+\hypertarget{forward_8h_a3be9ed245dc9194f033f09e9ba107318}{}\index{forward.\+h@{forward.\+h}!I\+O\+W\+\_\+\+R\+E\+A\+D\+\_\+\+T\+U\+N@{I\+O\+W\+\_\+\+R\+E\+A\+D\+\_\+\+T\+U\+N}}
+\index{I\+O\+W\+\_\+\+R\+E\+A\+D\+\_\+\+T\+U\+N@{I\+O\+W\+\_\+\+R\+E\+A\+D\+\_\+\+T\+U\+N}!forward.\+h@{forward.\+h}}
+\subsubsection[{I\+O\+W\+\_\+\+R\+E\+A\+D\+\_\+\+T\+U\+N}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\+O\+W\+\_\+\+R\+E\+A\+D\+\_\+\+T\+U\+N~(1$<$$<$2)}\label{forward_8h_a3be9ed245dc9194f033f09e9ba107318}
+\hypertarget{forward_8h_ad7de6cf332649e7a45222cd7ac9733fe}{}\index{forward.\+h@{forward.\+h}!I\+O\+W\+\_\+\+R\+E\+A\+D\+\_\+\+T\+U\+N\+\_\+\+F\+O\+R\+C\+E@{I\+O\+W\+\_\+\+R\+E\+A\+D\+\_\+\+T\+U\+N\+\_\+\+F\+O\+R\+C\+E}}
+\index{I\+O\+W\+\_\+\+R\+E\+A\+D\+\_\+\+T\+U\+N\+\_\+\+F\+O\+R\+C\+E@{I\+O\+W\+\_\+\+R\+E\+A\+D\+\_\+\+T\+U\+N\+\_\+\+F\+O\+R\+C\+E}!forward.\+h@{forward.\+h}}
+\subsubsection[{I\+O\+W\+\_\+\+R\+E\+A\+D\+\_\+\+T\+U\+N\+\_\+\+F\+O\+R\+C\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\+O\+W\+\_\+\+R\+E\+A\+D\+\_\+\+T\+U\+N\+\_\+\+F\+O\+R\+C\+E~(1$<$$<$8)}\label{forward_8h_ad7de6cf332649e7a45222cd7ac9733fe}
+\hypertarget{forward_8h_a4a4f0ce40cf04a540f7d8ddbea590692}{}\index{forward.\+h@{forward.\+h}!I\+O\+W\+\_\+\+S\+H\+A\+P\+E\+R@{I\+O\+W\+\_\+\+S\+H\+A\+P\+E\+R}}
+\index{I\+O\+W\+\_\+\+S\+H\+A\+P\+E\+R@{I\+O\+W\+\_\+\+S\+H\+A\+P\+E\+R}!forward.\+h@{forward.\+h}}
+\subsubsection[{I\+O\+W\+\_\+\+S\+H\+A\+P\+E\+R}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\+O\+W\+\_\+\+S\+H\+A\+P\+E\+R~(1$<$$<$4)}\label{forward_8h_a4a4f0ce40cf04a540f7d8ddbea590692}
+\hypertarget{forward_8h_af4b60c1cc9b40fce1758a13580254099}{}\index{forward.\+h@{forward.\+h}!I\+O\+W\+\_\+\+T\+O\+\_\+\+L\+I\+N\+K@{I\+O\+W\+\_\+\+T\+O\+\_\+\+L\+I\+N\+K}}
+\index{I\+O\+W\+\_\+\+T\+O\+\_\+\+L\+I\+N\+K@{I\+O\+W\+\_\+\+T\+O\+\_\+\+L\+I\+N\+K}!forward.\+h@{forward.\+h}}
+\subsubsection[{I\+O\+W\+\_\+\+T\+O\+\_\+\+L\+I\+N\+K}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\+O\+W\+\_\+\+T\+O\+\_\+\+L\+I\+N\+K~(1$<$$<$1)}\label{forward_8h_af4b60c1cc9b40fce1758a13580254099}
+\hypertarget{forward_8h_ad02bfe995be98ae20f7d09e5d15b8320}{}\index{forward.\+h@{forward.\+h}!I\+O\+W\+\_\+\+T\+O\+\_\+\+T\+U\+N@{I\+O\+W\+\_\+\+T\+O\+\_\+\+T\+U\+N}}
+\index{I\+O\+W\+\_\+\+T\+O\+\_\+\+T\+U\+N@{I\+O\+W\+\_\+\+T\+O\+\_\+\+T\+U\+N}!forward.\+h@{forward.\+h}}
+\subsubsection[{I\+O\+W\+\_\+\+T\+O\+\_\+\+T\+U\+N}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\+O\+W\+\_\+\+T\+O\+\_\+\+T\+U\+N~(1$<$$<$0)}\label{forward_8h_ad02bfe995be98ae20f7d09e5d15b8320}
+\hypertarget{forward_8h_a35a9f08a9e9bfd3fea2e26b8208bb2e4}{}\index{forward.\+h@{forward.\+h}!I\+O\+W\+\_\+\+W\+A\+I\+T\+\_\+\+S\+I\+G\+N\+A\+L@{I\+O\+W\+\_\+\+W\+A\+I\+T\+\_\+\+S\+I\+G\+N\+A\+L}}
+\index{I\+O\+W\+\_\+\+W\+A\+I\+T\+\_\+\+S\+I\+G\+N\+A\+L@{I\+O\+W\+\_\+\+W\+A\+I\+T\+\_\+\+S\+I\+G\+N\+A\+L}!forward.\+h@{forward.\+h}}
+\subsubsection[{I\+O\+W\+\_\+\+W\+A\+I\+T\+\_\+\+S\+I\+G\+N\+A\+L}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\+O\+W\+\_\+\+W\+A\+I\+T\+\_\+\+S\+I\+G\+N\+A\+L~(1$<$$<$9)}\label{forward_8h_a35a9f08a9e9bfd3fea2e26b8208bb2e4}
+\hypertarget{forward_8h_adc0ffa533dbcedb97a06690216dda8cd}{}\index{forward.\+h@{forward.\+h}!L\+I\+N\+K\+\_\+\+O\+U\+T@{L\+I\+N\+K\+\_\+\+O\+U\+T}}
+\index{L\+I\+N\+K\+\_\+\+O\+U\+T@{L\+I\+N\+K\+\_\+\+O\+U\+T}!forward.\+h@{forward.\+h}}
+\subsubsection[{L\+I\+N\+K\+\_\+\+O\+U\+T}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\+I\+N\+K\+\_\+\+O\+U\+T(
+\begin{DoxyParamCaption}
+\item[{}]{c}
+\end{DoxyParamCaption}
+)~({\bf B\+L\+E\+N}(\&(c)-\/$>$c2.\+to\+\_\+link) $>$ 0)}\label{forward_8h_adc0ffa533dbcedb97a06690216dda8cd}
+\hypertarget{forward_8h_a0ec66f41e5131803435b6dc2d5422239}{}\index{forward.\+h@{forward.\+h}!P\+I\+P\+\_\+\+M\+S\+S\+F\+I\+X@{P\+I\+P\+\_\+\+M\+S\+S\+F\+I\+X}}
+\index{P\+I\+P\+\_\+\+M\+S\+S\+F\+I\+X@{P\+I\+P\+\_\+\+M\+S\+S\+F\+I\+X}!forward.\+h@{forward.\+h}}
+\subsubsection[{P\+I\+P\+\_\+\+M\+S\+S\+F\+I\+X}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\+I\+P\+\_\+\+M\+S\+S\+F\+I\+X~(1$<$$<$1)         /$\ast$ v4 and v6 $\ast$/}\label{forward_8h_a0ec66f41e5131803435b6dc2d5422239}
+\hypertarget{forward_8h_a1b9b04d196702c7813533380401880ad}{}\index{forward.\+h@{forward.\+h}!P\+I\+P\+V4\+\_\+\+C\+L\+I\+E\+N\+T\+\_\+\+N\+A\+T@{P\+I\+P\+V4\+\_\+\+C\+L\+I\+E\+N\+T\+\_\+\+N\+A\+T}}
+\index{P\+I\+P\+V4\+\_\+\+C\+L\+I\+E\+N\+T\+\_\+\+N\+A\+T@{P\+I\+P\+V4\+\_\+\+C\+L\+I\+E\+N\+T\+\_\+\+N\+A\+T}!forward.\+h@{forward.\+h}}
+\subsubsection[{P\+I\+P\+V4\+\_\+\+C\+L\+I\+E\+N\+T\+\_\+\+N\+A\+T}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\+I\+P\+V4\+\_\+\+C\+L\+I\+E\+N\+T\+\_\+\+N\+A\+T~(1$<$$<$4)}\label{forward_8h_a1b9b04d196702c7813533380401880ad}
+\hypertarget{forward_8h_a3dc73ac88ece0849eff40ed354f6a3e3}{}\index{forward.\+h@{forward.\+h}!P\+I\+P\+V4\+\_\+\+E\+X\+T\+R\+A\+C\+T\+\_\+\+D\+H\+C\+P\+\_\+\+R\+O\+U\+T\+E\+R@{P\+I\+P\+V4\+\_\+\+E\+X\+T\+R\+A\+C\+T\+\_\+\+D\+H\+C\+P\+\_\+\+R\+O\+U\+T\+E\+R}}
+\index{P\+I\+P\+V4\+\_\+\+E\+X\+T\+R\+A\+C\+T\+\_\+\+D\+H\+C\+P\+\_\+\+R\+O\+U\+T\+E\+R@{P\+I\+P\+V4\+\_\+\+E\+X\+T\+R\+A\+C\+T\+\_\+\+D\+H\+C\+P\+\_\+\+R\+O\+U\+T\+E\+R}!forward.\+h@{forward.\+h}}
+\subsubsection[{P\+I\+P\+V4\+\_\+\+E\+X\+T\+R\+A\+C\+T\+\_\+\+D\+H\+C\+P\+\_\+\+R\+O\+U\+T\+E\+R}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\+I\+P\+V4\+\_\+\+E\+X\+T\+R\+A\+C\+T\+\_\+\+D\+H\+C\+P\+\_\+\+R\+O\+U\+T\+E\+R~(1$<$$<$3)}\label{forward_8h_a3dc73ac88ece0849eff40ed354f6a3e3}
+\hypertarget{forward_8h_a606a1b9a1ba5e682ada50a8c74a880a3}{}\index{forward.\+h@{forward.\+h}!P\+I\+P\+V4\+\_\+\+O\+U\+T\+G\+O\+I\+N\+G@{P\+I\+P\+V4\+\_\+\+O\+U\+T\+G\+O\+I\+N\+G}}
+\index{P\+I\+P\+V4\+\_\+\+O\+U\+T\+G\+O\+I\+N\+G@{P\+I\+P\+V4\+\_\+\+O\+U\+T\+G\+O\+I\+N\+G}!forward.\+h@{forward.\+h}}
+\subsubsection[{P\+I\+P\+V4\+\_\+\+O\+U\+T\+G\+O\+I\+N\+G}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\+I\+P\+V4\+\_\+\+O\+U\+T\+G\+O\+I\+N\+G~(1$<$$<$2)}\label{forward_8h_a606a1b9a1ba5e682ada50a8c74a880a3}
+\hypertarget{forward_8h_ad5064600bd6aa89622ec5063ba1c4c6c}{}\index{forward.\+h@{forward.\+h}!P\+I\+P\+V4\+\_\+\+P\+A\+S\+S\+T\+O\+S@{P\+I\+P\+V4\+\_\+\+P\+A\+S\+S\+T\+O\+S}}
+\index{P\+I\+P\+V4\+\_\+\+P\+A\+S\+S\+T\+O\+S@{P\+I\+P\+V4\+\_\+\+P\+A\+S\+S\+T\+O\+S}!forward.\+h@{forward.\+h}}
+\subsubsection[{P\+I\+P\+V4\+\_\+\+P\+A\+S\+S\+T\+O\+S}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\+I\+P\+V4\+\_\+\+P\+A\+S\+S\+T\+O\+S~(1$<$$<$0)}\label{forward_8h_ad5064600bd6aa89622ec5063ba1c4c6c}
+\hypertarget{forward_8h_aba5deebd79e4ca7a672b80a8ec940d73}{}\index{forward.\+h@{forward.\+h}!T\+O\+\_\+\+L\+I\+N\+K\+\_\+\+D\+E\+F@{T\+O\+\_\+\+L\+I\+N\+K\+\_\+\+D\+E\+F}}
+\index{T\+O\+\_\+\+L\+I\+N\+K\+\_\+\+D\+E\+F@{T\+O\+\_\+\+L\+I\+N\+K\+\_\+\+D\+E\+F}!forward.\+h@{forward.\+h}}
+\subsubsection[{T\+O\+\_\+\+L\+I\+N\+K\+\_\+\+D\+E\+F}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\+O\+\_\+\+L\+I\+N\+K\+\_\+\+D\+E\+F(
+\begin{DoxyParamCaption}
+\item[{}]{c}
+\end{DoxyParamCaption}
+)~({\bf L\+I\+N\+K\+\_\+\+O\+U\+T}(c) $\vert$$\vert$ {\bf T\+O\+\_\+\+L\+I\+N\+K\+\_\+\+F\+R\+A\+G}(c))}\label{forward_8h_aba5deebd79e4ca7a672b80a8ec940d73}
+\hypertarget{forward_8h_ab1438bb8ee77559c3cbe138d01a329f4}{}\index{forward.\+h@{forward.\+h}!T\+O\+\_\+\+L\+I\+N\+K\+\_\+\+F\+R\+A\+G@{T\+O\+\_\+\+L\+I\+N\+K\+\_\+\+F\+R\+A\+G}}
+\index{T\+O\+\_\+\+L\+I\+N\+K\+\_\+\+F\+R\+A\+G@{T\+O\+\_\+\+L\+I\+N\+K\+\_\+\+F\+R\+A\+G}!forward.\+h@{forward.\+h}}
+\subsubsection[{T\+O\+\_\+\+L\+I\+N\+K\+\_\+\+F\+R\+A\+G}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\+O\+\_\+\+L\+I\+N\+K\+\_\+\+F\+R\+A\+G(
+\begin{DoxyParamCaption}
+\item[{}]{c}
+\end{DoxyParamCaption}
+)~({\bf false})}\label{forward_8h_ab1438bb8ee77559c3cbe138d01a329f4}
+\hypertarget{forward_8h_a30b4a9da7fe4e62c299dbc3e772a0187}{}\index{forward.\+h@{forward.\+h}!T\+U\+N\+\_\+\+O\+U\+T@{T\+U\+N\+\_\+\+O\+U\+T}}
+\index{T\+U\+N\+\_\+\+O\+U\+T@{T\+U\+N\+\_\+\+O\+U\+T}!forward.\+h@{forward.\+h}}
+\subsubsection[{T\+U\+N\+\_\+\+O\+U\+T}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\+U\+N\+\_\+\+O\+U\+T(
+\begin{DoxyParamCaption}
+\item[{}]{c}
+\end{DoxyParamCaption}
+)~({\bf B\+L\+E\+N}(\&(c)-\/$>$c2.\+to\+\_\+tun) $>$ 0)}\label{forward_8h_a30b4a9da7fe4e62c299dbc3e772a0187}
+
+
+\subsection{Function Documentation}
+\hypertarget{forward_8h_a66abf1cd0cfe2af99b61d954cab37966}{}\index{forward.\+h@{forward.\+h}!encrypt\+\_\+sign@{encrypt\+\_\+sign}}
+\index{encrypt\+\_\+sign@{encrypt\+\_\+sign}!forward.\+h@{forward.\+h}}
+\subsubsection[{encrypt\+\_\+sign(struct context $\ast$c, bool comp\+\_\+frag)}]{\setlength{\rightskip}{0pt plus 5cm}void encrypt\+\_\+sign (
+\begin{DoxyParamCaption}
+\item[{struct {\bf context} $\ast$}]{c, }
+\item[{{\bf bool}}]{comp\+\_\+frag}
+\end{DoxyParamCaption}
+)}\label{forward_8h_a66abf1cd0cfe2af99b61d954cab37966}
+Process a data channel packet that will be sent through a V\+P\+N tunnel.
+
+This function controls the processing of a data channel packet which will be sent through a V\+P\+N tunnel to a remote Open\+V\+P\+N peer. It\textquotesingle{}s general structure is as follows\+:
+\begin{DoxyItemize}
+\item Check that the client authentication has succeeded; if not, drop the packet.
+\item If the {\itshape comp\+\_\+frag} argument is true\+:
+\begin{DoxyItemize}
+\item Call {\ttfamily lzo\+\_\+compress()} of the \hyperlink{}{Channel Compression module} to (possibly) compress the packet.
+\item Call {\ttfamily fragment\+\_\+outgoing()} of the \hyperlink{}{Channel Fragmentation module} to (possibly) fragment the packet.
+\end{DoxyItemize}
+\item Activate the \hyperlink{}{Channel Crypto module} to perform security operations on the packet.
+\begin{DoxyItemize}
+\item Call {\ttfamily \hyperlink{group__data__crypto_gaba03eaba587a89c2abda8780da7b3ac7}{tls\+\_\+pre\+\_\+encrypt()}} to choose the appropriate security parameters for this packet.
+\item Call {\ttfamily \hyperlink{group__data__crypto_ga2756bad88224b98719d4e8f08cb11ef9}{openvpn\+\_\+encrypt()}} to encrypt and H\+M\+A\+C signed the packet.
+\item Call {\ttfamily \hyperlink{group__data__crypto_ga1f2ecd39b88da77b2f8067962155ea82}{tls\+\_\+post\+\_\+encrypt()}} to prepend the one-\/byte Open\+V\+P\+N header and do some T\+L\+S accounting.
+\end{DoxyItemize}
+\item Place the resulting packet in {\ttfamily c-\/$>$c2.\+to\+\_\+link} so that it can be sent over the external network interface to its remote destination by the \hyperlink{}{External Multiplexer}.
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parameters}
+{\em c} & -\/ The context structure of the V\+P\+N tunnel associated with this packet. \\
+\hline
+{\em comp\+\_\+frag} & -\/ Whether to do packet compression and fragmentation. This flag is set to true the first time a packet is processed. If the packet then gets fragmented, this function will be called again once for each remaining fragment with this parameter set to false. \\
+\hline
+\end{DoxyParams}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{forward_8h_a66abf1cd0cfe2af99b61d954cab37966_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{forward_8h_a66abf1cd0cfe2af99b61d954cab37966_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{forward_8h_a1445427854d7b321be538f18802b6b35}{}\index{forward.\+h@{forward.\+h}!get\+\_\+server\+\_\+poll\+\_\+remaining\+\_\+time@{get\+\_\+server\+\_\+poll\+\_\+remaining\+\_\+time}}
+\index{get\+\_\+server\+\_\+poll\+\_\+remaining\+\_\+time@{get\+\_\+server\+\_\+poll\+\_\+remaining\+\_\+time}!forward.\+h@{forward.\+h}}
+\subsubsection[{get\+\_\+server\+\_\+poll\+\_\+remaining\+\_\+time(struct event\+\_\+timeout $\ast$server\+\_\+poll\+\_\+timeout)}]{\setlength{\rightskip}{0pt plus 5cm}int get\+\_\+server\+\_\+poll\+\_\+remaining\+\_\+time (
+\begin{DoxyParamCaption}
+\item[{struct {\bf event\+\_\+timeout} $\ast$}]{server\+\_\+poll\+\_\+timeout}
+\end{DoxyParamCaption}
+)}\label{forward_8h_a1445427854d7b321be538f18802b6b35}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{forward_8h_a1445427854d7b321be538f18802b6b35_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{forward_8h_a98c3703dd840bdc9affca78d893d5024}{}\index{forward.\+h@{forward.\+h}!pre\+\_\+select@{pre\+\_\+select}}
+\index{pre\+\_\+select@{pre\+\_\+select}!forward.\+h@{forward.\+h}}
+\subsubsection[{pre\+\_\+select(struct context $\ast$c)}]{\setlength{\rightskip}{0pt plus 5cm}void pre\+\_\+select (
+\begin{DoxyParamCaption}
+\item[{struct {\bf context} $\ast$}]{c}
+\end{DoxyParamCaption}
+)}\label{forward_8h_a98c3703dd840bdc9affca78d893d5024}
+\hypertarget{forward_8h_a01bb4da24c0d75c32845ac87c5cad055}{}\index{forward.\+h@{forward.\+h}!process\+\_\+incoming\+\_\+link\+\_\+part1@{process\+\_\+incoming\+\_\+link\+\_\+part1}}
+\index{process\+\_\+incoming\+\_\+link\+\_\+part1@{process\+\_\+incoming\+\_\+link\+\_\+part1}!forward.\+h@{forward.\+h}}
+\subsubsection[{process\+\_\+incoming\+\_\+link\+\_\+part1(struct context $\ast$c, struct link\+\_\+socket\+\_\+info $\ast$lsi, bool floated)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} process\+\_\+incoming\+\_\+link\+\_\+part1 (
+\begin{DoxyParamCaption}
+\item[{struct {\bf context} $\ast$}]{c, }
+\item[{struct {\bf link\+\_\+socket\+\_\+info} $\ast$}]{lsi, }
+\item[{{\bf bool}}]{floated}
+\end{DoxyParamCaption}
+)}\label{forward_8h_a01bb4da24c0d75c32845ac87c5cad055}
+Starts processing a packet read from the external network interface.
+
+This function starts the processing of a data channel packet which has come out of a V\+P\+N tunnel. It\textquotesingle{}s high-\/level structure is as follows\+:
+\begin{DoxyItemize}
+\item Verify that a nonzero length packet has been received from a valid source address for the given context {\itshape c}.
+\item Call {\ttfamily \hyperlink{ssl_8c_ad436aa1372a562e8be84491907531df4}{tls\+\_\+pre\+\_\+decrypt()}}, which splits data channel and control channel packets\+:
+\begin{DoxyItemize}
+\item If a data channel packet, the appropriate security parameters are loaded.
+\item If a control channel packet, this function process is it and afterwards sets the packet\textquotesingle{}s buffer length to 0, so that the data channel processing steps below will ignore it.
+\end{DoxyItemize}
+\item Call {\ttfamily \hyperlink{group__data__crypto_gae91d99446478fcf3327672eb78ef0bf8}{openvpn\+\_\+decrypt()}} of the \hyperlink{group__data__crypto}{Data Channel Crypto module} to authenticate and decrypt the packet using the security parameters loaded by {\ttfamily \hyperlink{ssl_8c_ad436aa1372a562e8be84491907531df4}{tls\+\_\+pre\+\_\+decrypt()}} above.
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parameters}
+{\em c} & -\/ The context structure of the V\+P\+N tunnel associated with the packet. \\
+\hline
+{\em lsi} & -\/ \hyperlink{structlink__socket__info}{link\+\_\+socket\+\_\+info} obtained from context before processing. \\
+\hline
+{\em floated} & -\/ Flag indicates that peer has floated.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if packet is authenticated, false otherwise. 
+\end{DoxyReturn}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{forward_8h_a01bb4da24c0d75c32845ac87c5cad055_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{forward_8h_a28085fcbafd6f128240d96026fd81414}{}\index{forward.\+h@{forward.\+h}!process\+\_\+incoming\+\_\+link\+\_\+part2@{process\+\_\+incoming\+\_\+link\+\_\+part2}}
+\index{process\+\_\+incoming\+\_\+link\+\_\+part2@{process\+\_\+incoming\+\_\+link\+\_\+part2}!forward.\+h@{forward.\+h}}
+\subsubsection[{process\+\_\+incoming\+\_\+link\+\_\+part2(struct context $\ast$c, struct link\+\_\+socket\+\_\+info $\ast$lsi, const uint8\+\_\+t $\ast$orig\+\_\+buf)}]{\setlength{\rightskip}{0pt plus 5cm}void process\+\_\+incoming\+\_\+link\+\_\+part2 (
+\begin{DoxyParamCaption}
+\item[{struct {\bf context} $\ast$}]{c, }
+\item[{struct {\bf link\+\_\+socket\+\_\+info} $\ast$}]{lsi, }
+\item[{const uint8\+\_\+t $\ast$}]{orig\+\_\+buf}
+\end{DoxyParamCaption}
+)}\label{forward_8h_a28085fcbafd6f128240d96026fd81414}
+Continues processing a packet read from the external network interface.
+
+This function continues the processing of a data channel packet which has come out of a V\+P\+N tunnel. It must be called after {\ttfamily \hyperlink{forward_8h_a01bb4da24c0d75c32845ac87c5cad055}{process\+\_\+incoming\+\_\+link\+\_\+part1()}} function.
+
+It\textquotesingle{}s high-\/level structure is as follows\+:
+\begin{DoxyItemize}
+\item Call {\ttfamily fragment\+\_\+incoming()} of the \hyperlink{}{Data Channel Fragmentation module} to reassemble the packet if it\textquotesingle{}s fragmented.
+\item Call {\ttfamily lzo\+\_\+decompress()} of the \hyperlink{}{Data Channel Compression module} to decompress the packet if it\textquotesingle{}s compressed.
+\item Place the resulting packet in {\ttfamily c-\/$>$c2.\+to\+\_\+tun} so that it can be sent over the virtual tun/tap network interface to its local destination by the \hyperlink{}{Internal Multiplexer}.
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parameters}
+{\em c} & -\/ The context structure of the V\+P\+N tunnel associated with the packet. \\
+\hline
+{\em lsi} & -\/ \hyperlink{structlink__socket__info}{link\+\_\+socket\+\_\+info} obtained from context before processing. \\
+\hline
+{\em orig\+\_\+buf} & -\/ Pointer to a buffer data. \\
+\hline
+\end{DoxyParams}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{forward_8h_a28085fcbafd6f128240d96026fd81414_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{forward_8h_a1ac8de3ee1c24f16d30a8773d7574bee}{}\index{forward.\+h@{forward.\+h}!process\+\_\+incoming\+\_\+tun@{process\+\_\+incoming\+\_\+tun}}
+\index{process\+\_\+incoming\+\_\+tun@{process\+\_\+incoming\+\_\+tun}!forward.\+h@{forward.\+h}}
+\subsubsection[{process\+\_\+incoming\+\_\+tun(struct context $\ast$c)}]{\setlength{\rightskip}{0pt plus 5cm}void process\+\_\+incoming\+\_\+tun (
+\begin{DoxyParamCaption}
+\item[{struct {\bf context} $\ast$}]{c}
+\end{DoxyParamCaption}
+)}\label{forward_8h_a1ac8de3ee1c24f16d30a8773d7574bee}
+Process a packet read from the virtual tun/tap network interface.
+
+This function calls {\ttfamily \hyperlink{forward_8h_a66abf1cd0cfe2af99b61d954cab37966}{encrypt\+\_\+sign()}} of the \hyperlink{}{Data Channel Control module} to process the packet.
+
+If an error occurs, it is logged and the packet is dropped.
+
+
+\begin{DoxyParams}{Parameters}
+{\em c} & -\/ The context structure of the V\+P\+N tunnel associated with the packet. \\
+\hline
+\end{DoxyParams}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{forward_8h_a1ac8de3ee1c24f16d30a8773d7574bee_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=294pt]{forward_8h_a1ac8de3ee1c24f16d30a8773d7574bee_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{forward_8h_a20db9c6797042b6584e95af8ea5bbc10}{}\index{forward.\+h@{forward.\+h}!process\+\_\+io@{process\+\_\+io}}
+\index{process\+\_\+io@{process\+\_\+io}!forward.\+h@{forward.\+h}}
+\subsubsection[{process\+\_\+io(struct context $\ast$c)}]{\setlength{\rightskip}{0pt plus 5cm}void process\+\_\+io (
+\begin{DoxyParamCaption}
+\item[{struct {\bf context} $\ast$}]{c}
+\end{DoxyParamCaption}
+)}\label{forward_8h_a20db9c6797042b6584e95af8ea5bbc10}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{forward_8h_a20db9c6797042b6584e95af8ea5bbc10_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{forward_8h_a9d9ddd3cb647f519e56209e58fb09610}{}\index{forward.\+h@{forward.\+h}!process\+\_\+ip\+\_\+header@{process\+\_\+ip\+\_\+header}}
+\index{process\+\_\+ip\+\_\+header@{process\+\_\+ip\+\_\+header}!forward.\+h@{forward.\+h}}
+\subsubsection[{process\+\_\+ip\+\_\+header(struct context $\ast$c, unsigned int flags, struct buffer $\ast$buf)}]{\setlength{\rightskip}{0pt plus 5cm}void process\+\_\+ip\+\_\+header (
+\begin{DoxyParamCaption}
+\item[{struct {\bf context} $\ast$}]{c, }
+\item[{unsigned int}]{flags, }
+\item[{struct {\bf buffer} $\ast$}]{buf}
+\end{DoxyParamCaption}
+)}\label{forward_8h_a9d9ddd3cb647f519e56209e58fb09610}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{forward_8h_a9d9ddd3cb647f519e56209e58fb09610_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{forward_8h_a9d9ddd3cb647f519e56209e58fb09610_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{forward_8h_a1a506b271590be59a1b285c6cd4a5d85}{}\index{forward.\+h@{forward.\+h}!process\+\_\+outgoing\+\_\+link@{process\+\_\+outgoing\+\_\+link}}
+\index{process\+\_\+outgoing\+\_\+link@{process\+\_\+outgoing\+\_\+link}!forward.\+h@{forward.\+h}}
+\subsubsection[{process\+\_\+outgoing\+\_\+link(struct context $\ast$c)}]{\setlength{\rightskip}{0pt plus 5cm}void process\+\_\+outgoing\+\_\+link (
+\begin{DoxyParamCaption}
+\item[{struct {\bf context} $\ast$}]{c}
+\end{DoxyParamCaption}
+)}\label{forward_8h_a1a506b271590be59a1b285c6cd4a5d85}
+Write a packet to the external network interface.
+
+This function writes the packet stored in {\ttfamily c-\/$>$c2.\+to\+\_\+link} to the external network device contained within {\ttfamily c-\/$>$c1.\+link\+\_\+socket}.
+
+If an error occurs, it is logged and the packet is dropped.
+
+
+\begin{DoxyParams}{Parameters}
+{\em c} & -\/ The context structure of the V\+P\+N tunnel associated with the packet. \\
+\hline
+\end{DoxyParams}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{forward_8h_a1a506b271590be59a1b285c6cd4a5d85_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=293pt]{forward_8h_a1a506b271590be59a1b285c6cd4a5d85_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{forward_8h_a2dd6f53fabe65e8e50eafc12030a8a6e}{}\index{forward.\+h@{forward.\+h}!process\+\_\+outgoing\+\_\+tun@{process\+\_\+outgoing\+\_\+tun}}
+\index{process\+\_\+outgoing\+\_\+tun@{process\+\_\+outgoing\+\_\+tun}!forward.\+h@{forward.\+h}}
+\subsubsection[{process\+\_\+outgoing\+\_\+tun(struct context $\ast$c)}]{\setlength{\rightskip}{0pt plus 5cm}void process\+\_\+outgoing\+\_\+tun (
+\begin{DoxyParamCaption}
+\item[{struct {\bf context} $\ast$}]{c}
+\end{DoxyParamCaption}
+)}\label{forward_8h_a2dd6f53fabe65e8e50eafc12030a8a6e}
+Write a packet to the virtual tun/tap network interface.
+
+This function writes the packet stored in {\ttfamily c-\/$>$c2.\+to\+\_\+tun} to the virtual tun/tap network device {\ttfamily c-\/$>$c1.\+tuntap}.
+
+If an error occurs, it is logged and the packet is dropped.
+
+
+\begin{DoxyParams}{Parameters}
+{\em c} & -\/ The context structure of the V\+P\+N tunnel associated with the packet. \\
+\hline
+\end{DoxyParams}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{forward_8h_a2dd6f53fabe65e8e50eafc12030a8a6e_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=292pt]{forward_8h_a2dd6f53fabe65e8e50eafc12030a8a6e_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{forward_8h_ab240cf830443447e24d8554e7b290446}{}\index{forward.\+h@{forward.\+h}!read\+\_\+incoming\+\_\+link@{read\+\_\+incoming\+\_\+link}}
+\index{read\+\_\+incoming\+\_\+link@{read\+\_\+incoming\+\_\+link}!forward.\+h@{forward.\+h}}
+\subsubsection[{read\+\_\+incoming\+\_\+link(struct context $\ast$c)}]{\setlength{\rightskip}{0pt plus 5cm}void read\+\_\+incoming\+\_\+link (
+\begin{DoxyParamCaption}
+\item[{struct {\bf context} $\ast$}]{c}
+\end{DoxyParamCaption}
+)}\label{forward_8h_ab240cf830443447e24d8554e7b290446}
+Read a packet from the external network interface.
+
+The packet read from the external network interface is stored in {\ttfamily c-\/$>$c2.\+buf} and its source address in {\ttfamily c-\/$>$c2.\+from}. If an error occurred, the length of {\ttfamily c-\/$>$c2.\+buf} will be 0.
+
+Open\+V\+P\+N running as client or as U\+D\+P server only has a single external network socket, so this function can be called with the single (client mode) or top level (U\+D\+P server) context as its argument. Open\+V\+P\+N running as T\+C\+P server, on the other hand, has a network socket for each active V\+P\+N tunnel. In that case this function must be called with the context associated with the appropriate V\+P\+N tunnel for which data is available to be read.
+
+
+\begin{DoxyParams}{Parameters}
+{\em c} & -\/ The context structure which contains the external network socket from which to read incoming packets. \\
+\hline
+\end{DoxyParams}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=317pt]{forward_8h_ab240cf830443447e24d8554e7b290446_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=280pt]{forward_8h_ab240cf830443447e24d8554e7b290446_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{forward_8h_a085f2884d6c0e63250ad17e489ab2a1e}{}\index{forward.\+h@{forward.\+h}!read\+\_\+incoming\+\_\+tun@{read\+\_\+incoming\+\_\+tun}}
+\index{read\+\_\+incoming\+\_\+tun@{read\+\_\+incoming\+\_\+tun}!forward.\+h@{forward.\+h}}
+\subsubsection[{read\+\_\+incoming\+\_\+tun(struct context $\ast$c)}]{\setlength{\rightskip}{0pt plus 5cm}void read\+\_\+incoming\+\_\+tun (
+\begin{DoxyParamCaption}
+\item[{struct {\bf context} $\ast$}]{c}
+\end{DoxyParamCaption}
+)}\label{forward_8h_a085f2884d6c0e63250ad17e489ab2a1e}
+Read a packet from the virtual tun/tap network interface.
+
+This function reads a packet from the virtual tun/tap network device {\ttfamily c-\/$>$c1.\+tuntap} and stores it in {\ttfamily c-\/$>$c2.\+buf}.
+
+If an error occurs, it is logged and the packet is dropped.
+
+
+\begin{DoxyParams}{Parameters}
+{\em c} & -\/ The context structure in which to store the received packet. \\
+\hline
+\end{DoxyParams}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=294pt]{forward_8h_a085f2884d6c0e63250ad17e489ab2a1e_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=278pt]{forward_8h_a085f2884d6c0e63250ad17e489ab2a1e_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{forward_8h_a7a409db050be184362b60f3ce7b56b35}{}\index{forward.\+h@{forward.\+h}!send\+\_\+control\+\_\+channel\+\_\+string@{send\+\_\+control\+\_\+channel\+\_\+string}}
+\index{send\+\_\+control\+\_\+channel\+\_\+string@{send\+\_\+control\+\_\+channel\+\_\+string}!forward.\+h@{forward.\+h}}
+\subsubsection[{send\+\_\+control\+\_\+channel\+\_\+string(struct context $\ast$c, const char $\ast$str, int msglevel)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} send\+\_\+control\+\_\+channel\+\_\+string (
+\begin{DoxyParamCaption}
+\item[{struct {\bf context} $\ast$}]{c, }
+\item[{const char $\ast$}]{str, }
+\item[{int}]{msglevel}
+\end{DoxyParamCaption}
+)}\label{forward_8h_a7a409db050be184362b60f3ce7b56b35}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{forward_8h_a7a409db050be184362b60f3ce7b56b35_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{forward_8h_a61c81d8d4c12e17e674876dc802da5e2}{}\index{forward.\+h@{forward.\+h}!show\+\_\+wait\+\_\+status@{show\+\_\+wait\+\_\+status}}
+\index{show\+\_\+wait\+\_\+status@{show\+\_\+wait\+\_\+status}!forward.\+h@{forward.\+h}}
+\subsubsection[{show\+\_\+wait\+\_\+status(struct context $\ast$c)}]{\setlength{\rightskip}{0pt plus 5cm}void show\+\_\+wait\+\_\+status (
+\begin{DoxyParamCaption}
+\item[{struct {\bf context} $\ast$}]{c}
+\end{DoxyParamCaption}
+)}\label{forward_8h_a61c81d8d4c12e17e674876dc802da5e2}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=293pt]{forward_8h_a61c81d8d4c12e17e674876dc802da5e2_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{forward_8h_a4e9d3dd04d69b38f6902dfc5ae12cc82}{}\index{forward.\+h@{forward.\+h}!wait\+\_\+status\+\_\+string@{wait\+\_\+status\+\_\+string}}
+\index{wait\+\_\+status\+\_\+string@{wait\+\_\+status\+\_\+string}!forward.\+h@{forward.\+h}}
+\subsubsection[{wait\+\_\+status\+\_\+string(struct context $\ast$c, struct gc\+\_\+arena $\ast$gc)}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ wait\+\_\+status\+\_\+string (
+\begin{DoxyParamCaption}
+\item[{struct {\bf context} $\ast$}]{c, }
+\item[{struct {\bf gc\+\_\+arena} $\ast$}]{gc}
+\end{DoxyParamCaption}
+)}\label{forward_8h_a4e9d3dd04d69b38f6902dfc5ae12cc82}

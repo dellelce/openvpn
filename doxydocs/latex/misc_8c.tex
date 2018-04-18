@@ -1,0 +1,619 @@
+\hypertarget{misc_8c}{}\section{src/openvpn/misc.c File Reference}
+\label{misc_8c}\index{src/openvpn/misc.\+c@{src/openvpn/misc.\+c}}
+{\ttfamily \#include \char`\"{}syshead.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}buffer.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}misc.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}base64.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}tun.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}error.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}otime.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}plugin.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}options.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}manage.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}crypto.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}route.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}console.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}win32.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}memdbg.\+h\char`\"{}}\\*
+Include dependency graph for misc.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{misc_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{misc_8c_a325df6b67fa088a578b667faab194398}{n\+\_\+rnd\+\_\+bytes}~6
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{misc_8c_a6e7deed7d2affb7c6a734ec2aea7951d}{set\+\_\+std\+\_\+files\+\_\+to\+\_\+null} (\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} stdin\+\_\+only)
+\item 
+void \hyperlink{misc_8c_a7459e81aab781d02183498da67072573}{save\+\_\+inetd\+\_\+socket\+\_\+descriptor} (void)
+\item 
+const char $\ast$ \hyperlink{misc_8c_ae833868983cc7cc952461d72dab62bbd}{system\+\_\+error\+\_\+message} (int stat, struct \hyperlink{structgc__arena}{gc\+\_\+arena} $\ast$gc)
+\item 
+\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} \hyperlink{misc_8c_a12c490307c9e4966e41f32d08f5f3cae}{openvpn\+\_\+execve\+\_\+check} (const struct \hyperlink{structargv}{argv} $\ast$a, const struct \hyperlink{structenv__set}{env\+\_\+set} $\ast$es, const unsigned int flags, const char $\ast$error\+\_\+message)
+\item 
+\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} \hyperlink{misc_8c_a1ea73c309e8dfb9c1fc00b2977d72a75}{openvpn\+\_\+execve\+\_\+allowed} (const unsigned int flags)
+\item 
+int \hyperlink{misc_8c_a8596ddf7653af77837d24c74e6a59b69}{openvpn\+\_\+execve} (const struct \hyperlink{structargv}{argv} $\ast$a, const struct \hyperlink{structenv__set}{env\+\_\+set} $\ast$es, const unsigned int flags)
+\item 
+int \hyperlink{misc_8c_aa6317d2c2a118c3a9519b02a23111367}{openvpn\+\_\+popen} (const struct \hyperlink{structargv}{argv} $\ast$a, const struct \hyperlink{structenv__set}{env\+\_\+set} $\ast$es)
+\item 
+\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} \hyperlink{misc_8c_aa26af8ee2558835f5c8c920fb12a1db6}{test\+\_\+file} (const char $\ast$filename)
+\item 
+const char $\ast$ \hyperlink{misc_8c_aa10a1dd4b150f979d6f359b5625e81f5}{create\+\_\+temp\+\_\+file} (const char $\ast$directory, const char $\ast$prefix, struct \hyperlink{structgc__arena}{gc\+\_\+arena} $\ast$gc)
+\item 
+const char $\ast$ \hyperlink{misc_8c_ac6174edbe71fde417d167f81417ae36b}{hostname\+\_\+randomize} (const char $\ast$hostname, struct \hyperlink{structgc__arena}{gc\+\_\+arena} $\ast$gc)
+\item 
+const char $\ast$ \hyperlink{misc_8c_ad71e3889d079e20769eb904160b243f2}{gen\+\_\+path} (const char $\ast$directory, const char $\ast$filename, struct \hyperlink{structgc__arena}{gc\+\_\+arena} $\ast$gc)
+\item 
+\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} \hyperlink{misc_8c_aaa376fd005fae1702d8121f295626ac8}{absolute\+\_\+pathname} (const char $\ast$pathname)
+\item 
+\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} \hyperlink{misc_8c_a17ec57572c876bf53ca3fa0cadb9c664}{get\+\_\+user\+\_\+pass\+\_\+cr} (struct \hyperlink{structuser__pass}{user\+\_\+pass} $\ast$up, const char $\ast$auth\+\_\+file, const char $\ast$prefix, const unsigned int flags, const char $\ast$auth\+\_\+challenge)
+\item 
+void \hyperlink{misc_8c_a37c9ea488f35dc0454dbf94f7e8938fa}{purge\+\_\+user\+\_\+pass} (struct \hyperlink{structuser__pass}{user\+\_\+pass} $\ast$up, const \hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} force)
+\item 
+void \hyperlink{misc_8c_a8891fa0f7a8c069f3ed301d220559e08}{set\+\_\+auth\+\_\+token} (struct \hyperlink{structuser__pass}{user\+\_\+pass} $\ast$up, const char $\ast$token)
+\item 
+const char $\ast$ \hyperlink{misc_8c_acb1c853a22da028226b8098a81250c9a}{safe\+\_\+print} (const char $\ast$str, struct \hyperlink{structgc__arena}{gc\+\_\+arena} $\ast$gc)
+\item 
+const char $\ast$$\ast$ \hyperlink{misc_8c_abd1f6f7eac3eb3b3aecc21785c5a3b45}{make\+\_\+arg\+\_\+array} (const char $\ast$first, const char $\ast$parms, struct \hyperlink{structgc__arena}{gc\+\_\+arena} $\ast$gc)
+\item 
+const char $\ast$$\ast$ \hyperlink{misc_8c_a865a40fce786c53591ae4744c6ced760}{make\+\_\+extended\+\_\+arg\+\_\+array} (char $\ast$$\ast$p, struct \hyperlink{structgc__arena}{gc\+\_\+arena} $\ast$gc)
+\item 
+const char $\ast$ \hyperlink{misc_8c_ad9f9ea2091b3303cef77c02575fdf91d}{sanitize\+\_\+control\+\_\+message} (const char $\ast$src, struct \hyperlink{structgc__arena}{gc\+\_\+arena} $\ast$gc)
+\item 
+\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} \hyperlink{misc_8c_a032f18f4fffe1b60f4d30e3bacc9fa28}{compat\+\_\+flag} (unsigned int flag)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{misc_8c_a20ae66171b79abd32459ab4b3ccb5b33}{script\+\_\+security} = \hyperlink{misc_8h_abf174381018a58379a4f3e258b5bf6a0}{S\+S\+E\+C\+\_\+\+B\+U\+I\+L\+T\+\_\+\+I\+N}
+\item 
+int \hyperlink{misc_8c_a5ad312831981e71bad906718e68acc2d}{inetd\+\_\+socket\+\_\+descriptor} = \hyperlink{syshead_8h_a3fa9d20331cf27c4219b58ca00c99fb8}{S\+O\+C\+K\+E\+T\+\_\+\+U\+N\+D\+E\+F\+I\+N\+E\+D}
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{misc_8c_a325df6b67fa088a578b667faab194398}{}\index{misc.\+c@{misc.\+c}!n\+\_\+rnd\+\_\+bytes@{n\+\_\+rnd\+\_\+bytes}}
+\index{n\+\_\+rnd\+\_\+bytes@{n\+\_\+rnd\+\_\+bytes}!misc.\+c@{misc.\+c}}
+\subsubsection[{n\+\_\+rnd\+\_\+bytes}]{\setlength{\rightskip}{0pt plus 5cm}\#define n\+\_\+rnd\+\_\+bytes~6}\label{misc_8c_a325df6b67fa088a578b667faab194398}
+
+
+\subsection{Function Documentation}
+\hypertarget{misc_8c_aaa376fd005fae1702d8121f295626ac8}{}\index{misc.\+c@{misc.\+c}!absolute\+\_\+pathname@{absolute\+\_\+pathname}}
+\index{absolute\+\_\+pathname@{absolute\+\_\+pathname}!misc.\+c@{misc.\+c}}
+\subsubsection[{absolute\+\_\+pathname(const char $\ast$pathname)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} absolute\+\_\+pathname (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{pathname}
+\end{DoxyParamCaption}
+)}\label{misc_8c_aaa376fd005fae1702d8121f295626ac8}
+\hypertarget{misc_8c_a032f18f4fffe1b60f4d30e3bacc9fa28}{}\index{misc.\+c@{misc.\+c}!compat\+\_\+flag@{compat\+\_\+flag}}
+\index{compat\+\_\+flag@{compat\+\_\+flag}!misc.\+c@{misc.\+c}}
+\subsubsection[{compat\+\_\+flag(unsigned int flag)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} compat\+\_\+flag (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{flag}
+\end{DoxyParamCaption}
+)}\label{misc_8c_a032f18f4fffe1b60f4d30e3bacc9fa28}
+Will set or query for a global compat flag. To modify the compat flags the C\+O\+M\+P\+A\+T\+\_\+\+F\+L\+A\+G\+\_\+\+S\+E\+T must be bitwise O\+Red together with the flag to set. If no \char`\"{}operator\char`\"{} flag is given it defaults to C\+O\+M\+P\+A\+T\+\_\+\+F\+L\+A\+G\+\_\+\+Q\+U\+E\+R\+Y, which returns the flag state.
+
+
+\begin{DoxyParams}{Parameters}
+{\em flag} & Flag to be set/queried for bitwise O\+Red with the operator flag \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns 0 if the flag is not set, otherwise the \textquotesingle{}flag\textquotesingle{} value is returned 
+\end{DoxyReturn}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=274pt]{misc_8c_a032f18f4fffe1b60f4d30e3bacc9fa28_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{misc_8c_aa10a1dd4b150f979d6f359b5625e81f5}{}\index{misc.\+c@{misc.\+c}!create\+\_\+temp\+\_\+file@{create\+\_\+temp\+\_\+file}}
+\index{create\+\_\+temp\+\_\+file@{create\+\_\+temp\+\_\+file}!misc.\+c@{misc.\+c}}
+\subsubsection[{create\+\_\+temp\+\_\+file(const char $\ast$directory, const char $\ast$prefix, struct gc\+\_\+arena $\ast$gc)}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ create\+\_\+temp\+\_\+file (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{directory, }
+\item[{const char $\ast$}]{prefix, }
+\item[{struct {\bf gc\+\_\+arena} $\ast$}]{gc}
+\end{DoxyParamCaption}
+)}\label{misc_8c_aa10a1dd4b150f979d6f359b5625e81f5}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{misc_8c_aa10a1dd4b150f979d6f359b5625e81f5_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=263pt]{misc_8c_aa10a1dd4b150f979d6f359b5625e81f5_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{misc_8c_ad71e3889d079e20769eb904160b243f2}{}\index{misc.\+c@{misc.\+c}!gen\+\_\+path@{gen\+\_\+path}}
+\index{gen\+\_\+path@{gen\+\_\+path}!misc.\+c@{misc.\+c}}
+\subsubsection[{gen\+\_\+path(const char $\ast$directory, const char $\ast$filename, struct gc\+\_\+arena $\ast$gc)}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ gen\+\_\+path (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{directory, }
+\item[{const char $\ast$}]{filename, }
+\item[{struct {\bf gc\+\_\+arena} $\ast$}]{gc}
+\end{DoxyParamCaption}
+)}\label{misc_8c_ad71e3889d079e20769eb904160b243f2}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{misc_8c_ad71e3889d079e20769eb904160b243f2_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{misc_8c_ad71e3889d079e20769eb904160b243f2_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{misc_8c_a17ec57572c876bf53ca3fa0cadb9c664}{}\index{misc.\+c@{misc.\+c}!get\+\_\+user\+\_\+pass\+\_\+cr@{get\+\_\+user\+\_\+pass\+\_\+cr}}
+\index{get\+\_\+user\+\_\+pass\+\_\+cr@{get\+\_\+user\+\_\+pass\+\_\+cr}!misc.\+c@{misc.\+c}}
+\subsubsection[{get\+\_\+user\+\_\+pass\+\_\+cr(struct user\+\_\+pass $\ast$up, const char $\ast$auth\+\_\+file, const char $\ast$prefix, const unsigned int flags, const char $\ast$auth\+\_\+challenge)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} get\+\_\+user\+\_\+pass\+\_\+cr (
+\begin{DoxyParamCaption}
+\item[{struct {\bf user\+\_\+pass} $\ast$}]{up, }
+\item[{const char $\ast$}]{auth\+\_\+file, }
+\item[{const char $\ast$}]{prefix, }
+\item[{const unsigned int}]{flags, }
+\item[{const char $\ast$}]{auth\+\_\+challenge}
+\end{DoxyParamCaption}
+)}\label{misc_8c_a17ec57572c876bf53ca3fa0cadb9c664}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{misc_8c_a17ec57572c876bf53ca3fa0cadb9c664_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{misc_8c_a17ec57572c876bf53ca3fa0cadb9c664_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{misc_8c_ac6174edbe71fde417d167f81417ae36b}{}\index{misc.\+c@{misc.\+c}!hostname\+\_\+randomize@{hostname\+\_\+randomize}}
+\index{hostname\+\_\+randomize@{hostname\+\_\+randomize}!misc.\+c@{misc.\+c}}
+\subsubsection[{hostname\+\_\+randomize(const char $\ast$hostname, struct gc\+\_\+arena $\ast$gc)}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ hostname\+\_\+randomize (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{hostname, }
+\item[{struct {\bf gc\+\_\+arena} $\ast$}]{gc}
+\end{DoxyParamCaption}
+)}\label{misc_8c_ac6174edbe71fde417d167f81417ae36b}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{misc_8c_ac6174edbe71fde417d167f81417ae36b_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{misc_8c_ac6174edbe71fde417d167f81417ae36b_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{misc_8c_abd1f6f7eac3eb3b3aecc21785c5a3b45}{}\index{misc.\+c@{misc.\+c}!make\+\_\+arg\+\_\+array@{make\+\_\+arg\+\_\+array}}
+\index{make\+\_\+arg\+\_\+array@{make\+\_\+arg\+\_\+array}!misc.\+c@{misc.\+c}}
+\subsubsection[{make\+\_\+arg\+\_\+array(const char $\ast$first, const char $\ast$parms, struct gc\+\_\+arena $\ast$gc)}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$$\ast$ make\+\_\+arg\+\_\+array (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{first, }
+\item[{const char $\ast$}]{parms, }
+\item[{struct {\bf gc\+\_\+arena} $\ast$}]{gc}
+\end{DoxyParamCaption}
+)}\label{misc_8c_abd1f6f7eac3eb3b3aecc21785c5a3b45}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{misc_8c_abd1f6f7eac3eb3b3aecc21785c5a3b45_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=333pt]{misc_8c_abd1f6f7eac3eb3b3aecc21785c5a3b45_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{misc_8c_a865a40fce786c53591ae4744c6ced760}{}\index{misc.\+c@{misc.\+c}!make\+\_\+extended\+\_\+arg\+\_\+array@{make\+\_\+extended\+\_\+arg\+\_\+array}}
+\index{make\+\_\+extended\+\_\+arg\+\_\+array@{make\+\_\+extended\+\_\+arg\+\_\+array}!misc.\+c@{misc.\+c}}
+\subsubsection[{make\+\_\+extended\+\_\+arg\+\_\+array(char $\ast$$\ast$p, struct gc\+\_\+arena $\ast$gc)}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$$\ast$ make\+\_\+extended\+\_\+arg\+\_\+array (
+\begin{DoxyParamCaption}
+\item[{char $\ast$$\ast$}]{p, }
+\item[{struct {\bf gc\+\_\+arena} $\ast$}]{gc}
+\end{DoxyParamCaption}
+)}\label{misc_8c_a865a40fce786c53591ae4744c6ced760}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{misc_8c_a865a40fce786c53591ae4744c6ced760_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{misc_8c_a8596ddf7653af77837d24c74e6a59b69}{}\index{misc.\+c@{misc.\+c}!openvpn\+\_\+execve@{openvpn\+\_\+execve}}
+\index{openvpn\+\_\+execve@{openvpn\+\_\+execve}!misc.\+c@{misc.\+c}}
+\subsubsection[{openvpn\+\_\+execve(const struct argv $\ast$a, const struct env\+\_\+set $\ast$es, const unsigned int flags)}]{\setlength{\rightskip}{0pt plus 5cm}int openvpn\+\_\+execve (
+\begin{DoxyParamCaption}
+\item[{const struct {\bf argv} $\ast$}]{a, }
+\item[{const struct {\bf env\+\_\+set} $\ast$}]{es, }
+\item[{const unsigned int}]{flags}
+\end{DoxyParamCaption}
+)}\label{misc_8c_a8596ddf7653af77837d24c74e6a59b69}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{misc_8c_a8596ddf7653af77837d24c74e6a59b69_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{misc_8c_a8596ddf7653af77837d24c74e6a59b69_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{misc_8c_a1ea73c309e8dfb9c1fc00b2977d72a75}{}\index{misc.\+c@{misc.\+c}!openvpn\+\_\+execve\+\_\+allowed@{openvpn\+\_\+execve\+\_\+allowed}}
+\index{openvpn\+\_\+execve\+\_\+allowed@{openvpn\+\_\+execve\+\_\+allowed}!misc.\+c@{misc.\+c}}
+\subsubsection[{openvpn\+\_\+execve\+\_\+allowed(const unsigned int flags)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} openvpn\+\_\+execve\+\_\+allowed (
+\begin{DoxyParamCaption}
+\item[{const unsigned int}]{flags}
+\end{DoxyParamCaption}
+)}\label{misc_8c_a1ea73c309e8dfb9c1fc00b2977d72a75}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{misc_8c_a1ea73c309e8dfb9c1fc00b2977d72a75_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{misc_8c_a12c490307c9e4966e41f32d08f5f3cae}{}\index{misc.\+c@{misc.\+c}!openvpn\+\_\+execve\+\_\+check@{openvpn\+\_\+execve\+\_\+check}}
+\index{openvpn\+\_\+execve\+\_\+check@{openvpn\+\_\+execve\+\_\+check}!misc.\+c@{misc.\+c}}
+\subsubsection[{openvpn\+\_\+execve\+\_\+check(const struct argv $\ast$a, const struct env\+\_\+set $\ast$es, const unsigned int flags, const char $\ast$error\+\_\+message)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} openvpn\+\_\+execve\+\_\+check (
+\begin{DoxyParamCaption}
+\item[{const struct {\bf argv} $\ast$}]{a, }
+\item[{const struct {\bf env\+\_\+set} $\ast$}]{es, }
+\item[{const unsigned int}]{flags, }
+\item[{const char $\ast$}]{error\+\_\+message}
+\end{DoxyParamCaption}
+)}\label{misc_8c_a12c490307c9e4966e41f32d08f5f3cae}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{misc_8c_a12c490307c9e4966e41f32d08f5f3cae_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{misc_8c_a12c490307c9e4966e41f32d08f5f3cae_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{misc_8c_aa6317d2c2a118c3a9519b02a23111367}{}\index{misc.\+c@{misc.\+c}!openvpn\+\_\+popen@{openvpn\+\_\+popen}}
+\index{openvpn\+\_\+popen@{openvpn\+\_\+popen}!misc.\+c@{misc.\+c}}
+\subsubsection[{openvpn\+\_\+popen(const struct argv $\ast$a, const struct env\+\_\+set $\ast$es)}]{\setlength{\rightskip}{0pt plus 5cm}int openvpn\+\_\+popen (
+\begin{DoxyParamCaption}
+\item[{const struct {\bf argv} $\ast$}]{a, }
+\item[{const struct {\bf env\+\_\+set} $\ast$}]{es}
+\end{DoxyParamCaption}
+)}\label{misc_8c_aa6317d2c2a118c3a9519b02a23111367}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{misc_8c_aa6317d2c2a118c3a9519b02a23111367_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{misc_8c_a37c9ea488f35dc0454dbf94f7e8938fa}{}\index{misc.\+c@{misc.\+c}!purge\+\_\+user\+\_\+pass@{purge\+\_\+user\+\_\+pass}}
+\index{purge\+\_\+user\+\_\+pass@{purge\+\_\+user\+\_\+pass}!misc.\+c@{misc.\+c}}
+\subsubsection[{purge\+\_\+user\+\_\+pass(struct user\+\_\+pass $\ast$up, const bool force)}]{\setlength{\rightskip}{0pt plus 5cm}void purge\+\_\+user\+\_\+pass (
+\begin{DoxyParamCaption}
+\item[{struct {\bf user\+\_\+pass} $\ast$}]{up, }
+\item[{const {\bf bool}}]{force}
+\end{DoxyParamCaption}
+)}\label{misc_8c_a37c9ea488f35dc0454dbf94f7e8938fa}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{misc_8c_a37c9ea488f35dc0454dbf94f7e8938fa_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{misc_8c_acb1c853a22da028226b8098a81250c9a}{}\index{misc.\+c@{misc.\+c}!safe\+\_\+print@{safe\+\_\+print}}
+\index{safe\+\_\+print@{safe\+\_\+print}!misc.\+c@{misc.\+c}}
+\subsubsection[{safe\+\_\+print(const char $\ast$str, struct gc\+\_\+arena $\ast$gc)}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ safe\+\_\+print (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{str, }
+\item[{struct {\bf gc\+\_\+arena} $\ast$}]{gc}
+\end{DoxyParamCaption}
+)}\label{misc_8c_acb1c853a22da028226b8098a81250c9a}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{misc_8c_acb1c853a22da028226b8098a81250c9a_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{misc_8c_ad9f9ea2091b3303cef77c02575fdf91d}{}\index{misc.\+c@{misc.\+c}!sanitize\+\_\+control\+\_\+message@{sanitize\+\_\+control\+\_\+message}}
+\index{sanitize\+\_\+control\+\_\+message@{sanitize\+\_\+control\+\_\+message}!misc.\+c@{misc.\+c}}
+\subsubsection[{sanitize\+\_\+control\+\_\+message(const char $\ast$src, struct gc\+\_\+arena $\ast$gc)}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ sanitize\+\_\+control\+\_\+message (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{src, }
+\item[{struct {\bf gc\+\_\+arena} $\ast$}]{gc}
+\end{DoxyParamCaption}
+)}\label{misc_8c_ad9f9ea2091b3303cef77c02575fdf91d}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=307pt]{misc_8c_ad9f9ea2091b3303cef77c02575fdf91d_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{misc_8c_ad9f9ea2091b3303cef77c02575fdf91d_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{misc_8c_a7459e81aab781d02183498da67072573}{}\index{misc.\+c@{misc.\+c}!save\+\_\+inetd\+\_\+socket\+\_\+descriptor@{save\+\_\+inetd\+\_\+socket\+\_\+descriptor}}
+\index{save\+\_\+inetd\+\_\+socket\+\_\+descriptor@{save\+\_\+inetd\+\_\+socket\+\_\+descriptor}!misc.\+c@{misc.\+c}}
+\subsubsection[{save\+\_\+inetd\+\_\+socket\+\_\+descriptor(void)}]{\setlength{\rightskip}{0pt plus 5cm}void save\+\_\+inetd\+\_\+socket\+\_\+descriptor (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{misc_8c_a7459e81aab781d02183498da67072573}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{misc_8c_a7459e81aab781d02183498da67072573_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{misc_8c_a8891fa0f7a8c069f3ed301d220559e08}{}\index{misc.\+c@{misc.\+c}!set\+\_\+auth\+\_\+token@{set\+\_\+auth\+\_\+token}}
+\index{set\+\_\+auth\+\_\+token@{set\+\_\+auth\+\_\+token}!misc.\+c@{misc.\+c}}
+\subsubsection[{set\+\_\+auth\+\_\+token(struct user\+\_\+pass $\ast$up, const char $\ast$token)}]{\setlength{\rightskip}{0pt plus 5cm}void set\+\_\+auth\+\_\+token (
+\begin{DoxyParamCaption}
+\item[{struct {\bf user\+\_\+pass} $\ast$}]{up, }
+\item[{const char $\ast$}]{token}
+\end{DoxyParamCaption}
+)}\label{misc_8c_a8891fa0f7a8c069f3ed301d220559e08}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=300pt]{misc_8c_a8891fa0f7a8c069f3ed301d220559e08_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{misc_8c_a6e7deed7d2affb7c6a734ec2aea7951d}{}\index{misc.\+c@{misc.\+c}!set\+\_\+std\+\_\+files\+\_\+to\+\_\+null@{set\+\_\+std\+\_\+files\+\_\+to\+\_\+null}}
+\index{set\+\_\+std\+\_\+files\+\_\+to\+\_\+null@{set\+\_\+std\+\_\+files\+\_\+to\+\_\+null}!misc.\+c@{misc.\+c}}
+\subsubsection[{set\+\_\+std\+\_\+files\+\_\+to\+\_\+null(bool stdin\+\_\+only)}]{\setlength{\rightskip}{0pt plus 5cm}void set\+\_\+std\+\_\+files\+\_\+to\+\_\+null (
+\begin{DoxyParamCaption}
+\item[{{\bf bool}}]{stdin\+\_\+only}
+\end{DoxyParamCaption}
+)}\label{misc_8c_a6e7deed7d2affb7c6a734ec2aea7951d}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{misc_8c_a6e7deed7d2affb7c6a734ec2aea7951d_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{misc_8c_ae833868983cc7cc952461d72dab62bbd}{}\index{misc.\+c@{misc.\+c}!system\+\_\+error\+\_\+message@{system\+\_\+error\+\_\+message}}
+\index{system\+\_\+error\+\_\+message@{system\+\_\+error\+\_\+message}!misc.\+c@{misc.\+c}}
+\subsubsection[{system\+\_\+error\+\_\+message(int stat, struct gc\+\_\+arena $\ast$gc)}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ system\+\_\+error\+\_\+message (
+\begin{DoxyParamCaption}
+\item[{int}]{stat, }
+\item[{struct {\bf gc\+\_\+arena} $\ast$}]{gc}
+\end{DoxyParamCaption}
+)}\label{misc_8c_ae833868983cc7cc952461d72dab62bbd}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{misc_8c_ae833868983cc7cc952461d72dab62bbd_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{misc_8c_ae833868983cc7cc952461d72dab62bbd_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{misc_8c_aa26af8ee2558835f5c8c920fb12a1db6}{}\index{misc.\+c@{misc.\+c}!test\+\_\+file@{test\+\_\+file}}
+\index{test\+\_\+file@{test\+\_\+file}!misc.\+c@{misc.\+c}}
+\subsubsection[{test\+\_\+file(const char $\ast$filename)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} test\+\_\+file (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{filename}
+\end{DoxyParamCaption}
+)}\label{misc_8c_aa26af8ee2558835f5c8c920fb12a1db6}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=246pt]{misc_8c_aa26af8ee2558835f5c8c920fb12a1db6_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=288pt]{misc_8c_aa26af8ee2558835f5c8c920fb12a1db6_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Variable Documentation}
+\hypertarget{misc_8c_a5ad312831981e71bad906718e68acc2d}{}\index{misc.\+c@{misc.\+c}!inetd\+\_\+socket\+\_\+descriptor@{inetd\+\_\+socket\+\_\+descriptor}}
+\index{inetd\+\_\+socket\+\_\+descriptor@{inetd\+\_\+socket\+\_\+descriptor}!misc.\+c@{misc.\+c}}
+\subsubsection[{inetd\+\_\+socket\+\_\+descriptor}]{\setlength{\rightskip}{0pt plus 5cm}int inetd\+\_\+socket\+\_\+descriptor = {\bf S\+O\+C\+K\+E\+T\+\_\+\+U\+N\+D\+E\+F\+I\+N\+E\+D}}\label{misc_8c_a5ad312831981e71bad906718e68acc2d}
+\hypertarget{misc_8c_a20ae66171b79abd32459ab4b3ccb5b33}{}\index{misc.\+c@{misc.\+c}!script\+\_\+security@{script\+\_\+security}}
+\index{script\+\_\+security@{script\+\_\+security}!misc.\+c@{misc.\+c}}
+\subsubsection[{script\+\_\+security}]{\setlength{\rightskip}{0pt plus 5cm}int script\+\_\+security = {\bf S\+S\+E\+C\+\_\+\+B\+U\+I\+L\+T\+\_\+\+I\+N}}\label{misc_8c_a20ae66171b79abd32459ab4b3ccb5b33}

@@ -1,0 +1,5 @@
+<map id="status_output" name="status_output">
+<area shape="rect" id="node2" href="$structevent__timeout.html" title="event_timeout" alt="" coords="5,5,108,32"/>
+<area shape="rect" id="node3" href="$structvirtual__output.html" title="virtual_output" alt="" coords="133,5,231,32"/>
+<area shape="rect" id="node4" href="$structbuffer.html" title="buffer" alt="" coords="255,5,309,32"/>
+</map>

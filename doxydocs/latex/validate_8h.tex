@@ -1,0 +1,76 @@
+\hypertarget{validate_8h}{}\section{src/openvpnserv/validate.h File Reference}
+\label{validate_8h}\index{src/openvpnserv/validate.\+h@{src/openvpnserv/validate.\+h}}
+{\ttfamily \#include \char`\"{}service.\+h\char`\"{}}\\*
+Include dependency graph for validate.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=272pt]{validate_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{validate_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{validate_8h_a29a063e3a7fd138beaf027fc7db58e8d}{S\+Y\+S\+T\+E\+M\+\_\+\+A\+D\+M\+I\+N\+\_\+\+G\+R\+O\+U\+P}~T\+E\+X\+T(\char`\"{}Administrators\char`\"{})
+\item 
+\#define \hyperlink{validate_8h_aed7320bcf6d4de84cf2a72ae3744e76d}{O\+V\+P\+N\+\_\+\+A\+D\+M\+I\+N\+\_\+\+G\+R\+O\+U\+P}~T\+E\+X\+T(\char`\"{}Open\+V\+P\+N Administrators\char`\"{})
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+B\+O\+O\+L \hyperlink{validate_8h_ad0d681ef22f3bfed2a45fc461fa8ac96}{Is\+Authorized\+User} (P\+S\+I\+D sid, const H\+A\+N\+D\+L\+E token, const W\+C\+H\+A\+R $\ast$ovpn\+\_\+admin\+\_\+group)
+\item 
+B\+O\+O\+L \hyperlink{validate_8h_a70ca063dcdff3ab5dd4124023529f0c4}{Check\+Option} (const W\+C\+H\+A\+R $\ast$workdir, int narg, W\+C\+H\+A\+R $\ast$\hyperlink{structargv}{argv}\mbox{[}$\,$\mbox{]}, const \hyperlink{structsettings__t}{settings\+\_\+t} $\ast$s)
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{validate_8h_aed7320bcf6d4de84cf2a72ae3744e76d}{}\index{validate.\+h@{validate.\+h}!O\+V\+P\+N\+\_\+\+A\+D\+M\+I\+N\+\_\+\+G\+R\+O\+U\+P@{O\+V\+P\+N\+\_\+\+A\+D\+M\+I\+N\+\_\+\+G\+R\+O\+U\+P}}
+\index{O\+V\+P\+N\+\_\+\+A\+D\+M\+I\+N\+\_\+\+G\+R\+O\+U\+P@{O\+V\+P\+N\+\_\+\+A\+D\+M\+I\+N\+\_\+\+G\+R\+O\+U\+P}!validate.\+h@{validate.\+h}}
+\subsubsection[{O\+V\+P\+N\+\_\+\+A\+D\+M\+I\+N\+\_\+\+G\+R\+O\+U\+P}]{\setlength{\rightskip}{0pt plus 5cm}\#define O\+V\+P\+N\+\_\+\+A\+D\+M\+I\+N\+\_\+\+G\+R\+O\+U\+P~T\+E\+X\+T(\char`\"{}Open\+V\+P\+N Administrators\char`\"{})}\label{validate_8h_aed7320bcf6d4de84cf2a72ae3744e76d}
+\hypertarget{validate_8h_a29a063e3a7fd138beaf027fc7db58e8d}{}\index{validate.\+h@{validate.\+h}!S\+Y\+S\+T\+E\+M\+\_\+\+A\+D\+M\+I\+N\+\_\+\+G\+R\+O\+U\+P@{S\+Y\+S\+T\+E\+M\+\_\+\+A\+D\+M\+I\+N\+\_\+\+G\+R\+O\+U\+P}}
+\index{S\+Y\+S\+T\+E\+M\+\_\+\+A\+D\+M\+I\+N\+\_\+\+G\+R\+O\+U\+P@{S\+Y\+S\+T\+E\+M\+\_\+\+A\+D\+M\+I\+N\+\_\+\+G\+R\+O\+U\+P}!validate.\+h@{validate.\+h}}
+\subsubsection[{S\+Y\+S\+T\+E\+M\+\_\+\+A\+D\+M\+I\+N\+\_\+\+G\+R\+O\+U\+P}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\+Y\+S\+T\+E\+M\+\_\+\+A\+D\+M\+I\+N\+\_\+\+G\+R\+O\+U\+P~T\+E\+X\+T(\char`\"{}Administrators\char`\"{})}\label{validate_8h_a29a063e3a7fd138beaf027fc7db58e8d}
+
+
+\subsection{Function Documentation}
+\hypertarget{validate_8h_a70ca063dcdff3ab5dd4124023529f0c4}{}\index{validate.\+h@{validate.\+h}!Check\+Option@{Check\+Option}}
+\index{Check\+Option@{Check\+Option}!validate.\+h@{validate.\+h}}
+\subsubsection[{Check\+Option(const W\+C\+H\+A\+R $\ast$workdir, int narg, W\+C\+H\+A\+R $\ast$argv[], const settings\+\_\+t $\ast$s)}]{\setlength{\rightskip}{0pt plus 5cm}B\+O\+O\+L Check\+Option (
+\begin{DoxyParamCaption}
+\item[{const W\+C\+H\+A\+R $\ast$}]{workdir, }
+\item[{int}]{narg, }
+\item[{W\+C\+H\+A\+R $\ast$}]{argv\mbox{[}$\,$\mbox{]}, }
+\item[{const {\bf settings\+\_\+t} $\ast$}]{s}
+\end{DoxyParamCaption}
+)}\label{validate_8h_a70ca063dcdff3ab5dd4124023529f0c4}
+\hypertarget{validate_8h_ad0d681ef22f3bfed2a45fc461fa8ac96}{}\index{validate.\+h@{validate.\+h}!Is\+Authorized\+User@{Is\+Authorized\+User}}
+\index{Is\+Authorized\+User@{Is\+Authorized\+User}!validate.\+h@{validate.\+h}}
+\subsubsection[{Is\+Authorized\+User(\+P\+S\+I\+D sid, const H\+A\+N\+D\+L\+E token, const W\+C\+H\+A\+R $\ast$ovpn\+\_\+admin\+\_\+group)}]{\setlength{\rightskip}{0pt plus 5cm}B\+O\+O\+L Is\+Authorized\+User (
+\begin{DoxyParamCaption}
+\item[{P\+S\+I\+D}]{sid, }
+\item[{const H\+A\+N\+D\+L\+E}]{token, }
+\item[{const W\+C\+H\+A\+R $\ast$}]{ovpn\+\_\+admin\+\_\+group}
+\end{DoxyParamCaption}
+)}\label{validate_8h_ad0d681ef22f3bfed2a45fc461fa8ac96}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{validate_8h_ad0d681ef22f3bfed2a45fc461fa8ac96_cgraph}
+\end{center}
+\end{figure}
+
+

@@ -1,0 +1,218 @@
+\hypertarget{mtu_8c}{}\section{src/openvpn/mtu.c File Reference}
+\label{mtu_8c}\index{src/openvpn/mtu.\+c@{src/openvpn/mtu.\+c}}
+{\ttfamily \#include \char`\"{}syshead.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}common.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}buffer.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}error.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}integer.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}mtu.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}options.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}memdbg.\+h\char`\"{}}\\*
+Include dependency graph for mtu.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{mtu_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{mtu_8c_a512a602bbb7f09d7e019e8573596fd0a}{M\+T\+U\+D\+I\+S\+C\+\_\+\+N\+O\+T\+\_\+\+S\+U\+P\+P\+O\+R\+T\+E\+D\+\_\+\+M\+S\+G}~\char`\"{}-\/-\/mtu-\/disc is not supported on this O\+S\char`\"{}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{mtu_8c_a4eed7ef3a3abff91283294cdc70a1a4e}{alloc\+\_\+buf\+\_\+sock\+\_\+tun} (struct \hyperlink{structbuffer}{buffer} $\ast$buf, const struct \hyperlink{structframe}{frame} $\ast$\hyperlink{structframe}{frame}, const \hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} tuntap\+\_\+buffer, const unsigned int align\+\_\+mask)
+\item 
+void \hyperlink{mtu_8c_aa4f19c6314a87fa7a3616fec2a3f1d32}{frame\+\_\+finalize} (struct \hyperlink{structframe}{frame} $\ast$\hyperlink{structframe}{frame}, \hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} link\+\_\+mtu\+\_\+defined, int link\+\_\+mtu, \hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} tun\+\_\+mtu\+\_\+defined, int tun\+\_\+mtu)
+\item 
+void \hyperlink{mtu_8c_a0d975207c7e52a23853613dd18a6eebf}{frame\+\_\+set\+\_\+mtu\+\_\+dynamic} (struct \hyperlink{structframe}{frame} $\ast$\hyperlink{structframe}{frame}, int mtu, unsigned int flags)
+\item 
+void \hyperlink{mtu_8c_a07432f6efa9b2facc2bd910743ec21f3}{frame\+\_\+subtract\+\_\+extra} (struct \hyperlink{structframe}{frame} $\ast$\hyperlink{structframe}{frame}, const struct \hyperlink{structframe}{frame} $\ast$src)
+\item 
+void \hyperlink{mtu_8c_abf74c37a0e444f337bb18382ff84321b}{frame\+\_\+init\+\_\+mssfix} (struct \hyperlink{structframe}{frame} $\ast$\hyperlink{structframe}{frame}, const struct \hyperlink{structoptions}{options} $\ast$\hyperlink{structoptions}{options})
+\item 
+void \hyperlink{mtu_8c_a224812036cf5be8e57a95dad7d45067e}{frame\+\_\+print} (const struct \hyperlink{structframe}{frame} $\ast$\hyperlink{structframe}{frame}, int level, const char $\ast$prefix)
+\item 
+void \hyperlink{mtu_8c_acd693378d7d3c69878f40d0edcbc8209}{set\+\_\+mtu\+\_\+discover\+\_\+type} (int sd, int mtu\+\_\+type, \hyperlink{syshead_8h_a27a82860cef19f4a53f68516e7b2ee0e}{sa\+\_\+family\+\_\+t} proto\+\_\+af)
+\item 
+int \hyperlink{mtu_8c_a6223a243efc1ca913f9b6bf3aa7f9edb}{translate\+\_\+mtu\+\_\+discover\+\_\+type\+\_\+name} (const char $\ast$name)
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{mtu_8c_a512a602bbb7f09d7e019e8573596fd0a}{}\index{mtu.\+c@{mtu.\+c}!M\+T\+U\+D\+I\+S\+C\+\_\+\+N\+O\+T\+\_\+\+S\+U\+P\+P\+O\+R\+T\+E\+D\+\_\+\+M\+S\+G@{M\+T\+U\+D\+I\+S\+C\+\_\+\+N\+O\+T\+\_\+\+S\+U\+P\+P\+O\+R\+T\+E\+D\+\_\+\+M\+S\+G}}
+\index{M\+T\+U\+D\+I\+S\+C\+\_\+\+N\+O\+T\+\_\+\+S\+U\+P\+P\+O\+R\+T\+E\+D\+\_\+\+M\+S\+G@{M\+T\+U\+D\+I\+S\+C\+\_\+\+N\+O\+T\+\_\+\+S\+U\+P\+P\+O\+R\+T\+E\+D\+\_\+\+M\+S\+G}!mtu.\+c@{mtu.\+c}}
+\subsubsection[{M\+T\+U\+D\+I\+S\+C\+\_\+\+N\+O\+T\+\_\+\+S\+U\+P\+P\+O\+R\+T\+E\+D\+\_\+\+M\+S\+G}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\+T\+U\+D\+I\+S\+C\+\_\+\+N\+O\+T\+\_\+\+S\+U\+P\+P\+O\+R\+T\+E\+D\+\_\+\+M\+S\+G~\char`\"{}-\/-\/mtu-\/disc is not supported on this O\+S\char`\"{}}\label{mtu_8c_a512a602bbb7f09d7e019e8573596fd0a}
+
+
+\subsection{Function Documentation}
+\hypertarget{mtu_8c_a4eed7ef3a3abff91283294cdc70a1a4e}{}\index{mtu.\+c@{mtu.\+c}!alloc\+\_\+buf\+\_\+sock\+\_\+tun@{alloc\+\_\+buf\+\_\+sock\+\_\+tun}}
+\index{alloc\+\_\+buf\+\_\+sock\+\_\+tun@{alloc\+\_\+buf\+\_\+sock\+\_\+tun}!mtu.\+c@{mtu.\+c}}
+\subsubsection[{alloc\+\_\+buf\+\_\+sock\+\_\+tun(struct buffer $\ast$buf, const struct frame $\ast$frame, const bool tuntap\+\_\+buffer, const unsigned int align\+\_\+mask)}]{\setlength{\rightskip}{0pt plus 5cm}void alloc\+\_\+buf\+\_\+sock\+\_\+tun (
+\begin{DoxyParamCaption}
+\item[{struct {\bf buffer} $\ast$}]{buf, }
+\item[{const struct {\bf frame} $\ast$}]{frame, }
+\item[{const {\bf bool}}]{tuntap\+\_\+buffer, }
+\item[{const unsigned int}]{align\+\_\+mask}
+\end{DoxyParamCaption}
+)}\label{mtu_8c_a4eed7ef3a3abff91283294cdc70a1a4e}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{mtu_8c_a4eed7ef3a3abff91283294cdc70a1a4e_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{mtu_8c_aa4f19c6314a87fa7a3616fec2a3f1d32}{}\index{mtu.\+c@{mtu.\+c}!frame\+\_\+finalize@{frame\+\_\+finalize}}
+\index{frame\+\_\+finalize@{frame\+\_\+finalize}!mtu.\+c@{mtu.\+c}}
+\subsubsection[{frame\+\_\+finalize(struct frame $\ast$frame, bool link\+\_\+mtu\+\_\+defined, int link\+\_\+mtu, bool tun\+\_\+mtu\+\_\+defined, int tun\+\_\+mtu)}]{\setlength{\rightskip}{0pt plus 5cm}void frame\+\_\+finalize (
+\begin{DoxyParamCaption}
+\item[{struct {\bf frame} $\ast$}]{frame, }
+\item[{{\bf bool}}]{link\+\_\+mtu\+\_\+defined, }
+\item[{int}]{link\+\_\+mtu, }
+\item[{{\bf bool}}]{tun\+\_\+mtu\+\_\+defined, }
+\item[{int}]{tun\+\_\+mtu}
+\end{DoxyParamCaption}
+)}\label{mtu_8c_aa4f19c6314a87fa7a3616fec2a3f1d32}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{mtu_8c_aa4f19c6314a87fa7a3616fec2a3f1d32_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{mtu_8c_aa4f19c6314a87fa7a3616fec2a3f1d32_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{mtu_8c_abf74c37a0e444f337bb18382ff84321b}{}\index{mtu.\+c@{mtu.\+c}!frame\+\_\+init\+\_\+mssfix@{frame\+\_\+init\+\_\+mssfix}}
+\index{frame\+\_\+init\+\_\+mssfix@{frame\+\_\+init\+\_\+mssfix}!mtu.\+c@{mtu.\+c}}
+\subsubsection[{frame\+\_\+init\+\_\+mssfix(struct frame $\ast$frame, const struct options $\ast$options)}]{\setlength{\rightskip}{0pt plus 5cm}void frame\+\_\+init\+\_\+mssfix (
+\begin{DoxyParamCaption}
+\item[{struct {\bf frame} $\ast$}]{frame, }
+\item[{const struct {\bf options} $\ast$}]{options}
+\end{DoxyParamCaption}
+)}\label{mtu_8c_abf74c37a0e444f337bb18382ff84321b}
+Set the --mssfix option. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=331pt]{mtu_8c_abf74c37a0e444f337bb18382ff84321b_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{mtu_8c_abf74c37a0e444f337bb18382ff84321b_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{mtu_8c_a224812036cf5be8e57a95dad7d45067e}{}\index{mtu.\+c@{mtu.\+c}!frame\+\_\+print@{frame\+\_\+print}}
+\index{frame\+\_\+print@{frame\+\_\+print}!mtu.\+c@{mtu.\+c}}
+\subsubsection[{frame\+\_\+print(const struct frame $\ast$frame, int level, const char $\ast$prefix)}]{\setlength{\rightskip}{0pt plus 5cm}void frame\+\_\+print (
+\begin{DoxyParamCaption}
+\item[{const struct {\bf frame} $\ast$}]{frame, }
+\item[{int}]{level, }
+\item[{const char $\ast$}]{prefix}
+\end{DoxyParamCaption}
+)}\label{mtu_8c_a224812036cf5be8e57a95dad7d45067e}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{mtu_8c_a224812036cf5be8e57a95dad7d45067e_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{mtu_8c_a224812036cf5be8e57a95dad7d45067e_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{mtu_8c_a0d975207c7e52a23853613dd18a6eebf}{}\index{mtu.\+c@{mtu.\+c}!frame\+\_\+set\+\_\+mtu\+\_\+dynamic@{frame\+\_\+set\+\_\+mtu\+\_\+dynamic}}
+\index{frame\+\_\+set\+\_\+mtu\+\_\+dynamic@{frame\+\_\+set\+\_\+mtu\+\_\+dynamic}!mtu.\+c@{mtu.\+c}}
+\subsubsection[{frame\+\_\+set\+\_\+mtu\+\_\+dynamic(struct frame $\ast$frame, int mtu, unsigned int flags)}]{\setlength{\rightskip}{0pt plus 5cm}void frame\+\_\+set\+\_\+mtu\+\_\+dynamic (
+\begin{DoxyParamCaption}
+\item[{struct {\bf frame} $\ast$}]{frame, }
+\item[{int}]{mtu, }
+\item[{unsigned int}]{flags}
+\end{DoxyParamCaption}
+)}\label{mtu_8c_a0d975207c7e52a23853613dd18a6eebf}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{mtu_8c_a0d975207c7e52a23853613dd18a6eebf_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{mtu_8c_a07432f6efa9b2facc2bd910743ec21f3}{}\index{mtu.\+c@{mtu.\+c}!frame\+\_\+subtract\+\_\+extra@{frame\+\_\+subtract\+\_\+extra}}
+\index{frame\+\_\+subtract\+\_\+extra@{frame\+\_\+subtract\+\_\+extra}!mtu.\+c@{mtu.\+c}}
+\subsubsection[{frame\+\_\+subtract\+\_\+extra(struct frame $\ast$frame, const struct frame $\ast$src)}]{\setlength{\rightskip}{0pt plus 5cm}void frame\+\_\+subtract\+\_\+extra (
+\begin{DoxyParamCaption}
+\item[{struct {\bf frame} $\ast$}]{frame, }
+\item[{const struct {\bf frame} $\ast$}]{src}
+\end{DoxyParamCaption}
+)}\label{mtu_8c_a07432f6efa9b2facc2bd910743ec21f3}
+\hypertarget{mtu_8c_acd693378d7d3c69878f40d0edcbc8209}{}\index{mtu.\+c@{mtu.\+c}!set\+\_\+mtu\+\_\+discover\+\_\+type@{set\+\_\+mtu\+\_\+discover\+\_\+type}}
+\index{set\+\_\+mtu\+\_\+discover\+\_\+type@{set\+\_\+mtu\+\_\+discover\+\_\+type}!mtu.\+c@{mtu.\+c}}
+\subsubsection[{set\+\_\+mtu\+\_\+discover\+\_\+type(int sd, int mtu\+\_\+type, sa\+\_\+family\+\_\+t proto\+\_\+af)}]{\setlength{\rightskip}{0pt plus 5cm}void set\+\_\+mtu\+\_\+discover\+\_\+type (
+\begin{DoxyParamCaption}
+\item[{int}]{sd, }
+\item[{int}]{mtu\+\_\+type, }
+\item[{{\bf sa\+\_\+family\+\_\+t}}]{proto\+\_\+af}
+\end{DoxyParamCaption}
+)}\label{mtu_8c_acd693378d7d3c69878f40d0edcbc8209}
+\hypertarget{mtu_8c_a6223a243efc1ca913f9b6bf3aa7f9edb}{}\index{mtu.\+c@{mtu.\+c}!translate\+\_\+mtu\+\_\+discover\+\_\+type\+\_\+name@{translate\+\_\+mtu\+\_\+discover\+\_\+type\+\_\+name}}
+\index{translate\+\_\+mtu\+\_\+discover\+\_\+type\+\_\+name@{translate\+\_\+mtu\+\_\+discover\+\_\+type\+\_\+name}!mtu.\+c@{mtu.\+c}}
+\subsubsection[{translate\+\_\+mtu\+\_\+discover\+\_\+type\+\_\+name(const char $\ast$name)}]{\setlength{\rightskip}{0pt plus 5cm}int translate\+\_\+mtu\+\_\+discover\+\_\+type\+\_\+name (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{name}
+\end{DoxyParamCaption}
+)}\label{mtu_8c_a6223a243efc1ca913f9b6bf3aa7f9edb}

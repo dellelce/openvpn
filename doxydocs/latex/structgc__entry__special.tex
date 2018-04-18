@@ -1,0 +1,45 @@
+\hypertarget{structgc__entry__special}{}\section{gc\+\_\+entry\+\_\+special Struct Reference}
+\label{structgc__entry__special}\index{gc\+\_\+entry\+\_\+special@{gc\+\_\+entry\+\_\+special}}
+
+
+{\ttfamily \#include $<$buffer.\+h$>$}
+
+
+
+Collaboration diagram for gc\+\_\+entry\+\_\+special\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=210pt]{structgc__entry__special__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structgc__entry__special}{gc\+\_\+entry\+\_\+special} $\ast$ \hyperlink{structgc__entry__special_af951f02db6b8edbc95620f638bb7c8b6}{next}
+\item 
+void($\ast$ \hyperlink{structgc__entry__special_a6564f5d117211f869ba53423979c10bf}{free\+\_\+fnc} )(void $\ast$)
+\item 
+void $\ast$ \hyperlink{structgc__entry__special_a8572c27b2f891e2a44432687a7481599}{addr}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Garbage collection entry for a specially allocated structure that needs a custom free function to be freed like struct addrinfo 
+
+\subsection{Member Data Documentation}
+\hypertarget{structgc__entry__special_a8572c27b2f891e2a44432687a7481599}{}\index{gc\+\_\+entry\+\_\+special@{gc\+\_\+entry\+\_\+special}!addr@{addr}}
+\index{addr@{addr}!gc\+\_\+entry\+\_\+special@{gc\+\_\+entry\+\_\+special}}
+\subsubsection[{addr}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ gc\+\_\+entry\+\_\+special\+::addr}\label{structgc__entry__special_a8572c27b2f891e2a44432687a7481599}
+\hypertarget{structgc__entry__special_a6564f5d117211f869ba53423979c10bf}{}\index{gc\+\_\+entry\+\_\+special@{gc\+\_\+entry\+\_\+special}!free\+\_\+fnc@{free\+\_\+fnc}}
+\index{free\+\_\+fnc@{free\+\_\+fnc}!gc\+\_\+entry\+\_\+special@{gc\+\_\+entry\+\_\+special}}
+\subsubsection[{free\+\_\+fnc}]{\setlength{\rightskip}{0pt plus 5cm}void($\ast$ gc\+\_\+entry\+\_\+special\+::free\+\_\+fnc) (void $\ast$)}\label{structgc__entry__special_a6564f5d117211f869ba53423979c10bf}
+\hypertarget{structgc__entry__special_af951f02db6b8edbc95620f638bb7c8b6}{}\index{gc\+\_\+entry\+\_\+special@{gc\+\_\+entry\+\_\+special}!next@{next}}
+\index{next@{next}!gc\+\_\+entry\+\_\+special@{gc\+\_\+entry\+\_\+special}}
+\subsubsection[{next}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf gc\+\_\+entry\+\_\+special}$\ast$ gc\+\_\+entry\+\_\+special\+::next}\label{structgc__entry__special_af951f02db6b8edbc95620f638bb7c8b6}
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/openvpn/\hyperlink{buffer_8h}{buffer.\+h}\end{DoxyCompactItemize}

@@ -1,0 +1,10 @@
+<map id="MsgToEventLog" name="MsgToEventLog">
+<area shape="rect" id="node2" href="$service_8h.html#a8c96f73e14db21ad6b4c55b30048f423" title="ServiceStartAutomatic" alt="" coords="365,82,516,109"/>
+<area shape="rect" id="node4" href="$service_8c.html#aa3d685aaa0340b7c09d933e767f28c7f" title="_tmain" alt="" coords="789,82,851,109"/>
+<area shape="rect" id="node5" href="$service_8h.html#ab54be77a669fa1e3eb854462610e5521" title="GetOpenvpnSettings" alt="" coords="171,82,313,109"/>
+<area shape="rect" id="node6" href="$service_8h.html#a95ed112a3321c4b0e5a2a78b4dbbb541" title="ServiceStartInteractive" alt="" coords="365,133,516,160"/>
+<area shape="rect" id="node8" href="$service_8h.html#a9f46bc08640b6816eab1e49e72a08145" title="ReportStatusToSCMgr" alt="" coords="167,133,317,160"/>
+<area shape="rect" id="node9" href="$validate_8h.html#ad0d681ef22f3bfed2a45fc461fa8ac96" title="IsAuthorizedUser" alt="" coords="181,234,303,261"/>
+<area shape="rect" id="node3" href="$service_8h.html#a9b9e568c54b3fb102d55439192eb347a" title="ServiceStartAutomaticOwn" alt="" coords="564,32,741,58"/>
+<area shape="rect" id="node7" href="$service_8h.html#afbdec4b55ab5c74bcadcae0cecc3900d" title="ServiceStartInteractiveOwn" alt="" coords="565,133,741,160"/>
+</map>

@@ -1,0 +1,102 @@
+\hypertarget{structcontext__1}{}\section{context\+\_\+1 Struct Reference}
+\label{structcontext__1}\index{context\+\_\+1@{context\+\_\+1}}
+
+
+{\ttfamily \#include $<$openvpn.\+h$>$}
+
+
+
+Collaboration diagram for context\+\_\+1\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{structcontext__1__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structlink__socket__addr}{link\+\_\+socket\+\_\+addr} \hyperlink{structcontext__1_a3f08fbd0447517dc9fefa3e1a30fa26f}{link\+\_\+socket\+\_\+addr}
+\item 
+struct \hyperlink{structkey__schedule}{key\+\_\+schedule} \hyperlink{structcontext__1_a2add75182e7da9d1d466d37c72e1c276}{ks}
+\item 
+struct \hyperlink{structcached__dns__entry}{cached\+\_\+dns\+\_\+entry} $\ast$ \hyperlink{structcontext__1_afa252fa776c920089066ddb7bdb16b24}{dns\+\_\+cache}
+\item 
+struct \hyperlink{structpacket__id__persist}{packet\+\_\+id\+\_\+persist} \hyperlink{structcontext__1_aa20a2b143b3a7f2db2cc9a1af3cdf3e2}{pid\+\_\+persist}
+\item 
+struct \hyperlink{structtuntap}{tuntap} $\ast$ \hyperlink{structcontext__1_afa52b84db5bb4e12deeabf2e788f7349}{tuntap}
+\item 
+\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} \hyperlink{structcontext__1_acae58a5af5e0f65b4963b44c6e9715e5}{tuntap\+\_\+owned}
+\item 
+struct \hyperlink{structroute__list}{route\+\_\+list} $\ast$ \hyperlink{structcontext__1_a5fce2b35dc960bcdc0cab91b278048f7}{route\+\_\+list}
+\item 
+struct \hyperlink{structroute__ipv6__list}{route\+\_\+ipv6\+\_\+list} $\ast$ \hyperlink{structcontext__1_a987a02f5590d85e75031d36a6dc2fe5c}{route\+\_\+ipv6\+\_\+list}
+\item 
+struct \hyperlink{structstatus__output}{status\+\_\+output} $\ast$ \hyperlink{structcontext__1_a52e54589393f891c6eb5aa5c55de22b1}{status\+\_\+output}
+\item 
+\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} \hyperlink{structcontext__1_a8eb1f3e8ba4ab0d8167a7d232dcff498}{status\+\_\+output\+\_\+owned}
+\item 
+struct \hyperlink{structhttp__proxy__info}{http\+\_\+proxy\+\_\+info} $\ast$ \hyperlink{structcontext__1_aa41670c0d47426f2b7630ecde06d509e}{http\+\_\+proxy}
+\item 
+\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} \hyperlink{structcontext__1_a4df958b48a25d1ceec216de0287cc7dd}{http\+\_\+proxy\+\_\+owned}
+\item 
+struct \hyperlink{structsocks__proxy__info}{socks\+\_\+proxy\+\_\+info} $\ast$ \hyperlink{structcontext__1_af266db9e924917e0dab9ca0f01259df1}{socks\+\_\+proxy}
+\item 
+\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} \hyperlink{structcontext__1_aaac4b2b8b2b667ffe53c32dcfb137144}{socks\+\_\+proxy\+\_\+owned}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Level 1 context containing state that persists across {\ttfamily S\+I\+G\+U\+S\+R1} restarts.
+
+Level 1 state is reset on {\ttfamily S\+I\+G\+H\+U\+P} restarts. This structure is initialized for every iteration of the {\ttfamily \hyperlink{openvpn_8c_a0ddf1224851353fc92bfbff6f499fa97}{main()}} function\textquotesingle{}s outer {\ttfamily S\+I\+G\+H\+U\+P} loop, but persists over iteration of that function\textquotesingle{}s inner {\ttfamily S\+I\+G\+U\+S\+R1} loop. 
+
+\subsection{Member Data Documentation}
+\hypertarget{structcontext__1_afa252fa776c920089066ddb7bdb16b24}{}\index{context\+\_\+1@{context\+\_\+1}!dns\+\_\+cache@{dns\+\_\+cache}}
+\index{dns\+\_\+cache@{dns\+\_\+cache}!context\+\_\+1@{context\+\_\+1}}
+\subsubsection[{dns\+\_\+cache}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf cached\+\_\+dns\+\_\+entry}$\ast$ context\+\_\+1\+::dns\+\_\+cache}\label{structcontext__1_afa252fa776c920089066ddb7bdb16b24}
+\hypertarget{structcontext__1_aa41670c0d47426f2b7630ecde06d509e}{}\index{context\+\_\+1@{context\+\_\+1}!http\+\_\+proxy@{http\+\_\+proxy}}
+\index{http\+\_\+proxy@{http\+\_\+proxy}!context\+\_\+1@{context\+\_\+1}}
+\subsubsection[{http\+\_\+proxy}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf http\+\_\+proxy\+\_\+info}$\ast$ context\+\_\+1\+::http\+\_\+proxy}\label{structcontext__1_aa41670c0d47426f2b7630ecde06d509e}
+\hypertarget{structcontext__1_a4df958b48a25d1ceec216de0287cc7dd}{}\index{context\+\_\+1@{context\+\_\+1}!http\+\_\+proxy\+\_\+owned@{http\+\_\+proxy\+\_\+owned}}
+\index{http\+\_\+proxy\+\_\+owned@{http\+\_\+proxy\+\_\+owned}!context\+\_\+1@{context\+\_\+1}}
+\subsubsection[{http\+\_\+proxy\+\_\+owned}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} context\+\_\+1\+::http\+\_\+proxy\+\_\+owned}\label{structcontext__1_a4df958b48a25d1ceec216de0287cc7dd}
+\hypertarget{structcontext__1_a2add75182e7da9d1d466d37c72e1c276}{}\index{context\+\_\+1@{context\+\_\+1}!ks@{ks}}
+\index{ks@{ks}!context\+\_\+1@{context\+\_\+1}}
+\subsubsection[{ks}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf key\+\_\+schedule} context\+\_\+1\+::ks}\label{structcontext__1_a2add75182e7da9d1d466d37c72e1c276}
+\hypertarget{structcontext__1_a3f08fbd0447517dc9fefa3e1a30fa26f}{}\index{context\+\_\+1@{context\+\_\+1}!link\+\_\+socket\+\_\+addr@{link\+\_\+socket\+\_\+addr}}
+\index{link\+\_\+socket\+\_\+addr@{link\+\_\+socket\+\_\+addr}!context\+\_\+1@{context\+\_\+1}}
+\subsubsection[{link\+\_\+socket\+\_\+addr}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf link\+\_\+socket\+\_\+addr} context\+\_\+1\+::link\+\_\+socket\+\_\+addr}\label{structcontext__1_a3f08fbd0447517dc9fefa3e1a30fa26f}
+Local and remote addresses on the external network. \hypertarget{structcontext__1_aa20a2b143b3a7f2db2cc9a1af3cdf3e2}{}\index{context\+\_\+1@{context\+\_\+1}!pid\+\_\+persist@{pid\+\_\+persist}}
+\index{pid\+\_\+persist@{pid\+\_\+persist}!context\+\_\+1@{context\+\_\+1}}
+\subsubsection[{pid\+\_\+persist}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf packet\+\_\+id\+\_\+persist} context\+\_\+1\+::pid\+\_\+persist}\label{structcontext__1_aa20a2b143b3a7f2db2cc9a1af3cdf3e2}
+\hypertarget{structcontext__1_a987a02f5590d85e75031d36a6dc2fe5c}{}\index{context\+\_\+1@{context\+\_\+1}!route\+\_\+ipv6\+\_\+list@{route\+\_\+ipv6\+\_\+list}}
+\index{route\+\_\+ipv6\+\_\+list@{route\+\_\+ipv6\+\_\+list}!context\+\_\+1@{context\+\_\+1}}
+\subsubsection[{route\+\_\+ipv6\+\_\+list}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf route\+\_\+ipv6\+\_\+list}$\ast$ context\+\_\+1\+::route\+\_\+ipv6\+\_\+list}\label{structcontext__1_a987a02f5590d85e75031d36a6dc2fe5c}
+\hypertarget{structcontext__1_a5fce2b35dc960bcdc0cab91b278048f7}{}\index{context\+\_\+1@{context\+\_\+1}!route\+\_\+list@{route\+\_\+list}}
+\index{route\+\_\+list@{route\+\_\+list}!context\+\_\+1@{context\+\_\+1}}
+\subsubsection[{route\+\_\+list}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf route\+\_\+list}$\ast$ context\+\_\+1\+::route\+\_\+list}\label{structcontext__1_a5fce2b35dc960bcdc0cab91b278048f7}
+List of routing information. See the {\ttfamily --route} command line option. \hypertarget{structcontext__1_af266db9e924917e0dab9ca0f01259df1}{}\index{context\+\_\+1@{context\+\_\+1}!socks\+\_\+proxy@{socks\+\_\+proxy}}
+\index{socks\+\_\+proxy@{socks\+\_\+proxy}!context\+\_\+1@{context\+\_\+1}}
+\subsubsection[{socks\+\_\+proxy}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf socks\+\_\+proxy\+\_\+info}$\ast$ context\+\_\+1\+::socks\+\_\+proxy}\label{structcontext__1_af266db9e924917e0dab9ca0f01259df1}
+\hypertarget{structcontext__1_aaac4b2b8b2b667ffe53c32dcfb137144}{}\index{context\+\_\+1@{context\+\_\+1}!socks\+\_\+proxy\+\_\+owned@{socks\+\_\+proxy\+\_\+owned}}
+\index{socks\+\_\+proxy\+\_\+owned@{socks\+\_\+proxy\+\_\+owned}!context\+\_\+1@{context\+\_\+1}}
+\subsubsection[{socks\+\_\+proxy\+\_\+owned}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} context\+\_\+1\+::socks\+\_\+proxy\+\_\+owned}\label{structcontext__1_aaac4b2b8b2b667ffe53c32dcfb137144}
+\hypertarget{structcontext__1_a52e54589393f891c6eb5aa5c55de22b1}{}\index{context\+\_\+1@{context\+\_\+1}!status\+\_\+output@{status\+\_\+output}}
+\index{status\+\_\+output@{status\+\_\+output}!context\+\_\+1@{context\+\_\+1}}
+\subsubsection[{status\+\_\+output}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf status\+\_\+output}$\ast$ context\+\_\+1\+::status\+\_\+output}\label{structcontext__1_a52e54589393f891c6eb5aa5c55de22b1}
+\hypertarget{structcontext__1_a8eb1f3e8ba4ab0d8167a7d232dcff498}{}\index{context\+\_\+1@{context\+\_\+1}!status\+\_\+output\+\_\+owned@{status\+\_\+output\+\_\+owned}}
+\index{status\+\_\+output\+\_\+owned@{status\+\_\+output\+\_\+owned}!context\+\_\+1@{context\+\_\+1}}
+\subsubsection[{status\+\_\+output\+\_\+owned}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} context\+\_\+1\+::status\+\_\+output\+\_\+owned}\label{structcontext__1_a8eb1f3e8ba4ab0d8167a7d232dcff498}
+\hypertarget{structcontext__1_afa52b84db5bb4e12deeabf2e788f7349}{}\index{context\+\_\+1@{context\+\_\+1}!tuntap@{tuntap}}
+\index{tuntap@{tuntap}!context\+\_\+1@{context\+\_\+1}}
+\subsubsection[{tuntap}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf tuntap}$\ast$ context\+\_\+1\+::tuntap}\label{structcontext__1_afa52b84db5bb4e12deeabf2e788f7349}
+Tun/tap virtual network interface. \hypertarget{structcontext__1_acae58a5af5e0f65b4963b44c6e9715e5}{}\index{context\+\_\+1@{context\+\_\+1}!tuntap\+\_\+owned@{tuntap\+\_\+owned}}
+\index{tuntap\+\_\+owned@{tuntap\+\_\+owned}!context\+\_\+1@{context\+\_\+1}}
+\subsubsection[{tuntap\+\_\+owned}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} context\+\_\+1\+::tuntap\+\_\+owned}\label{structcontext__1_acae58a5af5e0f65b4963b44c6e9715e5}
+Whether the tun/tap interface should be cleaned up when this context is cleaned up. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/openvpn/\hyperlink{openvpn_8h}{openvpn.\+h}\end{DoxyCompactItemize}

@@ -1,0 +1,10 @@
+<map id="tls_wrap_ctx" name="tls_wrap_ctx">
+<area shape="rect" id="node2" href="$structcrypto__options.html" title="crypto_options" alt="" coords="249,199,355,225"/>
+<area shape="rect" id="node3" href="$structpacket__id.html" title="packet_id" alt="" coords="155,109,233,136"/>
+<area shape="rect" id="node4" href="$structpacket__id__send.html" title="packet_id_send" alt="" coords="5,5,119,32"/>
+<area shape="rect" id="node5" href="$structpacket__id__rec.html" title="packet_id_rec" alt="" coords="143,5,245,32"/>
+<area shape="rect" id="node6" href="$structkey__ctx__bi.html" title="key_ctx_bi" alt="" coords="259,109,345,136"/>
+<area shape="rect" id="node7" href="$structkey__ctx.html" title="key_ctx" alt="" coords="269,5,337,32"/>
+<area shape="rect" id="node8" href="$structpacket__id__persist.html" title="packet_id_persist" alt="" coords="369,109,493,136"/>
+<area shape="rect" id="node9" href="$structbuffer.html" title="buffer" alt="" coords="379,199,433,225"/>
+</map>

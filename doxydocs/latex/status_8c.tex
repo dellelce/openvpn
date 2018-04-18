@@ -1,0 +1,245 @@
+\hypertarget{status_8c}{}\section{src/openvpn/status.c File Reference}
+\label{status_8c}\index{src/openvpn/status.\+c@{src/openvpn/status.\+c}}
+{\ttfamily \#include \char`\"{}syshead.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}status.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}perf.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}misc.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}fdmisc.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}memdbg.\+h\char`\"{}}\\*
+Include dependency graph for status.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{status_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{status_8c_a26ab76b4a01a5f7b0d118b4ceac1f959}{S\+T\+A\+T\+U\+S\+\_\+\+P\+R\+I\+N\+T\+F\+\_\+\+M\+A\+X\+L\+E\+N}~512
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structstatus__output}{status\+\_\+output} $\ast$ \hyperlink{status_8c_ab196e92cac48e356eab474978232e453}{status\+\_\+open} (const char $\ast$filename, const int refresh\+\_\+freq, const int msglevel, const struct \hyperlink{structvirtual__output}{virtual\+\_\+output} $\ast$vout, const unsigned int flags)
+\item 
+\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} \hyperlink{status_8c_a6e98b4852ac3f2d6281169944051f411}{status\+\_\+trigger} (struct \hyperlink{structstatus__output}{status\+\_\+output} $\ast$so)
+\item 
+\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} \hyperlink{status_8c_ad43693c6fc57dd4bb5324bd0aaf08cf3}{status\+\_\+trigger\+\_\+tv} (struct \hyperlink{structstatus__output}{status\+\_\+output} $\ast$so, struct timeval $\ast$tv)
+\item 
+void \hyperlink{status_8c_ac13471945270b543de32396a7f03c4bb}{status\+\_\+reset} (struct \hyperlink{structstatus__output}{status\+\_\+output} $\ast$so)
+\item 
+void \hyperlink{status_8c_aa7e4814a0ab9d168a9b8902c65932e62}{status\+\_\+flush} (struct \hyperlink{structstatus__output}{status\+\_\+output} $\ast$so)
+\item 
+\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} \hyperlink{status_8c_af524160156e0aa1ba6f4666bddb4bbd9}{status\+\_\+close} (struct \hyperlink{structstatus__output}{status\+\_\+output} $\ast$so)
+\item 
+void \hyperlink{status_8c_a8d855058c1a32820d55c92ecee2289cd}{status\+\_\+printf} (struct \hyperlink{structstatus__output}{status\+\_\+output} $\ast$so, const char $\ast$format,...)
+\item 
+\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} \hyperlink{status_8c_a9bae899cdb4882163da35639da7d2f74}{status\+\_\+read} (struct \hyperlink{structstatus__output}{status\+\_\+output} $\ast$so, struct \hyperlink{structbuffer}{buffer} $\ast$buf)
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{status_8c_a26ab76b4a01a5f7b0d118b4ceac1f959}{}\index{status.\+c@{status.\+c}!S\+T\+A\+T\+U\+S\+\_\+\+P\+R\+I\+N\+T\+F\+\_\+\+M\+A\+X\+L\+E\+N@{S\+T\+A\+T\+U\+S\+\_\+\+P\+R\+I\+N\+T\+F\+\_\+\+M\+A\+X\+L\+E\+N}}
+\index{S\+T\+A\+T\+U\+S\+\_\+\+P\+R\+I\+N\+T\+F\+\_\+\+M\+A\+X\+L\+E\+N@{S\+T\+A\+T\+U\+S\+\_\+\+P\+R\+I\+N\+T\+F\+\_\+\+M\+A\+X\+L\+E\+N}!status.\+c@{status.\+c}}
+\subsubsection[{S\+T\+A\+T\+U\+S\+\_\+\+P\+R\+I\+N\+T\+F\+\_\+\+M\+A\+X\+L\+E\+N}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\+T\+A\+T\+U\+S\+\_\+\+P\+R\+I\+N\+T\+F\+\_\+\+M\+A\+X\+L\+E\+N~512}\label{status_8c_a26ab76b4a01a5f7b0d118b4ceac1f959}
+
+
+\subsection{Function Documentation}
+\hypertarget{status_8c_af524160156e0aa1ba6f4666bddb4bbd9}{}\index{status.\+c@{status.\+c}!status\+\_\+close@{status\+\_\+close}}
+\index{status\+\_\+close@{status\+\_\+close}!status.\+c@{status.\+c}}
+\subsubsection[{status\+\_\+close(struct status\+\_\+output $\ast$so)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} status\+\_\+close (
+\begin{DoxyParamCaption}
+\item[{struct {\bf status\+\_\+output} $\ast$}]{so}
+\end{DoxyParamCaption}
+)}\label{status_8c_af524160156e0aa1ba6f4666bddb4bbd9}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=238pt]{status_8c_af524160156e0aa1ba6f4666bddb4bbd9_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=247pt]{status_8c_af524160156e0aa1ba6f4666bddb4bbd9_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{status_8c_aa7e4814a0ab9d168a9b8902c65932e62}{}\index{status.\+c@{status.\+c}!status\+\_\+flush@{status\+\_\+flush}}
+\index{status\+\_\+flush@{status\+\_\+flush}!status.\+c@{status.\+c}}
+\subsubsection[{status\+\_\+flush(struct status\+\_\+output $\ast$so)}]{\setlength{\rightskip}{0pt plus 5cm}void status\+\_\+flush (
+\begin{DoxyParamCaption}
+\item[{struct {\bf status\+\_\+output} $\ast$}]{so}
+\end{DoxyParamCaption}
+)}\label{status_8c_aa7e4814a0ab9d168a9b8902c65932e62}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{status_8c_aa7e4814a0ab9d168a9b8902c65932e62_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{status_8c_ab196e92cac48e356eab474978232e453}{}\index{status.\+c@{status.\+c}!status\+\_\+open@{status\+\_\+open}}
+\index{status\+\_\+open@{status\+\_\+open}!status.\+c@{status.\+c}}
+\subsubsection[{status\+\_\+open(const char $\ast$filename, const int refresh\+\_\+freq, const int msglevel, const struct virtual\+\_\+output $\ast$vout, const unsigned int flags)}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf status\+\_\+output}$\ast$ status\+\_\+open (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{filename, }
+\item[{const int}]{refresh\+\_\+freq, }
+\item[{const int}]{msglevel, }
+\item[{const struct {\bf virtual\+\_\+output} $\ast$}]{vout, }
+\item[{const unsigned int}]{flags}
+\end{DoxyParamCaption}
+)}\label{status_8c_ab196e92cac48e356eab474978232e453}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{status_8c_ab196e92cac48e356eab474978232e453_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=245pt]{status_8c_ab196e92cac48e356eab474978232e453_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{status_8c_a8d855058c1a32820d55c92ecee2289cd}{}\index{status.\+c@{status.\+c}!status\+\_\+printf@{status\+\_\+printf}}
+\index{status\+\_\+printf@{status\+\_\+printf}!status.\+c@{status.\+c}}
+\subsubsection[{status\+\_\+printf(struct status\+\_\+output $\ast$so, const char $\ast$format,...)}]{\setlength{\rightskip}{0pt plus 5cm}void status\+\_\+printf (
+\begin{DoxyParamCaption}
+\item[{struct {\bf status\+\_\+output} $\ast$}]{so, }
+\item[{const char $\ast$}]{format, }
+\item[{}]{...}
+\end{DoxyParamCaption}
+)}\label{status_8c_a8d855058c1a32820d55c92ecee2289cd}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{status_8c_a8d855058c1a32820d55c92ecee2289cd_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{status_8c_a8d855058c1a32820d55c92ecee2289cd_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{status_8c_a9bae899cdb4882163da35639da7d2f74}{}\index{status.\+c@{status.\+c}!status\+\_\+read@{status\+\_\+read}}
+\index{status\+\_\+read@{status\+\_\+read}!status.\+c@{status.\+c}}
+\subsubsection[{status\+\_\+read(struct status\+\_\+output $\ast$so, struct buffer $\ast$buf)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} status\+\_\+read (
+\begin{DoxyParamCaption}
+\item[{struct {\bf status\+\_\+output} $\ast$}]{so, }
+\item[{struct {\bf buffer} $\ast$}]{buf}
+\end{DoxyParamCaption}
+)}\label{status_8c_a9bae899cdb4882163da35639da7d2f74}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=279pt]{status_8c_a9bae899cdb4882163da35639da7d2f74_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{status_8c_ac13471945270b543de32396a7f03c4bb}{}\index{status.\+c@{status.\+c}!status\+\_\+reset@{status\+\_\+reset}}
+\index{status\+\_\+reset@{status\+\_\+reset}!status.\+c@{status.\+c}}
+\subsubsection[{status\+\_\+reset(struct status\+\_\+output $\ast$so)}]{\setlength{\rightskip}{0pt plus 5cm}void status\+\_\+reset (
+\begin{DoxyParamCaption}
+\item[{struct {\bf status\+\_\+output} $\ast$}]{so}
+\end{DoxyParamCaption}
+)}\label{status_8c_ac13471945270b543de32396a7f03c4bb}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{status_8c_ac13471945270b543de32396a7f03c4bb_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{status_8c_a6e98b4852ac3f2d6281169944051f411}{}\index{status.\+c@{status.\+c}!status\+\_\+trigger@{status\+\_\+trigger}}
+\index{status\+\_\+trigger@{status\+\_\+trigger}!status.\+c@{status.\+c}}
+\subsubsection[{status\+\_\+trigger(struct status\+\_\+output $\ast$so)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} status\+\_\+trigger (
+\begin{DoxyParamCaption}
+\item[{struct {\bf status\+\_\+output} $\ast$}]{so}
+\end{DoxyParamCaption}
+)}\label{status_8c_a6e98b4852ac3f2d6281169944051f411}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=301pt]{status_8c_a6e98b4852ac3f2d6281169944051f411_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{status_8c_ad43693c6fc57dd4bb5324bd0aaf08cf3}{}\index{status.\+c@{status.\+c}!status\+\_\+trigger\+\_\+tv@{status\+\_\+trigger\+\_\+tv}}
+\index{status\+\_\+trigger\+\_\+tv@{status\+\_\+trigger\+\_\+tv}!status.\+c@{status.\+c}}
+\subsubsection[{status\+\_\+trigger\+\_\+tv(struct status\+\_\+output $\ast$so, struct timeval $\ast$tv)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} status\+\_\+trigger\+\_\+tv (
+\begin{DoxyParamCaption}
+\item[{struct {\bf status\+\_\+output} $\ast$}]{so, }
+\item[{struct timeval $\ast$}]{tv}
+\end{DoxyParamCaption}
+)}\label{status_8c_ad43693c6fc57dd4bb5324bd0aaf08cf3}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=313pt]{status_8c_ad43693c6fc57dd4bb5324bd0aaf08cf3_cgraph}
+\end{center}
+\end{figure}
+
+

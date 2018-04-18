@@ -1,0 +1,7 @@
+<map id="ReportStatusToSCMgr" name="ReportStatusToSCMgr">
+<area shape="rect" id="node2" href="$service_8h.html#a8c96f73e14db21ad6b4c55b30048f423" title="ServiceStartAutomatic" alt="" coords="204,56,355,83"/>
+<area shape="rect" id="node5" href="$service_8h.html#a95ed112a3321c4b0e5a2a78b4dbbb541" title="ServiceStartInteractive" alt="" coords="204,107,355,133"/>
+<area shape="rect" id="node3" href="$service_8h.html#a9b9e568c54b3fb102d55439192eb347a" title="ServiceStartAutomaticOwn" alt="" coords="403,5,580,32"/>
+<area shape="rect" id="node4" href="$service_8c.html#aa3d685aaa0340b7c09d933e767f28c7f" title="_tmain" alt="" coords="628,81,689,108"/>
+<area shape="rect" id="node6" href="$service_8h.html#afbdec4b55ab5c74bcadcae0cecc3900d" title="ServiceStartInteractiveOwn" alt="" coords="403,157,579,184"/>
+</map>

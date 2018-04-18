@@ -1,0 +1,199 @@
+\hypertarget{common_8c}{}\section{src/openvpnserv/common.c File Reference}
+\label{common_8c}\index{src/openvpnserv/common.\+c@{src/openvpnserv/common.\+c}}
+{\ttfamily \#include \char`\"{}service.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}validate.\+h\char`\"{}}\\*
+Include dependency graph for common.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=272pt]{common_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{common_8c_a443b5988f6015454008fdab390a50edb}{openvpn\+\_\+vsntprintf} (L\+P\+T\+S\+T\+R str, size\+\_\+t size, L\+P\+C\+T\+S\+T\+R format, va\+\_\+list arglist)
+\item 
+int \hyperlink{common_8c_ae697dac0c0dd8b6b2eeef1283595efe4}{openvpn\+\_\+sntprintf} (L\+P\+T\+S\+T\+R str, size\+\_\+t size, L\+P\+C\+T\+S\+T\+R format,...)
+\item 
+D\+W\+O\+R\+D \hyperlink{common_8c_ab54be77a669fa1e3eb854462610e5521}{Get\+Openvpn\+Settings} (\hyperlink{structsettings__t}{settings\+\_\+t} $\ast$s)
+\item 
+L\+P\+C\+T\+S\+T\+R \hyperlink{common_8c_a2610102e271fc65ae8908d593cab8afd}{Get\+Last\+Error\+Text} ()
+\item 
+D\+W\+O\+R\+D \hyperlink{common_8c_a8d96b9d66b4a1f920afe99d73686d8e5}{Msg\+To\+Event\+Log} (D\+W\+O\+R\+D flags, L\+P\+C\+T\+S\+T\+R format,...)
+\item 
+wchar\+\_\+t $\ast$ \hyperlink{common_8c_a1c5bccb0d09544d2beef61d38138c75e}{utf8to16} (const char $\ast$utf8)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+L\+P\+C\+T\+S\+T\+R \hyperlink{common_8c_abff7747247c9df481a34e9817af9e35a}{service\+\_\+instance} = T\+E\+X\+T(\char`\"{}\char`\"{})
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{common_8c_a2610102e271fc65ae8908d593cab8afd}{}\index{common.\+c@{common.\+c}!Get\+Last\+Error\+Text@{Get\+Last\+Error\+Text}}
+\index{Get\+Last\+Error\+Text@{Get\+Last\+Error\+Text}!common.\+c@{common.\+c}}
+\subsubsection[{Get\+Last\+Error\+Text()}]{\setlength{\rightskip}{0pt plus 5cm}L\+P\+C\+T\+S\+T\+R Get\+Last\+Error\+Text (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{common_8c_a2610102e271fc65ae8908d593cab8afd}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{common_8c_a2610102e271fc65ae8908d593cab8afd_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{common_8c_a2610102e271fc65ae8908d593cab8afd_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{common_8c_ab54be77a669fa1e3eb854462610e5521}{}\index{common.\+c@{common.\+c}!Get\+Openvpn\+Settings@{Get\+Openvpn\+Settings}}
+\index{Get\+Openvpn\+Settings@{Get\+Openvpn\+Settings}!common.\+c@{common.\+c}}
+\subsubsection[{Get\+Openvpn\+Settings(settings\+\_\+t $\ast$s)}]{\setlength{\rightskip}{0pt plus 5cm}D\+W\+O\+R\+D Get\+Openvpn\+Settings (
+\begin{DoxyParamCaption}
+\item[{{\bf settings\+\_\+t} $\ast$}]{s}
+\end{DoxyParamCaption}
+)}\label{common_8c_ab54be77a669fa1e3eb854462610e5521}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{common_8c_ab54be77a669fa1e3eb854462610e5521_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{common_8c_ab54be77a669fa1e3eb854462610e5521_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{common_8c_a8d96b9d66b4a1f920afe99d73686d8e5}{}\index{common.\+c@{common.\+c}!Msg\+To\+Event\+Log@{Msg\+To\+Event\+Log}}
+\index{Msg\+To\+Event\+Log@{Msg\+To\+Event\+Log}!common.\+c@{common.\+c}}
+\subsubsection[{Msg\+To\+Event\+Log(\+D\+W\+O\+R\+D flags, L\+P\+C\+T\+S\+T\+R format,...)}]{\setlength{\rightskip}{0pt plus 5cm}D\+W\+O\+R\+D Msg\+To\+Event\+Log (
+\begin{DoxyParamCaption}
+\item[{D\+W\+O\+R\+D}]{flags, }
+\item[{L\+P\+C\+T\+S\+T\+R}]{format, }
+\item[{}]{...}
+\end{DoxyParamCaption}
+)}\label{common_8c_a8d96b9d66b4a1f920afe99d73686d8e5}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{common_8c_a8d96b9d66b4a1f920afe99d73686d8e5_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{common_8c_a8d96b9d66b4a1f920afe99d73686d8e5_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{common_8c_ae697dac0c0dd8b6b2eeef1283595efe4}{}\index{common.\+c@{common.\+c}!openvpn\+\_\+sntprintf@{openvpn\+\_\+sntprintf}}
+\index{openvpn\+\_\+sntprintf@{openvpn\+\_\+sntprintf}!common.\+c@{common.\+c}}
+\subsubsection[{openvpn\+\_\+sntprintf(\+L\+P\+T\+S\+T\+R str, size\+\_\+t size, L\+P\+C\+T\+S\+T\+R format,...)}]{\setlength{\rightskip}{0pt plus 5cm}int openvpn\+\_\+sntprintf (
+\begin{DoxyParamCaption}
+\item[{L\+P\+T\+S\+T\+R}]{str, }
+\item[{size\+\_\+t}]{size, }
+\item[{L\+P\+C\+T\+S\+T\+R}]{format, }
+\item[{}]{...}
+\end{DoxyParamCaption}
+)}\label{common_8c_ae697dac0c0dd8b6b2eeef1283595efe4}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=303pt]{common_8c_ae697dac0c0dd8b6b2eeef1283595efe4_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{common_8c_ae697dac0c0dd8b6b2eeef1283595efe4_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{common_8c_a443b5988f6015454008fdab390a50edb}{}\index{common.\+c@{common.\+c}!openvpn\+\_\+vsntprintf@{openvpn\+\_\+vsntprintf}}
+\index{openvpn\+\_\+vsntprintf@{openvpn\+\_\+vsntprintf}!common.\+c@{common.\+c}}
+\subsubsection[{openvpn\+\_\+vsntprintf(\+L\+P\+T\+S\+T\+R str, size\+\_\+t size, L\+P\+C\+T\+S\+T\+R format, va\+\_\+list arglist)}]{\setlength{\rightskip}{0pt plus 5cm}int openvpn\+\_\+vsntprintf (
+\begin{DoxyParamCaption}
+\item[{L\+P\+T\+S\+T\+R}]{str, }
+\item[{size\+\_\+t}]{size, }
+\item[{L\+P\+C\+T\+S\+T\+R}]{format, }
+\item[{va\+\_\+list}]{arglist}
+\end{DoxyParamCaption}
+)}\label{common_8c_a443b5988f6015454008fdab390a50edb}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{common_8c_a443b5988f6015454008fdab390a50edb_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{common_8c_a1c5bccb0d09544d2beef61d38138c75e}{}\index{common.\+c@{common.\+c}!utf8to16@{utf8to16}}
+\index{utf8to16@{utf8to16}!common.\+c@{common.\+c}}
+\subsubsection[{utf8to16(const char $\ast$utf8)}]{\setlength{\rightskip}{0pt plus 5cm}wchar\+\_\+t$\ast$ utf8to16 (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{utf8}
+\end{DoxyParamCaption}
+)}\label{common_8c_a1c5bccb0d09544d2beef61d38138c75e}
+
+
+\subsection{Variable Documentation}
+\hypertarget{common_8c_abff7747247c9df481a34e9817af9e35a}{}\index{common.\+c@{common.\+c}!service\+\_\+instance@{service\+\_\+instance}}
+\index{service\+\_\+instance@{service\+\_\+instance}!common.\+c@{common.\+c}}
+\subsubsection[{service\+\_\+instance}]{\setlength{\rightskip}{0pt plus 5cm}L\+P\+C\+T\+S\+T\+R service\+\_\+instance = T\+E\+X\+T(\char`\"{}\char`\"{})}\label{common_8c_abff7747247c9df481a34e9817af9e35a}

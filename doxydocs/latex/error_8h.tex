@@ -1,0 +1,757 @@
+\hypertarget{error_8h}{}\section{src/openvpn/error.h File Reference}
+\label{error_8h}\index{src/openvpn/error.\+h@{src/openvpn/error.\+h}}
+{\ttfamily \#include \char`\"{}basic.\+h\char`\"{}}\\*
+{\ttfamily \#include $<$errno.\+h$>$}\\*
+{\ttfamily \#include $<$stdbool.\+h$>$}\\*
+{\ttfamily \#include $<$assert.\+h$>$}\\*
+{\ttfamily \#include \char`\"{}errlevel.\+h\char`\"{}}\\*
+Include dependency graph for error.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{error_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{error_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{error_8h_a4db65693f10ed792369734d48fac39e9}{E\+R\+R\+\_\+\+B\+U\+F\+\_\+\+S\+I\+Z\+E}~1280
+\item 
+\#define \hyperlink{error_8h_a7490c0fb2066549c53f7517a95bfc13c}{O\+P\+E\+N\+V\+P\+N\+\_\+\+M\+S\+G\+\_\+\+F\+P}~stdout
+\item 
+\#define \hyperlink{error_8h_afc6e1eca642bff34759452cd5d647a91}{O\+P\+E\+N\+V\+P\+N\+\_\+\+E\+R\+R\+O\+R\+\_\+\+F\+P}~stderr
+\item 
+\#define \hyperlink{error_8h_a4e109c617af1a4da5ce902afc2163cd2}{O\+P\+E\+N\+V\+P\+N\+\_\+\+E\+X\+I\+T\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+G\+O\+O\+D}~0
+\item 
+\#define \hyperlink{error_8h_a8b0a091a634f6e0f411389a4af4052a9}{O\+P\+E\+N\+V\+P\+N\+\_\+\+E\+X\+I\+T\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+E\+R\+R\+O\+R}~1
+\item 
+\#define \hyperlink{error_8h_a4dc2ede9eb7b0406ddfaa6e37955741d}{O\+P\+E\+N\+V\+P\+N\+\_\+\+E\+X\+I\+T\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+U\+S\+A\+G\+E}~1
+\item 
+\#define \hyperlink{error_8h_a718101e4ac89d621f5581d789f9137f8}{O\+P\+E\+N\+V\+P\+N\+\_\+\+E\+X\+I\+T\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+C\+A\+N\+N\+O\+T\+\_\+\+O\+P\+E\+N\+\_\+\+D\+E\+B\+U\+G\+\_\+\+F\+I\+L\+E}~1
+\item 
+\#define \hyperlink{error_8h_a31a1a3b7abb388842c0cc8b92d13934c}{O\+P\+E\+N\+V\+P\+N\+\_\+\+D\+E\+B\+U\+G\+\_\+\+F\+I\+L\+E}~P\+A\+C\+K\+A\+G\+E \char`\"{}.log\char`\"{}
+\item 
+\#define \hyperlink{error_8h_aedc5bca053cf108acb651e878b1f24a9}{openvpn\+\_\+errno}()                      ~errno
+\item 
+\#define \hyperlink{error_8h_a0b2b940f4efcfb92d64104591882ea15}{openvpn\+\_\+strerror}(x,  gc)      ~strerror(x)
+\item 
+\#define \hyperlink{error_8h_a415d77f89113cc2e55ee415bc2b47cb5}{M\+\_\+\+D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L}~(0x0\+F)         /$\ast$ debug level mask $\ast$/
+\item 
+\#define \hyperlink{error_8h_a65ed7f4ae1be12a19362e90b962d72ac}{M\+\_\+\+F\+A\+T\+A\+L}~(1$<$$<$4)         /$\ast$ exit program $\ast$/
+\item 
+\#define \hyperlink{error_8h_a9e1c690bc419010e6e8346d28a237941}{M\+\_\+\+N\+O\+N\+F\+A\+T\+A\+L}~(1$<$$<$5)         /$\ast$ non-\/fatal error $\ast$/
+\item 
+\#define \hyperlink{error_8h_ad17a45f62ba6f3c0949d434a66ccb20a}{M\+\_\+\+W\+A\+R\+N}~(1$<$$<$6)         /$\ast$ call syslog with L\+O\+G\+\_\+\+W\+A\+R\+N\+I\+N\+G $\ast$/
+\item 
+\#define \hyperlink{error_8h_acccd12226173a70815de18bc19ad5c29}{M\+\_\+\+D\+E\+B\+U\+G}~(1$<$$<$7)
+\item 
+\#define \hyperlink{error_8h_ae003b2ded77b3b3d78acda1afc93fcc9}{M\+\_\+\+E\+R\+R\+N\+O}~(1$<$$<$8)         /$\ast$ show errno description $\ast$/
+\item 
+\#define \hyperlink{error_8h_a645f03576c6739f55b8b1bf267ca532c}{M\+\_\+\+N\+O\+M\+U\+T\+E}~(1$<$$<$11)        /$\ast$ don\textquotesingle{}t do mute processing $\ast$/
+\item 
+\#define \hyperlink{error_8h_a39772a2bdab0bd56c1b6dd518a65c2c3}{M\+\_\+\+N\+O\+P\+R\+E\+F\+I\+X}~(1$<$$<$12)        /$\ast$ don\textquotesingle{}t show date/time prefix $\ast$/
+\item 
+\#define \hyperlink{error_8h_ade027423d38ac891f70ea954c5f13ac4}{M\+\_\+\+U\+S\+A\+G\+E\+\_\+\+S\+M\+A\+L\+L}~(1$<$$<$13)        /$\ast$ fatal \hyperlink{structoptions}{options} error, call \hyperlink{options_8h_a7d9390dad03983eaf6dd29673624f1d6}{usage\+\_\+small} $\ast$/
+\item 
+\#define \hyperlink{error_8h_ad63c7fd9a3c7a2f0ed421903e1a29205}{M\+\_\+\+M\+S\+G\+\_\+\+V\+I\+R\+T\+\_\+\+O\+U\+T}~(1$<$$<$14)        /$\ast$ output message through msg\+\_\+status\+\_\+output callback $\ast$/
+\item 
+\#define \hyperlink{error_8h_a02fdddb17b95f31a428bf1f989df57f5}{M\+\_\+\+O\+P\+T\+E\+R\+R}~(1$<$$<$15)        /$\ast$ print \char`\"{}Options error\+:\char`\"{} prefix $\ast$/
+\item 
+\#define \hyperlink{error_8h_aa4da57fbd678535c2698666b3a8b3e92}{M\+\_\+\+N\+O\+L\+F}~(1$<$$<$16)        /$\ast$ don\textquotesingle{}t print new line $\ast$/
+\item 
+\#define \hyperlink{error_8h_a2e4dcc7453353b78f4ce8bdebe09c58b}{M\+\_\+\+N\+O\+I\+P\+R\+E\+F\+I\+X}~(1$<$$<$17)        /$\ast$ don\textquotesingle{}t print instance prefix $\ast$/
+\item 
+\#define \hyperlink{error_8h_ab5286dbd1378331f3d1c3a0522b6a43f}{M\+\_\+\+E\+R\+R}~(\hyperlink{error_8h_a65ed7f4ae1be12a19362e90b962d72ac}{M\+\_\+\+F\+A\+T\+A\+L} $\vert$ \hyperlink{error_8h_ae003b2ded77b3b3d78acda1afc93fcc9}{M\+\_\+\+E\+R\+R\+N\+O})
+\item 
+\#define \hyperlink{error_8h_a446cccfde267d5f96d18513d217286fe}{M\+\_\+\+U\+S\+A\+G\+E}~(\hyperlink{error_8h_ade027423d38ac891f70ea954c5f13ac4}{M\+\_\+\+U\+S\+A\+G\+E\+\_\+\+S\+M\+A\+L\+L} $\vert$ \hyperlink{error_8h_a39772a2bdab0bd56c1b6dd518a65c2c3}{M\+\_\+\+N\+O\+P\+R\+E\+F\+I\+X} $\vert$ \hyperlink{error_8h_a02fdddb17b95f31a428bf1f989df57f5}{M\+\_\+\+O\+P\+T\+E\+R\+R})
+\item 
+\#define \hyperlink{error_8h_a04b4cdfde995f9169f4733139598a544}{M\+\_\+\+C\+L\+I\+E\+N\+T}~(\hyperlink{error_8h_ad63c7fd9a3c7a2f0ed421903e1a29205}{M\+\_\+\+M\+S\+G\+\_\+\+V\+I\+R\+T\+\_\+\+O\+U\+T} $\vert$ \hyperlink{error_8h_a645f03576c6739f55b8b1bf267ca532c}{M\+\_\+\+N\+O\+M\+U\+T\+E} $\vert$ \hyperlink{error_8h_a2e4dcc7453353b78f4ce8bdebe09c58b}{M\+\_\+\+N\+O\+I\+P\+R\+E\+F\+I\+X})
+\item 
+\#define \hyperlink{error_8h_a00b52a88f1d57fe919c2fa376cdcb29f}{M\+U\+T\+E\+\_\+\+L\+E\+V\+E\+L\+\_\+\+S\+H\+I\+F\+T}~24
+\item 
+\#define \hyperlink{error_8h_af6c65d3a0bd369494b761bedb7e21318}{M\+U\+T\+E\+\_\+\+L\+E\+V\+E\+L\+\_\+\+M\+A\+S\+K}~0x\+F\+F
+\item 
+\#define \hyperlink{error_8h_a28107bdcc5393a7e71bdb20084852d9f}{E\+N\+C\+O\+D\+E\+\_\+\+M\+U\+T\+E\+\_\+\+L\+E\+V\+E\+L}(mute\+\_\+level)~(((mute\+\_\+level) \& \hyperlink{error_8h_af6c65d3a0bd369494b761bedb7e21318}{M\+U\+T\+E\+\_\+\+L\+E\+V\+E\+L\+\_\+\+M\+A\+S\+K}) $<$$<$ \hyperlink{error_8h_a00b52a88f1d57fe919c2fa376cdcb29f}{M\+U\+T\+E\+\_\+\+L\+E\+V\+E\+L\+\_\+\+S\+H\+I\+F\+T})
+\item 
+\#define \hyperlink{error_8h_a3d8f71706bb28f9be0cf584f2a6f9ae8}{D\+E\+C\+O\+D\+E\+\_\+\+M\+U\+T\+E\+\_\+\+L\+E\+V\+E\+L}(flags)~(((flags) $>$$>$ \hyperlink{error_8h_a00b52a88f1d57fe919c2fa376cdcb29f}{M\+U\+T\+E\+\_\+\+L\+E\+V\+E\+L\+\_\+\+S\+H\+I\+F\+T}) \& \hyperlink{error_8h_af6c65d3a0bd369494b761bedb7e21318}{M\+U\+T\+E\+\_\+\+L\+E\+V\+E\+L\+\_\+\+M\+A\+S\+K})
+\item 
+\#define \hyperlink{error_8h_a5c765719cc34afe773b52ffbd096a863}{L\+O\+G\+L\+E\+V}(log\+\_\+level,  mute\+\_\+level,  other)~((log\+\_\+level) $\vert$ \hyperlink{error_8h_a28107bdcc5393a7e71bdb20084852d9f}{E\+N\+C\+O\+D\+E\+\_\+\+M\+U\+T\+E\+\_\+\+L\+E\+V\+E\+L}(mute\+\_\+level) $\vert$ other)
+\item 
+\#define \hyperlink{error_8h_ae83d4ff85f0cea37abd51ad9896c375b}{E\+X\+I\+T\+\_\+\+F\+A\+T\+A\+L}(flags)~do \{ if ((flags) \& \hyperlink{error_8h_a65ed7f4ae1be12a19362e90b962d72ac}{M\+\_\+\+F\+A\+T\+A\+L}) \{\+\_\+exit(1);\}\} while (\hyperlink{automatic_8c_a65e9886d74aaee76545e83dd09011727}{false})
+\item 
+\#define \hyperlink{error_8h_a3ac39702968675a6552a43d7c68bf7f9}{msg}~\hyperlink{error_8h_a69aed7acd879be502a26b9114f9da2cc}{x\+\_\+msg}
+\item 
+\#define \hyperlink{error_8h_a542de1000e6bc3b78b863494e9a033d4}{dmsg}~\hyperlink{error_8h_a69aed7acd879be502a26b9114f9da2cc}{x\+\_\+msg}
+\item 
+\#define \hyperlink{error_8h_a2e211f58831bf4b3ebe6e33d35d02b05}{S\+D\+L\+\_\+\+C\+O\+N\+S\+T\+R\+A\+I\+N}~(1$<$$<$0)
+\item 
+\#define \hyperlink{error_8h_aca68c0d4ac8df0838e209fb5300f7be3}{A\+S\+S\+E\+R\+T}(x)~do \{ if (!(x)) \{\hyperlink{error_8h_a4614127f69a6b3a2c020ec521c97bc79}{assert\+\_\+failed}(\+\_\+\+\_\+\+F\+I\+L\+E\+\_\+\+\_\+, \+\_\+\+\_\+\+L\+I\+N\+E\+\_\+\+\_\+, \#x);\}\} while (\hyperlink{automatic_8c_a65e9886d74aaee76545e83dd09011727}{false})
+\item 
+\#define \hyperlink{error_8h_a12970781b04e7ea91f151a643e38b77c}{static\+\_\+assert}(expr,  diagnostic)
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} \hyperlink{error_8h_a4f8ff3cb9e3ea249c5f370a4d5963b49}{dont\+\_\+mute} (unsigned int flags)
+\item 
+void \hyperlink{error_8h_a69aed7acd879be502a26b9114f9da2cc}{x\+\_\+msg} (const unsigned int flags, const char $\ast$format,...)
+\item 
+void \hyperlink{error_8h_a98e586e25ee166a62299c110f598f952}{x\+\_\+msg\+\_\+va} (const unsigned int flags, const char $\ast$format, va\+\_\+list arglist)
+\item 
+void \hyperlink{error_8h_a0b40f361c449800d74f89d1c14dfa3cc}{error\+\_\+reset} (void)
+\item 
+void \hyperlink{error_8h_a233b2e66629459fa236ef66e4ed12e18}{errors\+\_\+to\+\_\+stderr} (void)
+\item 
+void \hyperlink{error_8h_aeb50a33f9d057f0a90a5e8d57541d687}{set\+\_\+suppress\+\_\+timestamps} (\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} suppressed)
+\item 
+void \hyperlink{error_8h_aed638b90e3fe15693140aa2395f2136b}{set\+\_\+machine\+\_\+readable\+\_\+output} (\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} parsable)
+\item 
+\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} \hyperlink{error_8h_af250e34abb4c2f896fcfa37e10aaeebf}{set\+\_\+debug\+\_\+level} (const int level, const unsigned int flags)
+\item 
+\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} \hyperlink{error_8h_aa24606a2ec1cb6e454a387c4fd709545}{set\+\_\+mute\+\_\+cutoff} (const int cutoff)
+\item 
+int \hyperlink{error_8h_a77cad2c632c4d56f6db20bc9f49e483b}{get\+\_\+debug\+\_\+level} (void)
+\item 
+int \hyperlink{error_8h_ae92d511635137d13fa3e3fcb5b63c30c}{get\+\_\+mute\+\_\+cutoff} (void)
+\item 
+const char $\ast$ \hyperlink{error_8h_a12e19662dce619502f632747e9984c78}{msg\+\_\+flags\+\_\+string} (const unsigned int flags, struct \hyperlink{structgc__arena}{gc\+\_\+arena} $\ast$gc)
+\item 
+F\+I\+L\+E $\ast$ \hyperlink{error_8h_a692dbcf8520af95b60e8beb23f0155a5}{msg\+\_\+fp} (const unsigned int flags)
+\item 
+void \hyperlink{error_8h_a4614127f69a6b3a2c020ec521c97bc79}{assert\+\_\+failed} (const char $\ast$filename, int line, const char $\ast$condition) \+\_\+\+\_\+attribute\+\_\+\+\_\+((\+\_\+\+\_\+noreturn\+\_\+\+\_\+))
+\item 
+void \hyperlink{error_8h_a540e97cac0c01abe8f0f866788352b25}{msg\+\_\+forked} (void)
+\item 
+void \hyperlink{error_8h_a291ecc71e1a4041b6816df699e7478b7}{open\+\_\+syslog} (const char $\ast$pgmname, \hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} stdio\+\_\+to\+\_\+null)
+\item 
+void \hyperlink{error_8h_a2c57c9daa70de43f5a36efa6dba65a0c}{close\+\_\+syslog} (void)
+\item 
+void \hyperlink{error_8h_a9355a091e8b3e1c2c181727681c46010}{redirect\+\_\+stdout\+\_\+stderr} (const char $\ast$file, \hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} append)
+\item 
+void \hyperlink{error_8h_abfd36ef9b390f01aad213d7062dbb78d}{openvpn\+\_\+exit} (const int status)
+\item 
+void \hyperlink{error_8h_a1f147a9ed021308a6b658c77d566a4dc}{out\+\_\+of\+\_\+memory} (void)
+\item 
+void \hyperlink{error_8h_ac013439368e05d67a8515f9a6295359c}{reset\+\_\+check\+\_\+status} (void)
+\item 
+void \hyperlink{error_8h_ab76eae70d91e60b44b8c6478c72baae5}{set\+\_\+check\+\_\+status} (unsigned int info\+\_\+level, unsigned int verbose\+\_\+level)
+\item 
+void \hyperlink{error_8h_a67f3e46b0c81125d48254aac6fbf92eb}{x\+\_\+check\+\_\+status} (int status, const char $\ast$description, struct \hyperlink{structlink__socket}{link\+\_\+socket} $\ast$sock, struct \hyperlink{structtuntap}{tuntap} $\ast$tt)
+\item 
+void \hyperlink{error_8h_a11abb2bbc50d311b874ce9047c21c69c}{msg\+\_\+thread\+\_\+init} (void)
+\item 
+void \hyperlink{error_8h_adae54052261e0d3c3f377a9377b293b9}{msg\+\_\+thread\+\_\+uninit} (void)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+unsigned int \hyperlink{error_8h_a0cf2e25fae07d4a6ab95d494428a698c}{x\+\_\+debug\+\_\+level}
+\item 
+int \hyperlink{error_8h_a6182ffedfd04856c7a6147b4aba0f774}{x\+\_\+msg\+\_\+line\+\_\+num}
+\item 
+unsigned int \hyperlink{error_8h_a3e0fc77ce12c6cd6eb1b224290064a04}{x\+\_\+cs\+\_\+info\+\_\+level}
+\item 
+unsigned int \hyperlink{error_8h_aba212c1f2512355010d35d8fa7a0d43c}{x\+\_\+cs\+\_\+verbose\+\_\+level}
+\item 
+unsigned int \hyperlink{error_8h_affed9095be74ace9a8570c3093acb09b}{x\+\_\+cs\+\_\+err\+\_\+delay\+\_\+ms}
+\item 
+const char $\ast$ \hyperlink{error_8h_a5bc1525dd52536077d1d6f0571112d7f}{x\+\_\+msg\+\_\+prefix}
+\item 
+const struct \hyperlink{structvirtual__output}{virtual\+\_\+output} $\ast$ \hyperlink{error_8h_a12161c08ca4f1909ace7d8b71bee8d3e}{x\+\_\+msg\+\_\+virtual\+\_\+output}
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{error_8h_aca68c0d4ac8df0838e209fb5300f7be3}{}\index{error.\+h@{error.\+h}!A\+S\+S\+E\+R\+T@{A\+S\+S\+E\+R\+T}}
+\index{A\+S\+S\+E\+R\+T@{A\+S\+S\+E\+R\+T}!error.\+h@{error.\+h}}
+\subsubsection[{A\+S\+S\+E\+R\+T}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\+S\+S\+E\+R\+T(
+\begin{DoxyParamCaption}
+\item[{}]{x}
+\end{DoxyParamCaption}
+)~do \{ if (!(x)) \{{\bf assert\+\_\+failed}(\+\_\+\+\_\+\+F\+I\+L\+E\+\_\+\+\_\+, \+\_\+\+\_\+\+L\+I\+N\+E\+\_\+\+\_\+, \#x);\}\} while ({\bf false})}\label{error_8h_aca68c0d4ac8df0838e209fb5300f7be3}
+\hypertarget{error_8h_a3d8f71706bb28f9be0cf584f2a6f9ae8}{}\index{error.\+h@{error.\+h}!D\+E\+C\+O\+D\+E\+\_\+\+M\+U\+T\+E\+\_\+\+L\+E\+V\+E\+L@{D\+E\+C\+O\+D\+E\+\_\+\+M\+U\+T\+E\+\_\+\+L\+E\+V\+E\+L}}
+\index{D\+E\+C\+O\+D\+E\+\_\+\+M\+U\+T\+E\+\_\+\+L\+E\+V\+E\+L@{D\+E\+C\+O\+D\+E\+\_\+\+M\+U\+T\+E\+\_\+\+L\+E\+V\+E\+L}!error.\+h@{error.\+h}}
+\subsubsection[{D\+E\+C\+O\+D\+E\+\_\+\+M\+U\+T\+E\+\_\+\+L\+E\+V\+E\+L}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+E\+C\+O\+D\+E\+\_\+\+M\+U\+T\+E\+\_\+\+L\+E\+V\+E\+L(
+\begin{DoxyParamCaption}
+\item[{}]{flags}
+\end{DoxyParamCaption}
+)~(((flags) $>$$>$ {\bf M\+U\+T\+E\+\_\+\+L\+E\+V\+E\+L\+\_\+\+S\+H\+I\+F\+T}) \& {\bf M\+U\+T\+E\+\_\+\+L\+E\+V\+E\+L\+\_\+\+M\+A\+S\+K})}\label{error_8h_a3d8f71706bb28f9be0cf584f2a6f9ae8}
+\hypertarget{error_8h_a542de1000e6bc3b78b863494e9a033d4}{}\index{error.\+h@{error.\+h}!dmsg@{dmsg}}
+\index{dmsg@{dmsg}!error.\+h@{error.\+h}}
+\subsubsection[{dmsg}]{\setlength{\rightskip}{0pt plus 5cm}\#define dmsg~{\bf x\+\_\+msg}}\label{error_8h_a542de1000e6bc3b78b863494e9a033d4}
+\hypertarget{error_8h_a28107bdcc5393a7e71bdb20084852d9f}{}\index{error.\+h@{error.\+h}!E\+N\+C\+O\+D\+E\+\_\+\+M\+U\+T\+E\+\_\+\+L\+E\+V\+E\+L@{E\+N\+C\+O\+D\+E\+\_\+\+M\+U\+T\+E\+\_\+\+L\+E\+V\+E\+L}}
+\index{E\+N\+C\+O\+D\+E\+\_\+\+M\+U\+T\+E\+\_\+\+L\+E\+V\+E\+L@{E\+N\+C\+O\+D\+E\+\_\+\+M\+U\+T\+E\+\_\+\+L\+E\+V\+E\+L}!error.\+h@{error.\+h}}
+\subsubsection[{E\+N\+C\+O\+D\+E\+\_\+\+M\+U\+T\+E\+\_\+\+L\+E\+V\+E\+L}]{\setlength{\rightskip}{0pt plus 5cm}\#define E\+N\+C\+O\+D\+E\+\_\+\+M\+U\+T\+E\+\_\+\+L\+E\+V\+E\+L(
+\begin{DoxyParamCaption}
+\item[{}]{mute\+\_\+level}
+\end{DoxyParamCaption}
+)~(((mute\+\_\+level) \& {\bf M\+U\+T\+E\+\_\+\+L\+E\+V\+E\+L\+\_\+\+M\+A\+S\+K}) $<$$<$ {\bf M\+U\+T\+E\+\_\+\+L\+E\+V\+E\+L\+\_\+\+S\+H\+I\+F\+T})}\label{error_8h_a28107bdcc5393a7e71bdb20084852d9f}
+\hypertarget{error_8h_a4db65693f10ed792369734d48fac39e9}{}\index{error.\+h@{error.\+h}!E\+R\+R\+\_\+\+B\+U\+F\+\_\+\+S\+I\+Z\+E@{E\+R\+R\+\_\+\+B\+U\+F\+\_\+\+S\+I\+Z\+E}}
+\index{E\+R\+R\+\_\+\+B\+U\+F\+\_\+\+S\+I\+Z\+E@{E\+R\+R\+\_\+\+B\+U\+F\+\_\+\+S\+I\+Z\+E}!error.\+h@{error.\+h}}
+\subsubsection[{E\+R\+R\+\_\+\+B\+U\+F\+\_\+\+S\+I\+Z\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define E\+R\+R\+\_\+\+B\+U\+F\+\_\+\+S\+I\+Z\+E~1280}\label{error_8h_a4db65693f10ed792369734d48fac39e9}
+\hypertarget{error_8h_ae83d4ff85f0cea37abd51ad9896c375b}{}\index{error.\+h@{error.\+h}!E\+X\+I\+T\+\_\+\+F\+A\+T\+A\+L@{E\+X\+I\+T\+\_\+\+F\+A\+T\+A\+L}}
+\index{E\+X\+I\+T\+\_\+\+F\+A\+T\+A\+L@{E\+X\+I\+T\+\_\+\+F\+A\+T\+A\+L}!error.\+h@{error.\+h}}
+\subsubsection[{E\+X\+I\+T\+\_\+\+F\+A\+T\+A\+L}]{\setlength{\rightskip}{0pt plus 5cm}\#define E\+X\+I\+T\+\_\+\+F\+A\+T\+A\+L(
+\begin{DoxyParamCaption}
+\item[{}]{flags}
+\end{DoxyParamCaption}
+)~do \{ if ((flags) \& {\bf M\+\_\+\+F\+A\+T\+A\+L}) \{\+\_\+exit(1);\}\} while ({\bf false})}\label{error_8h_ae83d4ff85f0cea37abd51ad9896c375b}
+\hypertarget{error_8h_a5c765719cc34afe773b52ffbd096a863}{}\index{error.\+h@{error.\+h}!L\+O\+G\+L\+E\+V@{L\+O\+G\+L\+E\+V}}
+\index{L\+O\+G\+L\+E\+V@{L\+O\+G\+L\+E\+V}!error.\+h@{error.\+h}}
+\subsubsection[{L\+O\+G\+L\+E\+V}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\+O\+G\+L\+E\+V(
+\begin{DoxyParamCaption}
+\item[{}]{log\+\_\+level, }
+\item[{}]{mute\+\_\+level, }
+\item[{}]{other}
+\end{DoxyParamCaption}
+)~((log\+\_\+level) $\vert$ {\bf E\+N\+C\+O\+D\+E\+\_\+\+M\+U\+T\+E\+\_\+\+L\+E\+V\+E\+L}(mute\+\_\+level) $\vert$ other)}\label{error_8h_a5c765719cc34afe773b52ffbd096a863}
+\hypertarget{error_8h_a04b4cdfde995f9169f4733139598a544}{}\index{error.\+h@{error.\+h}!M\+\_\+\+C\+L\+I\+E\+N\+T@{M\+\_\+\+C\+L\+I\+E\+N\+T}}
+\index{M\+\_\+\+C\+L\+I\+E\+N\+T@{M\+\_\+\+C\+L\+I\+E\+N\+T}!error.\+h@{error.\+h}}
+\subsubsection[{M\+\_\+\+C\+L\+I\+E\+N\+T}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\+\_\+\+C\+L\+I\+E\+N\+T~({\bf M\+\_\+\+M\+S\+G\+\_\+\+V\+I\+R\+T\+\_\+\+O\+U\+T} $\vert$ {\bf M\+\_\+\+N\+O\+M\+U\+T\+E} $\vert$ {\bf M\+\_\+\+N\+O\+I\+P\+R\+E\+F\+I\+X})}\label{error_8h_a04b4cdfde995f9169f4733139598a544}
+\hypertarget{error_8h_acccd12226173a70815de18bc19ad5c29}{}\index{error.\+h@{error.\+h}!M\+\_\+\+D\+E\+B\+U\+G@{M\+\_\+\+D\+E\+B\+U\+G}}
+\index{M\+\_\+\+D\+E\+B\+U\+G@{M\+\_\+\+D\+E\+B\+U\+G}!error.\+h@{error.\+h}}
+\subsubsection[{M\+\_\+\+D\+E\+B\+U\+G}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\+\_\+\+D\+E\+B\+U\+G~(1$<$$<$7)}\label{error_8h_acccd12226173a70815de18bc19ad5c29}
+\hypertarget{error_8h_a415d77f89113cc2e55ee415bc2b47cb5}{}\index{error.\+h@{error.\+h}!M\+\_\+\+D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L@{M\+\_\+\+D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L}}
+\index{M\+\_\+\+D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L@{M\+\_\+\+D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L}!error.\+h@{error.\+h}}
+\subsubsection[{M\+\_\+\+D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\+\_\+\+D\+E\+B\+U\+G\+\_\+\+L\+E\+V\+E\+L~(0x0\+F)         /$\ast$ debug level mask $\ast$/}\label{error_8h_a415d77f89113cc2e55ee415bc2b47cb5}
+\hypertarget{error_8h_ab5286dbd1378331f3d1c3a0522b6a43f}{}\index{error.\+h@{error.\+h}!M\+\_\+\+E\+R\+R@{M\+\_\+\+E\+R\+R}}
+\index{M\+\_\+\+E\+R\+R@{M\+\_\+\+E\+R\+R}!error.\+h@{error.\+h}}
+\subsubsection[{M\+\_\+\+E\+R\+R}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\+\_\+\+E\+R\+R~({\bf M\+\_\+\+F\+A\+T\+A\+L} $\vert$ {\bf M\+\_\+\+E\+R\+R\+N\+O})}\label{error_8h_ab5286dbd1378331f3d1c3a0522b6a43f}
+\hypertarget{error_8h_ae003b2ded77b3b3d78acda1afc93fcc9}{}\index{error.\+h@{error.\+h}!M\+\_\+\+E\+R\+R\+N\+O@{M\+\_\+\+E\+R\+R\+N\+O}}
+\index{M\+\_\+\+E\+R\+R\+N\+O@{M\+\_\+\+E\+R\+R\+N\+O}!error.\+h@{error.\+h}}
+\subsubsection[{M\+\_\+\+E\+R\+R\+N\+O}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\+\_\+\+E\+R\+R\+N\+O~(1$<$$<$8)         /$\ast$ show errno description $\ast$/}\label{error_8h_ae003b2ded77b3b3d78acda1afc93fcc9}
+\hypertarget{error_8h_a65ed7f4ae1be12a19362e90b962d72ac}{}\index{error.\+h@{error.\+h}!M\+\_\+\+F\+A\+T\+A\+L@{M\+\_\+\+F\+A\+T\+A\+L}}
+\index{M\+\_\+\+F\+A\+T\+A\+L@{M\+\_\+\+F\+A\+T\+A\+L}!error.\+h@{error.\+h}}
+\subsubsection[{M\+\_\+\+F\+A\+T\+A\+L}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\+\_\+\+F\+A\+T\+A\+L~(1$<$$<$4)         /$\ast$ exit program $\ast$/}\label{error_8h_a65ed7f4ae1be12a19362e90b962d72ac}
+\hypertarget{error_8h_ad63c7fd9a3c7a2f0ed421903e1a29205}{}\index{error.\+h@{error.\+h}!M\+\_\+\+M\+S\+G\+\_\+\+V\+I\+R\+T\+\_\+\+O\+U\+T@{M\+\_\+\+M\+S\+G\+\_\+\+V\+I\+R\+T\+\_\+\+O\+U\+T}}
+\index{M\+\_\+\+M\+S\+G\+\_\+\+V\+I\+R\+T\+\_\+\+O\+U\+T@{M\+\_\+\+M\+S\+G\+\_\+\+V\+I\+R\+T\+\_\+\+O\+U\+T}!error.\+h@{error.\+h}}
+\subsubsection[{M\+\_\+\+M\+S\+G\+\_\+\+V\+I\+R\+T\+\_\+\+O\+U\+T}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\+\_\+\+M\+S\+G\+\_\+\+V\+I\+R\+T\+\_\+\+O\+U\+T~(1$<$$<$14)        /$\ast$ output message through msg\+\_\+status\+\_\+output callback $\ast$/}\label{error_8h_ad63c7fd9a3c7a2f0ed421903e1a29205}
+\hypertarget{error_8h_a2e4dcc7453353b78f4ce8bdebe09c58b}{}\index{error.\+h@{error.\+h}!M\+\_\+\+N\+O\+I\+P\+R\+E\+F\+I\+X@{M\+\_\+\+N\+O\+I\+P\+R\+E\+F\+I\+X}}
+\index{M\+\_\+\+N\+O\+I\+P\+R\+E\+F\+I\+X@{M\+\_\+\+N\+O\+I\+P\+R\+E\+F\+I\+X}!error.\+h@{error.\+h}}
+\subsubsection[{M\+\_\+\+N\+O\+I\+P\+R\+E\+F\+I\+X}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\+\_\+\+N\+O\+I\+P\+R\+E\+F\+I\+X~(1$<$$<$17)        /$\ast$ don\textquotesingle{}t print instance prefix $\ast$/}\label{error_8h_a2e4dcc7453353b78f4ce8bdebe09c58b}
+\hypertarget{error_8h_aa4da57fbd678535c2698666b3a8b3e92}{}\index{error.\+h@{error.\+h}!M\+\_\+\+N\+O\+L\+F@{M\+\_\+\+N\+O\+L\+F}}
+\index{M\+\_\+\+N\+O\+L\+F@{M\+\_\+\+N\+O\+L\+F}!error.\+h@{error.\+h}}
+\subsubsection[{M\+\_\+\+N\+O\+L\+F}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\+\_\+\+N\+O\+L\+F~(1$<$$<$16)        /$\ast$ don\textquotesingle{}t print new line $\ast$/}\label{error_8h_aa4da57fbd678535c2698666b3a8b3e92}
+\hypertarget{error_8h_a645f03576c6739f55b8b1bf267ca532c}{}\index{error.\+h@{error.\+h}!M\+\_\+\+N\+O\+M\+U\+T\+E@{M\+\_\+\+N\+O\+M\+U\+T\+E}}
+\index{M\+\_\+\+N\+O\+M\+U\+T\+E@{M\+\_\+\+N\+O\+M\+U\+T\+E}!error.\+h@{error.\+h}}
+\subsubsection[{M\+\_\+\+N\+O\+M\+U\+T\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\+\_\+\+N\+O\+M\+U\+T\+E~(1$<$$<$11)        /$\ast$ don\textquotesingle{}t do mute processing $\ast$/}\label{error_8h_a645f03576c6739f55b8b1bf267ca532c}
+\hypertarget{error_8h_a9e1c690bc419010e6e8346d28a237941}{}\index{error.\+h@{error.\+h}!M\+\_\+\+N\+O\+N\+F\+A\+T\+A\+L@{M\+\_\+\+N\+O\+N\+F\+A\+T\+A\+L}}
+\index{M\+\_\+\+N\+O\+N\+F\+A\+T\+A\+L@{M\+\_\+\+N\+O\+N\+F\+A\+T\+A\+L}!error.\+h@{error.\+h}}
+\subsubsection[{M\+\_\+\+N\+O\+N\+F\+A\+T\+A\+L}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\+\_\+\+N\+O\+N\+F\+A\+T\+A\+L~(1$<$$<$5)         /$\ast$ non-\/fatal error $\ast$/}\label{error_8h_a9e1c690bc419010e6e8346d28a237941}
+\hypertarget{error_8h_a39772a2bdab0bd56c1b6dd518a65c2c3}{}\index{error.\+h@{error.\+h}!M\+\_\+\+N\+O\+P\+R\+E\+F\+I\+X@{M\+\_\+\+N\+O\+P\+R\+E\+F\+I\+X}}
+\index{M\+\_\+\+N\+O\+P\+R\+E\+F\+I\+X@{M\+\_\+\+N\+O\+P\+R\+E\+F\+I\+X}!error.\+h@{error.\+h}}
+\subsubsection[{M\+\_\+\+N\+O\+P\+R\+E\+F\+I\+X}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\+\_\+\+N\+O\+P\+R\+E\+F\+I\+X~(1$<$$<$12)        /$\ast$ don\textquotesingle{}t show date/time prefix $\ast$/}\label{error_8h_a39772a2bdab0bd56c1b6dd518a65c2c3}
+\hypertarget{error_8h_a02fdddb17b95f31a428bf1f989df57f5}{}\index{error.\+h@{error.\+h}!M\+\_\+\+O\+P\+T\+E\+R\+R@{M\+\_\+\+O\+P\+T\+E\+R\+R}}
+\index{M\+\_\+\+O\+P\+T\+E\+R\+R@{M\+\_\+\+O\+P\+T\+E\+R\+R}!error.\+h@{error.\+h}}
+\subsubsection[{M\+\_\+\+O\+P\+T\+E\+R\+R}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\+\_\+\+O\+P\+T\+E\+R\+R~(1$<$$<$15)        /$\ast$ print \char`\"{}Options error\+:\char`\"{} prefix $\ast$/}\label{error_8h_a02fdddb17b95f31a428bf1f989df57f5}
+\hypertarget{error_8h_a446cccfde267d5f96d18513d217286fe}{}\index{error.\+h@{error.\+h}!M\+\_\+\+U\+S\+A\+G\+E@{M\+\_\+\+U\+S\+A\+G\+E}}
+\index{M\+\_\+\+U\+S\+A\+G\+E@{M\+\_\+\+U\+S\+A\+G\+E}!error.\+h@{error.\+h}}
+\subsubsection[{M\+\_\+\+U\+S\+A\+G\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\+\_\+\+U\+S\+A\+G\+E~({\bf M\+\_\+\+U\+S\+A\+G\+E\+\_\+\+S\+M\+A\+L\+L} $\vert$ {\bf M\+\_\+\+N\+O\+P\+R\+E\+F\+I\+X} $\vert$ {\bf M\+\_\+\+O\+P\+T\+E\+R\+R})}\label{error_8h_a446cccfde267d5f96d18513d217286fe}
+\hypertarget{error_8h_ade027423d38ac891f70ea954c5f13ac4}{}\index{error.\+h@{error.\+h}!M\+\_\+\+U\+S\+A\+G\+E\+\_\+\+S\+M\+A\+L\+L@{M\+\_\+\+U\+S\+A\+G\+E\+\_\+\+S\+M\+A\+L\+L}}
+\index{M\+\_\+\+U\+S\+A\+G\+E\+\_\+\+S\+M\+A\+L\+L@{M\+\_\+\+U\+S\+A\+G\+E\+\_\+\+S\+M\+A\+L\+L}!error.\+h@{error.\+h}}
+\subsubsection[{M\+\_\+\+U\+S\+A\+G\+E\+\_\+\+S\+M\+A\+L\+L}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\+\_\+\+U\+S\+A\+G\+E\+\_\+\+S\+M\+A\+L\+L~(1$<$$<$13)        /$\ast$ fatal {\bf options} error, call {\bf usage\+\_\+small} $\ast$/}\label{error_8h_ade027423d38ac891f70ea954c5f13ac4}
+\hypertarget{error_8h_ad17a45f62ba6f3c0949d434a66ccb20a}{}\index{error.\+h@{error.\+h}!M\+\_\+\+W\+A\+R\+N@{M\+\_\+\+W\+A\+R\+N}}
+\index{M\+\_\+\+W\+A\+R\+N@{M\+\_\+\+W\+A\+R\+N}!error.\+h@{error.\+h}}
+\subsubsection[{M\+\_\+\+W\+A\+R\+N}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\+\_\+\+W\+A\+R\+N~(1$<$$<$6)         /$\ast$ call syslog with L\+O\+G\+\_\+\+W\+A\+R\+N\+I\+N\+G $\ast$/}\label{error_8h_ad17a45f62ba6f3c0949d434a66ccb20a}
+\hypertarget{error_8h_a3ac39702968675a6552a43d7c68bf7f9}{}\index{error.\+h@{error.\+h}!msg@{msg}}
+\index{msg@{msg}!error.\+h@{error.\+h}}
+\subsubsection[{msg}]{\setlength{\rightskip}{0pt plus 5cm}\#define msg~{\bf x\+\_\+msg}}\label{error_8h_a3ac39702968675a6552a43d7c68bf7f9}
+\hypertarget{error_8h_af6c65d3a0bd369494b761bedb7e21318}{}\index{error.\+h@{error.\+h}!M\+U\+T\+E\+\_\+\+L\+E\+V\+E\+L\+\_\+\+M\+A\+S\+K@{M\+U\+T\+E\+\_\+\+L\+E\+V\+E\+L\+\_\+\+M\+A\+S\+K}}
+\index{M\+U\+T\+E\+\_\+\+L\+E\+V\+E\+L\+\_\+\+M\+A\+S\+K@{M\+U\+T\+E\+\_\+\+L\+E\+V\+E\+L\+\_\+\+M\+A\+S\+K}!error.\+h@{error.\+h}}
+\subsubsection[{M\+U\+T\+E\+\_\+\+L\+E\+V\+E\+L\+\_\+\+M\+A\+S\+K}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\+U\+T\+E\+\_\+\+L\+E\+V\+E\+L\+\_\+\+M\+A\+S\+K~0x\+F\+F}\label{error_8h_af6c65d3a0bd369494b761bedb7e21318}
+\hypertarget{error_8h_a00b52a88f1d57fe919c2fa376cdcb29f}{}\index{error.\+h@{error.\+h}!M\+U\+T\+E\+\_\+\+L\+E\+V\+E\+L\+\_\+\+S\+H\+I\+F\+T@{M\+U\+T\+E\+\_\+\+L\+E\+V\+E\+L\+\_\+\+S\+H\+I\+F\+T}}
+\index{M\+U\+T\+E\+\_\+\+L\+E\+V\+E\+L\+\_\+\+S\+H\+I\+F\+T@{M\+U\+T\+E\+\_\+\+L\+E\+V\+E\+L\+\_\+\+S\+H\+I\+F\+T}!error.\+h@{error.\+h}}
+\subsubsection[{M\+U\+T\+E\+\_\+\+L\+E\+V\+E\+L\+\_\+\+S\+H\+I\+F\+T}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\+U\+T\+E\+\_\+\+L\+E\+V\+E\+L\+\_\+\+S\+H\+I\+F\+T~24}\label{error_8h_a00b52a88f1d57fe919c2fa376cdcb29f}
+\hypertarget{error_8h_a31a1a3b7abb388842c0cc8b92d13934c}{}\index{error.\+h@{error.\+h}!O\+P\+E\+N\+V\+P\+N\+\_\+\+D\+E\+B\+U\+G\+\_\+\+F\+I\+L\+E@{O\+P\+E\+N\+V\+P\+N\+\_\+\+D\+E\+B\+U\+G\+\_\+\+F\+I\+L\+E}}
+\index{O\+P\+E\+N\+V\+P\+N\+\_\+\+D\+E\+B\+U\+G\+\_\+\+F\+I\+L\+E@{O\+P\+E\+N\+V\+P\+N\+\_\+\+D\+E\+B\+U\+G\+\_\+\+F\+I\+L\+E}!error.\+h@{error.\+h}}
+\subsubsection[{O\+P\+E\+N\+V\+P\+N\+\_\+\+D\+E\+B\+U\+G\+\_\+\+F\+I\+L\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define O\+P\+E\+N\+V\+P\+N\+\_\+\+D\+E\+B\+U\+G\+\_\+\+F\+I\+L\+E~P\+A\+C\+K\+A\+G\+E \char`\"{}.log\char`\"{}}\label{error_8h_a31a1a3b7abb388842c0cc8b92d13934c}
+\hypertarget{error_8h_aedc5bca053cf108acb651e878b1f24a9}{}\index{error.\+h@{error.\+h}!openvpn\+\_\+errno@{openvpn\+\_\+errno}}
+\index{openvpn\+\_\+errno@{openvpn\+\_\+errno}!error.\+h@{error.\+h}}
+\subsubsection[{openvpn\+\_\+errno}]{\setlength{\rightskip}{0pt plus 5cm}\#define openvpn\+\_\+errno(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~errno}\label{error_8h_aedc5bca053cf108acb651e878b1f24a9}
+\hypertarget{error_8h_afc6e1eca642bff34759452cd5d647a91}{}\index{error.\+h@{error.\+h}!O\+P\+E\+N\+V\+P\+N\+\_\+\+E\+R\+R\+O\+R\+\_\+\+F\+P@{O\+P\+E\+N\+V\+P\+N\+\_\+\+E\+R\+R\+O\+R\+\_\+\+F\+P}}
+\index{O\+P\+E\+N\+V\+P\+N\+\_\+\+E\+R\+R\+O\+R\+\_\+\+F\+P@{O\+P\+E\+N\+V\+P\+N\+\_\+\+E\+R\+R\+O\+R\+\_\+\+F\+P}!error.\+h@{error.\+h}}
+\subsubsection[{O\+P\+E\+N\+V\+P\+N\+\_\+\+E\+R\+R\+O\+R\+\_\+\+F\+P}]{\setlength{\rightskip}{0pt plus 5cm}\#define O\+P\+E\+N\+V\+P\+N\+\_\+\+E\+R\+R\+O\+R\+\_\+\+F\+P~stderr}\label{error_8h_afc6e1eca642bff34759452cd5d647a91}
+\hypertarget{error_8h_a718101e4ac89d621f5581d789f9137f8}{}\index{error.\+h@{error.\+h}!O\+P\+E\+N\+V\+P\+N\+\_\+\+E\+X\+I\+T\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+C\+A\+N\+N\+O\+T\+\_\+\+O\+P\+E\+N\+\_\+\+D\+E\+B\+U\+G\+\_\+\+F\+I\+L\+E@{O\+P\+E\+N\+V\+P\+N\+\_\+\+E\+X\+I\+T\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+C\+A\+N\+N\+O\+T\+\_\+\+O\+P\+E\+N\+\_\+\+D\+E\+B\+U\+G\+\_\+\+F\+I\+L\+E}}
+\index{O\+P\+E\+N\+V\+P\+N\+\_\+\+E\+X\+I\+T\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+C\+A\+N\+N\+O\+T\+\_\+\+O\+P\+E\+N\+\_\+\+D\+E\+B\+U\+G\+\_\+\+F\+I\+L\+E@{O\+P\+E\+N\+V\+P\+N\+\_\+\+E\+X\+I\+T\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+C\+A\+N\+N\+O\+T\+\_\+\+O\+P\+E\+N\+\_\+\+D\+E\+B\+U\+G\+\_\+\+F\+I\+L\+E}!error.\+h@{error.\+h}}
+\subsubsection[{O\+P\+E\+N\+V\+P\+N\+\_\+\+E\+X\+I\+T\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+C\+A\+N\+N\+O\+T\+\_\+\+O\+P\+E\+N\+\_\+\+D\+E\+B\+U\+G\+\_\+\+F\+I\+L\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define O\+P\+E\+N\+V\+P\+N\+\_\+\+E\+X\+I\+T\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+C\+A\+N\+N\+O\+T\+\_\+\+O\+P\+E\+N\+\_\+\+D\+E\+B\+U\+G\+\_\+\+F\+I\+L\+E~1}\label{error_8h_a718101e4ac89d621f5581d789f9137f8}
+\hypertarget{error_8h_a8b0a091a634f6e0f411389a4af4052a9}{}\index{error.\+h@{error.\+h}!O\+P\+E\+N\+V\+P\+N\+\_\+\+E\+X\+I\+T\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+E\+R\+R\+O\+R@{O\+P\+E\+N\+V\+P\+N\+\_\+\+E\+X\+I\+T\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+E\+R\+R\+O\+R}}
+\index{O\+P\+E\+N\+V\+P\+N\+\_\+\+E\+X\+I\+T\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+E\+R\+R\+O\+R@{O\+P\+E\+N\+V\+P\+N\+\_\+\+E\+X\+I\+T\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+E\+R\+R\+O\+R}!error.\+h@{error.\+h}}
+\subsubsection[{O\+P\+E\+N\+V\+P\+N\+\_\+\+E\+X\+I\+T\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+E\+R\+R\+O\+R}]{\setlength{\rightskip}{0pt plus 5cm}\#define O\+P\+E\+N\+V\+P\+N\+\_\+\+E\+X\+I\+T\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+E\+R\+R\+O\+R~1}\label{error_8h_a8b0a091a634f6e0f411389a4af4052a9}
+\hypertarget{error_8h_a4e109c617af1a4da5ce902afc2163cd2}{}\index{error.\+h@{error.\+h}!O\+P\+E\+N\+V\+P\+N\+\_\+\+E\+X\+I\+T\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+G\+O\+O\+D@{O\+P\+E\+N\+V\+P\+N\+\_\+\+E\+X\+I\+T\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+G\+O\+O\+D}}
+\index{O\+P\+E\+N\+V\+P\+N\+\_\+\+E\+X\+I\+T\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+G\+O\+O\+D@{O\+P\+E\+N\+V\+P\+N\+\_\+\+E\+X\+I\+T\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+G\+O\+O\+D}!error.\+h@{error.\+h}}
+\subsubsection[{O\+P\+E\+N\+V\+P\+N\+\_\+\+E\+X\+I\+T\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+G\+O\+O\+D}]{\setlength{\rightskip}{0pt plus 5cm}\#define O\+P\+E\+N\+V\+P\+N\+\_\+\+E\+X\+I\+T\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+G\+O\+O\+D~0}\label{error_8h_a4e109c617af1a4da5ce902afc2163cd2}
+\hypertarget{error_8h_a4dc2ede9eb7b0406ddfaa6e37955741d}{}\index{error.\+h@{error.\+h}!O\+P\+E\+N\+V\+P\+N\+\_\+\+E\+X\+I\+T\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+U\+S\+A\+G\+E@{O\+P\+E\+N\+V\+P\+N\+\_\+\+E\+X\+I\+T\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+U\+S\+A\+G\+E}}
+\index{O\+P\+E\+N\+V\+P\+N\+\_\+\+E\+X\+I\+T\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+U\+S\+A\+G\+E@{O\+P\+E\+N\+V\+P\+N\+\_\+\+E\+X\+I\+T\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+U\+S\+A\+G\+E}!error.\+h@{error.\+h}}
+\subsubsection[{O\+P\+E\+N\+V\+P\+N\+\_\+\+E\+X\+I\+T\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+U\+S\+A\+G\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define O\+P\+E\+N\+V\+P\+N\+\_\+\+E\+X\+I\+T\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+U\+S\+A\+G\+E~1}\label{error_8h_a4dc2ede9eb7b0406ddfaa6e37955741d}
+\hypertarget{error_8h_a7490c0fb2066549c53f7517a95bfc13c}{}\index{error.\+h@{error.\+h}!O\+P\+E\+N\+V\+P\+N\+\_\+\+M\+S\+G\+\_\+\+F\+P@{O\+P\+E\+N\+V\+P\+N\+\_\+\+M\+S\+G\+\_\+\+F\+P}}
+\index{O\+P\+E\+N\+V\+P\+N\+\_\+\+M\+S\+G\+\_\+\+F\+P@{O\+P\+E\+N\+V\+P\+N\+\_\+\+M\+S\+G\+\_\+\+F\+P}!error.\+h@{error.\+h}}
+\subsubsection[{O\+P\+E\+N\+V\+P\+N\+\_\+\+M\+S\+G\+\_\+\+F\+P}]{\setlength{\rightskip}{0pt plus 5cm}\#define O\+P\+E\+N\+V\+P\+N\+\_\+\+M\+S\+G\+\_\+\+F\+P~stdout}\label{error_8h_a7490c0fb2066549c53f7517a95bfc13c}
+\hypertarget{error_8h_a0b2b940f4efcfb92d64104591882ea15}{}\index{error.\+h@{error.\+h}!openvpn\+\_\+strerror@{openvpn\+\_\+strerror}}
+\index{openvpn\+\_\+strerror@{openvpn\+\_\+strerror}!error.\+h@{error.\+h}}
+\subsubsection[{openvpn\+\_\+strerror}]{\setlength{\rightskip}{0pt plus 5cm}\#define openvpn\+\_\+strerror(
+\begin{DoxyParamCaption}
+\item[{}]{x, }
+\item[{}]{gc}
+\end{DoxyParamCaption}
+)~strerror(x)}\label{error_8h_a0b2b940f4efcfb92d64104591882ea15}
+\hypertarget{error_8h_a2e211f58831bf4b3ebe6e33d35d02b05}{}\index{error.\+h@{error.\+h}!S\+D\+L\+\_\+\+C\+O\+N\+S\+T\+R\+A\+I\+N@{S\+D\+L\+\_\+\+C\+O\+N\+S\+T\+R\+A\+I\+N}}
+\index{S\+D\+L\+\_\+\+C\+O\+N\+S\+T\+R\+A\+I\+N@{S\+D\+L\+\_\+\+C\+O\+N\+S\+T\+R\+A\+I\+N}!error.\+h@{error.\+h}}
+\subsubsection[{S\+D\+L\+\_\+\+C\+O\+N\+S\+T\+R\+A\+I\+N}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\+D\+L\+\_\+\+C\+O\+N\+S\+T\+R\+A\+I\+N~(1$<$$<$0)}\label{error_8h_a2e211f58831bf4b3ebe6e33d35d02b05}
+\hypertarget{error_8h_a12970781b04e7ea91f151a643e38b77c}{}\index{error.\+h@{error.\+h}!static\+\_\+assert@{static\+\_\+assert}}
+\index{static\+\_\+assert@{static\+\_\+assert}!error.\+h@{error.\+h}}
+\subsubsection[{static\+\_\+assert}]{\setlength{\rightskip}{0pt plus 5cm}\#define static\+\_\+assert(
+\begin{DoxyParamCaption}
+\item[{}]{expr, }
+\item[{}]{diagnostic}
+\end{DoxyParamCaption}
+)}\label{error_8h_a12970781b04e7ea91f151a643e38b77c}
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\textcolor{keyword}{extern} int (*\_\_OpenVPN\_static\_assert\_function(\textcolor{keywordtype}{void})) \(\backslash\)
+    [!!\textcolor{keyword}{sizeof}(\textcolor{keyword}{struct }\{ \textcolor{keywordtype}{int} \_\_error\_if\_negative : (expr) ? 2 : -1; \})]
+\end{DoxyCode}
+
+
+\subsection{Function Documentation}
+\hypertarget{error_8h_a4614127f69a6b3a2c020ec521c97bc79}{}\index{error.\+h@{error.\+h}!assert\+\_\+failed@{assert\+\_\+failed}}
+\index{assert\+\_\+failed@{assert\+\_\+failed}!error.\+h@{error.\+h}}
+\subsubsection[{assert\+\_\+failed(const char $\ast$filename, int line, const char $\ast$condition) \+\_\+\+\_\+attribute\+\_\+\+\_\+((\+\_\+\+\_\+noreturn\+\_\+\+\_\+))}]{\setlength{\rightskip}{0pt plus 5cm}void assert\+\_\+failed (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{filename, }
+\item[{int}]{line, }
+\item[{const char $\ast$}]{condition}
+\end{DoxyParamCaption}
+)}\label{error_8h_a4614127f69a6b3a2c020ec521c97bc79}
+\hypertarget{error_8h_a2c57c9daa70de43f5a36efa6dba65a0c}{}\index{error.\+h@{error.\+h}!close\+\_\+syslog@{close\+\_\+syslog}}
+\index{close\+\_\+syslog@{close\+\_\+syslog}!error.\+h@{error.\+h}}
+\subsubsection[{close\+\_\+syslog(void)}]{\setlength{\rightskip}{0pt plus 5cm}void close\+\_\+syslog (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{error_8h_a2c57c9daa70de43f5a36efa6dba65a0c}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{error_8h_a2c57c9daa70de43f5a36efa6dba65a0c_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{error_8h_a4f8ff3cb9e3ea249c5f370a4d5963b49}{}\index{error.\+h@{error.\+h}!dont\+\_\+mute@{dont\+\_\+mute}}
+\index{dont\+\_\+mute@{dont\+\_\+mute}!error.\+h@{error.\+h}}
+\subsubsection[{dont\+\_\+mute(unsigned int flags)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} dont\+\_\+mute (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{flags}
+\end{DoxyParamCaption}
+)}\label{error_8h_a4f8ff3cb9e3ea249c5f370a4d5963b49}
+Check muting filter 
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=320pt]{error_8h_a4f8ff3cb9e3ea249c5f370a4d5963b49_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{error_8h_a0b40f361c449800d74f89d1c14dfa3cc}{}\index{error.\+h@{error.\+h}!error\+\_\+reset@{error\+\_\+reset}}
+\index{error\+\_\+reset@{error\+\_\+reset}!error.\+h@{error.\+h}}
+\subsubsection[{error\+\_\+reset(void)}]{\setlength{\rightskip}{0pt plus 5cm}void error\+\_\+reset (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{error_8h_a0b40f361c449800d74f89d1c14dfa3cc}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{error_8h_a0b40f361c449800d74f89d1c14dfa3cc_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=238pt]{error_8h_a0b40f361c449800d74f89d1c14dfa3cc_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{error_8h_a233b2e66629459fa236ef66e4ed12e18}{}\index{error.\+h@{error.\+h}!errors\+\_\+to\+\_\+stderr@{errors\+\_\+to\+\_\+stderr}}
+\index{errors\+\_\+to\+\_\+stderr@{errors\+\_\+to\+\_\+stderr}!error.\+h@{error.\+h}}
+\subsubsection[{errors\+\_\+to\+\_\+stderr(void)}]{\setlength{\rightskip}{0pt plus 5cm}void errors\+\_\+to\+\_\+stderr (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{error_8h_a233b2e66629459fa236ef66e4ed12e18}
+\hypertarget{error_8h_a77cad2c632c4d56f6db20bc9f49e483b}{}\index{error.\+h@{error.\+h}!get\+\_\+debug\+\_\+level@{get\+\_\+debug\+\_\+level}}
+\index{get\+\_\+debug\+\_\+level@{get\+\_\+debug\+\_\+level}!error.\+h@{error.\+h}}
+\subsubsection[{get\+\_\+debug\+\_\+level(void)}]{\setlength{\rightskip}{0pt plus 5cm}int get\+\_\+debug\+\_\+level (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{error_8h_a77cad2c632c4d56f6db20bc9f49e483b}
+\hypertarget{error_8h_ae92d511635137d13fa3e3fcb5b63c30c}{}\index{error.\+h@{error.\+h}!get\+\_\+mute\+\_\+cutoff@{get\+\_\+mute\+\_\+cutoff}}
+\index{get\+\_\+mute\+\_\+cutoff@{get\+\_\+mute\+\_\+cutoff}!error.\+h@{error.\+h}}
+\subsubsection[{get\+\_\+mute\+\_\+cutoff(void)}]{\setlength{\rightskip}{0pt plus 5cm}int get\+\_\+mute\+\_\+cutoff (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{error_8h_ae92d511635137d13fa3e3fcb5b63c30c}
+\hypertarget{error_8h_a12e19662dce619502f632747e9984c78}{}\index{error.\+h@{error.\+h}!msg\+\_\+flags\+\_\+string@{msg\+\_\+flags\+\_\+string}}
+\index{msg\+\_\+flags\+\_\+string@{msg\+\_\+flags\+\_\+string}!error.\+h@{error.\+h}}
+\subsubsection[{msg\+\_\+flags\+\_\+string(const unsigned int flags, struct gc\+\_\+arena $\ast$gc)}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ msg\+\_\+flags\+\_\+string (
+\begin{DoxyParamCaption}
+\item[{const unsigned int}]{flags, }
+\item[{struct {\bf gc\+\_\+arena} $\ast$}]{gc}
+\end{DoxyParamCaption}
+)}\label{error_8h_a12e19662dce619502f632747e9984c78}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{error_8h_a12e19662dce619502f632747e9984c78_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{error_8h_a540e97cac0c01abe8f0f866788352b25}{}\index{error.\+h@{error.\+h}!msg\+\_\+forked@{msg\+\_\+forked}}
+\index{msg\+\_\+forked@{msg\+\_\+forked}!error.\+h@{error.\+h}}
+\subsubsection[{msg\+\_\+forked(void)}]{\setlength{\rightskip}{0pt plus 5cm}void msg\+\_\+forked (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{error_8h_a540e97cac0c01abe8f0f866788352b25}
+\hypertarget{error_8h_a692dbcf8520af95b60e8beb23f0155a5}{}\index{error.\+h@{error.\+h}!msg\+\_\+fp@{msg\+\_\+fp}}
+\index{msg\+\_\+fp@{msg\+\_\+fp}!error.\+h@{error.\+h}}
+\subsubsection[{msg\+\_\+fp(const unsigned int flags)}]{\setlength{\rightskip}{0pt plus 5cm}F\+I\+L\+E$\ast$ msg\+\_\+fp (
+\begin{DoxyParamCaption}
+\item[{const unsigned int}]{flags}
+\end{DoxyParamCaption}
+)}\label{error_8h_a692dbcf8520af95b60e8beb23f0155a5}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=347pt]{error_8h_a692dbcf8520af95b60e8beb23f0155a5_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=306pt]{error_8h_a692dbcf8520af95b60e8beb23f0155a5_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{error_8h_a11abb2bbc50d311b874ce9047c21c69c}{}\index{error.\+h@{error.\+h}!msg\+\_\+thread\+\_\+init@{msg\+\_\+thread\+\_\+init}}
+\index{msg\+\_\+thread\+\_\+init@{msg\+\_\+thread\+\_\+init}!error.\+h@{error.\+h}}
+\subsubsection[{msg\+\_\+thread\+\_\+init(void)}]{\setlength{\rightskip}{0pt plus 5cm}void msg\+\_\+thread\+\_\+init (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{error_8h_a11abb2bbc50d311b874ce9047c21c69c}
+\hypertarget{error_8h_adae54052261e0d3c3f377a9377b293b9}{}\index{error.\+h@{error.\+h}!msg\+\_\+thread\+\_\+uninit@{msg\+\_\+thread\+\_\+uninit}}
+\index{msg\+\_\+thread\+\_\+uninit@{msg\+\_\+thread\+\_\+uninit}!error.\+h@{error.\+h}}
+\subsubsection[{msg\+\_\+thread\+\_\+uninit(void)}]{\setlength{\rightskip}{0pt plus 5cm}void msg\+\_\+thread\+\_\+uninit (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{error_8h_adae54052261e0d3c3f377a9377b293b9}
+\hypertarget{error_8h_a291ecc71e1a4041b6816df699e7478b7}{}\index{error.\+h@{error.\+h}!open\+\_\+syslog@{open\+\_\+syslog}}
+\index{open\+\_\+syslog@{open\+\_\+syslog}!error.\+h@{error.\+h}}
+\subsubsection[{open\+\_\+syslog(const char $\ast$pgmname, bool stdio\+\_\+to\+\_\+null)}]{\setlength{\rightskip}{0pt plus 5cm}void open\+\_\+syslog (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{pgmname, }
+\item[{{\bf bool}}]{stdio\+\_\+to\+\_\+null}
+\end{DoxyParamCaption}
+)}\label{error_8h_a291ecc71e1a4041b6816df699e7478b7}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{error_8h_a291ecc71e1a4041b6816df699e7478b7_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{error_8h_abfd36ef9b390f01aad213d7062dbb78d}{}\index{error.\+h@{error.\+h}!openvpn\+\_\+exit@{openvpn\+\_\+exit}}
+\index{openvpn\+\_\+exit@{openvpn\+\_\+exit}!error.\+h@{error.\+h}}
+\subsubsection[{openvpn\+\_\+exit(const int status)}]{\setlength{\rightskip}{0pt plus 5cm}void openvpn\+\_\+exit (
+\begin{DoxyParamCaption}
+\item[{const int}]{status}
+\end{DoxyParamCaption}
+)}\label{error_8h_abfd36ef9b390f01aad213d7062dbb78d}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=263pt]{error_8h_abfd36ef9b390f01aad213d7062dbb78d_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{error_8h_abfd36ef9b390f01aad213d7062dbb78d_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{error_8h_a1f147a9ed021308a6b658c77d566a4dc}{}\index{error.\+h@{error.\+h}!out\+\_\+of\+\_\+memory@{out\+\_\+of\+\_\+memory}}
+\index{out\+\_\+of\+\_\+memory@{out\+\_\+of\+\_\+memory}!error.\+h@{error.\+h}}
+\subsubsection[{out\+\_\+of\+\_\+memory(void)}]{\setlength{\rightskip}{0pt plus 5cm}void out\+\_\+of\+\_\+memory (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{error_8h_a1f147a9ed021308a6b658c77d566a4dc}
+\hypertarget{error_8h_a9355a091e8b3e1c2c181727681c46010}{}\index{error.\+h@{error.\+h}!redirect\+\_\+stdout\+\_\+stderr@{redirect\+\_\+stdout\+\_\+stderr}}
+\index{redirect\+\_\+stdout\+\_\+stderr@{redirect\+\_\+stdout\+\_\+stderr}!error.\+h@{error.\+h}}
+\subsubsection[{redirect\+\_\+stdout\+\_\+stderr(const char $\ast$file, bool append)}]{\setlength{\rightskip}{0pt plus 5cm}void redirect\+\_\+stdout\+\_\+stderr (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{file, }
+\item[{{\bf bool}}]{append}
+\end{DoxyParamCaption}
+)}\label{error_8h_a9355a091e8b3e1c2c181727681c46010}
+\hypertarget{error_8h_ac013439368e05d67a8515f9a6295359c}{}\index{error.\+h@{error.\+h}!reset\+\_\+check\+\_\+status@{reset\+\_\+check\+\_\+status}}
+\index{reset\+\_\+check\+\_\+status@{reset\+\_\+check\+\_\+status}!error.\+h@{error.\+h}}
+\subsubsection[{reset\+\_\+check\+\_\+status(void)}]{\setlength{\rightskip}{0pt plus 5cm}void reset\+\_\+check\+\_\+status (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{error_8h_ac013439368e05d67a8515f9a6295359c}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=277pt]{error_8h_ac013439368e05d67a8515f9a6295359c_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{error_8h_ab76eae70d91e60b44b8c6478c72baae5}{}\index{error.\+h@{error.\+h}!set\+\_\+check\+\_\+status@{set\+\_\+check\+\_\+status}}
+\index{set\+\_\+check\+\_\+status@{set\+\_\+check\+\_\+status}!error.\+h@{error.\+h}}
+\subsubsection[{set\+\_\+check\+\_\+status(unsigned int info\+\_\+level, unsigned int verbose\+\_\+level)}]{\setlength{\rightskip}{0pt plus 5cm}void set\+\_\+check\+\_\+status (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{info\+\_\+level, }
+\item[{unsigned int}]{verbose\+\_\+level}
+\end{DoxyParamCaption}
+)}\label{error_8h_ab76eae70d91e60b44b8c6478c72baae5}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{error_8h_ab76eae70d91e60b44b8c6478c72baae5_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{error_8h_af250e34abb4c2f896fcfa37e10aaeebf}{}\index{error.\+h@{error.\+h}!set\+\_\+debug\+\_\+level@{set\+\_\+debug\+\_\+level}}
+\index{set\+\_\+debug\+\_\+level@{set\+\_\+debug\+\_\+level}!error.\+h@{error.\+h}}
+\subsubsection[{set\+\_\+debug\+\_\+level(const int level, const unsigned int flags)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} set\+\_\+debug\+\_\+level (
+\begin{DoxyParamCaption}
+\item[{const int}]{level, }
+\item[{const unsigned int}]{flags}
+\end{DoxyParamCaption}
+)}\label{error_8h_af250e34abb4c2f896fcfa37e10aaeebf}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{error_8h_af250e34abb4c2f896fcfa37e10aaeebf_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{error_8h_aed638b90e3fe15693140aa2395f2136b}{}\index{error.\+h@{error.\+h}!set\+\_\+machine\+\_\+readable\+\_\+output@{set\+\_\+machine\+\_\+readable\+\_\+output}}
+\index{set\+\_\+machine\+\_\+readable\+\_\+output@{set\+\_\+machine\+\_\+readable\+\_\+output}!error.\+h@{error.\+h}}
+\subsubsection[{set\+\_\+machine\+\_\+readable\+\_\+output(bool parsable)}]{\setlength{\rightskip}{0pt plus 5cm}void set\+\_\+machine\+\_\+readable\+\_\+output (
+\begin{DoxyParamCaption}
+\item[{{\bf bool}}]{parsable}
+\end{DoxyParamCaption}
+)}\label{error_8h_aed638b90e3fe15693140aa2395f2136b}
+\hypertarget{error_8h_aa24606a2ec1cb6e454a387c4fd709545}{}\index{error.\+h@{error.\+h}!set\+\_\+mute\+\_\+cutoff@{set\+\_\+mute\+\_\+cutoff}}
+\index{set\+\_\+mute\+\_\+cutoff@{set\+\_\+mute\+\_\+cutoff}!error.\+h@{error.\+h}}
+\subsubsection[{set\+\_\+mute\+\_\+cutoff(const int cutoff)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} set\+\_\+mute\+\_\+cutoff (
+\begin{DoxyParamCaption}
+\item[{const int}]{cutoff}
+\end{DoxyParamCaption}
+)}\label{error_8h_aa24606a2ec1cb6e454a387c4fd709545}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{error_8h_aa24606a2ec1cb6e454a387c4fd709545_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{error_8h_aeb50a33f9d057f0a90a5e8d57541d687}{}\index{error.\+h@{error.\+h}!set\+\_\+suppress\+\_\+timestamps@{set\+\_\+suppress\+\_\+timestamps}}
+\index{set\+\_\+suppress\+\_\+timestamps@{set\+\_\+suppress\+\_\+timestamps}!error.\+h@{error.\+h}}
+\subsubsection[{set\+\_\+suppress\+\_\+timestamps(bool suppressed)}]{\setlength{\rightskip}{0pt plus 5cm}void set\+\_\+suppress\+\_\+timestamps (
+\begin{DoxyParamCaption}
+\item[{{\bf bool}}]{suppressed}
+\end{DoxyParamCaption}
+)}\label{error_8h_aeb50a33f9d057f0a90a5e8d57541d687}
+\hypertarget{error_8h_a67f3e46b0c81125d48254aac6fbf92eb}{}\index{error.\+h@{error.\+h}!x\+\_\+check\+\_\+status@{x\+\_\+check\+\_\+status}}
+\index{x\+\_\+check\+\_\+status@{x\+\_\+check\+\_\+status}!error.\+h@{error.\+h}}
+\subsubsection[{x\+\_\+check\+\_\+status(int status, const char $\ast$description, struct link\+\_\+socket $\ast$sock, struct tuntap $\ast$tt)}]{\setlength{\rightskip}{0pt plus 5cm}void x\+\_\+check\+\_\+status (
+\begin{DoxyParamCaption}
+\item[{int}]{status, }
+\item[{const char $\ast$}]{description, }
+\item[{struct {\bf link\+\_\+socket} $\ast$}]{sock, }
+\item[{struct {\bf tuntap} $\ast$}]{tt}
+\end{DoxyParamCaption}
+)}\label{error_8h_a67f3e46b0c81125d48254aac6fbf92eb}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=341pt]{error_8h_a67f3e46b0c81125d48254aac6fbf92eb_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{error_8h_a69aed7acd879be502a26b9114f9da2cc}{}\index{error.\+h@{error.\+h}!x\+\_\+msg@{x\+\_\+msg}}
+\index{x\+\_\+msg@{x\+\_\+msg}!error.\+h@{error.\+h}}
+\subsubsection[{x\+\_\+msg(const unsigned int flags, const char $\ast$format,...)}]{\setlength{\rightskip}{0pt plus 5cm}void x\+\_\+msg (
+\begin{DoxyParamCaption}
+\item[{const unsigned int}]{flags, }
+\item[{const char $\ast$}]{format, }
+\item[{}]{...}
+\end{DoxyParamCaption}
+)}\label{error_8h_a69aed7acd879be502a26b9114f9da2cc}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{error_8h_a69aed7acd879be502a26b9114f9da2cc_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{error_8h_a98e586e25ee166a62299c110f598f952}{}\index{error.\+h@{error.\+h}!x\+\_\+msg\+\_\+va@{x\+\_\+msg\+\_\+va}}
+\index{x\+\_\+msg\+\_\+va@{x\+\_\+msg\+\_\+va}!error.\+h@{error.\+h}}
+\subsubsection[{x\+\_\+msg\+\_\+va(const unsigned int flags, const char $\ast$format, va\+\_\+list arglist)}]{\setlength{\rightskip}{0pt plus 5cm}void x\+\_\+msg\+\_\+va (
+\begin{DoxyParamCaption}
+\item[{const unsigned int}]{flags, }
+\item[{const char $\ast$}]{format, }
+\item[{va\+\_\+list}]{arglist}
+\end{DoxyParamCaption}
+)}\label{error_8h_a98e586e25ee166a62299c110f598f952}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{error_8h_a98e586e25ee166a62299c110f598f952_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=222pt]{error_8h_a98e586e25ee166a62299c110f598f952_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Variable Documentation}
+\hypertarget{error_8h_affed9095be74ace9a8570c3093acb09b}{}\index{error.\+h@{error.\+h}!x\+\_\+cs\+\_\+err\+\_\+delay\+\_\+ms@{x\+\_\+cs\+\_\+err\+\_\+delay\+\_\+ms}}
+\index{x\+\_\+cs\+\_\+err\+\_\+delay\+\_\+ms@{x\+\_\+cs\+\_\+err\+\_\+delay\+\_\+ms}!error.\+h@{error.\+h}}
+\subsubsection[{x\+\_\+cs\+\_\+err\+\_\+delay\+\_\+ms}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int x\+\_\+cs\+\_\+err\+\_\+delay\+\_\+ms}\label{error_8h_affed9095be74ace9a8570c3093acb09b}
+\hypertarget{error_8h_a3e0fc77ce12c6cd6eb1b224290064a04}{}\index{error.\+h@{error.\+h}!x\+\_\+cs\+\_\+info\+\_\+level@{x\+\_\+cs\+\_\+info\+\_\+level}}
+\index{x\+\_\+cs\+\_\+info\+\_\+level@{x\+\_\+cs\+\_\+info\+\_\+level}!error.\+h@{error.\+h}}
+\subsubsection[{x\+\_\+cs\+\_\+info\+\_\+level}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int x\+\_\+cs\+\_\+info\+\_\+level}\label{error_8h_a3e0fc77ce12c6cd6eb1b224290064a04}
+\hypertarget{error_8h_aba212c1f2512355010d35d8fa7a0d43c}{}\index{error.\+h@{error.\+h}!x\+\_\+cs\+\_\+verbose\+\_\+level@{x\+\_\+cs\+\_\+verbose\+\_\+level}}
+\index{x\+\_\+cs\+\_\+verbose\+\_\+level@{x\+\_\+cs\+\_\+verbose\+\_\+level}!error.\+h@{error.\+h}}
+\subsubsection[{x\+\_\+cs\+\_\+verbose\+\_\+level}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int x\+\_\+cs\+\_\+verbose\+\_\+level}\label{error_8h_aba212c1f2512355010d35d8fa7a0d43c}
+\hypertarget{error_8h_a0cf2e25fae07d4a6ab95d494428a698c}{}\index{error.\+h@{error.\+h}!x\+\_\+debug\+\_\+level@{x\+\_\+debug\+\_\+level}}
+\index{x\+\_\+debug\+\_\+level@{x\+\_\+debug\+\_\+level}!error.\+h@{error.\+h}}
+\subsubsection[{x\+\_\+debug\+\_\+level}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int x\+\_\+debug\+\_\+level}\label{error_8h_a0cf2e25fae07d4a6ab95d494428a698c}
+\hypertarget{error_8h_a6182ffedfd04856c7a6147b4aba0f774}{}\index{error.\+h@{error.\+h}!x\+\_\+msg\+\_\+line\+\_\+num@{x\+\_\+msg\+\_\+line\+\_\+num}}
+\index{x\+\_\+msg\+\_\+line\+\_\+num@{x\+\_\+msg\+\_\+line\+\_\+num}!error.\+h@{error.\+h}}
+\subsubsection[{x\+\_\+msg\+\_\+line\+\_\+num}]{\setlength{\rightskip}{0pt plus 5cm}int x\+\_\+msg\+\_\+line\+\_\+num}\label{error_8h_a6182ffedfd04856c7a6147b4aba0f774}
+\hypertarget{error_8h_a5bc1525dd52536077d1d6f0571112d7f}{}\index{error.\+h@{error.\+h}!x\+\_\+msg\+\_\+prefix@{x\+\_\+msg\+\_\+prefix}}
+\index{x\+\_\+msg\+\_\+prefix@{x\+\_\+msg\+\_\+prefix}!error.\+h@{error.\+h}}
+\subsubsection[{x\+\_\+msg\+\_\+prefix}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ x\+\_\+msg\+\_\+prefix}\label{error_8h_a5bc1525dd52536077d1d6f0571112d7f}
+\hypertarget{error_8h_a12161c08ca4f1909ace7d8b71bee8d3e}{}\index{error.\+h@{error.\+h}!x\+\_\+msg\+\_\+virtual\+\_\+output@{x\+\_\+msg\+\_\+virtual\+\_\+output}}
+\index{x\+\_\+msg\+\_\+virtual\+\_\+output@{x\+\_\+msg\+\_\+virtual\+\_\+output}!error.\+h@{error.\+h}}
+\subsubsection[{x\+\_\+msg\+\_\+virtual\+\_\+output}]{\setlength{\rightskip}{0pt plus 5cm}const struct {\bf virtual\+\_\+output}$\ast$ x\+\_\+msg\+\_\+virtual\+\_\+output}\label{error_8h_a12161c08ca4f1909ace7d8b71bee8d3e}

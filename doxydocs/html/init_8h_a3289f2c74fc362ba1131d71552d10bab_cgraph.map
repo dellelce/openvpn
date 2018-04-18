@@ -1,0 +1,5 @@
+<map id="inherit_context_top" name="inherit_context_top">
+<area shape="rect" id="node2" href="$options_8c.html#aaf33ed424941f850b99c2a26d6f64378" title="options_detach" alt="" coords="185,5,296,32"/>
+<area shape="rect" id="node3" href="$socket_8c.html#adbff197bdb9734118cdf9889650477ae" title="proto_is_dgram" alt="" coords="185,56,296,83"/>
+<area shape="rect" id="node4" href="$socket_8c.html#a86424bdc75e8f05f00a649f30f897110" title="proto_is_udp" alt="" coords="344,56,440,83"/>
+</map>

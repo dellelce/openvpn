@@ -1,0 +1,137 @@
+\hypertarget{compat_8h}{}\section{src/compat/compat.h File Reference}
+\label{compat_8h}\index{src/compat/compat.\+h@{src/compat/compat.\+h}}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{compat_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+char $\ast$ \hyperlink{compat_8h_ac27f2c6cf41fe0cd9d8e47c6e23e4c0a}{dirname} (char $\ast$str)
+\item 
+char $\ast$ \hyperlink{compat_8h_a817969c4fe20a121e99fda658e88fbc7}{basename} (char $\ast$str)
+\item 
+int \hyperlink{compat_8h_a2f316a4ad94a242df56b01953677015d}{gettimeofday} (struct timeval $\ast$tv, void $\ast$tz)
+\item 
+int \hyperlink{compat_8h_af298996def620cbda4cd529988218cb0}{daemon} (int nochdir, int noclose)
+\item 
+const char $\ast$ \hyperlink{compat_8h_a102fcb53ee2ffdbeceeec5b5ffa0cb1c}{inet\+\_\+ntop} (int af, const void $\ast$src, char $\ast$\hyperlink{compat-lz4_8h_a961c13eb7fcda15b167b953cac1ab3ec}{dst}, socklen\+\_\+t size)
+\item 
+int \hyperlink{compat_8h_acdce1d46efd09e8485a2f682b388ebc0}{inet\+\_\+pton} (int af, const char $\ast$src, void $\ast$\hyperlink{compat-lz4_8h_a961c13eb7fcda15b167b953cac1ab3ec}{dst})
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{compat_8h_a817969c4fe20a121e99fda658e88fbc7}{}\index{compat.\+h@{compat.\+h}!basename@{basename}}
+\index{basename@{basename}!compat.\+h@{compat.\+h}}
+\subsubsection[{basename(char $\ast$str)}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ basename (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{str}
+\end{DoxyParamCaption}
+)}\label{compat_8h_a817969c4fe20a121e99fda658e88fbc7}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=264pt]{compat_8h_a817969c4fe20a121e99fda658e88fbc7_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{compat_8h_af298996def620cbda4cd529988218cb0}{}\index{compat.\+h@{compat.\+h}!daemon@{daemon}}
+\index{daemon@{daemon}!compat.\+h@{compat.\+h}}
+\subsubsection[{daemon(int nochdir, int noclose)}]{\setlength{\rightskip}{0pt plus 5cm}int daemon (
+\begin{DoxyParamCaption}
+\item[{int}]{nochdir, }
+\item[{int}]{noclose}
+\end{DoxyParamCaption}
+)}\label{compat_8h_af298996def620cbda4cd529988218cb0}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=299pt]{compat_8h_af298996def620cbda4cd529988218cb0_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{compat_8h_ac27f2c6cf41fe0cd9d8e47c6e23e4c0a}{}\index{compat.\+h@{compat.\+h}!dirname@{dirname}}
+\index{dirname@{dirname}!compat.\+h@{compat.\+h}}
+\subsubsection[{dirname(char $\ast$str)}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ dirname (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{str}
+\end{DoxyParamCaption}
+)}\label{compat_8h_ac27f2c6cf41fe0cd9d8e47c6e23e4c0a}
+\hypertarget{compat_8h_a2f316a4ad94a242df56b01953677015d}{}\index{compat.\+h@{compat.\+h}!gettimeofday@{gettimeofday}}
+\index{gettimeofday@{gettimeofday}!compat.\+h@{compat.\+h}}
+\subsubsection[{gettimeofday(struct timeval $\ast$tv, void $\ast$tz)}]{\setlength{\rightskip}{0pt plus 5cm}int gettimeofday (
+\begin{DoxyParamCaption}
+\item[{struct timeval $\ast$}]{tv, }
+\item[{void $\ast$}]{tz}
+\end{DoxyParamCaption}
+)}\label{compat_8h_a2f316a4ad94a242df56b01953677015d}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{compat_8h_a2f316a4ad94a242df56b01953677015d_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{compat_8h_a102fcb53ee2ffdbeceeec5b5ffa0cb1c}{}\index{compat.\+h@{compat.\+h}!inet\+\_\+ntop@{inet\+\_\+ntop}}
+\index{inet\+\_\+ntop@{inet\+\_\+ntop}!compat.\+h@{compat.\+h}}
+\subsubsection[{inet\+\_\+ntop(int af, const void $\ast$src, char $\ast$dst, socklen\+\_\+t size)}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ inet\+\_\+ntop (
+\begin{DoxyParamCaption}
+\item[{int}]{af, }
+\item[{const void $\ast$}]{src, }
+\item[{char $\ast$}]{dst, }
+\item[{socklen\+\_\+t}]{size}
+\end{DoxyParamCaption}
+)}\label{compat_8h_a102fcb53ee2ffdbeceeec5b5ffa0cb1c}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{compat_8h_a102fcb53ee2ffdbeceeec5b5ffa0cb1c_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{compat_8h_acdce1d46efd09e8485a2f682b388ebc0}{}\index{compat.\+h@{compat.\+h}!inet\+\_\+pton@{inet\+\_\+pton}}
+\index{inet\+\_\+pton@{inet\+\_\+pton}!compat.\+h@{compat.\+h}}
+\subsubsection[{inet\+\_\+pton(int af, const char $\ast$src, void $\ast$dst)}]{\setlength{\rightskip}{0pt plus 5cm}int inet\+\_\+pton (
+\begin{DoxyParamCaption}
+\item[{int}]{af, }
+\item[{const char $\ast$}]{src, }
+\item[{void $\ast$}]{dst}
+\end{DoxyParamCaption}
+)}\label{compat_8h_acdce1d46efd09e8485a2f682b388ebc0}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{compat_8h_acdce1d46efd09e8485a2f682b388ebc0_icgraph}
+\end{center}
+\end{figure}
+
+

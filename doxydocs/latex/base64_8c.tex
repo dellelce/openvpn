@@ -1,0 +1,76 @@
+\hypertarget{base64_8c}{}\section{src/openvpn/base64.c File Reference}
+\label{base64_8c}\index{src/openvpn/base64.\+c@{src/openvpn/base64.\+c}}
+{\ttfamily \#include \char`\"{}syshead.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}base64.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}memdbg.\+h\char`\"{}}\\*
+Include dependency graph for base64.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=330pt]{base64_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{base64_8c_ad21cc58ec3fb3407eee2c3729bf6dec2}{D\+E\+C\+O\+D\+E\+\_\+\+E\+R\+R\+O\+R}~0xffffffff
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{base64_8c_aa4ba2746be38180fa210944b20a1a6e4}{openvpn\+\_\+base64\+\_\+encode} (const void $\ast$data, int size, char $\ast$$\ast$str)
+\item 
+int \hyperlink{base64_8c_a2f7387816b480eb935792adaa665a0b2}{openvpn\+\_\+base64\+\_\+decode} (const char $\ast$str, void $\ast$data, int size)
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{base64_8c_ad21cc58ec3fb3407eee2c3729bf6dec2}{}\index{base64.\+c@{base64.\+c}!D\+E\+C\+O\+D\+E\+\_\+\+E\+R\+R\+O\+R@{D\+E\+C\+O\+D\+E\+\_\+\+E\+R\+R\+O\+R}}
+\index{D\+E\+C\+O\+D\+E\+\_\+\+E\+R\+R\+O\+R@{D\+E\+C\+O\+D\+E\+\_\+\+E\+R\+R\+O\+R}!base64.\+c@{base64.\+c}}
+\subsubsection[{D\+E\+C\+O\+D\+E\+\_\+\+E\+R\+R\+O\+R}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+E\+C\+O\+D\+E\+\_\+\+E\+R\+R\+O\+R~0xffffffff}\label{base64_8c_ad21cc58ec3fb3407eee2c3729bf6dec2}
+
+
+\subsection{Function Documentation}
+\hypertarget{base64_8c_a2f7387816b480eb935792adaa665a0b2}{}\index{base64.\+c@{base64.\+c}!openvpn\+\_\+base64\+\_\+decode@{openvpn\+\_\+base64\+\_\+decode}}
+\index{openvpn\+\_\+base64\+\_\+decode@{openvpn\+\_\+base64\+\_\+decode}!base64.\+c@{base64.\+c}}
+\subsubsection[{openvpn\+\_\+base64\+\_\+decode(const char $\ast$str, void $\ast$data, int size)}]{\setlength{\rightskip}{0pt plus 5cm}int openvpn\+\_\+base64\+\_\+decode (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{str, }
+\item[{void $\ast$}]{data, }
+\item[{int}]{size}
+\end{DoxyParamCaption}
+)}\label{base64_8c_a2f7387816b480eb935792adaa665a0b2}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{base64_8c_a2f7387816b480eb935792adaa665a0b2_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{base64_8c_aa4ba2746be38180fa210944b20a1a6e4}{}\index{base64.\+c@{base64.\+c}!openvpn\+\_\+base64\+\_\+encode@{openvpn\+\_\+base64\+\_\+encode}}
+\index{openvpn\+\_\+base64\+\_\+encode@{openvpn\+\_\+base64\+\_\+encode}!base64.\+c@{base64.\+c}}
+\subsubsection[{openvpn\+\_\+base64\+\_\+encode(const void $\ast$data, int size, char $\ast$$\ast$str)}]{\setlength{\rightskip}{0pt plus 5cm}int openvpn\+\_\+base64\+\_\+encode (
+\begin{DoxyParamCaption}
+\item[{const void $\ast$}]{data, }
+\item[{int}]{size, }
+\item[{char $\ast$$\ast$}]{str}
+\end{DoxyParamCaption}
+)}\label{base64_8c_aa4ba2746be38180fa210944b20a1a6e4}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{base64_8c_aa4ba2746be38180fa210944b20a1a6e4_icgraph}
+\end{center}
+\end{figure}
+
+

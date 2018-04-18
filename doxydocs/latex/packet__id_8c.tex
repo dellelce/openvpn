@@ -1,0 +1,351 @@
+\hypertarget{packet__id_8c}{}\section{src/openvpn/packet\+\_\+id.c File Reference}
+\label{packet__id_8c}\index{src/openvpn/packet\+\_\+id.\+c@{src/openvpn/packet\+\_\+id.\+c}}
+{\ttfamily \#include \char`\"{}syshead.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}packet\+\_\+id.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}misc.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}integer.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}memdbg.\+h\char`\"{}}\\*
+Include dependency graph for packet\+\_\+id.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{packet__id_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{packet__id_8c_a32230d81dff9db802500aff4495d23bb}{S\+E\+Q\+\_\+\+U\+N\+S\+E\+E\+N}~((time\+\_\+t)0)
+\item 
+\#define \hyperlink{packet__id_8c_ac1bdf3aaf9f2a55d549646f754916340}{S\+E\+Q\+\_\+\+E\+X\+P\+I\+R\+E\+D}~((time\+\_\+t)1)
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{packet__id_8c_a2ed0adcc640944fdb68ef1e394fc4f32}{packet\+\_\+id\+\_\+init} (struct \hyperlink{structpacket__id}{packet\+\_\+id} $\ast$p, int seq\+\_\+backtrack, int time\+\_\+backtrack, const char $\ast$name, int unit)
+\item 
+void \hyperlink{packet__id_8c_a5162087628a8856757b82c93cf4a696b}{packet\+\_\+id\+\_\+free} (struct \hyperlink{structpacket__id}{packet\+\_\+id} $\ast$p)
+\item 
+void \hyperlink{packet__id_8c_ab5f78b3bd91dc5e3ef4946855365933a}{packet\+\_\+id\+\_\+add} (struct \hyperlink{structpacket__id__rec}{packet\+\_\+id\+\_\+rec} $\ast$p, const struct \hyperlink{structpacket__id__net}{packet\+\_\+id\+\_\+net} $\ast$pin)
+\item 
+void \hyperlink{packet__id_8c_aa2b33d1c90ab197e51fc502282d6f172}{packet\+\_\+id\+\_\+reap} (struct \hyperlink{structpacket__id__rec}{packet\+\_\+id\+\_\+rec} $\ast$p)
+\item 
+\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} \hyperlink{packet__id_8c_a68f8055e781f23fe159e979550e3b60b}{packet\+\_\+id\+\_\+test} (struct \hyperlink{structpacket__id__rec}{packet\+\_\+id\+\_\+rec} $\ast$p, const struct \hyperlink{structpacket__id__net}{packet\+\_\+id\+\_\+net} $\ast$pin)
+\item 
+\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} \hyperlink{packet__id_8c_a698b7a89921d8dc6441b47b87545c18d}{packet\+\_\+id\+\_\+read} (struct \hyperlink{structpacket__id__net}{packet\+\_\+id\+\_\+net} $\ast$pin, struct \hyperlink{structbuffer}{buffer} $\ast$buf, \hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} long\+\_\+form)
+\item 
+\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} \hyperlink{packet__id_8c_aee6501cdf56ed860554c95fd7e89854d}{packet\+\_\+id\+\_\+write} (struct \hyperlink{structpacket__id__send}{packet\+\_\+id\+\_\+send} $\ast$p, struct \hyperlink{structbuffer}{buffer} $\ast$buf, \hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} long\+\_\+form, \hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} prepend)
+\item 
+const char $\ast$ \hyperlink{packet__id_8c_a80c9b2288cb1df565dad9d7b65837ace}{packet\+\_\+id\+\_\+net\+\_\+print} (const struct \hyperlink{structpacket__id__net}{packet\+\_\+id\+\_\+net} $\ast$pin, \hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} print\+\_\+timestamp, struct \hyperlink{structgc__arena}{gc\+\_\+arena} $\ast$gc)
+\item 
+void \hyperlink{packet__id_8c_ad94f10b2db56c515a76480bd23d003aa}{packet\+\_\+id\+\_\+persist\+\_\+init} (struct \hyperlink{structpacket__id__persist}{packet\+\_\+id\+\_\+persist} $\ast$p)
+\item 
+void \hyperlink{packet__id_8c_a3f6e28af6874fe3665778dc54a8752cb}{packet\+\_\+id\+\_\+persist\+\_\+close} (struct \hyperlink{structpacket__id__persist}{packet\+\_\+id\+\_\+persist} $\ast$p)
+\item 
+void \hyperlink{packet__id_8c_ad4f489a3f0c44154ef52e924a1ef4caa}{packet\+\_\+id\+\_\+persist\+\_\+load} (struct \hyperlink{structpacket__id__persist}{packet\+\_\+id\+\_\+persist} $\ast$p, const char $\ast$filename)
+\item 
+void \hyperlink{packet__id_8c_a1a1b4689057b6361657f57fe65bd4f93}{packet\+\_\+id\+\_\+persist\+\_\+save} (struct \hyperlink{structpacket__id__persist}{packet\+\_\+id\+\_\+persist} $\ast$p)
+\item 
+void \hyperlink{packet__id_8c_a249d12dcab1d0a2bc424990138caa4e5}{packet\+\_\+id\+\_\+persist\+\_\+load\+\_\+obj} (const struct \hyperlink{structpacket__id__persist}{packet\+\_\+id\+\_\+persist} $\ast$p, struct \hyperlink{structpacket__id}{packet\+\_\+id} $\ast$pid)
+\item 
+const char $\ast$ \hyperlink{packet__id_8c_ae872b1bbf2e3afd6a6d3d2ab1271b43c}{packet\+\_\+id\+\_\+persist\+\_\+print} (const struct \hyperlink{structpacket__id__persist}{packet\+\_\+id\+\_\+persist} $\ast$p, struct \hyperlink{structgc__arena}{gc\+\_\+arena} $\ast$gc)
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{packet__id_8c_ac1bdf3aaf9f2a55d549646f754916340}{}\index{packet\+\_\+id.\+c@{packet\+\_\+id.\+c}!S\+E\+Q\+\_\+\+E\+X\+P\+I\+R\+E\+D@{S\+E\+Q\+\_\+\+E\+X\+P\+I\+R\+E\+D}}
+\index{S\+E\+Q\+\_\+\+E\+X\+P\+I\+R\+E\+D@{S\+E\+Q\+\_\+\+E\+X\+P\+I\+R\+E\+D}!packet\+\_\+id.\+c@{packet\+\_\+id.\+c}}
+\subsubsection[{S\+E\+Q\+\_\+\+E\+X\+P\+I\+R\+E\+D}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\+E\+Q\+\_\+\+E\+X\+P\+I\+R\+E\+D~((time\+\_\+t)1)}\label{packet__id_8c_ac1bdf3aaf9f2a55d549646f754916340}
+\hypertarget{packet__id_8c_a32230d81dff9db802500aff4495d23bb}{}\index{packet\+\_\+id.\+c@{packet\+\_\+id.\+c}!S\+E\+Q\+\_\+\+U\+N\+S\+E\+E\+N@{S\+E\+Q\+\_\+\+U\+N\+S\+E\+E\+N}}
+\index{S\+E\+Q\+\_\+\+U\+N\+S\+E\+E\+N@{S\+E\+Q\+\_\+\+U\+N\+S\+E\+E\+N}!packet\+\_\+id.\+c@{packet\+\_\+id.\+c}}
+\subsubsection[{S\+E\+Q\+\_\+\+U\+N\+S\+E\+E\+N}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\+E\+Q\+\_\+\+U\+N\+S\+E\+E\+N~((time\+\_\+t)0)}\label{packet__id_8c_a32230d81dff9db802500aff4495d23bb}
+
+
+\subsection{Function Documentation}
+\hypertarget{packet__id_8c_ab5f78b3bd91dc5e3ef4946855365933a}{}\index{packet\+\_\+id.\+c@{packet\+\_\+id.\+c}!packet\+\_\+id\+\_\+add@{packet\+\_\+id\+\_\+add}}
+\index{packet\+\_\+id\+\_\+add@{packet\+\_\+id\+\_\+add}!packet\+\_\+id.\+c@{packet\+\_\+id.\+c}}
+\subsubsection[{packet\+\_\+id\+\_\+add(struct packet\+\_\+id\+\_\+rec $\ast$p, const struct packet\+\_\+id\+\_\+net $\ast$pin)}]{\setlength{\rightskip}{0pt plus 5cm}void packet\+\_\+id\+\_\+add (
+\begin{DoxyParamCaption}
+\item[{struct {\bf packet\+\_\+id\+\_\+rec} $\ast$}]{p, }
+\item[{const struct {\bf packet\+\_\+id\+\_\+net} $\ast$}]{pin}
+\end{DoxyParamCaption}
+)}\label{packet__id_8c_ab5f78b3bd91dc5e3ef4946855365933a}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{packet__id_8c_ab5f78b3bd91dc5e3ef4946855365933a_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{packet__id_8c_ab5f78b3bd91dc5e3ef4946855365933a_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{packet__id_8c_a5162087628a8856757b82c93cf4a696b}{}\index{packet\+\_\+id.\+c@{packet\+\_\+id.\+c}!packet\+\_\+id\+\_\+free@{packet\+\_\+id\+\_\+free}}
+\index{packet\+\_\+id\+\_\+free@{packet\+\_\+id\+\_\+free}!packet\+\_\+id.\+c@{packet\+\_\+id.\+c}}
+\subsubsection[{packet\+\_\+id\+\_\+free(struct packet\+\_\+id $\ast$p)}]{\setlength{\rightskip}{0pt plus 5cm}void packet\+\_\+id\+\_\+free (
+\begin{DoxyParamCaption}
+\item[{struct {\bf packet\+\_\+id} $\ast$}]{p}
+\end{DoxyParamCaption}
+)}\label{packet__id_8c_a5162087628a8856757b82c93cf4a696b}
+\hypertarget{packet__id_8c_a2ed0adcc640944fdb68ef1e394fc4f32}{}\index{packet\+\_\+id.\+c@{packet\+\_\+id.\+c}!packet\+\_\+id\+\_\+init@{packet\+\_\+id\+\_\+init}}
+\index{packet\+\_\+id\+\_\+init@{packet\+\_\+id\+\_\+init}!packet\+\_\+id.\+c@{packet\+\_\+id.\+c}}
+\subsubsection[{packet\+\_\+id\+\_\+init(struct packet\+\_\+id $\ast$p, int seq\+\_\+backtrack, int time\+\_\+backtrack, const char $\ast$name, int unit)}]{\setlength{\rightskip}{0pt plus 5cm}void packet\+\_\+id\+\_\+init (
+\begin{DoxyParamCaption}
+\item[{struct {\bf packet\+\_\+id} $\ast$}]{p, }
+\item[{int}]{seq\+\_\+backtrack, }
+\item[{int}]{time\+\_\+backtrack, }
+\item[{const char $\ast$}]{name, }
+\item[{int}]{unit}
+\end{DoxyParamCaption}
+)}\label{packet__id_8c_a2ed0adcc640944fdb68ef1e394fc4f32}
+\hypertarget{packet__id_8c_a80c9b2288cb1df565dad9d7b65837ace}{}\index{packet\+\_\+id.\+c@{packet\+\_\+id.\+c}!packet\+\_\+id\+\_\+net\+\_\+print@{packet\+\_\+id\+\_\+net\+\_\+print}}
+\index{packet\+\_\+id\+\_\+net\+\_\+print@{packet\+\_\+id\+\_\+net\+\_\+print}!packet\+\_\+id.\+c@{packet\+\_\+id.\+c}}
+\subsubsection[{packet\+\_\+id\+\_\+net\+\_\+print(const struct packet\+\_\+id\+\_\+net $\ast$pin, bool print\+\_\+timestamp, struct gc\+\_\+arena $\ast$gc)}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ packet\+\_\+id\+\_\+net\+\_\+print (
+\begin{DoxyParamCaption}
+\item[{const struct {\bf packet\+\_\+id\+\_\+net} $\ast$}]{pin, }
+\item[{{\bf bool}}]{print\+\_\+timestamp, }
+\item[{struct {\bf gc\+\_\+arena} $\ast$}]{gc}
+\end{DoxyParamCaption}
+)}\label{packet__id_8c_a80c9b2288cb1df565dad9d7b65837ace}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{packet__id_8c_a80c9b2288cb1df565dad9d7b65837ace_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{packet__id_8c_a80c9b2288cb1df565dad9d7b65837ace_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{packet__id_8c_a3f6e28af6874fe3665778dc54a8752cb}{}\index{packet\+\_\+id.\+c@{packet\+\_\+id.\+c}!packet\+\_\+id\+\_\+persist\+\_\+close@{packet\+\_\+id\+\_\+persist\+\_\+close}}
+\index{packet\+\_\+id\+\_\+persist\+\_\+close@{packet\+\_\+id\+\_\+persist\+\_\+close}!packet\+\_\+id.\+c@{packet\+\_\+id.\+c}}
+\subsubsection[{packet\+\_\+id\+\_\+persist\+\_\+close(struct packet\+\_\+id\+\_\+persist $\ast$p)}]{\setlength{\rightskip}{0pt plus 5cm}void packet\+\_\+id\+\_\+persist\+\_\+close (
+\begin{DoxyParamCaption}
+\item[{struct {\bf packet\+\_\+id\+\_\+persist} $\ast$}]{p}
+\end{DoxyParamCaption}
+)}\label{packet__id_8c_a3f6e28af6874fe3665778dc54a8752cb}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=349pt]{packet__id_8c_a3f6e28af6874fe3665778dc54a8752cb_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{packet__id_8c_ad94f10b2db56c515a76480bd23d003aa}{}\index{packet\+\_\+id.\+c@{packet\+\_\+id.\+c}!packet\+\_\+id\+\_\+persist\+\_\+init@{packet\+\_\+id\+\_\+persist\+\_\+init}}
+\index{packet\+\_\+id\+\_\+persist\+\_\+init@{packet\+\_\+id\+\_\+persist\+\_\+init}!packet\+\_\+id.\+c@{packet\+\_\+id.\+c}}
+\subsubsection[{packet\+\_\+id\+\_\+persist\+\_\+init(struct packet\+\_\+id\+\_\+persist $\ast$p)}]{\setlength{\rightskip}{0pt plus 5cm}void packet\+\_\+id\+\_\+persist\+\_\+init (
+\begin{DoxyParamCaption}
+\item[{struct {\bf packet\+\_\+id\+\_\+persist} $\ast$}]{p}
+\end{DoxyParamCaption}
+)}\label{packet__id_8c_ad94f10b2db56c515a76480bd23d003aa}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=349pt]{packet__id_8c_ad94f10b2db56c515a76480bd23d003aa_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{packet__id_8c_ad4f489a3f0c44154ef52e924a1ef4caa}{}\index{packet\+\_\+id.\+c@{packet\+\_\+id.\+c}!packet\+\_\+id\+\_\+persist\+\_\+load@{packet\+\_\+id\+\_\+persist\+\_\+load}}
+\index{packet\+\_\+id\+\_\+persist\+\_\+load@{packet\+\_\+id\+\_\+persist\+\_\+load}!packet\+\_\+id.\+c@{packet\+\_\+id.\+c}}
+\subsubsection[{packet\+\_\+id\+\_\+persist\+\_\+load(struct packet\+\_\+id\+\_\+persist $\ast$p, const char $\ast$filename)}]{\setlength{\rightskip}{0pt plus 5cm}void packet\+\_\+id\+\_\+persist\+\_\+load (
+\begin{DoxyParamCaption}
+\item[{struct {\bf packet\+\_\+id\+\_\+persist} $\ast$}]{p, }
+\item[{const char $\ast$}]{filename}
+\end{DoxyParamCaption}
+)}\label{packet__id_8c_ad4f489a3f0c44154ef52e924a1ef4caa}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{packet__id_8c_ad4f489a3f0c44154ef52e924a1ef4caa_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{packet__id_8c_a249d12dcab1d0a2bc424990138caa4e5}{}\index{packet\+\_\+id.\+c@{packet\+\_\+id.\+c}!packet\+\_\+id\+\_\+persist\+\_\+load\+\_\+obj@{packet\+\_\+id\+\_\+persist\+\_\+load\+\_\+obj}}
+\index{packet\+\_\+id\+\_\+persist\+\_\+load\+\_\+obj@{packet\+\_\+id\+\_\+persist\+\_\+load\+\_\+obj}!packet\+\_\+id.\+c@{packet\+\_\+id.\+c}}
+\subsubsection[{packet\+\_\+id\+\_\+persist\+\_\+load\+\_\+obj(const struct packet\+\_\+id\+\_\+persist $\ast$p, struct packet\+\_\+id $\ast$pid)}]{\setlength{\rightskip}{0pt plus 5cm}void packet\+\_\+id\+\_\+persist\+\_\+load\+\_\+obj (
+\begin{DoxyParamCaption}
+\item[{const struct {\bf packet\+\_\+id\+\_\+persist} $\ast$}]{p, }
+\item[{struct {\bf packet\+\_\+id} $\ast$}]{pid}
+\end{DoxyParamCaption}
+)}\label{packet__id_8c_a249d12dcab1d0a2bc424990138caa4e5}
+\hypertarget{packet__id_8c_ae872b1bbf2e3afd6a6d3d2ab1271b43c}{}\index{packet\+\_\+id.\+c@{packet\+\_\+id.\+c}!packet\+\_\+id\+\_\+persist\+\_\+print@{packet\+\_\+id\+\_\+persist\+\_\+print}}
+\index{packet\+\_\+id\+\_\+persist\+\_\+print@{packet\+\_\+id\+\_\+persist\+\_\+print}!packet\+\_\+id.\+c@{packet\+\_\+id.\+c}}
+\subsubsection[{packet\+\_\+id\+\_\+persist\+\_\+print(const struct packet\+\_\+id\+\_\+persist $\ast$p, struct gc\+\_\+arena $\ast$gc)}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ packet\+\_\+id\+\_\+persist\+\_\+print (
+\begin{DoxyParamCaption}
+\item[{const struct {\bf packet\+\_\+id\+\_\+persist} $\ast$}]{p, }
+\item[{struct {\bf gc\+\_\+arena} $\ast$}]{gc}
+\end{DoxyParamCaption}
+)}\label{packet__id_8c_ae872b1bbf2e3afd6a6d3d2ab1271b43c}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{packet__id_8c_ae872b1bbf2e3afd6a6d3d2ab1271b43c_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{packet__id_8c_ae872b1bbf2e3afd6a6d3d2ab1271b43c_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{packet__id_8c_a1a1b4689057b6361657f57fe65bd4f93}{}\index{packet\+\_\+id.\+c@{packet\+\_\+id.\+c}!packet\+\_\+id\+\_\+persist\+\_\+save@{packet\+\_\+id\+\_\+persist\+\_\+save}}
+\index{packet\+\_\+id\+\_\+persist\+\_\+save@{packet\+\_\+id\+\_\+persist\+\_\+save}!packet\+\_\+id.\+c@{packet\+\_\+id.\+c}}
+\subsubsection[{packet\+\_\+id\+\_\+persist\+\_\+save(struct packet\+\_\+id\+\_\+persist $\ast$p)}]{\setlength{\rightskip}{0pt plus 5cm}void packet\+\_\+id\+\_\+persist\+\_\+save (
+\begin{DoxyParamCaption}
+\item[{struct {\bf packet\+\_\+id\+\_\+persist} $\ast$}]{p}
+\end{DoxyParamCaption}
+)}\label{packet__id_8c_a1a1b4689057b6361657f57fe65bd4f93}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{packet__id_8c_a1a1b4689057b6361657f57fe65bd4f93_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{packet__id_8c_a698b7a89921d8dc6441b47b87545c18d}{}\index{packet\+\_\+id.\+c@{packet\+\_\+id.\+c}!packet\+\_\+id\+\_\+read@{packet\+\_\+id\+\_\+read}}
+\index{packet\+\_\+id\+\_\+read@{packet\+\_\+id\+\_\+read}!packet\+\_\+id.\+c@{packet\+\_\+id.\+c}}
+\subsubsection[{packet\+\_\+id\+\_\+read(struct packet\+\_\+id\+\_\+net $\ast$pin, struct buffer $\ast$buf, bool long\+\_\+form)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} packet\+\_\+id\+\_\+read (
+\begin{DoxyParamCaption}
+\item[{struct {\bf packet\+\_\+id\+\_\+net} $\ast$}]{pin, }
+\item[{struct {\bf buffer} $\ast$}]{buf, }
+\item[{{\bf bool}}]{long\+\_\+form}
+\end{DoxyParamCaption}
+)}\label{packet__id_8c_a698b7a89921d8dc6441b47b87545c18d}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=289pt]{packet__id_8c_a698b7a89921d8dc6441b47b87545c18d_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{packet__id_8c_aa2b33d1c90ab197e51fc502282d6f172}{}\index{packet\+\_\+id.\+c@{packet\+\_\+id.\+c}!packet\+\_\+id\+\_\+reap@{packet\+\_\+id\+\_\+reap}}
+\index{packet\+\_\+id\+\_\+reap@{packet\+\_\+id\+\_\+reap}!packet\+\_\+id.\+c@{packet\+\_\+id.\+c}}
+\subsubsection[{packet\+\_\+id\+\_\+reap(struct packet\+\_\+id\+\_\+rec $\ast$p)}]{\setlength{\rightskip}{0pt plus 5cm}void packet\+\_\+id\+\_\+reap (
+\begin{DoxyParamCaption}
+\item[{struct {\bf packet\+\_\+id\+\_\+rec} $\ast$}]{p}
+\end{DoxyParamCaption}
+)}\label{packet__id_8c_aa2b33d1c90ab197e51fc502282d6f172}
+\hypertarget{packet__id_8c_a68f8055e781f23fe159e979550e3b60b}{}\index{packet\+\_\+id.\+c@{packet\+\_\+id.\+c}!packet\+\_\+id\+\_\+test@{packet\+\_\+id\+\_\+test}}
+\index{packet\+\_\+id\+\_\+test@{packet\+\_\+id\+\_\+test}!packet\+\_\+id.\+c@{packet\+\_\+id.\+c}}
+\subsubsection[{packet\+\_\+id\+\_\+test(struct packet\+\_\+id\+\_\+rec $\ast$p, const struct packet\+\_\+id\+\_\+net $\ast$pin)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} packet\+\_\+id\+\_\+test (
+\begin{DoxyParamCaption}
+\item[{struct {\bf packet\+\_\+id\+\_\+rec} $\ast$}]{p, }
+\item[{const struct {\bf packet\+\_\+id\+\_\+net} $\ast$}]{pin}
+\end{DoxyParamCaption}
+)}\label{packet__id_8c_a68f8055e781f23fe159e979550e3b60b}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{packet__id_8c_a68f8055e781f23fe159e979550e3b60b_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{packet__id_8c_aee6501cdf56ed860554c95fd7e89854d}{}\index{packet\+\_\+id.\+c@{packet\+\_\+id.\+c}!packet\+\_\+id\+\_\+write@{packet\+\_\+id\+\_\+write}}
+\index{packet\+\_\+id\+\_\+write@{packet\+\_\+id\+\_\+write}!packet\+\_\+id.\+c@{packet\+\_\+id.\+c}}
+\subsubsection[{packet\+\_\+id\+\_\+write(struct packet\+\_\+id\+\_\+send $\ast$p, struct buffer $\ast$buf, bool long\+\_\+form, bool prepend)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} packet\+\_\+id\+\_\+write (
+\begin{DoxyParamCaption}
+\item[{struct {\bf packet\+\_\+id\+\_\+send} $\ast$}]{p, }
+\item[{struct {\bf buffer} $\ast$}]{buf, }
+\item[{{\bf bool}}]{long\+\_\+form, }
+\item[{{\bf bool}}]{prepend}
+\end{DoxyParamCaption}
+)}\label{packet__id_8c_aee6501cdf56ed860554c95fd7e89854d}
+Write a packet I\+D to buf, and update the packet I\+D state.
+
+
+\begin{DoxyParams}{Parameters}
+{\em p} & Packet I\+D state. \\
+\hline
+{\em buf} & Buffer to write the packet I\+D too \\
+\hline
+{\em long\+\_\+form} & If true, also update and write time\+\_\+t to buf \\
+\hline
+{\em prepend} & If true, prepend to buffer, otherwise apppend.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if successful, false otherwise. 
+\end{DoxyReturn}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=280pt]{packet__id_8c_aee6501cdf56ed860554c95fd7e89854d_icgraph}
+\end{center}
+\end{figure}
+
+

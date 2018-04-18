@@ -1,0 +1,40 @@
+\hypertarget{structkey__ctx}{}\section{key\+\_\+ctx Struct Reference}
+\label{structkey__ctx}\index{key\+\_\+ctx@{key\+\_\+ctx}}
+
+
+{\ttfamily \#include $<$crypto.\+h$>$}
+
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{crypto__mbedtls_8h_a5fd03a052e0b72cb24747f7cccfc66dd}{cipher\+\_\+ctx\+\_\+t} $\ast$ \hyperlink{structkey__ctx_aae41ef2b9e31ab2da86e7926cceed175}{cipher}
+\item 
+\hyperlink{crypto__mbedtls_8h_a673f50867e637575e463123b9a6b8180}{hmac\+\_\+ctx\+\_\+t} $\ast$ \hyperlink{structkey__ctx_ac82e9ac5970ca208fa7d36c9a49bb4a7}{hmac}
+\item 
+uint8\+\_\+t \hyperlink{structkey__ctx_a3abf80e0721314aa5ae121fa668620a7}{implicit\+\_\+iv} \mbox{[}\hyperlink{crypto__openssl_8h_ae9cda5ecb2fa1ec97a413d9ffbb0c87e}{O\+P\+E\+N\+V\+P\+N\+\_\+\+M\+A\+X\+\_\+\+I\+V\+\_\+\+L\+E\+N\+G\+T\+H}\mbox{]}
+\item 
+size\+\_\+t \hyperlink{structkey__ctx_a094aa3b3f35e7d15ac58d5e4ef072eaa}{implicit\+\_\+iv\+\_\+len}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Container for one set of cipher and/or H\+M\+A\+C contexts. 
+
+\subsection{Member Data Documentation}
+\hypertarget{structkey__ctx_aae41ef2b9e31ab2da86e7926cceed175}{}\index{key\+\_\+ctx@{key\+\_\+ctx}!cipher@{cipher}}
+\index{cipher@{cipher}!key\+\_\+ctx@{key\+\_\+ctx}}
+\subsubsection[{cipher}]{\setlength{\rightskip}{0pt plus 5cm}{\bf cipher\+\_\+ctx\+\_\+t}$\ast$ key\+\_\+ctx\+::cipher}\label{structkey__ctx_aae41ef2b9e31ab2da86e7926cceed175}
+Generic cipher context. \hypertarget{structkey__ctx_ac82e9ac5970ca208fa7d36c9a49bb4a7}{}\index{key\+\_\+ctx@{key\+\_\+ctx}!hmac@{hmac}}
+\index{hmac@{hmac}!key\+\_\+ctx@{key\+\_\+ctx}}
+\subsubsection[{hmac}]{\setlength{\rightskip}{0pt plus 5cm}{\bf hmac\+\_\+ctx\+\_\+t}$\ast$ key\+\_\+ctx\+::hmac}\label{structkey__ctx_ac82e9ac5970ca208fa7d36c9a49bb4a7}
+Generic H\+M\+A\+C context. \hypertarget{structkey__ctx_a3abf80e0721314aa5ae121fa668620a7}{}\index{key\+\_\+ctx@{key\+\_\+ctx}!implicit\+\_\+iv@{implicit\+\_\+iv}}
+\index{implicit\+\_\+iv@{implicit\+\_\+iv}!key\+\_\+ctx@{key\+\_\+ctx}}
+\subsubsection[{implicit\+\_\+iv}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t key\+\_\+ctx\+::implicit\+\_\+iv\mbox{[}{\bf O\+P\+E\+N\+V\+P\+N\+\_\+\+M\+A\+X\+\_\+\+I\+V\+\_\+\+L\+E\+N\+G\+T\+H}\mbox{]}}\label{structkey__ctx_a3abf80e0721314aa5ae121fa668620a7}
+The implicit part of the I\+V \hypertarget{structkey__ctx_a094aa3b3f35e7d15ac58d5e4ef072eaa}{}\index{key\+\_\+ctx@{key\+\_\+ctx}!implicit\+\_\+iv\+\_\+len@{implicit\+\_\+iv\+\_\+len}}
+\index{implicit\+\_\+iv\+\_\+len@{implicit\+\_\+iv\+\_\+len}!key\+\_\+ctx@{key\+\_\+ctx}}
+\subsubsection[{implicit\+\_\+iv\+\_\+len}]{\setlength{\rightskip}{0pt plus 5cm}size\+\_\+t key\+\_\+ctx\+::implicit\+\_\+iv\+\_\+len}\label{structkey__ctx_a094aa3b3f35e7d15ac58d5e4ef072eaa}
+The length of implicit\+\_\+iv 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/openvpn/\hyperlink{crypto_8h}{crypto.\+h}\end{DoxyCompactItemize}

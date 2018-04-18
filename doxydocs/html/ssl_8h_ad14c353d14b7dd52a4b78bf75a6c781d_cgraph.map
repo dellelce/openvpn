@@ -1,0 +1,5 @@
+<map id="tls_poor_mans_ncp" name="tls_poor_mans_ncp">
+<area shape="rect" id="node2" href="$ssl_8c.html#a9e8061a56d8a114317b5f829b6cbf19b" title="tls_item_in_cipher_list" alt="" coords="188,5,339,32"/>
+<area shape="rect" id="node3" href="$buffer_8c.html#a06e0220403278399596a7a1b6b601fca" title="string_alloc" alt="" coords="387,31,475,57"/>
+<area shape="rect" id="node4" href="$buffer_8c.html#a67f7dec7f86e113dc0744584fd80b621" title="gc_malloc" alt="" coords="523,31,604,57"/>
+</map>

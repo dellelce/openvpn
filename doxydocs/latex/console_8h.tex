@@ -1,0 +1,141 @@
+\hypertarget{console_8h}{}\section{src/openvpn/console.h File Reference}
+\label{console_8h}\index{src/openvpn/console.\+h@{src/openvpn/console.\+h}}
+{\ttfamily \#include \char`\"{}basic.\+h\char`\"{}}\\*
+Include dependency graph for console.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=193pt]{console_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{console_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{struct__query__user}{\+\_\+query\+\_\+user}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{console_8h_a3e221d1b0bf482402e3e0dcae5148f60}{Q\+U\+E\+R\+Y\+\_\+\+U\+S\+E\+R\+\_\+\+N\+U\+M\+S\+L\+O\+T\+S}~10
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{console_8h_a1723be7ca1a9e0c4992cb7e9c6d5c6d8}{query\+\_\+user\+\_\+clear} (void)
+\item 
+void \hyperlink{console_8h_af9287e418f46b3bce4d65ebbd17d401a}{query\+\_\+user\+\_\+add} (char $\ast$prompt, size\+\_\+t prompt\+\_\+len, char $\ast$resp, size\+\_\+t resp\+\_\+len, \hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} echo)
+\item 
+\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} \hyperlink{console_8h_a285f4de5297e604771dd132c2345b590}{query\+\_\+user\+\_\+exec\+\_\+builtin} (void)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{struct__query__user}{\+\_\+query\+\_\+user} \hyperlink{console_8h_a2e989e9a117a0464dc21d2c7b3842acf}{query\+\_\+user} \mbox{[}$\,$\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{console_8h_a3e221d1b0bf482402e3e0dcae5148f60}{}\index{console.\+h@{console.\+h}!Q\+U\+E\+R\+Y\+\_\+\+U\+S\+E\+R\+\_\+\+N\+U\+M\+S\+L\+O\+T\+S@{Q\+U\+E\+R\+Y\+\_\+\+U\+S\+E\+R\+\_\+\+N\+U\+M\+S\+L\+O\+T\+S}}
+\index{Q\+U\+E\+R\+Y\+\_\+\+U\+S\+E\+R\+\_\+\+N\+U\+M\+S\+L\+O\+T\+S@{Q\+U\+E\+R\+Y\+\_\+\+U\+S\+E\+R\+\_\+\+N\+U\+M\+S\+L\+O\+T\+S}!console.\+h@{console.\+h}}
+\subsubsection[{Q\+U\+E\+R\+Y\+\_\+\+U\+S\+E\+R\+\_\+\+N\+U\+M\+S\+L\+O\+T\+S}]{\setlength{\rightskip}{0pt plus 5cm}\#define Q\+U\+E\+R\+Y\+\_\+\+U\+S\+E\+R\+\_\+\+N\+U\+M\+S\+L\+O\+T\+S~10}\label{console_8h_a3e221d1b0bf482402e3e0dcae5148f60}
+
+
+\subsection{Function Documentation}
+\hypertarget{console_8h_af9287e418f46b3bce4d65ebbd17d401a}{}\index{console.\+h@{console.\+h}!query\+\_\+user\+\_\+add@{query\+\_\+user\+\_\+add}}
+\index{query\+\_\+user\+\_\+add@{query\+\_\+user\+\_\+add}!console.\+h@{console.\+h}}
+\subsubsection[{query\+\_\+user\+\_\+add(char $\ast$prompt, size\+\_\+t prompt\+\_\+len, char $\ast$resp, size\+\_\+t resp\+\_\+len, bool echo)}]{\setlength{\rightskip}{0pt plus 5cm}void query\+\_\+user\+\_\+add (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{prompt, }
+\item[{size\+\_\+t}]{prompt\+\_\+len, }
+\item[{char $\ast$}]{resp, }
+\item[{size\+\_\+t}]{resp\+\_\+len, }
+\item[{{\bf bool}}]{echo}
+\end{DoxyParamCaption}
+)}\label{console_8h_af9287e418f46b3bce4d65ebbd17d401a}
+Adds an item to ask the user for
+
+
+\begin{DoxyParams}{Parameters}
+{\em prompt} & Prompt to display to the user \\
+\hline
+{\em prompt\+\_\+len} & Length of the prompt string \\
+\hline
+{\em resp} & String containing the user response \\
+\hline
+{\em resp\+\_\+len} & Lenght of the response string \\
+\hline
+{\em echo} & Should the user input be echoed to the user? If False, input will be masked \\
+\hline
+\end{DoxyParams}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{console_8h_af9287e418f46b3bce4d65ebbd17d401a_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{console_8h_a1723be7ca1a9e0c4992cb7e9c6d5c6d8}{}\index{console.\+h@{console.\+h}!query\+\_\+user\+\_\+clear@{query\+\_\+user\+\_\+clear}}
+\index{query\+\_\+user\+\_\+clear@{query\+\_\+user\+\_\+clear}!console.\+h@{console.\+h}}
+\subsubsection[{query\+\_\+user\+\_\+clear(void)}]{\setlength{\rightskip}{0pt plus 5cm}void query\+\_\+user\+\_\+clear (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{console_8h_a1723be7ca1a9e0c4992cb7e9c6d5c6d8}
+Wipes all data put into all of the query\+\_\+user structs 
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{console_8h_a1723be7ca1a9e0c4992cb7e9c6d5c6d8_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{console_8h_a285f4de5297e604771dd132c2345b590}{}\index{console.\+h@{console.\+h}!query\+\_\+user\+\_\+exec\+\_\+builtin@{query\+\_\+user\+\_\+exec\+\_\+builtin}}
+\index{query\+\_\+user\+\_\+exec\+\_\+builtin@{query\+\_\+user\+\_\+exec\+\_\+builtin}!console.\+h@{console.\+h}}
+\subsubsection[{query\+\_\+user\+\_\+exec\+\_\+builtin(void)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} query\+\_\+user\+\_\+exec\+\_\+builtin (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{console_8h_a285f4de5297e604771dd132c2345b590}
+
+
+
+
+Executes a configured setup, using the built-\/in method for querying the user. This method uses the console/\+T\+T\+Y directly.
+
+
+\begin{DoxyParams}{Parameters}
+{\em setup} & Pointer to the setup defining what to ask the user\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if executing all the defined steps completed successfully
+\end{DoxyReturn}
+Wrapper function enabling query\+\_\+user\+\_\+exec() if no alternative methods have been enabled
+
+Default method for querying user using default stdin/stdout on a console. This needs to be available as a backup interface for the alternative implementations in case they cannot query through their implementation specific methods.
+
+If no alternative implementation is declared, a wrapper in \hyperlink{console_8h}{console.\+h} will ensure query\+\_\+user\+\_\+exec() will call this function instead. 
+
+\subsection{Variable Documentation}
+\hypertarget{console_8h_a2e989e9a117a0464dc21d2c7b3842acf}{}\index{console.\+h@{console.\+h}!query\+\_\+user@{query\+\_\+user}}
+\index{query\+\_\+user@{query\+\_\+user}!console.\+h@{console.\+h}}
+\subsubsection[{query\+\_\+user}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf \+\_\+query\+\_\+user} query\+\_\+user\mbox{[}$\,$\mbox{]}}\label{console_8h_a2e989e9a117a0464dc21d2c7b3842acf}
+Global variable, declared in \hyperlink{console_8c}{console.\+c} 

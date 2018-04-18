@@ -1,0 +1,117 @@
+\hypertarget{structtls__multi}{}\section{tls\+\_\+multi Struct Reference}
+\label{structtls__multi}\index{tls\+\_\+multi@{tls\+\_\+multi}}
+
+
+{\ttfamily \#include $<$ssl\+\_\+common.\+h$>$}
+
+
+
+Collaboration diagram for tls\+\_\+multi\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{structtls__multi__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structtls__options}{tls\+\_\+options} \hyperlink{structtls__multi_a6cd0005716f05da0398d85f6f1693e5d}{opt}
+\item 
+struct \hyperlink{structkey__state}{key\+\_\+state} $\ast$ \hyperlink{structtls__multi_a27b151b0cdf8d80dbd920478b87fe64b}{key\+\_\+scan} \mbox{[}\hyperlink{ssl__common_8h_a1fa7da1282872926332e449e8fa35dce}{K\+E\+Y\+\_\+\+S\+C\+A\+N\+\_\+\+S\+I\+Z\+E}\mbox{]}
+\item 
+struct \hyperlink{structkey__state}{key\+\_\+state} $\ast$ \hyperlink{structtls__multi_a522b67985ccd1faa266d4a26c978457a}{save\+\_\+ks}
+\item 
+struct \hyperlink{structlink__socket__actual}{link\+\_\+socket\+\_\+actual} \hyperlink{structtls__multi_a35cf748c1d74ed47cd38b6c6ea096202}{to\+\_\+link\+\_\+addr}
+\item 
+int \hyperlink{structtls__multi_ad8e1c72950574c3bdbaafd5e8e0d4cc8}{n\+\_\+sessions}
+\item 
+int \hyperlink{structtls__multi_a0903b5991f15d2c72dc24850591ec54f}{n\+\_\+hard\+\_\+errors}
+\item 
+int \hyperlink{structtls__multi_afa4c3a8815c8ac3dd4e1e8271e0c2ee3}{n\+\_\+soft\+\_\+errors}
+\item 
+char $\ast$ \hyperlink{structtls__multi_a922fe40b847bf8747e99f8b2af5e295d}{locked\+\_\+cn}
+\item 
+char $\ast$ \hyperlink{structtls__multi_a62bfb73bf4fbdb246053a7ba85412346}{locked\+\_\+username}
+\item 
+struct \hyperlink{structcert__hash__set}{cert\+\_\+hash\+\_\+set} $\ast$ \hyperlink{structtls__multi_a85b861eacbb27a9f9a9a008dec4fc55a}{locked\+\_\+cert\+\_\+hash\+\_\+set}
+\item 
+uint32\+\_\+t \hyperlink{structtls__multi_a93c90f22f9fbbd1898ea9708a49ee1f7}{peer\+\_\+id}
+\item 
+\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} \hyperlink{structtls__multi_aa1c6b330c9dd68a9f9dd6bf05d454642}{use\+\_\+peer\+\_\+id}
+\item 
+char $\ast$ \hyperlink{structtls__multi_a5dcccc0eb320a38f6a20923c742046b2}{remote\+\_\+ciphername}
+\item 
+char $\ast$ \hyperlink{structtls__multi_aa03c9a1c7487bd7bed7e4f73e266614d}{auth\+\_\+token}
+\item 
+time\+\_\+t \hyperlink{structtls__multi_a499dd009f7a000b432f0362b48c89b55}{auth\+\_\+token\+\_\+tstamp}
+\item 
+\hyperlink{automatic_8c_abb452686968e48b67397da5f97445f5b}{bool} \hyperlink{structtls__multi_a3a0e4ef1be4d294a440d01ae178546f8}{auth\+\_\+token\+\_\+sent}
+\item 
+struct \hyperlink{structtls__session}{tls\+\_\+session} \hyperlink{structtls__multi_a74e065e432f819307a830ef38d5be73c}{session} \mbox{[}\hyperlink{group__control__processor_gaa195349d22c113d3acc88b6795e491b8}{T\+M\+\_\+\+S\+I\+Z\+E}\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Security parameter state for a single V\+P\+N tunnel.
+
+An active V\+P\+N tunnel running with T\+L\+S enabled has one {\ttfamily \hyperlink{structtls__multi}{tls\+\_\+multi}} object, in which it stores all control channel and data channel security parameter state. This structure can contain multiple, possibly simultaneously active, {\ttfamily tls\+\_\+context} objects to allow for interruption-\/less transitions during session renegotiations. Each {\ttfamily tls\+\_\+context} represents one control channel session, which can span multiple data channel security parameter sessions stored in {\ttfamily \hyperlink{structkey__state}{key\+\_\+state}} structures. 
+
+\subsection{Member Data Documentation}
+\hypertarget{structtls__multi_aa03c9a1c7487bd7bed7e4f73e266614d}{}\index{tls\+\_\+multi@{tls\+\_\+multi}!auth\+\_\+token@{auth\+\_\+token}}
+\index{auth\+\_\+token@{auth\+\_\+token}!tls\+\_\+multi@{tls\+\_\+multi}}
+\subsubsection[{auth\+\_\+token}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ tls\+\_\+multi\+::auth\+\_\+token}\label{structtls__multi_aa03c9a1c7487bd7bed7e4f73e266614d}
+If server sends a generated auth-\/token, this is the token to use for future user/pass authentications in this session. \hypertarget{structtls__multi_a3a0e4ef1be4d294a440d01ae178546f8}{}\index{tls\+\_\+multi@{tls\+\_\+multi}!auth\+\_\+token\+\_\+sent@{auth\+\_\+token\+\_\+sent}}
+\index{auth\+\_\+token\+\_\+sent@{auth\+\_\+token\+\_\+sent}!tls\+\_\+multi@{tls\+\_\+multi}}
+\subsubsection[{auth\+\_\+token\+\_\+sent}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} tls\+\_\+multi\+::auth\+\_\+token\+\_\+sent}\label{structtls__multi_a3a0e4ef1be4d294a440d01ae178546f8}
+If server uses --auth-\/gen-\/token and token has been sent to client \hypertarget{structtls__multi_a499dd009f7a000b432f0362b48c89b55}{}\index{tls\+\_\+multi@{tls\+\_\+multi}!auth\+\_\+token\+\_\+tstamp@{auth\+\_\+token\+\_\+tstamp}}
+\index{auth\+\_\+token\+\_\+tstamp@{auth\+\_\+token\+\_\+tstamp}!tls\+\_\+multi@{tls\+\_\+multi}}
+\subsubsection[{auth\+\_\+token\+\_\+tstamp}]{\setlength{\rightskip}{0pt plus 5cm}time\+\_\+t tls\+\_\+multi\+::auth\+\_\+token\+\_\+tstamp}\label{structtls__multi_a499dd009f7a000b432f0362b48c89b55}
+timestamp of the generated token \hypertarget{structtls__multi_a27b151b0cdf8d80dbd920478b87fe64b}{}\index{tls\+\_\+multi@{tls\+\_\+multi}!key\+\_\+scan@{key\+\_\+scan}}
+\index{key\+\_\+scan@{key\+\_\+scan}!tls\+\_\+multi@{tls\+\_\+multi}}
+\subsubsection[{key\+\_\+scan}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf key\+\_\+state}$\ast$ tls\+\_\+multi\+::key\+\_\+scan\mbox{[}{\bf K\+E\+Y\+\_\+\+S\+C\+A\+N\+\_\+\+S\+I\+Z\+E}\mbox{]}}\label{structtls__multi_a27b151b0cdf8d80dbd920478b87fe64b}
+List of {\ttfamily \hyperlink{structkey__state}{key\+\_\+state}} objects in the order they should be scanned by data channel modules. \hypertarget{structtls__multi_a85b861eacbb27a9f9a9a008dec4fc55a}{}\index{tls\+\_\+multi@{tls\+\_\+multi}!locked\+\_\+cert\+\_\+hash\+\_\+set@{locked\+\_\+cert\+\_\+hash\+\_\+set}}
+\index{locked\+\_\+cert\+\_\+hash\+\_\+set@{locked\+\_\+cert\+\_\+hash\+\_\+set}!tls\+\_\+multi@{tls\+\_\+multi}}
+\subsubsection[{locked\+\_\+cert\+\_\+hash\+\_\+set}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf cert\+\_\+hash\+\_\+set}$\ast$ tls\+\_\+multi\+::locked\+\_\+cert\+\_\+hash\+\_\+set}\label{structtls__multi_a85b861eacbb27a9f9a9a008dec4fc55a}
+\hypertarget{structtls__multi_a922fe40b847bf8747e99f8b2af5e295d}{}\index{tls\+\_\+multi@{tls\+\_\+multi}!locked\+\_\+cn@{locked\+\_\+cn}}
+\index{locked\+\_\+cn@{locked\+\_\+cn}!tls\+\_\+multi@{tls\+\_\+multi}}
+\subsubsection[{locked\+\_\+cn}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ tls\+\_\+multi\+::locked\+\_\+cn}\label{structtls__multi_a922fe40b847bf8747e99f8b2af5e295d}
+\hypertarget{structtls__multi_a62bfb73bf4fbdb246053a7ba85412346}{}\index{tls\+\_\+multi@{tls\+\_\+multi}!locked\+\_\+username@{locked\+\_\+username}}
+\index{locked\+\_\+username@{locked\+\_\+username}!tls\+\_\+multi@{tls\+\_\+multi}}
+\subsubsection[{locked\+\_\+username}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ tls\+\_\+multi\+::locked\+\_\+username}\label{structtls__multi_a62bfb73bf4fbdb246053a7ba85412346}
+\hypertarget{structtls__multi_a0903b5991f15d2c72dc24850591ec54f}{}\index{tls\+\_\+multi@{tls\+\_\+multi}!n\+\_\+hard\+\_\+errors@{n\+\_\+hard\+\_\+errors}}
+\index{n\+\_\+hard\+\_\+errors@{n\+\_\+hard\+\_\+errors}!tls\+\_\+multi@{tls\+\_\+multi}}
+\subsubsection[{n\+\_\+hard\+\_\+errors}]{\setlength{\rightskip}{0pt plus 5cm}int tls\+\_\+multi\+::n\+\_\+hard\+\_\+errors}\label{structtls__multi_a0903b5991f15d2c72dc24850591ec54f}
+\hypertarget{structtls__multi_ad8e1c72950574c3bdbaafd5e8e0d4cc8}{}\index{tls\+\_\+multi@{tls\+\_\+multi}!n\+\_\+sessions@{n\+\_\+sessions}}
+\index{n\+\_\+sessions@{n\+\_\+sessions}!tls\+\_\+multi@{tls\+\_\+multi}}
+\subsubsection[{n\+\_\+sessions}]{\setlength{\rightskip}{0pt plus 5cm}int tls\+\_\+multi\+::n\+\_\+sessions}\label{structtls__multi_ad8e1c72950574c3bdbaafd5e8e0d4cc8}
+Number of sessions negotiated thus far. \hypertarget{structtls__multi_afa4c3a8815c8ac3dd4e1e8271e0c2ee3}{}\index{tls\+\_\+multi@{tls\+\_\+multi}!n\+\_\+soft\+\_\+errors@{n\+\_\+soft\+\_\+errors}}
+\index{n\+\_\+soft\+\_\+errors@{n\+\_\+soft\+\_\+errors}!tls\+\_\+multi@{tls\+\_\+multi}}
+\subsubsection[{n\+\_\+soft\+\_\+errors}]{\setlength{\rightskip}{0pt plus 5cm}int tls\+\_\+multi\+::n\+\_\+soft\+\_\+errors}\label{structtls__multi_afa4c3a8815c8ac3dd4e1e8271e0c2ee3}
+\hypertarget{structtls__multi_a6cd0005716f05da0398d85f6f1693e5d}{}\index{tls\+\_\+multi@{tls\+\_\+multi}!opt@{opt}}
+\index{opt@{opt}!tls\+\_\+multi@{tls\+\_\+multi}}
+\subsubsection[{opt}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf tls\+\_\+options} tls\+\_\+multi\+::opt}\label{structtls__multi_a6cd0005716f05da0398d85f6f1693e5d}
+\hypertarget{structtls__multi_a93c90f22f9fbbd1898ea9708a49ee1f7}{}\index{tls\+\_\+multi@{tls\+\_\+multi}!peer\+\_\+id@{peer\+\_\+id}}
+\index{peer\+\_\+id@{peer\+\_\+id}!tls\+\_\+multi@{tls\+\_\+multi}}
+\subsubsection[{peer\+\_\+id}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t tls\+\_\+multi\+::peer\+\_\+id}\label{structtls__multi_a93c90f22f9fbbd1898ea9708a49ee1f7}
+\hypertarget{structtls__multi_a5dcccc0eb320a38f6a20923c742046b2}{}\index{tls\+\_\+multi@{tls\+\_\+multi}!remote\+\_\+ciphername@{remote\+\_\+ciphername}}
+\index{remote\+\_\+ciphername@{remote\+\_\+ciphername}!tls\+\_\+multi@{tls\+\_\+multi}}
+\subsubsection[{remote\+\_\+ciphername}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ tls\+\_\+multi\+::remote\+\_\+ciphername}\label{structtls__multi_a5dcccc0eb320a38f6a20923c742046b2}
+cipher specified in peer\textquotesingle{}s config file \hypertarget{structtls__multi_a522b67985ccd1faa266d4a26c978457a}{}\index{tls\+\_\+multi@{tls\+\_\+multi}!save\+\_\+ks@{save\+\_\+ks}}
+\index{save\+\_\+ks@{save\+\_\+ks}!tls\+\_\+multi@{tls\+\_\+multi}}
+\subsubsection[{save\+\_\+ks}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf key\+\_\+state}$\ast$ tls\+\_\+multi\+::save\+\_\+ks}\label{structtls__multi_a522b67985ccd1faa266d4a26c978457a}
+\hypertarget{structtls__multi_a74e065e432f819307a830ef38d5be73c}{}\index{tls\+\_\+multi@{tls\+\_\+multi}!session@{session}}
+\index{session@{session}!tls\+\_\+multi@{tls\+\_\+multi}}
+\subsubsection[{session}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf tls\+\_\+session} tls\+\_\+multi\+::session\mbox{[}{\bf T\+M\+\_\+\+S\+I\+Z\+E}\mbox{]}}\label{structtls__multi_a74e065e432f819307a830ef38d5be73c}
+Array of {\ttfamily \hyperlink{structtls__session}{tls\+\_\+session}} objects representing control channel sessions with the remote peer. \hypertarget{structtls__multi_a35cf748c1d74ed47cd38b6c6ea096202}{}\index{tls\+\_\+multi@{tls\+\_\+multi}!to\+\_\+link\+\_\+addr@{to\+\_\+link\+\_\+addr}}
+\index{to\+\_\+link\+\_\+addr@{to\+\_\+link\+\_\+addr}!tls\+\_\+multi@{tls\+\_\+multi}}
+\subsubsection[{to\+\_\+link\+\_\+addr}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf link\+\_\+socket\+\_\+actual} tls\+\_\+multi\+::to\+\_\+link\+\_\+addr}\label{structtls__multi_a35cf748c1d74ed47cd38b6c6ea096202}
+\hypertarget{structtls__multi_aa1c6b330c9dd68a9f9dd6bf05d454642}{}\index{tls\+\_\+multi@{tls\+\_\+multi}!use\+\_\+peer\+\_\+id@{use\+\_\+peer\+\_\+id}}
+\index{use\+\_\+peer\+\_\+id@{use\+\_\+peer\+\_\+id}!tls\+\_\+multi@{tls\+\_\+multi}}
+\subsubsection[{use\+\_\+peer\+\_\+id}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} tls\+\_\+multi\+::use\+\_\+peer\+\_\+id}\label{structtls__multi_aa1c6b330c9dd68a9f9dd6bf05d454642}
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/openvpn/\hyperlink{ssl__common_8h}{ssl\+\_\+common.\+h}\end{DoxyCompactItemize}

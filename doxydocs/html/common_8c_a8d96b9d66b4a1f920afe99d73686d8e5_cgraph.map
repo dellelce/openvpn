@@ -1,0 +1,5 @@
+<map id="MsgToEventLog" name="MsgToEventLog">
+<area shape="rect" id="node2" href="$common_8c.html#a2610102e271fc65ae8908d593cab8afd" title="GetLastErrorText" alt="" coords="167,5,287,32"/>
+<area shape="rect" id="node3" href="$common_8c.html#ae697dac0c0dd8b6b2eeef1283595efe4" title="openvpn_sntprintf" alt="" coords="335,56,457,83"/>
+<area shape="rect" id="node4" href="$common_8c.html#a443b5988f6015454008fdab390a50edb" title="openvpn_vsntprintf" alt="" coords="505,81,632,108"/>
+</map>

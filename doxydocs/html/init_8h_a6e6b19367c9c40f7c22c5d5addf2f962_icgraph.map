@@ -1,0 +1,6 @@
+<map id="context_gc_free" name="context_gc_free">
+<area shape="rect" id="node2" href="$init_8h.html#a8f6bfd35ae93f4eda968d89f76637a98" title="close_context" alt="" coords="168,42,271,69"/>
+<area shape="rect" id="node3" href="$init_8h.html#a2986d81718c6cb5cd19bad612998d56f" title="init_instance" alt="" coords="319,42,413,69"/>
+<area shape="rect" id="node4" href="$init_8h.html#a6a1f31e3d9a1f00ef308cd117c540ed4" title="init_instance_handle\l_signals" alt="" coords="462,5,602,47"/>
+<area shape="rect" id="node5" href="$init_8h.html#a2e3da881a15567d205101e6b0853987a" title="inherit_context_child" alt="" coords="461,71,603,98"/>
+</map>
